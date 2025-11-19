@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texter (テキスター) - AI音声認識・文字起こしアプリ</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb; /* モダンなブルー */
+            --primary-dark: #1d4ed8;
+            --secondary-color: #f3f4f6;
+            --text-color: #1f2937;
+            --text-light: #6b7280;
+            --white: #ffffff;
+            --accent: #8b5cf6; /* AIっぽさを出すパープル */
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9fafb;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-download {
+            background-color: var(--text-color);
+            color: var(--white);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-download:hover {
+            background-color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, var(--primary-color), var(--accent));
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .app-store-badge {
+            background: #000;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        
+        .app-store-badge:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Features */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            background: #eff6ff;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Highlight Section (Grid) */
+        .highlight-section {
+            background-color: var(--white);
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .highlight-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .highlight-content ul {
+            margin-bottom: 2rem;
+        }
+
+        .highlight-content li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-color);
+        }
+
+        .highlight-content li i {
+            color: var(--accent);
+        }
+
+        .highlight-image {
+            background: #f3f4f6;
+            height: 400px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #9ca3af;
+            border: 2px dashed #d1d5db;
+            /* 実際の画像がある場合はここにimgタグを入れる */
+        }
+
+        /* Pricing */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            border: 1px solid #e5e7eb;
+            text-align: center;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.1);
+        }
+
+        .badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 1rem 0;
+            color: var(--text-color);
+        }
+        
+        .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-light);
+        }
+
+        .pricing-features {
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .pricing-features i {
+            color: var(--primary-color);
+            margin-right: 8px;
+        }
+
+        /* Reviews */
+        .reviews-section {
+            background: #f9fafb;
+        }
+
+        .review-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .stars {
+            color: #fbbf24;
+            margin-bottom: 1rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .reviewer {
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background: #111827;
+            color: #9ca3af;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .footer-links h4 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #374151;
+            padding-top: 20px;
+            font-size: 0.85rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none; /* 簡易的に非表示。本来はハンバーガーメニュー */
+            }
+
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .highlight-image {
+                order: -1; /* 画像を上に */
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo"><i class="fas fa-microphone-lines"></i> Texter</a>
+                <div class="nav-links">
+                    <a href="#features">機能</a>
+                    <a href="#usecase">活用例</a>
+                    <a href="#pricing">料金プラン</a>
+                    <a href="#reviews">お客様の声</a>
+                </div>
+                <a href="https://apps.apple.com/jp/app/id1528276871" class="btn-download">
+                    <i class="fab fa-apple"></i> ダウンロード
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>あなたの言葉、瞬時にテキスト化。<br>AIがもたらす新しい記録体験。</h1>
+            <p>Texter（テキスター）は、最先端のAI音声認識技術を駆使して、あなたの声、画像、動画を迅速かつ正確に文字に起こします。</p>
+            <div class="hero-btns">
+                <a href="https://apps.apple.com/jp/app/id1528276871" class="app-store-badge">
+                    <i class="fab fa-apple fa-2x"></i>
+                    <div style="text-align: left; line-height: 1.2;">
+                        <span style="font-size: 0.7rem; display: block;">Download on the</span>
+                        <span style="font-size: 1.2rem;">App Store</span>
+                    </div>
+                </a>
+            </div>
+            <p style="margin-top: 1rem; font-size: 0.8rem;">※ iPad / Apple Watch 対応</p>
+        </div>
+    </section>
+
+    <section id="features" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>主な機能</h2>
+                <p>音声も画像も動画も。あらゆるメディアをテキストへ。</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-microphone-alt"></i></div>
+                    <h3>高精度 AI音声文字起こし</h3>
+                    <p>Whisper (OpenAI) を含む最新AIエンジンを採用。句読点や疑問符も自動で変換し、長時間の録音もスムーズにテキスト化します。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-image"></i></div>
+                    <h3>画像・動画から文字変換</h3>
+                    <p>OCR機能で画像内の文字を瞬時にテキスト化。動画ファイルからの音声抽出・文字起こしにも対応しています。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-language"></i></div>
+                    <h3>リアルタイム翻訳</h3>
+                    <p>DeepLやGoogle翻訳と連携。文字起こしした内容をその場で翻訳し、多言語コミュニケーションをサポートします。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-robot"></i></div>
+                    <h3>AI要約 & リスト管理</h3>
+                    <p>議事録の要約を作成したり、フォルダ分けや検索機能で膨大なメモをスマートに管理できます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="usecase" class="section highlight-section">
+        <div class="container">
+            <div class="highlight-grid">
+                <div class="highlight-image">
+                    <i class="fas fa-mobile-screen-button fa-3x"></i>
+                    <span style="margin-left:10px">App Screenshot Placeholder</span>
+                </div>
+                <div class="highlight-content">
+                    <h3>ビジネスから学習まで、<br>あらゆるシーンで活躍</h3>
+                    <p style="margin-bottom: 20px; color: var(--text-light);">
+                        Texterは単なるボイスレコーダーではありません。あなたの生産性を劇的に向上させるパートナーです。
+                    </p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <strong>議事録作成：</strong> 会議の内容を自動で記録し、要約までAIにお任せ。</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>ライター・ブロガー：</strong> インタビューやアイデア出しを声で行い、執筆速度を加速。</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>聴覚サポート：</strong> リアルタイム文字起こしでコミュニケーションを円滑に。</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>語学学習：</strong> 発音チェックや、PDF教材のテキスト化に。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>料金プラン</h2>
+                <p>あなたの用途に合わせて選べるプラン</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Free</h3>
+                    <div class="price">¥0</div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> リアルタイム文字起こし（1分）</li>
+                        <li><i class="fas fa-check"></i> 画像文字起こし（3回/日）</li>
+                        <li><i class="fas fa-check"></i> リアルタイム翻訳</li>
+                        <li><i class="fas fa-check"></i> 録音・動画文字起こし（短時間）</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="badge">人気</div>
+                    <h3>Premium M</h3>
+                    <div class="price">¥1,500<span>/月</span></div>
+                    <p style="font-size: 0.8rem; color: var(--primary-color); margin-bottom: 1rem;">1週間無料トライアル付き</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> <strong>Whisper 無制限</strong></li>
+                        <li><i class="fas fa-check"></i> 高性能モード (3時間/月)</li>
+                        <li><i class="fas fa-check"></i> 画像文字起こし 無制限</li>
+                        <li><i class="fas fa-check"></i> 広告非表示</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="badge">お得</div>
+                    <h3>Premium Y</h3>
+                    <div class="price">¥7,400<span>/年</span></div>
+                    <p style="font-size: 0.8rem; color: #059669; margin-bottom: 1rem;">月額の約半額！ビジネス活用に</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> <strong>Whisper 無制限</strong></li>
+                        <li><i class="fas fa-check"></i> 高性能モード (10時間/月)</li>
+                        <li><i class="fas fa-check"></i> 画像文字起こし 無制限</li>
+                        <li><i class="fas fa-check"></i> 広告非表示</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="section reviews-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>ユーザーの声</h2>
+            </div>
+            <div class="features-grid">
+                <div class="review-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="review-text">「ライターです。ここまで性能が良いとは期待以上でした！これまで全て手打ちしていたときに比べて随分助かります。早速一年で契約しました。」</p>
+                    <p class="reviewer">ともころう 様</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="review-text">「補聴器をつけても聞き取る事が難しい母に画面を見せて理解してもらえるので、とても助かっております。」</p>
+                    <p class="reviewer">ののはるちゃん 様</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="review-text">「OCRが他のスキャナーアプリなどと比較しても速くて正確です。ほぼ100%の精度で読み取ってくれます。」</p>
+                    <p class="reviewer">yuta-mom 様</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <a href="#" class="footer-logo">Texter</a>
+                    <p>京都市発、最先端AI文字起こしアプリ。<br>あなたの声を、未来へ。</p>
+                </div>
+                <div class="footer-links">
+                    <h4>機能・サポート</h4>
+                    <ul>
+                        <li><a href="#">基本機能</a></li>
+                        <li><a href="#">利用方法</a></li>
+                        <li><a href="#">よくある質問</a></li>
+                        <li><a href="#">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>規約・法律</h4>
+                    <ul>
+                        <li><a href="#">利用規約</a></li>
+                        <li><a href="#">プライバシーポリシー</a></li>
+                        <li><a href="#">特定商取引法に基づく表記</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2020 Texter app - Kyoto, Japan.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
