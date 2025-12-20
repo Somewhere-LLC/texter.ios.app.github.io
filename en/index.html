@@ -42,7 +42,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Space+Mono:wght@700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #6366f1;
@@ -1255,10 +1255,10 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav id="navbar">
+    <nav id="navbar" aria-label="Main navigation">
         <div class="nav-left">
             <a href="../" class="logo">Texter</a>
-            <ul class="nav-links">
+            <ul class="nav-links" role="list">
                 <li><a href="#features">Features</a></li>
                 <li><a href="#usecases">Use Cases</a></li>
                 <li><a href="#pricing">Pricing</a></li>
@@ -1281,13 +1281,13 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="hero">
+    <section class="hero" id="hero" aria-labelledby="hero-title">
         <div class="hero-bg"></div>
         
         <div class="hero-content">
             <div class="hero-text">
                 <div class="hero-badge">AI Powered Transcription</div>
-                <h1>
+                <h1 id="hero-title">
                     Your words,<br>
                     <span class="gradient-text">instantly transcribed</span>
                 </h1>
@@ -1378,10 +1378,10 @@
     </section>
 
     <!-- Features Section -->
-    <section class="features" id="features">
+    <section class="features" id="features" aria-labelledby="features-title">
         <div class="section-header">
             <span class="section-label">FEATURES</span>
-            <h2 class="section-title">Voice, images, videos.<br>All converted to text</h2>
+            <h2 class="section-title" id="features-title">Voice, images, videos.<br>All converted to text</h2>
             <p class="section-description">Powered by Whisper (OpenAI) and latest AI engines with automatic punctuation</p>
         </div>
 
@@ -1437,10 +1437,10 @@
     </section>
 
     <!-- Use Cases Section -->
-    <section class="usecases" id="usecases">
+    <section class="usecases" id="usecases" aria-labelledby="usecases-title">
         <div class="section-header">
             <span class="section-label">USE CASES</span>
-            <h2 class="section-title">From business to learning,<br>perfect for every scene</h2>
+            <h2 class="section-title" id="usecases-title">From business to learning,<br>perfect for every scene</h2>
         </div>
 
         <div class="usecase-grid">
@@ -1479,10 +1479,10 @@
     </section>
 
     <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
+    <section class="pricing" id="pricing" aria-labelledby="pricing-title">
         <div class="section-header">
             <span class="section-label">PRICING</span>
-            <h2 class="section-title">Plans for<br>your needs</h2>
+            <h2 class="section-title" id="pricing-title">Plans for<br>your needs</h2>
         </div>
 
         <div class="pricing-grid">
@@ -1537,10 +1537,10 @@
     </section>
 
     <!-- Reviews Section -->
-    <section class="reviews" id="reviews">
+    <section class="reviews" id="reviews" aria-labelledby="reviews-title">
         <div class="section-header">
             <span class="section-label">REVIEWS</span>
-            <h2 class="section-title">What users say</h2>
+            <h2 class="section-title" id="reviews-title">What users say</h2>
         </div>
 
         <div class="reviews-grid">

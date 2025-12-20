@@ -42,7 +42,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Space+Mono:wght@700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #6366f1;
@@ -1284,10 +1284,10 @@
     <div class="noise"></div>
 
     <!-- Navigation -->
-    <nav id="navbar">
+    <nav id="navbar" aria-label="メインナビゲーション">
         <div class="nav-left">
             <a href="./" class="logo">Texter</a>
-            <ul class="nav-links">
+            <ul class="nav-links" role="list">
                 <li><a href="#features">機能</a></li>
                 <li><a href="#usecases">活用例</a></li>
                 <li><a href="#pricing">料金</a></li>
@@ -1310,7 +1310,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="hero">
+    <section class="hero" id="hero" aria-labelledby="hero-title">
         <div class="hero-bg"></div>
         <div class="hero-orb hero-orb-1"></div>
         <div class="hero-orb hero-orb-2"></div>
@@ -1319,7 +1319,7 @@
         <div class="hero-content">
             <div class="hero-text">
                 <div class="hero-badge">AI Powered Transcription</div>
-                <h1>
+                <h1 id="hero-title">
                     あなたの言葉を<br>
                     <span class="gradient-text">瞬時にテキスト化</span>
                 </h1>
@@ -1410,10 +1410,10 @@
     </section>
 
     <!-- Features Section -->
-    <section class="features" id="features">
+    <section class="features" id="features" aria-labelledby="features-title">
         <div class="section-header">
             <span class="section-label">FEATURES</span>
-            <h2 class="section-title">音声も画像も動画も。<br>あらゆるメディアをテキストへ</h2>
+            <h2 class="section-title" id="features-title">音声も画像も動画も。<br>あらゆるメディアをテキストへ</h2>
             <p class="section-description">Whisper (OpenAI) を含む最新AIエンジンを採用。句読点や疑問符も自動変換</p>
         </div>
 
@@ -1469,10 +1469,10 @@
     </section>
 
     <!-- Use Cases Section -->
-    <section class="usecases" id="usecases">
+    <section class="usecases" id="usecases" aria-labelledby="usecases-title">
         <div class="section-header">
             <span class="section-label">USE CASES</span>
-            <h2 class="section-title">ビジネスから学習まで、<br>あらゆるシーンで活躍</h2>
+            <h2 class="section-title" id="usecases-title">ビジネスから学習まで、<br>あらゆるシーンで活躍</h2>
         </div>
 
         <div class="usecase-grid">
@@ -1511,10 +1511,10 @@
     </section>
 
     <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
+    <section class="pricing" id="pricing" aria-labelledby="pricing-title">
         <div class="section-header">
             <span class="section-label">PRICING</span>
-            <h2 class="section-title">あなたの用途に合わせて<br>選べるプラン</h2>
+            <h2 class="section-title" id="pricing-title">あなたの用途に合わせて<br>選べるプラン</h2>
         </div>
 
         <div class="pricing-grid">
@@ -1569,10 +1569,10 @@
     </section>
 
     <!-- Reviews Section -->
-    <section class="reviews" id="reviews">
+    <section class="reviews" id="reviews" aria-labelledby="reviews-title">
         <div class="section-header">
             <span class="section-label">REVIEWS</span>
-            <h2 class="section-title">ユーザーの声</h2>
+            <h2 class="section-title" id="reviews-title">ユーザーの声</h2>
         </div>
 
         <div class="reviews-grid">
