@@ -43,14 +43,8 @@ Options -Indexes
 # URL Redirects
 # ==============================================
 
-RewriteEngine On
-
-# Force HTTPS
-RewriteCond %{HTTPS} off
-RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
-
 # Redirect old English page to new structure
+RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^index-en\.html$ /en/ [R=301,L]
 

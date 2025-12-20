@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179024659-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-179024659-1');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texter – AI Voice to Text, OCR & Translation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #f3f4f6;
+            --text-color: #1f2937;
+            --text-light: #6b7280;
+            --white: #ffffff;
+            --accent: #8b5cf6;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --radius: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9fafb;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        header {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0; z-index: 1000;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        nav { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); display: flex; align-items: center; gap: 0.5rem; }
+
+        .nav-links { display: flex; gap: 2rem; }
+
+        .nav-links a { font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary-color); }
+
+        .btn-download {
+            background-color: var(--text-color);
+            color: var(--white);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: background 0.3s;
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .btn-download:hover { background-color: var(--primary-color); }
+
+        .hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, var(--primary-color), var(--accent));
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 640px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-btns { display: flex; justify-content: center; gap: 1rem; }
+
+        .app-store-badge {
+            background: #000;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        .app-store-badge:hover { transform: translateY(-2px); }
+
+        .section { padding: 80px 0; }
+
+        .section-title { text-align: center; margin-bottom: 3rem; }
+        .section-title h2 { font-size: 2rem; margin-bottom: 1rem; }
+        .section-title p { color: var(--text-light); }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+        .feature-card:hover { transform: translateY(-5px); }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            background: #eff6ff;
+            width: 60px; height: 60px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 16px;
+        }
+
+        .feature-card h3 { margin-bottom: 1rem; font-size: 1.25rem; }
+        .feature-card p { color: var(--text-light); font-size: 0.95rem; }
+
+        .highlight-section { background-color: var(--white); }
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .highlight-content h3 { font-size: 1.8rem; margin-bottom: 1.5rem; }
+        .highlight-content ul { margin-bottom: 2rem; }
+        .highlight-content li {
+            margin-bottom: 1rem;
+            display: flex; align-items: center; gap: 10px;
+            color: var(--text-color);
+        }
+        .highlight-content li i { color: var(--accent); }
+
+        .highlight-image {
+            background: #f3f4f6;
+            height: 400px;
+            border-radius: 20px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 600; color: #9ca3af;
+            border: 2px dashed #d1d5db;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem; margin-top: 2rem;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            border: 1px solid #e5e7eb;
+            text-align: center; position: relative;
+        }
+        .pricing-card.featured { border-color: var(--primary-color); box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.1); }
+
+        .badge {
+            position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+            background: var(--primary-color); color: white;
+            padding: 4px 12px; border-radius: 20px;
+            font-size: 0.8rem; font-weight: bold;
+        }
+
+        .price { font-size: 2.5rem; font-weight: 700; margin: 1rem 0; color: var(--text-color); }
+        .price span { font-size: 1rem; font-weight: 400; color: var(--text-light); }
+
+        .pricing-features { margin: 2rem 0; text-align: left; }
+        .pricing-features li { margin-bottom: 0.8rem; font-size: 0.9rem; color: var(--text-light); }
+        .pricing-features i { color: var(--primary-color); margin-right: 8px; }
+
+        .reviews-section { background: #f9fafb; }
+        .review-card { background: white; padding: 2rem; border-radius: var(--radius); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .stars { color: #fbbf24; margin-bottom: 1rem; }
+        .review-text { font-style: italic; margin-bottom: 1.5rem; color: var(--text-color); }
+        .reviewer { font-weight: bold; font-size: 0.9rem; color: var(--text-light); }
+
+        footer { background: #111827; color: #9ca3af; padding: 60px 0 20px; }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem; margin-bottom: 3rem;
+        }
+        .footer-logo { color: white; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; display: block; }
+        .footer-links h4 { color: white; margin-bottom: 1rem; }
+        .footer-links ul li { margin-bottom: 0.8rem; }
+        .copyright { text-align: center; border-top: 1px solid #374151; padding-top: 20px; font-size: 0.85rem; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; }
+            .highlight-grid { grid-template-columns: 1fr; }
+            .highlight-image { order: -1; height: 300px; }
+        }
+    </style> -->
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo"><i class="fas fa-microphone-lines"></i> Texter</a>
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#demo">Demo</a>
+                    <a href="#pricing">Plans</a>
+                    <a href="#testimonials">Stories</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="index.html" style="color: var(--text-light);">日本語</a>
+                </div>
+                <a href="https://apps.apple.com/app/id1482592304" class="btn btn-download">
+                    <i class="fab fa-apple"></i> Download
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+    <section class="hero">
+        <div class="container">
+            <h1>Capture every word, instantly.<br>AI makes your notes effortless.</h1>
+            <p>Texter turns your voice, images, and videos into clean, editable text with leading AI models—ready for sharing, translating, or summarizing in seconds.</p>
+            <div class="hero-btns">
+                <a href="https://apps.apple.com/app/id1482592304" class="app-store-badge">
+                    <i class="fab fa-apple fa-2x"></i>
+                    <div style="text-align: left; line-height: 1.2;">
+                        <span style="font-size: 0.7rem; display: block;">Download on the</span>
+                        <span style="font-size: 1.2rem;">App Store</span>
+                    </div>
+                </a>
+            </div>
+            <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-light);">Optimized for iPhone, iPad, Apple Watch, and Mac (Apple Silicon).</p>
+        </div>
+    </section>
+
+    <section id="features" class="section">
+        <div class="container">
+            <div class="section-kicker">
+                <p>What you can do right now: turn audio, images, and videos into text—then translate, summarize, and generate subtitles.</p>
+            </div>
+            <div class="section-title">
+                <h2>What you can do</h2>
+                <p>Voice, images, videos—every format becomes searchable text.</p>
+            </div>
+            <div class="bento-grid">
+                <article class="card bento-card bento-card--wide">
+                    <div class="bento-card__icon"><i class="fas fa-microphone-alt"></i></div>
+                    <h3 class="bento-card__title">Audio transcription</h3>
+                    <p class="bento-card__desc">Turn recordings, meetings, and interviews into editable text.</p>
+                    <a class="bento-card__example" href="#demo-voice" aria-label="See an audio transcription example">Example →</a>
+                </article>
+                <article class="card bento-card">
+                    <div class="bento-card__icon"><i class="fas fa-image"></i></div>
+                    <h3 class="bento-card__title">Image to text (OCR)</h3>
+                    <p class="bento-card__desc">Copy text from photos and PDFs in seconds.</p>
+                    <a class="bento-card__example" href="#demo-ocr" aria-label="See an OCR example">Example →</a>
+                </article>
+                <article class="card bento-card">
+                    <div class="bento-card__icon"><i class="fas fa-video"></i></div>
+                    <h3 class="bento-card__title">Video to text</h3>
+                    <p class="bento-card__desc">Extract speech and make long videos searchable.</p>
+                    <a class="bento-card__example" href="#demo-video" aria-label="See a video transcription example">Example →</a>
+                </article>
+                <article class="card bento-card bento-card--wide">
+                    <div class="bento-card__icon"><i class="fas fa-language"></i></div>
+                    <h3 class="bento-card__title">Translation</h3>
+                    <p class="bento-card__desc">Switch languages instantly after you transcribe.</p>
+                    <a class="bento-card__example" href="#demo-translation" aria-label="See a translation example">Example →</a>
+                </article>
+                <article class="card bento-card">
+                    <div class="bento-card__icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+                    <h3 class="bento-card__title">Summaries</h3>
+                    <p class="bento-card__desc">Get key takeaways from long text, fast.</p>
+                    <a class="bento-card__example" href="#demo-summary" aria-label="See a summary example">Example →</a>
+                </article>
+                <article class="card bento-card bento-card--wide">
+                    <div class="bento-card__icon"><i class="fas fa-closed-captioning"></i></div>
+                    <h3 class="bento-card__title">Subtitle generation</h3>
+                    <p class="bento-card__desc">Auto-caption videos and tweak timing on a timeline.</p>
+                    <a class="bento-card__example" href="#demo-subtitles" aria-label="See a subtitle generation example">Example →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="demo" class="section highlight-section">
+        <div id="usecase" class="anchor-offset" aria-hidden="true"></div>
+        <div class="container">
+            <div class="highlight-grid">
+                <div class="highlight-image">
+                    <div class="app-preview-container">
+                        <div class="phone-mockup side left">
+                            <div class="phone-frame">
+                                <img src="img/s-1109x2400_v-frms_webp_cf5bc25b-81eb-4bb3-a7bf-10b227c5e324.jpg" width="1109" height="2400" loading="lazy" decoding="async" alt="Texter transcription screen (screenshot)" class="phone-screen">
+                            </div>
+                        </div>
+                        <div class="phone-mockup main">
+                            <div class="phone-frame">
+                                <img src="img/s-1109x2400_v-frms_webp_627dc8e8-dd15-43e1-bc6f-4732558187d4.png" width="1109" height="2400" loading="lazy" decoding="async" alt="Texter main screen (screenshot)" class="phone-screen">
+                            </div>
+                        </div>
+                        <div class="phone-mockup side">
+                            <div class="phone-frame">
+                                <img src="img/s-828x1792_v-fms_webp_fbad8514-1dd2-4349-b3f5-095d56d42d90.png" width="828" height="1792" loading="lazy" decoding="async" alt="Texter OCR screen (screenshot)" class="phone-screen">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight-content">
+                    <h3>Built for work, learning, and accessibility</h3>
+                    <p style="margin-bottom: 20px; color: var(--text-light);">
+                        Texter is more than a recorder—it’s a quiet assistant that helps you stay present while everything is captured for later.
+                    </p>
+                    <ul>
+                        <li id="demo-voice"><i class="fas fa-check-circle"></i> <strong>Meeting notes:</strong> Record → transcribe → summarize in one flow.</li>
+                        <li id="demo-ocr"><i class="fas fa-check-circle"></i> <strong>OCR:</strong> Turn photos and PDFs into editable text.</li>
+                        <li id="demo-video"><i class="fas fa-check-circle"></i> <strong>Video transcripts:</strong> Make lectures and interviews searchable.</li>
+                        <li id="demo-translation"><i class="fas fa-check-circle"></i> <strong>Translation:</strong> Switch languages for global teams.</li>
+                        <li id="demo-summary"><i class="fas fa-check-circle"></i> <strong>Summaries:</strong> Share key takeaways fast.</li>
+                        <li id="demo-subtitles"><i class="fas fa-check-circle"></i> <strong>Subtitles:</strong> Auto-caption videos and tweak the timing.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Plans</h2>
+                <p>Choose the plan that matches your everyday use.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card price-card">
+                    <h3>Free</h3>
+                    <div class="price">¥0</div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Real-time transcription (1 minute)</li>
+                        <li><i class="fas fa-check"></i> Whisper transcription (short)</li>
+                        <li class="feature-unavailable"><i class="fas fa-xmark"></i> Pro mode (not included)</li>
+                        <li><i class="fas fa-check"></i> Image OCR (3 per day)</li>
+                        <li class="feature-unavailable"><i class="fas fa-xmark"></i> Auto silence removal (not included)</li>
+                        <li class="feature-unavailable"><i class="fas fa-xmark"></i> Video subtitle generation (not included)</li>
+                        <li class="feature-unavailable"><i class="fas fa-xmark"></i> AI summarization (not included)</li>
+                        <li class="feature-unavailable"><i class="fas fa-xmark"></i> Priority support (not included)</li>
+                        <li class="feature-unavailable"><i class="fas fa-xmark"></i> Ad-free experience (not included)</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card price-card featured">
+                    <div class="badge">Popular</div>
+                    <h3>Premium M</h3>
+                    <div class="price">¥1,500<span>/month</span></div>
+                    <p style="font-size: 0.8rem; color: var(--primary-color); margin-bottom: 1rem;">Includes a 7-day free trial</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Real-time transcription (unlimited)</li>
+                        <li><i class="fas fa-check"></i> <strong>Unlimited Whisper</strong></li>
+                        <li><i class="fas fa-check"></i> Pro mode (3 hours / month)</li>
+                        <li><i class="fas fa-check"></i> Unlimited image OCR</li>
+                        <li><i class="fas fa-check"></i> Auto silence removal</li>
+                        <li><i class="fas fa-check"></i> Video subtitle generation</li>
+                        <li><i class="fas fa-check"></i> AI summarization</li>
+                        <li class="feature-unavailable"><i class="fas fa-xmark"></i> Priority support (not included)</li>
+                        <li><i class="fas fa-check"></i> Ad-free experience</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card price-card">
+                    <div class="badge">Best value</div>
+                    <h3>Premium Y</h3>
+                    <div class="price">¥7,400<span>/year</span></div>
+                    <p style="font-size: 0.8rem; color: #059669; margin-bottom: 1rem;">About half the monthly price—ideal for teams</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Real-time transcription (unlimited)</li>
+                        <li><i class="fas fa-check"></i> <strong>Unlimited Whisper</strong></li>
+                        <li><i class="fas fa-check"></i> Pro mode (10 hours / month)</li>
+                        <li><i class="fas fa-check"></i> Unlimited image OCR</li>
+                        <li><i class="fas fa-check"></i> Auto silence removal</li>
+                        <li><i class="fas fa-check"></i> Video subtitle generation</li>
+                        <li><i class="fas fa-check"></i> AI summarization</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                        <li><i class="fas fa-check"></i> Ad-free experience</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="section reviews-section">
+        <div id="reviews" class="anchor-offset" aria-hidden="true"></div>
+        <div class="container">
+            <div class="section-title">
+                <h2>Customer stories</h2>
+            </div>
+            <div class="features-grid">
+                <div class="card review-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="review-text">“I’m a writer and Texter is beyond what I hoped for. I moved to the annual plan right away because it saves hours every week.”</p>
+                    <p class="reviewer">Tomokorou</p>
+                </div>
+                <div class="card review-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="review-text">“My mother struggles to hear, so live captions let her follow conversations. It has made a real difference.”</p>
+                    <p class="reviewer">Nono Haru</p>
+                </div>
+                <div class="card review-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="review-text">“OCR is fast and precise—nearly 100% accuracy compared to other scanner apps I’ve tried.”</p>
+                    <p class="reviewer">Yuta Mom</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>FAQ</h2>
+                <p>Quick answers to get you started.</p>
+            </div>
+            <div class="faq-list">
+                <details class="card faq-item">
+                    <summary>What can Texter do?</summary>
+                    <div>Transcribe audio, extract text with OCR, transcribe videos, translate, summarize, and generate subtitles—all in one app.</div>
+                </details>
+                <details class="card faq-item">
+                    <summary>Can I edit the transcript?</summary>
+                    <div>Yes. You can edit the generated text and reuse it in notes, documents, or posts.</div>
+                </details>
+                <details class="card faq-item">
+                    <summary>Can it generate subtitles from a video?</summary>
+                    <div>Yes. Import a video to generate timestamped captions, then fine-tune sentence by sentence.</div>
+                </details>
+                <details class="card faq-item">
+                    <summary>Is there a free plan?</summary>
+                    <div>Yes. The Free plan lets you try core features. For longer and more advanced usage, Premium is available.</div>
+                </details>
+            </div>
+            <div style="text-align: center; margin-top: var(--space-4);">
+                <a class="btn btn-ghost" href="https://texter-app.notion.site/faqs">Read more FAQs</a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <a href="#" class="footer-logo">Texter</a>
+                    <p>Built in Kyoto. The AI transcription app that keeps you focused on the conversation.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#demo">Demo</a></li>
+                        <li><a href="#pricing">Plans</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="https://sites.google.com/view/texter-voice-to-text/terms-of-service">Terms of Use</a></li>
+                        <li><a href="https://sites.google.com/view/texter-voice-to-text/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="https://sites.google.com/view/texter-voice-to-text/%E7%89%B9%E5%AE%9A%E5%95%86%E5%8F%96%E5%BC%95%E6%B3%95%E3%81%AB%E5%9F%BA%E3%81%A5%E3%81%8F%E8%A1%A8%E8%A8%98">Legal Notice</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; <span id="currentYear">2025</span> Texter app – Kyoto, Japan.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

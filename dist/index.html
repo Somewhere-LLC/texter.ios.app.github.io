@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179024659-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-179024659-1', {
+            'anonymize_ip': true,
+            'cookie_flags': 'SameSite=None;Secure'
+        });
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texter (テキスター) - AI音声認識・文字起こしアプリ</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- <style>
+        :root {
+            --primary-color: #2563eb; /* モダンなブルー */
+            --primary-dark: #1d4ed8;
+            --secondary-color: #f3f4f6;
+            --text-color: #1f2937;
+            --text-light: #6b7280;
+            --white: #ffffff;
+            --accent: #8b5cf6; /* AIっぽさを出すパープル */
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9fafb;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-download {
+            background-color: var(--text-color);
+            color: var(--white);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-download:hover {
+            background-color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, var(--primary-color), var(--accent));
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .app-store-badge {
+            background: #000;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        
+        .app-store-badge:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Features */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            background: #eff6ff;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Highlight Section (Grid) */
+        .highlight-section {
+            background-color: var(--white);
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .highlight-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .highlight-content ul {
+            margin-bottom: 2rem;
+        }
+
+        .highlight-content li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-color);
+        }
+
+        .highlight-content li i {
+            color: var(--accent);
+        }
+
+        .highlight-image {
+            background: #f3f4f6;
+            height: 400px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #9ca3af;
+            border: 2px dashed #d1d5db;
+            /* 実際の画像がある場合はここにimgタグを入れる */
+        }
+
+        /* Pricing */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            border: 1px solid #e5e7eb;
+            text-align: center;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.1);
+        }
+
+        .badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 1rem 0;
+            color: var(--text-color);
+        }
+        
+        .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-light);
+        }
+
+        .pricing-features {
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .pricing-features i {
+            color: var(--primary-color);
+            margin-right: 8px;
+        }
+
+        /* Reviews */
+        .reviews-section {
+            background: #f9fafb;
+        }
+
+        .review-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .stars {
+            color: #fbbf24;
+            margin-bottom: 1rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .reviewer {
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background: #111827;
+            color: #9ca3af;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .footer-links h4 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #374151;
+            padding-top: 20px;
+            font-size: 0.85rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none; /* 簡易的に非表示。本来はハンバーガーメニュー */
+            }
+
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .highlight-image {
+                order: -1; /* 画像を上に */
+                height: 300px;
+            }
+        }
+    </style> -->
+</head>
+<body>
+    <a class="skip-link" href="#main">本文へスキップ</a>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo"><i class="fas fa-microphone-lines"></i> Texter</a>
+                <div class="nav-links">
+                    <a href="#features">機能</a>
+                    <a href="#demo">デモ</a>
+                    <a href="#pricing">料金</a>
+                    <a href="#testimonials">お客様の声</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="en/" style="color: var(--text-light);">EN</a>
+                </div>
+                <a href="https://apps.apple.com/jp/app/id1482592304" class="btn btn-download">
+                    <i class="fab fa-apple"></i> ダウンロード
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+    <section class="hero">
+        <div class="container">
+            <h1>あなたの言葉、瞬時にテキスト化。<br>AIがもたらす新しい記録体験。</h1>
+            <p>Texter（テキスター）は、最先端のAI音声認識技術を駆使して、あなたの声、画像、動画を迅速かつ正確に文字に起こします。</p>
+            <div class="hero-btns">
+                <a href="https://apps.apple.com/jp/app/id1482592304" class="app-store-badge">
+                    <i class="fab fa-apple fa-2x"></i>
+                    <div style="text-align: left; line-height: 1.2;">
+                        <span style="font-size: 0.7rem; display: block;">Download on the</span>
+                        <span style="font-size: 1.2rem;">App Store</span>
+                    </div>
+                </a>
+            </div>
+            <p style="margin-top: 1rem; font-size: 0.8rem;">※ iPad / Apple Watch / Mac (Apple Silicon) 対応</p>
+        </div>
+    </section>
+
+    <section id="features" class="section">
+        <div class="container">
+            <div class="section-kicker">
+                <p>このアプリで今すぐできること：音声・画像・動画をテキスト化して、翻訳・要約・字幕まで。</p>
+            </div>
+            <div class="section-title">
+                <h2>主な機能</h2>
+                <p>音声も画像も動画も。あらゆるメディアをテキストへ。</p>
+            </div>
+            <div class="bento-grid">
+                <article class="card bento-card bento-card--wide">
+                    <div class="bento-card__icon"><i class="fas fa-microphone-alt"></i></div>
+                    <h3 class="bento-card__title">音声の文字起こし</h3>
+                    <p class="bento-card__desc">録音・会議・インタビューをそのままテキストへ。</p>
+                    <a class="bento-card__example" href="#demo-voice" aria-label="音声の文字起こしの例を見る">例 →</a>
+                </article>
+                <article class="card bento-card">
+                    <div class="bento-card__icon"><i class="fas fa-image"></i></div>
+                    <h3 class="bento-card__title">画像から文字（OCR）</h3>
+                    <p class="bento-card__desc">写真・PDFの文字を、コピペできるテキストに。</p>
+                    <a class="bento-card__example" href="#demo-ocr" aria-label="画像OCRの例を見る">例 →</a>
+                </article>
+                <article class="card bento-card">
+                    <div class="bento-card__icon"><i class="fas fa-video"></i></div>
+                    <h3 class="bento-card__title">動画から文字</h3>
+                    <p class="bento-card__desc">動画の音声を抽出して、長尺でも読みやすく。</p>
+                    <a class="bento-card__example" href="#demo-video" aria-label="動画から文字の例を見る">例 →</a>
+                </article>
+                <article class="card bento-card bento-card--wide">
+                    <div class="bento-card__icon"><i class="fas fa-language"></i></div>
+                    <h3 class="bento-card__title">翻訳</h3>
+                    <p class="bento-card__desc">文字起こし結果を、必要な言語にすぐ切り替え。</p>
+                    <a class="bento-card__example" href="#demo-translation" aria-label="翻訳の例を見る">例 →</a>
+                </article>
+                <article class="card bento-card">
+                    <div class="bento-card__icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+                    <h3 class="bento-card__title">要約</h3>
+                    <p class="bento-card__desc">長文の要点だけを、短くまとめて把握。</p>
+                    <a class="bento-card__example" href="#demo-summary" aria-label="要約の例を見る">例 →</a>
+                </article>
+                <article class="card bento-card bento-card--wide">
+                    <div class="bento-card__icon"><i class="fas fa-closed-captioning"></i></div>
+                    <h3 class="bento-card__title">字幕生成</h3>
+                    <p class="bento-card__desc">動画に自動字幕を付けて、タイムラインで編集。</p>
+                    <a class="bento-card__example" href="#demo-subtitles" aria-label="字幕生成の例を見る">例 →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="demo" class="section highlight-section">
+        <div id="usecase" class="anchor-offset" aria-hidden="true"></div>
+        <div class="container">
+            <div class="highlight-grid">
+                <div class="highlight-image">
+                    <div class="app-preview-container">
+                        <div class="phone-mockup side left">
+                            <div class="phone-frame">
+                                <img src="img/s-1109x2400_v-frms_webp_cf5bc25b-81eb-4bb3-a7bf-10b227c5e324.jpg" width="1109" height="2400" loading="lazy" decoding="async" alt="Texterの文字起こし画面（スクリーンショット）" class="phone-screen">
+                            </div>
+                        </div>
+                        <div class="phone-mockup main">
+                            <div class="phone-frame">
+                                <img src="img/s-1109x2400_v-frms_webp_627dc8e8-dd15-43e1-bc6f-4732558187d4.png" width="1109" height="2400" loading="lazy" decoding="async" alt="Texterのメイン画面（スクリーンショット）" class="phone-screen">
+                            </div>
+                        </div>
+                        <div class="phone-mockup side">
+                            <div class="phone-frame">
+                                <img src="img/s-828x1792_v-fms_webp_fbad8514-1dd2-4349-b3f5-095d56d42d90.png" width="828" height="1792" loading="lazy" decoding="async" alt="TexterのOCR画面（スクリーンショット）" class="phone-screen">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight-content">
+                    <h3>ビジネスから学習まで、<br>あらゆるシーンで活躍</h3>
+                    <p style="margin-bottom: 20px; color: var(--text-light);">
+                        Texterは単なるボイスレコーダーではありません。あなたの生産性を劇的に向上させるパートナーです。
+                    </p>
+                    <ul>
+                        <li id="demo-voice"><i class="fas fa-check-circle"></i> <strong>議事録：</strong> 録音 → 文字起こし → 要約まで、ワンタップで。</li>
+                        <li id="demo-ocr"><i class="fas fa-check-circle"></i> <strong>画像OCR：</strong> 写真・PDFの文字を、編集できるテキストに。</li>
+                        <li id="demo-video"><i class="fas fa-check-circle"></i> <strong>動画から文字：</strong> 講義・インタビュー動画も、後から検索できる。</li>
+                        <li id="demo-translation"><i class="fas fa-check-circle"></i> <strong>翻訳：</strong> 多言語の会議や資料も、読みやすい言語へ。</li>
+                        <li id="demo-summary"><i class="fas fa-check-circle"></i> <strong>要約：</strong> 長文の要点を短くまとめて、すぐ共有。</li>
+                        <li id="demo-subtitles"><i class="fas fa-check-circle"></i> <strong>字幕：</strong> 動画に自動字幕を付けて、編集もスムーズに。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>料金プラン</h2>
+                <p>あなたの用途に合わせて選べるプラン</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card price-card">
+                    <h3>Free</h3>
+                    <div class="price">¥0</div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> リアルタイム文字起こし（1分）</li>
+                        <li><i class="fas fa-check"></i> Whisper文字起こし（短時間）</li>
+                        <li class="feature-unavailable"><i class="fas fa-xmark"></i> 高性能モード（利用不可）</li>
+                        <li><i class="fas fa-check"></i> 画像文字起こし（3回/日）</li>
+                        <li class="feature-unavailable"><i class="fas fa-xmark"></i> 自動無音カット（利用不可）</li>
+                        <li class="feature-unavailable"><i class="fas fa-xmark"></i> 動画字幕生成（利用不可）</li>
+                        <li class="feature-unavailable"><i class="fas fa-xmark"></i> AI要約機能（利用不可）</li>
+                        <li class="feature-unavailable"><i class="fas fa-xmark"></i> 優先サポート（利用不可）</li>
+                        <li class="feature-unavailable"><i class="fas fa-xmark"></i> 広告非表示（利用不可）</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card price-card featured">
+                    <div class="badge">人気</div>
+                    <h3>Premium M</h3>
+                    <div class="price">¥1,500<span>/月</span></div>
+                    <p style="font-size: 0.8rem; color: var(--primary-color); margin-bottom: 1rem;">1週間無料トライアル付き</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> リアルタイム文字起こし（無制限）</li>
+                        <li><i class="fas fa-check"></i> <strong>Whisper 無制限</strong></li>
+                        <li><i class="fas fa-check"></i> 高性能モード（3時間/月）</li>
+                        <li><i class="fas fa-check"></i> 画像文字起こし 無制限</li>
+                        <li><i class="fas fa-check"></i> 自動無音カット</li>
+                        <li><i class="fas fa-check"></i> 動画字幕生成</li>
+                        <li><i class="fas fa-check"></i> AI要約機能</li>
+                        <li class="feature-unavailable"><i class="fas fa-xmark"></i> 優先サポート（利用不可）</li>
+                        <li><i class="fas fa-check"></i> 広告非表示</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card price-card">
+                    <div class="badge">お得</div>
+                    <h3>Premium Y</h3>
+                    <div class="price">¥7,400<span>/年</span></div>
+                    <p style="font-size: 0.8rem; color: #059669; margin-bottom: 1rem;">月額の約半額！ビジネス活用に</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> リアルタイム文字起こし（無制限）</li>
+                        <li><i class="fas fa-check"></i> <strong>Whisper 無制限</strong></li>
+                        <li><i class="fas fa-check"></i> 高性能モード（10時間/月）</li>
+                        <li><i class="fas fa-check"></i> 画像文字起こし 無制限</li>
+                        <li><i class="fas fa-check"></i> 自動無音カット</li>
+                        <li><i class="fas fa-check"></i> 動画字幕生成</li>
+                        <li><i class="fas fa-check"></i> AI要約機能</li>
+                        <li><i class="fas fa-check"></i> 優先サポート</li>
+                        <li><i class="fas fa-check"></i> 広告非表示</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="section reviews-section">
+        <div id="reviews" class="anchor-offset" aria-hidden="true"></div>
+        <div class="container">
+            <div class="section-title">
+                <h2>ユーザーの声</h2>
+            </div>
+            <div class="features-grid">
+                <div class="card review-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="review-text">「ライターです。ここまで性能が良いとは期待以上でした！これまで全て手打ちしていたときに比べて随分助かります。早速一年で契約しました。」</p>
+                    <p class="reviewer">ともころう 様</p>
+                </div>
+                <div class="card review-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="review-text">「補聴器をつけても聞き取る事が難しい母に画面を見せて理解してもらえるので、とても助かっております。」</p>
+                    <p class="reviewer">ののはるちゃん 様</p>
+                </div>
+                <div class="card review-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="review-text">「OCRが他のスキャナーアプリなどと比較しても速くて正確です。ほぼ100%の精度で読み取ってくれます。」</p>
+                    <p class="reviewer">yuta-mom 様</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>よくある質問</h2>
+                <p>はじめに気になるところをサクッと確認できます。</p>
+            </div>
+            <div class="faq-list">
+                <details class="card faq-item">
+                    <summary>Texterは何ができるアプリですか？</summary>
+                    <div>音声の文字起こし、画像OCR、動画からの文字起こし、翻訳、要約、字幕生成などを1つのアプリで行えます。</div>
+                </details>
+                <details class="card faq-item">
+                    <summary>文字起こししたテキストは編集できますか？</summary>
+                    <div>はい。生成したテキストは編集して、そのままメモや資料に使えます。</div>
+                </details>
+                <details class="card faq-item">
+                    <summary>動画から字幕を作れますか？</summary>
+                    <div>動画をインポートすると自動で字幕（タイムスタンプ付き）を生成できます。文章単位での微調整も可能です。</div>
+                </details>
+                <details class="card faq-item">
+                    <summary>無料でも試せますか？</summary>
+                    <div>Freeプランで基本機能を試せます。より長時間・高精度に使いたい場合はPremiumをご検討ください。</div>
+                </details>
+            </div>
+            <div style="text-align: center; margin-top: var(--space-4);">
+                <a class="btn btn-ghost" href="https://texter-app.notion.site/faq-ja">FAQをもっと見る</a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <a href="#" class="footer-logo">Texter</a>
+                    <p>最先端AI文字起こしアプリ。<br>あなたの声を、未来へ。</p>
+                </div>
+                <div class="footer-links">
+                    <h4>機能・サポート</h4>
+                    <ul>
+                        <li><a href="#features">基本機能</a></li>
+                        <li><a href="#demo">デモ</a></li>
+                        <li><a href="#faq">よくある質問</a></li>
+                        <li><a href="mailto:texter.work.app@gmail.com">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>規約・法律</h4>
+                    <ul>
+                        <li><a href="https://sites.google.com/view/texter-voice-to-text/terms-of-service">利用規約</a></li>
+                        <li><a href="https://sites.google.com/view/texter-voice-to-text/privacy-policy">プライバシーポリシー</a></li>
+                        <li><a href="https://sites.google.com/view/texter-voice-to-text/%E7%89%B9%E5%AE%9A%E5%95%86%E5%8F%96%E5%BC%95%E6%B3%95%E3%81%AB%E5%9F%BA%E3%81%A5%E3%81%8F%E8%A1%A8%E8%A8%98">特定商取引法に基づく表記</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; <span id="currentYear">2025</span> Texter app - Kyoto, Japan.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

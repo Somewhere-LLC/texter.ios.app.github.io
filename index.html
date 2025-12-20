@@ -1,37 +1,104 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179024659-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-179024659-1', {
-            'anonymize_ip': true,
-            'cookie_flags': 'SameSite=None;Secure'
-        });
-    </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Texter (テキスター) - AI音声認識・文字起こしアプリ</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="最先端のAI音声認識技術で、あなたの声、画像、動画を迅速かつ正確に文字に起こします。議事録作成から語学学習まで、あらゆるシーンで活躍。">
+    <meta name="keywords" content="文字起こし,音声認識,AI,議事録,OCR,翻訳,Whisper,OpenAI">
+    <meta name="author" content="Texter">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://texter.work/">
+
+    <!-- Language Alternatives -->
+    <link rel="alternate" hreflang="ja" href="https://texter.work/">
+    <link rel="alternate" hreflang="en" href="https://texter.work/en/">
+    <link rel="alternate" hreflang="x-default" href="https://texter.work/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://texter.work/">
+    <meta property="og:title" content="Texter - AI音声認識・文字起こしアプリ">
+    <meta property="og:description" content="最先端のAI音声認識技術で、あなたの声、画像、動画を迅速かつ正確に文字に起こします。議事録作成から語学学習まで、あらゆるシーンで活躍。">
+    <meta property="og:site_name" content="Texter">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://texter.work/">
+    <meta name="twitter:title" content="Texter - AI音声認識・文字起こしアプリ">
+    <meta name="twitter:description" content="最先端のAI音声認識技術で、あなたの声、画像、動画を迅速かつ正確に文字に起こします。">
+
+    <!-- iOS App -->
+    <meta name="apple-itunes-app" content="app-id=1482592304">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <title>Texter - AI音声認識・文字起こしアプリ</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <!-- <style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
         :root {
-            --primary-color: #2563eb; /* モダンなブルー */
-            --primary-dark: #1d4ed8;
-            --secondary-color: #f3f4f6;
-            --text-color: #1f2937;
-            --text-light: #6b7280;
-            --white: #ffffff;
-            --accent: #8b5cf6; /* AIっぽさを出すパープル */
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --radius: 12px;
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --primary-dark: #4f46e5;
+            --accent: #22d3ee;
+            --accent-glow: rgba(34, 211, 238, 0.4);
+            --gradient-1: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            --gradient-2: linear-gradient(135deg, #22d3ee 0%, #6366f1 100%);
+            
+            /* Dark mode (default) */
+            --bg: #09090b;
+            --bg-surface: #0f0f12;
+            --bg-elevated: #18181b;
+            --text-primary: #fafafa;
+            --text-secondary: rgba(250, 250, 250, 0.6);
+            --text-muted: rgba(250, 250, 250, 0.35);
+            --border: rgba(255, 255, 255, 0.06);
+            --border-hover: rgba(255, 255, 255, 0.12);
+        }
+
+        /* Light mode */
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg: #fafafa;
+                --bg-surface: #ffffff;
+                --bg-elevated: #f4f4f5;
+                --text-primary: #09090b;
+                --text-secondary: rgba(9, 9, 11, 0.6);
+                --text-muted: rgba(9, 9, 11, 0.4);
+                --border: rgba(0, 0, 0, 0.06);
+                --border-hover: rgba(0, 0, 0, 0.12);
+            }
+        }
+
+        /* Manual theme toggle */
+        [data-theme="light"] {
+            --bg: #fafafa;
+            --bg-surface: #ffffff;
+            --bg-elevated: #f4f4f5;
+            --text-primary: #09090b;
+            --text-secondary: rgba(9, 9, 11, 0.6);
+            --text-muted: rgba(9, 9, 11, 0.4);
+            --border: rgba(0, 0, 0, 0.06);
+            --border-hover: rgba(0, 0, 0, 0.12);
+        }
+
+        [data-theme="dark"] {
+            --bg: #09090b;
+            --bg-surface: #0f0f12;
+            --bg-elevated: #18181b;
+            --text-primary: #fafafa;
+            --text-secondary: rgba(250, 250, 250, 0.6);
+            --text-muted: rgba(250, 250, 250, 0.35);
+            --border: rgba(255, 255, 255, 0.06);
+            --border-hover: rgba(255, 255, 255, 0.12);
         }
 
         * {
@@ -40,614 +107,1730 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Noto Sans JP', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: #f9fafb;
+            font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.7;
+            transition: background 0.3s ease, color 0.3s ease;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--text-muted);
+            border-radius: 3px;
         }
 
-        ul {
-            list-style: none;
+        /* Remove noise overlay for minimal look */
+        .noise {
+            display: none;
         }
 
-        /* Header */
-        header {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
+        /* Navigation */
         nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.25rem 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 70px;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 1rem 3rem;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 1.25rem;
             font-weight: 700;
-            color: var(--primary-color);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            color: var(--text-primary);
+            letter-spacing: -1px;
+            text-decoration: none;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
+            list-style: none;
         }
 
         .nav-links a {
-            font-weight: 500;
-            transition: color 0.3s;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 400;
+            transition: color 0.2s ease;
         }
 
         .nav-links a:hover {
-            color: var(--primary-color);
+            color: var(--text-primary);
         }
 
-        .btn-download {
-            background-color: var(--text-color);
-            color: var(--white);
-            padding: 0.5rem 1.2rem;
-            border-radius: 50px;
-            font-weight: 700;
-            transition: background 0.3s;
+        .nav-right {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 1rem;
         }
 
-        .btn-download:hover {
-            background-color: var(--primary-color);
+        .theme-toggle {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--border-hover);
+            color: var(--text-primary);
+        }
+
+        .lang-switch {
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-secondary);
+            font-size: 0.8125rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .lang-switch:hover {
+            border-color: var(--border-hover);
+            color: var(--text-primary);
+        }
+
+        .nav-cta {
+            padding: 0.625rem 1.5rem;
+            background: var(--text-primary);
+            border: none;
+            border-radius: 8px;
+            color: var(--bg);
+            font-weight: 500;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .nav-cta:hover {
+            opacity: 0.9;
         }
 
         /* Hero Section */
         .hero {
-            padding: 160px 0 100px;
-            background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
-            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 8rem 3rem 6rem;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 60%);
+        }
+
+        .hero-orb {
+            display: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            max-width: 1200px;
+            width: 100%;
+            align-items: center;
+        }
+
+        .hero-text {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.8s ease forwards 0.2s;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.375rem 0.875rem;
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-family: 'Space Mono', monospace;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--primary);
+            border-radius: 50%;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
-            line-height: 1.3;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to right, var(--primary-color), var(--accent));
+            font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+            letter-spacing: -1.5px;
+        }
+
+        .hero h1 .gradient-text {
+            background: var(--gradient-2);
             -webkit-background-clip: text;
-            color: transparent;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .hero p {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto 2rem;
+        .hero-description {
+            font-size: 1.0625rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 440px;
+            font-weight: 400;
         }
 
-        .hero-btns {
+        .hero-buttons {
             display: flex;
-            justify-content: center;
-            gap: 1rem;
+            gap: 0.75rem;
+            flex-wrap: wrap;
         }
 
-        .app-store-badge {
-            background: #000;
-            color: #fff;
-            padding: 12px 24px;
-            border-radius: 8px;
+        .btn-primary {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            font-weight: 600;
-            transition: transform 0.2s;
-        }
-        
-        .app-store-badge:hover {
-            transform: translateY(-2px);
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            background: var(--text-primary);
+            border: none;
+            border-radius: 10px;
+            color: var(--bg);
+            font-weight: 500;
+            font-size: 0.9375rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
         }
 
-        /* Features */
-        .section {
-            padding: 80px 0;
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 0.9375rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--border-hover);
+            background: var(--bg-elevated);
+        }
+
+        .hero-visual {
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.8s ease forwards 0.4s;
+        }
+
+        .phone-mockup {
+            position: relative;
+            max-width: 280px;
+            margin: 0 auto;
+        }
+
+        .phone-frame {
+            position: relative;
+            background: var(--bg-elevated);
+            border-radius: 36px;
+            padding: 10px;
+            border: 1px solid var(--border);
+            animation: phoneFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes phoneFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .phone-screen {
+            background: var(--bg);
+            border-radius: 28px;
+            overflow: hidden;
+            aspect-ratio: 9/19.5;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border);
+        }
+
+        .phone-notch {
+            width: 100px;
+            height: 24px;
+            background: var(--bg-elevated);
+            margin: 0 auto;
+            border-radius: 0 0 16px 16px;
+        }
+
+        .phone-content {
+            flex: 1;
+            background: var(--bg-surface);
+            display: flex;
+            flex-direction: column;
+            padding: 0.875rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Recording Header */
+        .phone-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.375rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .recording-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+            font-size: 0.625rem;
+            color: #ef4444;
+            font-weight: 500;
+        }
+
+        .recording-dot {
+            width: 6px;
+            height: 6px;
+            background: #ef4444;
+            border-radius: 50%;
+            animation: recordingPulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes recordingPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .recording-time {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.625rem;
+            color: var(--text-muted);
+        }
+
+        /* Waveform */
+        .waveform-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            padding: 0.75rem 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .waveform-bar {
+            width: 3px;
+            background: var(--primary);
+            border-radius: 2px;
+            animation: waveform 1.2s ease-in-out infinite;
+        }
+
+        .waveform-bar:nth-child(1) { height: 16px; animation-delay: 0s; }
+        .waveform-bar:nth-child(2) { height: 28px; animation-delay: 0.1s; }
+        .waveform-bar:nth-child(3) { height: 20px; animation-delay: 0.2s; }
+        .waveform-bar:nth-child(4) { height: 32px; animation-delay: 0.3s; }
+        .waveform-bar:nth-child(5) { height: 24px; animation-delay: 0.4s; }
+        .waveform-bar:nth-child(6) { height: 36px; animation-delay: 0.5s; }
+        .waveform-bar:nth-child(7) { height: 20px; animation-delay: 0.6s; }
+        .waveform-bar:nth-child(8) { height: 28px; animation-delay: 0.7s; }
+        .waveform-bar:nth-child(9) { height: 16px; animation-delay: 0.8s; }
+
+        @keyframes waveform {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(0.4); }
+        }
+
+        /* Transcription Area */
+        .transcription-area {
+            flex: 1;
+            background: var(--bg-elevated);
+            border-radius: 10px;
+            padding: 0.875rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .transcription-label {
+            font-size: 0.5rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .transcription-text {
+            font-size: 0.7rem;
+            line-height: 1.5;
+            color: var(--text-primary);
+        }
+
+        .transcription-text .completed {
+            color: var(--text-secondary);
+        }
+
+        .transcription-text .current {
+            color: var(--primary);
+            position: relative;
+        }
+
+        .transcription-text .current::after {
+            content: '|';
+            animation: cursorBlink 1s step-end infinite;
+            margin-left: 1px;
+        }
+
+        @keyframes cursorBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .typing-animation {
+            display: inline;
+            overflow: hidden;
+            animation: typing 4s steps(40) infinite;
+        }
+
+        /* PiP Window */
+        .pip-window {
+            position: absolute;
+            bottom: 0.875rem;
+            right: 0.875rem;
+            width: 80px;
+            height: 60px;
+            background: var(--bg-elevated);
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            animation: pipFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes pipFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-3px); }
+        }
+
+        .pip-video {
+            width: 100%;
+            height: 100%;
+            background: var(--bg-surface);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .pip-video::before {
+            content: '';
+            width: 28px;
+            height: 28px;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+
+        .pip-label {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            background: var(--primary);
+            padding: 1px 4px;
+            border-radius: 3px;
+            font-size: 0.4rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .pip-subtitle {
+            position: absolute;
+            bottom: 3px;
+            left: 3px;
+            right: 3px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 2px 4px;
+            border-radius: 2px;
+            font-size: 0.375rem;
+            color: white;
+            text-align: center;
+        }
+
+        /* Language Badge */
+        .language-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            background: transparent;
+            border: 1px solid var(--border);
+            padding: 3px 6px;
+            border-radius: 12px;
+            font-size: 0.5rem;
+            color: var(--text-secondary);
+            margin-top: 0.375rem;
+        }
+
+        .language-badge::before {
+            content: '🇯🇵';
+            font-size: 0.6rem;
+        }
+
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .floating-card {
+            position: absolute;
+            background: var(--bg-surface);
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            animation: floatCard 6s ease-in-out infinite;
+        }
+
+        .floating-card-1 {
+            top: 15%;
+            right: -50px;
+            animation-delay: 0s;
+        }
+
+        .floating-card-2 {
+            bottom: 25%;
+            left: -60px;
+            animation-delay: -3s;
+        }
+
+        .floating-card-3 {
+            top: 55%;
+            right: -55px;
+            transform: translateY(-50%);
+            animation-delay: -1.5s;
+        }
+
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        @keyframes floatCard3 {
+            0%, 100% { transform: translateY(-50%); }
+            50% { transform: translateY(calc(-50% - 8px)); }
+        }
+
+        .floating-card-3 {
+            animation-name: floatCard3;
+        }
+
+        .floating-card .card-text {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .floating-card .card-sub {
+            font-size: 0.625rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        /* Sections Common */
+        section {
+            padding: 6rem 3rem;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-family: 'Space Mono', monospace;
+            letter-spacing: 1px;
         }
 
         .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            font-weight: 600;
+            margin-bottom: 0.875rem;
+            letter-spacing: -0.5px;
         }
 
-        .section-title h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+        .section-description {
+            font-size: 1rem;
+            color: var(--text-secondary);
         }
 
-        .section-title p {
-            color: var(--text-light);
+        /* Features Section */
+        .features {
+            background: var(--bg);
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
         .feature-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            transition: transform 0.3s;
+            background: var(--bg-surface);
+            border-radius: 12px;
+            padding: 1.75rem;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+            opacity: 0;
+            transform: translateY(20px);
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
+            border-color: var(--border-hover);
+        }
+
+        .feature-card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .feature-icon {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            background: #eff6ff;
-            width: 60px;
-            height: 60px;
+            width: 44px;
+            height: 44px;
+            background: var(--bg-elevated);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 16px;
-        }
-
-        .feature-card h3 {
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
             font-size: 1.25rem;
         }
 
-        .feature-card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
+        .feature-title {
+            font-size: 1.0625rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
         }
 
-        /* Highlight Section (Grid) */
-        .highlight-section {
-            background-color: var(--white);
+        .feature-description {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            line-height: 1.6;
         }
 
-        .highlight-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .highlight-content h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .highlight-content ul {
-            margin-bottom: 2rem;
-        }
-
-        .highlight-content li {
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--text-color);
-        }
-
-        .highlight-content li i {
-            color: var(--accent);
-        }
-
-        .highlight-image {
-            background: #f3f4f6;
-            height: 400px;
-            border-radius: 20px;
+        /* Parallax Demo Section */
+        .parallax-section {
+            min-height: 60vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            color: #9ca3af;
-            border: 2px dashed #d1d5db;
-            /* 実際の画像がある場合はここにimgタグを入れる */
+            position: relative;
+            overflow: hidden;
+            background: var(--bg-surface);
         }
 
-        /* Pricing */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+        .parallax-layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .pricing-card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: var(--radius);
-            border: 1px solid #e5e7eb;
+        .parallax-text {
+            font-size: clamp(3rem, 12vw, 10rem);
+            font-weight: 700;
+            color: var(--border);
+            white-space: nowrap;
+            letter-spacing: -4px;
+        }
+
+        .parallax-content {
+            position: relative;
+            z-index: 10;
             text-align: center;
+            max-width: 600px;
+            padding: 0 2rem;
+        }
+
+        .parallax-content h2 {
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .parallax-content p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Use Cases */
+        .usecases {
+            background: var(--bg);
+        }
+
+        .usecase-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .usecase-card {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--bg-surface);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .usecase-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .usecase-card:hover {
+            border-color: var(--border-hover);
+        }
+
+        .usecase-icon {
+            width: 44px;
+            height: 44px;
+            min-width: 44px;
+            background: var(--bg-elevated);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .usecase-content h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.375rem;
+        }
+
+        .usecase-content p {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background: var(--bg-surface);
             position: relative;
         }
 
-        .pricing-card.featured {
-            border-color: var(--primary-color);
-            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.1);
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
         }
 
-        .badge {
+        .pricing-card {
+            background: var(--bg);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .pricing-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+        }
+
+        .pricing-badge {
             position: absolute;
-            top: -12px;
+            top: -10px;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--primary-color);
+            padding: 0.25rem 0.875rem;
+            background: var(--primary);
+            border-radius: 100px;
+            font-size: 0.6875rem;
+            font-weight: 600;
             color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
         }
 
-        .price {
+        .pricing-name {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.375rem;
+        }
+
+        .pricing-price {
             font-size: 2.5rem;
             font-weight: 700;
-            margin: 1rem 0;
-            color: var(--text-color);
+            margin-bottom: 0.25rem;
+            letter-spacing: -1px;
         }
-        
-        .price span {
-            font-size: 1rem;
+
+        .pricing-price span {
+            font-size: 0.875rem;
             font-weight: 400;
-            color: var(--text-light);
+            color: var(--text-muted);
+        }
+
+        .pricing-description {
+            color: var(--text-secondary);
+            font-size: 0.8125rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
         }
 
         .pricing-features {
-            margin: 2rem 0;
-            text-align: left;
+            list-style: none;
+            margin-bottom: 1.5rem;
         }
 
         .pricing-features li {
-            margin-bottom: 0.8rem;
-            font-size: 0.9rem;
-            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.625rem;
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
         }
 
-        .pricing-features i {
-            color: var(--primary-color);
-            margin-right: 8px;
+        .pricing-features li::before {
+            content: '✓';
+            width: 16px;
+            height: 16px;
+            color: var(--primary);
+            font-size: 0.75rem;
+            font-weight: bold;
         }
 
-        /* Reviews */
-        .reviews-section {
-            background: #f9fafb;
+        .pricing-btn {
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+        }
+
+        .pricing-btn-primary {
+            background: var(--text-primary);
+            border: none;
+            color: var(--bg);
+        }
+
+        .pricing-btn-secondary {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .pricing-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            background: var(--bg);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .review-card {
-            background: white;
-            padding: 2rem;
-            border-radius: var(--radius);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            background: var(--bg-surface);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
         }
 
-        .stars {
-            color: #fbbf24;
-            margin-bottom: 1rem;
+        .review-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .review-stars {
+            color: #f59e0b;
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+            letter-spacing: 1px;
         }
 
         .review-text {
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            color: var(--text-color);
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.6;
         }
 
-        .reviewer {
-            font-weight: bold;
-            font-size: 0.9rem;
-            color: var(--text-light);
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .review-avatar {
+            width: 36px;
+            height: 36px;
+            background: var(--bg-elevated);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+        }
+
+        .review-name {
+            font-weight: 500;
+            font-size: 0.8125rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: var(--bg-surface);
+            text-align: center;
+            position: relative;
+            padding: 5rem 3rem;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .cta h2 {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .cta p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            max-width: 480px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .app-store-badge {
+            height: 48px;
+            transition: opacity 0.2s ease;
+        }
+
+        .app-store-badge:hover {
+            opacity: 0.8;
         }
 
         /* Footer */
         footer {
-            background: #111827;
-            color: #9ca3af;
-            padding: 60px 0 20px;
+            background: var(--bg);
+            padding: 3rem 3rem 2rem;
+            border-top: 1px solid var(--border);
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: 2fr 1fr 1fr;
             gap: 3rem;
-            margin-bottom: 3rem;
+            max-width: 1000px;
+            margin: 0 auto 2rem;
         }
 
-        .footer-logo {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            display: block;
+        .footer-brand .logo {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            max-width: 280px;
+            font-size: 0.875rem;
         }
 
         .footer-links h4 {
-            color: white;
+            font-size: 0.75rem;
+            font-weight: 500;
             margin-bottom: 1rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .footer-links ul li {
-            margin-bottom: 0.8rem;
+        .footer-links ul {
+            list-style: none;
         }
 
-        .copyright {
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-bottom {
             text-align: center;
-            border-top: 1px solid #374151;
-            padding-top: 20px;
-            font-size: 0.85rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.8125rem;
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .nav-links {
-                display: none; /* 簡易的に非表示。本来はハンバーガーメニュー */
+        /* Responsive */
+        @media (max-width: 1024px) {
+            nav {
+                padding: 1rem 1.5rem;
             }
 
-            .highlight-grid {
+            .nav-links {
+                display: none;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .hero {
+                padding: 5rem 1.5rem 3rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+
+            .hero-description {
+                margin: 0 auto 2rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .usecase-grid {
                 grid-template-columns: 1fr;
             }
 
-            .highlight-image {
-                order: -1; /* 画像を上に */
-                height: 300px;
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 360px;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .footer-brand p {
+                margin: 0 auto;
             }
         }
-    </style> -->
+
+        @media (max-width: 640px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.875rem;
+            }
+
+            .floating-elements {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="noise"></div>
 
-    <header>
-        <div class="container">
-            <nav>
-                <a href="#" class="logo"><i class="fas fa-microphone-lines"></i> Texter</a>
-                <div class="nav-links">
-                    <a href="#features">機能</a>
-                    <a href="#usecase">活用例</a>
-                    <a href="#pricing">料金プラン</a>
-                    <a href="#reviews">お客様の声</a>
-                    <a href="en/" style="color: var(--text-light);">EN</a>
-                </div>
-                <a href="https://apps.apple.com/jp/app/id1482592304" class="btn-download">
-                    <i class="fab fa-apple"></i> ダウンロード
-                </a>
-            </nav>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-left">
+            <a href="./" class="logo">Texter</a>
+            <ul class="nav-links">
+                <li><a href="#features">機能</a></li>
+                <li><a href="#usecases">活用例</a></li>
+                <li><a href="#pricing">料金</a></li>
+                <li><a href="#reviews">レビュー</a></li>
+            </ul>
         </div>
-    </header>
+        <div class="nav-right">
+            <button class="theme-toggle" id="themeToggle" aria-label="テーマ切替">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="sun-icon">
+                    <circle cx="12" cy="12" r="5"/>
+                    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                </svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="moon-icon" style="display:none;">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+            <a href="en/" class="lang-switch">EN</a>
+            <a href="https://apps.apple.com/jp/app/id1482592304" class="nav-cta">ダウンロード</a>
+        </div>
+    </nav>
 
-    <section class="hero">
-        <div class="container">
-            <h1>あなたの言葉、瞬時にテキスト化。<br>AIがもたらす新しい記録体験。</h1>
-            <p>Texter（テキスター）は、最先端のAI音声認識技術を駆使して、あなたの声、画像、動画を迅速かつ正確に文字に起こします。</p>
-            <div class="hero-btns">
-                <a href="https://apps.apple.com/jp/app/id1482592304" class="app-store-badge">
-                    <i class="fab fa-apple fa-2x"></i>
-                    <div style="text-align: left; line-height: 1.2;">
-                        <span style="font-size: 0.7rem; display: block;">Download on the</span>
-                        <span style="font-size: 1.2rem;">App Store</span>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">AI Powered Transcription</div>
+                <h1>
+                    あなたの言葉を<br>
+                    <span class="gradient-text">瞬時にテキスト化</span>
+                </h1>
+                <p class="hero-description">
+                    最先端のAI音声認識技術で、あなたの声、画像、動画を迅速かつ正確に文字に起こします。議事録作成から語学学習まで、あらゆるシーンで活躍。
+                </p>
+                <div class="hero-buttons">
+                    <a href="https://apps.apple.com/jp/app/id1482592304" class="btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                        </svg>
+                        App Storeでダウンロード
+                    </a>
+                    <a href="#features" class="btn-secondary">
+                        機能を見る
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="phone-mockup">
+                    <div class="phone-frame">
+                        <div class="phone-screen">
+                            <div class="phone-notch"></div>
+                            <div class="phone-content">
+                                <!-- Recording Header -->
+                                <div class="phone-header">
+                                    <div class="recording-indicator">
+                                        <span class="recording-dot"></span>
+                                        録音中
+                                    </div>
+                                    <span class="recording-time">02:34</span>
+                                </div>
+
+                                <!-- Waveform -->
+                                <div class="waveform-container">
+                                    <div class="waveform-bar"></div>
+                                    <div class="waveform-bar"></div>
+                                    <div class="waveform-bar"></div>
+                                    <div class="waveform-bar"></div>
+                                    <div class="waveform-bar"></div>
+                                    <div class="waveform-bar"></div>
+                                    <div class="waveform-bar"></div>
+                                    <div class="waveform-bar"></div>
+                                    <div class="waveform-bar"></div>
+                                </div>
+
+                                <!-- Transcription Area -->
+                                <div class="transcription-area">
+                                    <div class="transcription-label">リアルタイム文字起こし</div>
+                                    <div class="transcription-text">
+                                        <span class="completed">本日の会議では、新しいプロジェクトの進捗について確認します。</span>
+                                        <span class="current" id="typing-text"></span>
+                                    </div>
+                                    <div class="language-badge">日本語 (自動検出)</div>
+                                </div>
+
+                                <!-- PiP Window -->
+                                <div class="pip-window">
+                                    <div class="pip-video">
+                                        <span class="pip-label">PiP</span>
+                                        <span class="pip-subtitle">字幕が表示されます</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </a>
-            </div>
-            <p style="margin-top: 1rem; font-size: 0.8rem;">※ iPad / Apple Watch / Mac (Apple Silicon) 対応</p>
-        </div>
-    </section>
-
-    <section id="features" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>主な機能</h2>
-                <p>音声も画像も動画も。あらゆるメディアをテキストへ。</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-microphone-alt"></i></div>
-                    <h3>高精度 AI音声文字起こし</h3>
-                    <p>Whisper (OpenAI) を含む最新AIエンジンを採用。句読点や疑問符も自動で変換し、長時間の録音もスムーズにテキスト化します。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-image"></i></div>
-                    <h3>画像・動画から文字変換</h3>
-                    <p>OCR機能で画像内の文字を瞬時にテキスト化。動画ファイルからの音声抽出・文字起こしにも対応しています。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-language"></i></div>
-                    <h3>リアルタイム翻訳</h3>
-                    <p>DeepLやGoogle翻訳と連携。文字起こしした内容をその場で翻訳し、多言語コミュニケーションをサポートします。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-robot"></i></div>
-                    <h3>AI要約 & リスト管理</h3>
-                    <p>議事録の要約を作成したり、フォルダ分けや検索機能で膨大なメモをスマートに管理できます。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-scissors"></i></div>
-                    <h3>無音カット</h3>
-                    <p>動画や音声から無音部分を自動検出・削除。3つのプリセット（弱・標準・強）で調整可能です。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-closed-captioning"></i></div>
-                    <h3>動画字幕生成</h3>
-                    <p>インポートした動画に自動で字幕を生成し、タイムスタンプ付きで表示。センテンス単位で編集・再生が可能です。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="usecase" class="section highlight-section">
-        <div class="container">
-            <div class="highlight-grid">
-                <div class="highlight-image">
-                    <div class="app-preview-container">
-                        <div class="phone-mockup side left">
-                            <div class="phone-frame">
-                                <img src="img/s-1109x2400_v-frms_webp_cf5bc25b-81eb-4bb3-a7bf-10b227c5e324.jpg" alt="Texter App Screenshot" class="phone-screen">
-                            </div>
+                    <div class="floating-elements">
+                        <div class="floating-card floating-card-1">
+                            <div class="card-text">🎯 98.5%</div>
+                            <div class="card-sub">認識精度</div>
                         </div>
-                        <div class="phone-mockup main">
-                            <div class="phone-frame">
-                                <img src="img/s-1109x2400_v-frms_webp_627dc8e8-dd15-43e1-bc6f-4732558187d4.png" alt="Texter App Main" class="phone-screen">
-                            </div>
+                        <div class="floating-card floating-card-2">
+                            <div class="card-text">📺 PiP対応</div>
+                            <div class="card-sub">ながら視聴可能</div>
                         </div>
-                        <div class="phone-mockup side">
-                            <div class="phone-frame">
-                                <img src="img/s-828x1792_v-fms_webp_fbad8514-1dd2-4349-b3f5-095d56d42d90.png" alt="Texter App Screenshot" class="phone-screen">
-                            </div>
+                        <div class="floating-card floating-card-3">
+                            <div class="card-text">🌍 100+言語</div>
+                            <div class="card-sub">多言語対応</div>
                         </div>
                     </div>
                 </div>
-                <div class="highlight-content">
-                    <h3>ビジネスから学習まで、<br>あらゆるシーンで活躍</h3>
-                    <p style="margin-bottom: 20px; color: var(--text-light);">
-                        Texterは単なるボイスレコーダーではありません。あなたの生産性を劇的に向上させるパートナーです。
-                    </p>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> <strong>議事録作成：</strong> 会議の内容を自動で記録し、要約までAIにお任せ。</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>ライター・ブロガー：</strong> インタビューやアイデア出しを声で行い、執筆速度を加速。</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>聴覚サポート：</strong> リアルタイム文字起こしでコミュニケーションを円滑に。</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>語学学習：</strong> 発音チェックや、PDF教材のテキスト化に。</li>
-                    </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <span class="section-label">FEATURES</span>
+            <h2 class="section-title">音声も画像も動画も。<br>あらゆるメディアをテキストへ</h2>
+            <p class="section-description">Whisper (OpenAI) を含む最新AIエンジンを採用。句読点や疑問符も自動変換</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎙️</div>
+                <h3 class="feature-title">高精度 AI音声文字起こし</h3>
+                <p class="feature-description">Whisper (OpenAI) を含む最新AIエンジンを採用。句読点や疑問符も自動で変換し、長時間の録音もスムーズにテキスト化します。</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📸</div>
+                <h3 class="feature-title">画像・動画から文字変換</h3>
+                <p class="feature-description">OCR機能で画像内の文字を瞬時にテキスト化。動画ファイルからの音声抽出・文字起こしにも対応しています。</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🌐</div>
+                <h3 class="feature-title">リアルタイム翻訳</h3>
+                <p class="feature-description">DeepLやGoogle翻訳と連携。文字起こしした内容をその場で翻訳し、多言語コミュニケーションをサポートします。</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3 class="feature-title">AI要約 & リスト管理</h3>
+                <p class="feature-description">議事録の要約を作成したり、フォルダ分けや検索機能で膨大なメモをスマートに管理できます。</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">✂️</div>
+                <h3 class="feature-title">無音カット</h3>
+                <p class="feature-description">動画や音声から無音部分を自動検出・削除。3つのプリセット（弱・標準・強）で調整可能です。</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🎬</div>
+                <h3 class="feature-title">動画字幕生成 & PiP</h3>
+                <p class="feature-description">インポートした動画に自動で字幕を生成。Picture in Picture（PiP）対応で、他のアプリを使いながらでも字幕付き動画を視聴できます。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Section -->
+    <section class="parallax-section">
+        <div class="parallax-layer" data-speed="0.1">
+            <div class="parallax-text">VOICE TO TEXT</div>
+        </div>
+        <div class="parallax-content">
+            <h2>あなたの生産性を<br><span class="gradient-text">劇的に向上</span></h2>
+            <p>Texterは単なるボイスレコーダーではありません。あなたの生産性を劇的に向上させるパートナーです。</p>
+            <a href="#usecases" class="btn-primary">活用シーンを見る</a>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="usecases" id="usecases">
+        <div class="section-header">
+            <span class="section-label">USE CASES</span>
+            <h2 class="section-title">ビジネスから学習まで、<br>あらゆるシーンで活躍</h2>
+        </div>
+
+        <div class="usecase-grid">
+            <div class="usecase-card">
+                <div class="usecase-icon">📋</div>
+                <div class="usecase-content">
+                    <h3>議事録作成</h3>
+                    <p>会議の内容を自動で記録し、要約までAIにお任せ。チームの生産性を大幅アップ。</p>
+                </div>
+            </div>
+            
+            <div class="usecase-card">
+                <div class="usecase-icon">✍️</div>
+                <div class="usecase-content">
+                    <h3>ライター・ブロガー</h3>
+                    <p>インタビューやアイデア出しを声で行い、執筆速度を加速。クリエイティブな作業に集中。</p>
+                </div>
+            </div>
+            
+            <div class="usecase-card">
+                <div class="usecase-icon">👂</div>
+                <div class="usecase-content">
+                    <h3>聴覚サポート</h3>
+                    <p>リアルタイム文字起こしでコミュニケーションを円滑に。誰もが会話に参加できる環境を。</p>
+                </div>
+            </div>
+            
+            <div class="usecase-card">
+                <div class="usecase-icon">📚</div>
+                <div class="usecase-content">
+                    <h3>語学学習</h3>
+                    <p>発音チェックや、PDF教材のテキスト化に。効率的な学習をサポート。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="pricing" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>料金プラン</h2>
-                <p>あなたの用途に合わせて選べるプラン</p>
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="section-header">
+            <span class="section-label">PRICING</span>
+            <h2 class="section-title">あなたの用途に合わせて<br>選べるプラン</h2>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-name">Free</div>
+                <div class="pricing-price">¥0</div>
+                <p class="pricing-description">まずは無料で試してみる</p>
+                <ul class="pricing-features">
+                    <li>リアルタイム文字起こし（1分）</li>
+                    <li>画像文字起こし（3回/日）</li>
+                    <li>リアルタイム翻訳</li>
+                    <li>録音・動画文字起こし（短時間）</li>
+                </ul>
+                <a href="https://apps.apple.com/jp/app/id1482592304" class="pricing-btn pricing-btn-secondary">無料で始める</a>
             </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Free</h3>
-                    <div class="price">¥0</div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> リアルタイム文字起こし（1分）</li>
-                        <li><i class="fas fa-check"></i> 画像文字起こし（3回/日）</li>
-                        <li><i class="fas fa-check"></i> リアルタイム翻訳</li>
-                        <li><i class="fas fa-check"></i> 録音・動画文字起こし（短時間）</li>
-                    </ul>
-                </div>
 
-                <div class="pricing-card featured">
-                    <div class="badge">人気</div>
-                    <h3>Premium M</h3>
-                    <div class="price">¥1,500<span>/月</span></div>
-                    <p style="font-size: 0.8rem; color: var(--primary-color); margin-bottom: 1rem;">1週間無料トライアル付き</p>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> <strong>Whisper 無制限</strong></li>
-                        <li><i class="fas fa-check"></i> 高性能モード (3時間/月)</li>
-                        <li><i class="fas fa-check"></i> 画像文字起こし 無制限</li>
-                        <li><i class="fas fa-check"></i> 自動無音カット</li>
-                        <li><i class="fas fa-check"></i> 動画字幕生成</li>
-                        <li><i class="fas fa-check"></i> AI要約機能</li>
-                        <li><i class="fas fa-check"></i> 広告非表示</li>
-                    </ul>
-                </div>
+            <div class="pricing-card featured">
+                <div class="pricing-badge">人気</div>
+                <div class="pricing-name">Premium M</div>
+                <div class="pricing-price">¥1,500<span>/月</span></div>
+                <p class="pricing-description">1週間無料トライアル付き</p>
+                <ul class="pricing-features">
+                    <li>Whisper 無制限</li>
+                    <li>高性能モード (3時間/月)</li>
+                    <li>画像文字起こし 無制限</li>
+                    <li>自動無音カット</li>
+                    <li>動画字幕生成</li>
+                    <li>AI要約機能</li>
+                    <li>広告非表示</li>
+                </ul>
+                <a href="https://apps.apple.com/jp/app/id1482592304" class="pricing-btn pricing-btn-primary">無料トライアル</a>
+            </div>
 
-                <div class="pricing-card">
-                    <div class="badge">お得</div>
-                    <h3>Premium Y</h3>
-                    <div class="price">¥7,400<span>/年</span></div>
-                    <p style="font-size: 0.8rem; color: #059669; margin-bottom: 1rem;">月額の約半額！ビジネス活用に</p>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> <strong>Whisper 無制限</strong></li>
-                        <li><i class="fas fa-check"></i> 高性能モード (10時間/月)</li>
-                        <li><i class="fas fa-check"></i> 画像文字起こし 無制限</li>
-                        <li><i class="fas fa-check"></i> 自動無音カット</li>
-                        <li><i class="fas fa-check"></i> 動画字幕生成</li>
-                        <li><i class="fas fa-check"></i> AI要約機能</li>
-                        <li><i class="fas fa-check"></i> 優先サポート</li>
-                        <li><i class="fas fa-check"></i> 広告非表示</li>
-                    </ul>
+            <div class="pricing-card">
+                <div class="pricing-badge">お得</div>
+                <div class="pricing-name">Premium Y</div>
+                <div class="pricing-price">¥7,400<span>/年</span></div>
+                <p class="pricing-description">月額の約半額！ビジネス活用に</p>
+                <ul class="pricing-features">
+                    <li>Whisper 無制限</li>
+                    <li>高性能モード (10時間/月)</li>
+                    <li>画像文字起こし 無制限</li>
+                    <li>自動無音カット</li>
+                    <li>動画字幕生成</li>
+                    <li>AI要約機能</li>
+                    <li>優先サポート</li>
+                    <li>広告非表示</li>
+                </ul>
+                <a href="https://apps.apple.com/jp/app/id1482592304" class="pricing-btn pricing-btn-secondary">年間プランを選択</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="section-header">
+            <span class="section-label">REVIEWS</span>
+            <h2 class="section-title">ユーザーの声</h2>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">「ライターです。ここまで性能が良いとは期待以上でした！これまで全て手打ちしていたときに比べて随分助かります。早速一年で契約しました。」</p>
+                <div class="review-author">
+                    <div class="review-avatar">T</div>
+                    <div class="review-name">ともころう 様</div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">「補聴器をつけても聞き取る事が難しい母に画面を見せて理解してもらえるので、とても助かっております。」</p>
+                <div class="review-author">
+                    <div class="review-avatar">N</div>
+                    <div class="review-name">ののはるちゃん 様</div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">「OCRが他のスキャナーアプリなどと比較しても速くて正確です。ほぼ100%の精度で読み取ってくれます。」</p>
+                <div class="review-author">
+                    <div class="review-avatar">Y</div>
+                    <div class="review-name">yuta-mom 様</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="reviews" class="section reviews-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>ユーザーの声</h2>
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2>今すぐ始めよう</h2>
+            <p>最先端AI文字起こしアプリで、あなたの声を未来へ。無料でダウンロードして体験してください。</p>
+            <div class="cta-buttons">
+                <a href="https://apps.apple.com/jp/app/id1482592304" class="btn-primary" style="padding: 1rem 2rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                    </svg>
+                    App Storeでダウンロード
+                </a>
             </div>
-            <div class="features-grid">
-                <div class="review-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="review-text">「ライターです。ここまで性能が良いとは期待以上でした！これまで全て手打ちしていたときに比べて随分助かります。早速一年で契約しました。」</p>
-                    <p class="reviewer">ともころう 様</p>
-                </div>
-                <div class="review-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="review-text">「補聴器をつけても聞き取る事が難しい母に画面を見せて理解してもらえるので、とても助かっております。」</p>
-                    <p class="reviewer">ののはるちゃん 様</p>
-                </div>
-                <div class="review-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="review-text">「OCRが他のスキャナーアプリなどと比較しても速くて正確です。ほぼ100%の精度で読み取ってくれます。」</p>
-                    <p class="reviewer">yuta-mom 様</p>
-                </div>
-            </div>
+            <p style="margin-top: 1.25rem; font-size: 0.8125rem; color: var(--text-muted);">※ iPad / Apple Watch / Mac (Apple Silicon) 対応</p>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div>
-                    <a href="#" class="footer-logo">Texter</a>
-                    <p>最先端AI文字起こしアプリ。<br>あなたの声を、未来へ。</p>
-                </div>
-                <div class="footer-links">
-                    <h4>機能・サポート</h4>
-                    <ul>
-                        <li><a href="#features">基本機能</a></li>
-                        <li><a href="#usecase">利用方法</a></li>
-                        <li><a href="https://texter-app.notion.site/faq-ja">よくある質問</a></li>
-                        <li><a href="mailto:texter.work.app@gmail.com">お問い合わせ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>規約・法律</h4>
-                    <ul>
-                        <li><a href="https://sites.google.com/view/texter-voice-to-text/terms-of-service">利用規約</a></li>
-                        <li><a href="https://sites.google.com/view/texter-voice-to-text/privacy-policy">プライバシーポリシー</a></li>
-                        <li><a href="https://sites.google.com/view/texter-voice-to-text/%E7%89%B9%E5%AE%9A%E5%95%86%E5%8F%96%E5%BC%95%E6%B3%95%E3%81%AB%E5%9F%BA%E3%81%A5%E3%81%8F%E8%A1%A8%E8%A8%98">特定商取引法に基づく表記</a></li>
-                    </ul>
-                </div>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">Texter</div>
+                <p>最先端AI文字起こしアプリ。あなたの声を、未来へ。</p>
             </div>
-            <div class="copyright">
-                &copy; <span id="currentYear">2025</span> Texter app - Kyoto, Japan.
+            
+            <div class="footer-links">
+                <h4>機能・サポート</h4>
+                <ul>
+                    <li><a href="#features">基本機能</a></li>
+                    <li><a href="#usecases">利用方法</a></li>
+                    <li><a href="https://texter-app.notion.site/faq-ja">よくある質問</a></li>
+                    <li><a href="mailto:texter.work.app@gmail.com">お問い合わせ</a></li>
+                </ul>
             </div>
+            
+            <div class="footer-links">
+                <h4>規約・法律</h4>
+                <ul>
+                    <li><a href="https://sites.google.com/view/texter-voice-to-text/terms-of-service">利用規約</a></li>
+                    <li><a href="https://sites.google.com/view/texter-voice-to-text/privacy-policy">プライバシーポリシー</a></li>
+                    <li><a href="https://sites.google.com/view/texter-voice-to-text/%E7%89%B9%E5%AE%9A%E5%95%86%E5%8F%96%E5%BC%95%E6%B3%95%E3%81%AB%E5%9F%BA%E3%81%A5%E3%81%8F%E8%A1%A8%E8%A8%98">特定商取引法に基づく表記</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 Texter app - Kyoto, Japan.</p>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const sunIcon = themeToggle.querySelector('.sun-icon');
+        const moonIcon = themeToggle.querySelector('.moon-icon');
+        
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            if (theme === 'light') {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+            } else {
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+            }
+        }
+        
+        // Check for saved theme or system preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+            setTheme('light');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            setTheme(currentTheme === 'light' ? 'dark' : 'light');
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Typing animation for transcription demo
+        const typingTexts = [
+            "まず第一四半期の",
+            "売上について報告します。",
+            "前年比120%を達成しました。",
+            "次に新機能の開発状況です。"
+        ];
+        let textIndex = 0;
+        let charIndex = 0;
+        const typingElement = document.getElementById('typing-text');
+
+        function typeText() {
+            if (charIndex < typingTexts[textIndex].length) {
+                typingElement.textContent += typingTexts[textIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(typeText, 100 + Math.random() * 50);
+            } else {
+                setTimeout(() => {
+                    typingElement.textContent = '';
+                    charIndex = 0;
+                    textIndex = (textIndex + 1) % typingTexts.length;
+                    typeText();
+                }, 2000);
+            }
+        }
+        
+        setTimeout(typeText, 1000);
+
+        // Recording time counter
+        let seconds = 154;
+        function updateRecordingTime() {
+            seconds++;
+            const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+            const secs = (seconds % 60).toString().padStart(2, '0');
+            document.querySelector('.recording-time').textContent = `${mins}:${secs}`;
+        }
+        setInterval(updateRecordingTime, 1000);
+
+        // PiP subtitle animation
+        const pipSubtitles = [
+            "字幕が表示されます",
+            "リアルタイムで更新",
+            "会議中も確認可能",
+            "他のアプリ使用中も"
+        ];
+        let subtitleIndex = 0;
+        function updatePipSubtitle() {
+            subtitleIndex = (subtitleIndex + 1) % pipSubtitles.length;
+            document.querySelector('.pip-subtitle').textContent = pipSubtitles[subtitleIndex];
+        }
+        setInterval(updatePipSubtitle, 3000);
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -30px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 80);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .usecase-card, .pricing-card, .review-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Parallax effect (subtle)
+        const parallaxLayers = document.querySelectorAll('.parallax-layer');
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            parallaxLayers.forEach(layer => {
+                const speed = layer.dataset.speed || 0.3;
+                layer.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Texter",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "iOS, iPadOS, macOS",
+        "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "0",
+            "highPrice": "7400",
+            "priceCurrency": "JPY",
+            "offerCount": "3"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "100+"
+        },
+        "description": "最先端のAI音声認識技術で、あなたの声、画像、動画を迅速かつ正確に文字に起こします。議事録作成から語学学習まで、あらゆるシーンで活躍。",
+        "url": "https://texter.work/",
+        "downloadUrl": "https://apps.apple.com/jp/app/id1482592304",
+        "screenshot": "https://texter.work/",
+        "softwareVersion": "Latest",
+        "author": {
+            "@type": "Organization",
+            "name": "Texter"
+        },
+        "featureList": [
+            "AI音声認識・文字起こし",
+            "画像・動画から文字変換（OCR）",
+            "リアルタイム翻訳",
+            "AI要約機能",
+            "無音カット",
+            "動画字幕生成"
+        ]
+    }
+    </script>
 </body>
 </html>

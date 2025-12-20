@@ -7,7 +7,10 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'UA-179024659-1');
+        gtag('config', 'UA-179024659-1', {
+            'anonymize_ip': true,
+            'cookie_flags': 'SameSite=None;Secure'
+        });
     </script>
 
     <meta charset="UTF-8">
@@ -17,7 +20,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
     <!-- <style>
         :root {
             --primary-color: #2563eb;
@@ -226,6 +229,7 @@
     </style> -->
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
     <header>
         <div class="container">
@@ -233,18 +237,20 @@
                 <a href="#" class="logo"><i class="fas fa-microphone-lines"></i> Texter</a>
                 <div class="nav-links">
                     <a href="#features">Features</a>
-                    <a href="#usecase">Use Cases</a>
-                    <a href="#pricing">Pricing</a>
-                    <a href="#reviews">Stories</a>
-                    <a href="index.html" style="color: var(--text-light);">日本語</a>
+                    <a href="#demo">Demo</a>
+                    <a href="#pricing">Plans</a>
+                    <a href="#testimonials">Stories</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="../index.html" style="color: var(--text-light);">日本語</a>
                 </div>
-                <a href="https://apps.apple.com/app/id1482592304" class="btn-download">
+                <a href="https://apps.apple.com/app/id1482592304" class="btn btn-download">
                     <i class="fab fa-apple"></i> Download
                 </a>
             </nav>
         </div>
     </header>
 
+    <main id="main">
     <section class="hero">
         <div class="container">
             <h1>Capture every word, instantly.<br>AI makes your notes effortless.</h1>
@@ -264,63 +270,73 @@
 
     <section id="features" class="section">
         <div class="container">
+            <div class="section-kicker">
+                <p>What you can do right now: turn audio, images, and videos into text—then translate, summarize, and generate subtitles.</p>
+            </div>
             <div class="section-title">
                 <h2>What you can do</h2>
                 <p>Voice, images, videos—every format becomes searchable text.</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-microphone-alt"></i></div>
-                    <h3>Studio-grade voice to text</h3>
-                    <p>Powered by Whisper (OpenAI) and other top engines. Auto punctuation and long-form handling keep transcripts clear and accurate.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-image"></i></div>
-                    <h3>OCR for images & video</h3>
-                    <p>Extract text from photos in a tap. Pull audio from video files and convert it to text without extra tools.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-language"></i></div>
-                    <h3>Live translations</h3>
-                    <p>Works with DeepL and Google Translate so you can read and share transcripts in the language you need, instantly.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-robot"></i></div>
-                    <h3>AI summaries & smart lists</h3>
-                    <p>Get meeting highlights automatically, organize notes with folders and search, and stay on top of every conversation.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-scissors"></i></div>
-                    <h3>Silence removal</h3>
-                    <p>Auto-detect and remove silent segments from audio and video. Three preset levels (light, standard, strong) for fine-tuning.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-closed-captioning"></i></div>
-                    <h3>Video subtitles</h3>
-                    <p>Auto-generate timestamped captions for imported videos. Edit and play back sentence by sentence with one tap.</p>
-                </div>
+            <div class="bento-grid">
+                <article class="card bento-card bento-card--wide">
+                    <div class="bento-card__icon"><i class="fas fa-microphone-alt"></i></div>
+                    <h3 class="bento-card__title">Audio transcription</h3>
+                    <p class="bento-card__desc">Turn recordings, meetings, and interviews into editable text.</p>
+                    <a class="bento-card__example" href="#demo-voice" aria-label="See an audio transcription example">Example →</a>
+                </article>
+                <article class="card bento-card">
+                    <div class="bento-card__icon"><i class="fas fa-image"></i></div>
+                    <h3 class="bento-card__title">Image to text (OCR)</h3>
+                    <p class="bento-card__desc">Copy text from photos and PDFs in seconds.</p>
+                    <a class="bento-card__example" href="#demo-ocr" aria-label="See an OCR example">Example →</a>
+                </article>
+                <article class="card bento-card">
+                    <div class="bento-card__icon"><i class="fas fa-video"></i></div>
+                    <h3 class="bento-card__title">Video to text</h3>
+                    <p class="bento-card__desc">Extract speech and make long videos searchable.</p>
+                    <a class="bento-card__example" href="#demo-video" aria-label="See a video transcription example">Example →</a>
+                </article>
+                <article class="card bento-card bento-card--wide">
+                    <div class="bento-card__icon"><i class="fas fa-language"></i></div>
+                    <h3 class="bento-card__title">Translation</h3>
+                    <p class="bento-card__desc">Switch languages instantly after you transcribe.</p>
+                    <a class="bento-card__example" href="#demo-translation" aria-label="See a translation example">Example →</a>
+                </article>
+                <article class="card bento-card">
+                    <div class="bento-card__icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+                    <h3 class="bento-card__title">Summaries</h3>
+                    <p class="bento-card__desc">Get key takeaways from long text, fast.</p>
+                    <a class="bento-card__example" href="#demo-summary" aria-label="See a summary example">Example →</a>
+                </article>
+                <article class="card bento-card bento-card--wide">
+                    <div class="bento-card__icon"><i class="fas fa-closed-captioning"></i></div>
+                    <h3 class="bento-card__title">Subtitle generation</h3>
+                    <p class="bento-card__desc">Auto-caption videos and tweak timing on a timeline.</p>
+                    <a class="bento-card__example" href="#demo-subtitles" aria-label="See a subtitle generation example">Example →</a>
+                </article>
             </div>
         </div>
     </section>
 
-    <section id="usecase" class="section highlight-section">
+    <section id="demo" class="section highlight-section">
+        <div id="usecase" class="anchor-offset" aria-hidden="true"></div>
         <div class="container">
             <div class="highlight-grid">
                 <div class="highlight-image">
                     <div class="app-preview-container">
                         <div class="phone-mockup side left">
                             <div class="phone-frame">
-                                <img src="img/s-1109x2400_v-frms_webp_cf5bc25b-81eb-4bb3-a7bf-10b227c5e324.jpg" alt="Texter App Screenshot" class="phone-screen">
+                                <img src="../img/s-1109x2400_v-frms_webp_cf5bc25b-81eb-4bb3-a7bf-10b227c5e324.jpg" width="1109" height="2400" loading="lazy" decoding="async" alt="Texter transcription screen (screenshot)" class="phone-screen">
                             </div>
                         </div>
                         <div class="phone-mockup main">
                             <div class="phone-frame">
-                                <img src="img/s-1109x2400_v-frms_webp_627dc8e8-dd15-43e1-bc6f-4732558187d4.png" alt="Texter App Main" class="phone-screen">
+                                <img src="../img/s-1109x2400_v-frms_webp_627dc8e8-dd15-43e1-bc6f-4732558187d4.png" width="1109" height="2400" loading="lazy" decoding="async" alt="Texter main screen (screenshot)" class="phone-screen">
                             </div>
                         </div>
                         <div class="phone-mockup side">
                             <div class="phone-frame">
-                                <img src="img/s-828x1792_v-fms_webp_fbad8514-1dd2-4349-b3f5-095d56d42d90.png" alt="Texter App Screenshot" class="phone-screen">
+                                <img src="../img/s-828x1792_v-fms_webp_fbad8514-1dd2-4349-b3f5-095d56d42d90.png" width="828" height="1792" loading="lazy" decoding="async" alt="Texter OCR screen (screenshot)" class="phone-screen">
                             </div>
                         </div>
                     </div>
@@ -331,10 +347,12 @@
                         Texter is more than a recorder—it’s a quiet assistant that helps you stay present while everything is captured for later.
                     </p>
                     <ul>
-                        <li><i class="fas fa-check-circle"></i> <strong>Meetings:</strong> Capture every point, auto-punctuated and ready to summarize.</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Writers & creators:</strong> Dictate ideas, interviews, or scripts and move straight to editing.</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Accessibility:</strong> Live captions support clear communication in any setting.</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Language study:</strong> Practice pronunciation and turn PDFs or slides into editable text.</li>
+                        <li id="demo-voice"><i class="fas fa-check-circle"></i> <strong>Meeting notes:</strong> Record → transcribe → summarize in one flow.</li>
+                        <li id="demo-ocr"><i class="fas fa-check-circle"></i> <strong>OCR:</strong> Turn photos and PDFs into editable text.</li>
+                        <li id="demo-video"><i class="fas fa-check-circle"></i> <strong>Video transcripts:</strong> Make lectures and interviews searchable.</li>
+                        <li id="demo-translation"><i class="fas fa-check-circle"></i> <strong>Translation:</strong> Switch languages for global teams.</li>
+                        <li id="demo-summary"><i class="fas fa-check-circle"></i> <strong>Summaries:</strong> Share key takeaways fast.</li>
+                        <li id="demo-subtitles"><i class="fas fa-check-circle"></i> <strong>Subtitles:</strong> Auto-caption videos and tweak the timing.</li>
                     </ul>
                 </div>
             </div>
@@ -348,39 +366,47 @@
                 <p>Choose the plan that matches your everyday use.</p>
             </div>
             <div class="pricing-grid">
-                <div class="pricing-card">
+                <div class="pricing-card price-card">
                     <h3>Free</h3>
                     <div class="price">¥0</div>
                     <ul class="pricing-features">
                         <li><i class="fas fa-check"></i> Real-time transcription (1 minute)</li>
+                        <li><i class="fas fa-check"></i> Whisper transcription (short)</li>
+                        <li class="feature-unavailable"><i class="fas fa-xmark"></i> Pro mode (not included)</li>
                         <li><i class="fas fa-check"></i> Image OCR (3 per day)</li>
-                        <li><i class="fas fa-check"></i> Live translation</li>
-                        <li><i class="fas fa-check"></i> Short audio & video transcription</li>
+                        <li class="feature-unavailable"><i class="fas fa-xmark"></i> Auto silence removal (not included)</li>
+                        <li class="feature-unavailable"><i class="fas fa-xmark"></i> Video subtitle generation (not included)</li>
+                        <li class="feature-unavailable"><i class="fas fa-xmark"></i> AI summarization (not included)</li>
+                        <li class="feature-unavailable"><i class="fas fa-xmark"></i> Priority support (not included)</li>
+                        <li class="feature-unavailable"><i class="fas fa-xmark"></i> Ad-free experience (not included)</li>
                     </ul>
                 </div>
 
-                <div class="pricing-card featured">
+                <div class="pricing-card price-card featured">
                     <div class="badge">Popular</div>
                     <h3>Premium M</h3>
                     <div class="price">¥1,500<span>/month</span></div>
                     <p style="font-size: 0.8rem; color: var(--primary-color); margin-bottom: 1rem;">Includes a 7-day free trial</p>
                     <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Real-time transcription (unlimited)</li>
                         <li><i class="fas fa-check"></i> <strong>Unlimited Whisper</strong></li>
                         <li><i class="fas fa-check"></i> Pro mode (3 hours / month)</li>
                         <li><i class="fas fa-check"></i> Unlimited image OCR</li>
                         <li><i class="fas fa-check"></i> Auto silence removal</li>
                         <li><i class="fas fa-check"></i> Video subtitle generation</li>
                         <li><i class="fas fa-check"></i> AI summarization</li>
+                        <li class="feature-unavailable"><i class="fas fa-xmark"></i> Priority support (not included)</li>
                         <li><i class="fas fa-check"></i> Ad-free experience</li>
                     </ul>
                 </div>
 
-                <div class="pricing-card">
+                <div class="pricing-card price-card">
                     <div class="badge">Best value</div>
                     <h3>Premium Y</h3>
                     <div class="price">¥7,400<span>/year</span></div>
                     <p style="font-size: 0.8rem; color: #059669; margin-bottom: 1rem;">About half the monthly price—ideal for teams</p>
                     <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Real-time transcription (unlimited)</li>
                         <li><i class="fas fa-check"></i> <strong>Unlimited Whisper</strong></li>
                         <li><i class="fas fa-check"></i> Pro mode (10 hours / month)</li>
                         <li><i class="fas fa-check"></i> Unlimited image OCR</li>
@@ -395,23 +421,24 @@
         </div>
     </section>
 
-    <section id="reviews" class="section reviews-section">
+    <section id="testimonials" class="section reviews-section">
+        <div id="reviews" class="anchor-offset" aria-hidden="true"></div>
         <div class="container">
             <div class="section-title">
                 <h2>Customer stories</h2>
             </div>
             <div class="features-grid">
-                <div class="review-card">
+                <div class="card review-card">
                     <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p class="review-text">“I’m a writer and Texter is beyond what I hoped for. I moved to the annual plan right away because it saves hours every week.”</p>
                     <p class="reviewer">Tomokorou</p>
                 </div>
-                <div class="review-card">
+                <div class="card review-card">
                     <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p class="review-text">“My mother struggles to hear, so live captions let her follow conversations. It has made a real difference.”</p>
                     <p class="reviewer">Nono Haru</p>
                 </div>
-                <div class="review-card">
+                <div class="card review-card">
                     <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p class="review-text">“OCR is fast and precise—nearly 100% accuracy compared to other scanner apps I’ve tried.”</p>
                     <p class="reviewer">Yuta Mom</p>
@@ -419,6 +446,38 @@
             </div>
         </div>
     </section>
+
+    <section id="faq" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>FAQ</h2>
+                <p>Quick answers to get you started.</p>
+            </div>
+            <div class="faq-list">
+                <details class="card faq-item">
+                    <summary>What can Texter do?</summary>
+                    <div>Transcribe audio, extract text with OCR, transcribe videos, translate, summarize, and generate subtitles—all in one app.</div>
+                </details>
+                <details class="card faq-item">
+                    <summary>Can I edit the transcript?</summary>
+                    <div>Yes. You can edit the generated text and reuse it in notes, documents, or posts.</div>
+                </details>
+                <details class="card faq-item">
+                    <summary>Can it generate subtitles from a video?</summary>
+                    <div>Yes. Import a video to generate timestamped captions, then fine-tune sentence by sentence.</div>
+                </details>
+                <details class="card faq-item">
+                    <summary>Is there a free plan?</summary>
+                    <div>Yes. The Free plan lets you try core features. For longer and more advanced usage, Premium is available.</div>
+                </details>
+            </div>
+            <div style="text-align: center; margin-top: var(--space-4);">
+                <a class="btn btn-ghost" href="https://texter-app.notion.site/faqs">Read more FAQs</a>
+            </div>
+        </div>
+    </section>
+
+    </main>
 
     <footer>
         <div class="container">
@@ -431,9 +490,10 @@
                     <h4>Product</h4>
                     <ul>
                         <li><a href="#features">Features</a></li>
-                        <li><a href="#usecase">How it works</a></li>
+                        <li><a href="#demo">Demo</a></li>
                         <li><a href="#pricing">Plans</a></li>
-                        <li><a href="https://texter-app.notion.site/faqs">FAQs</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="mailto:texter.work.app@gmail.com">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
@@ -451,6 +511,6 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

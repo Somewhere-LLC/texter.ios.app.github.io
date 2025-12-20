@@ -1,0 +1,8 @@
+# robots.txt for texter.work
+User-agent: *
+Allow: /
+Disallow: /css/
+Disallow: /js/
+
+# Sitemap
+Sitemap: https://texter.work/sitemap.xml
