@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.matz.Texter",
+      "sha256_cert_fingerprints": [
+        "59:8E:78:4D:6C:CD:C3:7D:A5:0E:33:8F:BA:C8:DF:AE:CC:1F:F4:0F:DF:B3:6A:2E:E8:ED:F8:CC:D9:90:79:99"
+      ]
+    }
+  }
+]
