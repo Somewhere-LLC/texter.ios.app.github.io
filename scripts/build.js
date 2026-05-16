@@ -15,6 +15,8 @@ const entries = [
   'CNAME',
   '.htaccess',
   '.well-known',
+  'assets',
+  'app-ads.txt',
 ];
 
 const ensureDir = (dir) => {

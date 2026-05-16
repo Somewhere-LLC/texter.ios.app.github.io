@@ -184,9 +184,18 @@
 
         nav.scrolled {
             padding: 1rem 3rem;
-            background: var(--bg);
+            background: rgba(9, 9, 11, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
         }
+
+        @media (prefers-color-scheme: light) {
+            nav.scrolled { background: rgba(250, 250, 250, 0.8); }
+        }
+
+        [data-theme="light"] nav.scrolled { background: rgba(250, 250, 250, 0.8); }
+        [data-theme="dark"] nav.scrolled { background: rgba(9, 9, 11, 0.8); }
 
         .nav-left {
             display: flex;
@@ -799,6 +808,11 @@
 
         .feature-card:hover {
             border-color: var(--border-hover);
+            box-shadow: 0 8px 32px rgba(99, 102, 241, 0.06);
+        }
+
+        .feature-card.visible:hover {
+            transform: translateY(-2px);
         }
 
         .feature-card.visible {
@@ -1235,6 +1249,71 @@
             font-size: 0.8125rem;
         }
 
+        /* Business Section */
+        .business {
+            background: var(--bg);
+            text-align: center;
+            padding: 5rem 3rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .business-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .business .section-label {
+            color: var(--primary);
+        }
+
+        .business-description {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .business-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 2rem;
+            background: var(--gradient-2);
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9375rem;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .btn-download:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .business-contact {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+        }
+
+        .business-contact a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .business-contact a:hover {
+            color: var(--primary);
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
             nav {
@@ -1308,6 +1387,310 @@
                 display: none;
             }
         }
+
+        /* CTA Shimmer */
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+        }
+
+        .btn-primary:hover::after {
+            animation: shimmer 0.6s ease forwards;
+        }
+
+        @keyframes shimmer {
+            to { left: 100%; }
+        }
+
+        /* Social Proof */
+        .social-proof {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+
+        .proof-item {
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+        }
+
+        .proof-stars {
+            color: #f59e0b;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        .proof-text {
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+        }
+
+        .proof-number {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .proof-divider {
+            width: 1px;
+            height: 14px;
+            background: var(--border-hover);
+        }
+
+        /* Before/After Comparison */
+        .comparison {
+            background: var(--bg-surface);
+            overflow: hidden;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 0;
+            max-width: 900px;
+            margin: 0 auto;
+            align-items: stretch;
+        }
+
+        .comparison-card {
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        .comparison-card.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        .comparison-card.before {
+            transform: translateX(-20px);
+        }
+
+        .comparison-card.before.visible {
+            opacity: 0.75;
+        }
+
+        .comparison-card.after {
+            border-color: var(--primary);
+            transform: translateX(20px);
+        }
+
+        .comparison-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 1.5rem;
+        }
+
+        .comparison-arrow svg {
+            color: var(--text-muted);
+            opacity: 0.5;
+        }
+
+        .comparison-label {
+            display: inline-block;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+        }
+
+        .comparison-card.before .comparison-label {
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+        }
+
+        .comparison-card.after .comparison-label {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-light);
+        }
+
+        .comparison-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .comparison-items {
+            list-style: none;
+        }
+
+        .comparison-items li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .comparison-items li .icon {
+            min-width: 18px;
+            text-align: center;
+            font-size: 0.75rem;
+            margin-top: 3px;
+            font-weight: 600;
+        }
+
+        .comparison-card.before .icon { color: #ef4444; }
+        .comparison-card.after .icon { color: var(--primary); }
+
+        .comparison-time {
+            margin-top: 1.25rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+
+        .comparison-time-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .comparison-card.after .comparison-time-value {
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .comparison-time-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Pricing Toggle */
+        .pricing-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 3rem;
+        }
+
+        .toggle-option {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: color 0.2s;
+            font-weight: 500;
+            user-select: none;
+        }
+
+        .toggle-option.active {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 48px;
+            height: 26px;
+            background: var(--bg-elevated);
+            border-radius: 13px;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+
+        .toggle-switch.yearly {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .toggle-knob {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 18px;
+            height: 18px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .toggle-switch.yearly .toggle-knob {
+            transform: translateX(22px);
+        }
+
+        .pricing-save-badge {
+            display: inline-block;
+            padding: 0.25rem 0.625rem;
+            background: rgba(34, 211, 238, 0.1);
+            color: var(--accent);
+            border-radius: 100px;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+
+        .pricing-grid-two {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .pricing-monthly-equiv {
+            font-size: 0.8125rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        @media (max-width: 1024px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .comparison-arrow {
+                padding: 0.5rem 0;
+            }
+            .comparison-arrow svg {
+                transform: rotate(90deg);
+            }
+            .pricing-grid-two {
+                grid-template-columns: 1fr;
+                max-width: 360px;
+            }
+            .social-proof {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .social-proof {
+                flex-wrap: wrap;
+                gap: 0.75rem;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1370,8 +1753,24 @@
                         Google Play
                     </a>
                 </div>
+                <div class="social-proof">
+                    <div class="proof-item">
+                        <span class="proof-stars">★★★★★</span>
+                        <span class="proof-text">App Store 4.6</span>
+                    </div>
+                    <div class="proof-divider"></div>
+                    <div class="proof-item">
+                        <span class="proof-number">50,000+</span>
+                        <span class="proof-text">ダウンロード</span>
+                    </div>
+                    <div class="proof-divider"></div>
+                    <div class="proof-item">
+                        <span class="proof-number">100+</span>
+                        <span class="proof-text">言語対応</span>
+                    </div>
+                </div>
             </div>
-            
+
             <div class="hero-visual">
                 <div class="phone-mockup">
                     <div class="phone-frame">
@@ -1434,6 +1833,53 @@
                             <div class="card-sub">多言語対応</div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Comparison -->
+    <section class="comparison" aria-labelledby="comparison-title">
+        <div class="section-header">
+            <span class="section-label">WHY TEXTER</span>
+            <h2 class="section-title" id="comparison-title">手作業に、もう戻れない</h2>
+            <p class="section-description">文字起こしの「あたりまえ」が変わる</p>
+        </div>
+
+        <div class="comparison-grid">
+            <div class="comparison-card before">
+                <span class="comparison-label">Before</span>
+                <h3 class="comparison-title">手動で書き起こす場合</h3>
+                <ul class="comparison-items">
+                    <li><span class="icon">×</span>聞き直しながら手入力</li>
+                    <li><span class="icon">×</span>話の全体像がつかめない</li>
+                    <li><span class="icon">×</span>構造化に別途時間が必要</li>
+                    <li><span class="icon">×</span>多言語は対応できない</li>
+                </ul>
+                <div class="comparison-time">
+                    <span class="comparison-time-value">45分</span>
+                    <span class="comparison-time-label">/ 1時間の会議</span>
+                </div>
+            </div>
+
+            <div class="comparison-arrow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </div>
+
+            <div class="comparison-card after">
+                <span class="comparison-label">With Texter</span>
+                <h3 class="comparison-title">AIが自動で仕上げる</h3>
+                <ul class="comparison-items">
+                    <li><span class="icon">✓</span>録音しながらリアルタイム変換</li>
+                    <li><span class="icon">✓</span>話題マップで全体を俯瞰</li>
+                    <li><span class="icon">✓</span>トピックまとめで自動構造化</li>
+                    <li><span class="icon">✓</span>100以上の言語に対応</li>
+                </ul>
+                <div class="comparison-time">
+                    <span class="comparison-time-value">0秒</span>
+                    <span class="comparison-time-label">/ 自動で完了</span>
                 </div>
             </div>
         </div>
@@ -1579,10 +2025,19 @@
     <section class="pricing" id="pricing" aria-labelledby="pricing-title">
         <div class="section-header">
             <span class="section-label">PRICING</span>
-            <h2 class="section-title" id="pricing-title">あなたの用途に合わせて<br>選べるプラン</h2>
+            <h2 class="section-title" id="pricing-title">シンプルな料金プラン</h2>
+            <p class="section-description">まずは無料で。もっと使いたくなったらPremiumへ。</p>
         </div>
 
-        <div class="pricing-grid">
+        <div class="pricing-toggle">
+            <span class="toggle-option active" data-plan="monthly">月額</span>
+            <div class="toggle-switch" id="toggleSwitch">
+                <div class="toggle-knob"></div>
+            </div>
+            <span class="toggle-option" data-plan="yearly">年額<span class="pricing-save-badge">¥9,200 お得</span></span>
+        </div>
+
+        <div class="pricing-grid-two">
             <div class="pricing-card">
                 <div class="pricing-name">Free</div>
                 <div class="pricing-price">¥0</div>
@@ -1597,11 +2052,12 @@
             </div>
 
             <div class="pricing-card featured">
-                <div class="pricing-badge">人気</div>
-                <div class="pricing-name">Premium M</div>
-                <div class="pricing-price">¥1,500<span>/月</span></div>
-                <p class="pricing-description">1週間無料トライアル付き</p>
-                <ul class="pricing-features">
+                <div class="pricing-badge" id="premiumBadge">人気</div>
+                <div class="pricing-name">Premium</div>
+                <div class="pricing-price" id="premiumPrice">¥1,500<span>/月</span></div>
+                <p class="pricing-monthly-equiv" id="monthlyEquiv" style="display: none;">月あたり約¥733</p>
+                <p class="pricing-description" id="premiumDesc">1週間無料トライアル付き</p>
+                <ul class="pricing-features" id="premiumFeatures">
                     <li>Whisper 無制限</li>
                     <li>高性能モード (3時間/月)</li>
                     <li>画像文字起こし 無制限</li>
@@ -1612,29 +2068,7 @@
                     <li>ワードクラウド</li>
                     <li>広告非表示</li>
                 </ul>
-                <a href="https://apps.apple.com/jp/app/id1482592304" class="pricing-btn pricing-btn-primary" target="_blank" rel="noopener noreferrer">無料トライアル</a>
-            </div>
-
-            <div class="pricing-card">
-                <div class="pricing-badge">お得</div>
-                <div class="pricing-name">Premium Y</div>
-                <div class="pricing-price">¥7,400<span>/年</span></div>
-                <p class="pricing-description">AI可視化ツール全開放。知識を構造化する新体験。</p>
-                <ul class="pricing-features">
-                    <li>Whisper 無制限</li>
-                    <li>高性能モード (10時間/月)</li>
-                    <li>画像文字起こし 無制限</li>
-                    <li>自動無音カット</li>
-                    <li>動画字幕生成</li>
-                    <li>AI要約機能</li>
-                    <li>話題マップ 無制限</li>
-                    <li>トピックまとめ 無制限</li>
-                    <li>ワードクラウド 無制限</li>
-                    <li>4種類のエクスポート形式</li>
-                    <li>優先サポート</li>
-                    <li>広告非表示</li>
-                </ul>
-                <a href="https://apps.apple.com/jp/app/id1482592304" class="pricing-btn pricing-btn-secondary" target="_blank" rel="noopener noreferrer">年間プランを選択</a>
+                <a href="https://apps.apple.com/jp/app/id1482592304" class="pricing-btn pricing-btn-primary" id="premiumCta" target="_blank" rel="noopener noreferrer">無料トライアル</a>
             </div>
         </div>
     </section>
@@ -1699,6 +2133,26 @@
         </div>
     </section>
 
+    <!-- Business Section -->
+    <section class="business" id="business">
+        <div class="business-content">
+            <span class="section-label">FOR BUSINESS</span>
+            <h2 class="section-title">法人でのご利用をご検討の方へ</h2>
+            <p class="business-description">Texterの機能・料金・セキュリティ情報をまとめた<br>法人向け資料をご用意しています。</p>
+            <div class="business-actions">
+                <a href="assets/pdf/texter-for-business.pdf" class="btn-download" download onclick="gtag('event', 'pdf_download', { 'event_category': 'business', 'event_label': 'texter-for-business' });">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    法人向け資料をダウンロード（PDF）
+                </a>
+                <p class="business-contact">お問い合わせ: <a href="mailto:texter.work.app@gmail.com">texter.work.app@gmail.com</a></p>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="footer-content">
@@ -1714,6 +2168,7 @@
                     <li><a href="#usecases">利用方法</a></li>
                     <li><a href="https://texter-app.notion.site/faq-ja" target="_blank" rel="noopener noreferrer">よくある質問</a></li>
                     <li><a href="mailto:texter.work.app@gmail.com">お問い合わせ</a></li>
+                    <li><a href="#business">法人向け資料</a></li>
                 </ul>
             </div>
             
@@ -1841,7 +2296,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.feature-card, .usecase-card, .pricing-card, .review-card').forEach(el => {
+        document.querySelectorAll('.feature-card, .usecase-card, .pricing-card, .review-card, .comparison-card').forEach(el => {
             observer.observe(el);
         });
 
@@ -1880,6 +2335,52 @@
                 }
             });
         });
+
+        // Pricing toggle
+        const toggleSwitch = document.getElementById('toggleSwitch');
+        const toggleOptions = document.querySelectorAll('.toggle-option');
+        const premiumPrice = document.getElementById('premiumPrice');
+        const premiumBadge = document.getElementById('premiumBadge');
+        const premiumDesc = document.getElementById('premiumDesc');
+        const premiumFeatures = document.getElementById('premiumFeatures');
+        const monthlyEquiv = document.getElementById('monthlyEquiv');
+        const premiumCta = document.getElementById('premiumCta');
+        let isYearly = false;
+
+        const monthlyFeaturesHTML = '<li>Whisper 無制限</li><li>高性能モード (3時間/月)</li><li>画像文字起こし 無制限</li><li>自動無音カット</li><li>動画字幕生成</li><li>AI要約機能</li><li>話題マップ・トピックまとめ</li><li>ワードクラウド</li><li>広告非表示</li>';
+        const yearlyFeaturesHTML = '<li>Whisper 無制限</li><li>高性能モード (10時間/月)</li><li>画像文字起こし 無制限</li><li>自動無音カット</li><li>動画字幕生成</li><li>AI要約機能</li><li>話題マップ 無制限</li><li>トピックまとめ 無制限</li><li>ワードクラウド 無制限</li><li>4種類のエクスポート形式</li><li>優先サポート</li><li>広告非表示</li>';
+
+        function updatePricing() {
+            if (isYearly) {
+                toggleSwitch.classList.add('yearly');
+                toggleOptions[0].classList.remove('active');
+                toggleOptions[1].classList.add('active');
+                premiumPrice.innerHTML = '¥8,800<span>/年</span>';
+                monthlyEquiv.textContent = '月あたり約¥733';
+                premiumBadge.textContent = 'お得';
+                premiumDesc.textContent = 'AI可視化ツール全開放。知識を構造化する新体験。';
+                premiumFeatures.innerHTML = yearlyFeaturesHTML;
+                monthlyEquiv.style.display = 'block';
+                premiumCta.textContent = '年間プランを選択';
+            } else {
+                toggleSwitch.classList.remove('yearly');
+                toggleOptions[0].classList.add('active');
+                toggleOptions[1].classList.remove('active');
+                premiumPrice.innerHTML = '¥1,500<span>/月</span>';
+                premiumBadge.textContent = '人気';
+                premiumDesc.textContent = '1週間無料トライアル付き';
+                premiumFeatures.innerHTML = monthlyFeaturesHTML;
+                monthlyEquiv.style.display = 'none';
+                premiumCta.textContent = '無料トライアル';
+            }
+        }
+
+        if (toggleSwitch) {
+            toggleSwitch.addEventListener('click', () => { isYearly = !isYearly; updatePricing(); });
+            toggleOptions.forEach(opt => {
+                opt.addEventListener('click', () => { isYearly = opt.dataset.plan === 'yearly'; updatePricing(); });
+            });
+        }
     </script>
 
     <!-- Smart App Banner for Android -->
@@ -1897,7 +2398,7 @@
         "offers": {
             "@type": "AggregateOffer",
             "lowPrice": "0",
-            "highPrice": "7400",
+            "highPrice": "8800",
             "priceCurrency": "JPY",
             "offerCount": "3"
         },

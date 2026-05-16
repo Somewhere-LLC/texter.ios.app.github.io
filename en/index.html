@@ -179,9 +179,18 @@
 
         nav.scrolled {
             padding: 1rem 3rem;
-            background: var(--bg);
+            background: rgba(9, 9, 11, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
         }
+
+        @media (prefers-color-scheme: light) {
+            nav.scrolled { background: rgba(250, 250, 250, 0.8); }
+        }
+
+        [data-theme="light"] nav.scrolled { background: rgba(250, 250, 250, 0.8); }
+        [data-theme="dark"] nav.scrolled { background: rgba(9, 9, 11, 0.8); }
 
         .nav-left {
             display: flex;
@@ -781,6 +790,11 @@
 
         .feature-card:hover {
             border-color: var(--border-hover);
+            box-shadow: 0 8px 32px rgba(99, 102, 241, 0.06);
+        }
+
+        .feature-card.visible:hover {
+            transform: translateY(-2px);
         }
 
         .feature-card.visible {
@@ -1281,6 +1295,310 @@
                 display: none;
             }
         }
+
+        /* CTA Shimmer */
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+        }
+
+        .btn-primary:hover::after {
+            animation: shimmer 0.6s ease forwards;
+        }
+
+        @keyframes shimmer {
+            to { left: 100%; }
+        }
+
+        /* Social Proof */
+        .social-proof {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+
+        .proof-item {
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+        }
+
+        .proof-stars {
+            color: #f59e0b;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        .proof-text {
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+        }
+
+        .proof-number {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .proof-divider {
+            width: 1px;
+            height: 14px;
+            background: var(--border-hover);
+        }
+
+        /* Before/After Comparison */
+        .comparison {
+            background: var(--bg-surface);
+            overflow: hidden;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 0;
+            max-width: 900px;
+            margin: 0 auto;
+            align-items: stretch;
+        }
+
+        .comparison-card {
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        .comparison-card.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        .comparison-card.before {
+            transform: translateX(-20px);
+        }
+
+        .comparison-card.before.visible {
+            opacity: 0.75;
+        }
+
+        .comparison-card.after {
+            border-color: var(--primary);
+            transform: translateX(20px);
+        }
+
+        .comparison-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 1.5rem;
+        }
+
+        .comparison-arrow svg {
+            color: var(--text-muted);
+            opacity: 0.5;
+        }
+
+        .comparison-label {
+            display: inline-block;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+        }
+
+        .comparison-card.before .comparison-label {
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+        }
+
+        .comparison-card.after .comparison-label {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-light);
+        }
+
+        .comparison-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .comparison-items {
+            list-style: none;
+        }
+
+        .comparison-items li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .comparison-items li .icon {
+            min-width: 18px;
+            text-align: center;
+            font-size: 0.75rem;
+            margin-top: 3px;
+            font-weight: 600;
+        }
+
+        .comparison-card.before .icon { color: #ef4444; }
+        .comparison-card.after .icon { color: var(--primary); }
+
+        .comparison-time {
+            margin-top: 1.25rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+
+        .comparison-time-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .comparison-card.after .comparison-time-value {
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .comparison-time-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Pricing Toggle */
+        .pricing-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 3rem;
+        }
+
+        .toggle-option {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: color 0.2s;
+            font-weight: 500;
+            user-select: none;
+        }
+
+        .toggle-option.active {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 48px;
+            height: 26px;
+            background: var(--bg-elevated);
+            border-radius: 13px;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+
+        .toggle-switch.yearly {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .toggle-knob {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 18px;
+            height: 18px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .toggle-switch.yearly .toggle-knob {
+            transform: translateX(22px);
+        }
+
+        .pricing-save-badge {
+            display: inline-block;
+            padding: 0.25rem 0.625rem;
+            background: rgba(34, 211, 238, 0.1);
+            color: var(--accent);
+            border-radius: 100px;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+
+        .pricing-grid-two {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .pricing-monthly-equiv {
+            font-size: 0.8125rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        @media (max-width: 1024px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .comparison-arrow {
+                padding: 0.5rem 0;
+            }
+            .comparison-arrow svg {
+                transform: rotate(90deg);
+            }
+            .pricing-grid-two {
+                grid-template-columns: 1fr;
+                max-width: 360px;
+            }
+            .social-proof {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .social-proof {
+                flex-wrap: wrap;
+                gap: 0.75rem;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1338,8 +1656,24 @@
                         Google Play
                     </a>
                 </div>
+                <div class="social-proof">
+                    <div class="proof-item">
+                        <span class="proof-stars">★★★★★</span>
+                        <span class="proof-text">App Store 4.6</span>
+                    </div>
+                    <div class="proof-divider"></div>
+                    <div class="proof-item">
+                        <span class="proof-number">50,000+</span>
+                        <span class="proof-text">Downloads</span>
+                    </div>
+                    <div class="proof-divider"></div>
+                    <div class="proof-item">
+                        <span class="proof-number">100+</span>
+                        <span class="proof-text">Languages</span>
+                    </div>
+                </div>
             </div>
-            
+
             <div class="hero-visual">
                 <div class="phone-mockup">
                     <div class="phone-frame">
@@ -1402,6 +1736,53 @@
                             <div class="card-sub">Multilingual</div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Comparison -->
+    <section class="comparison" aria-labelledby="comparison-title">
+        <div class="section-header">
+            <span class="section-label">WHY TEXTER</span>
+            <h2 class="section-title" id="comparison-title">No going back to manual</h2>
+            <p class="section-description">See how transcription should work</p>
+        </div>
+
+        <div class="comparison-grid">
+            <div class="comparison-card before">
+                <span class="comparison-label">Before</span>
+                <h3 class="comparison-title">Manual transcription</h3>
+                <ul class="comparison-items">
+                    <li><span class="icon">×</span>Rewind and type manually</li>
+                    <li><span class="icon">×</span>Hard to see the big picture</li>
+                    <li><span class="icon">×</span>Structuring takes extra time</li>
+                    <li><span class="icon">×</span>No multilingual support</li>
+                </ul>
+                <div class="comparison-time">
+                    <span class="comparison-time-value">45 min</span>
+                    <span class="comparison-time-label">/ 1 hour meeting</span>
+                </div>
+            </div>
+
+            <div class="comparison-arrow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </div>
+
+            <div class="comparison-card after">
+                <span class="comparison-label">With Texter</span>
+                <h3 class="comparison-title">AI handles everything</h3>
+                <ul class="comparison-items">
+                    <li><span class="icon">✓</span>Real-time transcription while recording</li>
+                    <li><span class="icon">✓</span>Topic Map for bird's-eye view</li>
+                    <li><span class="icon">✓</span>Auto-structured with Topic Summary</li>
+                    <li><span class="icon">✓</span>100+ languages supported</li>
+                </ul>
+                <div class="comparison-time">
+                    <span class="comparison-time-value">0 sec</span>
+                    <span class="comparison-time-label">/ fully automatic</span>
                 </div>
             </div>
         </div>
@@ -1547,10 +1928,19 @@
     <section class="pricing" id="pricing" aria-labelledby="pricing-title">
         <div class="section-header">
             <span class="section-label">PRICING</span>
-            <h2 class="section-title" id="pricing-title">Plans for<br>your needs</h2>
+            <h2 class="section-title" id="pricing-title">Simple pricing</h2>
+            <p class="section-description">Start free. Upgrade when you need more.</p>
         </div>
 
-        <div class="pricing-grid">
+        <div class="pricing-toggle">
+            <span class="toggle-option active" data-plan="monthly">Monthly</span>
+            <div class="toggle-switch" id="toggleSwitch">
+                <div class="toggle-knob"></div>
+            </div>
+            <span class="toggle-option" data-plan="yearly">Yearly<span class="pricing-save-badge">Save $60</span></span>
+        </div>
+
+        <div class="pricing-grid-two">
             <div class="pricing-card">
                 <div class="pricing-name">Free</div>
                 <div class="pricing-price">$0</div>
@@ -1565,11 +1955,12 @@
             </div>
 
             <div class="pricing-card featured">
-                <div class="pricing-badge">Popular</div>
-                <div class="pricing-name">Premium M</div>
-                <div class="pricing-price">$9.99<span>/mo</span></div>
-                <p class="pricing-description">1 week free trial included</p>
-                <ul class="pricing-features">
+                <div class="pricing-badge" id="premiumBadge">Popular</div>
+                <div class="pricing-name">Premium</div>
+                <div class="pricing-price" id="premiumPrice">$9.99<span>/mo</span></div>
+                <p class="pricing-monthly-equiv" id="monthlyEquiv" style="display: none;">~$5.00/mo</p>
+                <p class="pricing-description" id="premiumDesc">1 week free trial included</p>
+                <ul class="pricing-features" id="premiumFeatures">
                     <li>Whisper Unlimited</li>
                     <li>High-performance mode (3hr/mo)</li>
                     <li>Unlimited image OCR</li>
@@ -1580,29 +1971,7 @@
                     <li>Word Cloud</li>
                     <li>Ad-free</li>
                 </ul>
-                <a href="https://apps.apple.com/app/id1482592304" class="pricing-btn pricing-btn-primary" target="_blank" rel="noopener noreferrer">Start Free Trial</a>
-            </div>
-
-            <div class="pricing-card">
-                <div class="pricing-badge">Best Value</div>
-                <div class="pricing-name">Premium Y</div>
-                <div class="pricing-price">$49.99<span>/yr</span></div>
-                <p class="pricing-description">Full AI visualization suite. Structure your knowledge.</p>
-                <ul class="pricing-features">
-                    <li>Whisper Unlimited</li>
-                    <li>High-performance mode (10hr/mo)</li>
-                    <li>Unlimited image OCR</li>
-                    <li>Auto silence removal</li>
-                    <li>Video subtitle generation</li>
-                    <li>AI summary</li>
-                    <li>Unlimited Topic Map</li>
-                    <li>Unlimited Topic Summary</li>
-                    <li>Unlimited Word Cloud</li>
-                    <li>4 export formats</li>
-                    <li>Priority support</li>
-                    <li>Ad-free</li>
-                </ul>
-                <a href="https://apps.apple.com/app/id1482592304" class="pricing-btn pricing-btn-secondary" target="_blank" rel="noopener noreferrer">Choose Yearly</a>
+                <a href="https://apps.apple.com/app/id1482592304" class="pricing-btn pricing-btn-primary" id="premiumCta" target="_blank" rel="noopener noreferrer">Start Free Trial</a>
             </div>
         </div>
     </section>
@@ -1808,7 +2177,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.feature-card, .usecase-card, .pricing-card, .review-card').forEach(el => {
+        document.querySelectorAll('.feature-card, .usecase-card, .pricing-card, .review-card, .comparison-card').forEach(el => {
             observer.observe(el);
         });
 
@@ -1847,6 +2216,51 @@
                 }
             });
         });
+
+        // Pricing toggle
+        const toggleSwitch = document.getElementById('toggleSwitch');
+        const toggleOptions = document.querySelectorAll('.toggle-option');
+        const premiumPrice = document.getElementById('premiumPrice');
+        const premiumBadge = document.getElementById('premiumBadge');
+        const premiumDesc = document.getElementById('premiumDesc');
+        const premiumFeatures = document.getElementById('premiumFeatures');
+        const monthlyEquiv = document.getElementById('monthlyEquiv');
+        const premiumCta = document.getElementById('premiumCta');
+        let isYearly = false;
+
+        const monthlyFeaturesHTML = '<li>Whisper Unlimited</li><li>High-performance mode (3hr/mo)</li><li>Unlimited image OCR</li><li>Auto silence removal</li><li>Video subtitle generation</li><li>AI summary</li><li>Topic Map & Topic Summary</li><li>Word Cloud</li><li>Ad-free</li>';
+        const yearlyFeaturesHTML = '<li>Whisper Unlimited</li><li>High-performance mode (10hr/mo)</li><li>Unlimited image OCR</li><li>Auto silence removal</li><li>Video subtitle generation</li><li>AI summary</li><li>Unlimited Topic Map</li><li>Unlimited Topic Summary</li><li>Unlimited Word Cloud</li><li>4 export formats</li><li>Priority support</li><li>Ad-free</li>';
+
+        function updatePricing() {
+            if (isYearly) {
+                toggleSwitch.classList.add('yearly');
+                toggleOptions[0].classList.remove('active');
+                toggleOptions[1].classList.add('active');
+                premiumPrice.innerHTML = '$59.99<span>/yr</span>';
+                premiumBadge.textContent = 'Best Value';
+                premiumDesc.textContent = 'Full AI visualization suite. Structure your knowledge.';
+                premiumFeatures.innerHTML = yearlyFeaturesHTML;
+                monthlyEquiv.style.display = 'block';
+                premiumCta.textContent = 'Choose Yearly';
+            } else {
+                toggleSwitch.classList.remove('yearly');
+                toggleOptions[0].classList.add('active');
+                toggleOptions[1].classList.remove('active');
+                premiumPrice.innerHTML = '$9.99<span>/mo</span>';
+                premiumBadge.textContent = 'Popular';
+                premiumDesc.textContent = '1 week free trial included';
+                premiumFeatures.innerHTML = monthlyFeaturesHTML;
+                monthlyEquiv.style.display = 'none';
+                premiumCta.textContent = 'Start Free Trial';
+            }
+        }
+
+        if (toggleSwitch) {
+            toggleSwitch.addEventListener('click', () => { isYearly = !isYearly; updatePricing(); });
+            toggleOptions.forEach(opt => {
+                opt.addEventListener('click', () => { isYearly = opt.dataset.plan === 'yearly'; updatePricing(); });
+            });
+        }
     </script>
 
     <!-- Smart App Banner for Android -->
@@ -1864,7 +2278,7 @@
         "offers": {
             "@type": "AggregateOffer",
             "lowPrice": "0",
-            "highPrice": "7400",
+            "highPrice": "5999",
             "priceCurrency": "JPY",
             "offerCount": "3"
         },

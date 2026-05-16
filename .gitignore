@@ -16,3 +16,6 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+# Dependencies
+node_modules/

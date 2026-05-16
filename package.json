@@ -4,6 +4,11 @@
   "version": "0.1.0",
   "description": "Texter landing page",
   "scripts": {
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.js",
+    "generate-pdf": "node scripts/generate-pdf.js",
+    "build:all": "npm run generate-pdf && npm run build"
+  },
+  "devDependencies": {
+    "puppeteer": "^24.0.0"
   }
 }
