@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179024659-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-179024659-1', {
+            'anonymize_ip': true,
+            'cookie_flags': 'SameSite=None;Secure'
+        });
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="description" content="Terms of Service for Texter, the AI speech-to-text app.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://texter.work/en/terms-of-service.html">
+    <link rel="alternate" hreflang="ja" href="https://texter.work/terms-of-service.html">
+    <link rel="alternate" hreflang="en" href="https://texter.work/en/terms-of-service.html">
+    <link rel="alternate" hreflang="x-default" href="https://texter.work/terms-of-service.html">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://texter.work/en/terms-of-service.html">
+    <meta property="og:title" content="Terms of Service | Texter">
+    <meta property="og:description" content="Terms of Service for Texter, the AI speech-to-text app.">
+    <meta property="og:site_name" content="Texter">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://texter.work/img/ogp-en.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Terms of Service | Texter">
+    <meta name="twitter:description" content="Terms of Service for Texter, the AI speech-to-text app.">
+    <meta name="twitter:image" content="https://texter.work/img/ogp-en.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png">
+
+    <title>Terms of Service | Texter</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Space+Mono:wght@700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+:root {
+    --primary: #6366f1;
+    --primary-light: #818cf8;
+    --primary-dark: #4f46e5;
+    --accent: #22d3ee;
+    --bg: #09090b;
+    --bg-surface: #0f0f12;
+    --bg-elevated: #18181b;
+    --text-primary: #fafafa;
+    --text-secondary: rgba(250, 250, 250, 0.6);
+    --text-muted: rgba(250, 250, 250, 0.35);
+    --border: rgba(255, 255, 255, 0.06);
+    --border-hover: rgba(255, 255, 255, 0.12);
+}
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg: #fafafa; --bg-surface: #ffffff; --bg-elevated: #f4f4f5;
+        --text-primary: #09090b; --text-secondary: rgba(9, 9, 11, 0.6);
+        --text-muted: rgba(9, 9, 11, 0.4); --border: rgba(0, 0, 0, 0.06);
+        --border-hover: rgba(0, 0, 0, 0.12);
+    }
+}
+[data-theme="light"] {
+    --bg: #fafafa; --bg-surface: #ffffff; --bg-elevated: #f4f4f5;
+    --text-primary: #09090b; --text-secondary: rgba(9, 9, 11, 0.6);
+    --text-muted: rgba(9, 9, 11, 0.4); --border: rgba(0, 0, 0, 0.06);
+    --border-hover: rgba(0, 0, 0, 0.12);
+}
+[data-theme="dark"] {
+    --bg: #09090b; --bg-surface: #0f0f12; --bg-elevated: #18181b;
+    --text-primary: #fafafa; --text-secondary: rgba(250, 250, 250, 0.6);
+    --text-muted: rgba(250, 250, 250, 0.35); --border: rgba(255, 255, 255, 0.06);
+    --border-hover: rgba(255, 255, 255, 0.12);
+}
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.8;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 3rem;
+    border-bottom: 1px solid var(--border);
+}
+.logo {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -1px;
+    text-decoration: none;
+}
+.nav-right { display: flex; align-items: center; gap: 0.75rem; }
+.theme-toggle {
+    width: 36px; height: 36px; border-radius: 8px;
+    border: 1px solid var(--border); background: transparent;
+    color: var(--text-secondary); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s ease;
+}
+.theme-toggle:hover { border-color: var(--border-hover); color: var(--text-primary); }
+.lang-switch, .back-link {
+    padding: 0.5rem 1rem; border-radius: 8px;
+    border: 1px solid var(--border); background: transparent;
+    color: var(--text-secondary); font-size: 0.8125rem; font-weight: 500;
+    text-decoration: none; transition: all 0.2s ease;
+}
+.lang-switch:hover, .back-link:hover { border-color: var(--border-hover); color: var(--text-primary); }
+main { max-width: 720px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+.legal-title { font-size: 2rem; font-weight: 700; margin: 0 0 0.5rem; }
+.legal-updated { color: var(--text-muted); font-size: 0.875rem; margin-bottom: 3rem; }
+article h2 { font-size: 1.25rem; font-weight: 700; margin: 2.5rem 0 1rem; color: var(--text-primary); }
+article p { color: var(--text-secondary); margin: 0 0 1rem; }
+article ul { color: var(--text-secondary); margin: 0 0 1rem 1.5rem; padding: 0; }
+article li { margin-bottom: 0.5rem; }
+article a { color: var(--primary-light); }
+dl.tsh-table { margin: 0; }
+dl.tsh-table dt { font-weight: 700; color: var(--text-primary); margin-top: 1.75rem; }
+dl.tsh-table dd { color: var(--text-secondary); margin: 0.4rem 0 0; }
+.legal-footer-note { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.875rem; }
+footer { padding: 3rem 1.5rem; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.8125rem; }
+footer a { color: var(--text-secondary); text-decoration: none; margin: 0 0.6rem; }
+footer a:hover { color: var(--text-primary); }
+@media (max-width: 640px) {
+    nav { padding: 1rem 1.25rem; }
+    main { padding: 3rem 1.25rem 4rem; }
+}
+</style>
+</head>
+<body>
+    <nav aria-label="Main navigation">
+        <a href="/en/" class="logo">Texter</a>
+        <div class="nav-right">
+            <button class="theme-toggle" id="themeToggle" aria-label="テーマ切替">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="sun-icon">
+                    <circle cx="12" cy="12" r="5"/>
+                    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                </svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="moon-icon" style="display:none;">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+            <a href="/terms-of-service.html" class="lang-switch">JA</a>
+            <a href="/en/" class="back-link">← Home</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1 class="legal-title">Terms of Service</h1>
+
+        <article>
+            <p>These terms govern the relationship between the user of the application provided by the Company (hereinafter referred to as the "user") and the Company.</p>
+            <p>These terms apply to all relationships arising in connection with the use of this application.</p>
+            <p>The terms of use of this application are stipulated by these Terms of Use and other terms and conditions set by the Company. Other terms of use, etc., form part of these Terms of Use, regardless of name. In addition, if the provisions of these Terms of Use differ from the provisions of other terms of use, the provisions of these Terms of Use will be applied with priority unless otherwise specified by the Company.</p>
+            <p>By downloading, installing or using this application, the user is deemed to have agreed to all the contents of the Terms of Use.</p>
+            <h2>Article 1 (Definition of terms)</h2>
+            <p>This application: “Texter”, a service provided by the Company</p>
+            <p>User: User of this application</p>
+            <h2>Article 2 (Proprietary rights such as copyright)</h2>
+            <p>Copyrights and other intellectual property rights relating to this application belong to the Company or third parties who have valid rights.</p>
+            <h2>Article 3 (Responsibilities and Duty of Care)</h2>
+            <p>The user shall use this application on his / her own responsibility, and shall bear all responsibility for any actions that the user has performed in using the application and any damages resulting therefrom. The User shall not be liable to the Company for any damage or liability in the event of a dispute or claim for damages caused by the use of the copyrighted work of another user or a third party.</p>
+            <p>THIS SERVICE MAY CONTAIN TRANSLATIONS POWERED BY GOOGLE. GOOGLE DISCLAIMS ALL WARRANTIES RELATED TO THE TRANSLATIONS, EXPRESS OR IMPLIED, INCLUDING ANY WARRANTIES OF ACCURACY, RELIABILITY, AND ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.</p>
+            <h2>Article 4 (Privacy)</h2>
+            <p>We obtain from users the minimum information required to provide this application.</p>
+            <p>We take the utmost care in protecting the privacy information obtained from you.</p>
+            <h2>Article 5 (Disclaimer)</h2>
+            <p>1. The user is responsible for the data downloaded by the user, and the Company assumes no responsibility. In addition, even if it is for private use, it shall be used within the scope not violating criminal law, copyright law and other laws and regulations.</p>
+            <p>2. We have no obligation to maintain, modify functions, or provide technical support to users for this application.</p>
+            <p>3. All intellectual property rights, such as video, audio, and images, belong to the author / organization.</p>
+            <h2>Article 6 (Change of service, etc.)</h2>
+            <p>We may add, change, suspend, or terminate the Services at any time and for any reason at our convenience.</p>
+            <p>The Company shall not be liable for any changes, interruptions, abolition, or unforeseen circumstances that occur in the Service and the loss of stored and recorded data and files, not limited to the user's responsibility.</p>
+            <p>The Company shall not be liable for any damages that may occur to users due to data deletion.</p>
+            <h2>Article 7 (Revision of Terms)</h2>
+            <p>The Company may change the Terms without the consent of the user due to the establishment, change, or abolition of laws and regulations. In this case, the changed terms will take effect from the time they are displayed on this application.</p>
+            <h2>Article 8 (Governing law jurisdiction)</h2>
+            <p>Regarding this application and this agreement, Japanese law will be the governing law.</p>
+            <p>Disputes between the Company and users will be governed by the laws of Japan, and the court having jurisdiction over the Company's head office will be the exclusive jurisdiction court of the first instance.</p>
+            <h2>Article 9 (Use of the Publish Feature)</h2>
+            <p>1. The user may, at their own responsibility, create a public link for a note and share it with third parties.</p>
+            <p>2. The user shall confirm that they hold the lawful right to publish the note they choose to publish. The user shall not publish content that infringes the personal information, privacy, right of publicity, copyright, trademark rights, trade secrets, or other rights or interests of a third party.</p>
+            <p>3. If the Company reasonably determines that published content violates applicable law or these Terms, infringes the rights of a third party, or is likely to do so, the Company may suspend the publication, disable the public link, delete the content, or take any other necessary measures without prior notice to the user.</p>
+            <p>4. If a user disables a public link, subsequent viewing through that public link will be stopped. However, the Company does not guarantee the deletion or removal of content that a third party viewed, saved, reposted, or copied before the link was disabled.</p>
+            <p>that's all</p>
+            <p>Revised on July 14, 2026</p>
+        </article>
+    </main>
+
+    <footer>
+        <p>
+            <a href="/en/">Home</a>
+            <a href="/en/terms-of-service.html">Terms of Service</a>
+            <a href="/en/privacy-policy.html">Privacy Policy</a>
+        </p>
+        <p style="margin-top:1rem;">© 2025 Texter app - Kyoto, Japan.</p>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const sunIcon = themeToggle.querySelector('.sun-icon');
+        const moonIcon = themeToggle.querySelector('.moon-icon');
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            if (theme === 'light') { sunIcon.style.display = 'none'; moonIcon.style.display = 'block'; }
+            else { sunIcon.style.display = 'block'; moonIcon.style.display = 'none'; }
+        }
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) { setTheme(savedTheme); }
+        else if (window.matchMedia('(prefers-color-scheme: light)').matches) { setTheme('light'); }
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            setTheme(currentTheme === 'light' ? 'dark' : 'light');
+        });
+    </script>
+
+</body>
+</html>

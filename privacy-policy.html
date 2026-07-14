@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179024659-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-179024659-1', {
+            'anonymize_ip': true,
+            'cookie_flags': 'SameSite=None;Secure'
+        });
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="description" content="Texter（AI音声文字起こしアプリ）の個人情報保護方針です。">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://texter.work/privacy-policy.html">
+    <link rel="alternate" hreflang="ja" href="https://texter.work/privacy-policy.html">
+    <link rel="alternate" hreflang="en" href="https://texter.work/en/privacy-policy.html">
+    <link rel="alternate" hreflang="x-default" href="https://texter.work/privacy-policy.html">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://texter.work/privacy-policy.html">
+    <meta property="og:title" content="プライバシーポリシー | Texter">
+    <meta property="og:description" content="Texter（AI音声文字起こしアプリ）の個人情報保護方針です。">
+    <meta property="og:site_name" content="Texter">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:image" content="https://texter.work/img/ogp.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="プライバシーポリシー | Texter">
+    <meta name="twitter:description" content="Texter（AI音声文字起こしアプリ）の個人情報保護方針です。">
+    <meta name="twitter:image" content="https://texter.work/img/ogp.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png">
+
+    <title>プライバシーポリシー | Texter</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Space+Mono:wght@700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+:root {
+    --primary: #6366f1;
+    --primary-light: #818cf8;
+    --primary-dark: #4f46e5;
+    --accent: #22d3ee;
+    --bg: #09090b;
+    --bg-surface: #0f0f12;
+    --bg-elevated: #18181b;
+    --text-primary: #fafafa;
+    --text-secondary: rgba(250, 250, 250, 0.6);
+    --text-muted: rgba(250, 250, 250, 0.35);
+    --border: rgba(255, 255, 255, 0.06);
+    --border-hover: rgba(255, 255, 255, 0.12);
+}
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg: #fafafa; --bg-surface: #ffffff; --bg-elevated: #f4f4f5;
+        --text-primary: #09090b; --text-secondary: rgba(9, 9, 11, 0.6);
+        --text-muted: rgba(9, 9, 11, 0.4); --border: rgba(0, 0, 0, 0.06);
+        --border-hover: rgba(0, 0, 0, 0.12);
+    }
+}
+[data-theme="light"] {
+    --bg: #fafafa; --bg-surface: #ffffff; --bg-elevated: #f4f4f5;
+    --text-primary: #09090b; --text-secondary: rgba(9, 9, 11, 0.6);
+    --text-muted: rgba(9, 9, 11, 0.4); --border: rgba(0, 0, 0, 0.06);
+    --border-hover: rgba(0, 0, 0, 0.12);
+}
+[data-theme="dark"] {
+    --bg: #09090b; --bg-surface: #0f0f12; --bg-elevated: #18181b;
+    --text-primary: #fafafa; --text-secondary: rgba(250, 250, 250, 0.6);
+    --text-muted: rgba(250, 250, 250, 0.35); --border: rgba(255, 255, 255, 0.06);
+    --border-hover: rgba(255, 255, 255, 0.12);
+}
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.8;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 3rem;
+    border-bottom: 1px solid var(--border);
+}
+.logo {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -1px;
+    text-decoration: none;
+}
+.nav-right { display: flex; align-items: center; gap: 0.75rem; }
+.theme-toggle {
+    width: 36px; height: 36px; border-radius: 8px;
+    border: 1px solid var(--border); background: transparent;
+    color: var(--text-secondary); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s ease;
+}
+.theme-toggle:hover { border-color: var(--border-hover); color: var(--text-primary); }
+.lang-switch, .back-link {
+    padding: 0.5rem 1rem; border-radius: 8px;
+    border: 1px solid var(--border); background: transparent;
+    color: var(--text-secondary); font-size: 0.8125rem; font-weight: 500;
+    text-decoration: none; transition: all 0.2s ease;
+}
+.lang-switch:hover, .back-link:hover { border-color: var(--border-hover); color: var(--text-primary); }
+main { max-width: 720px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+.legal-title { font-size: 2rem; font-weight: 700; margin: 0 0 0.5rem; }
+.legal-updated { color: var(--text-muted); font-size: 0.875rem; margin-bottom: 3rem; }
+article h2 { font-size: 1.25rem; font-weight: 700; margin: 2.5rem 0 1rem; color: var(--text-primary); }
+article p { color: var(--text-secondary); margin: 0 0 1rem; }
+article ul { color: var(--text-secondary); margin: 0 0 1rem 1.5rem; padding: 0; }
+article li { margin-bottom: 0.5rem; }
+article a { color: var(--primary-light); }
+dl.tsh-table { margin: 0; }
+dl.tsh-table dt { font-weight: 700; color: var(--text-primary); margin-top: 1.75rem; }
+dl.tsh-table dd { color: var(--text-secondary); margin: 0.4rem 0 0; }
+.legal-footer-note { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.875rem; }
+footer { padding: 3rem 1.5rem; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.8125rem; }
+footer a { color: var(--text-secondary); text-decoration: none; margin: 0 0.6rem; }
+footer a:hover { color: var(--text-primary); }
+@media (max-width: 640px) {
+    nav { padding: 1rem 1.25rem; }
+    main { padding: 3rem 1.25rem 4rem; }
+}
+</style>
+</head>
+<body>
+    <nav aria-label="メインナビゲーション">
+        <a href="/" class="logo">Texter</a>
+        <div class="nav-right">
+            <button class="theme-toggle" id="themeToggle" aria-label="テーマ切替">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="sun-icon">
+                    <circle cx="12" cy="12" r="5"/>
+                    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                </svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="moon-icon" style="display:none;">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+            <a href="/en/privacy-policy.html" class="lang-switch">EN</a>
+            <a href="/" class="back-link">← ホーム</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1 class="legal-title">個人情報保護方針</h1>
+        <p class="legal-updated">最終更新日：2026年07月14日</p>
+        <article>
+            <p>Somewhere LLCが無料アプリとしてTexter-Voice to Textアプリを作成しました。このサービスは、Somewhere LLCが一部無料で提供するものであり、そのまま使用することを目的としています。</p>
+            <p>このページは、誰かが私のサービスを使用することを決めた場合に、個人情報の収集、使用、開示に関する私のポリシーについて訪問者に知らせるために使用されます。</p>
+            <p>私のサービスを使用することを選択した場合、このポリシーに関連する情報の収集と使用に同意します。私が収集する個人情報は、サービスの提供と改善に使用されます。このプライバシーポリシーに記載されている場合を除き、お客様の情報を使用したり、他人と共有したりすることはありません。</p>
+            <p>このプライバシーポリシーで使用される用語は、このプライバシーポリシーで別途定義されていない限り、Texterでアクセスできる利用規約と同じ意味を持っています。</p>
+            <h2>情報の収集と使用</h2>
+            <p>より良い体験のために、私たちのサービスを使用している間、特定の個人情報を提供するようにあなたに要求する場合があります。私が要求する情報はあなたのデバイスに保存され、いかなる方法でも収集されません。</p>
+            <p>アプリは、あなたを識別するために使用される情報を収集する可能性のあるサードパーティのサービスを使用します。</p>
+            <p>提供先の第三者は、当該国の個人情報保護 に関する法規制を遵守しています。</p>
+            <p>アプリで使用されるサードパーティのサービスプロバイダーのプライバシーポリシーへのリンク</p>
+            <ul>
+                <li><a href="https://firebase.google.com/policies/analytics" target="_blank" rel="noopener noreferrer">Firebase Analytics</a></li>
+            </ul>
+            <h2>ログデータ</h2>
+            <p>私のサービスを使用するたびに、アプリでエラーが発生した場合、電話でLog Dataというデータと情報を（サードパーティ製品を通じて）収集します。このログデータには、デバイスのインターネットプロトコル（「IP」）アドレス、デバイス名、オペレーティングシステムのバージョン、サービスを利用する際のアプリの構成、サービスの使用日時、その他の統計などの情報が含まれる場合があります。</p>
+            <h2>クッキー</h2>
+            <p>Cookieは、匿名の一意の識別子として一般的に使用される少量のデータを含むファイルです。これらは、アクセスしたWebサイトからブラウザに送信され、デバイスの内部メモリに保存されます。</p>
+            <p>このサービスはこれらの「Cookie」を明示的に使用しません。ただし、アプリは情報を収集してサービスを改善するために「Cookie」を使用するサードパーティのコードとライブラリを使用する場合があります。これらのCookieを受け入れるか拒否し、Cookieがいつデバイスに送信されるかを知るオプションがあります。クッキーを拒否することを選択した場合、このサービスの一部を使用できない場合があります。</p>
+            <h2>サービスプロバイダー</h2>
+            <p>次の理由により、サードパーティの企業や個人を雇用する場合があります。</p>
+            <ul>
+                <li>当社のサービスを促進するため。</li>
+                <li>当社に代わってサービスを提供するため。</li>
+                <li>サービス関連のサービスを実行するには;または</li>
+                <li>サービスの使用方法の分析を支援するため。</li>
+            </ul>
+            <p>これらの第三者があなたの個人情報にアクセスできることをこのサービスのユーザーに通知したいと思います。その理由は、私たちに代わって割り当てられたタスクを実行するためです。ただし、他の目的で情報を開示または使用しないことが義務付けられています。</p>
+            <h2>AIサービスへのデータ提供について</h2>
+            <p>本アプリの一部のAI機能（AI要約、AIチャット、トピック分析など）をご利用の際、ノート（文字起こし結果）のテキスト内容を、AI応答を生成する目的で第三者のAIサービスであるOpenAI, L.L.C.（ChatGPT API）へ送信します。</p>
+            <ul>
+                <li>送信されるデータ: ユーザーが作成したノートのテキスト内容</li>
+                <li>送信先: OpenAI, L.L.C.（米国）</li>
+                <li>利用目的: 要約・回答・分類などのAI応答の生成</li>
+                <li>送信されたデータはAI応答の生成にのみ使用され、OpenAIのモデル学習には利用されません（OpenAI APIのデータ利用ポリシーに基づく）。</li>
+                <li>これらのAI機能を初めて利用する際、アプリ内で送信内容の説明と同意の確認を行い、ユーザーが同意した場合にのみデータを送信します。同意しない場合、AI機能は利用されず、データは送信されません。</li>
+                <li>OpenAIは、当社が別途締結する契約およびOpenAIのデータ処理方針により、送信データに対して本ポリシーと同等のデータ保護を提供します。</li>
+            </ul>
+            <h2>セキュリティ</h2>
+            <p>個人情報の提供に対するお客様の信頼を大切にしています。したがって、商業的に許容される保護手段を使用して保護するよう努めています。しかし、インターネットを介した伝送方法、または電子ストレージの方法が100％安全で信頼できるものではないことを忘れないでください。絶対的なセキュリティを保証することはできません。</p>
+            <h2>他のサイトへのリンク</h2>
+            <p>このサービスには、他のサイトへのリンクが含まれている場合があります。サードパーティのリンクをクリックすると、そのサイトに移動します。これらの外部サイトは私によって運営されていないことに注意してください。したがって、これらのWebサイトのプライバシーポリシーを確認することを強くお勧めします。私は、サードパーティのサイトまたはサービスのコンテンツ、プライバシーポリシー、または慣行を管理しておらず、責任を負いません。</p>
+            <h2>子どものプライバシー</h2>
+            <p>これらのサービスは、13歳未満の人には対応していません。13歳未満の子供から個人を特定できる情報を意図的に収集することはありません。13歳未満の子供が個人情報を提供したことが判明した場合、すぐにサーバーからこれを削除します。あなたが親または保護者であり、あなたの子供が私たちに個人情報を提供したことを知っている場合、私に連絡して必要な行動をとることができます。</p>
+            <h2>ノートの公開リンク機能について</h2>
+            <p>本アプリには、ユーザーが自身のノートを公開リンクとして第三者に共有できる任意の機能があります。</p>
+            <p>この機能は初期状態では無効です。ユーザーが公開操作を行った場合に限り、対象となるノートのタイトル、要約および本文のテキストが、公開リンクを知る第三者から閲覧できる状態になります。録音音声、動画、画像その他のメディアファイルは、公開リンクを通じて公開されません。</p>
+            <p>公開リンクは、パスワードなどによって閲覧者を限定する非公開機能ではありません。公開リンクを知る者は、当該ページを閲覧し、その内容を保存または複製できる場合があります。ユーザーは、第三者の個人情報、秘密情報、著作物その他公開する権限のない情報が含まれていないことを確認した上で、公開機能を利用するものとします。</p>
+            <p>公開ページには、対応する検索エンジンの検索結果に表示されないよう、noindexを設定します。ただし、すべての検索エンジンによる非表示や、検索結果に一切表示されないことを保証するものではありません。</p>
+            <p>公開機能の利用状況を把握し、サービスを改善するため、公開ページが閲覧された回数を記録します。閲覧回数は集計情報として使用します。</p>
+            <p>また、公開ページへのアクセスに際して、IPアドレス、アクセス日時、ブラウザまたは端末に関する情報などが、サーバーのアクセスログとして自動的に記録される場合があります。これらの情報は、不正利用の防止、セキュリティの確保、障害の調査およびサービスの改善のために使用します。</p>
+            <p>ユーザーは、公開リンクをいつでも無効にできます。公開リンクを無効にした後は、当該リンクを使用した新たな閲覧はできなくなります。ただし、無効にする前に第三者が閲覧、保存、転載または複製した内容について、本アプリの運営者が削除または利用停止を保証することはできません。</p>
+            <p>公開された内容が第三者の著作権、プライバシーその他の権利を侵害していると思われる場合は、公開ページに設置された通報機能または info@texter.work までご連絡ください。ご連絡の内容を確認し、公開の停止、削除その他必要と判断した対応を行う場合があります。</p>
+            <h2>このプライバシーポリシーの変更</h2>
+            <p>プライバシーポリシーを随時更新する場合があります。したがって、変更がある場合はこのページを定期的に確認することをお勧めします。このページに新しいプライバシーポリシーを掲載して、変更をお知らせします。これらの変更は、このページに投稿された直後に有効になります。</p>
+        </article>
+    </main>
+
+    <footer>
+        <p>
+            <a href="/">ホーム</a>
+            <a href="/terms-of-service.html">利用規約</a>
+            <a href="/privacy-policy.html">プライバシーポリシー</a>
+            <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+        </p>
+        <p style="margin-top:1rem;">© 2025 Texter app - Kyoto, Japan.</p>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const sunIcon = themeToggle.querySelector('.sun-icon');
+        const moonIcon = themeToggle.querySelector('.moon-icon');
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            if (theme === 'light') { sunIcon.style.display = 'none'; moonIcon.style.display = 'block'; }
+            else { sunIcon.style.display = 'block'; moonIcon.style.display = 'none'; }
+        }
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) { setTheme(savedTheme); }
+        else if (window.matchMedia('(prefers-color-scheme: light)').matches) { setTheme('light'); }
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            setTheme(currentTheme === 'light' ? 'dark' : 'light');
+        });
+    </script>
+
+</body>
+</html>

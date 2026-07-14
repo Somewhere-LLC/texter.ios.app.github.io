@@ -7,6 +7,9 @@ const distDir = path.join(rootDir, 'dist');
 const entries = [
   'index.html',
   'index-en.html',
+  'terms-of-service.html',
+  'privacy-policy.html',
+  'tokushoho.html',
   'en',
   'css',
   'js',

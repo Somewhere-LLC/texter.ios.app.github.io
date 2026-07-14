@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179024659-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-179024659-1', {
+            'anonymize_ip': true,
+            'cookie_flags': 'SameSite=None;Secure'
+        });
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="description" content="Privacy Policy for Texter, the AI speech-to-text app.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://texter.work/en/privacy-policy.html">
+    <link rel="alternate" hreflang="ja" href="https://texter.work/privacy-policy.html">
+    <link rel="alternate" hreflang="en" href="https://texter.work/en/privacy-policy.html">
+    <link rel="alternate" hreflang="x-default" href="https://texter.work/privacy-policy.html">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://texter.work/en/privacy-policy.html">
+    <meta property="og:title" content="Privacy Policy | Texter">
+    <meta property="og:description" content="Privacy Policy for Texter, the AI speech-to-text app.">
+    <meta property="og:site_name" content="Texter">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://texter.work/img/ogp-en.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Privacy Policy | Texter">
+    <meta name="twitter:description" content="Privacy Policy for Texter, the AI speech-to-text app.">
+    <meta name="twitter:image" content="https://texter.work/img/ogp-en.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png">
+
+    <title>Privacy Policy | Texter</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Space+Mono:wght@700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+:root {
+    --primary: #6366f1;
+    --primary-light: #818cf8;
+    --primary-dark: #4f46e5;
+    --accent: #22d3ee;
+    --bg: #09090b;
+    --bg-surface: #0f0f12;
+    --bg-elevated: #18181b;
+    --text-primary: #fafafa;
+    --text-secondary: rgba(250, 250, 250, 0.6);
+    --text-muted: rgba(250, 250, 250, 0.35);
+    --border: rgba(255, 255, 255, 0.06);
+    --border-hover: rgba(255, 255, 255, 0.12);
+}
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg: #fafafa; --bg-surface: #ffffff; --bg-elevated: #f4f4f5;
+        --text-primary: #09090b; --text-secondary: rgba(9, 9, 11, 0.6);
+        --text-muted: rgba(9, 9, 11, 0.4); --border: rgba(0, 0, 0, 0.06);
+        --border-hover: rgba(0, 0, 0, 0.12);
+    }
+}
+[data-theme="light"] {
+    --bg: #fafafa; --bg-surface: #ffffff; --bg-elevated: #f4f4f5;
+    --text-primary: #09090b; --text-secondary: rgba(9, 9, 11, 0.6);
+    --text-muted: rgba(9, 9, 11, 0.4); --border: rgba(0, 0, 0, 0.06);
+    --border-hover: rgba(0, 0, 0, 0.12);
+}
+[data-theme="dark"] {
+    --bg: #09090b; --bg-surface: #0f0f12; --bg-elevated: #18181b;
+    --text-primary: #fafafa; --text-secondary: rgba(250, 250, 250, 0.6);
+    --text-muted: rgba(250, 250, 250, 0.35); --border: rgba(255, 255, 255, 0.06);
+    --border-hover: rgba(255, 255, 255, 0.12);
+}
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.8;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 3rem;
+    border-bottom: 1px solid var(--border);
+}
+.logo {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -1px;
+    text-decoration: none;
+}
+.nav-right { display: flex; align-items: center; gap: 0.75rem; }
+.theme-toggle {
+    width: 36px; height: 36px; border-radius: 8px;
+    border: 1px solid var(--border); background: transparent;
+    color: var(--text-secondary); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s ease;
+}
+.theme-toggle:hover { border-color: var(--border-hover); color: var(--text-primary); }
+.lang-switch, .back-link {
+    padding: 0.5rem 1rem; border-radius: 8px;
+    border: 1px solid var(--border); background: transparent;
+    color: var(--text-secondary); font-size: 0.8125rem; font-weight: 500;
+    text-decoration: none; transition: all 0.2s ease;
+}
+.lang-switch:hover, .back-link:hover { border-color: var(--border-hover); color: var(--text-primary); }
+main { max-width: 720px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+.legal-title { font-size: 2rem; font-weight: 700; margin: 0 0 0.5rem; }
+.legal-updated { color: var(--text-muted); font-size: 0.875rem; margin-bottom: 3rem; }
+article h2 { font-size: 1.25rem; font-weight: 700; margin: 2.5rem 0 1rem; color: var(--text-primary); }
+article p { color: var(--text-secondary); margin: 0 0 1rem; }
+article ul { color: var(--text-secondary); margin: 0 0 1rem 1.5rem; padding: 0; }
+article li { margin-bottom: 0.5rem; }
+article a { color: var(--primary-light); }
+dl.tsh-table { margin: 0; }
+dl.tsh-table dt { font-weight: 700; color: var(--text-primary); margin-top: 1.75rem; }
+dl.tsh-table dd { color: var(--text-secondary); margin: 0.4rem 0 0; }
+.legal-footer-note { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.875rem; }
+footer { padding: 3rem 1.5rem; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.8125rem; }
+footer a { color: var(--text-secondary); text-decoration: none; margin: 0 0.6rem; }
+footer a:hover { color: var(--text-primary); }
+@media (max-width: 640px) {
+    nav { padding: 1rem 1.25rem; }
+    main { padding: 3rem 1.25rem 4rem; }
+}
+</style>
+</head>
+<body>
+    <nav aria-label="Main navigation">
+        <a href="/en/" class="logo">Texter</a>
+        <div class="nav-right">
+            <button class="theme-toggle" id="themeToggle" aria-label="テーマ切替">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="sun-icon">
+                    <circle cx="12" cy="12" r="5"/>
+                    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                </svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="moon-icon" style="display:none;">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+            <a href="/privacy-policy.html" class="lang-switch">JA</a>
+            <a href="/en/" class="back-link">← Home</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1 class="legal-title">Privacy Policy</h1>
+        <p class="legal-updated">Last updated: Jul 14, 2026</p>
+        <article>
+            <p>This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.</p>
+            <p>If you choose to use my Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that I collect is used for providing and improving the Service. I will not use or share your information with anyone except as described in this Privacy Policy.</p>
+            <p>The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible at Texter unless otherwise defined in this Privacy Policy.</p>
+            <h2>Information Collection and Use</h2>
+            <p>For a better experience, while using our Service, I may require you to provide us with certain personally identifiable information. The information that I request will be retained on your device and is not collected by me in any way.</p>
+            <p>The app does use third party services that may collect information used to identify you.</p>
+            <p>Link to privacy policy of third party service providers used by the app</p>
+            <ul>
+                <li><a href="https://firebase.google.com/policies/analytics" target="_blank" rel="noopener noreferrer">Firebase Analytics</a></li>
+            </ul>
+            <h2>Log Data</h2>
+            <p>I want to inform you that whenever you use my Service, in a case of an error in the app I collect data and information (through third party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing my Service, the time and date of your use of the Service, and other statistics.</p>
+            <h2>Cookies</h2>
+            <p>Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. These are sent to your browser from the websites that you visit and are stored on your device's internal memory.</p>
+            <p>This Service does not use these “cookies” explicitly. However, the app may use third party code and libraries that use “cookies” to collect information and improve their services. You have the option to either accept or refuse these cookies and know when a cookie is being sent to your device. If you choose to refuse our cookies, you may not be able to use some portions of this Service.</p>
+            <h2>Service Providers</h2>
+            <p>I may employ third-party companies and individuals due to the following reasons:</p>
+            <ul>
+                <li>To facilitate our Service;</li>
+                <li>To provide the Service on our behalf;</li>
+                <li>To perform Service-related services; or</li>
+                <li>To assist us in analyzing how our Service is used.</li>
+            </ul>
+            <p>I want to inform users of this Service that these third parties have access to your Personal Information. The reason is to perform the tasks assigned to them on our behalf. However, they are obligated not to disclose or use the information for any other purpose.</p>
+            <h2>Data Sharing with AI Services</h2>
+            <p>When you use certain AI features of this app (AI Summary, AI Chat, and Topic Analysis), the text content of your notes (transcription results) is sent to a third-party AI service, OpenAI, L.L.C. (ChatGPT API), for the purpose of generating AI responses.</p>
+            <ul>
+                <li>Data sent: The text content of notes created by the user</li>
+                <li>Recipient: OpenAI, L.L.C. (United States)</li>
+                <li>Purpose: Generating AI responses such as summaries, answers, and classifications</li>
+                <li>The data is used only to generate AI responses and is not used to train OpenAI's models (per OpenAI's API data usage policy).</li>
+                <li>When you first use one of these AI features, the app displays an explanation of what will be sent and asks for your consent. Data is sent only if you agree. If you decline, the AI feature is not used and no data is sent.</li>
+                <li>OpenAI provides protection for the shared data equal to that described in this policy, under our agreement and OpenAI's data processing terms.</li>
+            </ul>
+            <h2>Security</h2>
+            <p>I value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and I cannot guarantee its absolute security.</p>
+            <h2>Links to Other Sites</h2>
+            <p>This Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by me. Therefore, I strongly advise you to review the Privacy Policy of these websites. I have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.</p>
+            <h2>Children’s Privacy</h2>
+            <p>These Services do not address anyone under the age of 13. I do not knowingly collect personally identifiable information from children under 13. In the case I discover that a child under 13 has provided me with personal information, I immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact me so that I will be able to do necessary actions.</p>
+            <h2>Public Link Sharing of Notes</h2>
+            <p>The app includes an optional feature that lets a user share one of their notes with third parties via a public link.</p>
+            <p>This feature is off by default. Only when the user performs the publish action does the title, summary, and body text of the target note become viewable by third parties who know the public link. Audio recordings, video, images, and other media files are not made available through the public link.</p>
+            <p>A public link is not a restricted-access feature limited to specific viewers by a password or similar means. Anyone who knows the public link may view the page and may save or copy its contents. Before using the publish feature, the user must confirm that the note does not contain a third party's personal information, confidential information, copyrighted work, or other content the user is not authorized to disclose.</p>
+            <p>We set the published page to noindex so that it is not shown in the search results of participating search engines. However, we do not guarantee that all search engines will honor this setting or that the page will never appear in any search results.</p>
+            <p>To understand how the publish feature is being used and to improve the Service, we record the number of times a published page is viewed. View counts are used as aggregate information.</p>
+            <p>In addition, when a published page is accessed, information such as the IP address, access date and time, and browser or device information may be automatically recorded in server access logs. This information is used to prevent unauthorized use, ensure security, investigate faults, and improve the Service.</p>
+            <p>A user may disable a public link at any time. Once a public link is disabled, it can no longer be used to view the note. However, we cannot guarantee the deletion or removal of content that a third party viewed, saved, reposted, or copied before the link was disabled.</p>
+            <p>If you believe published content infringes a third party's copyright, privacy, or other rights, please use the report feature on the published page or contact info@texter.work. We will review the matter and may take action such as suspending or removing the publication, or any other measures we determine to be necessary.</p>
+            <h2>Changes to This Privacy Policy</h2>
+            <p>I may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted on this page.</p>
+        </article>
+    </main>
+
+    <footer>
+        <p>
+            <a href="/en/">Home</a>
+            <a href="/en/terms-of-service.html">Terms of Service</a>
+            <a href="/en/privacy-policy.html">Privacy Policy</a>
+        </p>
+        <p style="margin-top:1rem;">© 2025 Texter app - Kyoto, Japan.</p>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const sunIcon = themeToggle.querySelector('.sun-icon');
+        const moonIcon = themeToggle.querySelector('.moon-icon');
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            if (theme === 'light') { sunIcon.style.display = 'none'; moonIcon.style.display = 'block'; }
+            else { sunIcon.style.display = 'block'; moonIcon.style.display = 'none'; }
+        }
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) { setTheme(savedTheme); }
+        else if (window.matchMedia('(prefers-color-scheme: light)').matches) { setTheme('light'); }
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            setTheme(currentTheme === 'light' ? 'dark' : 'light');
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179024659-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-179024659-1', {
+            'anonymize_ip': true,
+            'cookie_flags': 'SameSite=None;Secure'
+        });
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="description" content="Texter（AI音声文字起こしアプリ）の利用規約です。">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://texter.work/terms-of-service.html">
+    <link rel="alternate" hreflang="ja" href="https://texter.work/terms-of-service.html">
+    <link rel="alternate" hreflang="en" href="https://texter.work/en/terms-of-service.html">
+    <link rel="alternate" hreflang="x-default" href="https://texter.work/terms-of-service.html">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://texter.work/terms-of-service.html">
+    <meta property="og:title" content="利用規約 | Texter">
+    <meta property="og:description" content="Texter（AI音声文字起こしアプリ）の利用規約です。">
+    <meta property="og:site_name" content="Texter">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:image" content="https://texter.work/img/ogp.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="利用規約 | Texter">
+    <meta name="twitter:description" content="Texter（AI音声文字起こしアプリ）の利用規約です。">
+    <meta name="twitter:image" content="https://texter.work/img/ogp.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png">
+
+    <title>利用規約 | Texter</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Space+Mono:wght@700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+:root {
+    --primary: #6366f1;
+    --primary-light: #818cf8;
+    --primary-dark: #4f46e5;
+    --accent: #22d3ee;
+    --bg: #09090b;
+    --bg-surface: #0f0f12;
+    --bg-elevated: #18181b;
+    --text-primary: #fafafa;
+    --text-secondary: rgba(250, 250, 250, 0.6);
+    --text-muted: rgba(250, 250, 250, 0.35);
+    --border: rgba(255, 255, 255, 0.06);
+    --border-hover: rgba(255, 255, 255, 0.12);
+}
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg: #fafafa; --bg-surface: #ffffff; --bg-elevated: #f4f4f5;
+        --text-primary: #09090b; --text-secondary: rgba(9, 9, 11, 0.6);
+        --text-muted: rgba(9, 9, 11, 0.4); --border: rgba(0, 0, 0, 0.06);
+        --border-hover: rgba(0, 0, 0, 0.12);
+    }
+}
+[data-theme="light"] {
+    --bg: #fafafa; --bg-surface: #ffffff; --bg-elevated: #f4f4f5;
+    --text-primary: #09090b; --text-secondary: rgba(9, 9, 11, 0.6);
+    --text-muted: rgba(9, 9, 11, 0.4); --border: rgba(0, 0, 0, 0.06);
+    --border-hover: rgba(0, 0, 0, 0.12);
+}
+[data-theme="dark"] {
+    --bg: #09090b; --bg-surface: #0f0f12; --bg-elevated: #18181b;
+    --text-primary: #fafafa; --text-secondary: rgba(250, 250, 250, 0.6);
+    --text-muted: rgba(250, 250, 250, 0.35); --border: rgba(255, 255, 255, 0.06);
+    --border-hover: rgba(255, 255, 255, 0.12);
+}
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.8;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 3rem;
+    border-bottom: 1px solid var(--border);
+}
+.logo {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -1px;
+    text-decoration: none;
+}
+.nav-right { display: flex; align-items: center; gap: 0.75rem; }
+.theme-toggle {
+    width: 36px; height: 36px; border-radius: 8px;
+    border: 1px solid var(--border); background: transparent;
+    color: var(--text-secondary); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s ease;
+}
+.theme-toggle:hover { border-color: var(--border-hover); color: var(--text-primary); }
+.lang-switch, .back-link {
+    padding: 0.5rem 1rem; border-radius: 8px;
+    border: 1px solid var(--border); background: transparent;
+    color: var(--text-secondary); font-size: 0.8125rem; font-weight: 500;
+    text-decoration: none; transition: all 0.2s ease;
+}
+.lang-switch:hover, .back-link:hover { border-color: var(--border-hover); color: var(--text-primary); }
+main { max-width: 720px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+.legal-title { font-size: 2rem; font-weight: 700; margin: 0 0 0.5rem; }
+.legal-updated { color: var(--text-muted); font-size: 0.875rem; margin-bottom: 3rem; }
+article h2 { font-size: 1.25rem; font-weight: 700; margin: 2.5rem 0 1rem; color: var(--text-primary); }
+article p { color: var(--text-secondary); margin: 0 0 1rem; }
+article ul { color: var(--text-secondary); margin: 0 0 1rem 1.5rem; padding: 0; }
+article li { margin-bottom: 0.5rem; }
+article a { color: var(--primary-light); }
+dl.tsh-table { margin: 0; }
+dl.tsh-table dt { font-weight: 700; color: var(--text-primary); margin-top: 1.75rem; }
+dl.tsh-table dd { color: var(--text-secondary); margin: 0.4rem 0 0; }
+.legal-footer-note { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.875rem; }
+footer { padding: 3rem 1.5rem; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.8125rem; }
+footer a { color: var(--text-secondary); text-decoration: none; margin: 0 0.6rem; }
+footer a:hover { color: var(--text-primary); }
+@media (max-width: 640px) {
+    nav { padding: 1rem 1.25rem; }
+    main { padding: 3rem 1.25rem 4rem; }
+}
+</style>
+</head>
+<body>
+    <nav aria-label="メインナビゲーション">
+        <a href="/" class="logo">Texter</a>
+        <div class="nav-right">
+            <button class="theme-toggle" id="themeToggle" aria-label="テーマ切替">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="sun-icon">
+                    <circle cx="12" cy="12" r="5"/>
+                    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                </svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="moon-icon" style="display:none;">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+            <a href="/en/terms-of-service.html" class="lang-switch">EN</a>
+            <a href="/" class="back-link">← ホーム</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1 class="legal-title">利用規約</h1>
+
+        <article>
+            <p>この規約は、当社が提供する本アプリの利用者（以下「ユーザー」）と当社との関係を定めるものです。</p>
+            <p>本規約は、本アプリの利用に関して生ずる全ての関係に適用されます。</p>
+            <p>本アプリに関しては、本利用規約及びその他当社が定める規約等によって、その利用条件が規定されています。その他の利用規約等は名称によらずに本利用規約の一部を構成します。また、本利用規約の規定とその他の利用規約等の規定が異なる場合は、当社が別途定める場合を除いて、本利用規約の規定が優先して適用されます。</p>
+            <p>ユーザーは、本アプリをダウンロード、インストール又は利用することにより、本利用規約の全ての記載内容について同意したものとみなされます。</p>
+            <h2>第1条（用語の定義）</h2>
+            <p>本アプリ：当社が提供するサービス「Texter」</p>
+            <p>ユーザー：本アプリの利用者</p>
+            <h2>第2条（著作権等の権利の帰属）</h2>
+            <p>本アプリに関する著作権等の知的財産権は、当社または正当な権利を有する第三者に帰属します。</p>
+            <h2>第3条（責任及び注意義務について）</h2>
+            <p>ユーザーは、自己の責任に基づき本アプリを利用するものとし、ユーザーが本アプリの利用にあたって行った一切の行為及びその結果生じた損害について、全ての責任を負うものとします。ユーザーは当社に対し、他のユーザー、第三者の著作物を使用したことなどを原因とする紛争、損害賠償の請求などが起こった場合の損害、責任について一切を免責するものとします。</p>
+            <p>このサービスには、Google により提供される翻訳が含まれる場合があります。Google は、明示的か黙示的かを問わず、翻訳に関するすべての保証（精度、信頼性に関するあらゆる保証、および商品性、特定目的への適合性、第三者の権利の非侵害性に関するあらゆる黙示的保証を含みます）を放棄します。</p>
+            <p>高性能モードに関してはAmiVoice Cloud Platformの音声認識サービスを利用しており、規約に関しては以下に準じます。</p>
+            <p><a href="https://acp.amivoice.com/main/agreement/" target="_blank" rel="noopener noreferrer">https://acp.amivoice.com/main/agreement/</a></p>
+            <h2>第4条（プライバシー）</h2>
+            <p>当社は、本アプリを提供するにあたり必要となる最小限の情報をユーザーから取得します。</p>
+            <p>当社は、ユーザーから取得したプライバシー情報の保護に最大限の注意を払います。</p>
+            <h2>第5条（免責事項）</h2>
+            <p>１．ご利用者がダウンロードされるデータにつきましては、自身で責任を負うものとし、当社は一切の責任を負わないものとします。また、たとえ私的利用の目的であっても、刑法、著作権法その他の法令に違反しない範囲で利用しなければならないものとします。</p>
+            <p>２．当社は、本アプリに関する、保守、機能修正、ユーザーの技術的サポート等のいかなる義務も負わないものとします。</p>
+            <p>３．動画・音声・画像等すべての知的所有権は著作者・団体に帰属しております。</p>
+            <h2>第6条（サービスの変更等）</h2>
+            <p>当社は、当社の都合により、いつでも任意の理由で本サービスについて追加、変更、中断、終了することができます。</p>
+            <p>利用者の責任に限らず、本サービスに変更、中断、廃止、若しくは不測の事態が発生し、 蓄積・記録したデータおよびファイルが消失しても、当社は一切責任を負わないものとします。</p>
+            <p>また、データ消去に伴いご利用者に損害が生じたとしても当社は一切その責任を負わないものとします。</p>
+            <h2>第7条 （規約の改訂について）</h2>
+            <p>当社は、法令等の制定、変更、廃止などの理由により、ユーザーへの了解を得ることなく本規約を変更できるものとします。この場合、変更後の規約は本アプリ上に表示した時点より効力を生じるものとします。</p>
+            <h2>第8条 （準拠法裁判管轄）</h2>
+            <p>本アプリ及び本規約に関しては、日本法を準拠法とします。</p>
+            <p>当社とユーザーとの紛争については、日本法を準拠法とし、当社の本社所在地を管轄する裁判所を第1審の専属的合意管轄裁判所とします。</p>
+            <h2>第9条（公開機能の利用）</h2>
+            <p>1. ユーザーは、自己の責任において、ノートの公開リンクを作成し、第三者に共有できます。</p>
+            <p>2. ユーザーは、公開するノートについて、適法に公開する権限を有していることを確認するものとします。ユーザーは、第三者の個人情報、プライバシー、肖像権、著作権、商標権、営業秘密その他の権利または利益を侵害する内容を公開してはなりません。</p>
+            <p>3. 当社は、公開された内容が法令または本規約に違反する場合、第三者の権利を侵害する場合、またはそのおそれがあると合理的に判断した場合、ユーザーへの事前通知なく、公開の停止、公開リンクの無効化、内容の削除その他必要な措置を講じることができます。</p>
+            <p>4. ユーザーが公開リンクを無効にした場合、以後の公開リンクからの閲覧は停止されます。ただし、無効化以前に第三者が閲覧、保存、転載または複製した内容について、当社はその削除または利用停止を保証しません。</p>
+            <p>以上</p>
+            <p>2026年07月14日改定</p>
+        </article>
+    </main>
+
+    <footer>
+        <p>
+            <a href="/">ホーム</a>
+            <a href="/terms-of-service.html">利用規約</a>
+            <a href="/privacy-policy.html">プライバシーポリシー</a>
+            <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+        </p>
+        <p style="margin-top:1rem;">© 2025 Texter app - Kyoto, Japan.</p>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const sunIcon = themeToggle.querySelector('.sun-icon');
+        const moonIcon = themeToggle.querySelector('.moon-icon');
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            if (theme === 'light') { sunIcon.style.display = 'none'; moonIcon.style.display = 'block'; }
+            else { sunIcon.style.display = 'block'; moonIcon.style.display = 'none'; }
+        }
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) { setTheme(savedTheme); }
+        else if (window.matchMedia('(prefers-color-scheme: light)').matches) { setTheme('light'); }
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            setTheme(currentTheme === 'light' ? 'dark' : 'light');
+        });
+    </script>
+
+</body>
+</html>
