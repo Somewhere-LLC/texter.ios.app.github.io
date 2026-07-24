@@ -19,8 +19,8 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="AI speech-to-text + auto visualization. Overview meetings with Topic Map, auto-generate structured documents with Topic Summary. Transform your knowledge management with Texter.">
-    <meta name="keywords" content="transcription,speech recognition,AI,meeting notes,OCR,translation,Whisper,OpenAI,topic map,topic summary,word cloud,note visualization,AI structuring">
+    <meta name="description" content="Just hit record — AI transcribes every word, identifies speakers, summarizes key points, and sends action items to Reminders. Automate your meeting notes with Texter.">
+    <meta name="keywords" content="transcription,speech recognition,AI,meeting notes,AI notetaker,action items,speaker identification,Zoom transcription,OCR,translation,Whisper,OpenAI,topic map,topic summary,word cloud,note visualization,AI structuring">
     <meta name="author" content="Texter">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://texter.work/en/">
@@ -34,7 +34,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://texter.work/en/">
     <meta property="og:title" content="Texter - AI Speech Recognition & Transcription App">
-    <meta property="og:description" content="AI speech-to-text + auto visualization. Overview meetings with Topic Map, auto-generate structured documents with Topic Summary. Transform your knowledge management with Texter.">
+    <meta property="og:description" content="Just hit record — AI transcribes every word, identifies speakers, summarizes key points, and sends action items to Reminders. Automate your meeting notes with Texter.">
     <meta property="og:site_name" content="Texter">
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="ja_JP">
@@ -43,7 +43,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://texter.work/en/">
     <meta name="twitter:title" content="Texter - AI Speech Recognition & Transcription App">
-    <meta name="twitter:description" content="AI speech-to-text + auto visualization. Overview meetings with Topic Map, auto-generate structured documents with Topic Summary.">
+    <meta name="twitter:description" content="Just hit record — AI transcribes, identifies speakers, summarizes, and sends action items to Reminders.">
 
     <!-- iOS App -->
     <meta name="apple-itunes-app" content="app-id=1482592304">
@@ -595,67 +595,10 @@
             50% { opacity: 0; }
         }
 
-        /* PiP Window */
-        .pip-window {
-            position: absolute;
-            bottom: 0.875rem;
-            right: 0.875rem;
-            width: 80px;
-            height: 60px;
-            background: var(--bg-elevated);
-            border-radius: 6px;
-            border: 1px solid var(--border);
-            overflow: hidden;
-            animation: pipFloat 4s ease-in-out infinite;
-        }
-
+        /* Float animation (action items card) */
         @keyframes pipFloat {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-3px); }
-        }
-
-        .pip-video {
-            width: 100%;
-            height: 100%;
-            background: var(--bg-surface);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .pip-video::before {
-            content: '';
-            width: 28px;
-            height: 28px;
-            background: var(--primary);
-            border-radius: 50%;
-            opacity: 0.6;
-        }
-
-        .pip-label {
-            position: absolute;
-            top: 3px;
-            left: 3px;
-            background: var(--primary);
-            padding: 1px 4px;
-            border-radius: 3px;
-            font-size: 0.4rem;
-            font-weight: 600;
-            color: white;
-        }
-
-        .pip-subtitle {
-            position: absolute;
-            bottom: 3px;
-            left: 3px;
-            right: 3px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 2px 4px;
-            border-radius: 2px;
-            font-size: 0.375rem;
-            color: white;
-            text-align: center;
         }
 
         /* Language Badge */
@@ -735,6 +678,197 @@
             font-size: 0.625rem;
             color: var(--text-muted);
             margin-top: 2px;
+        }
+
+        /* Watch Mockup */
+        .watch-mockup {
+            position: absolute;
+            bottom: -14px;
+            left: -80px;
+            width: 100px;
+            z-index: 2;
+            animation: floatCard 6s ease-in-out infinite;
+            animation-delay: -2s;
+        }
+
+        .watch-frame {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 7px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .watch-frame::after {
+            content: '';
+            position: absolute;
+            right: -3px;
+            top: 28%;
+            width: 3px;
+            height: 16px;
+            background: var(--border-hover);
+            border-radius: 2px;
+        }
+
+        .watch-screen {
+            background: var(--bg);
+            border-radius: 18px;
+            padding: 10px 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            align-items: center;
+            border: 1px solid var(--border);
+        }
+
+        .watch-rec {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.5rem;
+            color: #ef4444;
+            font-weight: 600;
+        }
+
+        .watch-rec-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #ef4444;
+            animation: recordingPulse 1.5s ease-in-out infinite;
+        }
+
+        .watch-time {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .watch-wave {
+            display: flex;
+            gap: 2px;
+            align-items: center;
+            height: 16px;
+        }
+
+        .watch-wave span {
+            width: 2px;
+            background: var(--accent);
+            border-radius: 1px;
+            animation: waveform 1.2s ease-in-out infinite;
+        }
+
+        .watch-caption {
+            text-align: center;
+            font-size: 0.5625rem;
+            color: var(--text-muted);
+            margin-top: 6px;
+        }
+
+        /* Hero Flow Chips */
+        .hero-flow {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem;
+            margin: -0.5rem 0 2rem;
+        }
+
+        .flow-step {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            padding: 0.375rem 0.875rem;
+            border-radius: 999px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            white-space: nowrap;
+        }
+
+        .flow-step.highlight {
+            background: rgba(34, 211, 238, 0.1);
+            border-color: rgba(34, 211, 238, 0.45);
+            color: var(--accent);
+        }
+
+        .flow-arrow {
+            color: var(--text-muted);
+            font-size: 0.8125rem;
+        }
+
+        /* Action Items Mini Card (hero phone) */
+        .action-mini {
+            position: absolute;
+            bottom: 0.875rem;
+            left: 0.875rem;
+            right: 0.875rem;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 0.625rem 0.75rem;
+            animation: pipFloat 4s ease-in-out infinite;
+        }
+
+        .action-mini-label {
+            font-size: 0.5rem;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 0.375rem;
+        }
+
+        .action-mini-task {
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+            font-size: 0.625rem;
+            color: var(--text-primary);
+            padding: 0.125rem 0;
+        }
+
+        .action-mini-task .due {
+            margin-left: auto;
+            font-size: 0.5rem;
+            color: #f59e0b;
+            white-space: nowrap;
+        }
+
+        .action-check {
+            width: 11px;
+            height: 11px;
+            border-radius: 3px;
+            border: 1.5px solid var(--primary);
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.5rem;
+            font-style: normal;
+            color: white;
+        }
+
+        .action-check.done {
+            background: var(--primary);
+        }
+
+        .action-mini-cta {
+            margin-top: 0.375rem;
+            text-align: center;
+            font-size: 0.5625rem;
+            font-weight: 600;
+            color: white;
+            background: var(--gradient-2);
+            border-radius: 6px;
+            padding: 0.25rem;
+        }
+
+        .pricing-footnote {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.8125rem;
+            color: var(--text-muted);
         }
 
         /* Sections Common */
@@ -1260,6 +1394,10 @@
                 justify-content: center;
             }
 
+            .hero-flow {
+                justify-content: center;
+            }
+
             .features-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -1298,6 +1436,10 @@
             }
 
             .floating-elements {
+                display: none;
+            }
+
+            .watch-mockup {
                 display: none;
             }
         }
@@ -1640,14 +1782,23 @@
         
         <div class="hero-content">
             <div class="hero-text">
-                <div class="hero-badge">AI Powered Transcription + Visualization</div>
+                <div class="hero-badge">AI Notetaker — from recording to tasks</div>
                 <h1 id="hero-title">
-                    Your words,<br>
-                    <span class="gradient-text">instantly transcribed</span>
+                    Record the meeting.<br>
+                    <span class="gradient-text">Get notes and to-dos.</span>
                 </h1>
                 <p class="hero-description">
-                    Cutting-edge AI converts your voice to text instantly. Plus, Topic Map and Topic Summary auto-visualize and structure your content. Beyond transcription.
+                    One tap transcribes every word. AI identifies speakers, summarizes key points, and sends action items straight to Reminders. Meeting notes, fully automated.
                 </p>
+                <div class="hero-flow" aria-label="From recording to tasks">
+                    <span class="flow-step">🎙️ Record</span>
+                    <span class="flow-arrow" aria-hidden="true">→</span>
+                    <span class="flow-step">📝 Transcribe</span>
+                    <span class="flow-arrow" aria-hidden="true">→</span>
+                    <span class="flow-step">🧠 Summarize</span>
+                    <span class="flow-arrow" aria-hidden="true">→</span>
+                    <span class="flow-step highlight">✅ Action items</span>
+                </div>
                 <div class="hero-buttons">
                     <a href="https://apps.apple.com/app/id1482592304" class="btn-primary" target="_blank" rel="noopener noreferrer">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -1718,15 +1869,25 @@
                                     <div class="language-badge">English (Auto-detect)</div>
                                 </div>
 
-                                <!-- PiP Window -->
-                                <div class="pip-window">
-                                    <div class="pip-video">
-                                        <span class="pip-label">PiP</span>
-                                        <span class="pip-subtitle">Subtitles appear here</span>
-                                    </div>
+                                <!-- Action Items Card -->
+                                <div class="action-mini">
+                                    <div class="action-mini-label">Action Items</div>
+                                    <div class="action-mini-task"><i class="action-check done">✓</i>Review the spec draft<span class="due">Tomorrow</span></div>
+                                    <div class="action-mini-task"><i class="action-check"></i>Send the estimate<span class="due">Jul 28</span></div>
+                                    <div class="action-mini-cta">⏰ Add to Reminders</div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="watch-mockup" aria-hidden="true">
+                        <div class="watch-frame">
+                            <div class="watch-screen">
+                                <div class="watch-rec"><span class="watch-rec-dot"></span>REC</div>
+                                <div class="watch-time">02:34</div>
+                                <div class="watch-wave"><span style="height:6px"></span><span style="height:12px; animation-delay:0.1s"></span><span style="height:8px; animation-delay:0.2s"></span><span style="height:14px; animation-delay:0.3s"></span><span style="height:9px; animation-delay:0.4s"></span><span style="height:12px; animation-delay:0.5s"></span><span style="height:6px; animation-delay:0.6s"></span></div>
+                            </div>
+                        </div>
+                        <div class="watch-caption">Record from your wrist</div>
                     </div>
                     <div class="floating-elements">
                         <div class="floating-card floating-card-1">
@@ -1734,8 +1895,8 @@
                             <div class="card-sub">Accuracy</div>
                         </div>
                         <div class="floating-card floating-card-2">
-                            <div class="card-text">📺 PiP Mode</div>
-                            <div class="card-sub">Multitask enabled</div>
+                            <div class="card-text">✅ Auto task capture</div>
+                            <div class="card-sub">Syncs to Reminders</div>
                         </div>
                         <div class="floating-card floating-card-3">
                             <div class="card-text">🌍 100+ Lang</div>
@@ -1868,6 +2029,64 @@
         </div>
     </section>
 
+    <!-- Action Items Section -->
+    <section class="features" id="action-items" aria-labelledby="action-items-title">
+        <div class="section-header">
+            <span class="section-label">ACTION ITEMS</span>
+            <h2 class="section-title" id="action-items-title">Meetings become<br>to-do lists</h2>
+            <p class="section-description">AI pulls action items out of your notes automatically. No more copying tasks by hand after every meeting.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3 class="feature-title">Automatic extraction</h3>
+                <p class="feature-description">"Can you handle this?" "By next week" — AI catches tasks buried in conversation and turns them into a clean list.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⏰</div>
+                <h3 class="feature-title">One-tap Reminders</h3>
+                <p class="feature-description">Due dates and owners are detected and sent straight to Apple Reminders, so notifications just work.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3 class="feature-title">Filter by action</h3>
+                <p class="feature-description">Filter your notes by open tasks or reminders already set. Nothing slips through the cracks.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apple Ecosystem Section -->
+    <section class="features" id="ecosystem" aria-labelledby="ecosystem-title">
+        <div class="section-header">
+            <span class="section-label">APPLE ECOSYSTEM</span>
+            <h2 class="section-title" id="ecosystem-title">No iPhone in hand?<br>Record from your wrist</h2>
+            <p class="section-description">Apple Watch, widgets, and Shortcuts put recording everywhere you are.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⌚</div>
+                <h3 class="feature-title">Record on Apple Watch</h3>
+                <p class="feature-description">Start recording from the Action button, watch face, or Smart Stack — then hand it off to your iPhone for transcription.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🧩</div>
+                <h3 class="feature-title">Widgets &amp; Shortcuts</h3>
+                <p class="feature-description">One-tap recording from the Lock Screen widget, plus automation with Siri and Shortcuts.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3 class="feature-title">On-device AI</h3>
+                <p class="feature-description">Summaries and action items are processed entirely on-device — your content never leaves your phone.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Parallax Section -->
     <section class="parallax-section">
         <div class="parallax-layer" data-speed="0.1">
@@ -1943,7 +2162,7 @@
             <div class="toggle-switch" id="toggleSwitch">
                 <div class="toggle-knob"></div>
             </div>
-            <span class="toggle-option" data-plan="yearly">Yearly<span class="pricing-save-badge">Save $60</span></span>
+            <span class="toggle-option" data-plan="yearly">Yearly<span class="pricing-save-badge">Save $95</span></span>
         </div>
 
         <div class="pricing-grid-two">
@@ -1963,16 +2182,17 @@
             <div class="pricing-card featured">
                 <div class="pricing-badge" id="premiumBadge">Popular</div>
                 <div class="pricing-name">Premium</div>
-                <div class="pricing-price" id="premiumPrice">$9.99<span>/mo</span></div>
+                <div class="pricing-price" id="premiumPrice">$12.99<span>/mo</span></div>
                 <p class="pricing-monthly-equiv" id="monthlyEquiv" style="display: none;">~$5.00/mo</p>
-                <p class="pricing-description" id="premiumDesc">1 week free trial included</p>
+                <p class="pricing-description" id="premiumDesc">3-day free trial included</p>
                 <ul class="pricing-features" id="premiumFeatures">
                     <li>Whisper Unlimited</li>
                     <li>High-performance mode (3hr/mo)</li>
+                    <li>"Ask Your Note" AI chat</li>
+                    <li>20 summary templates</li>
+                    <li>Action item extraction</li>
                     <li>Unlimited image OCR</li>
-                    <li>Auto silence removal</li>
-                    <li>Video subtitle generation</li>
-                    <li>AI summary</li>
+                    <li>Silence removal & video subtitles</li>
                     <li>Topic Map & Topic Summary</li>
                     <li>Word Cloud</li>
                     <li>Ad-free</li>
@@ -1980,6 +2200,7 @@
                 <a href="https://apps.apple.com/app/id1482592304" class="pricing-btn pricing-btn-primary" id="premiumCta" target="_blank" rel="noopener noreferrer">Start Free Trial</a>
             </div>
         </div>
+        <p class="pricing-footnote">Just need it for a week? A weekly plan ($3.99/week) is also available in the app.</p>
     </section>
 
     <!-- Reviews Section -->
@@ -2153,20 +2374,6 @@
         }
         setInterval(updateRecordingTime, 1000);
 
-        // PiP subtitle animation
-        const pipSubtitles = [
-            "Subtitles appear here",
-            "Updates in real-time",
-            "View during meetings",
-            "Works with other apps"
-        ];
-        let subtitleIndex = 0;
-        function updatePipSubtitle() {
-            subtitleIndex = (subtitleIndex + 1) % pipSubtitles.length;
-            document.querySelector('.pip-subtitle').textContent = pipSubtitles[subtitleIndex];
-        }
-        setInterval(updatePipSubtitle, 3000);
-
         // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
@@ -2234,8 +2441,8 @@
         const premiumCta = document.getElementById('premiumCta');
         let isYearly = false;
 
-        const monthlyFeaturesHTML = '<li>Whisper Unlimited</li><li>High-performance mode (3hr/mo)</li><li>Unlimited image OCR</li><li>Auto silence removal</li><li>Video subtitle generation</li><li>AI summary</li><li>Topic Map & Topic Summary</li><li>Word Cloud</li><li>Ad-free</li>';
-        const yearlyFeaturesHTML = '<li>Whisper Unlimited</li><li>High-performance mode (10hr/mo)</li><li>Unlimited image OCR</li><li>Auto silence removal</li><li>Video subtitle generation</li><li>AI summary</li><li>Unlimited Topic Map</li><li>Unlimited Topic Summary</li><li>Unlimited Word Cloud</li><li>4 export formats</li><li>Priority support</li><li>Ad-free</li>';
+        const monthlyFeaturesHTML = '<li>Whisper Unlimited</li><li>High-performance mode (3hr/mo)</li><li>"Ask Your Note" AI chat</li><li>20 summary templates</li><li>Action item extraction</li><li>Unlimited image OCR</li><li>Silence removal & video subtitles</li><li>Topic Map & Topic Summary</li><li>Word Cloud</li><li>Ad-free</li>';
+        const yearlyFeaturesHTML = '<li>Whisper Unlimited</li><li>High-performance mode (10hr/mo)</li><li>"Ask Your Note" AI chat</li><li>20 summary templates</li><li>Action item extraction</li><li>Unlimited image OCR</li><li>Silence removal & video subtitles</li><li>Unlimited Topic Map & Summary</li><li>Unlimited Word Cloud</li><li>4 export formats</li><li>Priority support</li><li>Ad-free</li>';
 
         function updatePricing() {
             if (isYearly) {
@@ -2244,7 +2451,7 @@
                 toggleOptions[1].classList.add('active');
                 premiumPrice.innerHTML = '$59.99<span>/yr</span>';
                 premiumBadge.textContent = 'Best Value';
-                premiumDesc.textContent = 'Full AI visualization suite. Structure your knowledge.';
+                premiumDesc.textContent = '3-day free trial included. Full AI visualization suite.';
                 premiumFeatures.innerHTML = yearlyFeaturesHTML;
                 monthlyEquiv.style.display = 'block';
                 premiumCta.textContent = 'Choose Yearly';
@@ -2252,9 +2459,9 @@
                 toggleSwitch.classList.remove('yearly');
                 toggleOptions[0].classList.add('active');
                 toggleOptions[1].classList.remove('active');
-                premiumPrice.innerHTML = '$9.99<span>/mo</span>';
+                premiumPrice.innerHTML = '$12.99<span>/mo</span>';
                 premiumBadge.textContent = 'Popular';
-                premiumDesc.textContent = '1 week free trial included';
+                premiumDesc.textContent = '3-day free trial included';
                 premiumFeatures.innerHTML = monthlyFeaturesHTML;
                 monthlyEquiv.style.display = 'none';
                 premiumCta.textContent = 'Start Free Trial';
@@ -2284,8 +2491,8 @@
         "offers": {
             "@type": "AggregateOffer",
             "lowPrice": "0",
-            "highPrice": "5999",
-            "priceCurrency": "JPY",
+            "highPrice": "59.99",
+            "priceCurrency": "USD",
             "offerCount": "3"
         },
         "aggregateRating": {
@@ -2293,7 +2500,7 @@
             "ratingValue": "5",
             "reviewCount": "100+"
         },
-        "description": "Convert your voice, images, and videos to text quickly and accurately with cutting-edge AI speech recognition. From meeting notes to language learning, Texter works in every scenario.",
+        "description": "Just hit record — AI transcribes your voice, images, and videos, identifies speakers, summarizes key points, and sends action items to Reminders. From meeting notes to language learning, Texter works in every scenario.",
         "url": "https://texter.work/en/",
         "downloadUrl": "https://apps.apple.com/app/id1482592304",
         "screenshot": "https://texter.work/en/",
@@ -2304,14 +2511,19 @@
         },
         "featureList": [
             "AI Speech Recognition & Transcription",
+            "Speaker Identification",
+            "Action Item Extraction & Reminders Sync",
+            "Cloud Link Import (Zoom / Google Drive / Dropbox / OneDrive)",
+            "Public Link Sharing",
             "Image & Video to Text (OCR)",
             "Real-time Translation",
-            "AI Summarization",
+            "AI Summarization (20 templates)",
             "Silence Removal",
             "Video Subtitle Generation",
             "Topic Map",
             "Topic Summary",
-            "Word Cloud"
+            "Word Cloud",
+            "Apple Watch Standalone Recording"
         ]
     }
     </script>
