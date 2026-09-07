@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179024659-1"></script>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G2JBTE56K4"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'UA-179024659-1', {
-            'anonymize_ip': true,
+        gtag('config', 'G-G2JBTE56K4', {
             'cookie_flags': 'SameSite=None;Secure'
         });
     </script>
@@ -69,10 +68,10 @@
     <meta name="twitter:image" content="https://texter.work/img/ogp-en.png">
 
     <!-- Favicon -->
-    <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
-    <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" href="/assets/favicon/favicon.ico?v=2" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png?v=2">
+    <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png?v=2">
 
     <title>Texter - AI Speech Recognition & Transcription App</title>
 
@@ -2418,17 +2417,28 @@
             });
         });
 
-        // GA4 Event Tracking for Download buttons
+        // GA4: store link clicks (location tells which CTA)
         document.querySelectorAll('a[href*="apps.apple.com"], a[href*="play.google.com"]').forEach(link => {
             link.addEventListener('click', () => {
-                if (typeof gtag === 'function') {
-                    gtag('event', 'app_download_click', {
-                        'event_category': 'engagement',
-                        'event_label': link.href.includes('apple') ? 'ios' : 'android'
-                    });
-                }
+                if (typeof gtag !== 'function') return;
+                const section = link.closest('section');
+                gtag('event', 'app_store_click', {
+                    'store': link.href.includes('apple') ? 'ios' : 'android',
+                    'location': section ? (section.id || section.className.split(' ')[0]) : 'nav'
+                });
             });
         });
+
+        // GA4: pricing section reached (once per page view)
+        const pricingSection = document.getElementById('pricing');
+        if (pricingSection && 'IntersectionObserver' in window) {
+            const pricingObserver = new IntersectionObserver((entries, observer) => {
+                if (!entries.some(entry => entry.isIntersecting)) return;
+                if (typeof gtag === 'function') gtag('event', 'pricing_view');
+                observer.disconnect();
+            }, { threshold: 0.3 });
+            pricingObserver.observe(pricingSection);
+        }
 
         // Pricing toggle
         const toggleSwitch = document.getElementById('toggleSwitch');
