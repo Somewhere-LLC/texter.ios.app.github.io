@@ -18,7 +18,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="録るだけで議事録もタスクも。AIが文字起こし・話者識別・要約し、アクションアイテムをリマインダーへ自動登録。話題マップで会議を俯瞰。Texterで議事録作業をまるごと自動化。">
+    <meta name="description" content="会議や取材を録音すると、文字起こし・話者識別・要約・タスク整理までTexterが自動化。あとから過去の記録に質問して、元の発言まで戻れます。">
     <meta name="keywords" content="文字起こし,音声認識,AI,議事録,AIノートテイカー,アクションアイテム,話者識別,Zoom文字起こし,OCR,翻訳,Whisper,OpenAI,話題マップ,内容まとめ,トピックまとめ,ワードクラウド,ノート可視化,AI構造化">
     <meta name="author" content="Texter">
     <meta name="robots" content="index, follow">
@@ -32,8 +32,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://texter.work/">
-    <meta property="og:title" content="Texter - AI音声認識・文字起こしアプリ">
-    <meta property="og:description" content="録るだけで議事録もタスクも。AIが文字起こし・話者識別・要約し、アクションアイテムをリマインダーへ自動登録。Texterで議事録作業をまるごと自動化。">
+    <meta property="og:title" content="Texter - 録るだけで、議事録もタスクも。AI文字起こし・議事録アプリ">
+    <meta property="og:description" content="会議や取材を録音すると、文字起こし・話者識別・要約・タスク整理までTexterが自動化。あとから過去の記録に質問して、元の発言まで戻れます。">
     <meta property="og:site_name" content="Texter">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:locale:alternate" content="en_US">
@@ -41,8 +41,8 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://texter.work/">
-    <meta name="twitter:title" content="Texter - AI音声認識・文字起こしアプリ">
-    <meta name="twitter:description" content="録るだけで議事録もタスクも。AIが文字起こし・話者識別・要約し、アクションアイテムをリマインダーへ自動登録。">
+    <meta name="twitter:title" content="Texter - 録るだけで、議事録もタスクも。AI文字起こし・議事録アプリ">
+    <meta name="twitter:description" content="会議や取材を録音すると、文字起こし・話者識別・要約・タスク整理まで自動化。あとから過去の記録に質問できます。">
 
     <!-- iOS App -->
     <meta name="apple-itunes-app" content="app-id=1482592304">
@@ -73,7 +73,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png?v=2">
     <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png?v=2">
 
-    <title>Texter - AI音声認識・文字起こしアプリ</title>
+    <title>Texter - 録るだけで、議事録もタスクも。AI文字起こし・議事録アプリ</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -814,6 +814,68 @@
             font-size: 0.8125rem;
         }
 
+        a.flow-step { text-decoration: none; transition: color 0.2s, border-color 0.2s; }
+        a.flow-step:hover { color: var(--text-primary); border-color: var(--border-hover); }
+        a.flow-step.highlight:hover { color: var(--accent); }
+
+        /* Recall section (思い出す) */
+        .recall-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5rem;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .recall-points { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.5rem; }
+        .recall-point { display: flex; gap: 1rem; align-items: flex-start; }
+        .recall-point-icon {
+            flex: 0 0 auto; width: 42px; height: 42px; border-radius: 11px;
+            background: var(--bg-elevated); border: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: center; font-size: 1.125rem;
+        }
+        .recall-point h3 { font-size: 1.0625rem; font-weight: 600; margin: 0 0 0.3rem; }
+        .recall-point p { font-size: 0.9375rem; color: var(--text-secondary); margin: 0; line-height: 1.65; }
+        .recall-mock {
+            width: 100%; max-width: 420px; margin: 0 auto;
+            background: var(--bg-surface); border: 1px solid var(--border); border-radius: 22px;
+            padding: 1.25rem; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+        }
+        .recall-mock-header {
+            display: flex; align-items: center; justify-content: space-between;
+            padding-bottom: 0.875rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border);
+        }
+        .recall-mock-title { font-weight: 600; font-size: 0.9375rem; }
+        .recall-mock-scope {
+            font-size: 0.6875rem; font-weight: 600; padding: 0.25rem 0.625rem; border-radius: 999px;
+            background: rgba(34, 211, 238, 0.1); color: var(--accent); border: 1px solid rgba(34, 211, 238, 0.35);
+        }
+        .recall-bubble { max-width: 88%; padding: 0.625rem 0.875rem; border-radius: 14px; font-size: 0.875rem; line-height: 1.55; margin-bottom: 0.75rem; }
+        .recall-bubble.user { margin-left: auto; background: var(--primary); color: #fff; border-bottom-right-radius: 4px; }
+        .recall-bubble.ai { background: var(--bg-elevated); border: 1px solid var(--border); border-bottom-left-radius: 4px; }
+        .recall-evidence-label { font-size: 0.6875rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.5px; margin: 0.25rem 0 0.5rem; }
+        .recall-evidence {
+            background: var(--bg-elevated); border: 1px solid var(--border); border-left: 3px solid var(--accent);
+            border-radius: 10px; padding: 0.75rem 0.875rem; margin-bottom: 0.875rem;
+        }
+        .recall-evidence-meta { display: flex; justify-content: space-between; font-size: 0.6875rem; color: var(--text-muted); margin-bottom: 0.375rem; }
+        .recall-evidence-quote { display: block; font-size: 0.8125rem; color: var(--text-primary); line-height: 1.5; margin-bottom: 0.625rem; }
+        .recall-play {
+            display: inline-flex; align-items: center; gap: 0.375rem; font-size: 0.75rem; font-weight: 600;
+            color: var(--accent); background: rgba(34, 211, 238, 0.1); border: 1px solid rgba(34, 211, 238, 0.35);
+            border-radius: 999px; padding: 0.3rem 0.75rem;
+        }
+        .recall-mock-input {
+            display: flex; align-items: center; justify-content: space-between; margin-top: 0.25rem;
+            padding: 0.625rem 0.875rem; border-radius: 999px; background: var(--bg); border: 1px solid var(--border);
+            font-size: 0.8125rem; color: var(--text-muted);
+        }
+        .recall-mock-input span:last-child { color: var(--accent); font-weight: 700; }
+        .recall-mock-note { text-align: center; font-size: 0.75rem; color: var(--text-muted); margin: 1.5rem 0 0; }
+        @media (max-width: 1024px) {
+            .recall-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+        }
+
         /* Action Items Mini Card (hero phone) */
         .action-mini {
             position: absolute;
@@ -906,8 +968,8 @@
             font-weight: 500;
             color: var(--text-muted);
             margin-bottom: 1rem;
-            font-family: 'Space Mono', monospace;
-            letter-spacing: 1px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
         }
 
         .section-title {
@@ -1854,7 +1916,7 @@
         <div class="nav-left">
             <a href="./" class="logo">Texter</a>
             <ul class="nav-links" role="list">
-                <li><a href="#features">機能</a></li>
+                <li><a href="#record">機能</a></li>
                 <li><a href="#usecases">活用例</a></li>
                 <li><a href="#pricing">料金</a></li>
                 <li><a href="#reviews">レビュー</a></li>
@@ -1884,22 +1946,22 @@
         
         <div class="hero-content">
             <div class="hero-text">
-                <div class="hero-badge">AI Notetaker — 録音から、タスクまで</div>
+                <div class="hero-badge">会議・取材・講義の記録に</div>
                 <h1 id="hero-title">
                     録るだけで、<br>
                     <span class="gradient-text">議事録もタスクも。</span>
                 </h1>
                 <p class="hero-description">
-                    録音ボタンひとつで発言を全文テキスト化。話者を自動識別し、AIが要点をまとめ、やるべきことをリマインダーへ。議事録作業を、まるごと自動化。
+                    会議や取材を録音すると、文字起こし・話者識別・要約・タスク整理までTexterが自動化。あとから過去の記録に質問して、元の発言まで戻れます。
                 </p>
-                <div class="hero-flow" aria-label="録音からタスクまでの流れ">
-                    <span class="flow-step">🎙️ 録音</span>
+                <div class="hero-flow" aria-label="録音からあとで思い出すまでの流れ">
+                    <a class="flow-step" href="#record">🎙️ 記録する</a>
                     <span class="flow-arrow" aria-hidden="true">→</span>
-                    <span class="flow-step">📝 文字起こし</span>
+                    <a class="flow-step" href="#organize">📝 まとめる</a>
                     <span class="flow-arrow" aria-hidden="true">→</span>
-                    <span class="flow-step">🧠 AI要約</span>
+                    <a class="flow-step highlight" href="#recall">💬 思い出す</a>
                     <span class="flow-arrow" aria-hidden="true">→</span>
-                    <span class="flow-step highlight">✅ アクションアイテム</span>
+                    <a class="flow-step" href="#act">✅ 行動する</a>
                 </div>
                 <div class="hero-buttons">
                     <a href="https://apps.apple.com/jp/app/id1482592304" class="btn-primary" target="_blank" rel="noopener noreferrer">
@@ -2013,7 +2075,7 @@
     <!-- Before/After Comparison -->
     <section class="comparison" aria-labelledby="comparison-title">
         <div class="section-header">
-            <span class="section-label">WHY TEXTER</span>
+            <span class="section-label">なぜTexterか</span>
             <h2 class="section-title" id="comparison-title">手作業に、もう戻れない</h2>
             <p class="section-description">文字起こしの「あたりまえ」が変わる</p>
         </div>
@@ -2057,86 +2119,118 @@
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features" aria-labelledby="features-title">
+    <!-- 1. 記録する -->
+    <section class="features" id="record" aria-labelledby="record-title">
         <div class="section-header">
-            <span class="section-label">FEATURES</span>
-            <h2 class="section-title" id="features-title">音声も画像も動画も。<br>あらゆるメディアをテキストへ</h2>
-            <p class="section-description">Whisper (OpenAI) を含む最新AIエンジンを採用。句読点や疑問符も自動変換</p>
+            <span class="section-label">1. 記録する</span>
+            <h2 class="section-title" id="record-title">録音も、取り込みも、<br>手首からも。</h2>
+            <p class="section-description">記録の入口はどこにでも。思い立った瞬間に始められます。</p>
         </div>
 
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon">🎙️</div>
-                <h3 class="feature-title">高精度 AI音声文字起こし</h3>
-                <p class="feature-description">Whisper (OpenAI) を含む最新AIエンジンを採用。句読点や疑問符も自動で変換し、長時間の録音もスムーズにテキスト化します。</p>
+                <h3 class="feature-title">録音してそのまま文字起こし</h3>
+                <p class="feature-description">録音ボタンひとつで、話しながらリアルタイムに文字化。長時間の会議や講義もそのまま記録できます。</p>
             </div>
-            
             <div class="feature-card">
-                <div class="feature-icon">📸</div>
-                <h3 class="feature-title">画像・動画から文字変換</h3>
-                <p class="feature-description">OCR機能で画像内の文字を瞬時にテキスト化。動画ファイルからの音声抽出・文字起こしにも対応しています。</p>
+                <div class="feature-icon">📂</div>
+                <h3 class="feature-title">音声・動画ファイルを取り込む</h3>
+                <p class="feature-description">ボイスメモや会議ツールの録音、動画ファイルを取り込んで文字起こし。過去の記録もTexterに集約できます。</p>
             </div>
-            
             <div class="feature-card">
-                <div class="feature-icon">🌐</div>
-                <h3 class="feature-title">リアルタイム翻訳</h3>
-                <p class="feature-description">DeepLやGoogle翻訳と連携。文字起こしした内容をその場で翻訳し、多言語コミュニケーションをサポートします。</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🤖</div>
-                <h3 class="feature-title">AI要約 & リスト管理</h3>
-                <p class="feature-description">議事録の要約を作成したり、フォルダ分けや検索機能で膨大なメモをスマートに管理できます。</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">✂️</div>
-                <h3 class="feature-title">無音カット</h3>
-                <p class="feature-description">動画や音声から無音部分を自動検出・削除。3つのプリセット（弱・標準・強）で調整可能です。</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🎬</div>
-                <h3 class="feature-title">動画字幕生成 & PiP</h3>
-                <p class="feature-description">インポートした動画に自動で字幕を生成。Picture in Picture（PiP）対応で、他のアプリを使いながらでも字幕付き動画を視聴できます。</p>
-            </div>
-        </div>
-
-        <!-- AI Visualization Section -->
-        <div class="section-header" style="margin-top: 4rem;">
-            <span class="section-label">AI VISUALIZATION</span>
-            <h2 class="section-title" id="visualization-title">録ったら終わり、じゃない。<br>AIが「気づき」を引き出す</h2>
-            <p class="section-description">長いノートを俯瞰したいとき。構造化して整理したいとき。</p>
-        </div>
-
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🗺️</div>
-                <h3 class="feature-title">話題マップ</h3>
-                <p class="feature-description">2時間の会議を、3分で把握。AIがトピックを自動分類し、インタラクティブなバブルチャートで可視化。「結局何を話してたっけ？」が一目でわかります。</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3 class="feature-title">内容まとめ</h3>
-                <p class="feature-description">ノートを自動で構造化ドキュメントに変換。2カラム比較・フローチャート・サマリーグリッドなど、内容に最適な形式をAIが選択。PDF・Markdownでエクスポートも。</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">☁️</div>
-                <h3 class="feature-title">ワードクラウド</h3>
-                <p class="feature-description">フォルダ全体のキーワードを一望。よく使う言葉が大きく浮かび上がり、タップすれば該当ノートへジャンプ。知識の全体像を直感的に。</p>
+                <div class="feature-icon">⌚</div>
+                <h3 class="feature-title">Apple Watch・ウィジェット</h3>
+                <p class="feature-description">Apple Watch単体で録音し、あとでiPhoneへ転送。ロック画面ウィジェット、サイドボタン長押し（iOS 26.2〜）、Siri・ショートカットからも即録音。</p>
             </div>
         </div>
     </section>
 
-    <!-- Action Items Section -->
-    <section class="features" id="action-items" aria-labelledby="action-items-title">
+    <!-- 2. まとめる -->
+    <section class="features" id="organize" aria-labelledby="organize-title">
         <div class="section-header">
-            <span class="section-label">ACTION ITEMS</span>
-            <h2 class="section-title" id="action-items-title">会議が、<br>TODOリストになる</h2>
-            <p class="section-description">AIが内容まとめから「やるべきこと」を自動抽出。会議後の転記作業は、もういりません。</p>
+            <span class="section-label">2. まとめる</span>
+            <h2 class="section-title" id="organize-title">文字起こしから要約まで、<br>自動で。</h2>
+            <p class="section-description">録音が終わるころには、読める形になっています。</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📝</div>
+                <h3 class="feature-title">高精度な文字起こしと話者識別</h3>
+                <p class="feature-description">Whisper (OpenAI) を含む最新エンジンで文字起こし。句読点も自動で整え、誰の発言かを分けて記録します。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3 class="feature-title">要約と内容まとめ</h3>
+                <p class="feature-description">会議・取材・講義など20種のテンプレートで要約。内容まとめは2カラム比較やフローチャートなど、内容に合う形式をAIが選びます。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌐</div>
+                <h3 class="feature-title">100以上の言語と翻訳</h3>
+                <p class="feature-description">100以上の言語の文字起こしに対応。DeepL・Google翻訳と連携し、文字起こしをその場で翻訳できます。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 思い出す -->
+    <section class="features" id="recall" aria-labelledby="recall-title">
+        <div class="section-header">
+            <span class="section-label">3. 思い出す</span>
+            <h2 class="section-title" id="recall-title">過去の記録に、<br>質問できる。</h2>
+            <p class="section-description">「ノートに聞く」で、1件のノートにも、すべてのノートにも質問。答えには根拠がつき、元の発言をその場で再生できます。</p>
+        </div>
+
+        <div class="recall-layout">
+            <ul class="recall-points">
+                <li class="recall-point">
+                    <div class="recall-point-icon" aria-hidden="true">💬</div>
+                    <div>
+                        <h3>すべてのノートに聞く</h3>
+                        <p>「先月の定例で決まった納期は？」のように、ノートをまたいで質問。探すのではなく、聞くだけです。</p>
+                    </div>
+                </li>
+                <li class="recall-point">
+                    <div class="recall-point-icon" aria-hidden="true">📎</div>
+                    <div>
+                        <h3>根拠つきの回答</h3>
+                        <p>どのノートのどの発言をもとに答えたかを、回答の下に表示。AIの言いっぱなしにしません。</p>
+                    </div>
+                </li>
+                <li class="recall-point">
+                    <div class="recall-point-icon" aria-hidden="true">▶️</div>
+                    <div>
+                        <h3>元の発言から再生</h3>
+                        <p>根拠カードの「○分○秒から再生」をタップすると、その瞬間の録音に戻れます。記憶ではなく、記録で確かめられます。</p>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="recall-mock" role="img" aria-label="「思い出す」画面のイメージ。すべてのノートに質問し、根拠カードから元の発言を再生できる">
+                <div class="recall-mock-header">
+                    <span class="recall-mock-title">思い出す</span>
+                    <span class="recall-mock-scope">すべてのノート</span>
+                </div>
+                <div class="recall-bubble user">先月の定例で決まった納期は？</div>
+                <div class="recall-bubble ai">納期は <strong>8月29日（金）</strong> に決まっています。デザイン確認を先に済ませることが条件でした。</div>
+                <div class="recall-evidence-label">根拠</div>
+                <div class="recall-evidence">
+                    <div class="recall-evidence-meta"><span>週次定例 7/15</span><span>12:34</span></div>
+                    <span class="recall-evidence-quote">「じゃあ納期は29日の金曜で。デザインの確認を先に終わらせておいてね。」</span>
+                    <span class="recall-play">▶ 12:34から再生</span>
+                </div>
+                <div class="recall-mock-input"><span>すべてのノートについて質問する...</span><span>↑</span></div>
+            </div>
+        </div>
+        <p class="recall-mock-note">※ 画面はイメージです</p>
+    </section>
+
+    <!-- 4. 行動する -->
+    <section class="features" id="act" aria-labelledby="act-title">
+        <div class="section-header">
+            <span class="section-label">4. 行動する</span>
+            <h2 class="section-title" id="act-title">会議が、<br>TODOリストになる</h2>
+            <p class="section-description">AIが「やるべきこと」を自動で抽出。会議後の転記作業は、もういりません。</p>
         </div>
 
         <div class="features-grid">
@@ -2145,60 +2239,65 @@
                 <h3 class="feature-title">タスクを自動抽出</h3>
                 <p class="feature-description">「〜しておいて」「来週までに」— 会話の中に埋もれたタスクをAIが見逃さず拾い上げ、リストにまとめます。</p>
             </div>
-
             <div class="feature-card">
                 <div class="feature-icon">⏰</div>
                 <h3 class="feature-title">ワンタップでリマインダー</h3>
                 <p class="feature-description">期限・担当者も読み取って、Apple純正リマインダーにそのまま登録。通知はOSにおまかせできます。</p>
             </div>
-
             <div class="feature-card">
-                <div class="feature-icon">🔍</div>
-                <h3 class="feature-title">アクションで絞り込み</h3>
-                <p class="feature-description">「タスクが残っているノート」「リマインダー設定済み」でノート一覧をフィルター。やり残しをゼロに。</p>
+                <div class="feature-icon">📤</div>
+                <h3 class="feature-title">共有・書き出し</h3>
+                <p class="feature-description">文字起こし・要約・アクションアイテムをテキストやPDF、Markdownで書き出し。チームへの共有もその場で。</p>
             </div>
         </div>
     </section>
 
-    <!-- Apple Ecosystem Section -->
-    <section class="features" id="ecosystem" aria-labelledby="ecosystem-title">
+    <!-- Texterでできること -->
+    <section class="features" id="more" aria-labelledby="more-title">
         <div class="section-header">
-            <span class="section-label">APPLE ECOSYSTEM</span>
-            <h2 class="section-title" id="ecosystem-title">iPhoneがなくても、<br>手首から録音</h2>
-            <p class="section-description">Apple Watch・ウィジェット・ショートカット。録音の入口はあらゆる場所に。</p>
+            <span class="section-label">Texterでできること</span>
+            <h2 class="section-title" id="more-title">ほかにも、こんな使い方。</h2>
+            <p class="section-description">4つの流れの外でも、Texterは日々の道具になります。</p>
         </div>
 
-        <div class="features-grid features-grid-two">
+        <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon">⌚</div>
-                <h3 class="feature-title">Apple Watch 単体録音</h3>
-                <p class="feature-description">アクションボタン・文字盤・Smart Stackから即録音。あとでiPhoneに転送して文字起こしできます。</p>
+                <div class="feature-icon">📸</div>
+                <h3 class="feature-title">画像の文字起こし（OCR）</h3>
+                <p class="feature-description">写真やスクリーンショットの文字をテキスト化。ホワイトボードや紙の資料の取り込みに。</p>
             </div>
-
             <div class="feature-card">
-                <div class="feature-icon">🧩</div>
-                <h3 class="feature-title">サイドボタン &amp; ウィジェット</h3>
-                <p class="feature-description">サイドボタン長押しでTexterを即起動（iOS 26.2〜）。ロック画面ウィジェットからのワンタップ録音や、Siri・ショートカットでの自動化にも対応。</p>
+                <div class="feature-icon">🎬</div>
+                <h3 class="feature-title">動画の字幕生成・PiP</h3>
+                <p class="feature-description">取り込んだ動画に自動で字幕を付け、他のアプリを使いながらPicture in Pictureで再生できます。</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Parallax Section -->
-    <section class="parallax-section">
-        <div class="parallax-layer" data-speed="0.1">
-            <div class="parallax-text">VOICE TO TEXT</div>
-        </div>
-        <div class="parallax-content">
-            <h2>あなたの生産性を<br><span class="gradient-text">劇的に向上</span></h2>
-            <p>Texterは単なるボイスレコーダーではありません。録って、可視化して、構造化する。知識整理のパートナーです。</p>
-            <a href="#usecases" class="btn-primary">活用シーンを見る</a>
+            <div class="feature-card">
+                <div class="feature-icon">✂️</div>
+                <h3 class="feature-title">無音カット</h3>
+                <p class="feature-description">音声・動画の無音部分を自動で検出して削除。3段階の強さから選べます。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🗺️</div>
+                <h3 class="feature-title">話題マップ</h3>
+                <p class="feature-description">長い会議のトピックをバブルチャートで俯瞰。「結局何を話したか」が一目でわかります。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">☁️</div>
+                <h3 class="feature-title">ワードクラウド</h3>
+                <p class="feature-description">フォルダ全体のキーワードを一望。タップすると該当ノートへジャンプします。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⌨️</div>
+                <h3 class="feature-title">音声入力キーボード</h3>
+                <p class="feature-description">メールもチャットも、話すだけで入力。キーボードを追加すれば、どのアプリでも使えます。</p>
+            </div>
         </div>
     </section>
 
     <!-- Use Cases Section -->
     <section class="usecases" id="usecases" aria-labelledby="usecases-title">
         <div class="section-header">
-            <span class="section-label">USE CASES</span>
+            <span class="section-label">活用例</span>
             <h2 class="section-title" id="usecases-title">ビジネスから学習まで、<br>あらゆるシーンで活躍</h2>
         </div>
 
@@ -2248,7 +2347,7 @@
     <!-- Pricing Section -->
     <section class="pricing" id="pricing" aria-labelledby="pricing-title">
         <div class="section-header">
-            <span class="section-label">PRICING</span>
+            <span class="section-label">料金</span>
             <h2 class="section-title" id="pricing-title">シンプルな料金プラン</h2>
             <p class="section-description">まずは無料で。もっと使いたくなったらPremiumへ。</p>
         </div>
@@ -2284,7 +2383,7 @@
                 <ul class="pricing-features" id="premiumFeatures">
                     <li>Whisper 無制限</li>
                     <li>高性能モード (3時間/月)</li>
-                    <li>「ノートに聞く」AIチャット</li>
+                    <li>「ノートに聞く」AIチャット（すべてのノート対応）</li>
                     <li>要約テンプレート 20種</li>
                     <li>アクションアイテム抽出</li>
                     <li>画像文字起こし 無制限</li>
@@ -2302,7 +2401,7 @@
     <!-- Reviews Section -->
     <section class="reviews" id="reviews" aria-labelledby="reviews-title">
         <div class="section-header">
-            <span class="section-label">REVIEWS</span>
+            <span class="section-label">レビュー</span>
             <h2 class="section-title" id="reviews-title">ユーザーの声</h2>
         </div>
 
@@ -2340,7 +2439,7 @@
     <section class="cta">
         <div class="cta-content">
             <h2>今すぐ始めよう</h2>
-            <p>最先端AI文字起こしアプリで、あなたの声を未来へ。無料でダウンロードして体験してください。</p>
+            <p>録るだけで、議事録もタスクも。無料で始められます。</p>
             <div class="cta-buttons">
                 <a href="https://apps.apple.com/jp/app/id1482592304" class="btn-primary" style="padding: 1rem 2rem;" target="_blank" rel="noopener noreferrer">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -2362,7 +2461,7 @@
     <!-- Business Section -->
     <section class="business" id="business">
         <div class="business-content">
-            <span class="section-label">FOR BUSINESS</span>
+            <span class="section-label">法人のお客様へ</span>
             <h2 class="section-title">法人でのご利用をご検討の方へ</h2>
             <p class="business-description">Texterの機能・料金・セキュリティ情報をまとめた<br>法人向け資料をご用意しています。</p>
             <div class="business-actions">
@@ -2384,13 +2483,13 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <div class="logo">Texter</div>
-                <p>最先端AI文字起こしアプリ。あなたの声を、未来へ。</p>
+                <p>録音から、議事録・タスク・あとからの質問まで。</p>
             </div>
             
             <div class="footer-links">
                 <h4>機能・サポート</h4>
                 <ul>
-                    <li><a href="#features">基本機能</a></li>
+                    <li><a href="#record">基本機能</a></li>
                     <li><a href="#usecases">利用方法</a></li>
                     <li><a href="https://texter-app.notion.site/faq-ja" target="_blank" rel="noopener noreferrer">よくある質問</a></li>
                     <li><a href="mailto:texter.work.app@gmail.com">お問い合わせ</a></li>
@@ -2570,8 +2669,8 @@
         const premiumCta = document.getElementById('premiumCta');
         let isYearly = false;
 
-        const monthlyFeaturesHTML = '<li>Whisper 無制限</li><li>高性能モード (3時間/月)</li><li>「ノートに聞く」AIチャット</li><li>要約テンプレート 20種</li><li>アクションアイテム抽出</li><li>画像文字起こし 無制限</li><li>自動無音カット・動画字幕生成</li><li>話題マップ・内容まとめ</li><li>ワードクラウド</li><li>広告非表示</li>';
-        const yearlyFeaturesHTML = '<li>Whisper 無制限</li><li>高性能モード (10時間/月)</li><li>「ノートに聞く」AIチャット</li><li>要約テンプレート 20種</li><li>アクションアイテム抽出</li><li>画像文字起こし 無制限</li><li>自動無音カット・動画字幕生成</li><li>話題マップ・内容まとめ 無制限</li><li>ワードクラウド 無制限</li><li>4種類のエクスポート形式</li><li>優先サポート</li><li>広告非表示</li>';
+        const monthlyFeaturesHTML = '<li>Whisper 無制限</li><li>高性能モード (3時間/月)</li><li>「ノートに聞く」AIチャット（すべてのノート対応）</li><li>要約テンプレート 20種</li><li>アクションアイテム抽出</li><li>画像文字起こし 無制限</li><li>自動無音カット・動画字幕生成</li><li>話題マップ・内容まとめ</li><li>ワードクラウド</li><li>広告非表示</li>';
+        const yearlyFeaturesHTML = '<li>Whisper 無制限</li><li>高性能モード (10時間/月)</li><li>「ノートに聞く」AIチャット（すべてのノート対応）</li><li>要約テンプレート 20種</li><li>アクションアイテム抽出</li><li>画像文字起こし 無制限</li><li>自動無音カット・動画字幕生成</li><li>話題マップ・内容まとめ 無制限</li><li>ワードクラウド 無制限</li><li>4種類のエクスポート形式</li><li>優先サポート</li><li>広告非表示</li>';
 
         function updatePricing() {
             if (isYearly) {
@@ -2630,7 +2729,7 @@
             "ratingValue": "5",
             "reviewCount": "100+"
         },
-        "description": "録るだけで議事録もタスクも。AIが音声・画像・動画を文字起こしし、話者を識別、要点をまとめ、アクションアイテムをリマインダーへ自動登録。議事録作成から語学学習まで、あらゆるシーンで活躍。",
+        "description": "会議や取材を録音すると、文字起こし・話者識別・要約・タスク整理までTexterが自動化。あとから過去の記録に質問して、元の発言まで戻れます。",
         "url": "https://texter.work/",
         "downloadUrl": "https://apps.apple.com/jp/app/id1482592304",
         "screenshot": "https://texter.work/",

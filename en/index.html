@@ -18,7 +18,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Just hit record — AI transcribes every word, identifies speakers, summarizes key points, and sends action items to Reminders. Automate your meeting notes with Texter.">
+    <meta name="description" content="Record a meeting or interview and Texter transcribes it, labels speakers, summarizes, and pulls out the tasks automatically. Later, ask questions across your past notes and jump back to the original words.">
     <meta name="keywords" content="transcription,speech recognition,AI,meeting notes,AI notetaker,action items,speaker identification,Zoom transcription,OCR,translation,Whisper,OpenAI,topic map,topic summary,word cloud,note visualization,AI structuring">
     <meta name="author" content="Texter">
     <meta name="robots" content="index, follow">
@@ -32,8 +32,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://texter.work/en/">
-    <meta property="og:title" content="Texter - AI Speech Recognition & Transcription App">
-    <meta property="og:description" content="Just hit record — AI transcribes every word, identifies speakers, summarizes key points, and sends action items to Reminders. Automate your meeting notes with Texter.">
+    <meta property="og:title" content="Texter - Record the meeting. Get notes and to-dos. AI transcription app">
+    <meta property="og:description" content="Record a meeting or interview and Texter transcribes it, labels speakers, summarizes, and pulls out the tasks automatically. Later, ask questions across your past notes and jump back to the original words.">
     <meta property="og:site_name" content="Texter">
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="ja_JP">
@@ -41,8 +41,8 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://texter.work/en/">
-    <meta name="twitter:title" content="Texter - AI Speech Recognition & Transcription App">
-    <meta name="twitter:description" content="Just hit record — AI transcribes, identifies speakers, summarizes, and sends action items to Reminders.">
+    <meta name="twitter:title" content="Texter - Record the meeting. Get notes and to-dos. AI transcription app">
+    <meta name="twitter:description" content="Record a meeting and Texter transcribes, labels speakers, summarizes, and extracts tasks. Later, ask questions across your past notes.">
 
     <!-- iOS App -->
     <meta name="apple-itunes-app" content="app-id=1482592304">
@@ -73,7 +73,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png?v=2">
     <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png?v=2">
 
-    <title>Texter - AI Speech Recognition & Transcription App</title>
+    <title>Texter - Record the meeting. Get notes and to-dos. AI transcription app</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -796,6 +796,68 @@
             font-size: 0.8125rem;
         }
 
+        a.flow-step { text-decoration: none; transition: color 0.2s, border-color 0.2s; }
+        a.flow-step:hover { color: var(--text-primary); border-color: var(--border-hover); }
+        a.flow-step.highlight:hover { color: var(--accent); }
+
+        /* Recall section (思い出す) */
+        .recall-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5rem;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .recall-points { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.5rem; }
+        .recall-point { display: flex; gap: 1rem; align-items: flex-start; }
+        .recall-point-icon {
+            flex: 0 0 auto; width: 42px; height: 42px; border-radius: 11px;
+            background: var(--bg-elevated); border: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: center; font-size: 1.125rem;
+        }
+        .recall-point h3 { font-size: 1.0625rem; font-weight: 600; margin: 0 0 0.3rem; }
+        .recall-point p { font-size: 0.9375rem; color: var(--text-secondary); margin: 0; line-height: 1.65; }
+        .recall-mock {
+            width: 100%; max-width: 420px; margin: 0 auto;
+            background: var(--bg-surface); border: 1px solid var(--border); border-radius: 22px;
+            padding: 1.25rem; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+        }
+        .recall-mock-header {
+            display: flex; align-items: center; justify-content: space-between;
+            padding-bottom: 0.875rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border);
+        }
+        .recall-mock-title { font-weight: 600; font-size: 0.9375rem; }
+        .recall-mock-scope {
+            font-size: 0.6875rem; font-weight: 600; padding: 0.25rem 0.625rem; border-radius: 999px;
+            background: rgba(34, 211, 238, 0.1); color: var(--accent); border: 1px solid rgba(34, 211, 238, 0.35);
+        }
+        .recall-bubble { max-width: 88%; padding: 0.625rem 0.875rem; border-radius: 14px; font-size: 0.875rem; line-height: 1.55; margin-bottom: 0.75rem; }
+        .recall-bubble.user { margin-left: auto; background: var(--primary); color: #fff; border-bottom-right-radius: 4px; }
+        .recall-bubble.ai { background: var(--bg-elevated); border: 1px solid var(--border); border-bottom-left-radius: 4px; }
+        .recall-evidence-label { font-size: 0.6875rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.5px; margin: 0.25rem 0 0.5rem; }
+        .recall-evidence {
+            background: var(--bg-elevated); border: 1px solid var(--border); border-left: 3px solid var(--accent);
+            border-radius: 10px; padding: 0.75rem 0.875rem; margin-bottom: 0.875rem;
+        }
+        .recall-evidence-meta { display: flex; justify-content: space-between; font-size: 0.6875rem; color: var(--text-muted); margin-bottom: 0.375rem; }
+        .recall-evidence-quote { display: block; font-size: 0.8125rem; color: var(--text-primary); line-height: 1.5; margin-bottom: 0.625rem; }
+        .recall-play {
+            display: inline-flex; align-items: center; gap: 0.375rem; font-size: 0.75rem; font-weight: 600;
+            color: var(--accent); background: rgba(34, 211, 238, 0.1); border: 1px solid rgba(34, 211, 238, 0.35);
+            border-radius: 999px; padding: 0.3rem 0.75rem;
+        }
+        .recall-mock-input {
+            display: flex; align-items: center; justify-content: space-between; margin-top: 0.25rem;
+            padding: 0.625rem 0.875rem; border-radius: 999px; background: var(--bg); border: 1px solid var(--border);
+            font-size: 0.8125rem; color: var(--text-muted);
+        }
+        .recall-mock-input span:last-child { color: var(--accent); font-weight: 700; }
+        .recall-mock-note { text-align: center; font-size: 0.75rem; color: var(--text-muted); margin: 1.5rem 0 0; }
+        @media (max-width: 1024px) {
+            .recall-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+        }
+
         /* Action Items Mini Card (hero phone) */
         .action-mini {
             position: absolute;
@@ -888,8 +950,8 @@
             font-weight: 500;
             color: var(--text-muted);
             margin-bottom: 1rem;
-            font-family: 'Space Mono', monospace;
-            letter-spacing: 1px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
         }
 
         .section-title {
@@ -1760,7 +1822,7 @@
         <div class="nav-left">
             <a href="../" class="logo">Texter</a>
             <ul class="nav-links" role="list">
-                <li><a href="#features">Features</a></li>
+                <li><a href="#record">Features</a></li>
                 <li><a href="#usecases">Use Cases</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#reviews">Reviews</a></li>
@@ -1787,22 +1849,22 @@
         
         <div class="hero-content">
             <div class="hero-text">
-                <div class="hero-badge">AI Notetaker — from recording to tasks</div>
+                <div class="hero-badge">For meetings, interviews and lectures</div>
                 <h1 id="hero-title">
                     Record the meeting.<br>
                     <span class="gradient-text">Get notes and to-dos.</span>
                 </h1>
                 <p class="hero-description">
-                    One tap transcribes every word. AI identifies speakers, summarizes key points, and sends action items straight to Reminders. Meeting notes, fully automated.
+                    Record a meeting or interview and Texter transcribes it, labels speakers, summarizes, and pulls out the tasks. Later, ask a question across your past notes and jump back to the original words.
                 </p>
-                <div class="hero-flow" aria-label="From recording to tasks">
-                    <span class="flow-step">🎙️ Record</span>
+                <div class="hero-flow" aria-label="From recording to recalling it later">
+                    <a class="flow-step" href="#record">🎙️ Record</a>
                     <span class="flow-arrow" aria-hidden="true">→</span>
-                    <span class="flow-step">📝 Transcribe</span>
+                    <a class="flow-step" href="#organize">📝 Organize</a>
                     <span class="flow-arrow" aria-hidden="true">→</span>
-                    <span class="flow-step">🧠 Summarize</span>
+                    <a class="flow-step highlight" href="#recall">💬 Recall</a>
                     <span class="flow-arrow" aria-hidden="true">→</span>
-                    <span class="flow-step highlight">✅ Action items</span>
+                    <a class="flow-step" href="#act">✅ Act</a>
                 </div>
                 <div class="hero-buttons">
                     <a href="https://apps.apple.com/app/id1482592304" class="btn-primary" target="_blank" rel="noopener noreferrer">
@@ -1916,7 +1978,7 @@
     <!-- Before/After Comparison -->
     <section class="comparison" aria-labelledby="comparison-title">
         <div class="section-header">
-            <span class="section-label">WHY TEXTER</span>
+            <span class="section-label">Why Texter</span>
             <h2 class="section-title" id="comparison-title">No going back to manual</h2>
             <p class="section-description">See how transcription should work</p>
         </div>
@@ -1960,86 +2022,118 @@
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features" aria-labelledby="features-title">
+    <!-- 1. Record -->
+    <section class="features" id="record" aria-labelledby="record-title">
         <div class="section-header">
-            <span class="section-label">FEATURES</span>
-            <h2 class="section-title" id="features-title">Voice, images, videos.<br>All converted to text</h2>
-            <p class="section-description">Powered by Whisper (OpenAI) and latest AI engines with automatic punctuation</p>
+            <span class="section-label">1. Record</span>
+            <h2 class="section-title" id="record-title">Record on your phone,<br>from files, or from your wrist.</h2>
+            <p class="section-description">Start capturing the moment you think of it.</p>
         </div>
 
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon">🎙️</div>
-                <h3 class="feature-title">High-Accuracy AI Transcription</h3>
-                <p class="feature-description">Powered by Whisper (OpenAI) and advanced AI. Automatic punctuation and smooth transcription of long recordings.</p>
+                <h3 class="feature-title">Record and transcribe live</h3>
+                <p class="feature-description">One tap starts recording and transcribes as you speak. Long meetings and lectures are captured as they happen.</p>
             </div>
-            
             <div class="feature-card">
-                <div class="feature-icon">📸</div>
-                <h3 class="feature-title">Image & Video to Text</h3>
-                <p class="feature-description">OCR instantly extracts text from images. Also supports audio extraction and transcription from video files.</p>
+                <div class="feature-icon">📂</div>
+                <h3 class="feature-title">Import audio and video</h3>
+                <p class="feature-description">Bring in voice memos, meeting-tool recordings, or video files for transcription. Keep past recordings in one place.</p>
             </div>
-            
             <div class="feature-card">
-                <div class="feature-icon">🌐</div>
-                <h3 class="feature-title">Real-time Translation</h3>
-                <p class="feature-description">Integrated with DeepL and Google Translate. Instantly translate transcribed content for multilingual communication.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🤖</div>
-                <h3 class="feature-title">AI Summary & Organization</h3>
-                <p class="feature-description">Create meeting summaries and smartly manage your notes with folders and search functionality.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">✂️</div>
-                <h3 class="feature-title">Silence Removal</h3>
-                <p class="feature-description">Automatically detect and remove silent parts from videos and audio. Three preset levels: Low, Standard, High.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🎬</div>
-                <h3 class="feature-title">Video Subtitles & PiP</h3>
-                <p class="feature-description">Auto-generate subtitles for imported videos. Picture-in-Picture support lets you view subtitled videos while using other apps.</p>
-            </div>
-        </div>
-
-        <!-- AI Visualization Section -->
-        <div class="section-header" style="margin-top: 4rem;">
-            <span class="section-label">AI VISUALIZATION</span>
-            <h2 class="section-title" id="visualization-title">Recording is just the start.<br>AI extracts insights.</h2>
-            <p class="section-description">When you need to overview long notes. When you want to structure and organize.</p>
-        </div>
-
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🗺️</div>
-                <h3 class="feature-title">Topic Map</h3>
-                <p class="feature-description">Grasp a 2-hour meeting in 3 minutes. AI auto-clusters topics and visualizes them as interactive bubble charts. See "what was discussed" at a glance.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3 class="feature-title">Topic Summary</h3>
-                <p class="feature-description">Auto-convert notes to structured documents. AI selects the best format: 2-column comparison, flowchart, summary grid, and more. Export to PDF or Markdown.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">☁️</div>
-                <h3 class="feature-title">Word Cloud</h3>
-                <p class="feature-description">Overview keywords across folders. Frequently used words appear larger. Tap to jump directly to the relevant note. Visualize your knowledge intuitively.</p>
+                <div class="feature-icon">⌚</div>
+                <h3 class="feature-title">Apple Watch and widgets</h3>
+                <p class="feature-description">Record on Apple Watch alone and hand it off to iPhone. Start instantly from the Lock Screen widget, the Side button (iOS 26.2+), or Siri and Shortcuts.</p>
             </div>
         </div>
     </section>
 
-    <!-- Action Items Section -->
-    <section class="features" id="action-items" aria-labelledby="action-items-title">
+    <!-- 2. Organize -->
+    <section class="features" id="organize" aria-labelledby="organize-title">
         <div class="section-header">
-            <span class="section-label">ACTION ITEMS</span>
-            <h2 class="section-title" id="action-items-title">Meetings become<br>to-do lists</h2>
-            <p class="section-description">AI pulls action items out of your notes automatically. No more copying tasks by hand after every meeting.</p>
+            <span class="section-label">2. Organize</span>
+            <h2 class="section-title" id="organize-title">From transcript to summary,<br>automatically.</h2>
+            <p class="section-description">By the time you stop recording, it already reads like notes.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📝</div>
+                <h3 class="feature-title">Accurate transcription with speaker labels</h3>
+                <p class="feature-description">Powered by the latest engines including Whisper (OpenAI). Punctuation is added automatically and each speaker's lines are kept apart.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3 class="feature-title">Summaries and Topic Summary</h3>
+                <p class="feature-description">20 templates for meetings, interviews, lectures and more. Topic Summary picks the right structure for the content, from two-column comparisons to flowcharts.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌐</div>
+                <h3 class="feature-title">100+ languages and translation</h3>
+                <p class="feature-description">Transcribe in more than 100 languages, and translate on the spot with DeepL or Google Translate.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Recall -->
+    <section class="features" id="recall" aria-labelledby="recall-title">
+        <div class="section-header">
+            <span class="section-label">3. Recall</span>
+            <h2 class="section-title" id="recall-title">Ask your past recordings<br>a question.</h2>
+            <p class="section-description">Ask Your Note works on a single note or across All Notes. Every answer comes with sources, and you can play the original words right there.</p>
+        </div>
+
+        <div class="recall-layout">
+            <ul class="recall-points">
+                <li class="recall-point">
+                    <div class="recall-point-icon" aria-hidden="true">💬</div>
+                    <div>
+                        <h3>Ask across All Notes</h3>
+                        <p>"What deadline did we agree on last month?" Ask across your notes instead of searching through them.</p>
+                    </div>
+                </li>
+                <li class="recall-point">
+                    <div class="recall-point-icon" aria-hidden="true">📎</div>
+                    <div>
+                        <h3>Answers with sources</h3>
+                        <p>Each answer shows which note and which line it came from. No unsupported claims.</p>
+                    </div>
+                </li>
+                <li class="recall-point">
+                    <div class="recall-point-icon" aria-hidden="true">▶️</div>
+                    <div>
+                        <h3>Play the original words</h3>
+                        <p>Tap "Play from 12:34" on a source card to hear that exact moment again. Check the record, not your memory.</p>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="recall-mock" role="img" aria-label="Illustration of the Recall screen: a question across All Notes, an answer, and a source card with playback">
+                <div class="recall-mock-header">
+                    <span class="recall-mock-title">Recall</span>
+                    <span class="recall-mock-scope">All Notes</span>
+                </div>
+                <div class="recall-bubble user">What deadline did we agree on last month?</div>
+                <div class="recall-bubble ai">The deadline is <strong>Friday, August 29</strong>, on the condition that the design review is finished first.</div>
+                <div class="recall-evidence-label">Sources</div>
+                <div class="recall-evidence">
+                    <div class="recall-evidence-meta"><span>Weekly sync · Jul 15</span><span>12:34</span></div>
+                    <span class="recall-evidence-quote">"Let's go with Friday the 29th for the deadline. Get the design review done first."</span>
+                    <span class="recall-play">▶ Play from 12:34</span>
+                </div>
+                <div class="recall-mock-input"><span>Ask across all your notes...</span><span>↑</span></div>
+            </div>
+        </div>
+        <p class="recall-mock-note">Screen shown is an illustration.</p>
+    </section>
+
+    <!-- 4. Act -->
+    <section class="features" id="act" aria-labelledby="act-title">
+        <div class="section-header">
+            <span class="section-label">4. Act</span>
+            <h2 class="section-title" id="act-title">Your meeting becomes<br>a to-do list</h2>
+            <p class="section-description">AI pulls out what needs doing. No more copying tasks out of your notes.</p>
         </div>
 
         <div class="features-grid">
@@ -2048,60 +2142,65 @@
                 <h3 class="feature-title">Automatic extraction</h3>
                 <p class="feature-description">"Can you handle this?" "By next week" — AI catches tasks buried in conversation and turns them into a clean list.</p>
             </div>
-
             <div class="feature-card">
                 <div class="feature-icon">⏰</div>
                 <h3 class="feature-title">One-tap Reminders</h3>
                 <p class="feature-description">Due dates and owners are detected and sent straight to Apple Reminders, so notifications just work.</p>
             </div>
-
             <div class="feature-card">
-                <div class="feature-icon">🔍</div>
-                <h3 class="feature-title">Filter by action</h3>
-                <p class="feature-description">Filter your notes by open tasks or reminders already set. Nothing slips through the cracks.</p>
+                <div class="feature-icon">📤</div>
+                <h3 class="feature-title">Share and export</h3>
+                <p class="feature-description">Export transcripts, summaries and action items as text, PDF or Markdown, and share them with your team on the spot.</p>
             </div>
         </div>
     </section>
 
-    <!-- Apple Ecosystem Section -->
-    <section class="features" id="ecosystem" aria-labelledby="ecosystem-title">
+    <!-- More with Texter -->
+    <section class="features" id="more" aria-labelledby="more-title">
         <div class="section-header">
-            <span class="section-label">APPLE ECOSYSTEM</span>
-            <h2 class="section-title" id="ecosystem-title">No iPhone in hand?<br>Record from your wrist</h2>
-            <p class="section-description">Apple Watch, widgets, and Shortcuts put recording everywhere you are.</p>
+            <span class="section-label">More with Texter</span>
+            <h2 class="section-title" id="more-title">And when you need them,<br>a few more tools.</h2>
+            <p class="section-description">Outside the four steps, Texter still earns its place on your Home Screen.</p>
         </div>
 
-        <div class="features-grid features-grid-two">
+        <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon">⌚</div>
-                <h3 class="feature-title">Record on Apple Watch</h3>
-                <p class="feature-description">Start recording from the Action button, watch face, or Smart Stack — then hand it off to your iPhone for transcription.</p>
+                <div class="feature-icon">📸</div>
+                <h3 class="feature-title">Image OCR</h3>
+                <p class="feature-description">Turn photos and screenshots into text. Handy for whiteboards and printed documents.</p>
             </div>
-
             <div class="feature-card">
-                <div class="feature-icon">🧩</div>
-                <h3 class="feature-title">Widgets &amp; Shortcuts</h3>
-                <p class="feature-description">One-tap recording from the Lock Screen widget, plus automation with Siri and Shortcuts.</p>
+                <div class="feature-icon">🎬</div>
+                <h3 class="feature-title">Video subtitles and PiP</h3>
+                <p class="feature-description">Generate subtitles for imported videos and keep watching in Picture in Picture while you use other apps.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Parallax Section -->
-    <section class="parallax-section">
-        <div class="parallax-layer" data-speed="0.1">
-            <div class="parallax-text">VOICE TO TEXT</div>
-        </div>
-        <div class="parallax-content">
-            <h2>Dramatically boost<br><span class="gradient-text">your productivity</span></h2>
-            <p>Texter is more than a voice recorder. Record, visualize, and structure. Your partner in knowledge management.</p>
-            <a href="#usecases" class="btn-primary">See Use Cases</a>
+            <div class="feature-card">
+                <div class="feature-icon">✂️</div>
+                <h3 class="feature-title">Silence removal</h3>
+                <p class="feature-description">Detect and cut silent parts of audio and video automatically, with three strength levels.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🗺️</div>
+                <h3 class="feature-title">Topic Map</h3>
+                <p class="feature-description">See a long meeting as a bubble chart of topics and spot what it was really about.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">☁️</div>
+                <h3 class="feature-title">Word Cloud</h3>
+                <p class="feature-description">See the keywords across a whole folder. Tap one to jump to the note.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⌨️</div>
+                <h3 class="feature-title">Voice keyboard</h3>
+                <p class="feature-description">Dictate emails and chats in any app once you add the Texter keyboard.</p>
+            </div>
         </div>
     </section>
 
     <!-- Use Cases Section -->
     <section class="usecases" id="usecases" aria-labelledby="usecases-title">
         <div class="section-header">
-            <span class="section-label">USE CASES</span>
+            <span class="section-label">Use cases</span>
             <h2 class="section-title" id="usecases-title">From business to learning,<br>perfect for every scene</h2>
         </div>
 
@@ -2151,7 +2250,7 @@
     <!-- Pricing Section -->
     <section class="pricing" id="pricing" aria-labelledby="pricing-title">
         <div class="section-header">
-            <span class="section-label">PRICING</span>
+            <span class="section-label">Pricing</span>
             <h2 class="section-title" id="pricing-title">Simple pricing</h2>
             <p class="section-description">Start free. Upgrade when you need more.</p>
         </div>
@@ -2187,7 +2286,7 @@
                 <ul class="pricing-features" id="premiumFeatures">
                     <li>Whisper Unlimited</li>
                     <li>High-performance mode (3hr/mo)</li>
-                    <li>"Ask Your Note" AI chat</li>
+                    <li>"Ask Your Note" AI chat (single note or All Notes)</li>
                     <li>20 summary templates</li>
                     <li>Action item extraction</li>
                     <li>Unlimited image OCR</li>
@@ -2205,7 +2304,7 @@
     <!-- Reviews Section -->
     <section class="reviews" id="reviews" aria-labelledby="reviews-title">
         <div class="section-header">
-            <span class="section-label">REVIEWS</span>
+            <span class="section-label">Reviews</span>
             <h2 class="section-title" id="reviews-title">What users say</h2>
         </div>
 
@@ -2243,7 +2342,7 @@
     <section class="cta">
         <div class="cta-content">
             <h2>Get started today</h2>
-            <p>Experience the cutting-edge AI transcription app. Download free and transform your voice into the future.</p>
+            <p>Record the meeting. Get notes and to-dos. Free to start.</p>
             <div class="cta-buttons">
                 <a href="https://apps.apple.com/app/id1482592304" class="btn-primary" style="padding: 1rem 2rem;" target="_blank" rel="noopener noreferrer">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -2267,13 +2366,13 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <div class="logo">Texter</div>
-                <p>Cutting-edge AI transcription app. Your voice, to the future.</p>
+                <p>From recording to notes, tasks, and answers later.</p>
             </div>
             
             <div class="footer-links">
                 <h4>Features & Support</h4>
                 <ul>
-                    <li><a href="#features">Features</a></li>
+                    <li><a href="#record">Features</a></li>
                     <li><a href="#usecases">Use Cases</a></li>
                     <li><a href="https://texter-app.notion.site/faq-en" target="_blank" rel="noopener noreferrer">FAQ</a></li>
                     <li><a href="mailto:texter.work.app@gmail.com">Contact</a></li>
@@ -2451,8 +2550,8 @@
         const premiumCta = document.getElementById('premiumCta');
         let isYearly = false;
 
-        const monthlyFeaturesHTML = '<li>Whisper Unlimited</li><li>High-performance mode (3hr/mo)</li><li>"Ask Your Note" AI chat</li><li>20 summary templates</li><li>Action item extraction</li><li>Unlimited image OCR</li><li>Silence removal & video subtitles</li><li>Topic Map & Topic Summary</li><li>Word Cloud</li><li>Ad-free</li>';
-        const yearlyFeaturesHTML = '<li>Whisper Unlimited</li><li>High-performance mode (10hr/mo)</li><li>"Ask Your Note" AI chat</li><li>20 summary templates</li><li>Action item extraction</li><li>Unlimited image OCR</li><li>Silence removal & video subtitles</li><li>Unlimited Topic Map & Summary</li><li>Unlimited Word Cloud</li><li>4 export formats</li><li>Priority support</li><li>Ad-free</li>';
+        const monthlyFeaturesHTML = '<li>Whisper Unlimited</li><li>High-performance mode (3hr/mo)</li><li>"Ask Your Note" AI chat (single note or All Notes)</li><li>20 summary templates</li><li>Action item extraction</li><li>Unlimited image OCR</li><li>Silence removal & video subtitles</li><li>Topic Map & Topic Summary</li><li>Word Cloud</li><li>Ad-free</li>';
+        const yearlyFeaturesHTML = '<li>Whisper Unlimited</li><li>High-performance mode (10hr/mo)</li><li>"Ask Your Note" AI chat (single note or All Notes)</li><li>20 summary templates</li><li>Action item extraction</li><li>Unlimited image OCR</li><li>Silence removal & video subtitles</li><li>Unlimited Topic Map & Summary</li><li>Unlimited Word Cloud</li><li>4 export formats</li><li>Priority support</li><li>Ad-free</li>';
 
         function updatePricing() {
             if (isYearly) {
@@ -2510,7 +2609,7 @@
             "ratingValue": "5",
             "reviewCount": "100+"
         },
-        "description": "Just hit record — AI transcribes your voice, images, and videos, identifies speakers, summarizes key points, and sends action items to Reminders. From meeting notes to language learning, Texter works in every scenario.",
+        "description": "Record a meeting or interview and Texter transcribes it, labels speakers, summarizes, and pulls out the tasks automatically. Later, ask questions across your past notes and jump back to the original words.",
         "url": "https://texter.work/en/",
         "downloadUrl": "https://apps.apple.com/app/id1482592304",
         "screenshot": "https://texter.work/en/",
