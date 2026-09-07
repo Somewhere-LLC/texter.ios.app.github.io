@@ -936,6 +936,11 @@
             margin: 0 auto;
         }
 
+        .features-grid.features-grid-two {
+            grid-template-columns: repeat(2, 1fr);
+            max-width: 730px;
+        }
+
         .feature-card {
             background: var(--bg-surface);
             border-radius: 12px;
@@ -1519,7 +1524,8 @@
         }
 
         @media (max-width: 640px) {
-            .features-grid {
+            .features-grid,
+            .features-grid.features-grid-two {
                 grid-template-columns: 1fr;
             }
 
@@ -1988,8 +1994,8 @@
                     </div>
                     <div class="floating-elements">
                         <div class="floating-card floating-card-1">
-                            <div class="card-text">🎯 98.5%</div>
-                            <div class="card-sub">認識精度</div>
+                            <div class="card-text">🎯 話者を自動識別</div>
+                            <div class="card-sub">誰の発言かも記録</div>
                         </div>
                         <div class="floating-card floating-card-2">
                             <div class="card-text">✅ タスク自動抽出</div>
@@ -2045,8 +2051,8 @@
                     <li><span class="icon">✓</span>100以上の言語に対応</li>
                 </ul>
                 <div class="comparison-time">
-                    <span class="comparison-time-value">0秒</span>
-                    <span class="comparison-time-label">/ 自動で完了</span>
+                    <span class="comparison-time-value">自動</span>
+                    <span class="comparison-time-label">/ 録るだけで完了</span>
                 </div>
             </div>
         </div>
@@ -2163,7 +2169,7 @@
             <p class="section-description">Apple Watch・ウィジェット・ショートカット。録音の入口はあらゆる場所に。</p>
         </div>
 
-        <div class="features-grid">
+        <div class="features-grid features-grid-two">
             <div class="feature-card">
                 <div class="feature-icon">⌚</div>
                 <h3 class="feature-title">Apple Watch 単体録音</h3>
@@ -2174,12 +2180,6 @@
                 <div class="feature-icon">🧩</div>
                 <h3 class="feature-title">サイドボタン &amp; ウィジェット</h3>
                 <p class="feature-description">サイドボタン長押しでTexterを即起動（iOS 26.2〜）。ロック画面ウィジェットからのワンタップ録音や、Siri・ショートカットでの自動化にも対応。</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">🔒</div>
-                <h3 class="feature-title">オンデバイスAI</h3>
-                <p class="feature-description">要約やアクション抽出は端末内のAIで完結。内容が外部に出ない安心設計です。</p>
             </div>
         </div>
     </section>
@@ -2259,7 +2259,7 @@
             <div class="toggle-switch" id="toggleSwitch">
                 <div class="toggle-knob"></div>
             </div>
-            <span class="toggle-option" data-plan="yearly">年額<span class="pricing-save-badge">¥12,800 お得</span></span>
+            <span class="toggle-option" data-plan="yearly">年額<span class="pricing-save-badge">月額払い比 約59%OFF</span></span>
         </div>
 
         <div class="pricing-grid-two">

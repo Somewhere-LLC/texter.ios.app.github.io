@@ -918,6 +918,11 @@
             margin: 0 auto;
         }
 
+        .features-grid.features-grid-two {
+            grid-template-columns: repeat(2, 1fr);
+            max-width: 730px;
+        }
+
         .feature-card {
             background: var(--bg-surface);
             border-radius: 12px;
@@ -1427,7 +1432,8 @@
         }
 
         @media (max-width: 640px) {
-            .features-grid {
+            .features-grid,
+            .features-grid.features-grid-two {
                 grid-template-columns: 1fr;
             }
 
@@ -1891,8 +1897,8 @@
                     </div>
                     <div class="floating-elements">
                         <div class="floating-card floating-card-1">
-                            <div class="card-text">🎯 98.5%</div>
-                            <div class="card-sub">Accuracy</div>
+                            <div class="card-text">🎯 Speaker labels</div>
+                            <div class="card-sub">Know who said what</div>
                         </div>
                         <div class="floating-card floating-card-2">
                             <div class="card-text">✅ Auto task capture</div>
@@ -1948,8 +1954,8 @@
                     <li><span class="icon">✓</span>100+ languages supported</li>
                 </ul>
                 <div class="comparison-time">
-                    <span class="comparison-time-value">0 sec</span>
-                    <span class="comparison-time-label">/ fully automatic</span>
+                    <span class="comparison-time-value">Auto</span>
+                    <span class="comparison-time-label">/ just hit record</span>
                 </div>
             </div>
         </div>
@@ -2066,7 +2072,7 @@
             <p class="section-description">Apple Watch, widgets, and Shortcuts put recording everywhere you are.</p>
         </div>
 
-        <div class="features-grid">
+        <div class="features-grid features-grid-two">
             <div class="feature-card">
                 <div class="feature-icon">⌚</div>
                 <h3 class="feature-title">Record on Apple Watch</h3>
@@ -2077,12 +2083,6 @@
                 <div class="feature-icon">🧩</div>
                 <h3 class="feature-title">Widgets &amp; Shortcuts</h3>
                 <p class="feature-description">One-tap recording from the Lock Screen widget, plus automation with Siri and Shortcuts.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">🔒</div>
-                <h3 class="feature-title">On-device AI</h3>
-                <p class="feature-description">Summaries and action items are processed entirely on-device — your content never leaves your phone.</p>
             </div>
         </div>
     </section>
@@ -2162,7 +2162,7 @@
             <div class="toggle-switch" id="toggleSwitch">
                 <div class="toggle-knob"></div>
             </div>
-            <span class="toggle-option" data-plan="yearly">Yearly<span class="pricing-save-badge">Save $95</span></span>
+            <span class="toggle-option" data-plan="yearly">Yearly<span class="pricing-save-badge">Save 61% vs monthly</span></span>
         </div>
 
         <div class="pricing-grid-two">
