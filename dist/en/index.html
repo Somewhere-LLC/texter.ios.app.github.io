@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com https://*.g.doubleclick.net https://*.google.com https://*.google.co.jp; connect-src 'self' https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://www.googletagmanager.com https://*.g.doubleclick.net; base-uri 'self'; form-action 'self'; object-src 'none'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com https://*.doubleclick.net https://*.google.com https://*.google.co.jp; connect-src 'self' https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://www.googletagmanager.com https://*.doubleclick.net https://*.google.com https://*.google.co.jp; base-uri 'self'; form-action 'self'; object-src 'none'">
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HDB32BHHL8"></script>
     <script>
@@ -60,6 +60,7 @@
     <meta name="smartbanner:button" content="Open">
     <meta name="smartbanner:button-url-google" content="https://play.google.com/store/apps/details?id=com.matz.Texter">
     <meta name="smartbanner:button-url-apple" content="https://apps.apple.com/app/id1482592304">
+    <meta name="smartbanner:icon-google" content="/img/appicon.png">
     <meta name="smartbanner:enabled-platforms" content="android">
 
     <!-- OGP Image -->
@@ -132,7 +133,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .ruler .r0{top:24px;display:none}.ruler .r1{bottom:14px}
 
 /* ---------- nav ---------- */
-.nav{position:fixed;z-index:50;top:0;left:var(--ruler);right:0;height:var(--nav);color:var(--navy);background:rgba(255,255,255,.70);-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%);border-bottom:1px solid rgba(23,37,90,.06);transition:transform .3s ease,opacity .3s ease}
+.nav{position:fixed;z-index:50;top:var(--banner,0px);left:var(--ruler);right:0;height:var(--nav);color:var(--navy);background:rgba(255,255,255,.70);-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%);border-bottom:1px solid rgba(23,37,90,.06);transition:transform .3s ease,opacity .3s ease}
 .nav.is-hidden{transform:translateY(-100%);opacity:0}
 @media (prefers-reduced-transparency:reduce){.nav,.ruler{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}}
 .nav .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
@@ -143,10 +144,10 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .nav ul a::after{content:"";position:absolute;left:12px;right:100%;bottom:4px;height:2px;background:var(--accent);transition:right .25s}
 .nav ul a:hover::after{right:12px}
 .nav ul a.en{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em}
-.btn-dl{display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:var(--accent);color:#fff;font-weight:600;font-size:14px;padding:0 16px;height:38px;border-radius:999px;box-shadow:var(--shadow-btn);transition:transform .12s ease-out}
+.btn-dl{display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:var(--deep);color:#fff;font-weight:600;font-size:14px;padding:0 16px;height:38px;border-radius:999px;box-shadow:var(--shadow-btn);transition:transform .12s ease-out}
 .btn-dl:active,.btn:active{transform:scale(.97)}
 .menu-btn{display:none;height:38px;padding:0 14px;border-radius:999px;background:#fff;color:var(--navy);font-weight:600;font-size:14px;box-shadow:var(--shadow-soft)}
-.sheet{position:fixed;inset:0;z-index:90;background:rgba(237,244,255,.96);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);color:var(--navy);padding:calc(20px + env(safe-area-inset-top,0px)) 24px calc(28px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:28px}
+.sheet{position:fixed;inset:0;z-index:90;overflow-y:auto;background:rgba(237,244,255,.96);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);color:var(--navy);padding:calc(20px + env(safe-area-inset-top,0px)) 24px calc(28px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:28px}
 .sheet[hidden]{display:none}
 .sheet .top{display:flex;justify-content:space-between;align-items:center}
 .sheet ol{list-style:none;padding:0;margin:0;display:grid;gap:4px;border-top:1px solid var(--line)}
@@ -157,7 +158,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 /* ---------- buttons ---------- */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;border-radius:999px;text-decoration:none;font-weight:600;font-size:16px;line-height:1;transition:transform .12s ease-out,background-color .2s,color .2s;white-space:nowrap}
 .btn svg{width:20px;height:20px;flex:none}
-.btn-solid{background:var(--accent);color:#fff;box-shadow:var(--shadow-btn)}
+.btn-solid{background:var(--deep);color:#fff;box-shadow:var(--shadow-btn)}
 .btn-line{background:#fff;color:var(--navy);box-shadow:inset 0 0 0 1px var(--line),var(--shadow-soft)}
 .btn-line:hover{box-shadow:inset 0 0 0 1px var(--accent),var(--shadow-soft)}
 .btn-tint{background:#E9EDFF;color:var(--deep)}
@@ -197,7 +198,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:12px;color:var(--sub)}
 .card-top .cdate{font-family:var(--f-mono);font-feature-settings:"tnum" 1;letter-spacing:.02em}
 .card .eh{display:flex;align-items:center;gap:8px;margin-top:4px;font-size:15px;font-weight:600;color:#000}
-.card .num{width:20px;height:20px;border-radius:50%;background:var(--accent);color:#fff;font-size:12px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card .num{width:20px;height:20px;border-radius:50%;background:var(--deep);color:#fff;font-size:12px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex:none}
 .card:not(.hit) .num{display:none}
 .card-body{margin:4px 0 0 28px;font-size:13.5px;word-break:auto-phrase;line-height:1.6;color:var(--sub);min-height:2.6em}
 .card-foot{margin:6px 0 0 28px;display:flex;align-items:center;gap:16px;font-size:14px;font-weight:500;color:var(--deep);min-height:24px}
@@ -438,7 +439,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .plans{margin-top:24px;align-items:start;row-gap:24px}
 .plan{grid-column:span 6;background:rgba(255,255,255,.88);border-radius:var(--r-card);box-shadow:var(--shadow-soft);padding:28px;display:flex;flex-direction:column}
 .plan .nm{display:flex;align-items:center;justify-content:space-between;font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--sub)}
-.plan .pop{background:var(--accent);color:#fff;padding:3px 10px;border-radius:999px;letter-spacing:0;font-weight:600;font-size:12px}
+.plan .pop{background:var(--deep);color:#fff;padding:3px 10px;border-radius:999px;letter-spacing:0;font-weight:600;font-size:12px}
 .price{margin-top:12px;font-weight:800;font-size:clamp(2.6rem,4vw,3.4rem);line-height:1.05;letter-spacing:-.03em;color:var(--navy);font-variant-numeric:tabular-nums}
 .price small{font-weight:600;font-size:16px;letter-spacing:0;margin-left:4px;color:var(--sub)}
 .plan .eq{margin-top:6px;font-size:13px;min-height:1.6em;color:var(--sub);font-variant-numeric:tabular-nums}
@@ -1192,7 +1193,7 @@ html[lang=en] .h1 .ch{white-space:pre}
       phT.textContent = fmt(tcAt(shownY));
     }
     // the nav quietly leaves while reading down and comes back on the way up
-    if (y !== lastY) { if (!reduce()) nav.classList.toggle('is-hidden', y > lastY && y > 120 && sheet.hidden); lastY = y; }
+    if (y !== lastY) { if (!reduce() && !nav.matches(':focus-within')) nav.classList.toggle('is-hidden', y > lastY && y > 120 && sheet.hidden); lastY = y; }
     sraf = (shownY !== y) ? requestAnimationFrame(frame) : 0;
   }
   const kick = () => { if (!sraf) sraf = requestAnimationFrame(frame); };
@@ -1243,6 +1244,7 @@ html[lang=en] .h1 .ch{white-space:pre}
     if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
     else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
   });
+  nav.addEventListener('focusin', () => nav.classList.remove('is-hidden'));
   menuBtn.addEventListener('click', () => openSheet(true));
   closeBtn.addEventListener('click', () => openSheet(false));
   sheet.addEventListener('click', e => { if (e.target.closest('a')) openSheet(false); });
@@ -1261,5 +1263,15 @@ html[lang=en] .h1 .ch{white-space:pre}
     <!-- Android Smart Banner (self-hosted; see assets/vendor/smartbanner/LICENSE) -->
     <link rel="stylesheet" href="/assets/vendor/smartbanner/smartbanner.min.css">
     <script src="/assets/vendor/smartbanner/smartbanner.min.js"></script>
+    <script>
+      // Keep the fixed nav below the Android smart banner (smartbanner.js pushes the page down with html margin-top, not the fixed nav).
+      (function () {
+        var root = document.documentElement;
+        function sync() { var b = document.querySelector('.smartbanner'); root.style.setProperty('--banner', b ? b.offsetHeight + 'px' : '0px'); }
+        document.addEventListener('DOMContentLoaded', function () { sync(); setTimeout(sync, 300); });
+        document.addEventListener('smartbanner.exit', function () { root.style.setProperty('--banner', '0px'); });
+        window.addEventListener('resize', sync);
+      })();
+    </script>
 </body>
 </html>
