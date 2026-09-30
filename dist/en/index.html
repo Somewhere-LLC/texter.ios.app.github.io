@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com https://*.g.doubleclick.net https://*.google.com https://*.google.co.jp; connect-src 'self' https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://www.googletagmanager.com https://*.g.doubleclick.net; base-uri 'self'; form-action 'self'; object-src 'none'">
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HDB32BHHL8"></script>
     <script>
@@ -12,8 +14,6 @@
         });
     </script>
 
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; connect-src 'self' https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://www.googletagmanager.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -992,7 +992,7 @@ html[lang=en] .h1 .ch{white-space:pre}
         <a class="brand" href="/"><img src="/img/appicon.png" alt="" width="28" height="28">Texter</a>
         <p>From recording to notes, tasks and questions later.</p>
       </div>
-      <nav aria-label="Product and support"><h4>Product &amp; support</h4><ul><li><a href="#record">Features</a></li><li><a href="#usecases">Use cases</a></li><li><a href="https://texter-app.notion.site/faq-ja" target="_blank" rel="noopener noreferrer">FAQ</a></li><li><a href="mailto:texter.work.app@gmail.com">Contact</a></li><li><a href="#business">For teams</a></li></ul></nav>
+      <nav aria-label="Product and support"><h4>Product &amp; support</h4><ul><li><a href="#record">Features</a></li><li><a href="#usecases">Use cases</a></li><li><a href="https://texter-app.notion.site/faq-en" target="_blank" rel="noopener noreferrer">FAQ</a></li><li><a href="mailto:texter.work.app@gmail.com">Contact</a></li><li><a href="#business">For teams</a></li></ul></nav>
       <nav aria-label="Legal"><h4>Legal</h4><ul><li><a href="/en/terms-of-service/">Terms of Service</a></li><li><a href="/en/privacy-policy/">Privacy Policy</a></li><li><a href="/tokushoho/">Legal notice (Japan)</a></li><li><a href="/" hreflang="ja">日本語</a></li></ul></nav>
     </div>
     <div class="copy"><span>© 2026 Texter app - Kyoto, Japan.</span><span>60:00 · END OF RECORDING</span></div>
@@ -1226,12 +1226,23 @@ html[lang=en] .h1 .ch{white-space:pre}
 
   /* ---------- mobile sheet ---------- */
   const menuBtn = $('#menuBtn'), closeBtn = $('#menuClose');
+  const behind = () => $$('body > :not(#sheet):not(script):not(link)');
   function openSheet(o) {
     sheet.hidden = !o; menuBtn.setAttribute('aria-expanded', String(o));
     document.documentElement.style.overflow = o ? 'hidden' : '';
+    // aria-modal: everything behind the sheet is inert while it is open (the nav stays reachable only via the sheet's own close button)
+    behind().forEach(el => { if (o) el.setAttribute('inert', ''); else el.removeAttribute('inert'); });
     if (o) nav.classList.remove('is-hidden');
     (o ? closeBtn : menuBtn).focus();
   }
+  sheet.addEventListener('keydown', e => {
+    if (e.key !== 'Tab') return;
+    const f = $$('a[href], button, [tabindex]:not([tabindex="-1"])', sheet).filter(el => !el.hidden && el.offsetParent !== null);
+    if (!f.length) return;
+    const first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
   menuBtn.addEventListener('click', () => openSheet(true));
   closeBtn.addEventListener('click', () => openSheet(false));
   sheet.addEventListener('click', e => { if (e.target.closest('a')) openSheet(false); });
@@ -1247,5 +1258,8 @@ html[lang=en] .h1 .ch{white-space:pre}
   });
 })();
 </script>
+    <!-- Android Smart Banner (self-hosted; see assets/vendor/smartbanner/LICENSE) -->
+    <link rel="stylesheet" href="/assets/vendor/smartbanner/smartbanner.min.css">
+    <script src="/assets/vendor/smartbanner/smartbanner.min.js"></script>
 </body>
 </html>

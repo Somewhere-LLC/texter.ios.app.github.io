@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com https://*.g.doubleclick.net https://*.google.com https://*.google.co.jp; connect-src 'self' https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://www.googletagmanager.com https://*.g.doubleclick.net; base-uri 'self'; form-action 'self'; object-src 'none'">
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HDB32BHHL8"></script>
     <script>
@@ -12,8 +14,6 @@
         });
     </script>
 
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; connect-src 'self' https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://www.googletagmanager.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -1222,12 +1222,23 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 
   /* ---------- mobile sheet ---------- */
   const menuBtn = $('#menuBtn'), closeBtn = $('#menuClose');
+  const behind = () => $$('body > :not(#sheet):not(script):not(link)');
   function openSheet(o) {
     sheet.hidden = !o; menuBtn.setAttribute('aria-expanded', String(o));
     document.documentElement.style.overflow = o ? 'hidden' : '';
+    // aria-modal: everything behind the sheet is inert while it is open (the nav stays reachable only via the sheet's own close button)
+    behind().forEach(el => { if (o) el.setAttribute('inert', ''); else el.removeAttribute('inert'); });
     if (o) nav.classList.remove('is-hidden');
     (o ? closeBtn : menuBtn).focus();
   }
+  sheet.addEventListener('keydown', e => {
+    if (e.key !== 'Tab') return;
+    const f = $$('a[href], button, [tabindex]:not([tabindex="-1"])', sheet).filter(el => !el.hidden && el.offsetParent !== null);
+    if (!f.length) return;
+    const first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
   menuBtn.addEventListener('click', () => openSheet(true));
   closeBtn.addEventListener('click', () => openSheet(false));
   sheet.addEventListener('click', e => { if (e.target.closest('a')) openSheet(false); });
@@ -1243,5 +1254,8 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   });
 })();
 </script>
+    <!-- Android Smart Banner (self-hosted; see assets/vendor/smartbanner/LICENSE) -->
+    <link rel="stylesheet" href="/assets/vendor/smartbanner/smartbanner.min.css">
+    <script src="/assets/vendor/smartbanner/smartbanner.min.js"></script>
 </body>
 </html>
