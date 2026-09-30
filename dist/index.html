@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com https://*.doubleclick.net https://*.google.com https://*.google.co.jp; connect-src 'self' https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://www.googletagmanager.com https://*.doubleclick.net https://*.google.com https://*.google.co.jp; base-uri 'self'; form-action 'self'; object-src 'none'">
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HDB32BHHL8"></script>
     <script>
@@ -12,8 +14,7 @@
         });
     </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
@@ -59,13 +60,14 @@
     <meta name="smartbanner:button" content="開く">
     <meta name="smartbanner:button-url-google" content="https://play.google.com/store/apps/details?id=com.matz.Texter">
     <meta name="smartbanner:button-url-apple" content="https://apps.apple.com/jp/app/id1482592304">
+    <meta name="smartbanner:icon-google" content="/img/appicon.png">
     <meta name="smartbanner:enabled-platforms" content="android">
 
     <!-- OGP Image -->
-    <meta property="og:image" content="https://texter.work/img/ogp.png?v=2">
+    <meta property="og:image" content="https://texter.work/img/ogp.png?v=3">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta name="twitter:image" content="https://texter.work/img/ogp.png?v=2">
+    <meta name="twitter:image" content="https://texter.work/img/ogp.png?v=3">
 
     <!-- Favicon -->
     <link rel="icon" href="/assets/favicon/favicon.ico?v=2" sizes="any">
@@ -74,2687 +76,1198 @@
     <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png?v=2">
 
     <title>Texter - 録るだけで、議事録もタスクも。AI文字起こし・議事録アプリ</title>
-
+    <meta name="theme-color" content="#EDF4FF">
+    <script>document.documentElement.classList.add('js');</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Space+Mono:wght@700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500&family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #6366f1;
-            --primary-light: #818cf8;
-            --primary-dark: #4f46e5;
-            --accent: #22d3ee;
-            --accent-glow: rgba(34, 211, 238, 0.4);
-            --gradient-1: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-            --gradient-2: linear-gradient(135deg, #22d3ee 0%, #6366f1 100%);
-            
-            /* Dark mode (default) */
-            --bg: #09090b;
-            --bg-surface: #0f0f12;
-            --bg-elevated: #18181b;
-            --text-primary: #fafafa;
-            --text-secondary: rgba(250, 250, 250, 0.6);
-            --text-muted: rgba(250, 250, 250, 0.35);
-            --border: rgba(255, 255, 255, 0.06);
-            --border-hover: rgba(255, 255, 255, 0.12);
-        }
-
-        /* Light mode */
-        @media (prefers-color-scheme: light) {
-            :root {
-                --bg: #fafafa;
-                --bg-surface: #ffffff;
-                --bg-elevated: #f4f4f5;
-                --text-primary: #09090b;
-                --text-secondary: rgba(9, 9, 11, 0.6);
-                --text-muted: rgba(9, 9, 11, 0.4);
-                --border: rgba(0, 0, 0, 0.06);
-                --border-hover: rgba(0, 0, 0, 0.12);
-            }
-        }
-
-        /* Manual theme toggle */
-        [data-theme="light"] {
-            --bg: #fafafa;
-            --bg-surface: #ffffff;
-            --bg-elevated: #f4f4f5;
-            --text-primary: #09090b;
-            --text-secondary: rgba(9, 9, 11, 0.6);
-            --text-muted: rgba(9, 9, 11, 0.4);
-            --border: rgba(0, 0, 0, 0.06);
-            --border-hover: rgba(0, 0, 0, 0.12);
-        }
-
-        [data-theme="dark"] {
-            --bg: #09090b;
-            --bg-surface: #0f0f12;
-            --bg-elevated: #18181b;
-            --text-primary: #fafafa;
-            --text-secondary: rgba(250, 250, 250, 0.6);
-            --text-muted: rgba(250, 250, 250, 0.35);
-            --border: rgba(255, 255, 255, 0.06);
-            --border-hover: rgba(255, 255, 255, 0.12);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Noto Sans JP', 'Outfit', sans-serif;
-            background: var(--bg);
-            color: var(--text-primary);
-            overflow-x: hidden;
-            line-height: 1.7;
-            transition: background 0.3s ease, color 0.3s ease;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--text-muted);
-            border-radius: 3px;
-        }
-
-        /* Remove noise overlay for minimal look */
-        .noise {
-            display: none;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 1.25rem 3rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: transparent;
-            transition: all 0.3s ease;
-        }
-
-        nav.scrolled {
-            padding: 1rem 3rem;
-            background: rgba(9, 9, 11, 0.8);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        @media (prefers-color-scheme: light) {
-            nav.scrolled { background: rgba(250, 250, 250, 0.8); }
-        }
-
-        [data-theme="light"] nav.scrolled { background: rgba(250, 250, 250, 0.8); }
-        [data-theme="dark"] nav.scrolled { background: rgba(9, 9, 11, 0.8); }
-
-        .nav-left {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-        }
-
-        .logo {
-            font-family: 'Space Mono', monospace;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            letter-spacing: -1px;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.875rem;
-            font-weight: 400;
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--text-primary);
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .theme-toggle {
-            width: 36px;
-            height: 36px;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            background: transparent;
-            color: var(--text-secondary);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s ease;
-        }
-
-        .theme-toggle:hover {
-            border-color: var(--border-hover);
-            color: var(--text-primary);
-        }
-
-        .lang-switch {
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            background: transparent;
-            color: var(--text-secondary);
-            font-size: 0.8125rem;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .lang-switch:hover {
-            border-color: var(--border-hover);
-            color: var(--text-primary);
-        }
-
-        .nav-cta {
-            padding: 0.625rem 1.5rem;
-            background: var(--text-primary);
-            border: none;
-            border-radius: 8px;
-            color: var(--bg);
-            font-weight: 500;
-            font-size: 0.875rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-decoration: none;
-        }
-
-        .nav-cta:hover {
-            opacity: 0.9;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            padding: 8rem 3rem 6rem;
-        }
-
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 60%);
-        }
-
-        .hero-orb {
-            display: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            max-width: 1200px;
-            width: 100%;
-            align-items: center;
-        }
-
-        .hero-text {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeUp 0.8s ease forwards 0.2s;
-        }
-
-        @keyframes fadeUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.375rem 0.875rem;
-            background: transparent;
-            border: 1px solid var(--border);
-            border-radius: 100px;
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            font-family: 'Space Mono', monospace;
-        }
-
-        .hero-badge::before {
-            content: '';
-            width: 6px;
-            height: 6px;
-            background: var(--primary);
-            border-radius: 50%;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.25rem, 4.5vw, 3.5rem);
-            font-weight: 700;
-            line-height: 1.15;
-            margin-bottom: 1.25rem;
-            letter-spacing: -1.5px;
-        }
-
-        .hero h1 .gradient-text {
-            background: var(--gradient-2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-description {
-            font-size: 1.0625rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            max-width: 440px;
-            font-weight: 400;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.875rem 1.75rem;
-            background: var(--text-primary);
-            border: none;
-            border-radius: 10px;
-            color: var(--bg);
-            font-weight: 500;
-            font-size: 0.9375rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-decoration: none;
-        }
-
-        .btn-primary:hover {
-            opacity: 0.9;
-            transform: translateY(-1px);
-        }
-
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.875rem 1.75rem;
-            background: transparent;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            color: var(--text-primary);
-            font-weight: 500;
-            font-size: 0.9375rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-decoration: none;
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--border-hover);
-            background: var(--bg-elevated);
-        }
-
-        .hero-visual {
-            position: relative;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeUp 0.8s ease forwards 0.4s;
-        }
-
-        .phone-mockup {
-            position: relative;
-            max-width: 280px;
-            margin: 0 auto;
-        }
-
-        .phone-frame {
-            position: relative;
-            background: var(--bg-elevated);
-            border-radius: 36px;
-            padding: 10px;
-            border: 1px solid var(--border);
-            animation: phoneFloat 6s ease-in-out infinite;
-        }
-
-        @keyframes phoneFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .phone-screen {
-            background: var(--bg);
-            border-radius: 28px;
-            overflow: hidden;
-            aspect-ratio: 9/19.5;
-            display: flex;
-            flex-direction: column;
-            border: 1px solid var(--border);
-        }
-
-        .phone-notch {
-            width: 100px;
-            height: 24px;
-            background: var(--bg-elevated);
-            margin: 0 auto;
-            border-radius: 0 0 16px 16px;
-        }
-
-        .phone-content {
-            flex: 1;
-            background: var(--bg-surface);
-            display: flex;
-            flex-direction: column;
-            padding: 0.875rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Recording Header */
-        .phone-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0.375rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .recording-indicator {
-            display: flex;
-            align-items: center;
-            gap: 0.375rem;
-            font-size: 0.625rem;
-            color: #ef4444;
-            font-weight: 500;
-        }
-
-        .recording-dot {
-            width: 6px;
-            height: 6px;
-            background: #ef4444;
-            border-radius: 50%;
-            animation: recordingPulse 1.5s ease-in-out infinite;
-        }
-
-        @keyframes recordingPulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
-        }
-
-        .recording-time {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.625rem;
-            color: var(--text-muted);
-        }
-
-        /* Waveform */
-        .waveform-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 2px;
-            padding: 0.75rem 0;
-            margin-bottom: 0.5rem;
-        }
-
-        .waveform-bar {
-            width: 3px;
-            background: var(--primary);
-            border-radius: 2px;
-            animation: waveform 1.2s ease-in-out infinite;
-        }
-
-        .waveform-bar:nth-child(1) { height: 16px; animation-delay: 0s; }
-        .waveform-bar:nth-child(2) { height: 28px; animation-delay: 0.1s; }
-        .waveform-bar:nth-child(3) { height: 20px; animation-delay: 0.2s; }
-        .waveform-bar:nth-child(4) { height: 32px; animation-delay: 0.3s; }
-        .waveform-bar:nth-child(5) { height: 24px; animation-delay: 0.4s; }
-        .waveform-bar:nth-child(6) { height: 36px; animation-delay: 0.5s; }
-        .waveform-bar:nth-child(7) { height: 20px; animation-delay: 0.6s; }
-        .waveform-bar:nth-child(8) { height: 28px; animation-delay: 0.7s; }
-        .waveform-bar:nth-child(9) { height: 16px; animation-delay: 0.8s; }
-
-        @keyframes waveform {
-            0%, 100% { transform: scaleY(1); }
-            50% { transform: scaleY(0.4); }
-        }
-
-        /* Transcription Area */
-        .transcription-area {
-            flex: 1;
-            background: var(--bg-elevated);
-            border-radius: 10px;
-            padding: 0.875rem;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .transcription-label {
-            font-size: 0.5rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.5rem;
-        }
-
-        .transcription-text {
-            font-size: 0.7rem;
-            line-height: 1.5;
-            color: var(--text-primary);
-        }
-
-        .transcription-text .completed {
-            color: var(--text-secondary);
-        }
-
-        .transcription-text .current {
-            color: var(--primary);
-            position: relative;
-        }
-
-        .transcription-text .current::after {
-            content: '|';
-            animation: cursorBlink 1s step-end infinite;
-            margin-left: 1px;
-        }
-
-        @keyframes cursorBlink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-
-        .typing-animation {
-            display: inline;
-            overflow: hidden;
-            animation: typing 4s steps(40) infinite;
-        }
-
-        /* Float animation (action items card) */
-        @keyframes pipFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-3px); }
-        }
-
-        /* Language Badge */
-        .language-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 3px;
-            background: transparent;
-            border: 1px solid var(--border);
-            padding: 3px 6px;
-            border-radius: 12px;
-            font-size: 0.5rem;
-            color: var(--text-secondary);
-            margin-top: 0.375rem;
-        }
-
-        .language-badge::before {
-            content: '🇯🇵';
-            font-size: 0.6rem;
-        }
-
-        .floating-elements {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-        }
-
-        .floating-card {
-            position: absolute;
-            background: var(--bg-surface);
-            border-radius: 10px;
-            padding: 0.75rem 1rem;
-            border: 1px solid var(--border);
-            animation: floatCard 6s ease-in-out infinite;
-        }
-
-        .floating-card-1 {
-            top: 15%;
-            right: -50px;
-            animation-delay: 0s;
-        }
-
-        .floating-card-2 {
-            bottom: 25%;
-            left: -60px;
-            animation-delay: -3s;
-        }
-
-        .floating-card-3 {
-            top: 55%;
-            right: -55px;
-            transform: translateY(-50%);
-            animation-delay: -1.5s;
-        }
-
-        @keyframes floatCard {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-
-        @keyframes floatCard3 {
-            0%, 100% { transform: translateY(-50%); }
-            50% { transform: translateY(calc(-50% - 8px)); }
-        }
-
-        .floating-card-3 {
-            animation-name: floatCard3;
-        }
-
-        .floating-card .card-text {
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .floating-card .card-sub {
-            font-size: 0.625rem;
-            color: var(--text-muted);
-            margin-top: 2px;
-        }
-
-        /* Watch Mockup */
-        .watch-mockup {
-            position: absolute;
-            bottom: -14px;
-            left: -80px;
-            width: 100px;
-            z-index: 2;
-            animation: floatCard 6s ease-in-out infinite;
-            animation-delay: -2s;
-        }
-
-        .watch-frame {
-            background: var(--bg-elevated);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 7px;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-        }
-
-        .watch-frame::after {
-            content: '';
-            position: absolute;
-            right: -3px;
-            top: 28%;
-            width: 3px;
-            height: 16px;
-            background: var(--border-hover);
-            border-radius: 2px;
-        }
-
-        .watch-screen {
-            background: var(--bg);
-            border-radius: 18px;
-            padding: 10px 8px;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            align-items: center;
-            border: 1px solid var(--border);
-        }
-
-        .watch-rec {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            font-size: 0.5rem;
-            color: #ef4444;
-            font-weight: 600;
-        }
-
-        .watch-rec-dot {
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            background: #ef4444;
-            animation: recordingPulse 1.5s ease-in-out infinite;
-        }
-
-        .watch-time {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.75rem;
-            color: var(--text-primary);
-        }
-
-        .watch-wave {
-            display: flex;
-            gap: 2px;
-            align-items: center;
-            height: 16px;
-        }
-
-        .watch-wave span {
-            width: 2px;
-            background: var(--accent);
-            border-radius: 1px;
-            animation: waveform 1.2s ease-in-out infinite;
-        }
-
-        .watch-caption {
-            text-align: center;
-            font-size: 0.5625rem;
-            color: var(--text-muted);
-            margin-top: 6px;
-        }
-
-        /* Hero Flow Chips */
-        .hero-flow {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 0.5rem;
-            margin: -0.5rem 0 2rem;
-        }
-
-        .flow-step {
-            font-size: 0.8125rem;
-            font-weight: 600;
-            padding: 0.375rem 0.875rem;
-            border-radius: 999px;
-            background: var(--bg-elevated);
-            border: 1px solid var(--border);
-            color: var(--text-secondary);
-            white-space: nowrap;
-        }
-
-        .flow-step.highlight {
-            background: rgba(34, 211, 238, 0.1);
-            border-color: rgba(34, 211, 238, 0.45);
-            color: var(--accent);
-        }
-
-        .flow-arrow {
-            color: var(--text-muted);
-            font-size: 0.8125rem;
-        }
-
-        a.flow-step { text-decoration: none; transition: color 0.2s, border-color 0.2s; }
-        a.flow-step:hover { color: var(--text-primary); border-color: var(--border-hover); }
-        a.flow-step.highlight:hover { color: var(--accent); }
-
-        /* Recall section (思い出す) */
-        .recall-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3.5rem;
-            align-items: center;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .recall-points { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.5rem; }
-        .recall-point { display: flex; gap: 1rem; align-items: flex-start; }
-        .recall-point-icon {
-            flex: 0 0 auto; width: 42px; height: 42px; border-radius: 11px;
-            background: var(--bg-elevated); border: 1px solid var(--border);
-            display: flex; align-items: center; justify-content: center; font-size: 1.125rem;
-        }
-        .recall-point h3 { font-size: 1.0625rem; font-weight: 600; margin: 0 0 0.3rem; }
-        .recall-point p { font-size: 0.9375rem; color: var(--text-secondary); margin: 0; line-height: 1.65; }
-        .recall-mock {
-            width: 100%; max-width: 420px; margin: 0 auto;
-            background: var(--bg-surface); border: 1px solid var(--border); border-radius: 22px;
-            padding: 1.25rem; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
-        }
-        .recall-mock-header {
-            display: flex; align-items: center; justify-content: space-between;
-            padding-bottom: 0.875rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border);
-        }
-        .recall-mock-title { font-weight: 600; font-size: 0.9375rem; }
-        .recall-mock-scope {
-            font-size: 0.6875rem; font-weight: 600; padding: 0.25rem 0.625rem; border-radius: 999px;
-            background: rgba(34, 211, 238, 0.1); color: var(--accent); border: 1px solid rgba(34, 211, 238, 0.35);
-        }
-        .recall-bubble { max-width: 88%; padding: 0.625rem 0.875rem; border-radius: 14px; font-size: 0.875rem; line-height: 1.55; margin-bottom: 0.75rem; }
-        .recall-bubble.user { margin-left: auto; background: var(--primary); color: #fff; border-bottom-right-radius: 4px; }
-        .recall-bubble.ai { background: var(--bg-elevated); border: 1px solid var(--border); border-bottom-left-radius: 4px; }
-        .recall-evidence-label { font-size: 0.6875rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.5px; margin: 0.25rem 0 0.5rem; }
-        .recall-evidence {
-            background: var(--bg-elevated); border: 1px solid var(--border); border-left: 3px solid var(--accent);
-            border-radius: 10px; padding: 0.75rem 0.875rem; margin-bottom: 0.875rem;
-        }
-        .recall-evidence-meta { display: flex; justify-content: space-between; font-size: 0.6875rem; color: var(--text-muted); margin-bottom: 0.375rem; }
-        .recall-evidence-quote { display: block; font-size: 0.8125rem; color: var(--text-primary); line-height: 1.5; margin-bottom: 0.625rem; }
-        .recall-play {
-            display: inline-flex; align-items: center; gap: 0.375rem; font-size: 0.75rem; font-weight: 600;
-            color: var(--accent); background: rgba(34, 211, 238, 0.1); border: 1px solid rgba(34, 211, 238, 0.35);
-            border-radius: 999px; padding: 0.3rem 0.75rem;
-        }
-        .recall-mock-input {
-            display: flex; align-items: center; justify-content: space-between; margin-top: 0.25rem;
-            padding: 0.625rem 0.875rem; border-radius: 999px; background: var(--bg); border: 1px solid var(--border);
-            font-size: 0.8125rem; color: var(--text-muted);
-        }
-        .recall-mock-input span:last-child { color: var(--accent); font-weight: 700; }
-        .recall-mock-note { text-align: center; font-size: 0.75rem; color: var(--text-muted); margin: 1.5rem 0 0; }
-        @media (max-width: 1024px) {
-            .recall-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-        }
-
-        /* Action Items Mini Card (hero phone) */
-        .action-mini {
-            position: absolute;
-            bottom: 0.875rem;
-            left: 0.875rem;
-            right: 0.875rem;
-            background: var(--bg-elevated);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 0.625rem 0.75rem;
-            animation: pipFloat 4s ease-in-out infinite;
-        }
-
-        .action-mini-label {
-            font-size: 0.5rem;
-            color: var(--accent);
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            margin-bottom: 0.375rem;
-        }
-
-        .action-mini-task {
-            display: flex;
-            align-items: center;
-            gap: 0.375rem;
-            font-size: 0.625rem;
-            color: var(--text-primary);
-            padding: 0.125rem 0;
-        }
-
-        .action-mini-task .due {
-            margin-left: auto;
-            font-size: 0.5rem;
-            color: #f59e0b;
-            white-space: nowrap;
-        }
-
-        .action-check {
-            width: 11px;
-            height: 11px;
-            border-radius: 3px;
-            border: 1.5px solid var(--primary);
-            flex-shrink: 0;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.5rem;
-            font-style: normal;
-            color: white;
-        }
-
-        .action-check.done {
-            background: var(--primary);
-        }
-
-        .action-mini-cta {
-            margin-top: 0.375rem;
-            text-align: center;
-            font-size: 0.5625rem;
-            font-weight: 600;
-            color: white;
-            background: var(--gradient-2);
-            border-radius: 6px;
-            padding: 0.25rem;
-        }
-
-        .pricing-footnote {
-            text-align: center;
-            margin-top: 1.5rem;
-            font-size: 0.8125rem;
-            color: var(--text-muted);
-        }
-
-        /* Sections Common */
-        section {
-            padding: 6rem 3rem;
-            position: relative;
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 4rem;
-        }
-
-        .section-label {
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-        }
-
-        .section-title {
-            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-            font-weight: 600;
-            margin-bottom: 0.875rem;
-            letter-spacing: -0.5px;
-        }
-
-        .section-description {
-            font-size: 1rem;
-            color: var(--text-secondary);
-        }
-
-        /* Features Section */
-        .features {
-            background: var(--bg);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .features-grid.features-grid-two {
-            grid-template-columns: repeat(2, 1fr);
-            max-width: 730px;
-        }
-
-        .feature-card {
-            background: var(--bg-surface);
-            border-radius: 12px;
-            padding: 1.75rem;
-            border: 1px solid var(--border);
-            transition: all 0.2s ease;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        .feature-card:hover {
-            border-color: var(--border-hover);
-            box-shadow: 0 8px 32px rgba(99, 102, 241, 0.06);
-        }
-
-        .feature-card.visible:hover {
-            transform: translateY(-2px);
-        }
-
-        .feature-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .feature-icon {
-            width: 44px;
-            height: 44px;
-            background: var(--bg-elevated);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.25rem;
-            font-size: 1.25rem;
-        }
-
-        .feature-title {
-            font-size: 1.0625rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .feature-description {
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-            line-height: 1.6;
-        }
-
-        /* Parallax Demo Section */
-        .parallax-section {
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            background: var(--bg-surface);
-        }
-
-        .parallax-layer {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .parallax-text {
-            font-size: clamp(3rem, 12vw, 10rem);
-            font-weight: 700;
-            color: var(--border);
-            white-space: nowrap;
-            letter-spacing: -4px;
-        }
-
-        .parallax-content {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            max-width: 600px;
-            padding: 0 2rem;
-        }
-
-        .parallax-content h2 {
-            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
-            font-weight: 600;
-            margin-bottom: 1rem;
-            letter-spacing: -0.5px;
-        }
-
-        .parallax-content p {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-        }
-
-        /* Use Cases */
-        .usecases {
-            background: var(--bg);
-        }
-
-        .usecase-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.25rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .usecase-card {
-            display: flex;
-            gap: 1rem;
-            padding: 1.5rem;
-            background: var(--bg-surface);
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.3s ease;
-        }
-
-        .usecase-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .usecase-card:hover {
-            border-color: var(--border-hover);
-        }
-
-        .usecase-icon {
-            width: 44px;
-            height: 44px;
-            min-width: 44px;
-            background: var(--bg-elevated);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-        }
-
-        .usecase-content h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.375rem;
-        }
-
-        .usecase-content p {
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-            line-height: 1.5;
-        }
-
-        /* Pricing Section */
-        .pricing {
-            background: var(--bg-surface);
-            position: relative;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .pricing-card {
-            background: var(--bg);
-            border-radius: 12px;
-            padding: 2rem;
-            border: 1px solid var(--border);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .pricing-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .pricing-card.featured {
-            border-color: var(--primary);
-        }
-
-        .pricing-badge {
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 0.25rem 0.875rem;
-            background: var(--primary);
-            border-radius: 100px;
-            font-size: 0.6875rem;
-            font-weight: 600;
-            color: white;
-        }
-
-        .pricing-name {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.375rem;
-        }
-
-        .pricing-price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 0.25rem;
-            letter-spacing: -1px;
-        }
-
-        .pricing-price span {
-            font-size: 0.875rem;
-            font-weight: 400;
-            color: var(--text-muted);
-        }
-
-        .pricing-description {
-            color: var(--text-secondary);
-            font-size: 0.8125rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .pricing-features {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-
-        .pricing-features li {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.625rem;
-            font-size: 0.8125rem;
-            color: var(--text-secondary);
-        }
-
-        .pricing-features li::before {
-            content: '✓';
-            width: 16px;
-            height: 16px;
-            color: var(--primary);
-            font-size: 0.75rem;
-            font-weight: bold;
-        }
-
-        .pricing-btn {
-            width: 100%;
-            padding: 0.75rem;
-            border-radius: 8px;
-            font-weight: 500;
-            font-size: 0.875rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-align: center;
-            text-decoration: none;
-            display: block;
-        }
-
-        .pricing-btn-primary {
-            background: var(--text-primary);
-            border: none;
-            color: var(--bg);
-        }
-
-        .pricing-btn-secondary {
-            background: transparent;
-            border: 1px solid var(--border);
-            color: var(--text-primary);
-        }
-
-        .pricing-btn:hover {
-            opacity: 0.9;
-        }
-
-        /* Reviews Section */
-        .reviews {
-            background: var(--bg);
-        }
-
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .review-card {
-            background: var(--bg-surface);
-            border-radius: 12px;
-            padding: 1.5rem;
-            border: 1px solid var(--border);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.3s ease;
-        }
-
-        .review-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .review-stars {
-            color: #f59e0b;
-            font-size: 0.875rem;
-            margin-bottom: 0.75rem;
-            letter-spacing: 1px;
-        }
-
-        .review-text {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-
-        .review-author {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .review-avatar {
-            width: 36px;
-            height: 36px;
-            background: var(--bg-elevated);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            font-size: 0.8125rem;
-            color: var(--text-secondary);
-        }
-
-        .review-name {
-            font-weight: 500;
-            font-size: 0.8125rem;
-        }
-
-        /* CTA Section */
-        .cta {
-            background: var(--bg-surface);
-            text-align: center;
-            position: relative;
-            padding: 5rem 3rem;
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 10;
-        }
-
-        .cta h2 {
-            font-size: clamp(2rem, 4vw, 2.75rem);
-            font-weight: 600;
-            margin-bottom: 1rem;
-            letter-spacing: -0.5px;
-        }
-
-        .cta p {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            max-width: 480px;
-            margin: 0 auto 2rem;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 0.75rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .app-store-badge {
-            height: 48px;
-            transition: opacity 0.2s ease;
-        }
-
-        .app-store-badge:hover {
-            opacity: 0.8;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--bg);
-            padding: 3rem 3rem 2rem;
-            border-top: 1px solid var(--border);
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 3rem;
-            max-width: 1000px;
-            margin: 0 auto 2rem;
-        }
-
-        .footer-brand .logo {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-brand p {
-            color: var(--text-secondary);
-            max-width: 280px;
-            font-size: 0.875rem;
-        }
-
-        .footer-links h4 {
-            font-size: 0.75rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.875rem;
-            transition: color 0.2s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--text-primary);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border);
-            color: var(--text-muted);
-            font-size: 0.8125rem;
-        }
-
-        /* Business Section */
-        .business {
-            background: var(--bg);
-            text-align: center;
-            padding: 5rem 3rem;
-            border-top: 1px solid var(--border);
-        }
-
-        .business-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .business .section-label {
-            color: var(--primary);
-        }
-
-        .business-description {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        .business-actions {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .btn-download {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.875rem 2rem;
-            background: var(--gradient-2);
-            color: #fff;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9375rem;
-            transition: opacity 0.2s ease, transform 0.2s ease;
-        }
-
-        .btn-download:hover {
-            opacity: 0.9;
-            transform: translateY(-1px);
-        }
-
-        .business-contact {
-            font-size: 0.8125rem;
-            color: var(--text-muted);
-        }
-
-        .business-contact a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .business-contact a:hover {
-            color: var(--primary);
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            nav {
-                padding: 1rem 1.5rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            section {
-                padding: 4rem 1.5rem;
-            }
-
-            .hero {
-                padding: 5rem 1.5rem 3rem;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-                text-align: center;
-            }
-
-            .hero-description {
-                margin: 0 auto 2rem;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .hero-flow {
-                justify-content: center;
-            }
-
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .usecase-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .pricing-grid {
-                grid-template-columns: 1fr;
-                max-width: 360px;
-            }
-
-            .reviews-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 2rem;
-            }
-
-            .footer-brand p {
-                margin: 0 auto;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .features-grid,
-            .features-grid.features-grid-two {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 1.875rem;
-            }
-
-            .floating-elements {
-                display: none;
-            }
-
-            .watch-mockup {
-                display: none;
-            }
-        }
-
-        /* CTA Shimmer */
-        .btn-primary {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-primary::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
-        }
-
-        .btn-primary:hover::after {
-            animation: shimmer 0.6s ease forwards;
-        }
-
-        @keyframes shimmer {
-            to { left: 100%; }
-        }
-
-        /* Social Proof */
-        .social-proof {
-            display: flex;
-            align-items: center;
-            gap: 1.25rem;
-            margin-top: 2rem;
-        }
-
-        .proof-item {
-            display: flex;
-            align-items: center;
-            gap: 0.375rem;
-        }
-
-        .proof-stars {
-            color: #f59e0b;
-            font-size: 0.75rem;
-            letter-spacing: 0.5px;
-        }
-
-        .proof-text {
-            font-size: 0.8125rem;
-            color: var(--text-secondary);
-        }
-
-        .proof-number {
-            font-size: 0.8125rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .proof-divider {
-            width: 1px;
-            height: 14px;
-            background: var(--border-hover);
-        }
-
-        /* Before/After Comparison */
-        .comparison {
-            background: var(--bg-surface);
-            overflow: hidden;
-        }
-
-        .comparison-grid {
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            gap: 0;
-            max-width: 900px;
-            margin: 0 auto;
-            align-items: stretch;
-        }
-
-        .comparison-card {
-            padding: 2rem;
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            background: var(--bg);
-            opacity: 0;
-            transition: all 0.6s ease;
-        }
-
-        .comparison-card.visible {
-            opacity: 1;
-            transform: none;
-        }
-
-        .comparison-card.before {
-            transform: translateX(-20px);
-        }
-
-        .comparison-card.before.visible {
-            opacity: 0.75;
-        }
-
-        .comparison-card.after {
-            border-color: var(--primary);
-            transform: translateX(20px);
-        }
-
-        .comparison-arrow {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 1.5rem;
-        }
-
-        .comparison-arrow svg {
-            color: var(--text-muted);
-            opacity: 0.5;
-        }
-
-        .comparison-label {
-            display: inline-block;
-            font-size: 0.6875rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-            padding: 0.25rem 0.75rem;
-            border-radius: 100px;
-        }
-
-        .comparison-card.before .comparison-label {
-            background: var(--bg-elevated);
-            color: var(--text-muted);
-        }
-
-        .comparison-card.after .comparison-label {
-            background: rgba(99, 102, 241, 0.1);
-            color: var(--primary-light);
-        }
-
-        .comparison-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .comparison-items {
-            list-style: none;
-        }
-
-        .comparison-items li {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
-            margin-bottom: 0.75rem;
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
-        }
-
-        .comparison-items li .icon {
-            min-width: 18px;
-            text-align: center;
-            font-size: 0.75rem;
-            margin-top: 3px;
-            font-weight: 600;
-        }
-
-        .comparison-card.before .icon { color: #ef4444; }
-        .comparison-card.after .icon { color: var(--primary); }
-
-        .comparison-time {
-            margin-top: 1.25rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border);
-            display: flex;
-            align-items: baseline;
-            gap: 0.5rem;
-        }
-
-        .comparison-time-value {
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .comparison-card.after .comparison-time-value {
-            background: var(--gradient-2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .comparison-time-label {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        /* Pricing Toggle */
-        .pricing-toggle {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            margin-bottom: 3rem;
-        }
-
-        .toggle-option {
-            font-size: 0.875rem;
-            color: var(--text-muted);
-            cursor: pointer;
-            transition: color 0.2s;
-            font-weight: 500;
-            user-select: none;
-        }
-
-        .toggle-option.active {
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-
-        .toggle-switch {
-            position: relative;
-            width: 48px;
-            height: 26px;
-            background: var(--bg-elevated);
-            border-radius: 13px;
-            border: 1px solid var(--border);
-            cursor: pointer;
-            transition: all 0.3s;
-            flex-shrink: 0;
-        }
-
-        .toggle-switch.yearly {
-            background: var(--primary);
-            border-color: var(--primary);
-        }
-
-        .toggle-knob {
-            position: absolute;
-            top: 3px;
-            left: 3px;
-            width: 18px;
-            height: 18px;
-            background: white;
-            border-radius: 50%;
-            transition: transform 0.3s;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-        }
-
-        .toggle-switch.yearly .toggle-knob {
-            transform: translateX(22px);
-        }
-
-        .pricing-save-badge {
-            display: inline-block;
-            padding: 0.25rem 0.625rem;
-            background: rgba(34, 211, 238, 0.1);
-            color: var(--accent);
-            border-radius: 100px;
-            font-size: 0.6875rem;
-            font-weight: 600;
-            margin-left: 0.5rem;
-            vertical-align: middle;
-        }
-
-        .pricing-grid-two {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            max-width: 720px;
-            margin: 0 auto;
-        }
-
-        .pricing-monthly-equiv {
-            font-size: 0.8125rem;
-            color: var(--accent);
-            font-weight: 500;
-            margin-top: 0.25rem;
-        }
-
-        @media (max-width: 1024px) {
-            .comparison-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            .comparison-arrow {
-                padding: 0.5rem 0;
-            }
-            .comparison-arrow svg {
-                transform: rotate(90deg);
-            }
-            .pricing-grid-two {
-                grid-template-columns: 1fr;
-                max-width: 360px;
-            }
-            .social-proof {
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .social-proof {
-                flex-wrap: wrap;
-                gap: 0.75rem;
-                justify-content: center;
-            }
-        }
+/* Concept C+ 「Timecode」in Texter's own colors.
+   Layout: one 60-minute recording. Every section sits at its
+   own timecode on a quiet 12-column drafting grid over the App Store sky (#EDF4FF→#B9D2FA).
+   Tokens come from the iOS app's Assets.xcassets and the store artwork. */
+:root{
+  --accent:#6482FA; --deep:#5460D6; --navy:#17255A; --text:#444444; --sub:#666666;
+  --white:#FFFFFF; --cell:#F2F3FA; --icons:#A9BBD4;
+  --green:#0F8A7E; --green-soft:#E6F3F1; --orange:#FF9500;
+  --grad-a:#EDF4FF; --grad-b:#B9D2FA;
+  --user-bubble:rgba(100,130,250,.15); --evidence:rgba(0,122,255,.06); --fill2:rgba(120,120,128,.16);
+  --line:rgba(23,37,90,.12); --guide:rgba(23,37,90,.06);
+  --shadow-soft:0 12px 40px rgba(23,37,90,.08); --shadow-btn:0 10px 20px rgba(156,165,185,.30);
+  --f-jp:-apple-system,BlinkMacSystemFont,"SF Pro JP","Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+  --f-mono:'Azeret Mono',ui-monospace,Menlo,monospace;
+  --ruler:0px; --nav:64px; --pad:clamp(20px,3.4vw,52px); --maxw:1360px;
+  --ease:cubic-bezier(.2,.8,.2,1); --wipe:cubic-bezier(.75,0,.2,1);
+  --sw:280; --sh:630; --r-card:16px; --r-12:12px; --r-10:10px;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--nav) + 8px)}
+body{margin:0;padding-left:var(--ruler);color:var(--text);font-family:var(--f-jp);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased;font-feature-settings:"palt" 1;
+  background:linear-gradient(180deg,var(--grad-a) 0%,#D6E4FC 40%,var(--grad-b) 100%) no-repeat,var(--grad-b)}
+img,svg{max-width:100%}
+a{color:inherit}
+h1,h2,h3,h4,p,ul,ol,figure,blockquote{margin:0}
+ul{padding:0;list-style:none}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+.mono{font-family:var(--f-mono);font-feature-settings:"tnum" 1;letter-spacing:.02em}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:fixed;left:calc(var(--ruler) + 12px);top:-60px;z-index:100;background:var(--navy);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+.skip:focus{top:12px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+/* fields: every component reads --fg/--fg2/--ln/--gd */
+.field{--fg:var(--navy);--fg2:var(--sub);--ln:var(--line);--gd:var(--guide);--bg:var(--white)}
+.f-key{background:rgba(255,255,255,.30)}
+.f-navy{--fg:#fff;--fg2:rgba(255,255,255,.72);--ln:rgba(255,255,255,.16);--gd:rgba(255,255,255,.05);--bg:var(--navy);background:var(--navy);color:#fff}
+.wrap{position:relative;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
+
+/* ---------- ruler ---------- */
+.ruler{position:fixed;z-index:60;left:0;top:0;bottom:0;width:var(--ruler);background:rgba(255,255,255,.72);-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%);color:var(--navy);font-family:var(--f-mono);font-size:10px;letter-spacing:.04em;border-right:1px solid var(--line)}
+.ruler .track{position:absolute;left:0;right:0;top:calc(var(--nav) + 8px);bottom:40px}
+.ruler .ticks{position:absolute;inset:0;background-image:repeating-linear-gradient(to bottom,rgba(23,37,90,.18) 0 1px,transparent 1px 8px),repeating-linear-gradient(to bottom,rgba(23,37,90,.45) 0 1px,transparent 1px 64px);background-size:10px 100%,20px 100%;background-position:right top,right top;background-repeat:no-repeat}
+.ruler .mark{position:absolute;left:8px;width:10px;height:2px;background:var(--accent);opacity:.9}
+.ruler .ph{position:absolute;left:0;right:0;top:0;height:2px;background:var(--accent);will-change:transform}
+.ruler .ph b{position:absolute;left:4px;top:-19px;background:var(--deep);color:#fff;font-weight:500;padding:1px 4px;border-radius:4px;font-size:10px;line-height:15px}
+.ruler .r0,.ruler .r1{position:absolute;left:0;right:0;text-align:center;color:var(--sub)}
+.ruler .r0{top:24px;display:none}.ruler .r1{bottom:14px}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;z-index:50;top:var(--banner,0px);left:var(--ruler);right:0;height:var(--nav);color:var(--navy);background:rgba(255,255,255,.70);-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%);border-bottom:1px solid rgba(23,37,90,.06);transition:transform .3s ease,opacity .3s ease}
+.nav.is-hidden{transform:translateY(-100%);opacity:0}
+@media (prefers-reduced-transparency:reduce){.nav,.ruler{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}}
+.nav .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:19px;letter-spacing:-.01em;color:var(--navy)}
+.brand img{width:28px;height:28px;border-radius:7px;flex:none}
+.nav ul{display:flex;align-items:center;gap:4px}
+.nav ul a{display:block;text-decoration:none;font-size:15px;font-weight:500;padding:8px 12px;border-radius:8px;color:var(--text);position:relative}
+.nav ul a::after{content:"";position:absolute;left:12px;right:100%;bottom:4px;height:2px;background:var(--accent);transition:right .25s}
+.nav ul a:hover::after{right:12px}
+.nav ul a.en{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em}
+.btn-dl{display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:var(--deep);color:#fff;font-weight:600;font-size:14px;padding:0 16px;height:38px;border-radius:999px;box-shadow:var(--shadow-btn);transition:transform .12s ease-out}
+.btn-dl:active,.btn:active{transform:scale(.97)}
+.menu-btn{display:none;height:38px;padding:0 14px;border-radius:999px;background:#fff;color:var(--navy);font-weight:600;font-size:14px;box-shadow:var(--shadow-soft)}
+.sheet{position:fixed;inset:0;z-index:90;overflow-y:auto;background:rgba(237,244,255,.96);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);color:var(--navy);padding:calc(20px + env(safe-area-inset-top,0px)) 24px calc(28px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:28px}
+.sheet[hidden]{display:none}
+.sheet .top{display:flex;justify-content:space-between;align-items:center}
+.sheet ol{list-style:none;padding:0;margin:0;display:grid;gap:4px;border-top:1px solid var(--line)}
+.sheet ol a{display:flex;align-items:baseline;gap:16px;text-decoration:none;font-weight:800;font-size:clamp(1.8rem,8vw,2.6rem);letter-spacing:-.02em;line-height:1.3;padding:10px 0;border-bottom:1px solid var(--line);color:var(--navy)}
+.sheet ol a span{font-family:var(--f-mono);font-weight:400;font-size:12px;letter-spacing:.1em;color:var(--deep)}
+.sheet .stores{margin-top:auto}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;border-radius:999px;text-decoration:none;font-weight:600;font-size:16px;line-height:1;transition:transform .12s ease-out,background-color .2s,color .2s;white-space:nowrap}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-solid{background:var(--deep);color:#fff;box-shadow:var(--shadow-btn)}
+.btn-line{background:#fff;color:var(--navy);box-shadow:inset 0 0 0 1px var(--line),var(--shadow-soft)}
+.btn-line:hover{box-shadow:inset 0 0 0 1px var(--accent),var(--shadow-soft)}
+.btn-tint{background:#E9EDFF;color:var(--deep)}
+.stores{display:flex;flex-wrap:wrap;gap:12px}
+
+/* ---------- eyebrow ---------- */
+.eyebrow{display:flex;align-items:center;gap:12px;font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--deep)}
+.eyebrow .tc{padding:2px 6px;border:1px solid currentColor;border-radius:4px;letter-spacing:.04em}
+.eyebrow .dim{color:var(--fg2)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding-top:calc(var(--nav) + clamp(16px,3.6vh,40px));padding-bottom:clamp(24px,3.6vh,40px);overflow:hidden}
+.hero .wrap::before,.chapter .wrap::before,.block .wrap::before{content:"";position:absolute;inset:0 var(--pad);pointer-events:none;background:repeating-linear-gradient(to right,var(--gd) 0 1px,transparent 1px calc(100% / 12));box-shadow:inset -1px 0 0 var(--gd)}
+.hero .wrap{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(12px,1.6vw,24px);row-gap:0}
+.hero .eyebrow{grid-column:1/-1}
+.hero-top{grid-column:1/span 8;margin-top:clamp(12px,2vh,22px)}
+.hero-side{grid-column:9/span 4;align-self:end;display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding-bottom:6px}
+.hero .scrub{grid-column:1/-1}
+.h1{word-break:keep-all;color:var(--navy);font-weight:900;font-size:clamp(2.6rem,6vw,5.4rem);line-height:1.1;letter-spacing:-.02em}
+.h1 .line{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
+.h1 .ch{display:inline-block}
+.js .h1 .ch{animation:rise .9s var(--ease) both;animation-delay:calc(var(--i) * 40ms + 120ms)}
+@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
+.one{margin-top:14px;font-size:clamp(1rem,1.3vw,1.2rem);color:var(--text);font-weight:500}
+.stats{font-size:14px;color:var(--sub);display:flex;flex-wrap:wrap;gap:4px 12px}
+.stats b{color:var(--navy);font-weight:700;font-variant-numeric:tabular-nums}
+
+/* scrubber */
+.scrub{position:relative;margin-top:clamp(18px,3vh,34px);--track:96px;--lane:124px}
+.scrub-title{display:flex;align-items:baseline;gap:14px 20px;flex-wrap:wrap}
+.scrub-title b{font-size:clamp(1.15rem,1.6vw,1.5rem);font-weight:700;color:var(--navy);letter-spacing:-.01em}
+.scrub-title span{font-size:14px;color:var(--sub)}
+.scrub-meta{display:flex;justify-content:space-between;gap:16px;margin-top:6px;font-family:var(--f-mono);font-size:12px;letter-spacing:.04em;color:var(--sub)}
+.scrub-meta b{color:var(--navy);font-weight:500}
+.lane{position:relative;height:var(--lane);margin-top:8px}
+.card{position:absolute;left:0;bottom:10px;width:min(400px,100%);background:#fff;color:var(--text);border-radius:var(--r-12);padding:10px 14px 12px;will-change:transform;box-shadow:var(--shadow-soft),0 0 0 .5px rgba(23,37,90,.06)}
+.card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:12px;color:var(--sub)}
+.card-top .cdate{font-family:var(--f-mono);font-feature-settings:"tnum" 1;letter-spacing:.02em}
+.card .eh{display:flex;align-items:center;gap:8px;margin-top:4px;font-size:15px;font-weight:600;color:#000}
+.card .num{width:20px;height:20px;border-radius:50%;background:var(--deep);color:#fff;font-size:12px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card:not(.hit) .num{display:none}
+.card-body{margin:4px 0 0 28px;font-size:13.5px;word-break:auto-phrase;line-height:1.6;color:var(--sub);min-height:2.6em}
+.card-foot{margin:6px 0 0 28px;display:flex;align-items:center;gap:16px;font-size:14px;font-weight:500;color:var(--deep);min-height:24px}
+.card-foot .playb{display:inline-flex;align-items:center;gap:5px;color:var(--deep);font-weight:500;font-size:14px}
+.card-foot .playb svg{width:16px;height:16px}
+.card-foot .playb[aria-pressed="true"]{opacity:.6}
+.card:not(.hit) .card-foot .playb,.card:not(.hit) .card-foot .open{display:none}
+.card-foot .none{color:var(--sub);font-weight:400;font-size:13px}
+.card.hit .card-foot .none{display:none}
+.track{position:relative;height:var(--track);border-top:1px solid var(--ln);border-bottom:1px solid var(--ln);touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none}
+.track.dragging{cursor:grabbing}
+.bars{position:absolute;inset:10px 0;display:flex;align-items:center;gap:clamp(6px,.9vw,14px)}
+.bars i{flex:1;min-width:0;height:100%;display:flex;align-items:center;gap:clamp(1px,.2vw,3px);opacity:.38;transition:opacity .2s}
+.bars i b{flex:1;min-width:1px;max-width:3px;border-radius:1px;background:var(--accent)}
+.bars i.tue{opacity:.62}
+.bars i.on{opacity:1}
+.bars i.on b{background:var(--deep)}
+.playhead{position:absolute;top:-10px;bottom:calc(50% + 32px);left:0;width:2px;margin-left:-1px;background:var(--accent);will-change:transform;pointer-events:none}
+.handle{position:absolute;top:50%;left:0;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 2px var(--accent),0 8px 24px rgba(23,37,90,.16);will-change:transform;cursor:grab;transition:box-shadow .15s ease-out}
+.handle::before,.handle::after{content:"";position:absolute;left:50%;width:14px;height:5px;margin-left:-7px;background:var(--accent);border-radius:3px}
+.handle::before{top:-2px}.handle::after{bottom:-2px}
+.track.dragging .handle{box-shadow:inset 0 0 0 3px var(--deep),0 10px 28px rgba(23,37,90,.22)}
+.handle:focus-visible{outline:2px solid var(--deep);outline-offset:4px}
+.dates{position:relative;height:26px;font-family:var(--f-mono);font-size:11px;letter-spacing:.04em;color:var(--sub)}
+.dates span{position:absolute;top:6px;transform:translateX(-50%);white-space:nowrap}
+.dates span.cur{color:var(--deep);font-weight:500}
+.dates span:first-child{transform:translateX(-30%)}
+
+/* ---------- chapters ---------- */
+.chapter,.block{position:relative;padding-block:clamp(56px,6.5vw,104px)}
+.chapter .wrap>*,.block .wrap>*{position:relative}
+.ch-rule{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:14px;border-top:1.5px solid var(--navy)}
+.f-navy .ch-rule{border-top-color:#fff}
+.ch-rule .en{font-family:var(--f-mono);font-size:12px;letter-spacing:.16em;color:var(--fg2)}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(12px,1.6vw,24px)}
+.ch-head{margin-top:clamp(32px,4.4vw,60px);align-items:end;row-gap:24px}
+.h2{grid-column:1/span 9;color:var(--fg);font-weight:900;font-size:clamp(2.2rem,4.6vw,4rem);line-height:1.15;letter-spacing:-.02em;word-break:keep-all}
+.h2 .w{display:block}
+.js .h2 .w{clip-path:inset(0 100% -.2em 0);transition:clip-path 1s var(--wipe)}
+.js .h2 .w+.w{transition-delay:.12s}
+.js .h2.in .w{clip-path:inset(-.2em -.2em -.25em -.1em)}
+.lead{grid-column:10/span 3;word-break:auto-phrase;font-size:16px;line-height:1.85;color:var(--fg2);max-width:34em}
+.ch-body{margin-top:clamp(40px,5vw,72px);align-items:center;row-gap:40px}
+.ch-body .fig{grid-column:1/span 7;display:flex;flex-direction:column;align-items:center}
+.ch-body .feats{grid-column:9/span 4}
+.ch-body.flip .fig{grid-column:6/span 7;grid-row:1}
+.ch-body.flip .feats{grid-column:1/span 4;grid-row:1}
+.feats{background:rgba(255,255,255,.78);border-radius:var(--r-card);box-shadow:var(--shadow-soft);padding:4px 0}
+.feat{padding:18px 20px 20px;border-top:1px solid rgba(23,37,90,.06)}
+.feat:first-child{border-top:0}
+.feat .k{display:flex;align-items:center;justify-content:space-between;color:var(--sub)}
+.feat .k .mono{font-size:12px;letter-spacing:.08em;color:var(--deep)}
+.feat svg{width:24px;height:24px;color:var(--deep)}
+.feat h3{margin-top:10px;font-size:17px;font-weight:700;letter-spacing:-.01em;line-height:1.4;color:var(--navy)}
+.feat p{margin-top:6px;font-size:15px;line-height:1.75;color:var(--sub)}
+.cap{margin-top:12px;font-size:12px;color:var(--sub)}
+.ico{fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- Phone ---------- */
+.phone{position:relative;width:calc(var(--sw) * 1px + 20px);height:calc(var(--sh) * 1px + 20px);background:#0B0B0D;border-radius:46px;box-shadow:0 30px 60px rgba(23,37,90,.25),0 2px 0 rgba(255,255,255,.4) inset;flex:none}
+.phone .island{position:absolute;top:calc(10px + 11px * var(--sw) / 280);left:50%;transform:translateX(-50%);width:calc(100px * var(--sw) / 280);height:calc(28px * var(--sw) / 280);background:#000;border-radius:999px;z-index:5}
+.screen{position:absolute;inset:10px;border-radius:37px;overflow:hidden;background:#fff}
+.canvas{position:absolute;left:0;top:0;width:390px;height:877px;transform:scale(calc(var(--sw) / 390));transform-origin:0 0;background:#fff;font-size:17px;line-height:1.35;color:var(--text);letter-spacing:0}
+.s{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .35s ease,visibility .35s}
+.s.active{opacity:1;visibility:visible}
+@media (prefers-reduced-motion:reduce){.s{transition:none}}
+.caption{font-size:12px;color:var(--sub);margin:12px 0 0;text-align:center}
+
+/* iOS chrome */
+.status{position:absolute;top:0;left:0;right:0;height:54px;display:flex;justify-content:space-between;align-items:flex-end;padding:0 32px 6px;font-size:15px;font-weight:600;color:#000}
+.status .bat{display:flex;align-items:center;gap:6px}
+.status .bat i{display:block;width:25px;height:12px;border:1.5px solid #000;border-radius:4px;position:relative}
+.status .bat i::after{content:"";position:absolute;inset:2px;background:#000;border-radius:2px}
+.navbar{position:absolute;top:54px;left:0;right:0;height:52px;display:flex;align-items:center;justify-content:center;padding:0 16px}
+.navbar .t{font-size:20px;color:var(--accent);font-weight:500}
+.navbar .l,.navbar .r{position:absolute;top:0;height:52px;display:flex;align-items:center;gap:12px;color:var(--accent)}
+.navbar .l{left:16px}.navbar .r{right:16px}
+.navbar svg{width:22px;height:22px}
+.circ{width:40px;height:40px;border-radius:50%;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:center;color:#222}
+.circ svg{width:20px;height:20px}
+.grabber{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:36px;height:5px;border-radius:3px;background:#C7C7CC}
+.psheet{background:#5D5E66}
+.psheet::after{content:"";position:absolute;left:0;right:0;top:44px;bottom:0;background:#fff;border-radius:14px 14px 0 0;z-index:0}
+.psheet>*{z-index:1}
+.psheet .grabber{top:52px}
+.psheet .navbar{top:60px}
+.body{position:absolute;left:0;right:0;bottom:0}
+.tabbar{position:absolute;left:24px;right:24px;bottom:22px;height:76px;border-radius:38px;background:rgba(255,255,255,.92);box-shadow:0 10px 30px rgba(23,37,90,.16),0 0 0 .5px rgba(0,0,0,.05);display:flex;align-items:center;justify-content:space-around;padding:0 10px}
+.tabbar .tab{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;font-weight:600;color:#222;min-width:64px;height:60px;justify-content:center;border-radius:30px}
+.tabbar .tab svg{width:26px;height:26px}
+.tabbar .tab.on{color:var(--accent);background:#EDF0FF}
+
+/* S0 ボイス */
+.s0 .field{position:absolute;top:118px;left:24px;right:24px}
+.s0 .lbl{font-size:13px;color:#8E8E93;margin-bottom:10px}
+.s0 .live{font-size:19px;line-height:1.55;color:#333;min-height:120px}
+.s0 .live .cur{display:inline-block;width:2px;height:1.1em;background:var(--accent);vertical-align:-3px;margin-left:2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.s0 .rec{position:absolute;top:340px;left:24px;right:24px;display:flex;align-items:center;gap:8px;font-size:13px;color:#8E8E93;font-variant-numeric:tabular-nums}
+.s0 .rec i{width:8px;height:8px;border-radius:50%;background:var(--accent);display:block}
+.s0 .stage{position:absolute;left:0;right:0;bottom:120px;height:220px;display:flex;align-items:center;justify-content:center;gap:52px}
+.mic{position:relative;width:100px;height:100px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 10px 20px rgba(156,165,185,.30)}
+.mic svg{width:50px;height:50px}
+.ring{position:absolute;left:50%;top:50%;border-radius:50%;background:var(--accent);transform:translate(-50%,-50%);pointer-events:none}
+.ring.r1{width:140px;height:140px;opacity:.22}
+.ring.r2{width:164px;height:164px;opacity:.12}
+.ring.r3{width:188px;height:188px;opacity:.06}
+.side{width:44px;height:44px;border-radius:50%;background:var(--fill2);display:flex;align-items:center;justify-content:center;color:var(--deep)}
+.side svg{width:22px;height:22px}
+@keyframes breathe1{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.06)}}
+@keyframes breathe2{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.09)}}
+@keyframes breathe3{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.12)}}
+.motion .ring.r1{animation:breathe1 2.4s cubic-bezier(.45,0,.2,1) infinite}
+.motion .ring.r2{animation:breathe2 2.4s cubic-bezier(.45,0,.2,1) .12s infinite}
+.motion .ring.r3{animation:breathe3 2.4s cubic-bezier(.45,0,.2,1) .24s infinite}
+
+/* S1 一覧 */
+.seg{position:absolute;top:106px;left:0;right:0;display:flex;border-bottom:1px solid #E5E5EA}
+.seg span{flex:1;text-align:center;padding:14px 0;font-size:17px;color:#222;position:relative}
+.seg span.on{color:#000;font-weight:600}
+.seg span.on::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;background:var(--accent);border-radius:2px}
+.s1 .body{top:156px;background:var(--cell);padding:14px 16px}
+.search{height:40px;border-radius:10px;background:#E3E4EA;display:flex;align-items:center;gap:8px;padding:0 12px;color:#8E8E93;font-size:17px}
+.search svg{width:18px;height:18px}
+.recall{display:flex;align-items:center;gap:8px;padding:16px 4px 10px;font-size:15px;color:#333}
+.recall svg{width:18px;height:18px;color:var(--accent)}
+.recall .rt{margin-left:auto;color:#8E8E93;font-size:14px;display:flex;align-items:center;gap:6px}
+.ncard{background:#fff;border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+.ncard .nt{font-size:17px;font-weight:600;color:#000;margin:0 0 8px}
+.chip{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:#555;border:1px solid #D1D1D6;border-radius:5px;padding:1px 6px;background:#F6F6F8}
+.chip svg{width:11px;height:11px}
+.ncard .ns{font-size:15px;color:#555;line-height:1.5;margin:8px 0 10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ncard .nf{display:flex;align-items:center;gap:8px;font-size:13px;color:#A0A0A8}
+.ncard .nf svg{width:14px;height:14px;color:var(--accent)}
+.ncard .nf svg.g{color:#A0A0A8}
+
+/* S2 内容まとめ */
+.s2 .body,.s4 .body{top:124px;padding:0 16px 24px;overflow:hidden}
+.ttl{font-size:22px;font-weight:700;color:#000;margin:6px 0 4px}
+.tsub{display:flex;align-items:center;gap:6px;font-size:13px;color:#8E8E93;margin-bottom:16px}
+.tsub svg{width:16px;height:16px}
+.sec{background:var(--cell);border-radius:16px;padding:16px 16px 16px 20px;position:relative;margin-bottom:12px}
+.sec::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:3px;border-radius:2px;background:var(--green)}
+.sec .sh{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.badge{width:26px;height:26px;border-radius:50%;background:var(--green);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums}
+.sec .sh b{font-size:17px;font-weight:600;color:#000;flex:1}
+.sec .sh svg{width:18px;height:18px;color:#8E8E93}
+.sec .sp{font-size:14px;color:#777;line-height:1.55;margin:0 0 10px}
+.arrows{list-style:none;margin:0;padding:0}
+.arrows li{display:flex;gap:10px;font-size:16px;color:#222;padding:5px 0;line-height:1.4}
+.arrows li::before{content:"→";color:var(--green);font-weight:700;flex:none}
+.kp{background:#fff;border-radius:12px;padding:12px 14px;margin-top:12px}
+.kp .kl{font-size:12px;font-weight:700;color:var(--green);margin-bottom:4px}
+.kp .arrows li{font-size:14px;padding:3px 0}
+.matome{background:var(--green-soft);border-radius:16px;padding:16px;margin-bottom:12px}
+.matome .ml{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;color:var(--green);margin-bottom:6px}
+.matome .ml svg{width:18px;height:18px}
+.matome p{margin:0;font-size:15px;color:#222;line-height:1.55}
+.askpill{display:flex;align-items:center;justify-content:center;gap:8px;height:52px;border-radius:14px;background:#E3ECFF;color:#1E6BFF;font-size:15px;font-weight:600}
+.askpill svg{width:20px;height:20px}
+
+/* S3 思い出す */
+.s3 .body{top:124px;bottom:0;padding:4px 16px 0}
+.ubub{margin-left:auto;max-width:78%;background:var(--user-bubble);border-radius:16px;padding:9px 14px;font-size:16px;color:#222;line-height:1.4;width:fit-content}
+.ai{display:flex;align-items:center;gap:6px;margin:12px 0 4px;font-size:13px;color:#8E8E93}
+.ai img{width:20px;height:20px;border-radius:5px}
+.ans{font-size:16px;line-height:1.45;color:#222;margin:0}
+.ans mark{background:none;color:inherit;font-weight:600;border-bottom:2px solid rgba(100,130,250,.5)}
+.ev{background:var(--evidence);border-radius:10px;padding:10px 14px;margin-top:10px}
+.ev .el{font-size:13px;color:#8E8E93;margin-bottom:8px}
+.ev .eh{display:flex;align-items:center;gap:8px;font-size:17px;font-weight:600;color:#000}
+.ev .num{width:20px;height:20px;border-radius:50%;background:var(--accent);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.ev .ed{font-size:13px;color:#8E8E93;margin:2px 0 6px 28px}
+.ev .ex{font-size:13px;color:#666;line-height:1.5;margin:0 0 8px 28px}
+.ev .links{display:flex;gap:18px;margin-left:28px;font-size:14px;font-weight:500;color:var(--deep)}
+.ev .links button,.ev .links span{display:inline-flex;align-items:center;gap:5px;color:var(--deep);font-size:14px;font-weight:500}
+.ev .links svg{width:16px;height:16px}
+.fb{display:flex;gap:18px;align-items:center;margin:10px 0 0 4px;font-size:13px;color:#8E8E93}
+.fb span{display:inline-flex;align-items:center;gap:5px}
+.fb svg{width:18px;height:18px}
+.inputbar{position:absolute;left:0;right:0;bottom:0;height:96px;background:rgba(242,242,247,.9);display:flex;align-items:center;padding:0 16px 22px}
+.inputbar .in{flex:1;height:44px;border-radius:22px;background:#fff;box-shadow:0 0 0 .5px rgba(0,0,0,.08);display:flex;align-items:center;padding:0 14px;color:#A0A0A8;font-size:15px;position:relative}
+.inputbar .in i{position:absolute;right:6px;top:6px;width:32px;height:32px;border-radius:50%;background:#C7C7CC;display:flex;align-items:center;justify-content:center;color:#fff}
+.inputbar svg{width:18px;height:18px}
+
+/* S4 アクションアイテム */
+.acard{background:var(--cell);border-radius:16px;padding:16px;margin-bottom:12px}
+.acard .ah{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.acard .ah svg{width:20px;height:20px;color:var(--green)}
+.acard .ah b{font-size:17px;font-weight:600;color:var(--green);flex:1}
+.acard .ah .pp{font-size:12px;font-weight:600;color:#1E6BFF;background:#E3ECFF;border-radius:999px;padding:6px 10px}
+.arow{display:flex;justify-content:space-between;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(0,0,0,.05)}
+.arow:first-of-type{border-top:0}
+.arow .at{font-size:16px;color:#111;line-height:1.35}
+.arow .am{display:flex;align-items:center;gap:8px;margin-top:6px;font-size:12px;color:#8E8E93}
+.arow .am .who{background:#E5E5EA;color:#333;border-radius:6px;padding:2px 7px;font-weight:500}
+.arow svg{width:22px;height:22px;color:#1E6BFF;flex:none;margin-top:2px}
+
+
+/* static phones in chapters */
+.fig .phone{--sw:280;--sh:630}
+.fig .s{position:absolute;inset:0;opacity:1;visibility:visible}
+
+/* more */
+.cells{margin-top:clamp(40px,5vw,72px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:rgba(255,255,255,.78);border-radius:var(--r-card);box-shadow:var(--shadow-soft);overflow:hidden}
+.cell{padding:26px clamp(18px,2vw,30px) 30px;border-right:1px solid rgba(23,37,90,.06);border-bottom:1px solid rgba(23,37,90,.06);min-width:0}
+.cell:nth-child(3n){border-right:0}
+.cell:nth-child(n+4){border-bottom:0}
+.cell .k{display:flex;justify-content:space-between;align-items:center;color:var(--sub)}
+.cell .k .mono{font-size:12px;color:var(--deep)}
+.cell svg{width:26px;height:26px;color:var(--deep)}
+.cell h3{margin-top:26px;font-size:17px;font-weight:700;letter-spacing:-.01em;line-height:1.4;color:var(--navy)}
+.cell p{margin-top:6px;font-size:15px;color:var(--sub);line-height:1.75}
+
+/* use cases */
+.rows{margin-top:clamp(40px,5vw,72px);background:rgba(255,255,255,.78);border-radius:var(--r-card);box-shadow:var(--shadow-soft);overflow:hidden}
+.row{display:grid;grid-template-columns:clamp(56px,7vw,110px) minmax(0,.9fr) minmax(0,1.3fr) 40px;gap:clamp(12px,2vw,32px);align-items:center;padding:20px clamp(16px,2vw,28px);border-top:1px solid rgba(23,37,90,.06);transition:background-color .25s ease,color .25s ease}
+.row:first-child{border-top:0}
+.row .n{font-weight:800;font-size:clamp(2.2rem,4vw,3.6rem);line-height:1;letter-spacing:-.03em;color:var(--navy);font-variant-numeric:tabular-nums}
+.row h3{font-size:clamp(1.2rem,1.8vw,1.6rem);font-weight:700;letter-spacing:-.01em;line-height:1.3;color:var(--navy)}
+.row p{font-size:15px;color:var(--sub);line-height:1.75}
+.row svg{width:24px;height:24px;justify-self:end;color:var(--deep);transition:transform .3s var(--ease)}
+.row:hover{background:var(--accent);color:#fff}
+.row:hover .n,.row:hover h3,.row:hover svg{color:#fff}
+.row:hover p{color:rgba(255,255,255,.85)}
+.row:hover svg{transform:translateX(6px)}
+
+/* pricing */
+.toggle{margin-top:clamp(32px,4vw,52px);display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:15px;color:var(--sub)}
+.sw{position:relative;width:51px;height:31px;border-radius:16px;background:#E5E5EA;transition:background-color .25s;flex:none}
+.sw::after{content:"";position:absolute;top:2px;left:2px;width:27px;height:27px;border-radius:50%;background:#fff;box-shadow:0 3px 8px rgba(0,0,0,.15),0 3px 1px rgba(0,0,0,.06);transition:transform .25s cubic-bezier(.2,.8,.2,1)}
+.sw[aria-checked="true"]{background:var(--accent)}
+.sw[aria-checked="true"]::after{transform:translateX(20px)}
+.toggle .lbl{transition:color .2s}
+.toggle .lbl.act{color:var(--navy)}
+.off[hidden]{display:none}
+.off{display:inline-block;font-size:12px;font-weight:600;background:#E9EDFF;color:var(--deep);padding:3px 9px;border-radius:999px;margin-left:6px;vertical-align:1px}
+.plans{margin-top:24px;align-items:start;row-gap:24px}
+.plan{grid-column:span 6;background:rgba(255,255,255,.88);border-radius:var(--r-card);box-shadow:var(--shadow-soft);padding:28px;display:flex;flex-direction:column}
+.plan .nm{display:flex;align-items:center;justify-content:space-between;font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--sub)}
+.plan .pop{background:var(--deep);color:#fff;padding:3px 10px;border-radius:999px;letter-spacing:0;font-weight:600;font-size:12px}
+.price{margin-top:12px;font-weight:800;font-size:clamp(2.6rem,4vw,3.4rem);line-height:1.05;letter-spacing:-.03em;color:var(--navy);font-variant-numeric:tabular-nums}
+.price small{font-weight:600;font-size:16px;letter-spacing:0;margin-left:4px;color:var(--sub)}
+.plan .eq{margin-top:6px;font-size:13px;min-height:1.6em;color:var(--sub);font-variant-numeric:tabular-nums}
+.plan .desc{margin-top:2px;font-weight:600;font-size:14px;color:var(--text)}
+.plan ul{margin-top:18px;margin-bottom:24px;border-top:1px solid rgba(23,37,90,.08)}
+.plan li{display:flex;gap:10px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(23,37,90,.06);font-size:15px}
+.plan li svg{width:18px;height:18px;color:var(--accent);flex:none;transform:translateY(3px)}
+.plan .btn{width:100%}
+.foot-note{margin-top:20px;font-size:13px;color:var(--sub)}
+
+/* reviews */
+.quotes{margin-top:clamp(40px,5vw,72px);row-gap:24px}
+.quote{grid-column:span 4;background:rgba(255,255,255,.78);border-radius:var(--r-card);box-shadow:var(--shadow-soft);padding:24px;display:flex;flex-direction:column;gap:12px}
+.quote .st{font-size:13px;letter-spacing:2px;color:var(--accent)}
+.quote blockquote{font-size:16px;font-weight:500;line-height:1.8;color:var(--text)}
+.quote cite{margin-top:auto;font-style:normal;font-size:13px;color:var(--sub)}
+
+/* business */
+.biz{margin-top:32px;align-items:center;row-gap:24px;background:rgba(255,255,255,.78);border-radius:var(--r-card);box-shadow:var(--shadow-soft);padding:32px}
+.biz .txt{grid-column:1/span 7}
+.biz .txt h2{font-size:clamp(1.5rem,2.6vw,2rem);font-weight:800;letter-spacing:-.01em;line-height:1.3;color:var(--navy)}
+.biz .txt p{margin-top:10px;color:var(--sub);max-width:36em;font-size:15px}
+.biz .act{grid-column:9/span 4;display:grid;gap:12px}
+.mail{display:flex;align-items:center;justify-content:space-between;gap:10px;height:44px;padding:0 6px 0 16px;border-radius:999px;background:var(--cell);font-size:14px;color:var(--text);min-width:0}
+.mail span{font-family:var(--f-mono);font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;user-select:all;-webkit-user-select:all}
+.mail button{flex:none;height:32px;padding:0 12px;border-radius:999px;background:#fff;font-size:13px;font-weight:600;color:var(--deep);box-shadow:0 1px 3px rgba(0,0,0,.08);user-select:none}
+
+/* cta */
+.cta .big{margin-top:clamp(28px,4vw,52px);color:var(--navy);font-weight:900;font-size:clamp(2.6rem,6vw,5.4rem);line-height:1.1;letter-spacing:-.02em}
+.cta .row2{margin-top:clamp(24px,3vw,40px);display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap}
+.cta .row2 p{font-size:17px;font-weight:500;color:var(--text)}
+.cta .row2 .note{margin-top:10px;font-size:13px;color:var(--sub);font-weight:400}
+
+/* footer */
+.footer{padding-block:56px 36px}
+.footer .grid{row-gap:40px}
+.footer .b{grid-column:1/span 5}
+.footer .brand{color:#fff}
+.footer .b p{margin-top:14px;color:var(--fg2);font-size:14px}
+.footer nav{grid-column:span 3}
+.footer h4{font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--fg2)}
+.footer nav ul{margin-top:14px;display:grid;gap:8px}
+.footer nav a{text-decoration:none;font-size:14px;color:#fff}
+.footer nav a:hover{text-decoration:underline;text-underline-offset:4px}
+.copy{margin-top:48px;padding-top:18px;border-top:1px solid var(--ln);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;color:var(--fg2)}
+
+/* reveal */
+.js .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s var(--ease)}
+.js .reveal.in{opacity:1;transform:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:1100px){
+  .hero-top{grid-column:1/-1}
+  .hero-side{grid-column:1/-1;margin-top:18px;align-self:start;flex-direction:row;flex-wrap:wrap;align-items:center;gap:14px 24px}
+  .lead{grid-column:1/-1}
+  .h2{grid-column:1/-1}
+  .ch-body .fig,.ch-body.flip .fig{grid-column:1/-1;grid-row:auto}
+  .ch-body .feats,.ch-body.flip .feats{grid-column:1/-1;grid-row:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:0;padding:0}
+  .feat{border-top:0;border-left:1px solid rgba(23,37,90,.06)}
+  .feat:first-child{border-left:0}
+  .biz .txt,.biz .act{grid-column:1/-1}
+  .quote{grid-column:1/-1}
+  .footer .b{grid-column:1/-1}.footer nav{grid-column:span 6}
+}
+@media (max-width:960px){
+  .nav ul{display:none}
+  .menu-btn{display:inline-flex;align-items:center}
+  .nav .btn-dl{display:none}
+}
+@media (max-width:760px){
+  :root{--ruler:0px;--nav:56px}
+  body{padding-left:0;padding-bottom:calc(32px + env(safe-area-inset-bottom,0px));font-size:15px}
+  .ruler{top:auto;right:0;width:auto;height:calc(32px + env(safe-area-inset-bottom,0px));padding-bottom:env(safe-area-inset-bottom,0px);border-right:0;border-top:1px solid var(--line)}
+  .ruler .track{top:0;bottom:env(safe-area-inset-bottom,0px);left:48px;right:48px}
+  .ruler .ticks{background-image:repeating-linear-gradient(to right,rgba(23,37,90,.18) 0 1px,transparent 1px 8px),repeating-linear-gradient(to right,rgba(23,37,90,.45) 0 1px,transparent 1px 64px);background-size:100% 8px,100% 16px;background-position:left bottom,left bottom}
+  .ruler .ph{top:0;bottom:0;right:auto;width:2px;height:auto}
+  .ruler .ph b{top:5px;left:6px}
+  .ruler .mark{left:auto;top:auto;bottom:0;width:2px;height:10px}
+  .ruler .r0,.ruler .r1{top:9px;bottom:auto;width:48px;right:auto}
+  .ruler .r1{left:auto;right:0}
+  .skip{left:12px}
+  .hero{padding-top:calc(var(--nav) + 14px)}
+  .hero .wrap{display:flex;flex-direction:column}
+  .hero-top{margin-top:10px}
+  .h1{font-size:clamp(2.1rem,9.2vw,2.6rem)}
+  .one{font-size:15px;margin-top:10px}
+  .hero-side{order:4;margin-top:22px;flex-direction:column;align-items:stretch;gap:12px}
+  .hero-side .stores .btn{flex:1}
+  .scrub{--track:80px;--lane:132px;margin-top:20px}
+  .scrub-title b{font-size:1.1rem}
+  .scrub-title span{font-size:13px}
+  .handle{width:56px;height:56px;margin:-28px 0 0 -28px}
+  .playhead{bottom:calc(50% + 28px)}
+  .card{width:100%}
+  .scrub-meta .hint{display:none}
+  .ch-body .feats,.ch-body.flip .feats{grid-template-columns:1fr}
+  .feat{border-left:0;border-top:1px solid rgba(23,37,90,.06)}
+  .feat:first-child{border-top:0}
+  .fig .phone{--sw:240;--sh:540}
+  .cells{grid-template-columns:1fr}
+  .cell{border-right:0;border-bottom:1px solid rgba(23,37,90,.06)}
+  .cell:last-child{border-bottom:0}
+  .cell h3{margin-top:16px}
+  .row{grid-template-columns:48px minmax(0,1fr);row-gap:4px;padding-block:18px}
+  .row .n{grid-row:span 2;font-size:2.2rem}
+  .row svg{display:none}
+  .plan{grid-column:1/-1;padding:22px}
+  .footer nav{grid-column:span 12}
+  .biz{padding:22px}
+}
+@media (max-width:380px){.stats{gap:4px 10px}}
+@media (prefers-reduced-motion:reduce){
+  .js .h1 .ch{animation:none}
+  .js .h2 .w{clip-path:none;transition:none}
+  .js .reveal{opacity:1;transform:none;transition:none}
+  .row,.row svg,.sw::after,.bars i,.nav{transition:none}
+  .nav.is-hidden{transform:none;opacity:1}
+  .s0 .live .cur{animation:none}
+}
     </style>
 </head>
 <body>
-    <div class="noise"></div>
+<a class="skip" href="#main">本文へスキップ</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9.5 14v2M12 12v6M14.5 13.5v3"/></symbol>
+  <symbol id="i-watch" viewBox="0 0 24 24"><rect x="7" y="6" width="10" height="12" rx="3"/><path d="M9 6l.7-3h4.6l.7 3M9 18l.7 3h4.6l.7-3M12 10v2.5l1.5 1"/></symbol>
+  <symbol id="i-lines" viewBox="0 0 24 24"><path d="M4 6h16M4 10h16M4 14h10M4 18h7"/><circle cx="18" cy="17" r="2.5"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M11 3l1.8 5.2L18 10l-5.2 1.8L11 17l-1.8-5.2L4 10l5.2-1.8z"/><path d="M18.5 15l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></symbol>
+  <symbol id="i-clip" viewBox="0 0 24 24"><path d="M8.5 12.5l6-6a3 3 0 0 1 4.2 4.2l-8 8a5 5 0 0 1-7-7l7.3-7.3"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l6-3.5z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><path d="M8 12.5l2.8 2.8L16 9.5"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 3v12M7 8l5-5 5 5"/><path d="M5 13v7h14v-7"/></symbol>
+  <symbol id="i-scan" viewBox="0 0 24 24"><path d="M4 8V4h4M16 4h4v4M20 16v4h-4M8 20H4v-4"/><path d="M8 10h8M8 14h5"/></symbol>
+  <symbol id="i-cc" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 15h4M13 15h4M7 11h10"/></symbol>
+  <symbol id="i-cut" viewBox="0 0 24 24"><circle cx="6" cy="7" r="2.5"/><circle cx="6" cy="17" r="2.5"/><path d="M8.2 8.4L20 17M8.2 15.6L20 7"/></symbol>
+  <symbol id="i-bubbles" viewBox="0 0 24 24"><circle cx="9" cy="10" r="5.5"/><circle cx="17" cy="16" r="3.5"/><circle cx="17.5" cy="5.5" r="2"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18a4 4 0 0 1-.6-7.96A6 6 0 0 1 17.7 9 4.5 4.5 0 0 1 17.5 18z"/><path d="M9 14.5h6"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M7 10h.01M10.3 10h.01M13.6 10h.01M17 10h.01M8 14h8"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 13h6M9 17h6"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v12M7 11l5 5 5-5M5 20h14"/></symbol>
+  <symbol id="i-apple" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.250 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.810-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></symbol>
+  <symbol id="i-gplay" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.24-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.54.68.54 1.19s-.2.92-.54 1.19l-2.12 1.23-2.5-2.5 2.5-2.5 2.12 1.39zM6.050 2.66l10.76 6.22-2.27 2.27L6.05 2.66z"/></symbol>
+  <symbol id="i-tick" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+</svg>
 
-    <!-- Navigation -->
-    <nav id="navbar" aria-label="メインナビゲーション">
-        <div class="nav-left">
-            <a href="./" class="logo">Texter</a>
-            <ul class="nav-links" role="list">
-                <li><a href="#record">機能</a></li>
-                <li><a href="#usecases">活用例</a></li>
-                <li><a href="#pricing">料金</a></li>
-                <li><a href="#reviews">レビュー</a></li>
-            </ul>
-        </div>
-        <div class="nav-right">
-            <button class="theme-toggle" id="themeToggle" aria-label="テーマ切替">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="sun-icon">
-                    <circle cx="12" cy="12" r="5"/>
-                    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-                </svg>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="moon-icon" style="display:none;">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                </svg>
-            </button>
-            <a href="en/" class="lang-switch">EN</a>
-            <a href="https://apps.apple.com/jp/app/id1482592304" class="nav-cta" target="_blank" rel="noopener noreferrer">ダウンロード</a>
-        </div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Texter ホーム"><img src="/img/appicon.png" alt="" width="28" height="28">Texter</a>
+    <nav aria-label="メイン">
+      <ul>
+        <li><a href="#record">機能</a></li>
+        <li><a href="#pricing">料金</a></li>
+        <li><a href="#reviews">レビュー</a></li>
+        <li><a class="en" href="/en/" hreflang="en">EN</a></li>
+      </ul>
     </nav>
+    <a class="btn-dl" href="https://apps.apple.com/jp/app/id1482592304" target="_blank" rel="noopener noreferrer">ダウンロード</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="sheet">メニュー</button>
+  </div>
+</header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero" aria-labelledby="hero-title">
-        <div class="hero-bg"></div>
-        <div class="hero-orb hero-orb-1"></div>
-        <div class="hero-orb hero-orb-2"></div>
-        <div class="hero-orb hero-orb-3"></div>
-        
-        <div class="hero-content">
-            <div class="hero-text">
-                <div class="hero-badge">会議・取材・講義の記録に</div>
-                <h1 id="hero-title">
-                    録るだけで、<br>
-                    <span class="gradient-text">議事録もタスクも。</span>
-                </h1>
-                <p class="hero-description">
-                    会議や取材を録音すると、文字起こし・話者識別・要約・タスク整理までTexterが自動化。あとから過去の記録に質問して、元の発言まで戻れます。
-                </p>
-                <div class="hero-flow" aria-label="録音からあとで思い出すまでの流れ">
-                    <a class="flow-step" href="#record">🎙️ 記録する</a>
-                    <span class="flow-arrow" aria-hidden="true">→</span>
-                    <a class="flow-step" href="#organize">📝 まとめる</a>
-                    <span class="flow-arrow" aria-hidden="true">→</span>
-                    <a class="flow-step highlight" href="#recall">💬 思い出す</a>
-                    <span class="flow-arrow" aria-hidden="true">→</span>
-                    <a class="flow-step" href="#act">✅ 行動する</a>
-                </div>
-                <div class="hero-buttons">
-                    <a href="https://apps.apple.com/jp/app/id1482592304" class="btn-primary" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-                        </svg>
-                        App Store
-                    </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.matz.Texter" class="btn-secondary" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.24-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.54.68.54 1.19s-.2.92-.54 1.19l-2.12 1.23-2.5-2.5 2.5-2.5 2.12 1.39zM6.05 2.66l10.76 6.22-2.27 2.27L6.05 2.66z"/>
-                        </svg>
-                        Google Play
-                    </a>
-                </div>
-                <div class="social-proof">
-                    <div class="proof-item">
-                        <span class="proof-stars">★★★★★</span>
-                        <span class="proof-text">App Store 4.6</span>
-                    </div>
-                    <div class="proof-divider"></div>
-                    <div class="proof-item">
-                        <span class="proof-number">50,000+</span>
-                        <span class="proof-text">ダウンロード</span>
-                    </div>
-                    <div class="proof-divider"></div>
-                    <div class="proof-item">
-                        <span class="proof-number">100+</span>
-                        <span class="proof-text">言語対応</span>
-                    </div>
-                </div>
-            </div>
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-label="メニュー">
+  <div class="top">
+    <a class="brand" href="/"><img src="/img/appicon.png" alt="" width="28" height="28">Texter</a>
+    <button class="menu-btn" style="display:inline-flex" id="menuClose">閉じる</button>
+  </div>
+  <ol>
+    <li><a href="#record"><span>04:00</span>機能</a></li>
+    <li><a href="#pricing"><span>40:00</span>料金</a></li>
+    <li><a href="#reviews"><span>48:00</span>レビュー</a></li>
+    <li><a href="/en/" hreflang="en"><span>EN</span>English</a></li>
+  </ol>
+  <div class="stores">
+    <a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304" target="_blank" rel="noopener noreferrer"><svg><use href="#i-apple"/></svg>App Store</a>
+    <a class="btn btn-line" href="https://play.google.com/store/apps/details?id=com.matz.Texter" target="_blank" rel="noopener noreferrer"><svg><use href="#i-gplay"/></svg>Google Play</a>
+  </div>
+</div>
 
-            <div class="hero-visual">
-                <div class="phone-mockup">
-                    <div class="phone-frame">
-                        <div class="phone-screen">
-                            <div class="phone-notch"></div>
-                            <div class="phone-content">
-                                <!-- Recording Header -->
-                                <div class="phone-header">
-                                    <div class="recording-indicator">
-                                        <span class="recording-dot"></span>
-                                        録音中
-                                    </div>
-                                    <span class="recording-time">02:34</span>
-                                </div>
+<main id="main">
+<!-- ============ HERO 00:00 ============ -->
+<section class="hero field" id="top" data-tc="00:00" aria-labelledby="hero-title">
+  <div class="wrap">
+    <p class="eyebrow"><span class="tc">00:00</span><span>Texter</span><span class="dim">AI文字起こし・議事録アプリ</span></p>
+    <div class="hero-top">
+      <h1 class="h1" id="hero-title" aria-label="録るだけで、議事録もタスクも。"><span aria-hidden="true"><span class="line">録るだけで、</span><span class="line">議事録もタスクも。</span></span></h1>
+      <p class="one">文字起こし・話者識別・要約・タスク整理まで自動。</p>
+    </div>
+    <div class="hero-side">
+      <div class="stores">
+        <a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304" target="_blank" rel="noopener noreferrer"><svg><use href="#i-apple"/></svg>App Store</a>
+        <a class="btn btn-line" href="https://play.google.com/store/apps/details?id=com.matz.Texter" target="_blank" rel="noopener noreferrer"><svg><use href="#i-gplay"/></svg>Google Play</a>
+      </div>
+      <p class="stats"><span>App Store <b>4.6</b></span><span>・</span><span><b>50,000+</b> ダウンロード</span><span>・</span><span><b>100</b>以上の言語</span></p>
+    </div>
 
-                                <!-- Waveform -->
-                                <div class="waveform-container">
-                                    <div class="waveform-bar"></div>
-                                    <div class="waveform-bar"></div>
-                                    <div class="waveform-bar"></div>
-                                    <div class="waveform-bar"></div>
-                                    <div class="waveform-bar"></div>
-                                    <div class="waveform-bar"></div>
-                                    <div class="waveform-bar"></div>
-                                    <div class="waveform-bar"></div>
-                                    <div class="waveform-bar"></div>
-                                </div>
-
-                                <!-- Transcription Area -->
-                                <div class="transcription-area">
-                                    <div class="transcription-label">リアルタイム文字起こし</div>
-                                    <div class="transcription-text">
-                                        <span class="completed">本日の会議では、新しいプロジェクトの進捗について確認します。</span>
-                                        <span class="current" id="typing-text"></span>
-                                    </div>
-                                    <div class="language-badge">日本語 (自動検出)</div>
-                                </div>
-
-                                <!-- Action Items Card -->
-                                <div class="action-mini">
-                                    <div class="action-mini-label">アクションアイテム</div>
-                                    <div class="action-mini-task"><i class="action-check done">✓</i>仕様書のレビュー依頼<span class="due">明日</span></div>
-                                    <div class="action-mini-task"><i class="action-check"></i>見積もりの送付<span class="due">7/28</span></div>
-                                    <div class="action-mini-cta">⏰ リマインダーに登録</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="watch-mockup" aria-hidden="true">
-                        <div class="watch-frame">
-                            <div class="watch-screen">
-                                <div class="watch-rec"><span class="watch-rec-dot"></span>録音中</div>
-                                <div class="watch-time">02:34</div>
-                                <div class="watch-wave"><span style="height:6px"></span><span style="height:12px; animation-delay:0.1s"></span><span style="height:8px; animation-delay:0.2s"></span><span style="height:14px; animation-delay:0.3s"></span><span style="height:9px; animation-delay:0.4s"></span><span style="height:12px; animation-delay:0.5s"></span><span style="height:6px; animation-delay:0.6s"></span></div>
-                            </div>
-                        </div>
-                        <div class="watch-caption">Apple Watch単体で録音</div>
-                    </div>
-                    <div class="floating-elements">
-                        <div class="floating-card floating-card-1">
-                            <div class="card-text">🎯 話者を自動識別</div>
-                            <div class="card-sub">誰の発言かも記録</div>
-                        </div>
-                        <div class="floating-card floating-card-2">
-                            <div class="card-text">✅ タスク自動抽出</div>
-                            <div class="card-sub">リマインダー連携</div>
-                        </div>
-                        <div class="floating-card floating-card-3">
-                            <div class="card-text">🌍 100+言語</div>
-                            <div class="card-sub">多言語対応</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="scrub" id="scrub">
+      <div class="scrub-title"><b>その瞬間に、戻れる。</b><span>先月の会議を、ドラッグで辿ってみてください。</span></div>
+      <div class="scrub-meta"><span><b>Q.</b> 先月の定例で決まった納期は？</span><span class="hint">ハンドルをドラッグして、7月の記録をさかのぼる</span></div>
+      <div class="lane">
+        <div class="card hit" id="card">
+          <div class="card-top"><span id="cardLabel">根拠</span><span class="cdate" id="cardDate">7/15（火）</span></div>
+          <div class="eh"><span class="num">1</span><span id="cardTag">週次定例</span></div>
+          <p class="card-body" id="cardBody">「じゃあ納期は29日の金曜で。デザインの確認を先に終わらせておいてね。」</p>
+          <div class="card-foot"><button type="button" class="playb" id="cardPlay"><svg class="ico"><use href="#i-play"/></svg><span id="cardFootT">12:34から再生</span></button><span class="open">ノートを開く</span><span class="none" id="cardNone"></span></div>
         </div>
-    </section>
+      </div>
+      <div class="track" id="track">
+        <div class="bars" id="bars"></div>
+        <div class="playhead" id="playhead"></div>
+        <div class="handle" id="handle" role="slider" tabindex="0" aria-label="7月の記録をさかのぼる" aria-valuemin="1" aria-valuemax="23" aria-valuenow="11" aria-valuetext="7月15日 週次定例"></div>
+      </div>
+      <div class="dates" id="dates" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
 
-    <!-- Before/After Comparison -->
-    <section class="comparison" aria-labelledby="comparison-title">
-        <div class="section-header">
-            <span class="section-label">なぜTexterか</span>
-            <h2 class="section-title" id="comparison-title">手作業に、もう戻れない</h2>
-            <p class="section-description">文字起こしの「あたりまえ」が変わる</p>
+<!-- ============ 01 RECORD 04:00 ============ -->
+<section class="chapter field" id="record" data-tc="04:00" aria-labelledby="record-title">
+  <div class="wrap">
+    <div class="ch-rule"><p class="eyebrow"><span class="tc">04:00</span><span>01 — 記録する</span></p><span class="en">RECORD</span></div>
+    <div class="grid ch-head">
+      <h2 class="h2" id="record-title"><span class="w">録音も、取り込みも、</span><span class="w">手首からも。</span></h2>
+      <p class="lead">記録の入口はどこにでも。思い立った瞬間に始められます。</p>
+    </div>
+    <div class="grid ch-body">
+      <figure class="fig reveal" data-typing>
+        <div class="phone" aria-hidden="true"><div class="island"></div><div class="screen">
+<!-- S0 ボイス -->
+        <div class="s s0 canvas active" data-s="0">
+          <div class="status"><span>9:41</span><span class="bat"><i></i></span></div>
+          <div class="navbar"><span class="l"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span><span class="t">音声 → テキスト</span><span class="r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h11a2 2 0 0 1 2 2v14H7a2 2 0 0 1-2-2z"/><path d="M5 18a2 2 0 0 1 2-2h11"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h9M8.5 5v-1M6 8c1.5 3.5 4 5 6.5 6M12 8c-1 3-3 5.5-6.5 7.5"/><path d="M14 20l3-8 3 8M15.2 17h3.6"/></svg></span></div>
+          <div class="field">
+            <div class="lbl">リアルタイム文字起こし ・ 日本語（自動検出）</div>
+            <p class="live"><span class="typed">本日の会議では、新しいプロジェクトの進捗について確認します。</span><span class="cur"></span></p>
+          </div>
+          <div class="rec"><i></i>録音中 <span class="tc">02:34</span></div>
+          <div class="stage">
+            <span class="side"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 7l4-4 4 4"/><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg></span>
+            <span class="mic"><span class="ring r3"></span><span class="ring r2"></span><span class="ring r1"></span><svg viewBox="0 0 24 24" fill="currentColor" style="position:relative"><path d="M12 15a4 4 0 0 0 4-4V6a4 4 0 0 0-8 0v5a4 4 0 0 0 4 4z"/><path d="M5.5 11a.9.9 0 0 1 1.8 0 4.7 4.7 0 0 0 9.4 0 .9.9 0 0 1 1.8 0 6.5 6.5 0 0 1-5.6 6.4V20h2.2a.9.9 0 0 1 0 1.8H8.9a.9.9 0 0 1 0-1.8h2.2v-2.6A6.5 6.5 0 0 1 5.5 11z"/></svg></span>
+            <span class="side"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 12h1M7.5 8v8M11 5v14M14.5 9v6M18 7v10M21 12h-1"/></svg></span>
+          </div>
+          <div class="tabbar">
+            <span class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="2.5"/><path d="M7 8V6.5A1.5 1.5 0 0 1 8.5 5h7A1.5 1.5 0 0 1 17 6.5V8"/></svg>リスト</span>
+            <span class="tab on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6"/></svg>ボイス</span>
+            <span class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8.5A1.5 1.5 0 0 1 5.5 7H8l1.5-2h5L16 7h2.5A1.5 1.5 0 0 1 20 8.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 17.5z"/><circle cx="12" cy="13" r="3.5"/></svg>画像</span>
+            <span class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3l1.6 2.6 3-.6.7 3 2.7 1.4-1.4 2.6 1.4 2.6L17.3 16l-.7 3-3-.6L12 21l-1.6-2.6-3 .6-.7-3L4 14.6 5.4 12 4 9.4 6.7 8l.7-3 3 .6z"/></svg>設定</span>
+          </div>
         </div>
 
-        <div class="comparison-grid">
-            <div class="comparison-card before">
-                <span class="comparison-label">Before</span>
-                <h3 class="comparison-title">手動で書き起こす場合</h3>
-                <ul class="comparison-items">
-                    <li><span class="icon">×</span>聞き直しながら手入力</li>
-                    <li><span class="icon">×</span>話の全体像がつかめない</li>
-                    <li><span class="icon">×</span>構造化に別途時間が必要</li>
-                    <li><span class="icon">×</span>多言語は対応できない</li>
-                </ul>
-                <div class="comparison-time">
-                    <span class="comparison-time-value">45分</span>
-                    <span class="comparison-time-label">/ 1時間の会議</span>
-                </div>
-            </div>
+        </div></div>
+        <figcaption class="cap">※ 画面はイメージです</figcaption>
+      </figure>
+      <div class="feats">
+        <article class="feat reveal"><div class="k"><span class="mono">01.1</span><svg class="ico"><use href="#i-mic"/></svg></div><h3>録音してそのまま文字起こし</h3><p>録音ボタンひとつで、話しながらリアルタイムに文字化。長時間の会議や講義もそのまま記録できます。</p></article>
+        <article class="feat reveal"><div class="k"><span class="mono">01.2</span><svg class="ico"><use href="#i-file"/></svg></div><h3>音声・動画ファイルを取り込む</h3><p>ボイスメモや会議ツールの録音、動画ファイルを取り込んで文字起こし。過去の記録もTexterに集約できます。</p></article>
+        <article class="feat reveal"><div class="k"><span class="mono">01.3</span><svg class="ico"><use href="#i-watch"/></svg></div><h3>Apple Watch・ウィジェット</h3><p>Apple Watch単体で録音し、あとでiPhoneへ転送。ロック画面ウィジェット、サイドボタン長押し（iOS 26.2〜）、Siri・ショートカットからも即録音。</p></article>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <div class="comparison-arrow">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
+<!-- ============ 02 ORGANIZE 12:00 ============ -->
+<section class="chapter field" id="organize" data-tc="12:00" aria-labelledby="organize-title">
+  <div class="wrap">
+    <div class="ch-rule"><p class="eyebrow"><span class="tc">12:00</span><span>02 — まとめる</span></p><span class="en">ORGANIZE</span></div>
+    <div class="grid ch-head">
+      <h2 class="h2" id="organize-title"><span class="w">長い会議も、</span><span class="w">要点がすぐわかる。</span></h2>
+      <p class="lead">録音が終わるころには、読める形になっています。</p>
+    </div>
+    <div class="grid ch-body flip">
+      <figure class="fig reveal">
+        <div class="phone" aria-hidden="true"><div class="island"></div><div class="screen">
+<!-- S2 内容まとめ -->
+        <div class="s s2 psheet canvas active" data-s="2">
+          <div class="grabber"></div>
+          <div class="navbar"><span class="l"><span class="circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span></span><span class="t">内容まとめ</span><span class="r"><span class="circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 7l4-4 4 4"/><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg></span></span></div>
+          <div class="body">
+            <p class="ttl">週次定例</p>
+            <p class="tsub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 19a6 6 0 0 1 12 0M14.5 18.5A4.5 4.5 0 0 1 21 15.5v3"/></svg>納期・デザイン確認・見積もりの確認</p>
+            <div class="sec">
+              <div class="sh"><span class="badge">0</span><b>納期の確定</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 4v4h-4"/></svg></div>
+              <p class="sp">デザイン確認を先に済ませることを条件に、納期を8月29日（金）とした。</p>
+              <ul class="arrows"><li>納期は8月29日（金）</li><li>デザイン確認を実装より先に行う</li><li>見積もりは7/28に送付</li></ul>
+              <div class="kp"><div class="kl">要点</div><ul class="arrows"><li>納期は8月29日（金）</li><li>デザイン確認を先に</li></ul></div>
             </div>
-
-            <div class="comparison-card after">
-                <span class="comparison-label">With Texter</span>
-                <h3 class="comparison-title">AIが自動で仕上げる</h3>
-                <ul class="comparison-items">
-                    <li><span class="icon">✓</span>録音しながらリアルタイム変換</li>
-                    <li><span class="icon">✓</span>話題マップで全体を俯瞰</li>
-                    <li><span class="icon">✓</span>内容まとめで自動構造化</li>
-                    <li><span class="icon">✓</span>100以上の言語に対応</li>
-                </ul>
-                <div class="comparison-time">
-                    <span class="comparison-time-value">自動</span>
-                    <span class="comparison-time-label">/ 録るだけで完了</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 1. 記録する -->
-    <section class="features" id="record" aria-labelledby="record-title">
-        <div class="section-header">
-            <span class="section-label">1. 記録する</span>
-            <h2 class="section-title" id="record-title">録音も、取り込みも、<br>手首からも。</h2>
-            <p class="section-description">記録の入口はどこにでも。思い立った瞬間に始められます。</p>
+            <div class="matome"><div class="ml"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 11h16M4 16h10"/></svg>まとめ</div><p>8月29日の納期に向けて、デザイン確認と見積もり送付の担当と期限を確定した。</p></div>
+            <div class="askpill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h11v8H8l-4 3z"/><path d="M20 9v10l-3-2h-6v-2"/></svg>この内容についてAIに質問する</div>
+          </div>
         </div>
 
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🎙️</div>
-                <h3 class="feature-title">録音してそのまま文字起こし</h3>
-                <p class="feature-description">録音ボタンひとつで、話しながらリアルタイムに文字化。長時間の会議や講義もそのまま記録できます。</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📂</div>
-                <h3 class="feature-title">音声・動画ファイルを取り込む</h3>
-                <p class="feature-description">ボイスメモや会議ツールの録音、動画ファイルを取り込んで文字起こし。過去の記録もTexterに集約できます。</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">⌚</div>
-                <h3 class="feature-title">Apple Watch・ウィジェット</h3>
-                <p class="feature-description">Apple Watch単体で録音し、あとでiPhoneへ転送。ロック画面ウィジェット、サイドボタン長押し（iOS 26.2〜）、Siri・ショートカットからも即録音。</p>
-            </div>
-        </div>
-    </section>
+        </div></div>
+        <figcaption class="cap">※ 画面はイメージです</figcaption>
+      </figure>
+      <div class="feats">
+        <article class="feat reveal"><div class="k"><span class="mono">02.1</span><svg class="ico"><use href="#i-lines"/></svg></div><h3>高精度な文字起こしと話者識別</h3><p>Whisper (OpenAI) を含む最新エンジンで文字起こし。句読点も自動で整え、誰の発言かを分けて記録します。</p></article>
+        <article class="feat reveal"><div class="k"><span class="mono">02.2</span><svg class="ico"><use href="#i-spark"/></svg></div><h3>要約と内容まとめ</h3><p>会議・取材・講義など20種のテンプレートで要約。内容まとめは2カラム比較やフローチャートなど、内容に合う形式をAIが選びます。</p></article>
+        <article class="feat reveal"><div class="k"><span class="mono">02.3</span><svg class="ico"><use href="#i-globe"/></svg></div><h3>100以上の言語と翻訳</h3><p>100以上の言語の文字起こしに対応。DeepL・Google翻訳と連携し、文字起こしをその場で翻訳できます。</p></article>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- 2. まとめる -->
-    <section class="features" id="organize" aria-labelledby="organize-title">
-        <div class="section-header">
-            <span class="section-label">2. まとめる</span>
-            <h2 class="section-title" id="organize-title">文字起こしから要約まで、<br>自動で。</h2>
-            <p class="section-description">録音が終わるころには、読める形になっています。</p>
-        </div>
-
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">📝</div>
-                <h3 class="feature-title">高精度な文字起こしと話者識別</h3>
-                <p class="feature-description">Whisper (OpenAI) を含む最新エンジンで文字起こし。句読点も自動で整え、誰の発言かを分けて記録します。</p>
+<!-- ============ 03 RECALL 12:34 ============ -->
+<section class="chapter field f-key" id="recall" data-tc="12:34" aria-labelledby="recall-title">
+  <div class="wrap">
+    <div class="ch-rule"><p class="eyebrow"><span class="tc">12:34</span><span>03 — 思い出す</span></p><span class="en">RECALL</span></div>
+    <div class="grid ch-head">
+      <h2 class="h2" id="recall-title"><span class="w">過去の会話も、</span><span class="w">Texterに聞ける。</span></h2>
+      <p class="lead">「ノートに聞く」で、1件のノートにも、すべてのノートにも質問。答えには根拠がつき、元の発言をその場で再生できます。</p>
+    </div>
+    <div class="grid ch-body">
+      <figure class="fig reveal">
+        <div class="phone" aria-hidden="true"><div class="island"></div><div class="screen">
+<!-- S3 思い出す -->
+        <div class="s s3 psheet canvas active" data-s="3">
+          <div class="grabber"></div>
+          <div class="navbar"><span class="l"><span class="circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span></span><span class="t">思い出す</span><span class="r"><span class="circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="8" cy="12" r=".8"/><circle cx="12" cy="12" r=".8"/><circle cx="16" cy="12" r=".8"/></svg></span></span></div>
+          <div class="body">
+            <div class="ubub">先月の定例で決まった納期は？</div>
+            <div class="ai"><img src="/img/appicon.png" alt="">Texter AI</div>
+            <p class="ans">納期は <mark>8月29日（金）</mark> に決まっています。デザイン確認を先に済ませることが条件でした。</p>
+            <div class="ev">
+              <div class="el">根拠</div>
+              <div class="eh"><span class="num">1</span>週次定例</div>
+              <div class="ed">7/15</div>
+              <p class="ex">「じゃあ納期は29日の金曜で。デザインの確認を先に終わらせておいてね。」</p>
+              <div class="links"><button type="button" class="play" data-t="12:34"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l5.5-3.5z"/></svg>12:34から再生</button><span>ノートを開く</span></div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">🧠</div>
-                <h3 class="feature-title">要約と内容まとめ</h3>
-                <p class="feature-description">会議・取材・講義など20種のテンプレートで要約。内容まとめは2カラム比較やフローチャートなど、内容に合う形式をAIが選びます。</p>
+            <div class="ubub" style="margin-top:18px">見積もりはいつ送る？</div>
+            <div class="ai"><img src="/img/appicon.png" alt="">Texter AI</div>
+            <p class="ans"><mark>7月28日</mark> に送付する予定です。担当は話者Aです。</p>
+            <div class="ev">
+              <div class="el">根拠</div>
+              <div class="eh"><span class="num">1</span>週次定例</div>
+              <div class="ed">7/15</div>
+              <p class="ex">「見積もりは28日に送ります。」</p>
+              <div class="links"><button type="button" class="play" data-t="14:02"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l5.5-3.5z"/></svg>14:02から再生</button><span>ノートを開く</span></div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">🌐</div>
-                <h3 class="feature-title">100以上の言語と翻訳</h3>
-                <p class="feature-description">100以上の言語の文字起こしに対応。DeepL・Google翻訳と連携し、文字起こしをその場で翻訳できます。</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. 思い出す -->
-    <section class="features" id="recall" aria-labelledby="recall-title">
-        <div class="section-header">
-            <span class="section-label">3. 思い出す</span>
-            <h2 class="section-title" id="recall-title">過去の記録に、<br>質問できる。</h2>
-            <p class="section-description">「ノートに聞く」で、1件のノートにも、すべてのノートにも質問。答えには根拠がつき、元の発言をその場で再生できます。</p>
-        </div>
-
-        <div class="recall-layout">
-            <ul class="recall-points">
-                <li class="recall-point">
-                    <div class="recall-point-icon" aria-hidden="true">💬</div>
-                    <div>
-                        <h3>すべてのノートに聞く</h3>
-                        <p>「先月の定例で決まった納期は？」のように、ノートをまたいで質問。探すのではなく、聞くだけです。</p>
-                    </div>
-                </li>
-                <li class="recall-point">
-                    <div class="recall-point-icon" aria-hidden="true">📎</div>
-                    <div>
-                        <h3>根拠つきの回答</h3>
-                        <p>どのノートのどの発言をもとに答えたかを、回答の下に表示。AIの言いっぱなしにしません。</p>
-                    </div>
-                </li>
-                <li class="recall-point">
-                    <div class="recall-point-icon" aria-hidden="true">▶️</div>
-                    <div>
-                        <h3>元の発言から再生</h3>
-                        <p>根拠カードの「○分○秒から再生」をタップすると、その瞬間の録音に戻れます。記憶ではなく、記録で確かめられます。</p>
-                    </div>
-                </li>
-            </ul>
-
-            <div class="recall-mock" role="img" aria-label="「思い出す」画面のイメージ。すべてのノートに質問し、根拠カードから元の発言を再生できる">
-                <div class="recall-mock-header">
-                    <span class="recall-mock-title">思い出す</span>
-                    <span class="recall-mock-scope">すべてのノート</span>
-                </div>
-                <div class="recall-bubble user">先月の定例で決まった納期は？</div>
-                <div class="recall-bubble ai">納期は <strong>8月29日（金）</strong> に決まっています。デザイン確認を先に済ませることが条件でした。</div>
-                <div class="recall-evidence-label">根拠</div>
-                <div class="recall-evidence">
-                    <div class="recall-evidence-meta"><span>週次定例 7/15</span><span>12:34</span></div>
-                    <span class="recall-evidence-quote">「じゃあ納期は29日の金曜で。デザインの確認を先に終わらせておいてね。」</span>
-                    <span class="recall-play">▶ 12:34から再生</span>
-                </div>
-                <div class="recall-mock-input"><span>すべてのノートについて質問する...</span><span>↑</span></div>
-            </div>
-        </div>
-        <p class="recall-mock-note">※ 画面はイメージです</p>
-    </section>
-
-    <!-- 4. 行動する -->
-    <section class="features" id="act" aria-labelledby="act-title">
-        <div class="section-header">
-            <span class="section-label">4. 行動する</span>
-            <h2 class="section-title" id="act-title">会議が、<br>TODOリストになる</h2>
-            <p class="section-description">AIが「やるべきこと」を自動で抽出。会議後の転記作業は、もういりません。</p>
+            <div class="fb"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v10H4V10zM7 10l4-7c1.5 0 2.5 1 2.5 2.5V9h5a2 2 0 0 1 2 2.3l-1.2 6.8A2 2 0 0 1 17.3 20H7"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 14V4h3v10zM17 14l-4 7c-1.5 0-2.5-1-2.5-2.5V15h-5a2 2 0 0 1-2-2.3l1.2-6.8A2 2 0 0 1 6.7 4H17"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>コピー</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 7l4-4 4 4"/><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg>共有</span></div>
+          </div>
+          <div class="inputbar"><div class="in">すべてのノートについて質問する...<i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V6M6 12l6-6 6 6"/></svg></i></div></div>
         </div>
 
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🎯</div>
-                <h3 class="feature-title">タスクを自動抽出</h3>
-                <p class="feature-description">「〜しておいて」「来週までに」— 会話の中に埋もれたタスクをAIが見逃さず拾い上げ、リストにまとめます。</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">⏰</div>
-                <h3 class="feature-title">ワンタップでリマインダー</h3>
-                <p class="feature-description">期限・担当者も読み取って、Apple純正リマインダーにそのまま登録。通知はOSにおまかせできます。</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📤</div>
-                <h3 class="feature-title">共有・書き出し</h3>
-                <p class="feature-description">文字起こし・要約・アクションアイテムをテキストやPDF、Markdownで書き出し。チームへの共有もその場で。</p>
-            </div>
-        </div>
-    </section>
+        </div></div>
+        <figcaption class="cap">※ 画面はイメージです</figcaption>
+      </figure>
+      <div class="feats">
+        <article class="feat reveal"><div class="k"><span class="mono">03.1</span><svg class="ico"><use href="#i-chat"/></svg></div><h3>すべてのノートに聞く</h3><p>「先月の定例で決まった納期は？」のように、ノートをまたいで質問。探すのではなく、聞くだけです。</p></article>
+        <article class="feat reveal"><div class="k"><span class="mono">03.2</span><svg class="ico"><use href="#i-clip"/></svg></div><h3>根拠つきの回答</h3><p>どのノートのどの発言をもとに答えたかを、回答の下に表示。AIの言いっぱなしにしません。</p></article>
+        <article class="feat reveal"><div class="k"><span class="mono">03.3</span><svg class="ico"><use href="#i-play"/></svg></div><h3>元の発言から再生</h3><p>根拠カードの「○分○秒から再生」をタップすると、その瞬間の録音に戻れます。記憶ではなく、記録で確かめられます。</p></article>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Texterでできること -->
-    <section class="features" id="more" aria-labelledby="more-title">
-        <div class="section-header">
-            <span class="section-label">Texterでできること</span>
-            <h2 class="section-title" id="more-title">ほかにも、こんな使い方。</h2>
-            <p class="section-description">4つの流れの外でも、Texterは日々の道具になります。</p>
-        </div>
-
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">📸</div>
-                <h3 class="feature-title">画像の文字起こし（OCR）</h3>
-                <p class="feature-description">写真やスクリーンショットの文字をテキスト化。ホワイトボードや紙の資料の取り込みに。</p>
+<!-- ============ 04 ACT 18:00 ============ -->
+<section class="chapter field" id="act" data-tc="18:00" aria-labelledby="act-title">
+  <div class="wrap">
+    <div class="ch-rule"><p class="eyebrow"><span class="tc">18:00</span><span>04 — 行動する</span></p><span class="en">ACT</span></div>
+    <div class="grid ch-head">
+      <h2 class="h2" id="act-title"><span class="w">やることまで、</span><span class="w">自動で拾う。</span></h2>
+      <p class="lead">AIが「やるべきこと」を自動で抽出。会議後の転記作業は、もういりません。</p>
+    </div>
+    <div class="grid ch-body flip">
+      <figure class="fig reveal">
+        <div class="phone" aria-hidden="true"><div class="island"></div><div class="screen">
+<!-- S4 アクションアイテム -->
+        <div class="s s4 psheet canvas active" data-s="4">
+          <div class="grabber"></div>
+          <div class="navbar"><span class="l"><span class="circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span></span><span class="t">内容まとめ</span><span class="r"><span class="circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 7l4-4 4 4"/><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg></span></span></div>
+          <div class="body">
+            <p class="ttl">週次定例</p>
+            <p class="tsub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 19a6 6 0 0 1 12 0M14.5 18.5A4.5 4.5 0 0 1 21 15.5v3"/></svg>納期・デザイン確認・見積もりの確認</p>
+            <div class="acard">
+              <div class="ah"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l1.5 1.5L8 6M4 13l1.5 1.5L8 12M4 19l1.5 1.5L8 18M11 7h9M11 13h9M11 19h9"/></svg><b>アクションアイテム</b><span class="pp">すべてリマインダーへ</span></div>
+              <div class="arow"><div><div class="at">デザイン確認を完了する</div><div class="am"><span class="who">話者B</span>8/29まで</div></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M9 15l6-6M10 9h5v5"/></svg></div>
+              <div class="arow"><div><div class="at">見積もりの送付</div><div class="am"><span class="who">話者A</span>7/28</div></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M9 15l6-6M10 9h5v5"/></svg></div>
+              <div class="arow"><div><div class="at">仕様書のレビュー依頼</div><div class="am"><span class="who">自分</span>明日</div></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M9 15l6-6M10 9h5v5"/></svg></div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">🎬</div>
-                <h3 class="feature-title">動画の字幕生成・PiP</h3>
-                <p class="feature-description">取り込んだ動画に自動で字幕を付け、他のアプリを使いながらPicture in Pictureで再生できます。</p>
+            <div class="sec">
+              <div class="sh"><span class="badge">0</span><b>納期の確定</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></div>
+              <p class="sp">デザイン確認を先に済ませることを条件に、納期を8月29日（金）とした。</p>
+              <ul class="arrows"><li>納期は8月29日（金）</li><li>デザイン確認を実装より先に行う</li></ul>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">✂️</div>
-                <h3 class="feature-title">無音カット</h3>
-                <p class="feature-description">音声・動画の無音部分を自動で検出して削除。3段階の強さから選べます。</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🗺️</div>
-                <h3 class="feature-title">話題マップ</h3>
-                <p class="feature-description">長い会議のトピックをバブルチャートで俯瞰。「結局何を話したか」が一目でわかります。</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">☁️</div>
-                <h3 class="feature-title">ワードクラウド</h3>
-                <p class="feature-description">フォルダ全体のキーワードを一望。タップすると該当ノートへジャンプします。</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">⌨️</div>
-                <h3 class="feature-title">音声入力キーボード</h3>
-                <p class="feature-description">メールもチャットも、話すだけで入力。キーボードを追加すれば、どのアプリでも使えます。</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Use Cases Section -->
-    <section class="usecases" id="usecases" aria-labelledby="usecases-title">
-        <div class="section-header">
-            <span class="section-label">活用例</span>
-            <h2 class="section-title" id="usecases-title">ビジネスから学習まで、<br>あらゆるシーンで活躍</h2>
+          </div>
         </div>
 
-        <div class="usecase-grid">
-            <div class="usecase-card">
-                <div class="usecase-icon">📋</div>
-                <div class="usecase-content">
-                    <h3>議事録作成</h3>
-                    <p>会議の内容を自動で記録し、要約までAIにお任せ。チームの生産性を大幅アップ。</p>
-                </div>
-            </div>
-            
-            <div class="usecase-card">
-                <div class="usecase-icon">✍️</div>
-                <div class="usecase-content">
-                    <h3>ライター・ブロガー</h3>
-                    <p>インタビューやアイデア出しを声で行い、執筆速度を加速。クリエイティブな作業に集中。</p>
-                </div>
-            </div>
-            
-            <div class="usecase-card">
-                <div class="usecase-icon">👂</div>
-                <div class="usecase-content">
-                    <h3>聴覚サポート</h3>
-                    <p>リアルタイム文字起こしでコミュニケーションを円滑に。誰もが会話に参加できる環境を。</p>
-                </div>
-            </div>
-            
-            <div class="usecase-card">
-                <div class="usecase-icon">📚</div>
-                <div class="usecase-content">
-                    <h3>語学学習</h3>
-                    <p>発音チェックや、PDF教材のテキスト化に。効率的な学習をサポート。</p>
-                </div>
-            </div>
+        </div></div>
+        <figcaption class="cap">※ 画面はイメージです</figcaption>
+      </figure>
+      <div class="feats">
+        <article class="feat reveal"><div class="k"><span class="mono">04.1</span><svg class="ico"><use href="#i-check"/></svg></div><h3>タスクを自動抽出</h3><p>「〜しておいて」「来週までに」。会話の中に埋もれたタスクをAIが見逃さず拾い上げ、リストにまとめます。</p></article>
+        <article class="feat reveal"><div class="k"><span class="mono">04.2</span><svg class="ico"><use href="#i-bell"/></svg></div><h3>ワンタップでリマインダー</h3><p>期限・担当者も読み取って、Apple純正リマインダーにそのまま登録。通知はOSにおまかせできます。</p></article>
+        <article class="feat reveal"><div class="k"><span class="mono">04.3</span><svg class="ico"><use href="#i-share"/></svg></div><h3>共有・書き出し</h3><p>文字起こし・要約・アクションアイテムをテキストやPDF、Markdownで書き出し。チームへの共有もその場で。</p></article>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <div class="usecase-card">
-                <div class="usecase-icon">🧠</div>
-                <div class="usecase-content">
-                    <h3>リサーチャー・研究者</h3>
-                    <p>インタビューを話題マップで俯瞰し、内容まとめでレポート下書きを自動生成。知識整理が圧倒的にラクに。</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ============ 05 MORE 24:00 ============ -->
+<section class="block field" id="more" data-tc="24:00" aria-labelledby="more-title">
+  <div class="wrap">
+    <div class="ch-rule"><p class="eyebrow"><span class="tc">24:00</span><span>05 — ほかにも</span></p><span class="en">MORE</span></div>
+    <div class="grid ch-head">
+      <h2 class="h2" id="more-title"><span class="w">ほかにも、</span><span class="w">こんな使い方。</span></h2>
+      <p class="lead">4つの流れの外でも、Texterは日々の道具になります。</p>
+    </div>
+    <div class="cells">
+      <article class="cell reveal"><div class="k"><span class="mono">05.1</span><svg class="ico"><use href="#i-scan"/></svg></div><h3>画像の文字起こし（OCR）</h3><p>写真やスクリーンショットの文字をテキスト化。ホワイトボードや紙の資料の取り込みに。</p></article>
+      <article class="cell reveal"><div class="k"><span class="mono">05.2</span><svg class="ico"><use href="#i-cc"/></svg></div><h3>動画の字幕生成・PiP</h3><p>取り込んだ動画に自動で字幕を付け、他のアプリを使いながらPicture in Pictureで再生できます。</p></article>
+      <article class="cell reveal"><div class="k"><span class="mono">05.3</span><svg class="ico"><use href="#i-cut"/></svg></div><h3>無音カット</h3><p>音声・動画の無音部分を自動で検出して削除。3段階の強さから選べます。</p></article>
+      <article class="cell reveal"><div class="k"><span class="mono">05.4</span><svg class="ico"><use href="#i-bubbles"/></svg></div><h3>話題マップ</h3><p>長い会議のトピックをバブルチャートで俯瞰。「結局何を話したか」が一目でわかります。</p></article>
+      <article class="cell reveal"><div class="k"><span class="mono">05.5</span><svg class="ico"><use href="#i-cloud"/></svg></div><h3>ワードクラウド</h3><p>フォルダ全体のキーワードを一望。タップすると該当ノートへジャンプします。</p></article>
+      <article class="cell reveal"><div class="k"><span class="mono">05.6</span><svg class="ico"><use href="#i-key"/></svg></div><h3>音声入力キーボード</h3><p>メールもチャットも、話すだけで入力。キーボードを追加すれば、どのアプリでも使えます。</p></article>
+    </div>
+  </div>
+</section>
 
-    <!-- Pricing Section -->
-    <section class="pricing" id="pricing" aria-labelledby="pricing-title">
-        <div class="section-header">
-            <span class="section-label">料金</span>
-            <h2 class="section-title" id="pricing-title">シンプルな料金プラン</h2>
-            <p class="section-description">まずは無料で。もっと使いたくなったらPremiumへ。</p>
-        </div>
+<!-- ============ 06 USE CASES 30:00 ============ -->
+<section class="block field" id="usecases" data-tc="30:00" aria-labelledby="use-title">
+  <div class="wrap">
+    <div class="ch-rule"><p class="eyebrow"><span class="tc">30:00</span><span>06 — 活用例</span></p><span class="en">USE CASES</span></div>
+    <div class="grid ch-head">
+      <h2 class="h2" id="use-title"><span class="w">ビジネスから学習まで、</span><span class="w">あらゆるシーンで。</span></h2>
+      <p class="lead">話す場所があれば、Texterの出番があります。</p>
+    </div>
+    <ol class="rows" style="list-style:none;padding:0;margin-bottom:0">
+      <li class="row reveal"><span class="n">1</span><h3>議事録作成</h3><p>会議の内容を自動で記録し、要約までAIにお任せ。チームの生産性を大幅アップ。</p><svg class="ico"><use href="#i-arrow"/></svg></li>
+      <li class="row reveal"><span class="n">2</span><h3>ライター・ブロガー</h3><p>インタビューやアイデア出しを声で行い、執筆速度を加速。クリエイティブな作業に集中。</p><svg class="ico"><use href="#i-arrow"/></svg></li>
+      <li class="row reveal"><span class="n">3</span><h3>聴覚サポート</h3><p>リアルタイム文字起こしでコミュニケーションを円滑に。誰もが会話に参加できる環境を。</p><svg class="ico"><use href="#i-arrow"/></svg></li>
+      <li class="row reveal"><span class="n">4</span><h3>語学学習</h3><p>発音チェックや、PDF教材のテキスト化に。効率的な学習をサポート。</p><svg class="ico"><use href="#i-arrow"/></svg></li>
+      <li class="row reveal"><span class="n">5</span><h3>リサーチャー・研究者</h3><p>インタビューを話題マップで俯瞰し、内容まとめでレポート下書きを自動生成。知識整理が圧倒的にラクに。</p><svg class="ico"><use href="#i-arrow"/></svg></li>
+    </ol>
+  </div>
+</section>
 
-        <div class="pricing-toggle">
-            <span class="toggle-option active" data-plan="monthly">月額</span>
-            <div class="toggle-switch" id="toggleSwitch">
-                <div class="toggle-knob"></div>
-            </div>
-            <span class="toggle-option" data-plan="yearly">年額<span class="pricing-save-badge">月額払い比 約59%OFF</span></span>
-        </div>
+<!-- ============ 07 PRICING 40:00 ============ -->
+<section class="block field" id="pricing" data-tc="40:00" aria-labelledby="pricing-title">
+  <div class="wrap">
+    <div class="ch-rule"><p class="eyebrow"><span class="tc">40:00</span><span>07 — 料金</span></p><span class="en">PRICING</span></div>
+    <div class="grid ch-head">
+      <h2 class="h2" id="pricing-title"><span class="w">まずは、</span><span class="w">無料で。</span></h2>
+      <p class="lead">もっと使いたくなったら、Premiumへ。</p>
+    </div>
+    <div class="toggle"><span class="lbl act" id="lblM">月額</span><button class="sw" id="planSw" role="switch" aria-checked="false" aria-label="年額表示に切り替える"></button><span class="lbl" id="lblY">年額</span><span class="off" id="offChip" hidden>月額払い比 約59%OFF</span></div>
+    <div class="grid plans">
+      <div class="plan">
+        <div class="nm"><span>FREE</span></div>
+        <p class="price">¥0</p>
+        <p class="eq">&nbsp;</p>
+        <p class="desc">まずは無料で試してみる</p>
+        <ul>
+          <li><svg class="ico"><use href="#i-tick"/></svg>リアルタイム文字起こし（1分）</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>画像文字起こし（3回/日）</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>リアルタイム翻訳</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>録音・動画文字起こし（短時間）</li>
+        </ul>
+        <a class="btn btn-line" href="https://apps.apple.com/jp/app/id1482592304" target="_blank" rel="noopener noreferrer">無料で始める</a>
+      </div>
+      <div class="plan">
+        <div class="nm"><span>PREMIUM</span><span class="pop">3日間無料トライアル</span></div>
+        <p class="price" id="pPrice">¥1,800<small>/月</small></p>
+        <p class="eq" id="pEq">&nbsp;</p>
+        <p class="desc">3日間無料トライアル付き</p>
+        <ul>
+          <li><svg class="ico"><use href="#i-tick"/></svg>音声・動画取り込み 無制限</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>高性能モード (3時間/月)</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>「ノートに聞く」AIチャット（すべてのノート対応）</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>要約テンプレート 20種</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>アクションアイテム抽出</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>画像文字起こし 無制限</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>自動無音カット・動画字幕生成</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>話題マップ・内容まとめ</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>ワードクラウド</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>広告非表示</li>
+        </ul>
+        <a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304" target="_blank" rel="noopener noreferrer">無料トライアルを始める</a>
+      </div>
+    </div>
+    <p class="foot-note">短期集中で使いたい方には、週額 ¥600 プランもアプリ内でご用意しています。</p>
+  </div>
+</section>
 
-        <div class="pricing-grid-two">
-            <div class="pricing-card">
-                <div class="pricing-name">Free</div>
-                <div class="pricing-price">¥0</div>
-                <p class="pricing-description">まずは無料で試してみる</p>
-                <ul class="pricing-features">
-                    <li>リアルタイム文字起こし（1分）</li>
-                    <li>画像文字起こし（3回/日）</li>
-                    <li>リアルタイム翻訳</li>
-                    <li>録音・動画文字起こし（短時間）</li>
-                </ul>
-                <a href="https://apps.apple.com/jp/app/id1482592304" class="pricing-btn pricing-btn-secondary" target="_blank" rel="noopener noreferrer">無料で始める</a>
-            </div>
+<!-- ============ 08 REVIEWS 48:00 ============ -->
+<section class="block field" id="reviews" data-tc="48:00" aria-labelledby="reviews-title">
+  <div class="wrap">
+    <div class="ch-rule"><p class="eyebrow"><span class="tc">48:00</span><span>08 — レビュー</span></p><span class="en">APP STORE 4.6</span></div>
+    <div class="grid ch-head">
+      <h2 class="h2" id="reviews-title"><span class="w">ユーザーの声。</span></h2>
+      <p class="lead">App Storeに寄せられたレビューから、原文のまま。</p>
+    </div>
+    <div class="grid quotes">
+      <figure class="quote reveal"><span class="st" aria-label="星5つ">★★★★★</span><blockquote>「ライターです。ここまで性能が良いとは期待以上でした！これまで全て手打ちしていたときに比べて随分助かります。早速一年で契約しました。」</blockquote><cite>ともころう 様</cite></figure>
+      <figure class="quote reveal"><span class="st" aria-label="星5つ">★★★★★</span><blockquote>「補聴器をつけても聞き取る事が難しい母に画面を見せて理解してもらえるので、とても助かっております。」</blockquote><cite>ののはるちゃん 様</cite></figure>
+      <figure class="quote reveal"><span class="st" aria-label="星5つ">★★★★★</span><blockquote>「OCRが他のスキャナーアプリなどと比較しても速くて正確です。ほぼ100%の精度で読み取ってくれます。」</blockquote><cite>yuta-mom 様</cite></figure>
+    </div>
+  </div>
+</section>
 
-            <div class="pricing-card featured">
-                <div class="pricing-badge" id="premiumBadge">人気</div>
-                <div class="pricing-name">Premium</div>
-                <div class="pricing-price" id="premiumPrice">¥1,800<span>/月</span></div>
-                <p class="pricing-monthly-equiv" id="monthlyEquiv" style="display: none;">月あたり約¥733</p>
-                <p class="pricing-description" id="premiumDesc">3日間無料トライアル付き</p>
-                <ul class="pricing-features" id="premiumFeatures">
-                    <li>Whisper 無制限</li>
-                    <li>高性能モード (3時間/月)</li>
-                    <li>「ノートに聞く」AIチャット（すべてのノート対応）</li>
-                    <li>要約テンプレート 20種</li>
-                    <li>アクションアイテム抽出</li>
-                    <li>画像文字起こし 無制限</li>
-                    <li>自動無音カット・動画字幕生成</li>
-                    <li>話題マップ・内容まとめ</li>
-                    <li>ワードクラウド</li>
-                    <li>広告非表示</li>
-                </ul>
-                <a href="https://apps.apple.com/jp/app/id1482592304" class="pricing-btn pricing-btn-primary" id="premiumCta" target="_blank" rel="noopener noreferrer">無料トライアル</a>
-            </div>
-        </div>
-        <p class="pricing-footnote">短期集中で使いたい方には、週額 ¥600 プランもアプリ内でご用意しています。</p>
-    </section>
+<!-- ============ 09 BUSINESS 52:00 ============ -->
+<section class="block field" id="business" data-tc="52:00" aria-labelledby="biz-title" style="padding-top:0">
+  <div class="wrap">
+    <div class="ch-rule"><p class="eyebrow"><span class="tc">52:00</span><span>09 — 法人のお客様へ</span></p><span class="en">BUSINESS</span></div>
+    <div class="grid biz">
+      <div class="txt">
+        <h2 id="biz-title">法人でのご利用をご検討の方へ</h2>
+        <p>Texterの機能・料金・セキュリティ情報をまとめた、法人向け資料をご用意しています。</p>
+      </div>
+      <div class="act">
+        <a class="btn btn-tint" href="/assets/pdf/texter-for-business.pdf" target="_blank" rel="noopener"><svg class="ico"><use href="#i-down"/></svg>法人向け資料（PDF）</a>
+        <div class="mail"><span id="mailAddr">texter.work.app@gmail.com</span><button id="copyMail" type="button">コピー</button></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Reviews Section -->
-    <section class="reviews" id="reviews" aria-labelledby="reviews-title">
-        <div class="section-header">
-            <span class="section-label">レビュー</span>
-            <h2 class="section-title" id="reviews-title">ユーザーの声</h2>
-        </div>
+<!-- ============ CTA 56:00 ============ -->
+<section class="block cta field f-key" id="start" data-tc="56:00" aria-labelledby="cta-title">
+  <div class="wrap">
+    <div class="ch-rule"><p class="eyebrow"><span class="tc">56:00</span><span>10 — はじめる</span></p><span class="en">START</span></div>
+    <h2 class="big" id="cta-title">次の会議から、<br>録るだけ。</h2>
+    <div class="row2">
+      <div>
+        <p>録るだけで、議事録もタスクも。無料で始められます。</p>
+        <p class="note">iPhone / iPad / Apple Watch / Mac (Apple Silicon) / Android 対応</p>
+      </div>
+      <div class="stores">
+        <a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304" target="_blank" rel="noopener noreferrer"><svg><use href="#i-apple"/></svg>App Store</a>
+        <a class="btn btn-line" href="https://play.google.com/store/apps/details?id=com.matz.Texter" target="_blank" rel="noopener noreferrer"><svg><use href="#i-gplay"/></svg>Google Play</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
 
-        <div class="reviews-grid">
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">「ライターです。ここまで性能が良いとは期待以上でした！これまで全て手打ちしていたときに比べて随分助かります。早速一年で契約しました。」</p>
-                <div class="review-author">
-                    <div class="review-avatar">T</div>
-                    <div class="review-name">ともころう 様</div>
-                </div>
-            </div>
+<footer class="footer f-navy" data-tc="60:00">
+  <div class="wrap">
+    <div class="grid">
+      <div class="b">
+        <a class="brand" href="/"><img src="/img/appicon.png" alt="" width="28" height="28">Texter</a>
+        <p>録音から、議事録・タスク・あとからの質問まで。</p>
+      </div>
+      <nav aria-label="機能・サポート"><h4>機能・サポート</h4><ul><li><a href="#record">基本機能</a></li><li><a href="#usecases">利用方法</a></li><li><a href="https://texter-app.notion.site/faq-ja" target="_blank" rel="noopener noreferrer">よくある質問</a></li><li><a href="mailto:texter.work.app@gmail.com">お問い合わせ</a></li><li><a href="#business">法人向け資料</a></li></ul></nav>
+      <nav aria-label="規約・法律"><h4>規約・法律</h4><ul><li><a href="/terms-of-service/">利用規約</a></li><li><a href="/privacy-policy/">プライバシーポリシー</a></li><li><a href="/tokushoho/">特定商取引法に基づく表記</a></li><li><a href="/en/" hreflang="en">English</a></li></ul></nav>
+    </div>
+    <div class="copy"><span>© 2026 Texter app - Kyoto, Japan.</span><span>60:00 · END OF RECORDING</span></div>
+  </div>
+</footer>
 
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">「補聴器をつけても聞き取る事が難しい母に画面を見せて理解してもらえるので、とても助かっております。」</p>
-                <div class="review-author">
-                    <div class="review-avatar">N</div>
-                    <div class="review-name">ののはるちゃん 様</div>
-                </div>
-            </div>
+<script>
+(() => {
+  'use strict';
+  const RM = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const reduce = () => RM.matches;
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+  if (!reduce()) document.body.classList.add('motion');
 
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">「OCRが他のスキャナーアプリなどと比較しても速くて正確です。ほぼ100%の精度で読み取ってくれます。」</p>
-                <div class="review-author">
-                    <div class="review-avatar">Y</div>
-                    <div class="review-name">yuta-mom 様</div>
-                </div>
-            </div>
-        </div>
-    </section>
+  /* ---------- H1: split into characters for the one orchestrated entrance ---------- */
+  let ci = 0;
+  $$('.h1 .line').forEach(line => {
+    const t = line.textContent; line.textContent = '';
+    for (const c of t) { const s = document.createElement('span'); s.className = 'ch'; s.textContent = c; s.style.setProperty('--i', ci++); line.appendChild(s); }
+  });
 
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="cta-content">
-            <h2>今すぐ始めよう</h2>
-            <p>録るだけで、議事録もタスクも。無料で始められます。</p>
-            <div class="cta-buttons">
-                <a href="https://apps.apple.com/jp/app/id1482592304" class="btn-primary" style="padding: 1rem 2rem;" target="_blank" rel="noopener noreferrer">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-                    </svg>
-                    App Store
-                </a>
-                <a href="https://play.google.com/store/apps/details?id=com.matz.Texter" class="btn-secondary" style="padding: 1rem 2rem;" target="_blank" rel="noopener noreferrer">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.24-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.54.68.54 1.19s-.2.92-.54 1.19l-2.12 1.23-2.5-2.5 2.5-2.5 2.12 1.39zM6.05 2.66l10.76 6.22-2.27 2.27L6.05 2.66z"/>
-                    </svg>
-                    Google Play
-                </a>
-            </div>
-            <p style="margin-top: 1.25rem; font-size: 0.8125rem; color: var(--text-muted);">※ iPad / Apple Watch / Mac (Apple Silicon) / Android 対応</p>
-        </div>
-    </section>
+  function mulberry32(a) { return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
 
-    <!-- Business Section -->
-    <section class="business" id="business">
-        <div class="business-content">
-            <span class="section-label">法人のお客様へ</span>
-            <h2 class="section-title">法人でのご利用をご検討の方へ</h2>
-            <p class="business-description">Texterの機能・料金・セキュリティ情報をまとめた<br>法人向け資料をご用意しています。</p>
-            <div class="business-actions">
-                <a href="assets/pdf/texter-for-business.pdf" class="btn-download" download onclick="gtag('event', 'pdf_download', { 'event_category': 'business', 'event_label': 'texter-for-business' });">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                        <polyline points="7 10 12 15 17 10"/>
-                        <line x1="12" y1="15" x2="12" y2="3"/>
-                    </svg>
-                    法人向け資料をダウンロード（PDF）
-                </a>
-                <p class="business-contact">お問い合わせ: <a href="mailto:texter.work.app@gmail.com">texter.work.app@gmail.com</a></p>
-            </div>
-        </div>
-    </section>
+  /* ---------- Hero scrubber: 23 weekday recordings in July ---------- */
+  const DAYS = [1,2,3,4,7,8,9,10,11,14,15,16,17,18,21,22,23,24,25,28,29,30,31];
+  const WD = '日月火水木金土';
+  const KINDS = ['打ち合わせ', '取材', '1on1', '講義メモ', 'ブレスト'];
+  const rnd = mulberry32(715);
+  const data = DAYS.map(d => {
+    const w = WD[(d + 1) % 7], tue = w === '火';
+    return { d, w, tue, kind: tue ? '週次定例' : KINDS[Math.floor(rnd() * KINDS.length)], notes: 1 + Math.floor(rnd() * 3), acts: 1 + Math.floor(rnd() * 6), h: tue ? .66 + rnd() * .2 : .22 + rnd() * .46 };
+  });
+  const HIT = 10; data[HIT].h = .98;
+  const N = data.length;
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <div class="logo">Texter</div>
-                <p>録音から、議事録・タスク・あとからの質問まで。</p>
-            </div>
-            
-            <div class="footer-links">
-                <h4>機能・サポート</h4>
-                <ul>
-                    <li><a href="#record">基本機能</a></li>
-                    <li><a href="#usecases">利用方法</a></li>
-                    <li><a href="https://texter-app.notion.site/faq-ja" target="_blank" rel="noopener noreferrer">よくある質問</a></li>
-                    <li><a href="mailto:texter.work.app@gmail.com">お問い合わせ</a></li>
-                    <li><a href="#business">法人向け資料</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-links">
-                <h4>規約・法律</h4>
-                <ul>
-                    <li><a href="/terms-of-service/">利用規約</a></li>
-                    <li><a href="/privacy-policy/">プライバシーポリシー</a></li>
-                    <li><a href="/tokushoho/">特定商取引法に基づく表記</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>© 2025 Texter app - Kyoto, Japan.</p>
-        </div>
-    </footer>
+  const track = $('#track'), barsEl = $('#bars'), handle = $('#handle'), playhead = $('#playhead'), card = $('#card'), datesEl = $('#dates');
+  const cardLabel = $('#cardLabel'), cardDate = $('#cardDate'), cardTag = $('#cardTag'), cardBody = $('#cardBody'), cardFootT = $('#cardFootT'), cardNone = $('#cardNone');
+  const wr = mulberry32(29);
+  const bars = data.map(b => {
+    const i = document.createElement('i'); if (b.tue) i.className = 'tue';
+    for (let k = 0; k < 7; k++) { const l = document.createElement('b'); const env = Math.sin(((k + .5) / 7) * Math.PI); l.style.height = (Math.max(.08, b.h * (.35 + env * .65) * (.7 + wr() * .3)) * 100).toFixed(1) + '%'; i.appendChild(l); }
+    barsEl.appendChild(i); return i;
+  });
+  const labels = [];
+  data.forEach((b, i) => { if (b.tue) { const s = document.createElement('span'); s.textContent = `7/${b.d}`; s.dataset.i = i; datesEl.appendChild(s); labels.push(s); } });
 
-    <script>
-        // Theme toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const sunIcon = themeToggle.querySelector('.sun-icon');
-        const moonIcon = themeToggle.querySelector('.moon-icon');
-        
-        function setTheme(theme) {
-            document.documentElement.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme);
-            if (theme === 'light') {
-                sunIcon.style.display = 'none';
-                moonIcon.style.display = 'block';
-            } else {
-                sunIcon.style.display = 'block';
-                moonIcon.style.display = 'none';
-            }
-        }
-        
-        // Check for saved theme or system preference
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            setTheme(savedTheme);
-        } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-            setTheme('light');
-        }
-        
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            setTheme(currentTheme === 'light' ? 'dark' : 'light');
-        });
+  let W = 0, centers = [], x = 0, v = 0, target = null, cur = -1, dragging = false, raf = 0, last = 0;
+  let spring = { z: .8, r: .4 };
 
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
+  function layout() {
+    const tr = track.getBoundingClientRect();
+    W = tr.width;
+    centers = bars.map(b => { const r = b.getBoundingClientRect(); return r.left - tr.left + r.width / 2; });
+    labels.forEach(l => { l.style.left = centers[+l.dataset.i] + 'px'; });
+  }
+  const nearest = px => { let bi = 0, bd = Infinity; centers.forEach((c, i) => { const d = Math.abs(c - px); if (d < bd) { bd = d; bi = i; } }); return bi; };
+  const rubber = (o, dim, c = .55) => (o * dim * c) / (dim + c * Math.abs(o));
+  const project = (vel, dr = .998) => (vel / 1000) * dr / (1 - dr);
 
-        // Typing animation for transcription demo
-        const typingTexts = [
-            "まず第一四半期の",
-            "売上について報告します。",
-            "前年比120%を達成しました。",
-            "次に新機能の開発状況です。"
-        ];
-        let textIndex = 0;
-        let charIndex = 0;
-        const typingElement = document.getElementById('typing-text');
-
-        function typeText() {
-            if (charIndex < typingTexts[textIndex].length) {
-                typingElement.textContent += typingTexts[textIndex].charAt(charIndex);
-                charIndex++;
-                setTimeout(typeText, 100 + Math.random() * 50);
-            } else {
-                setTimeout(() => {
-                    typingElement.textContent = '';
-                    charIndex = 0;
-                    textIndex = (textIndex + 1) % typingTexts.length;
-                    typeText();
-                }, 2000);
-            }
-        }
-        
-        setTimeout(typeText, 1000);
-
-        // Recording time counter
-        let seconds = 154;
-        function updateRecordingTime() {
-            seconds++;
-            const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
-            const secs = (seconds % 60).toString().padStart(2, '0');
-            document.querySelector('.recording-time').textContent = `${mins}:${secs}`;
-        }
-        setInterval(updateRecordingTime, 1000);
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -30px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                    }, index * 80);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.feature-card, .usecase-card, .pricing-card, .review-card, .comparison-card').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Parallax effect (subtle)
-        const parallaxLayers = document.querySelectorAll('.parallax-layer');
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            parallaxLayers.forEach(layer => {
-                const speed = layer.dataset.speed || 0.3;
-                layer.style.transform = `translateY(${scrolled * speed}px)`;
-            });
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // GA4: ストアリンクのクリック（どのセクションのCTAかを location で区別）
-        document.querySelectorAll('a[href*="apps.apple.com"], a[href*="play.google.com"]').forEach(link => {
-            link.addEventListener('click', () => {
-                if (typeof gtag !== 'function') return;
-                const section = link.closest('section');
-                gtag('event', 'app_store_click', {
-                    'store': link.href.includes('apple') ? 'ios' : 'android',
-                    'location': section ? (section.id || section.className.split(' ')[0]) : 'nav'
-                });
-            });
-        });
-
-        // GA4: 料金セクション到達（1セッション1回）
-        const pricingSection = document.getElementById('pricing');
-        if (pricingSection && 'IntersectionObserver' in window) {
-            const pricingObserver = new IntersectionObserver((entries, observer) => {
-                if (!entries.some(entry => entry.isIntersecting)) return;
-                if (typeof gtag === 'function') gtag('event', 'pricing_view');
-                observer.disconnect();
-            }, { threshold: 0.3 });
-            pricingObserver.observe(pricingSection);
-        }
-
-        // Pricing toggle
-        const toggleSwitch = document.getElementById('toggleSwitch');
-        const toggleOptions = document.querySelectorAll('.toggle-option');
-        const premiumPrice = document.getElementById('premiumPrice');
-        const premiumBadge = document.getElementById('premiumBadge');
-        const premiumDesc = document.getElementById('premiumDesc');
-        const premiumFeatures = document.getElementById('premiumFeatures');
-        const monthlyEquiv = document.getElementById('monthlyEquiv');
-        const premiumCta = document.getElementById('premiumCta');
-        let isYearly = false;
-
-        const monthlyFeaturesHTML = '<li>Whisper 無制限</li><li>高性能モード (3時間/月)</li><li>「ノートに聞く」AIチャット（すべてのノート対応）</li><li>要約テンプレート 20種</li><li>アクションアイテム抽出</li><li>画像文字起こし 無制限</li><li>自動無音カット・動画字幕生成</li><li>話題マップ・内容まとめ</li><li>ワードクラウド</li><li>広告非表示</li>';
-        const yearlyFeaturesHTML = '<li>Whisper 無制限</li><li>高性能モード (10時間/月)</li><li>「ノートに聞く」AIチャット（すべてのノート対応）</li><li>要約テンプレート 20種</li><li>アクションアイテム抽出</li><li>画像文字起こし 無制限</li><li>自動無音カット・動画字幕生成</li><li>話題マップ・内容まとめ 無制限</li><li>ワードクラウド 無制限</li><li>4種類のエクスポート形式</li><li>優先サポート</li><li>広告非表示</li>';
-
-        function updatePricing() {
-            if (isYearly) {
-                toggleSwitch.classList.add('yearly');
-                toggleOptions[0].classList.remove('active');
-                toggleOptions[1].classList.add('active');
-                premiumPrice.innerHTML = '¥8,800<span>/年</span>';
-                monthlyEquiv.textContent = '月あたり約¥733';
-                premiumBadge.textContent = 'お得';
-                premiumDesc.textContent = '3日間無料トライアル付き。AI可視化ツール全開放。';
-                premiumFeatures.innerHTML = yearlyFeaturesHTML;
-                monthlyEquiv.style.display = 'block';
-                premiumCta.textContent = '年間プランを選択';
-            } else {
-                toggleSwitch.classList.remove('yearly');
-                toggleOptions[0].classList.add('active');
-                toggleOptions[1].classList.remove('active');
-                premiumPrice.innerHTML = '¥1,800<span>/月</span>';
-                premiumBadge.textContent = '人気';
-                premiumDesc.textContent = '3日間無料トライアル付き';
-                premiumFeatures.innerHTML = monthlyFeaturesHTML;
-                monthlyEquiv.style.display = 'none';
-                premiumCta.textContent = '無料トライアル';
-            }
-        }
-
-        if (toggleSwitch) {
-            toggleSwitch.addEventListener('click', () => { isYearly = !isYearly; updatePricing(); });
-            toggleOptions.forEach(opt => {
-                opt.addEventListener('click', () => { isYearly = opt.dataset.plan === 'yearly'; updatePricing(); });
-            });
-        }
-    </script>
-
-    <!-- Smart App Banner for Android -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/smartbanner.js@1.21.1/dist/smartbanner.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/smartbanner.js@1.21.1/dist/smartbanner.min.js"></script>
-
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Texter",
-        "applicationCategory": "ProductivityApplication",
-        "operatingSystem": "iOS, iPadOS, macOS, Android",
-        "offers": {
-            "@type": "AggregateOffer",
-            "lowPrice": "0",
-            "highPrice": "8800",
-            "priceCurrency": "JPY",
-            "offerCount": "3"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5",
-            "reviewCount": "100+"
-        },
-        "description": "会議や取材を録音すると、文字起こし・話者識別・要約・タスク整理までTexterが自動化。あとから過去の記録に質問して、元の発言まで戻れます。",
-        "url": "https://texter.work/",
-        "downloadUrl": "https://apps.apple.com/jp/app/id1482592304",
-        "screenshot": "https://texter.work/",
-        "softwareVersion": "Latest",
-        "author": {
-            "@type": "Organization",
-            "name": "Texter"
-        },
-        "featureList": [
-            "AI音声認識・文字起こし",
-            "話者識別",
-            "アクションアイテム自動抽出・リマインダー連携",
-            "クラウド共有リンク取込（Zoom / Google Drive / Dropbox / OneDrive）",
-            "公開リンク共有",
-            "画像・動画から文字変換（OCR）",
-            "リアルタイム翻訳",
-            "AI要約機能（テンプレート20種）",
-            "無音カット",
-            "動画字幕生成",
-            "話題マップ（TopicMap）",
-            "内容まとめ（TopicSummary）",
-            "ワードクラウド",
-            "Apple Watch 単体録音"
-        ]
+  function setIndex(i) {
+    if (i === cur) return; cur = i;
+    const b = data[i];
+    bars.forEach((el, k) => el.classList.toggle('on', k === i));
+    labels.forEach(l => l.classList.toggle('cur', +l.dataset.i === i));
+    const hit = i === HIT;
+    card.classList.toggle('hit', hit);
+    cardDate.textContent = `7/${b.d}（${b.w}）`;
+    cardTag.textContent = b.kind;
+    if (hit) {
+      cardLabel.textContent = '根拠';
+      cardBody.textContent = '「じゃあ納期は29日の金曜で。デザインの確認を先に終わらせておいてね。」';
+      cardFootT.textContent = '12:34から再生';
+      cardNone.textContent = '';
+    } else {
+      cardLabel.textContent = 'この日の記録';
+      cardBody.textContent = `議事録 ${b.notes}件 · アクションアイテム ${b.acts}件`;
+      cardNone.textContent = b.tue ? '質問の答えは、この日の定例ではありません' : '質問に関係する発言はありません';
     }
+    handle.setAttribute('aria-valuenow', i + 1);
+    handle.setAttribute('aria-valuetext', `7月${b.d}日 ${b.kind}${hit ? '、納期が決まった発言 12分34秒' : ''}`);
+  }
+
+  function render() {
+    handle.style.transform = `translateX(${x}px)`;
+    playhead.style.transform = `translateX(${x}px)`;
+    const cw = card.offsetWidth;
+    const cx = Math.max(0, Math.min(W - cw, x - cw / 2));
+    card.style.transform = `translateX(${cx}px)`;
+    setIndex(nearest(Math.max(centers[0], Math.min(centers[N - 1], x))));
+  }
+
+  function tick(t) {
+    const dt = Math.min(.034, last ? (t - last) / 1000 : .016); last = t;
+    if (!dragging && target !== null) {
+      const k = Math.pow(2 * Math.PI / spring.r, 2), c = 4 * Math.PI * spring.z / spring.r;
+      for (let s = 0; s < 4; s++) { const h = dt / 4; const a = -k * (x - target) - c * v; v += a * h; x += v * h; }
+      if (Math.abs(v) < 4 && Math.abs(x - target) < .25) { x = target; v = 0; target = null; }
+    }
+    render();
+    raf = (target !== null) ? requestAnimationFrame(tick) : 0;
+    if (!raf) last = 0;
+  }
+  function animateTo(i, vel = 0, sp = { z: .8, r: .4 }) {
+    i = Math.max(0, Math.min(N - 1, i));
+    if (reduce()) { x = centers[i]; v = 0; target = null; render(); return; }
+    target = centers[i]; v = vel; spring = sp;
+    if (!raf) raf = requestAnimationFrame(tick);
+  }
+
+  let grab = 0, hist = [];
+  track.addEventListener('pointerdown', e => {
+    if (e.button !== 0) return;
+    const tr = track.getBoundingClientRect();
+    const px = e.clientX - tr.left;
+    grab = (e.target === handle) ? px - x : 0;       // respect where the handle was grabbed
+    dragging = true; target = null; v = 0;
+    track.setPointerCapture(e.pointerId); track.classList.add('dragging');
+    hist = [{ x: px - grab, t: e.timeStamp }];
+    move(px - grab);
+    if (e.target !== handle) handle.focus({ preventScroll: true });
+  });
+  function move(raw) {
+    const lo = centers[0], hi = centers[N - 1];
+    x = raw < lo ? lo - rubber(lo - raw, W) : raw > hi ? hi + rubber(raw - hi, W) : raw;
+    render();
+  }
+  track.addEventListener('pointermove', e => {
+    if (!dragging) return;
+    const px = e.clientX - track.getBoundingClientRect().left - grab;
+    hist.push({ x: px, t: e.timeStamp }); while (hist.length > 2 && e.timeStamp - hist[0].t > 100) hist.shift();
+    move(px);
+  });
+  function release(e) {
+    if (!dragging) return; dragging = false; track.classList.remove('dragging');
+    let vel = 0;
+    if (hist.length > 1) { const a = hist[0], b = hist[hist.length - 1]; const dt = (b.t - a.t) / 1000; if (dt > 0) vel = (b.x - a.x) / dt; }
+    const proj = Math.max(centers[0], Math.min(centers[N - 1], x + project(vel)));
+    animateTo(nearest(proj), vel, { z: .8, r: .4 });   // momentum projection → snap → spring carrying release velocity
+  }
+  track.addEventListener('pointerup', release);
+  track.addEventListener('pointercancel', release);
+  handle.addEventListener('keydown', e => {
+    const step = { ArrowRight: 1, ArrowUp: 1, ArrowLeft: -1, ArrowDown: -1, PageUp: 5, PageDown: -5 }[e.key];
+    let to = null;
+    if (step) to = cur + step; else if (e.key === 'Home') to = 0; else if (e.key === 'End') to = N - 1;
+    if (to === null) return;
+    e.preventDefault(); animateTo(to, 0, { z: 1, r: .3 });
+  });
+
+  layout(); x = centers[0]; render();
+  let glided = false;
+  function glide() { if (glided) return; glided = true; layout(); if (reduce()) { x = centers[HIT]; render(); return; } animateTo(HIT, 0, { z: 1, r: .5 }); }
+  (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(() => setTimeout(glide, 420));
+  setTimeout(glide, 2200);
+
+  /* play buttons (evidence): pressed state only, the screens are illustrative */
+  $$('.playb, .play').forEach(b => b.addEventListener('click', () => { b.setAttribute('aria-pressed', 'true'); setTimeout(() => b.removeAttribute('aria-pressed'), 900); }));
+
+  /* ---------- nav + ruler (one rAF) ---------- */
+  const nav = $('#nav'), sheet = $('#sheet');
+  const ruler = $('.ruler'), rTrack = $('.ruler .track'), ph = $('.ruler .ph'), phT = $('.ruler .ph b'), marks = $('.ruler .marks');
+  const tcSecs = $$('[data-tc]');
+  const toS = s => { const [m, ss] = s.split(':').map(Number); return m * 60 + ss; };
+  const fmt = s => { s = Math.round(s); return String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); };
+  let anchors = [], maxY = 1, shownY = 0, horiz = false, lastY = scrollY;
+  const navH = () => nav.offsetHeight;
+  function measure() {
+    maxY = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+    horiz = ruler ? (getComputedStyle(ruler).width === innerWidth + 'px' || ruler.offsetHeight < 80) : false;
+    anchors = [{ y: 0, t: 0 }];
+    tcSecs.forEach(sec => {
+      const t = toS(sec.dataset.tc); if (!t) return;
+      const y = Math.min(maxY, Math.max(0, sec.getBoundingClientRect().top + scrollY - navH()));
+      const lastA = anchors[anchors.length - 1];
+      if (y > lastA.y + 1) anchors.push({ y, t }); else lastA.t = Math.max(lastA.t, t);
+    });
+    const lastA = anchors[anchors.length - 1];
+    if (lastA.y < maxY - 1) anchors.push({ y: maxY, t: 3600 }); else lastA.t = 3600;
+    if (!marks) return;
+    marks.innerHTML = '';
+    anchors.slice(1, -1).forEach(a => { const m = document.createElement('i'); m.className = 'mark'; const p = a.y / maxY; if (horiz) m.style.left = (p * 100) + '%'; else m.style.top = (p * 100) + '%'; marks.appendChild(m); });
+  }
+  function tcAt(y) {
+    for (let i = 1; i < anchors.length; i++) { const a = anchors[i - 1], b = anchors[i]; if (y <= b.y) return a.t + (b.t - a.t) * ((y - a.y) / Math.max(1, b.y - a.y)); }
+    return 3600;
+  }
+  let sraf = 0;
+  function frame() {
+    const y = Math.min(maxY, Math.max(0, scrollY));
+    shownY = reduce() ? y : shownY + (y - shownY) * .22;
+    if (Math.abs(y - shownY) < .5) shownY = y;
+    const p = shownY / maxY;
+    if (ruler) {
+      const len = horiz ? rTrack.clientWidth : rTrack.clientHeight;
+      ph.style.transform = horiz ? `translateX(${p * len}px)` : `translateY(${p * len}px)`;
+      phT.textContent = fmt(tcAt(shownY));
+    }
+    // the nav quietly leaves while reading down and comes back on the way up
+    if (y !== lastY) { if (!reduce() && !nav.matches(':focus-within')) nav.classList.toggle('is-hidden', y > lastY && y > 120 && sheet.hidden); lastY = y; }
+    sraf = (shownY !== y) ? requestAnimationFrame(frame) : 0;
+  }
+  const kick = () => { if (!sraf) sraf = requestAnimationFrame(frame); };
+  addEventListener('scroll', kick, { passive: true });
+  let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { layout(); if (cur >= 0) { x = centers[cur]; target = null; render(); } measure(); kick(); }, 120); });
+  addEventListener('load', () => { measure(); kick(); });
+  measure(); kick();
+
+  /* ---------- reveal + wipe (once) + the recording screen types when it comes into view ---------- */
+  function typeOnce(fig) {
+    const el = fig.querySelector('.s0 .typed'); if (!el || el.dataset.done) return; el.dataset.done = '1';
+    if (reduce()) return;
+    const full = el.textContent; el.textContent = ''; let i = 0;
+    const t = setInterval(() => { el.textContent = full.slice(0, ++i); if (i >= full.length) clearInterval(t); }, 48);
+  }
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); if (e.target.hasAttribute('data-typing')) typeOnce(e.target); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: .12 }) : null;
+  $$('.reveal, .h2').forEach(el => io ? io.observe(el) : el.classList.add('in'));
+  if (!reduce()) { let secs = 154; setInterval(() => { secs++; const m = String(Math.floor(secs / 60)).padStart(2, '0'), s = String(secs % 60).padStart(2, '0'); $$('.s0 .tc').forEach(el => { el.textContent = m + ':' + s; }); }, 1000); }
+
+  /* ---------- pricing switch ---------- */
+  const sw = $('#planSw'), pPrice = $('#pPrice'), pEq = $('#pEq'), off = $('#offChip'), lblM = $('#lblM'), lblY = $('#lblY');
+  function setPlan(yearly) {
+    sw.setAttribute('aria-checked', String(yearly));
+    sw.setAttribute('aria-label', yearly ? '月額表示に切り替える' : '年額表示に切り替える');
+    pPrice.innerHTML = yearly ? '¥8,800<small>/年</small>' : '¥1,800<small>/月</small>';
+    pEq.textContent = yearly ? '月あたり約¥733' : ' ';
+    off.hidden = !yearly; lblM.classList.toggle('act', !yearly); lblY.classList.toggle('act', yearly);
+  }
+  sw.addEventListener('click', () => setPlan(sw.getAttribute('aria-checked') !== 'true'));
+  lblM.addEventListener('click', () => setPlan(false)); lblY.addEventListener('click', () => setPlan(true));
+
+  /* ---------- mobile sheet ---------- */
+  const menuBtn = $('#menuBtn'), closeBtn = $('#menuClose');
+  const behind = () => $$('body > :not(#sheet):not(script):not(link)');
+  function openSheet(o) {
+    sheet.hidden = !o; menuBtn.setAttribute('aria-expanded', String(o));
+    document.documentElement.style.overflow = o ? 'hidden' : '';
+    // aria-modal: everything behind the sheet is inert while it is open (the nav stays reachable only via the sheet's own close button)
+    behind().forEach(el => { if (o) el.setAttribute('inert', ''); else el.removeAttribute('inert'); });
+    if (o) nav.classList.remove('is-hidden');
+    (o ? closeBtn : menuBtn).focus();
+  }
+  sheet.addEventListener('keydown', e => {
+    if (e.key !== 'Tab') return;
+    const f = $$('a[href], button, [tabindex]:not([tabindex="-1"])', sheet).filter(el => !el.hidden && el.offsetParent !== null);
+    if (!f.length) return;
+    const first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+  nav.addEventListener('focusin', () => nav.classList.remove('is-hidden'));
+  menuBtn.addEventListener('click', () => openSheet(true));
+  closeBtn.addEventListener('click', () => openSheet(false));
+  sheet.addEventListener('click', e => { if (e.target.closest('a')) openSheet(false); });
+  addEventListener('keydown', e => { if (e.key === 'Escape' && !sheet.hidden) openSheet(false); });
+
+  /* ---------- copy email ---------- */
+  const cp = $('#copyMail');
+  cp.addEventListener('click', async () => {
+    const addr = $('#mailAddr').textContent;
+    try { await navigator.clipboard.writeText(addr); cp.textContent = 'コピーしました'; }
+    catch (_) { const r = document.createRange(); r.selectNodeContents($('#mailAddr')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); cp.textContent = '選択しました'; }
+    setTimeout(() => { cp.textContent = 'コピー'; }, 1800);
+  });
+})();
+</script>
+    <!-- Android Smart Banner (self-hosted; see assets/vendor/smartbanner/LICENSE) -->
+    <link rel="stylesheet" href="/assets/vendor/smartbanner/smartbanner.min.css">
+    <script src="/assets/vendor/smartbanner/smartbanner.min.js"></script>
+    <script>
+      // Keep the fixed nav below the Android smart banner (smartbanner.js pushes the page down with html margin-top, not the fixed nav).
+      (function () {
+        var root = document.documentElement;
+        function sync() { var b = document.querySelector('.smartbanner'); root.style.setProperty('--banner', b ? b.offsetHeight + 'px' : '0px'); }
+        document.addEventListener('DOMContentLoaded', function () { sync(); setTimeout(sync, 300); });
+        document.addEventListener('smartbanner.exit', function () { root.style.setProperty('--banner', '0px'); });
+        window.addEventListener('resize', sync);
+      })();
     </script>
 </body>
 </html>

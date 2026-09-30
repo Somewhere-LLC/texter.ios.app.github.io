@@ -1,26 +1,47 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Space+Mono:wght@700&family=Outfit:wght@400;500;700&display=block" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;900&family=Azeret+Mono:wght@500&display=block" rel="stylesheet">
 <style>
-html,body{margin:0;width:1200px;height:630px;overflow:hidden;background:#09090b}
-body{position:relative;font-family:'Outfit','Noto Sans JP','Hiragino Sans',sans-serif;color:#fafafa;-webkit-font-smoothing:antialiased}
-.glow1{position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.28),transparent 62%);right:-320px;top:-420px}
-.glow2{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(34,211,238,.16),transparent 62%);left:-260px;bottom:-380px}
-.wrap{position:absolute;inset:0;padding:60px 72px;box-sizing:border-box}
-.brand{display:flex;align-items:center;gap:22px}
-.icon{width:92px;height:92px;border-radius:21px;border:1px solid rgba(255,255,255,.16);box-shadow:0 20px 50px rgba(0,0,0,.5);display:block}
-.word{font-family:'Space Mono',monospace;font-weight:700;font-size:40px;letter-spacing:-1px}
-h1{margin:46px 0 0;font-size:66px;line-height:1.18;font-weight:700;letter-spacing:-1.5px}
-h1 .g{background:linear-gradient(135deg,#818cf8 0%,#22d3ee 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.sub{margin:22px 0 0;font-size:25px;line-height:1.55;color:rgba(250,250,250,.72);font-weight:400;max-width:1040px}
-.chips{position:absolute;left:72px;bottom:58px;display:flex;align-items:center;gap:12px}
-.chip{font-size:21px;font-weight:600;padding:9px 20px;border-radius:999px;background:#18181b;border:1px solid rgba(255,255,255,.1);color:rgba(250,250,250,.72);white-space:nowrap}
-.chip.hl{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.45);color:#22d3ee}
-.arrow{color:rgba(250,250,250,.35);font-size:21px}
+/* OGP for the "Timecode" landing page: App Store sky, navy headline, accent timeline. */
+html,body{margin:0;width:1200px;height:630px;overflow:hidden;background:linear-gradient(180deg,#EDF4FF 0%,#B9D2FA 100%)}
+body{position:relative;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;color:#17255A;-webkit-font-smoothing:antialiased;font-feature-settings:"palt" 1}
+.grid{position:absolute;inset:0;background-image:repeating-linear-gradient(to right,rgba(23,37,90,.07) 0 1px,transparent 1px 100px);background-position:72px 0}
+.wrap{position:absolute;inset:0;padding:56px 72px;box-sizing:border-box}
+.copy{max-width:660px}
+.brand{display:flex;align-items:center;gap:18px}
+.icon{width:72px;height:72px;border-radius:17px;box-shadow:0 14px 34px rgba(23,37,90,.18);display:block}
+.word{font-weight:700;font-size:34px;letter-spacing:-.5px}
+.tc{margin-left:auto;font-family:'Azeret Mono',monospace;font-weight:500;font-size:20px;color:#5460D6;border:1.5px solid #5460D6;border-radius:8px;padding:6px 12px;letter-spacing:.04em}
+h1{margin:44px 0 0;font-size:62px;line-height:1.1;font-weight:900;letter-spacing:-2.2px}
+.sub{margin:18px 0 0;font-size:22px;line-height:1.5;color:#444;font-weight:500}
+/* timeline strip */
+.tl{position:absolute;left:72px;right:72px;bottom:44px;height:84px}
+.bars{position:absolute;inset:0;display:flex;align-items:center;gap:10px}
+.bars i{display:block;flex:1;border-radius:4px;background:#6482FA;opacity:.45}
+.bars i.on{opacity:1;background:#5460D6}
+.lens{position:absolute;left:calc(78% - 30px);top:16px;width:60px;height:60px;border-radius:50%;background:#fff;border:3px solid #6482FA;box-shadow:0 10px 30px rgba(23,37,90,.22)}
+.card{position:absolute;right:72px;top:170px;width:380px;background:#fff;border-radius:16px;box-shadow:0 18px 50px rgba(23,37,90,.16);padding:16px 20px;box-sizing:border-box}
+.card .k{font-size:14px;color:#666;display:flex;justify-content:space-between}
+.card .k b{font-family:'Azeret Mono',monospace;font-weight:500;color:#5460D6}
+.card .q{margin-top:6px;font-size:19px;line-height:1.45;color:#17255A;font-weight:500}
+.card .p{margin-top:8px;font-size:16px;color:#6482FA;font-weight:700}
+.dates{position:absolute;left:0;right:0;bottom:-30px;display:flex;justify-content:space-between;font-family:'Azeret Mono',monospace;font-size:15px;color:#666}
+.dates b{color:#5460D6;font-weight:500}
 </style></head><body>
-<div class="glow1"></div><div class="glow2"></div>
+<div class="grid"></div>
 <div class="wrap">
-  <div class="brand"><img class="icon" src="appicon.png" alt=""><span class="word">Texter</span></div>
-  <h1>Record the meeting.<br><span class="g">Get notes and to-dos.</span></h1>
-  <p class="sub">Texter transcribes, labels speakers, summarizes, and pulls out the tasks.<br>Later, ask questions across your past notes and jump back to the original words.</p>
-  <div class="chips"><span class="chip">Record</span><span class="arrow">→</span><span class="chip">Organize</span><span class="arrow">→</span><span class="chip hl">Recall</span><span class="arrow">→</span><span class="chip">Act</span></div>
-</div></body></html>
+  <div class="brand"><img class="icon" src="appicon.png" alt=""><span class="word">Texter</span><span class="tc">00:00 / 60:00</span></div>
+  <div class="copy"><h1>Record the meeting.<br>Get notes and to-dos.</h1>
+  <p class="sub">Transcription, speaker labels, summaries and tasks, automatically. Ask your past notes and jump back to the moment.</p></div>
+</div>
+<div class="card">
+  <div class="k"><span>Evidence · Weekly sync</span><b>Jul 15 12:34</b></div>
+  <div class="q">“So the deadline is Friday the 29th. Get the design review done first.”</div>
+  <div class="p">▶ Play from 12:34</div>
+</div>
+<div class="tl">
+  <div class="bars">
+    <i style="height:38px"></i><i style="height:22px"></i><i style="height:30px"></i><i style="height:26px"></i><i style="height:18px"></i><i style="height:44px"></i><i style="height:24px"></i><i style="height:32px"></i><i style="height:28px"></i><i style="height:20px"></i><i style="height:60px"></i><i style="height:26px"></i><i style="height:34px"></i><i style="height:22px"></i><i style="height:40px"></i><i style="height:18px"></i><i style="height:30px"></i><i class="on" style="height:46px"></i><i style="height:24px"></i><i style="height:36px"></i><i style="height:28px"></i><i style="height:20px"></i><i style="height:32px"></i>
+  </div>
+  <div class="lens"></div>
+</div>
+</body></html>

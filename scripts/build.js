@@ -15,6 +15,7 @@ const entries = [
   'js',
   'img',
   'robots.txt',
+  'sitemap.xml',
   'CNAME',
   '.htaccess',
   '.well-known',
