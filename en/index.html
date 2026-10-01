@@ -47,6 +47,7 @@
 
     <!-- iOS App -->
     <meta name="apple-itunes-app" content="app-id=1482592304">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
@@ -96,14 +97,14 @@
   --shadow-soft:0 12px 40px rgba(23,37,90,.08); --shadow-btn:0 10px 20px rgba(156,165,185,.30);
   --f-jp:-apple-system,BlinkMacSystemFont,"SF Pro JP","Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
   --f-mono:'Azeret Mono',ui-monospace,Menlo,monospace;
-  --ruler:0px; --nav:64px; --pad:clamp(20px,3.4vw,52px); --maxw:1360px;
+  --nav:64px; --pad:clamp(20px,3.4vw,52px); --maxw:1360px;
   --ease:cubic-bezier(.2,.8,.2,1); --wipe:cubic-bezier(.75,0,.2,1);
   --sw:280; --sh:630; --r-card:16px; --r-12:12px; --r-10:10px;
   color-scheme:light;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--nav) + 8px)}
-body{margin:0;padding-left:var(--ruler);color:var(--text);font-family:var(--f-jp);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased;font-feature-settings:"palt" 1;
+body{margin:0;color:var(--text);font-family:var(--f-jp);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased;font-feature-settings:"palt" 1;
   background:linear-gradient(180deg,var(--grad-a) 0%,#D6E4FC 40%,var(--grad-b) 100%) no-repeat,var(--grad-b)}
 img,svg{max-width:100%}
 a{color:inherit}
@@ -112,7 +113,7 @@ ul{padding:0;list-style:none}
 button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
 .mono{font-family:var(--f-mono);font-feature-settings:"tnum" 1;letter-spacing:.02em}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.skip{position:fixed;left:calc(var(--ruler) + 12px);top:-60px;z-index:100;background:var(--navy);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+.skip{position:fixed;left:12px;top:-60px;z-index:100;background:var(--navy);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
 .skip:focus{top:12px}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
 
@@ -122,20 +123,11 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .f-navy{--fg:#fff;--fg2:rgba(255,255,255,.72);--ln:rgba(255,255,255,.16);--gd:rgba(255,255,255,.05);--bg:var(--navy);background:var(--navy);color:#fff}
 .wrap{position:relative;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
 
-/* ---------- ruler ---------- */
-.ruler{position:fixed;z-index:60;left:0;top:0;bottom:0;width:var(--ruler);background:rgba(255,255,255,.72);-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%);color:var(--navy);font-family:var(--f-mono);font-size:10px;letter-spacing:.04em;border-right:1px solid var(--line)}
-.ruler .track{position:absolute;left:0;right:0;top:calc(var(--nav) + 8px);bottom:40px}
-.ruler .ticks{position:absolute;inset:0;background-image:repeating-linear-gradient(to bottom,rgba(23,37,90,.18) 0 1px,transparent 1px 8px),repeating-linear-gradient(to bottom,rgba(23,37,90,.45) 0 1px,transparent 1px 64px);background-size:10px 100%,20px 100%;background-position:right top,right top;background-repeat:no-repeat}
-.ruler .mark{position:absolute;left:8px;width:10px;height:2px;background:var(--accent);opacity:.9}
-.ruler .ph{position:absolute;left:0;right:0;top:0;height:2px;background:var(--accent);will-change:transform}
-.ruler .ph b{position:absolute;left:4px;top:-19px;background:var(--deep);color:#fff;font-weight:500;padding:1px 4px;border-radius:4px;font-size:10px;line-height:15px}
-.ruler .r0,.ruler .r1{position:absolute;left:0;right:0;text-align:center;color:var(--sub)}
-.ruler .r0{top:24px;display:none}.ruler .r1{bottom:14px}
 
 /* ---------- nav ---------- */
-.nav{position:fixed;z-index:50;top:var(--banner,0px);left:var(--ruler);right:0;height:var(--nav);color:var(--navy);background:rgba(255,255,255,.70);-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%);border-bottom:1px solid rgba(23,37,90,.06);transition:transform .3s ease,opacity .3s ease}
+.nav{position:fixed;z-index:50;top:var(--banner,0px);left:0;right:0;height:var(--nav);color:var(--navy);background:rgba(255,255,255,.70);-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%);border-bottom:1px solid rgba(23,37,90,.06);transition:transform .3s ease,opacity .3s ease}
 .nav.is-hidden{transform:translateY(-100%);opacity:0}
-@media (prefers-reduced-transparency:reduce){.nav,.ruler{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}}
+@media (prefers-reduced-transparency:reduce){.nav{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}}
 .nav .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:19px;letter-spacing:-.01em;color:var(--navy)}
 .brand img{width:28px;height:28px;border-radius:7px;flex:none}
@@ -370,7 +362,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .ev{background:var(--evidence);border-radius:10px;padding:10px 14px;margin-top:10px}
 .ev .el{font-size:13px;color:#8E8E93;margin-bottom:8px}
 .ev .eh{display:flex;align-items:center;gap:8px;font-size:17px;font-weight:600;color:#000}
-.ev .num{width:20px;height:20px;border-radius:50%;background:var(--accent);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.ev .num{width:20px;height:20px;border-radius:50%;background:var(--deep);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
 .ev .ed{font-size:13px;color:#8E8E93;margin:2px 0 6px 28px}
 .ev .ex{font-size:13px;color:#666;line-height:1.5;margin:0 0 8px 28px}
 .ev .links{display:flex;gap:18px;margin-left:28px;font-size:14px;font-weight:500;color:var(--deep)}
@@ -421,9 +413,9 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .row h3{font-size:clamp(1.2rem,1.8vw,1.6rem);font-weight:700;letter-spacing:-.01em;line-height:1.3;color:var(--navy)}
 .row p{font-size:15px;color:var(--sub);line-height:1.75}
 .row svg{width:24px;height:24px;justify-self:end;color:var(--deep);transition:transform .3s var(--ease)}
-.row:hover{background:var(--accent);color:#fff}
+.row:hover{background:var(--deep);color:#fff}
 .row:hover .n,.row:hover h3,.row:hover svg{color:#fff}
-.row:hover p{color:rgba(255,255,255,.85)}
+.row:hover p{color:#fff}
 .row:hover svg{transform:translateX(6px)}
 
 /* pricing */
@@ -480,7 +472,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .footer .brand{color:#fff}
 .footer .b p{margin-top:14px;color:var(--fg2);font-size:14px}
 .footer nav{grid-column:span 3}
-.footer h4{font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--fg2)}
+.footer h3{font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--fg2)}
 .footer nav ul{margin-top:14px;display:grid;gap:8px}
 .footer nav a{text-decoration:none;font-size:14px;color:#fff}
 .footer nav a:hover{text-decoration:underline;text-underline-offset:4px}
@@ -510,16 +502,8 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   .nav .btn-dl{display:none}
 }
 @media (max-width:760px){
-  :root{--ruler:0px;--nav:56px}
-  body{padding-left:0;padding-bottom:calc(32px + env(safe-area-inset-bottom,0px));font-size:15px}
-  .ruler{top:auto;right:0;width:auto;height:calc(32px + env(safe-area-inset-bottom,0px));padding-bottom:env(safe-area-inset-bottom,0px);border-right:0;border-top:1px solid var(--line)}
-  .ruler .track{top:0;bottom:env(safe-area-inset-bottom,0px);left:48px;right:48px}
-  .ruler .ticks{background-image:repeating-linear-gradient(to right,rgba(23,37,90,.18) 0 1px,transparent 1px 8px),repeating-linear-gradient(to right,rgba(23,37,90,.45) 0 1px,transparent 1px 64px);background-size:100% 8px,100% 16px;background-position:left bottom,left bottom}
-  .ruler .ph{top:0;bottom:0;right:auto;width:2px;height:auto}
-  .ruler .ph b{top:5px;left:6px}
-  .ruler .mark{left:auto;top:auto;bottom:0;width:2px;height:10px}
-  .ruler .r0,.ruler .r1{top:9px;bottom:auto;width:48px;right:auto}
-  .ruler .r1{left:auto;right:0}
+  :root{--nav:56px}
+  body{padding-bottom:env(safe-area-inset-bottom,0px);font-size:15px}
   .skip{left:12px}
   .hero{padding-top:calc(var(--nav) + 14px)}
   .hero .wrap{display:flex;flex-direction:column}
@@ -895,7 +879,7 @@ html[lang=en] .h1 .ch{white-space:pre}
       <h2 class="h2" id="pricing-title"><span class="w">Start</span><span class="w">for free.</span></h2>
       <p class="lead">Move to Premium when you want more.</p>
     </div>
-    <div class="toggle"><span class="lbl act" id="lblM">Monthly</span><button class="sw" id="planSw" role="switch" aria-checked="false" aria-label="Show yearly price"></button><span class="lbl" id="lblY">Yearly</span><span class="off" id="offChip" hidden>About 59% off vs. monthly</span></div>
+    <div class="toggle"><span class="lbl act" id="lblM">Monthly</span><button class="sw" id="planSw" role="switch" aria-checked="false" aria-label="Yearly billing"></button><span class="lbl" id="lblY">Yearly</span><span class="off" id="offChip" hidden>About 59% off vs. monthly</span></div>
     <div class="grid plans">
       <div class="plan">
         <div class="nm"><span>FREE</span></div>
@@ -917,7 +901,8 @@ html[lang=en] .h1 .ch{white-space:pre}
         <p class="desc">Includes a 3-day free trial</p>
         <ul>
           <li><svg class="ico"><use href="#i-tick"/></svg>Unlimited audio &amp; video import</li>
-          <li><svg class="ico"><use href="#i-tick"/></svg>High-accuracy mode (3 hours/month)</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>Real-time transcription (<span id="rtHours">5</span> hours/month)</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>Amazon Transcribe (<span id="awsHours">3</span> hours/month)</li>
           <li><svg class="ico"><use href="#i-tick"/></svg>Ask-your-notes AI chat (across all notes)</li>
           <li><svg class="ico"><use href="#i-tick"/></svg>20 summary templates</li>
           <li><svg class="ico"><use href="#i-tick"/></svg>Action item extraction</li>
@@ -943,9 +928,9 @@ html[lang=en] .h1 .ch{white-space:pre}
       <p class="lead">From reviews on the App Store. Translated from Japanese App Store reviews.</p>
     </div>
     <div class="grid quotes">
-      <figure class="quote reveal"><span class="st" aria-label="5 stars">★★★★★</span><blockquote>“I'm a writer. It performs far better than I expected. Compared with typing everything by hand, it's a huge help. I signed up for a year right away.”</blockquote><cite>Tomokorou</cite></figure>
-      <figure class="quote reveal"><span class="st" aria-label="5 stars">★★★★★</span><blockquote>“My mother struggles to hear even with hearing aids. I show her the screen and she follows along. It helps us so much.”</blockquote><cite>Nonoharu-chan</cite></figure>
-      <figure class="quote reveal"><span class="st" aria-label="5 stars">★★★★★</span><blockquote>“The OCR is faster and more accurate than other scanner apps. It reads almost 100% correctly.”</blockquote><cite>yuta-mom</cite></figure>
+      <figure class="quote reveal"><span class="st" role="img" aria-label="5 stars">★★★★★</span><blockquote>“I'm a writer. It performs far better than I expected. Compared with typing everything by hand, it's a huge help. I signed up for a year right away.”</blockquote><cite>Tomokorou</cite></figure>
+      <figure class="quote reveal"><span class="st" role="img" aria-label="5 stars">★★★★★</span><blockquote>“My mother struggles to hear even with hearing aids. I show her the screen and she follows along. It helps us so much.”</blockquote><cite>Nonoharu-chan</cite></figure>
+      <figure class="quote reveal"><span class="st" role="img" aria-label="5 stars">★★★★★</span><blockquote>“The OCR is faster and more accurate than other scanner apps. It reads almost 100% correctly.”</blockquote><cite>yuta-mom</cite></figure>
     </div>
   </div>
 </section>
@@ -960,7 +945,7 @@ html[lang=en] .h1 .ch{white-space:pre}
         <p>Our business brochure covers features, pricing and security in one document.</p>
       </div>
       <div class="act">
-        <a class="btn btn-tint" href="/assets/pdf/texter-for-business.pdf" target="_blank" rel="noopener"><svg class="ico"><use href="#i-down"/></svg>Business brochure (PDF)</a>
+        <a class="btn btn-tint" href="/assets/pdf/texter-for-business.pdf" target="_blank" rel="noopener noreferrer"><svg class="ico"><use href="#i-down"/></svg>Business brochure (PDF)</a>
         <div class="mail"><span id="mailAddr">texter.work.app@gmail.com</span><button id="copyMail" type="button">Copy</button></div>
       </div>
     </div>
@@ -993,8 +978,8 @@ html[lang=en] .h1 .ch{white-space:pre}
         <a class="brand" href="/"><img src="/img/appicon.png" alt="" width="28" height="28">Texter</a>
         <p>From recording to notes, tasks and questions later.</p>
       </div>
-      <nav aria-label="Product and support"><h4>Product &amp; support</h4><ul><li><a href="#record">Features</a></li><li><a href="#usecases">Use cases</a></li><li><a href="https://texter-app.notion.site/faq-en" target="_blank" rel="noopener noreferrer">FAQ</a></li><li><a href="mailto:texter.work.app@gmail.com">Contact</a></li><li><a href="#business">For teams</a></li></ul></nav>
-      <nav aria-label="Legal"><h4>Legal</h4><ul><li><a href="/en/terms-of-service/">Terms of Service</a></li><li><a href="/en/privacy-policy/">Privacy Policy</a></li><li><a href="/tokushoho/">Legal notice (Japan)</a></li><li><a href="/" hreflang="ja">日本語</a></li></ul></nav>
+      <nav aria-label="Product and support"><h3>Product &amp; support</h3><ul><li><a href="#record">Features</a></li><li><a href="#usecases">Use cases</a></li><li><a href="https://texter-app.notion.site/faq-en" target="_blank" rel="noopener noreferrer">FAQ</a></li><li><a href="mailto:texter.work.app@gmail.com">Contact</a></li><li><a href="#business">For teams</a></li></ul></nav>
+      <nav aria-label="Legal"><h3>Legal</h3><ul><li><a href="/en/terms-of-service/">Terms of Service</a></li><li><a href="/en/privacy-policy/">Privacy Policy</a></li><li><a href="/tokushoho/">Legal notice (Japan)</a></li><li><a href="/" hreflang="ja">日本語</a></li></ul></nav>
     </div>
     <div class="copy"><span>© 2026 Texter app - Kyoto, Japan.</span><span>60:00 · END OF RECORDING</span></div>
   </div>
@@ -1018,6 +1003,19 @@ html[lang=en] .h1 .ch{white-space:pre}
 
   function mulberry32(a) { return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
 
+  /* ---------- reveal + wipe (once) + the recording screen types when it comes into view ---------- */
+  function typeOnce(fig) {
+    const el = fig.querySelector('.s0 .typed'); if (!el || el.dataset.done) return; el.dataset.done = '1';
+    if (reduce()) return;
+    const full = el.textContent; el.textContent = ''; let i = 0;
+    const t = setInterval(() => { el.textContent = full.slice(0, ++i); if (i >= full.length) clearInterval(t); }, 48);
+  }
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); if (e.target.hasAttribute('data-typing')) typeOnce(e.target); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: .12 }) : null;
+  $$('.reveal, .h2').forEach(el => io ? io.observe(el) : el.classList.add('in'));
+  if (!reduce()) { let secs = 154; setInterval(() => { secs++; const m = String(Math.floor(secs / 60)).padStart(2, '0'), s = String(secs % 60).padStart(2, '0'); $$('.s0 .tc').forEach(el => { el.textContent = m + ':' + s; }); }, 1000); }
+
+
+  const onResize = [];
   /* ---------- Hero scrubber: 23 weekday recordings in July ---------- */
   const DAYS = [1,2,3,4,7,8,9,10,11,14,15,16,17,18,21,22,23,24,25,28,29,30,31];
   const WD = 'SunMonTueWedThuFriSat'.match(/.{3}/g);
@@ -1031,6 +1029,7 @@ html[lang=en] .h1 .ch{white-space:pre}
   const N = data.length;
 
   const track = $('#track'), barsEl = $('#bars'), handle = $('#handle'), playhead = $('#playhead'), card = $('#card'), datesEl = $('#dates');
+  if (track && barsEl && handle && card) {
   const cardLabel = $('#cardLabel'), cardDate = $('#cardDate'), cardTag = $('#cardTag'), cardBody = $('#cardBody'), cardFootT = $('#cardFootT'), cardNone = $('#cardNone');
   const wr = mulberry32(29);
   const bars = data.map(b => {
@@ -1152,81 +1151,41 @@ html[lang=en] .h1 .ch{white-space:pre}
 
   /* play buttons (evidence): pressed state only, the screens are illustrative */
   $$('.playb, .play').forEach(b => b.addEventListener('click', () => { b.setAttribute('aria-pressed', 'true'); setTimeout(() => b.removeAttribute('aria-pressed'), 900); }));
+  onResize.push(() => { layout(); if (cur >= 0) { x = centers[cur]; target = null; render(); } });
+  }
 
-  /* ---------- nav + ruler (one rAF) ---------- */
+  /* ---------- nav: quietly leaves while reading down and comes back on the way up ---------- */
   const nav = $('#nav'), sheet = $('#sheet');
-  const ruler = $('.ruler'), rTrack = $('.ruler .track'), ph = $('.ruler .ph'), phT = $('.ruler .ph b'), marks = $('.ruler .marks');
-  const tcSecs = $$('[data-tc]');
-  const toS = s => { const [m, ss] = s.split(':').map(Number); return m * 60 + ss; };
-  const fmt = s => { s = Math.round(s); return String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); };
-  let anchors = [], maxY = 1, shownY = 0, horiz = false, lastY = scrollY;
-  const navH = () => nav.offsetHeight;
-  function measure() {
-    maxY = Math.max(1, document.documentElement.scrollHeight - innerHeight);
-    horiz = ruler ? (getComputedStyle(ruler).width === innerWidth + 'px' || ruler.offsetHeight < 80) : false;
-    anchors = [{ y: 0, t: 0 }];
-    tcSecs.forEach(sec => {
-      const t = toS(sec.dataset.tc); if (!t) return;
-      const y = Math.min(maxY, Math.max(0, sec.getBoundingClientRect().top + scrollY - navH()));
-      const lastA = anchors[anchors.length - 1];
-      if (y > lastA.y + 1) anchors.push({ y, t }); else lastA.t = Math.max(lastA.t, t);
-    });
-    const lastA = anchors[anchors.length - 1];
-    if (lastA.y < maxY - 1) anchors.push({ y: maxY, t: 3600 }); else lastA.t = 3600;
-    if (!marks) return;
-    marks.innerHTML = '';
-    anchors.slice(1, -1).forEach(a => { const m = document.createElement('i'); m.className = 'mark'; const p = a.y / maxY; if (horiz) m.style.left = (p * 100) + '%'; else m.style.top = (p * 100) + '%'; marks.appendChild(m); });
-  }
-  function tcAt(y) {
-    for (let i = 1; i < anchors.length; i++) { const a = anchors[i - 1], b = anchors[i]; if (y <= b.y) return a.t + (b.t - a.t) * ((y - a.y) / Math.max(1, b.y - a.y)); }
-    return 3600;
-  }
-  let sraf = 0;
+  let lastY = scrollY, sraf = 0;
   function frame() {
-    const y = Math.min(maxY, Math.max(0, scrollY));
-    shownY = reduce() ? y : shownY + (y - shownY) * .22;
-    if (Math.abs(y - shownY) < .5) shownY = y;
-    const p = shownY / maxY;
-    if (ruler) {
-      const len = horiz ? rTrack.clientWidth : rTrack.clientHeight;
-      ph.style.transform = horiz ? `translateX(${p * len}px)` : `translateY(${p * len}px)`;
-      phT.textContent = fmt(tcAt(shownY));
-    }
-    // the nav quietly leaves while reading down and comes back on the way up
-    if (y !== lastY) { if (!reduce() && !nav.matches(':focus-within')) nav.classList.toggle('is-hidden', y > lastY && y > 120 && sheet.hidden); lastY = y; }
-    sraf = (shownY !== y) ? requestAnimationFrame(frame) : 0;
+    sraf = 0;
+    const y = scrollY;
+    if (nav && y !== lastY) { if (!reduce() && !nav.matches(':focus-within')) nav.classList.toggle('is-hidden', y > lastY && y > 120 && (!sheet || sheet.hidden)); lastY = y; }
   }
   const kick = () => { if (!sraf) sraf = requestAnimationFrame(frame); };
   addEventListener('scroll', kick, { passive: true });
-  let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { layout(); if (cur >= 0) { x = centers[cur]; target = null; render(); } measure(); kick(); }, 120); });
-  addEventListener('load', () => { measure(); kick(); });
-  measure(); kick();
-
-  /* ---------- reveal + wipe (once) + the recording screen types when it comes into view ---------- */
-  function typeOnce(fig) {
-    const el = fig.querySelector('.s0 .typed'); if (!el || el.dataset.done) return; el.dataset.done = '1';
-    if (reduce()) return;
-    const full = el.textContent; el.textContent = ''; let i = 0;
-    const t = setInterval(() => { el.textContent = full.slice(0, ++i); if (i >= full.length) clearInterval(t); }, 48);
-  }
-  const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); if (e.target.hasAttribute('data-typing')) typeOnce(e.target); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: .12 }) : null;
-  $$('.reveal, .h2').forEach(el => io ? io.observe(el) : el.classList.add('in'));
-  if (!reduce()) { let secs = 154; setInterval(() => { secs++; const m = String(Math.floor(secs / 60)).padStart(2, '0'), s = String(secs % 60).padStart(2, '0'); $$('.s0 .tc').forEach(el => { el.textContent = m + ':' + s; }); }, 1000); }
+  let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => onResize.forEach(fn => fn()), 120); });
 
   /* ---------- pricing switch ---------- */
   const sw = $('#planSw'), pPrice = $('#pPrice'), pEq = $('#pEq'), off = $('#offChip'), lblM = $('#lblM'), lblY = $('#lblY');
+  if (sw && pPrice && pEq && off && lblM && lblY) {
   function setPlan(yearly) {
     sw.setAttribute('aria-checked', String(yearly));
-    sw.setAttribute('aria-label', yearly ? 'Show monthly price' : 'Show yearly price');
     pPrice.innerHTML = yearly ? '¥8,800<small>/yr</small>' : '¥1,800<small>/mo</small>';
     pEq.textContent = yearly ? 'About ¥733 per month' : ' ';
     off.hidden = !yearly; lblM.classList.toggle('act', !yearly); lblY.classList.toggle('act', yearly);
+    // quotas follow the in-app plan comparison table (iOS PlanComparisonSpeech* / PlanComparisonAws*)
+    const rt = $('#rtHours'), aws = $('#awsHours');
+    if (rt) rt.textContent = yearly ? '10' : '5';
+    if (aws) aws.textContent = yearly ? '5' : '3';
   }
   sw.addEventListener('click', () => setPlan(sw.getAttribute('aria-checked') !== 'true'));
   lblM.addEventListener('click', () => setPlan(false)); lblY.addEventListener('click', () => setPlan(true));
+  }
 
   /* ---------- mobile sheet ---------- */
   const menuBtn = $('#menuBtn'), closeBtn = $('#menuClose');
+  if (menuBtn && closeBtn && sheet && nav) {
   const behind = () => $$('body > :not(#sheet):not(script):not(link)');
   function openSheet(o) {
     sheet.hidden = !o; menuBtn.setAttribute('aria-expanded', String(o));
@@ -1249,10 +1208,11 @@ html[lang=en] .h1 .ch{white-space:pre}
   closeBtn.addEventListener('click', () => openSheet(false));
   sheet.addEventListener('click', e => { if (e.target.closest('a')) openSheet(false); });
   addEventListener('keydown', e => { if (e.key === 'Escape' && !sheet.hidden) openSheet(false); });
+  }
 
   /* ---------- copy email ---------- */
   const cp = $('#copyMail');
-  cp.addEventListener('click', async () => {
+  if (cp)   cp.addEventListener('click', async () => {
     const addr = $('#mailAddr').textContent;
     try { await navigator.clipboard.writeText(addr); cp.textContent = 'Copied'; }
     catch (_) { const r = document.createRange(); r.selectNodeContents($('#mailAddr')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); cp.textContent = 'Selected'; }
