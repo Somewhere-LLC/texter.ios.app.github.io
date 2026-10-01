@@ -901,7 +901,8 @@ html[lang=en] .h1 .ch{white-space:pre}
         <p class="desc">Includes a 3-day free trial</p>
         <ul>
           <li><svg class="ico"><use href="#i-tick"/></svg>Unlimited audio &amp; video import</li>
-          <li><svg class="ico"><use href="#i-tick"/></svg>High-accuracy mode (<span id="hqHours">3</span> hours/month)</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>Real-time transcription (<span id="rtHours">5</span> hours/month)</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>Amazon Transcribe (<span id="awsHours">3</span> hours/month)</li>
           <li><svg class="ico"><use href="#i-tick"/></svg>Ask-your-notes AI chat (across all notes)</li>
           <li><svg class="ico"><use href="#i-tick"/></svg>20 summary templates</li>
           <li><svg class="ico"><use href="#i-tick"/></svg>Action item extraction</li>
@@ -1173,7 +1174,10 @@ html[lang=en] .h1 .ch{white-space:pre}
     pPrice.innerHTML = yearly ? '¥8,800<small>/yr</small>' : '¥1,800<small>/mo</small>';
     pEq.textContent = yearly ? 'About ¥733 per month' : ' ';
     off.hidden = !yearly; lblM.classList.toggle('act', !yearly); lblY.classList.toggle('act', yearly);
-    $('#hqHours').textContent = yearly ? '5' : '3';
+    // quotas follow the in-app plan comparison table (iOS PlanComparisonSpeech* / PlanComparisonAws*)
+    const rt = $('#rtHours'), aws = $('#awsHours');
+    if (rt) rt.textContent = yearly ? '10' : '5';
+    if (aws) aws.textContent = yearly ? '5' : '3';
   }
   sw.addEventListener('click', () => setPlan(sw.getAttribute('aria-checked') !== 'true'));
   lblM.addEventListener('click', () => setPlan(false)); lblY.addEventListener('click', () => setPlan(true));

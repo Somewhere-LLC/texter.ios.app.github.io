@@ -897,7 +897,8 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <p class="desc">3日間無料トライアル付き</p>
         <ul>
           <li><svg class="ico"><use href="#i-tick"/></svg>音声・動画取り込み 無制限</li>
-          <li><svg class="ico"><use href="#i-tick"/></svg>高性能モード (<span id="hqHours">3</span>時間/月)</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>リアルタイム音声認識 (<span id="rtHours">5</span>時間/月)</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>Amazon Transcribe (<span id="awsHours">3</span>時間/月)</li>
           <li><svg class="ico"><use href="#i-tick"/></svg>「ノートに聞く」AIチャット（すべてのノート対応）</li>
           <li><svg class="ico"><use href="#i-tick"/></svg>要約テンプレート 20種</li>
           <li><svg class="ico"><use href="#i-tick"/></svg>アクションアイテム抽出</li>
@@ -1169,7 +1170,10 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
     pPrice.innerHTML = yearly ? '¥8,800<small>/年</small>' : '¥1,800<small>/月</small>';
     pEq.textContent = yearly ? '月あたり約¥733' : ' ';
     off.hidden = !yearly; lblM.classList.toggle('act', !yearly); lblY.classList.toggle('act', yearly);
-    $('#hqHours').textContent = yearly ? '5' : '3';
+    // quotas follow the in-app plan comparison table (iOS PlanComparisonSpeech* / PlanComparisonAws*)
+    const rt = $('#rtHours'), aws = $('#awsHours');
+    if (rt) rt.textContent = yearly ? '10' : '5';
+    if (aws) aws.textContent = yearly ? '5' : '3';
   }
   sw.addEventListener('click', () => setPlan(sw.getAttribute('aria-checked') !== 'true'));
   lblM.addEventListener('click', () => setPlan(false)); lblY.addEventListener('click', () => setPlan(true));
