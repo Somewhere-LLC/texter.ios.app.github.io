@@ -1,6 +1,6 @@
 // FAQ content for /faq/ and /en/faq/. Edit here, then run `node scripts/seo/build.js`.
-// Every answer was checked against the iOS app (Texter origin/develop 2fe6c3e69, 2026-10-04).
-// Values controlled by Remote Config or App Store Connect (trial length, live-only betas) are left out on purpose.
+// Every answer was checked against the iOS app as of 2026-10-04.
+// Values that can change without an app update (trial length, betas) are left out on purpose.
 // Answers may use only <a>, <b>, <strong>, <br>, <ul>, <ol>, <li>, <p>.
 const updated = '2026-10-05';
 

@@ -1,5 +1,5 @@
 // Facts about Texter that the structured data states. Each value must match what the pages show.
-// Sources: prices = LP pricing section (iOS PlanComparison* / IAPProduct.swift),
+// Sources: prices = LP pricing section (same values as the in-app plan comparison),
 // operator = /tokushoho/, store ids and minimum OS = App Store / Google Play listings.
 // No aggregateRating: the LP shows the App Store score (4.1 on 2026-10-05, 7,835 ratings in JP) but not the
 // rating count, and a hard-coded count would go stale. Without it the page is not eligible for Google's
