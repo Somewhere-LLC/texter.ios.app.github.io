@@ -120,60 +120,8 @@
         {
           "@type": "Offer",
           "name": "Free",
-          "priceCurrency": "JPY",
-          "eligibleRegion": {
-            "@type": "Country",
-            "name": "JP"
-          },
-          "price": "0"
-        },
-        {
-          "@type": "Offer",
-          "name": "Premium weekly",
-          "priceCurrency": "JPY",
-          "eligibleRegion": {
-            "@type": "Country",
-            "name": "JP"
-          },
-          "price": "600",
-          "priceSpecification": {
-            "@type": "UnitPriceSpecification",
-            "price": "600",
-            "priceCurrency": "JPY",
-            "billingDuration": "P1W"
-          }
-        },
-        {
-          "@type": "Offer",
-          "name": "Premium monthly",
-          "priceCurrency": "JPY",
-          "eligibleRegion": {
-            "@type": "Country",
-            "name": "JP"
-          },
-          "price": "1800",
-          "priceSpecification": {
-            "@type": "UnitPriceSpecification",
-            "price": "1800",
-            "priceCurrency": "JPY",
-            "billingDuration": "P1M"
-          }
-        },
-        {
-          "@type": "Offer",
-          "name": "Premium yearly",
-          "priceCurrency": "JPY",
-          "eligibleRegion": {
-            "@type": "Country",
-            "name": "JP"
-          },
-          "price": "8800",
-          "priceSpecification": {
-            "@type": "UnitPriceSpecification",
-            "price": "8800",
-            "priceCurrency": "JPY",
-            "billingDuration": "P1Y"
-          }
+          "price": "0",
+          "priceCurrency": "USD"
         }
       ],
       "publisher": {
@@ -1037,11 +985,11 @@ html[lang=en] .h1 .ch{white-space:pre}
       <h2 class="h2" id="pricing-title"><span class="w">Start</span><span class="w">for free.</span></h2>
       <p class="lead">Move to Premium when you want more.</p>
     </div>
-    <div class="toggle"><span class="lbl act" id="lblM">Monthly</span><button class="sw" id="planSw" role="switch" aria-checked="false" aria-label="Yearly billing"></button><span class="lbl" id="lblY">Yearly</span><span class="off" id="offChip" hidden>About 59% off vs. monthly</span></div>
+    <div class="toggle"><span class="lbl act" id="lblM">Monthly</span><button class="sw" id="planSw" role="switch" aria-checked="false" aria-label="Yearly billing"></button><span class="lbl" id="lblY">Yearly</span><span class="off" id="offChip" hidden>Best value</span></div>
     <div class="grid plans">
       <div class="plan">
         <div class="nm"><span>FREE</span></div>
-        <p class="price">¥0</p>
+        <p class="price">Free</p>
         <p class="eq">&nbsp;</p>
         <p class="desc">Try it free</p>
         <ul>
@@ -1054,13 +1002,13 @@ html[lang=en] .h1 .ch{white-space:pre}
       </div>
       <div class="plan">
         <div class="nm"><span>PREMIUM</span><span class="pop">3-day free trial</span></div>
-        <p class="price" id="pPrice">¥1,800<small>/mo</small></p>
-        <p class="eq" id="pEq">&nbsp;</p>
+        <p class="price" id="pPrice">Monthly</p>
+        <p class="eq" id="pEq">Billed monthly in your local currency</p>
         <p class="desc">Includes a 3-day free trial</p>
         <ul>
           <li><svg class="ico"><use href="#i-tick"/></svg>Unlimited audio &amp; video import</li>
-          <li><svg class="ico"><use href="#i-tick"/></svg>Real-time transcription (<span id="rtHours">5</span> hours/month)</li>
-          <li><svg class="ico"><use href="#i-tick"/></svg>Amazon Transcribe (<span id="awsHours">3</span> hours/month)</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg><span>Real-time transcription (<span id="rtHours">5</span> hours/month)</span></li>
+          <li><svg class="ico"><use href="#i-tick"/></svg><span>Amazon Transcribe (<span id="awsHours">3</span> hours/month)</span></li>
           <li><svg class="ico"><use href="#i-tick"/></svg>Ask-your-notes AI chat (across all notes)</li>
           <li><svg class="ico"><use href="#i-tick"/></svg>20 summary templates</li>
           <li><svg class="ico"><use href="#i-tick"/></svg>Action item extraction</li>
@@ -1073,7 +1021,7 @@ html[lang=en] .h1 .ch{white-space:pre}
         <a class="btn btn-solid" href="https://apps.apple.com/app/id1482592304" target="_blank" rel="noopener noreferrer">Start the free trial</a>
       </div>
     </div>
-    <p class="foot-note">Need it for a short stretch? A ¥600 weekly plan is available in the app.</p>
+    <p class="foot-note">Need it for a short stretch? A weekly plan is also available. Prices vary by country and are shown in your local currency on the App Store.</p>
   </div>
 </section>
 
@@ -1329,8 +1277,8 @@ html[lang=en] .h1 .ch{white-space:pre}
   if (sw && pPrice && pEq && off && lblM && lblY) {
   function setPlan(yearly) {
     sw.setAttribute('aria-checked', String(yearly));
-    pPrice.innerHTML = yearly ? '¥8,800<small>/yr</small>' : '¥1,800<small>/mo</small>';
-    pEq.textContent = yearly ? 'About ¥733 per month' : ' ';
+    pPrice.textContent = yearly ? 'Yearly' : 'Monthly';
+    pEq.textContent = yearly ? 'Billed yearly in your local currency' : 'Billed monthly in your local currency';
     off.hidden = !yearly; lblM.classList.toggle('act', !yearly); lblY.classList.toggle('act', yearly);
     // quotas follow the in-app plan comparison table (iOS PlanComparisonSpeech* / PlanComparisonAws*)
     const rt = $('#rtHours'), aws = $('#awsHours');
