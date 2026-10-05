@@ -10,6 +10,7 @@ const entries = [
   'terms-of-service',
   'privacy-policy',
   'tokushoho',
+  'faq',
   'en',
   'css',
   'js',
