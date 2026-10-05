@@ -68,8 +68,6 @@ const ja = {
           a: '<p>できます。iPhoneを持っていなくても、Apple Watch単体で録音できます。録音はあとでiPhoneへ転送され、文字起こしされます。1回に録音できる長さは、無料版で最大15分、Premiumで最大2時間です。</p>' },
         { id: 'quick-start', q: 'アプリを開かずにすぐ録音を始められますか？',
           a: '<p>ロック画面ウィジェットから、ワンタップで録音を始められます。iOS 18以降ではコントロールセンターにも追加できます。日本のiPhoneでは、iOS 26.2以降でサイドボタンの長押しにTexterの音声入力を割り当てられます。</p>' },
-        { id: 'zoom', q: 'Zoomの録画は文字起こしできますか？',
-          a: '<p>Zoomの録画リンクは直接取り込めません。録画ファイル（mp4やm4a）をダウンロードしてから、ファイルとして取り込んでください。</p>' },
       ],
     },
     {
@@ -137,7 +135,7 @@ const en = {
         { id: 'devices', q: 'Which devices does Texter support?',
           a: '<ul><li>iPhone and iPad (iOS / iPadOS 16.0 or later)</li><li>Apple Watch (watchOS 11 or later)</li><li>Mac with Apple silicon (runs as the iPad app)</li><li>Android (on Google Play)</li></ul>' },
         { id: 'price', q: 'Is Texter free? How much is Premium?',
-          a: '<p>The app is free to download, and the basic features are free to use. The free plan limits transcription time and how often you can use each feature.</p><p>Texter Premium raises those limits. On the Japanese App Store it is ¥1,800 per month, ¥8,800 per year, or ¥600 per week. Prices in other countries are shown in your local currency in the app. Check the purchase screen in the app for any free trial and its length.</p>' },
+          a: '<p>The app is free to download, and the basic features are free to use. The free plan limits transcription time and how often you can use each feature.</p><p>Texter Premium raises those limits and comes in weekly, monthly, and yearly plans. Prices vary by country and are shown in your local currency on the App Store and in the app. Check the purchase screen in the app for any free trial and its length.</p>' },
         { id: 'cancel', q: 'How do I cancel Premium?',
           a: '<p>On iPhone, open Settings, tap your name, then Subscriptions, then Texter. On Android, open Google Play, then Payments &amp; subscriptions, then Subscriptions. Deleting the app does not cancel your subscription.</p>' },
         { id: 'business', q: 'Can my company use Texter?',
@@ -160,8 +158,6 @@ const en = {
           a: '<p>Yes. Apple Watch records on its own, without your iPhone nearby. The recording transfers to your iPhone later and is transcribed there. Each recording can be up to 15 minutes on the free plan and up to 2 hours with Premium.</p>' },
         { id: 'quick-start', q: 'Can I start recording without opening the app?',
           a: '<p>Yes. Start recording with one tap from the Lock Screen widget. On iOS 18 or later you can also add Texter to Control Center.</p>' },
-        { id: 'zoom', q: 'Can I transcribe a Zoom recording?',
-          a: '<p>Zoom recording links can’t be imported directly. Download the recording file (mp4 or m4a) first, then import it as a file.</p>' },
       ],
     },
     {

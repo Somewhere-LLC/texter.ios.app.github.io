@@ -17,11 +17,9 @@ const yen = (n) => `¥${n.toLocaleString('en-US')}`;
 const PRICE_AS_SHOWN = {
   lp: {
     ja: { weekly: (p) => `週額 ${p}`, monthly: (p) => `${p}<small>/月`, yearly: (p) => `${p}<small>/年` },
-    en: { weekly: (p) => `${p} weekly`, monthly: (p) => `${p}<small>/mo`, yearly: (p) => `${p}<small>/yr` },
   },
   faq: {
     ja: { weekly: (p) => `週額 ${p}`, monthly: (p) => `月額 ${p}`, yearly: (p) => `年額 ${p}` },
-    en: { weekly: (p) => `${p} per week`, monthly: (p) => `${p} per month`, yearly: (p) => `${p} per year` },
   },
 };
 const PERIOD = { P1W: 'weekly', P1M: 'monthly', P1Y: 'yearly' };
@@ -40,8 +38,14 @@ function checkLp(file, lang, html, errors) {
   const app = graph.find((n) => n['@type'] === 'SoftwareApplication');
   if (!app) return errors.push(`${file}: no SoftwareApplication`);
   if (!graph.some((n) => n['@type'] === 'Organization')) errors.push(`${file}: no Organization`);
+  // English pages state no prices: they differ by country, and a yen price misleads readers abroad.
+  if (lang === 'en') {
+    if (html.includes('¥')) errors.push(`${file}: English page shows a yen price`);
+    if (app.offers.some((o) => o.price !== '0')) errors.push(`${file}: English JSON-LD lists a paid price`);
+  }
   // The yearly price exists only in the pricing toggle script, so match against the raw HTML.
   for (const o of app.offers) {
+    if (lang === 'en') break;
     if (o.price === '0') continue;
     const plan = PERIOD[o.priceSpecification?.billingDuration];
     if (!plan) { errors.push(`${file}: offer ${o.name} has no billing period`); continue; }
@@ -77,6 +81,8 @@ function checkFaq(file, lang, html, errors) {
   // Prices quoted in answers must be the ones the LP lists, each with its own period.
   const known = new Set(Object.values(facts.prices).map(yen));
   for (const m of pageText.matchAll(/¥[\d,]+/g)) if (!known.has(m[0])) errors.push(`${file}: price ${m[0]} is not in app-facts.prices`);
+  if (lang === 'en' && html.includes('¥')) errors.push(`${file}: English page shows a yen price`);
+  if (lang === 'en') return;
   for (const [plan, price] of Object.entries(facts.prices)) {
     const shown = PRICE_AS_SHOWN.faq[lang][plan](yen(price));
     if (!pageText.includes(shown)) errors.push(`${file}: expects "${shown}"`);
@@ -149,6 +155,8 @@ if (process.argv.includes('--self-test')) {
     ['LP feature card with extra attributes', 'index.html', (s) => s.replace('<h3>ワードクラウド</h3>', '<h3>ワードクラウド</h3></article><article class="cell reveal" id="x"><h3>新機能</h3>')],
     ['LP feature card without a heading', 'index.html', (s) => s.replace('<h3>ワードクラウド</h3>', '<h3>ワードクラウド</h3></article><article class="cell"><p>見出しなし</p>')],
     ['hreflang points to a wrong page', 'en/faq/index.html', (s) => s.replace('hreflang="ja" href="https://texter.work/faq/"', 'hreflang="ja" href="https://texter.work/"')],
+    ['yen price back on the English LP', 'en/index.html', (s) => s.replace('A weekly plan is also available.', 'A ¥600 weekly plan is available.')],
+    ['yen price back in the English FAQ', 'en/faq/index.html', (s) => s.replace('comes in weekly, monthly, and yearly plans.', 'is ¥1,800 per month.')],
     ['generated page edited by hand', 'en/faq/index.html', (s) => s.replace('</footer>', '<p>hand edit</p></footer>')],
   ];
   let failed = 0;

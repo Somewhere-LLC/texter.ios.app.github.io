@@ -38,6 +38,7 @@ const orgNode = () => ({
 });
 
 // Subscriptions carry their billing period so the price is not read as a one-time purchase.
+// Only the Japanese pages state prices (JPY, Japan). Prices differ by country, so the English pages list none.
 const PERIOD = { weekly: 'P1W', monthly: 'P1M', yearly: 'P1Y' };
 function offer(name, plan) {
   const base = { '@type': 'Offer', name, priceCurrency: 'JPY', eligibleRegion: { '@type': 'Country', name: 'JP' } };
@@ -91,12 +92,9 @@ function appGraph(lang, pageTitle) {
         installUrl: facts.appStore[lang],
         sameAs: [facts.appStore[lang], facts.googlePlay],
         featureList: f.features,
-        offers: [
-          offer(f.offers.free),
-          offer(f.offers.weekly, 'weekly'),
-          offer(f.offers.monthly, 'monthly'),
-          offer(f.offers.yearly, 'yearly'),
-        ],
+        offers: lang === 'ja'
+          ? [offer(f.offers.free), offer(f.offers.weekly, 'weekly'), offer(f.offers.monthly, 'monthly'), offer(f.offers.yearly, 'yearly')]
+          : [{ '@type': 'Offer', name: f.offers.free, price: '0', priceCurrency: 'USD' }],
         publisher: { '@id': ORG_ID },
         author: { '@id': ORG_ID },
       },

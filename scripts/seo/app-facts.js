@@ -36,7 +36,7 @@ module.exports = {
     alternateName: ['Texter: Audio & Video to Text'],
     description: 'Record a meeting or interview and Texter transcribes it, labels speakers, summarizes, and pulls out the tasks automatically. Later, ask questions across your past notes and jump back to the original words.',
     category: 'AI transcription & meeting notes app',
-    offers: { free: 'Free', weekly: 'Premium weekly', monthly: 'Premium monthly', yearly: 'Premium yearly' },
+    offers: { free: 'Free' },
     features: [
       'Record and transcribe live', 'Import audio and video files', 'Apple Watch and widgets',
       'Accurate transcription with speaker labels', 'Summaries and structured notes', '99 languages and translation',
