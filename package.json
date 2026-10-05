@@ -4,7 +4,9 @@
   "version": "0.1.0",
   "description": "Texter landing page",
   "scripts": {
-    "build": "node scripts/build.js",
+    "build": "node scripts/seo/build.js && node scripts/seo/check.js --self-test && node scripts/build.js",
+    "build:seo": "node scripts/seo/build.js",
+    "check:seo": "node scripts/seo/check.js --self-test",
     "generate-pdf": "node scripts/generate-pdf.js",
     "build:all": "npm run generate-pdf && npm run build"
   },
