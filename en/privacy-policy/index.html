@@ -172,20 +172,18 @@ footer a:hover { color: var(--text-primary); }
             <h2>Information Collection and Use</h2>
             <p>Depending on the features you use, Texter sends information from your device to servers and collects information needed to provide the service.</p>
             <ul>
-                <li>If you choose Google sign-in, Firebase Authentication processes your email address, account identifiers, and profile information provided by Google, such as your display name, for authentication and account management. Some features can be used without Google sign-in.</li>
-                <li>If you submit feedback, Cloud Firestore stores the message, user identifier, app version, device and OS information, language, and subscription status for support and troubleshooting. A reply email address is optional and is stored only if you enter one. You can submit feedback without an email address.</li>
+                <li>If you choose Google sign-in, an authentication service processes your email address, account identifiers, and profile information provided by Google, such as your display name, for authentication and account management. Some features can be used without Google sign-in.</li>
+                <li>If you submit feedback, the message, user identifier, app version, device and OS information, language, and subscription status are stored in the cloud for support and troubleshooting. A reply email address is optional and is stored only if you enter one. You can submit feedback without an email address.</li>
                 <li>Transcription and AI features send the audio, video, images, or text needed for processing to the servers and service providers used by the selected feature.</li>
-                <li>Firebase Analytics and Crashlytics collect usage information, identifiers, crash information, and diagnostics for service analytics and troubleshooting.</li>
-                <li>RevenueCat processes purchase history and user identifiers to provide paid features, restore purchases, and manage and analyze subscriptions.</li>
-                <li>Features that display ads use Google Mobile Ads (AdMob). This SDK collects and shares IP addresses (which may be used to estimate general location), app and ad interactions, diagnostics, and device or other identifiers for advertising, analytics, and fraud prevention.</li>
+                <li>Analytics and crash-reporting services collect usage information, identifiers, crash information, and diagnostics for service analytics and troubleshooting.</li>
+                <li>A subscription management service processes purchase history and user identifiers to provide paid features, restore purchases, and manage and analyze subscriptions.</li>
+                <li>In features that display ads, advertising providers collect and share IP addresses (which may be used to estimate general location), app and ad interactions, diagnostics, and device or other identifiers for advertising, analytics, and fraud prevention.</li>
             </ul>
             <p>The app does use third party services that may collect information used to identify you.</p>
-            <p>Link to privacy policy of third party service providers used by the app</p>
+            <p>The authentication, cloud storage, analytics and crash reporting, subscription management, and advertising services described above are provided by:</p>
             <ul>
-                <li><a href="https://firebase.google.com/policies/analytics" target="_blank" rel="noopener noreferrer">Firebase Analytics</a></li>
-                <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase Authentication, Cloud Firestore, and Crashlytics</a></li>
-                <li><a href="https://www.revenuecat.com/privacy/" target="_blank" rel="noopener noreferrer">RevenueCat</a></li>
-                <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Mobile Ads (AdMob)</a></li>
+                <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google (authentication, cloud storage, analytics and crash reporting, advertising)</a></li>
+                <li><a href="https://www.revenuecat.com/privacy/" target="_blank" rel="noopener noreferrer">RevenueCat, Inc. (subscription management)</a></li>
             </ul>
             <h2>Log Data</h2>
             <p>I want to inform you that whenever you use my Service, in a case of an error in the app I collect data and information (through third party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing my Service, the time and date of your use of the Service, and other statistics.</p>
