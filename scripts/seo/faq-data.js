@@ -31,6 +31,7 @@ const ja = {
   footer: [
     { label: 'ホーム', href: '/' },
     { label: '使い方ガイド', href: 'https://texter-app.notion.site/faq-ja', ext: true },
+    { label: '活用ガイド', href: '/guides/' },
     { label: 'お問い合わせ', href: 'mailto:texter.work.app@gmail.com' },
     { label: '利用規約', href: '/terms-of-service/' },
     { label: 'プライバシーポリシー', href: '/privacy-policy/' },

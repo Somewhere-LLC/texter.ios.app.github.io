@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HDB32BHHL8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HDB32BHHL8', { 'cookie_flags': 'SameSite=None;Secure' });
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>動画から字幕を作成する方法｜iPhoneでSRTを書き出す手順と実例</title>
+<meta name="description" content="15秒の動画から字幕ファイル（SRT）を作った全手順です。実際のSRTと字幕付きの再生例、時刻のずれの実測、YouTubeで使うときの手順と注意点を載せています。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://texter.work/guides/video-subtitles/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://texter.work/guides/video-subtitles/">
+<meta property="og:title" content="動画から字幕を作成する方法｜iPhoneでSRTを書き出す手順と実例">
+<meta property="og:description" content="15秒の動画から字幕ファイル（SRT）を作った全手順です。実際のSRTと字幕付きの再生例、時刻のずれの実測、YouTubeで使うときの手順と注意点を載せています。">
+<meta property="og:site_name" content="Texter">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://texter.work/img/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="動画から字幕を作成する方法｜iPhoneでSRTを書き出す手順と実例">
+<meta name="twitter:description" content="15秒の動画から字幕ファイル（SRT）を作った全手順です。実際のSRTと字幕付きの再生例、時刻のずれの実測、YouTubeで使うときの手順と注意点を載せています。">
+<meta name="twitter:image" content="https://texter.work/img/ogp.png">
+<meta name="apple-itunes-app" content="app-id=1482592304">
+<link rel="icon" href="/assets/favicon/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v=2">
+<link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png?v=2">
+<meta name="theme-color" content="#EDF4FF">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://texter.work/guides/video-subtitles/#article",
+      "headline": "動画から字幕を作成する方法",
+      "description": "15秒の動画から字幕ファイル（SRT）を作った全手順です。実際のSRTと字幕付きの再生例、時刻のずれの実測、YouTubeで使うときの手順と注意点を載せています。",
+      "url": "https://texter.work/guides/video-subtitles/",
+      "inLanguage": "ja",
+      "datePublished": "2026-10-31",
+      "dateModified": "2026-10-31",
+      "image": "https://texter.work/assets/guides/video-subtitles/poster.webp",
+      "isPartOf": {
+        "@id": "https://texter.work/#website"
+      },
+      "about": {
+        "@id": "https://texter.work/#app"
+      },
+      "publisher": {
+        "@id": "https://texter.work/#organization"
+      },
+      "video": {
+        "@id": "https://texter.work/guides/video-subtitles/#video"
+      }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://texter.work/guides/video-subtitles/#video",
+      "name": "動画ファイルから字幕（SRT）を書き出す操作",
+      "description": "動画ファイルを取り込み、文字起こしを確認して、字幕（SRT）ファイルを書き出すまでの実際の操作画面です。",
+      "thumbnailUrl": [
+        "https://texter.work/assets/guides/video-subtitles/poster.webp"
+      ],
+      "contentUrl": "https://texter.work/assets/guides/video-subtitles/demo.mp4",
+      "uploadDate": "2026-10-31T09:00:00+09:00",
+      "duration": "PT53S",
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://texter.work/guides/video-subtitles/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Texter",
+          "item": "https://texter.work/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "活用ガイド",
+          "item": "https://texter.work/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "動画から字幕を作成する方法",
+          "item": "https://texter.work/guides/video-subtitles/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{--accent:#6482FA;--deep:#5460D6;--navy:#17255A;--text:#444444;--sub:#5F6170;--line:rgba(23,37,90,.12);--card:#FFFFFF;--grad-a:#EDF4FF;--grad-b:#D6E4FC;
+  --f-jp:-apple-system,BlinkMacSystemFont,"SF Pro JP","Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;--f-mono:ui-monospace,Menlo,monospace;color-scheme:light}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:80px}
+body{margin:0;color:var(--text);font-family:var(--f-jp);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased;background:linear-gradient(180deg,var(--grad-a) 0%,var(--grad-b) 100%) fixed,var(--grad-b)}
+a{color:var(--deep)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip{position:fixed;left:12px;top:-60px;z-index:100;background:var(--navy);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+.skip:focus{top:12px}
+.wrap{max-width:760px;margin-inline:auto;padding-inline:20px}
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:18px;color:var(--navy)}
+.brand img{width:28px;height:28px;border-radius:7px}
+.nav ul{display:flex;gap:4px;margin:0;padding:0;list-style:none}
+.nav ul a{display:block;padding:8px 10px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;color:var(--text)}
+.crumbs{margin:28px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px;font-size:13px;color:var(--sub)}
+.crumbs li+li::before{content:"/";margin-right:6px}
+.crumbs a{color:var(--sub)}
+h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.6rem);line-height:1.25;font-weight:900}
+.lead{margin:16px 0 0}
+.meta{margin:10px 0 0;font-size:13px;color:var(--sub)}
+.toc{margin:28px 0 0;padding:18px 20px;background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:14px}
+.toc h2{margin:0;font-size:13px;color:var(--sub);font-weight:600}
+.toc ul{margin:8px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 18px}
+.toc a{font-size:15px;font-weight:500}
+.sec{margin-top:48px}
+.sec>h2{margin:0;padding-top:12px;border-top:1.5px solid var(--navy);color:var(--navy);font-size:clamp(1.3rem,3vw,1.6rem);line-height:1.4}
+.sec h3{margin:24px 0 0;color:var(--navy);font-size:17px;line-height:1.6}
+.sec p,.sec ul,.sec ol{margin:12px 0 0}
+.sec ul,.sec ol{padding-left:1.3em}
+.compare{width:100%;margin-top:16px;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;font-size:15px}
+.compare th,.compare td{padding:12px 14px;border:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.65}
+.compare thead th{background:#F2F5FD;color:var(--navy)}
+.doc{margin-top:12px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.doc p:first-child{margin-top:0}
+.steps{list-style:none;padding:0!important;counter-reset:s}
+.steps>li{counter-increment:s;margin-top:32px;padding:20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.steps>li>h3{margin:0}
+.steps>li>h3::before{content:counter(s) ". "}
+.shot{display:inline-block;width:min(46%,260px);margin:16px 10px 0 0;vertical-align:top}
+.shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:14px}
+.shot figcaption{margin-top:6px;font-size:13px;line-height:1.5;color:var(--sub)}
+.demo{margin:16px 0 0;max-width:300px}
+.demo video{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);background:#fff}
+.sample{display:block;width:100%;height:auto;margin-top:16px;border-radius:14px;background:#000}
+.note{font-size:14px}
+.raw{margin-top:14px}
+.raw summary{cursor:pointer;font-weight:600;color:var(--navy)}
+.code{margin:12px 0 0;padding:16px;overflow-x:auto;background:var(--navy);color:#fff;border-radius:12px;font:14px/1.7 var(--f-mono);white-space:pre-wrap;overflow-wrap:anywhere}
+.facts{display:grid;grid-template-columns:8em 1fr;gap:8px 12px;margin:16px 0 0;font-size:15px}
+.facts dt{font-weight:600;color:var(--navy)}
+.facts dd{margin:0}
+.cards{display:grid;gap:14px;margin:28px 0 0}
+.card{display:block;padding:20px 22px;background:var(--card);border:1px solid var(--line);border-radius:14px;text-decoration:none;color:var(--text)}
+.card strong{display:block;color:var(--navy);font-size:18px}
+.card span{display:block;margin-top:6px;font-size:15px}
+.cta{margin:56px 0 0;padding:28px 22px;background:var(--navy);color:#fff;border-radius:18px}
+.cta h2{margin:0;font-size:22px;line-height:1.4}
+.cta p{margin:8px 0 0;color:rgba(255,255,255,.85);font-size:15px}
+.cta .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px}
+.btn-solid{background:#fff;color:var(--navy)}
+.btn-line{color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)}
+footer{margin-top:64px;padding:28px 0 40px;border-top:1px solid var(--line);font-size:13px;color:var(--sub)}
+footer ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 16px}
+footer a{color:var(--sub)}
+footer p{margin:12px 0 0}
+@media (max-width:560px){.shot{width:calc(50% - 8px);margin-right:6px}.shot.wide{width:100%;max-width:320px;margin-right:0}.steps>li{padding:16px}.facts{grid-template-columns:1fr}.facts dd{margin-bottom:8px}.compare{font-size:14px}.compare th,.compare td{padding:10px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/"><img src="/img/appicon.png" alt="" width="28" height="28">Texter</a>
+  <nav aria-label="メイン"><ul><li><a href="/guides/">活用ガイド</a></li><li><a href="/faq/">よくある質問</a></li></ul></nav>
+</div></header>
+<main id="main" class="wrap">
+<nav aria-label="パンくずリスト"><ol class="crumbs"><li><a href="/">Texter</a></li><li><a href="/guides/">活用ガイド</a></li><li aria-current="page">動画から字幕を作成する方法</li></ol></nav>
+<h1>動画から字幕を作成する方法</h1>
+<p class="lead">動画の音声を文字起こしして、時刻つきの字幕ファイル（SRT）にすると、YouTubeなどに読み込めます。このページでは、15秒の動画を実際に処理した結果と、公開前に確認する点を説明します。</p>
+<p class="meta">検証日 <time datetime="2026-10-31">2026-10-31</time></p>
+<nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul><li><a href="#summary">結論</a></li><li><a href="#result">完成例: 実際のSRTと再生結果</a></li><li><a href="#steps">Texterで作る手順</a></li><li><a href="#youtube">YouTubeにSRTを読み込む</a></li><li><a href="#check">公開前に確認する3つの点</a></li><li><a href="#notes">できないこと</a></li><li><a href="#data">字幕を映像に入れたいときと、データの扱い</a></li><li><a href="#method">検証の条件</a></li></ul></nav>
+<section class="sec" id="summary" aria-labelledby="summary-h"><h2 id="summary-h">結論</h2>
+      <p>字幕の作り方は、使い道で選びます。YouTubeだけで公開するなら、まずYouTubeの自動字幕を確かめる方法があります。字幕ファイルを手元に残したいときや、ほかのサービスでも使いたいときは、SRTを作ります。</p>
+      <p>SRTは、番号、表示する時刻、字幕の文字だけでできたテキストファイルです。YouTubeヘルプでも、<a href="https://support.google.com/youtube/answer/2734698?hl=ja" target="_blank" rel="noopener noreferrer">対応形式の1つ</a>として案内されています。</p></section>
+<section class="sec" id="result" aria-labelledby="result-h"><h2 id="result-h">完成例: 実際のSRTと再生結果</h2>
+      <p>下の動画の字幕は、Texterが書き出したSRTをそのまま表示しています（ブラウザで表示するためにVTT形式へ変換しました）。字幕はプレーヤーの「字幕」ボタンで切り替えられます。題材の動画は、説明のためにAIで生成した架空の人物の映像です。</p>
+      <video class="sample" controls playsinline preload="metadata" poster="/assets/guides/video-subtitles/sample-poster.webp" width="960" height="540"><source src="/assets/guides/video-subtitles/sample.mp4" type="video/mp4"><track kind="captions" src="/assets/guides/video-subtitles/sample.vtt" srclang="ja" label="日本語" default></video>
+      <p class="note">書き出されたファイル: <a href="/assets/guides/video-subtitles/sample.srt" download>sample.srt（297バイト）</a></p>
+      <pre class="code"><code>1
+00:00:00,000 --&gt; 00:00:06,000
+こんにちは。今日は、5分でできる机の片付けを紹介します。
+
+2
+00:00:06,000 --&gt; 00:00:10,000
+まず、いらない紙を1か所に集めます。
+
+3
+00:00:10,000 --&gt; 00:00:15,060
+次に、よく使う文房具だけを手前に置きます。</code></pre></section>
+<section class="sec" id="steps" aria-labelledby="steps-h"><h2 id="steps-h">Texterで作る手順</h2>
+      <div class="demo"><video controls muted playsinline preload="none" poster="/assets/guides/video-subtitles/poster.webp" width="540" height="1308" aria-label="動画ファイルから字幕（SRT）を書き出す操作"><source src="/assets/guides/video-subtitles/demo.mp4" type="video/mp4"></video></div>
+      <ol class="steps">
+        <li><h3>動画ファイルを取り込む</h3><p>「設定」タブの「ファイルをインポート」で「動画をインポート」を選び、「ファイル」アプリにある動画を指定します。写真アプリの動画は、先に「ファイル」へ保存します。</p><figure class="shot"><a href="/assets/guides/video-subtitles/01-import.webp"><img src="/assets/guides/video-subtitles/01-import.webp" alt="「ファイルをインポート」画面。「動画をインポート」の項目がある" width="600" height="746" loading="lazy" decoding="async"></a><figcaption>「動画をインポート」を選ぶ</figcaption></figure><figure class="shot"><a href="/assets/guides/video-subtitles/02-pick.webp"><img src="/assets/guides/video-subtitles/02-pick.webp" alt="ファイルの選択画面に動画が1本表示されている" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>動画を指定する</figcaption></figure></li>
+        <li><h3>処理方法を選ぶ</h3><p>「動画として保存」か「音声のみ抽出」を選びます。今回は「動画として保存」を選びました。無料版では、処理の前に広告が表示される場合があります。今回の環境では表示されず、15秒の動画の文字起こしは約8秒で終わりました。</p><figure class="shot"><a href="/assets/guides/video-subtitles/03-option.webp"><img src="/assets/guides/video-subtitles/03-option.webp" alt="動画の処理方法を選択するダイアログ" width="600" height="1024" loading="lazy" decoding="async"></a><figcaption>処理方法の選択</figcaption></figure></li>
+        <li><h3>文字を確認する</h3><p>ノートを開いて、文字起こしの結果を読みます。字幕の文字になるので、誤字と表記をここで確かめます。「センテンス分割」がオフのときは、本文を編集しても字幕に反映されないという警告が出ます。直す場合は、書き出したSRTを直接編集するのが確実です。</p><figure class="shot"><a href="/assets/guides/video-subtitles/04-note.webp"><img src="/assets/guides/video-subtitles/04-note.webp" alt="ノート画面に、動画の話を文字にした3文が表示されている" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>文字起こしの結果</figcaption></figure></li>
+        <li><h3>SRTを書き出す</h3><p>「共有」から「字幕(SRT)ファイルを共有」を選びます。共有シートで、保存先や送り先を指定します。</p><figure class="shot"><a href="/assets/guides/video-subtitles/05-menu.webp"><img src="/assets/guides/video-subtitles/05-menu.webp" alt="共有メニュー。字幕(SRT)ファイルを共有の項目がある" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>共有メニュー</figcaption></figure><figure class="shot"><a href="/assets/guides/video-subtitles/06-sheet.webp"><img src="/assets/guides/video-subtitles/06-sheet.webp" alt="SRTファイルの共有シート。ファイルに保存などの項目が並ぶ" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>共有シート</figcaption></figure></li>
+      </ol></section>
+<section class="sec" id="youtube" aria-labelledby="youtube-h"><h2 id="youtube-h">YouTubeにSRTを読み込む</h2>
+      <p><a href="https://support.google.com/youtube/answer/2734796?hl=ja" target="_blank" rel="noopener noreferrer">YouTubeヘルプ</a>では、次の順に案内されています。手順はYouTube Studioのウェブ版のものです。この検証では、YouTubeへの実際のアップロードまでは行っていません。</p>
+      <ol><li>YouTube Studioにログインし、左のメニューの「字幕」を開く</li><li>対象の動画を選び、必要なら「言語を追加」で言語を追加する</li><li>「作成」を押し、「ファイルをアップロード」を選ぶ</li><li>SRTファイルを指定して、「保存」を押す</li></ol><p>メニューの名前は変わる場合があります。ご利用の画面と違うときは、上のヘルプを確認してください。</p></section>
+<section class="sec" id="check" aria-labelledby="check-h"><h2 id="check-h">公開前に確認する3つの点</h2>
+      <h3>1. 字幕が出るタイミング</h3>
+      <p>今回の動画で無音の区間を測ると、3つの字幕はどれも、話し始めより約0.2〜0.5秒早く表示されました。口の動きと合わせたい動画では、再生して確かめます。</p>
+      <h3>2. 数字と言葉の表記</h3>
+      <p>台本の「五分」は「5分」に、「一か所」は「1か所」に変わりました。今回はこの表記の違いのほかに、文字の誤りはありませんでした。名前や専門用語を話す動画は、この結果よりも誤りが増える可能性があるので、必ず読み直します。</p>
+      <h3>3. 1つの字幕の長さ</h3>
+      <p>1つの字幕には1〜2文が入り、最も長い字幕は句読点を含めて28文字でした。スマートフォンで見られる動画では、長い字幕は文を切って2つに分けると読みやすくなります。SRTはテキストファイルなので、メモアプリやテキストエディタで直せます。時刻の形式は変えず、文字コードはUTF-8のまま保存します。</p></section>
+<section class="sec" id="notes" aria-labelledby="notes-h"><h2 id="notes-h">できないこと</h2>
+      <ul>
+        <li>YouTube、TikTokなどの動画URLからは取り込めません。手元の動画ファイルか、Googleドライブ、Dropboxなどの共有リンクを使います。共有リンクからのSRTの書き出しは、今回検証していません。</li>
+        <li>書き出しの形式はSRTです。VTTで必要なときは、別のツールで変換します。</li>
+        <li>Zoomの録画リンクは直接取り込めません。録画ファイルをダウンロードしてから取り込みます。</li>
+        <li>この手順はiPhoneのSimulatorで確認しました。ほかの端末では画面が異なる場合があります。</li>
+      </ul></section>
+<section class="sec" id="data" aria-labelledby="data-h"><h2 id="data-h">字幕を映像に入れたいときと、データの扱い</h2>
+      <p>字幕を映像に焼き込んだ動画を作りたい読者もいると思います。Texterには字幕付きの動画を書き出す機能もありますが、この記事ではその手順を検証していないため、SRTの作り方だけを説明しています。</p>
+      <p>文字起こしは、既定のWhisperではクラウドで処理するため、音声を外部のサービスに送信します。「音声認識サービスを選択」で、iOS 26以降なら端末内で処理する方式も選べますが、サービスによってはSRTの項目が表示されない場合があります。無料版には時間と回数の上限があります。詳しくは<a href="/faq/#data-sent">データの扱い</a>と<a href="/faq/#price">料金と上限</a>をご確認ください。</p></section>
+<section class="sec" id="method" aria-labelledby="method-h"><h2 id="method-h">検証の条件</h2>
+      <dl class="facts">
+        <dt>検証日</dt><dd>2026-10-31</dd>
+        <dt>環境</dt><dd>iPhone 17 ProのSimulator（iOS 26.5）で動かした開発版のTexter（バージョン2.11.68）。開発用の表示は、画像と動画でぼかすか隠しています。初回の説明画面は事前に飛ばしました。製品版の見え方とは細部が異なる場合があります。</dd>
+        <dt>動画</dt><dd>AI動画生成サービスRenoiseで作った15秒の日本語の動画。雑音はありません。音声認識はアプリの既定のWhisperです。実際の撮影動画の精度を示すものではありません。</dd>
+        <dt>時刻の測定</dt><dd>ffmpegのsilencedetect（-35dB、0.25秒以上）で無音の区間を検出し、SRTの時刻と比べました。</dd>
+        <dt>AIの使用</dt><dd>記事の下書きと収録の操作にはAIを使っています。SRTはアプリが生成したものをそのまま掲載しました。</dd>
+      </dl></section>
+<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで試す</h2><p>Texterは、音声や動画の文字起こしと字幕（SRT）の書き出しができるアプリです。無料で始められます。この手順はiPhone版のものです。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304" target="_blank" rel="noopener noreferrer" onclick="gtag('event','app_store_click',{location:'guide-video-subtitles',store:'app_store'})">App Storeで見る</a><a class="btn btn-line" href="https://play.google.com/store/apps/details?id=com.matz.Texter" target="_blank" rel="noopener noreferrer" onclick="gtag('event','app_store_click',{location:'guide-video-subtitles',store:'google_play'})">Google Playで見る</a></div></section>
+</main>
+<footer><div class="wrap">
+  <ul><li><a href="/">ホーム</a></li><li><a href="/guides/">活用ガイド</a></li><li><a href="/faq/">よくある質問</a></li><li><a href="/terms-of-service/">利用規約</a></li><li><a href="/privacy-policy/">プライバシーポリシー</a></li><li><a href="/tokushoho/">特定商取引法に基づく表記</a></li></ul>
+  <p>© 2026 Texter app - Kyoto, Japan.</p>
+</div></footer>
+</body>
+</html>
