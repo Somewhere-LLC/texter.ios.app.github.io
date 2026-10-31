@@ -2,7 +2,8 @@
 // Every answer was checked against the iOS app as of 2026-10-04.
 // Values that can change without an app update (trial length, betas) are left out on purpose.
 // Answers may use only <a>, <b>, <strong>, <br>, <ul>, <ol>, <li>, <p>.
-const updated = '2026-10-05';
+const howto = require('./faq-howto-data');
+const updated = '2026-11-01';
 
 const ja = {
   path: '/faq/',
@@ -14,7 +15,7 @@ const ja = {
   title: 'よくある質問 | Texter - AI文字起こし・議事録アプリ',
   description: 'Texterの対応端末・料金・対応言語・話者識別・Apple Watch録音・ファイル取り込み・データの扱いなど、よくある質問への回答をまとめています。',
   h1: 'よくある質問',
-  intro: 'Texter（AI文字起こし・議事録アプリ）について、よくいただく質問への回答です。画面ごとの操作手順は<a href="https://texter-app.notion.site/faq-ja" target="_blank" rel="noopener noreferrer">使い方ガイド（Notion）</a>にまとめています。',
+  intro: 'Texter（AI文字起こし・議事録アプリ）について、よくいただく質問への回答です。機能の説明に続けて、画面ごとの操作手順も載せています。手順はiPhone版のものです。',
   updatedLabel: '最終更新',
   tocTitle: '目次',
   crumb: 'よくある質問',
@@ -30,7 +31,6 @@ const ja = {
   ctaBody: 'Texterは無料で始められます。iPhone / iPad / Apple Watch / Mac (Apple Silicon) / Android対応。',
   footer: [
     { label: 'ホーム', href: '/' },
-    { label: '使い方ガイド', href: 'https://texter-app.notion.site/faq-ja', ext: true },
     { label: 'お問い合わせ', href: 'mailto:texter.work.app@gmail.com' },
     { label: '利用規約', href: '/terms-of-service/' },
     { label: 'プライバシーポリシー', href: '/privacy-policy/' },
@@ -92,6 +92,7 @@ const ja = {
           a: '<p>要約・AIチャットなどのAI機能では、ノートのテキストをOpenAIのAPIに送信して回答を生成します。OpenAI APIのデータ利用ポリシーにもとづき、送信したデータはOpenAIのモデル学習には使われません。</p>' },
       ],
     },
+    ...howto.ja,
   ],
 };
 
@@ -105,7 +106,7 @@ const en = {
   title: 'FAQ | Texter - AI transcription & meeting notes app',
   description: 'Answers about Texter: supported devices, pricing, languages, speaker labels, Apple Watch recording, file import, and how your data is handled.',
   h1: 'Frequently asked questions',
-  intro: 'Answers to common questions about Texter, the AI transcription and meeting notes app. For step-by-step instructions, see the <a href="https://texter-app.notion.site/faq-en" target="_blank" rel="noopener noreferrer">user guide (Notion)</a>.',
+  intro: 'Answers to common questions about Texter, the AI transcription and meeting notes app. Step-by-step instructions follow the feature overview. The steps describe the iPhone app.',
   updatedLabel: 'Last updated',
   tocTitle: 'Contents',
   crumb: 'FAQ',
@@ -121,7 +122,6 @@ const en = {
   ctaBody: 'Texter is free to start. For iPhone / iPad / Apple Watch / Mac (Apple Silicon) / Android.',
   footer: [
     { label: 'Home', href: '/en/' },
-    { label: 'User guide', href: 'https://texter-app.notion.site/faq-en', ext: true },
     { label: 'Contact', href: 'mailto:texter.work.app@gmail.com' },
     { label: 'Terms of Service', href: '/en/terms-of-service/' },
     { label: 'Privacy Policy', href: '/en/privacy-policy/' },
@@ -182,6 +182,7 @@ const en = {
           a: '<p>AI features such as summaries and AI chat send the note text to the OpenAI API to generate a response. Under the OpenAI API data usage policy, that data is not used to train OpenAI’s models.</p>' },
       ],
     },
+    ...howto.en,
   ],
 };
 

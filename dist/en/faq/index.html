@@ -49,7 +49,7 @@
       "url": "https://texter.work/en/faq/",
       "name": "FAQ | Texter - AI transcription & meeting notes app",
       "inLanguage": "en",
-      "dateModified": "2026-10-05",
+      "dateModified": "2026-11-01",
       "isPartOf": {
         "@id": "https://texter.work/#website"
       },
@@ -211,6 +211,278 @@
             "@type": "Answer",
             "text": "\u003cp>AI features such as summaries and AI chat send the note text to the OpenAI API to generate a response. Under the OpenAI API data usage policy, that data is not used to train OpenAI’s models.\u003c/p>"
           }
+        },
+        {
+          "@type": "Question",
+          "name": "What do the tabs at the bottom of the screen do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cul>\u003cli>List: browse and search notes, manage folders\u003c/li>\u003cli>Voice: live transcription, and live translation from the translate icon at the top right\u003c/li>\u003cli>Image: transcribe images, videos, and PDFs\u003c/li>\u003cli>Settings: file import, voice input and transcription, text and display, app settings, help\u003c/li>\u003c/ul>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which settings should I check first?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>If you use technical terms or company names, register them under Settings → Voice Input &amp; Transcription → Word Registration (Technical Terms, etc.). For translation, choose the language and service in Translation Settings on the same screen.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the main limits on the free plan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cul>\u003cli>Real-time transcription: 3 minutes per session, 15 minutes a day\u003c/li>\u003cli>File transcription with Whisper: a monthly limit applies\u003c/li>\u003cli>Summaries: 3 a day\u003c/li>\u003cli>AI chat: 3 a day\u003c/li>\u003cli>Image transcription: 5 a day\u003c/li>\u003cli>Word cloud: 5 a day\u003c/li>\u003c/ul>\u003cp>Amazon Transcribe is available with Premium. Limits can change, so check the plan comparison in the app for the latest details.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I transcribe from the microphone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>On the Voice tab, tap the microphone, speak, then stop. To save automatically, turn on Save Real-Time Transcription Results under Settings → Voice Input &amp; Transcription.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I improve accuracy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Speak close to the microphone and reduce background noise. Add names and terms in Word Registration (Technical Terms, etc.), with the word and its reading separated by a half-width space. Audio Recording Settings also has a noise reduction option.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Texter clean up punctuation and filler words?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Turn on AI Text Formatting in Settings. Texter then adds punctuation and paragraphs after recording. This option does not appear on every device.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A permission error stops me from recording.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Open iPhone Settings → Privacy &amp; Security → Microphone and allow Texter. Allow Speech Recognition in the same way.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I start live translation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>On the Voice tab, tap the translate icon at the top right, choose the languages, and speak. The service can be DeepL, Google online, or Google offline. Change it under Settings → Voice Input &amp; Transcription → Translation Settings.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I keep transcribing while I use another app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Yes. Switch the live transcription screen to Picture in Picture, and it continues when you change apps. The free plan time limit still applies.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use voice input in other apps?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Yes. Add the Texter keyboard in iPhone Settings and turn on Allow Full Access. It does not work in password fields. The free plan allows 3 minutes a day.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where do I import audio and video files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Open Settings → Import Files, then choose Import Audio or Import Video. For a video, choose whether to keep the video or extract the audio only.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I choose the transcription service?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Go to Settings → Import Files → Choose Your Preferred Speech Recognition Service.\u003c/p>\u003cul>\u003cli>Default: uses Apple speech recognition\u003c/li>\u003cli>SpeechAnalyzer: runs on the device (iOS 26 or later)\u003c/li>\u003cli>Whisper(OpenAI): runs on a server\u003c/li>\u003cli>Amazon Transcribe: runs on a server (Premium)\u003c/li>\u003c/ul>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "I get an error when I import a file.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>The file may be over the limit. With Premium, the limits are 1 GB and 2 hours for Whisper, or 2 GB and 4 hours for Amazon Transcribe. The free plan has a monthly limit and a shorter length limit. Try splitting the file or converting it to a lighter format.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "My Japanese audio is transcribed in English.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Go to Settings → Import Files → Choose Your Preferred Speech Recognition Service, set the Whisper Recognition Language, and import again. If the problem continues, contact us and tell us about the audio quality and how you imported it.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I import from a cloud share link?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Yes. Use Settings → Import Files → Import from link for Google Drive, Dropbox, and OneDrive share links. OneDrive requires signing in with a Microsoft account. Zoom recording links cannot be imported directly, so download the recording first. URLs from video services such as YouTube are not supported.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is silence removal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>This Premium feature removes silent parts when you import a file. Set it with Auto Remove Silence under Settings → Import Files. Cut Strength can be Weak, Standard, or Strong.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I extract text from an image or PDF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>On the Image tab, choose Choose from Camera or Photo Library, Import Image Files (PDF included), or Select from Screenshots. Keep the result in a note with the save button.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Text in my image is not read correctly.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Retake the photo in good light without tilt or shadows. Choose the language under Settings → Voice Input &amp; Transcription → Image-to-Text Recognition Languages. For a PDF, use a high-resolution original.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I hide video subtitles?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Turn off Show Subtitles under Settings → Text &amp; Display → Text • Highlight • Subtitles • Split.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I organize notes in folders?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Create folders in the Folder view of the List tab, and use Move to Folder for a note. Sort by created date, last updated, or title.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I share a note?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Open the menu at the top right of a note, then use Export to choose Share Text, Share as PDF, or Share Subtitle (SRT) File. Create Public Link shares the note with a URL. SRT is available only for notes with subtitle data.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I set a reminder?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Tap the bell icon at the top of a note. Repeat options include once, daily, weekly, and every month, and More repeat options... offers shorter intervals. Snooze can be 1 or 5 minutes.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where do I open Topic Overview?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Open the menu at the top right of a note, then choose Topic Overview under Visualization. It groups a long note by topic. Word Cloud is in the same menu.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I use AI chat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Tap the chat icon at the bottom right of a note and ask about its content.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Texter summarize automatically after recording?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Set Auto Summary under Settings → Text &amp; Display → Summary &amp; Text Conversion Settings.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Texter name notes automatically?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Yes, on iOS 26 or later on devices where the on-device AI model is available.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I post to Slack?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Enter your webhook URL under Settings → App Settings → Slack Integration Settings, then send a test message.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where do I change text size and alignment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Go to Settings → Text &amp; Display → Text • Highlight • Subtitles • Split.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What changes with Premium?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Premium raises the time and usage limits and removes ads. It also adds speaker labels, Amazon Transcribe, and silence removal. Check the plan comparison in the app for what each plan includes.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Premium is not active after I changed phones.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Sign in with the Apple ID you used to buy, then try Restore Purchase in the app. Also check your App Store purchase history.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What about billing and refunds?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>App Store charges, receipts, and refunds follow Apple’s rules. Contact Apple Support about an unintended charge. A free trial starts charging automatically when it ends.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I buy extra usage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Yes, with Add More Usage. Check the purchase screen in the app for what is available.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens to my notes if I delete the app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Deleting the app also removes the notes on your device. Export anything you need first.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I contact support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Go to Settings → Help &amp; Support → Contact Us. It helps to include the feature name, the steps to reproduce the problem, and your device and OS version. You can also email \u003ca href=\"mailto:texter.work.app@gmail.com\">texter.work.app@gmail.com\u003c/a>.\u003c/p>"
+          }
         }
       ]
     },
@@ -317,9 +589,9 @@ footer p{margin:12px 0 0}
 <main id="main" class="wrap">
   <nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="/en/">Texter</a></li><li aria-current="page">FAQ</li></ol></nav>
   <h1>Frequently asked questions</h1>
-  <p class="intro">Answers to common questions about Texter, the AI transcription and meeting notes app. For step-by-step instructions, see the <a href="https://texter-app.notion.site/faq-en" target="_blank" rel="noopener noreferrer">user guide (Notion)</a>.</p>
-  <p class="meta">Last updated <time datetime="2026-10-05">2026-10-05</time></p>
-  <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">Contents</h2><ul><li><a href="#about">About Texter</a></li><li><a href="#transcription">Transcription</a></li><li><a href="#notes">Summaries, tasks, and export</a></li><li><a href="#privacy">Privacy and your data</a></li></ul></nav>
+  <p class="intro">Answers to common questions about Texter, the AI transcription and meeting notes app. Step-by-step instructions follow the feature overview. The steps describe the iPhone app.</p>
+  <p class="meta">Last updated <time datetime="2026-11-01">2026-11-01</time></p>
+  <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">Contents</h2><ul><li><a href="#about">About Texter</a></li><li><a href="#transcription">Transcription</a></li><li><a href="#notes">Summaries, tasks, and export</a></li><li><a href="#privacy">Privacy and your data</a></li><li><a href="#start">Getting started</a></li><li><a href="#voice">Recording and live translation</a></li><li><a href="#files">Importing files and images</a></li><li><a href="#manage">Notes and settings</a></li><li><a href="#premium">Premium and billing</a></li><li><a href="#support">Troubleshooting and contact</a></li></ul></nav>
 
     <section class="sec" id="about" aria-labelledby="about-h">
       <h2 id="about-h">About Texter</h2>
@@ -412,6 +684,166 @@ footer p{margin:12px 0 0}
         <div class="a"><p>AI features such as summaries and AI chat send the note text to the OpenAI API to generate a response. Under the OpenAI API data usage policy, that data is not used to train OpenAI’s models.</p></div>
       </article>
     </section>
+
+    <section class="sec" id="start" aria-labelledby="start-h">
+      <h2 id="start-h">Getting started</h2>
+      <article class="qa" id="tabs">
+        <h3>What do the tabs at the bottom of the screen do?</h3>
+        <div class="a"><ul><li>List: browse and search notes, manage folders</li><li>Voice: live transcription, and live translation from the translate icon at the top right</li><li>Image: transcribe images, videos, and PDFs</li><li>Settings: file import, voice input and transcription, text and display, app settings, help</li></ul></div>
+      </article>
+      <article class="qa" id="first-setup">
+        <h3>Which settings should I check first?</h3>
+        <div class="a"><p>If you use technical terms or company names, register them under Settings → Voice Input &amp; Transcription → Word Registration (Technical Terms, etc.). For translation, choose the language and service in Translation Settings on the same screen.</p></div>
+      </article>
+      <article class="qa" id="free-limits">
+        <h3>What are the main limits on the free plan?</h3>
+        <div class="a"><ul><li>Real-time transcription: 3 minutes per session, 15 minutes a day</li><li>File transcription with Whisper: a monthly limit applies</li><li>Summaries: 3 a day</li><li>AI chat: 3 a day</li><li>Image transcription: 5 a day</li><li>Word cloud: 5 a day</li></ul><p>Amazon Transcribe is available with Premium. Limits can change, so check the plan comparison in the app for the latest details.</p></div>
+      </article>
+    </section>
+
+    <section class="sec" id="voice" aria-labelledby="voice-h">
+      <h2 id="voice-h">Recording and live translation</h2>
+      <article class="qa" id="voice-how">
+        <h3>How do I transcribe from the microphone?</h3>
+        <div class="a"><p>On the Voice tab, tap the microphone, speak, then stop. To save automatically, turn on Save Real-Time Transcription Results under Settings → Voice Input &amp; Transcription.</p></div>
+      </article>
+      <article class="qa" id="voice-accuracy">
+        <h3>How can I improve accuracy?</h3>
+        <div class="a"><p>Speak close to the microphone and reduce background noise. Add names and terms in Word Registration (Technical Terms, etc.), with the word and its reading separated by a half-width space. Audio Recording Settings also has a noise reduction option.</p></div>
+      </article>
+      <article class="qa" id="voice-format">
+        <h3>Can Texter clean up punctuation and filler words?</h3>
+        <div class="a"><p>Turn on AI Text Formatting in Settings. Texter then adds punctuation and paragraphs after recording. This option does not appear on every device.</p></div>
+      </article>
+      <article class="qa" id="voice-permission">
+        <h3>A permission error stops me from recording.</h3>
+        <div class="a"><p>Open iPhone Settings → Privacy &amp; Security → Microphone and allow Texter. Allow Speech Recognition in the same way.</p></div>
+      </article>
+      <article class="qa" id="translate-how">
+        <h3>How do I start live translation?</h3>
+        <div class="a"><p>On the Voice tab, tap the translate icon at the top right, choose the languages, and speak. The service can be DeepL, Google online, or Google offline. Change it under Settings → Voice Input &amp; Transcription → Translation Settings.</p></div>
+      </article>
+      <article class="qa" id="pip">
+        <h3>Can I keep transcribing while I use another app?</h3>
+        <div class="a"><p>Yes. Switch the live transcription screen to Picture in Picture, and it continues when you change apps. The free plan time limit still applies.</p></div>
+      </article>
+      <article class="qa" id="keyboard">
+        <h3>Can I use voice input in other apps?</h3>
+        <div class="a"><p>Yes. Add the Texter keyboard in iPhone Settings and turn on Allow Full Access. It does not work in password fields. The free plan allows 3 minutes a day.</p></div>
+      </article>
+    </section>
+
+    <section class="sec" id="files" aria-labelledby="files-h">
+      <h2 id="files-h">Importing files and images</h2>
+      <article class="qa" id="import-how">
+        <h3>Where do I import audio and video files?</h3>
+        <div class="a"><p>Open Settings → Import Files, then choose Import Audio or Import Video. For a video, choose whether to keep the video or extract the audio only.</p></div>
+      </article>
+      <article class="qa" id="import-service">
+        <h3>How do I choose the transcription service?</h3>
+        <div class="a"><p>Go to Settings → Import Files → Choose Your Preferred Speech Recognition Service.</p><ul><li>Default: uses Apple speech recognition</li><li>SpeechAnalyzer: runs on the device (iOS 26 or later)</li><li>Whisper(OpenAI): runs on a server</li><li>Amazon Transcribe: runs on a server (Premium)</li></ul></div>
+      </article>
+      <article class="qa" id="import-limit">
+        <h3>I get an error when I import a file.</h3>
+        <div class="a"><p>The file may be over the limit. With Premium, the limits are 1 GB and 2 hours for Whisper, or 2 GB and 4 hours for Amazon Transcribe. The free plan has a monthly limit and a shorter length limit. Try splitting the file or converting it to a lighter format.</p></div>
+      </article>
+      <article class="qa" id="wrong-language">
+        <h3>My Japanese audio is transcribed in English.</h3>
+        <div class="a"><p>Go to Settings → Import Files → Choose Your Preferred Speech Recognition Service, set the Whisper Recognition Language, and import again. If the problem continues, contact us and tell us about the audio quality and how you imported it.</p></div>
+      </article>
+      <article class="qa" id="cloud-link">
+        <h3>Can I import from a cloud share link?</h3>
+        <div class="a"><p>Yes. Use Settings → Import Files → Import from link for Google Drive, Dropbox, and OneDrive share links. OneDrive requires signing in with a Microsoft account. Zoom recording links cannot be imported directly, so download the recording first. URLs from video services such as YouTube are not supported.</p></div>
+      </article>
+      <article class="qa" id="silence-cut">
+        <h3>What is silence removal?</h3>
+        <div class="a"><p>This Premium feature removes silent parts when you import a file. Set it with Auto Remove Silence under Settings → Import Files. Cut Strength can be Weak, Standard, or Strong.</p></div>
+      </article>
+      <article class="qa" id="ocr-how">
+        <h3>How do I extract text from an image or PDF?</h3>
+        <div class="a"><p>On the Image tab, choose Choose from Camera or Photo Library, Import Image Files (PDF included), or Select from Screenshots. Keep the result in a note with the save button.</p></div>
+      </article>
+      <article class="qa" id="ocr-accuracy">
+        <h3>Text in my image is not read correctly.</h3>
+        <div class="a"><p>Retake the photo in good light without tilt or shadows. Choose the language under Settings → Voice Input &amp; Transcription → Image-to-Text Recognition Languages. For a PDF, use a high-resolution original.</p></div>
+      </article>
+      <article class="qa" id="subtitle-off">
+        <h3>Can I hide video subtitles?</h3>
+        <div class="a"><p>Turn off Show Subtitles under Settings → Text &amp; Display → Text • Highlight • Subtitles • Split.</p></div>
+      </article>
+    </section>
+
+    <section class="sec" id="manage" aria-labelledby="manage-h">
+      <h2 id="manage-h">Notes and settings</h2>
+      <article class="qa" id="folders">
+        <h3>Can I organize notes in folders?</h3>
+        <div class="a"><p>Create folders in the Folder view of the List tab, and use Move to Folder for a note. Sort by created date, last updated, or title.</p></div>
+      </article>
+      <article class="qa" id="share-note">
+        <h3>How do I share a note?</h3>
+        <div class="a"><p>Open the menu at the top right of a note, then use Export to choose Share Text, Share as PDF, or Share Subtitle (SRT) File. Create Public Link shares the note with a URL. SRT is available only for notes with subtitle data.</p></div>
+      </article>
+      <article class="qa" id="reminder">
+        <h3>How do I set a reminder?</h3>
+        <div class="a"><p>Tap the bell icon at the top of a note. Repeat options include once, daily, weekly, and every month, and More repeat options... offers shorter intervals. Snooze can be 1 or 5 minutes.</p></div>
+      </article>
+      <article class="qa" id="topic-map">
+        <h3>Where do I open Topic Overview?</h3>
+        <div class="a"><p>Open the menu at the top right of a note, then choose Topic Overview under Visualization. It groups a long note by topic. Word Cloud is in the same menu.</p></div>
+      </article>
+      <article class="qa" id="ai-chat-how">
+        <h3>How do I use AI chat?</h3>
+        <div class="a"><p>Tap the chat icon at the bottom right of a note and ask about its content.</p></div>
+      </article>
+      <article class="qa" id="auto-summary">
+        <h3>Can Texter summarize automatically after recording?</h3>
+        <div class="a"><p>Set Auto Summary under Settings → Text &amp; Display → Summary &amp; Text Conversion Settings.</p></div>
+      </article>
+      <article class="qa" id="ai-title">
+        <h3>Can Texter name notes automatically?</h3>
+        <div class="a"><p>Yes, on iOS 26 or later on devices where the on-device AI model is available.</p></div>
+      </article>
+      <article class="qa" id="slack">
+        <h3>How do I post to Slack?</h3>
+        <div class="a"><p>Enter your webhook URL under Settings → App Settings → Slack Integration Settings, then send a test message.</p></div>
+      </article>
+      <article class="qa" id="display">
+        <h3>Where do I change text size and alignment?</h3>
+        <div class="a"><p>Go to Settings → Text &amp; Display → Text • Highlight • Subtitles • Split.</p></div>
+      </article>
+    </section>
+
+    <section class="sec" id="premium" aria-labelledby="premium-h">
+      <h2 id="premium-h">Premium and billing</h2>
+      <article class="qa" id="premium-what">
+        <h3>What changes with Premium?</h3>
+        <div class="a"><p>Premium raises the time and usage limits and removes ads. It also adds speaker labels, Amazon Transcribe, and silence removal. Check the plan comparison in the app for what each plan includes.</p></div>
+      </article>
+      <article class="qa" id="restore">
+        <h3>Premium is not active after I changed phones.</h3>
+        <div class="a"><p>Sign in with the Apple ID you used to buy, then try Restore Purchase in the app. Also check your App Store purchase history.</p></div>
+      </article>
+      <article class="qa" id="billing">
+        <h3>What about billing and refunds?</h3>
+        <div class="a"><p>App Store charges, receipts, and refunds follow Apple’s rules. Contact Apple Support about an unintended charge. A free trial starts charging automatically when it ends.</p></div>
+      </article>
+      <article class="qa" id="charge">
+        <h3>Can I buy extra usage?</h3>
+        <div class="a"><p>Yes, with Add More Usage. Check the purchase screen in the app for what is available.</p></div>
+      </article>
+    </section>
+
+    <section class="sec" id="support" aria-labelledby="support-h">
+      <h2 id="support-h">Troubleshooting and contact</h2>
+      <article class="qa" id="delete-note">
+        <h3>What happens to my notes if I delete the app?</h3>
+        <div class="a"><p>Deleting the app also removes the notes on your device. Export anything you need first.</p></div>
+      </article>
+      <article class="qa" id="contact">
+        <h3>How do I contact support?</h3>
+        <div class="a"><p>Go to Settings → Help &amp; Support → Contact Us. It helps to include the feature name, the steps to reproduce the problem, and your device and OS version. You can also email <a href="mailto:texter.work.app@gmail.com">texter.work.app@gmail.com</a>.</p></div>
+      </article>
+    </section>
   <section class="cta" aria-labelledby="cta-h">
     <h2 id="cta-h">Just hit record at your next meeting.</h2>
     <p>Texter is free to start. For iPhone / iPad / Apple Watch / Mac (Apple Silicon) / Android.</p>
@@ -423,7 +855,7 @@ footer p{margin:12px 0 0}
 </main>
 <footer>
   <div class="wrap">
-    <ul><li><a href="/en/">Home</a></li><li><a href="https://texter-app.notion.site/faq-en" target="_blank" rel="noopener noreferrer">User guide</a></li><li><a href="mailto:texter.work.app@gmail.com">Contact</a></li><li><a href="/en/terms-of-service/">Terms of Service</a></li><li><a href="/en/privacy-policy/">Privacy Policy</a></li><li><a href="/faq/" hreflang="ja" lang="ja">日本語</a></li></ul>
+    <ul><li><a href="/en/">Home</a></li><li><a href="mailto:texter.work.app@gmail.com">Contact</a></li><li><a href="/en/terms-of-service/">Terms of Service</a></li><li><a href="/en/privacy-policy/">Privacy Policy</a></li><li><a href="/faq/" hreflang="ja" lang="ja">日本語</a></li></ul>
     <p>© 2026 Texter app - Kyoto, Japan.</p>
   </div>
 </footer>
