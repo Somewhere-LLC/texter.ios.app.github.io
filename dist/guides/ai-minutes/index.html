@@ -164,7 +164,7 @@ h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.6rem);line-heigh
 .cta p{margin:8px 0 0;color:rgba(255,255,255,.85);font-size:15px}
 .cta .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
 .cta.inline{margin:32px 0 0;padding:20px 22px}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 20px;text-align:center;line-height:1.4;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px}
 .btn-solid{background:#fff;color:var(--navy)}
 .btn-line{color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)}
 footer{margin-top:64px;padding:28px 0 40px;border-top:1px solid var(--line);font-size:13px;color:var(--sub)}
@@ -240,7 +240,7 @@ footer p{margin:12px 0 0}
         <li><h3>要約を読む</h3><p>ノートを開くと、タイトルと要約が自動で入っています。決定事項と数字を、音声と見比べてください。</p><figure class="shot wide"><a href="/assets/guides/ai-minutes/03-summary.webp"><img src="/assets/guides/ai-minutes/03-summary.webp" alt="自動で作られたタイトルと要約。公開日やクーポンの条件が箇条書きで並ぶ" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>タイトルの「キャンプオン」は誤りです</figcaption></figure></li>
         <li><h3>「やること」を確認する</h3><p>画面を下へスクロールすると、抽出された作業の一覧が表示されます。担当と期限が欠けていないか確かめてください。項目の右のボタンから、リマインダーを設定できます。</p><figure class="shot wide"><a href="/assets/guides/ai-minutes/04-tasks.webp"><img src="/assets/guides/ai-minutes/04-tasks.webp" alt="やることの一覧。写真の確認、メール原稿の作成など4件が並ぶ" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>担当の表示がない項目があります</figcaption></figure></li>
         <li><h3>「内容まとめ」で整理して書き出す</h3><p>本文の上の「内容まとめ」を押すと、話の流れと要点をまとめた文書ができます。今回は約7秒で完成しました。右上の共有ボタンから、Markdown、テキスト、HTML、PDFで書き出せます。</p><figure class="shot"><a href="/assets/guides/ai-minutes/05-doc-top.webp"><img src="/assets/guides/ai-minutes/05-doc-top.webp" alt="内容まとめの上部。やることと、話の流れを示すセクションが並ぶ" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>内容まとめの上部</figcaption></figure><figure class="shot"><a href="/assets/guides/ai-minutes/06-doc-points.webp"><img src="/assets/guides/ai-minutes/06-doc-points.webp" alt="内容まとめの下部。要点5項目とまとめの文章が並ぶ" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>要点とまとめ</figcaption></figure><figure class="shot"><a href="/assets/guides/ai-minutes/07-export.webp"><img src="/assets/guides/ai-minutes/07-export.webp" alt="共有ボタンのメニュー。Markdown、テキスト、HTML、PDFが並ぶ" width="600" height="497" loading="lazy" decoding="async"></a><figcaption>書き出し形式の選択</figcaption></figure></li>
-      </ol></section><aside class="cta inline" aria-label="アプリで試す"><p>無料で始められます。無料版には時間と回数の上限があり、処理の前に広告が表示される場合があります。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-ai-minutes-after-steps&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-ai-minutes-after-steps" data-store="app_store">iPhoneで議事録作成を試す（App Store）</a></div></aside>
+      </ol></section><aside class="cta inline" aria-label="アプリで試す"><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-ai-minutes-after-steps&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-ai-minutes-after-steps" data-store="app_store">iPhoneで議事録作成を試す（App Store）</a></div></aside>
 <section class="sec" id="check" aria-labelledby="check-h"><h2 id="check-h">人が直す3か所</h2>
       <p>手順5で書き出したファイルをメモや文書ツールで開いてください。次の3か所を音声と見比べて直します。</p>
       <h3>1. 聞き間違えた語と、それを含む文</h3>
@@ -287,7 +287,7 @@ footer p{margin:12px 0 0}
   var send=function(name,el){if(window.gtag)gtag('event',name,{location:el.dataset.cta,store:el.dataset.store});};
   var links=document.querySelectorAll('a[data-cta]');
   links.forEach(function(a){
-    a.addEventListener('click',function(){send('app_store_click',a);});
+    a.addEventListener('click',function(){send(a.dataset.store==='google_play'?'google_play_click':'app_store_click',a);});
     if(!('IntersectionObserver' in window))return;
     var seen=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){send('guide_cta_view',a);seen.disconnect();}});},{threshold:.5});
     seen.observe(a);

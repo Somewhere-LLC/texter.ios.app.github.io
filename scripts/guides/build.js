@@ -13,13 +13,13 @@ const appStoreLink = (g, pos) => {
   if (id.length > 40) throw new Error(`campaign token too long: ${id}`);
   return `<a class="btn btn-solid" href="${facts.appStore.ja}?pt=${APP_STORE_PT}&amp;ct=${id}&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="${id}" data-store="app_store">${esc(g.ctaLabel)}（App Store）</a>`;
 };
-const inlineCta = (g, pos) => `<aside class="cta inline" aria-label="アプリで試す"><p>${CONDITIONS}</p><div class="row">${appStoreLink(g, pos)}</div></aside>`;
+const inlineCta = (g, pos) => `<aside class="cta inline" aria-label="アプリで試す">${pos === 'after-result' ? `<p>${CONDITIONS}</p>` : ''}<div class="row">${appStoreLink(g, pos)}</div></aside>`;
 const TRACK = `<script>
 (function(){
   var send=function(name,el){if(window.gtag)gtag('event',name,{location:el.dataset.cta,store:el.dataset.store});};
   var links=document.querySelectorAll('a[data-cta]');
   links.forEach(function(a){
-    a.addEventListener('click',function(){send('app_store_click',a);});
+    a.addEventListener('click',function(){send(a.dataset.store==='google_play'?'google_play_click':'app_store_click',a);});
     if(!('IntersectionObserver' in window))return;
     var seen=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){send('guide_cta_view',a);seen.disconnect();}});},{threshold:.5});
     seen.observe(a);
@@ -92,7 +92,7 @@ h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.6rem);line-heigh
 .cta p{margin:8px 0 0;color:rgba(255,255,255,.85);font-size:15px}
 .cta .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
 .cta.inline{margin:32px 0 0;padding:20px 22px}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 20px;text-align:center;line-height:1.4;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px}
 .btn-solid{background:#fff;color:var(--navy)}
 .btn-line{color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)}
 footer{margin-top:64px;padding:28px 0 40px;border-top:1px solid var(--line);font-size:13px;color:var(--sub)}
