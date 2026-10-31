@@ -1,6 +1,14 @@
 #!/bin/bash
 # Blocks commits whose Japanese pages break the yomiyasu rules. Enable with: git config core.hooksPath .githooks
-if git diff --cached --name-only | grep -qE '\.html$|^scripts/(guides|seo)/|^scripts/check-yomiyasu|^scripts/yomiyasu-baseline'; then
-  python3 "$(git rev-parse --show-toplevel)/scripts/check-yomiyasu.py" || exit 1
+PAGE='\.html$|^scripts/(guides|seo)/|^scripts/check-yomiyasu|^scripts/yomiyasu-baseline'
+staged=$(git diff --cached --name-only | grep -E "$PAGE")
+[ -n "$staged" ] || exit 0
+# The check reads the working tree, so it can only vouch for the commit when the two match.
+partial=$(git diff --name-only | grep -E "$PAGE" | grep -Fx -f <(printf '%s\n' "$staged"))
+if [ -n "$partial" ]; then
+  echo "NG 次のファイルに未ステージの変更があります。ステージするか退避してからコミットしてください。" >&2
+  echo "$partial" >&2
+  exit 1
 fi
+python3 "$(git rev-parse --show-toplevel)/scripts/check-yomiyasu.py" || exit 1
 exit 0

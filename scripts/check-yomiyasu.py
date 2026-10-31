@@ -18,7 +18,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Vendored copy of the yomiyasu skill linter, so a clean checkout can build. Refresh it by copying from the skill.
 LINT = os.path.join(ROOT, "scripts", "vendor", "yomiyasu_lint.py")
 BASELINE = os.path.join(ROOT, "scripts", "yomiyasu-baseline.json")
-BASELINED = ["index.html", "faq/index.html", "privacy-policy/index.html", "terms-of-service/index.html", "tokushoho/index.html", "pdf/texter-for-business.html"]
+SKIP_DIRS = {".git", ".claude", "assets", "dist", "en", "node_modules", "proposals", "scripts", "tasks"}
 
 
 def visible_text(page):
@@ -41,11 +41,26 @@ def generated_pages():
     return json.loads(r.stdout)
 
 
+def japanese_html_files():
+    """Every Japanese page in the repo, so a new page is checked without being listed anywhere."""
+    found = []
+    for folder, dirs, names in os.walk(ROOT):
+        dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
+        for name in names:
+            if name.endswith(".html"):
+                found.append(os.path.relpath(os.path.join(folder, name), ROOT))
+    return found
+
+
 def load_pages():
     generated = generated_pages()
-    pages = {k: v for k, v in generated.items() if k.startswith("guides/")}
-    for rel in BASELINED:
-        pages[rel] = generated.get(rel) or open(os.path.join(ROOT, rel), encoding="utf-8").read()
+    pages = {}
+    for rel in japanese_html_files():
+        page = open(os.path.join(ROOT, rel), encoding="utf-8").read()
+        if re.search(r"<html[^>]*\blang=[\"']ja", page):
+            pages[rel] = page
+    # The generator's output wins, so an edit to data.js is checked before anyone runs the build.
+    pages.update({k: v for k, v in generated.items() if k in pages or k.startswith("guides/")})
     return pages
 
 
@@ -70,6 +85,11 @@ def self_test(pages, baseline):
         caught = any(e.startswith(rel) for e in check(broken, baseline))
         print(f"{'caught' if caught else 'MISSED'}: {name}")
         missed += not caught
+    added = dict(pages)
+    added["support/index.html"] = "<html lang=\"ja\"><body>" + slop + "</body></html>"
+    caught = any(e.startswith("support/index.html") for e in check(added, baseline))
+    print(f"{'caught' if caught else 'MISSED'}: 新しいページに基準がなく警告がある")
+    missed += not caught
     quoted = dict(pages)
     rel = "guides/ai-minutes/index.html"
     quoted[rel] = pages[rel].replace("</body>", "<pre>処理は次のとおりです：</pre></body>")
@@ -84,7 +104,7 @@ def main():
         return 2
     pages = load_pages()
     if "--update-baseline" in sys.argv:
-        counts = {rel: len(warnings(pages[rel])) for rel in BASELINED}
+        counts = {rel: len(warnings(page)) for rel, page in sorted(pages.items()) if not rel.startswith("guides/")}
         with open(BASELINE, "w", encoding="utf-8") as f:
             json.dump(counts, f, ensure_ascii=False, indent=2)
             f.write("\n")
