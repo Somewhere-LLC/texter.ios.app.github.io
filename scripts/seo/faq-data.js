@@ -1,8 +1,10 @@
 // FAQ content for /faq/ and /en/faq/. Edit here, then run `node scripts/seo/build.js`.
-// Every answer was checked against the iOS app as of 2026-10-04.
+// Every answer was checked against the iOS app as of 2026-11-01.
 // Values that can change without an app update (trial length, betas) are left out on purpose.
 // Answers may use only <a>, <b>, <strong>, <br>, <ul>, <ol>, <li>, <p>.
-const updated = '2026-10-05';
+const howto = require('./faq-howto-data');
+const { arrange } = require('./faq-structure');
+const updated = '2026-11-01';
 
 const ja = {
   path: '/faq/',
@@ -14,9 +16,10 @@ const ja = {
   title: 'よくある質問 | Texter - AI文字起こし・議事録アプリ',
   description: 'Texterの対応端末・料金・対応言語・話者識別・Apple Watch録音・ファイル取り込み・データの扱いなど、よくある質問への回答をまとめています。',
   h1: 'よくある質問',
-  intro: 'Texter（AI文字起こし・議事録アプリ）について、よくいただく質問への回答です。画面ごとの操作手順は<a href="https://texter-app.notion.site/faq-ja" target="_blank" rel="noopener noreferrer">使い方ガイド（Notion）</a>にまとめています。',
+  intro: 'Texter（AI文字起こし・議事録アプリ）について、よくいただく質問への回答です。機能の説明に続けて、画面ごとの操作手順も載せています。手順はiPhone版のものです。',
   updatedLabel: '最終更新',
   tocTitle: '目次',
+  backToToc: '目次へ戻る',
   crumb: 'よくある質問',
   crumbLabel: 'パンくずリスト',
   skip: '本文へスキップ',
@@ -30,7 +33,6 @@ const ja = {
   ctaBody: 'Texterは無料で始められます。iPhone / iPad / Apple Watch / Mac (Apple Silicon) / Android対応。',
   footer: [
     { label: 'ホーム', href: '/' },
-    { label: '使い方ガイド', href: 'https://texter-app.notion.site/faq-ja', ext: true },
     { label: 'お問い合わせ', href: 'mailto:texter.work.app@gmail.com' },
     { label: '利用規約', href: '/terms-of-service/' },
     { label: 'プライバシーポリシー', href: '/privacy-policy/' },
@@ -46,8 +48,6 @@ const ja = {
           a: '<ul><li>iPhone・iPad（iOS / iPadOS 16.0以降）</li><li>Apple Watch（watchOS 11以降）</li><li>Apple Silicon搭載のMac（iPad版アプリとして動作）</li><li>Android（Google Playで配信）</li></ul>' },
         { id: 'price', q: '無料で使えますか？料金はいくらですか？',
           a: '<p>アプリのダウンロードと基本機能は無料です。無料版には、文字起こしの時間や各機能の利用回数に上限があります。</p><p>上限を引き上げるTexter Premiumは、App Store（日本）で月額 ¥1,800、年額 ¥8,800、週額 ¥600 です。無料トライアルの有無と期間は、アプリ内の購入画面でご確認ください。</p>' },
-        { id: 'cancel', q: 'Premiumの解約はどうすればいいですか？',
-          a: '<p>iPhoneの「設定」→ 自分の名前 →「サブスクリプション」→「Texter」から解約できます。Androidでは、Google Playの「お支払いと定期購入」→「定期購入」から解約します。アプリを削除しただけでは解約されません。</p>' },
         { id: 'business', q: '法人で利用できますか？',
           a: '<p>はい。機能・料金・セキュリティ情報をまとめた<a href="/assets/pdf/texter-for-business.pdf">法人向け資料（PDF）</a>をご用意しています。ご相談は<a href="mailto:texter.work.app@gmail.com">texter.work.app@gmail.com</a>までお送りください。</p>' },
       ],
@@ -92,6 +92,7 @@ const ja = {
           a: '<p>要約・AIチャットなどのAI機能では、ノートのテキストをOpenAIのAPIに送信して回答を生成します。OpenAI APIのデータ利用ポリシーにもとづき、送信したデータはOpenAIのモデル学習には使われません。</p>' },
       ],
     },
+    ...howto.ja,
   ],
 };
 
@@ -105,9 +106,10 @@ const en = {
   title: 'FAQ | Texter - AI transcription & meeting notes app',
   description: 'Answers about Texter: supported devices, pricing, languages, speaker labels, Apple Watch recording, file import, and how your data is handled.',
   h1: 'Frequently asked questions',
-  intro: 'Answers to common questions about Texter, the AI transcription and meeting notes app. For step-by-step instructions, see the <a href="https://texter-app.notion.site/faq-en" target="_blank" rel="noopener noreferrer">user guide (Notion)</a>.',
+  intro: 'Answers to common questions about Texter, the AI transcription and meeting notes app. Step-by-step instructions follow the feature overview. The steps describe the iPhone app.',
   updatedLabel: 'Last updated',
   tocTitle: 'Contents',
+  backToToc: 'Back to contents',
   crumb: 'FAQ',
   crumbLabel: 'Breadcrumb',
   skip: 'Skip to content',
@@ -121,7 +123,6 @@ const en = {
   ctaBody: 'Texter is free to start. For iPhone / iPad / Apple Watch / Mac (Apple Silicon) / Android.',
   footer: [
     { label: 'Home', href: '/en/' },
-    { label: 'User guide', href: 'https://texter-app.notion.site/faq-en', ext: true },
     { label: 'Contact', href: 'mailto:texter.work.app@gmail.com' },
     { label: 'Terms of Service', href: '/en/terms-of-service/' },
     { label: 'Privacy Policy', href: '/en/privacy-policy/' },
@@ -136,8 +137,6 @@ const en = {
           a: '<ul><li>iPhone and iPad (iOS / iPadOS 16.0 or later)</li><li>Apple Watch (watchOS 11 or later)</li><li>Mac with Apple silicon (runs as the iPad app)</li><li>Android (on Google Play)</li></ul>' },
         { id: 'price', q: 'Is Texter free? How much is Premium?',
           a: '<p>The app is free to download, and the basic features are free to use. The free plan limits transcription time and how often you can use each feature.</p><p>Texter Premium raises those limits and comes in weekly, monthly, and yearly plans. Prices vary by country and are shown in your local currency on the App Store and in the app. Check the purchase screen in the app for any free trial and its length.</p>' },
-        { id: 'cancel', q: 'How do I cancel Premium?',
-          a: '<p>On iPhone, open Settings, tap your name, then Subscriptions, then Texter. On Android, open Google Play, then Payments &amp; subscriptions, then Subscriptions. Deleting the app does not cancel your subscription.</p>' },
         { id: 'business', q: 'Can my company use Texter?',
           a: '<p>Yes. Our <a href="/assets/pdf/texter-for-business.pdf">business brochure (PDF)</a> covers features, pricing, and security. For questions, email <a href="mailto:texter.work.app@gmail.com">texter.work.app@gmail.com</a>.</p>' },
       ],
@@ -182,7 +181,11 @@ const en = {
           a: '<p>AI features such as summaries and AI chat send the note text to the OpenAI API to generate a response. Under the OpenAI API data usage policy, that data is not used to train OpenAI’s models.</p>' },
       ],
     },
+    ...howto.en,
   ],
 };
+
+ja.sections = arrange('ja', ja.sections);
+en.sections = arrange('en', en.sections);
 
 module.exports = { updated, ja, en };

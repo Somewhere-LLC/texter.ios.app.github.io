@@ -49,7 +49,7 @@
       "url": "https://texter.work/faq/",
       "name": "よくある質問 | Texter - AI文字起こし・議事録アプリ",
       "inLanguage": "ja",
-      "dateModified": "2026-10-05",
+      "dateModified": "2026-11-01",
       "isPartOf": {
         "@id": "https://texter.work/#website"
       },
@@ -78,10 +78,306 @@
         },
         {
           "@type": "Question",
+          "name": "画面の下のタブで何ができますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cul>\u003cli>リスト：ノートの閲覧、検索、フォルダ管理\u003c/li>\u003cli>ボイス：リアルタイム文字起こしと、右上の翻訳アイコンからの翻訳\u003c/li>\u003cli>画像：画像、動画、PDFの文字起こし\u003c/li>\u003cli>設定：ファイルの取り込み、音声入力と文字起こし、テキストと表示、アプリ設定、ヘルプとサポート\u003c/li>\u003c/ul>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "最初に設定しておくとよい項目はありますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>専門用語や社名を使う場合は、「設定」→「音声入力と文字起こし」→「単語登録（専門用語など）」で登録してください。翻訳を使う場合は、同じ画面の「翻訳」で翻訳先の言語とサービスを選べます。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "アプリを開かずにすぐ録音を始められますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>ロック画面ウィジェットから、ワンタップで録音を始められます。iOS 18以降ではコントロールセンターにも追加できます。日本のiPhoneでは、iOS 26.2以降でサイドボタンの長押しにTexterの音声入力を割り当てられます。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "会議をその場で文字起こしするにはどうしますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>「ボイス」タブでマイクをタップして話し、終わったら停止してください。言語と設定に応じて、会話向けのクラウド音声認識エンジンか、Appleの音声認識を使います。自動で保存したいときは、「設定」→「音声入力と文字起こし」→「リアルタイム結果の自動保存」をオンにしてください。無料版の上限は1回3分、1日15分です。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "認識の精度を上げるにはどうすればいいですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>マイクに近づいて話し、周囲の雑音を減らしてください。固有名詞は「単語登録（専門用語など）」に、表記と読みを半角スペースで区切って登録します（例：Texter てきすたー）。「音声録音設定」ではノイズ除去も設定できます。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "句読点や段落を自動で整えられますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>「設定」の「AI文字起こし整形」をオンにすると、録音の完了後に句読点や段落を整えます。この項目が表示されない場合があります。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "別のアプリを使いながら文字起こしを続けられますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>続けられます。リアルタイム文字起こしの画面をPiP（小窓）にすると、ほかのアプリに切り替えても文字起こしが続きます。無料版の時間の上限は同じように適用されます。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ほかのアプリでも音声入力できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Texterのキーボードを追加すると音声入力できます。iPhoneの設定でキーボードを追加し、「フルアクセスを許可」をオンにしてください。パスワードなどの入力欄では使えません。無料版は1日3分までです。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apple Watchで録音できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>できます。iPhoneを持っていなくても、Apple Watch単体で録音できます。録音はあとでiPhoneへ転送され、文字起こしされます。1回に録音できる長さは、無料版で最大15分、Premiumで最大2時間です。録音できても、無料版の文字起こしの枠を超えると処理は止まります。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "オフラインでも使えますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>一部の機能は使えます。リアルタイム文字起こしは、ネットワークにつながっていないときに端末内のApple音声認識へ切り替わります（端末内認識に対応した言語のみ）。iOS 26以降では、ファイルの文字起こしに端末内で処理するSpeechAnalyzerを選べます。翻訳はGoogleのオフライン翻訳を選べます。要約やAIチャットなどのAI機能にはインターネット接続が必要です。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "録音済みの音声や動画のファイルも文字起こしできますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>できます。「設定」→「ファイルをインポート」で「音声ファイルをインポート」か「動画をインポート」を選んでください。動画では「動画として保存」か「音声のみ抽出」を選びます。対応しているファイル形式は次のとおりです。\u003c/p>\u003cul>\u003cli>音声：m4a、mp3、wav、aac、aiff、cafなど\u003c/li>\u003cli>動画：mp4、mov、m4v\u003c/li>\u003c/ul>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "文字起こしのサービスはどう選びますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>「設定」→「ファイルをインポート」→「音声認識サービスを選択」で選べます。\u003c/p>\u003cul>\u003cli>Default：Appleの音声認識を使います\u003c/li>\u003cli>SpeechAnalyzer：端末内で処理します（iOS 26以降）\u003c/li>\u003cli>Whisper(OpenAI)：サーバーで処理します\u003c/li>\u003cli>Amazon Transcribe：サーバーで処理します（Premium）\u003c/li>\u003c/ul>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "日本語の音声が英語で文字起こしされます。",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>「設定」→「ファイルをインポート」→「音声認識サービスを選択」の順に開き、Whisperの「認識言語」で日本語を選んでから、もう一度取り込んでください。それでも直らないときは、音声の状態と取り込み方法を添えてお問い合わせください。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "クラウドの共有リンクから取り込めますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>「設定」→「ファイルをインポート」→「リンクから取り込む」で、Googleドライブ、Dropbox、OneDriveの共有リンクを取り込めます。OneDriveはMicrosoftアカウントでのサインインが必要です。Zoomの録画リンクは直接取り込めないので、録画ファイルをダウンロードしてください。YouTubeなどの動画サービスのURLには対応していません。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "無音カットとは何ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>取り込むときに無音の部分を自動で削除するPremiumの機能です。「設定」→「ファイルをインポート」の「無音を自動削除」で設定します。感度は弱、標準、強から選べます。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "取り込みでエラーが出ます。上限に達したときはどうしますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>ファイルの上限を超えている可能性があります。Premiumの1ファイルの上限は、Whisperが1GB・2時間、Amazon Transcribeが2GB・4時間です。Amazon Transcribeには、プランごとの月間の利用枠もあります。無料版には月ごとの上限があります。ファイルを分割するか、軽い形式に変換してお試しください。無料版の枠を超えると、取り込みの上限画面にPremiumやインポートチケットの案内が出ます。チケットはWhisperの文字起こし専用で、2時間までの音声に使えます。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "話者識別（誰が話したかの区別）はできますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Premiumでご利用いただけます。音声・動画ファイルをWhisperまたはAmazon Transcribeで文字起こしするときに、話者ごとに発言を分けて記録します。Whisperでは話者数を自動か人数で指定でき、Amazon Transcribeは最大10人まで区別します。リアルタイム文字起こしでも「話者識別（ベータ）」を使えます。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "何語に対応していますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>ファイルの文字起こし（Whisper）は、99言語と言語の自動判定に対応しています。リアルタイム文字起こしの対応言語は、使う音声認識エンジンによって異なります。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "話した内容を翻訳できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>できます。方法は2つあります。\u003c/p>\u003cul>\u003cli>翻訳画面：「ボイス」タブの右上にある翻訳アイコンをタップします。翻訳サービスはDeepL、Googleオンライン、Googleオフラインから選べ、「設定」→「音声入力と文字起こし」→「翻訳」で変更できます\u003c/li>\u003cli>リアルタイム翻訳：録音中にマイクの右に出る翻訳のボタンをオンにすると、文字起こしと同時に訳文が出ます。翻訳先は録音画面で選びます。Appleの翻訳機能を使うので、iOS 18以降が必要です\u003c/li>\u003c/ul>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "画像やPDFの文字を読み取るにはどうしますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>「画像」タブで「カメラまたは写真ライブラリから選択」「画像・PDFをインポート」「スクリーンショットから選択」のどれかを選んでください。読み取った結果は、保存ボタンでノートに残せます。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "画像の文字をうまく読み取れません。",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>明るい場所で、傾きや影が入らないように撮り直してください。「設定」→「音声入力と文字起こし」→「画像文字認識言語」で、対象の言語を選びます。PDFは解像度の高い原本をお試しください。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "議事録や要約を自動で作れますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>作れます。議事録、インタビュー、講義、構造化要約など20種類のテンプレートを用意しています。録音のあとに自動で要約するには、「設定」→「テキストと表示」→「要約 / 変換」の「自動要約」で設定してください。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "会議のタスク（アクションアイテム）を抜き出せますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>できます。AIが文字起こしから「やること」を抽出し、担当者と期限も読み取って一覧にします。抽出したタスクはそのままリマインダーに登録でき、設定した日時に通知でお知らせします。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "保存した記録にあとから質問できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>できます。ノートの右下にあるチャットのアイコンをタップすると、そのノートについて「決まった納期は？」のように質問できます。ノート一覧の「記録から思い出す」では、複数のノートをまたいで質問できます。無料版は1日3回まで、Premiumでは回数の制限なく使えます。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "話題マップはどこから開きますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>ノートの右上のメニューにある「可視化」から「話題マップ」を選んでください。長いノートの話題を分類して一覧にします。同じメニューからワードクラウドも開けます。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "タイトルを自動で付けられますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>iOS 26以降の対応端末で、端末内のAIモデルが使える場合に、録音のあとでタイトルが自動で入ります。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ノートをフォルダで整理できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>「リスト」タブの「フォルダ」で作成し、ノートは「フォルダに移動」で移せます。並び替えは保存日順、更新日順、タイトル順から選べます。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ノートを共有したり書き出したりするにはどうしますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>ノートの右上のメニューにある「エクスポート」から選んでください。\u003c/p>\u003cul>\u003cli>ノート：テキスト、PDF、SRT字幕ファイル、字幕付き動画\u003c/li>\u003cli>内容まとめ：Markdown、テキスト、HTML、PDF\u003c/li>\u003c/ul>\u003cp>SRTは、字幕のデータがあるノートだけで選べます。「公開リンクを作成」を選ぶと、ノートをURLで共有できます。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Slackに投稿するにはどうしますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>「設定」→「アプリ設定」→「Slack投稿設定」でWebhook URLを入力し、テスト送信で確かめてください。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "リマインダーはどう設定しますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>ノートの上部にあるベルのアイコンから設定してください。繰り返しは1回のみ、毎日、毎週、毎月などから選べます。「その他の繰り返し設定...」では、より細かい間隔も選べます。スヌーズは1分後か5分後を選べます。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "文字の大きさや配置はどこで変えますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>「設定」→「テキストと表示」→「文字 ハイライト 字幕 センテンス」で変更してください。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "動画の字幕を非表示にできますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>「設定」→「テキストと表示」→「文字 ハイライト 字幕 センテンス」の「字幕を表示」をオフにしてください。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
           "name": "無料で使えますか？料金はいくらですか？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "\u003cp>アプリのダウンロードと基本機能は無料です。無料版には、文字起こしの時間や各機能の利用回数に上限があります。\u003c/p>\u003cp>上限を引き上げるTexter Premiumは、App Store（日本）で月額 ¥1,800、年額 ¥8,800、週額 ¥600 です。無料トライアルの有無と期間は、アプリ内の購入画面でご確認ください。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "無料版の主な上限を教えてください。",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cul>\u003cli>リアルタイム認識：1回3分、1日15分\u003c/li>\u003cli>ファイルの文字起こし（Whisper）：月ごとの上限あり\u003c/li>\u003cli>要約：1日3回\u003c/li>\u003cli>AIチャット：1日3回\u003c/li>\u003cli>画像の文字起こし：1日5回\u003c/li>\u003cli>ワードクラウド：1日5回\u003c/li>\u003c/ul>\u003cp>Amazon TranscribeはPremiumで利用できます。上限は変わる場合があります。最新の内容は、アプリのプラン比較で確認してください。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Premiumでは何が変わりますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>各機能の時間や回数の上限が大きくなり、広告が消えます。話者識別、Amazon Transcribe、無音カットも使えます。プランごとの内容は、アプリのプラン比較で確認してください。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "追加で利用時間を購入できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>Premiumの方は「追加チャージ」で購入できます。無料版の方には、取り込みの上限画面でWhisper用のインポートチケット（音声1時間ぶん）を案内する場合があります。チケットは自動更新されず、残りは失効しません。リアルタイム録音、要約、AIチャット、翻訳には使えません。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "機種変更のあとにPremiumが有効になりません。",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>購入時と同じApple IDでサインインし、アプリの「購入を復元」をお試しください。App Storeの購入履歴も確認してください。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "請求や返金について教えてください。",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>App Storeでの課金、領収書、返金は、Appleの規定に従います。誤って課金された場合は、Appleサポートにお問い合わせください。無料トライアルは、期間が終わると自動で課金が始まります。\u003c/p>"
           }
         },
         {
@@ -102,98 +398,10 @@
         },
         {
           "@type": "Question",
-          "name": "会議をその場でリアルタイムに文字起こしできますか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "\u003cp>できます。録音ボタンを押すと、話している内容がその場で文字になります。言語と設定に応じて、会話向けのクラウド音声認識エンジンか、Appleの音声認識を使います。無料版は1回の録音で使える時間に上限があります。\u003c/p>"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "録音済みの音声や動画ファイルも文字起こしできますか？対応形式は？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "\u003cp>できます。対応しているファイル形式は次のとおりです。\u003c/p>\u003cul>\u003cli>音声：m4a、mp3、wav、aac、aiff、cafなど\u003c/li>\u003cli>動画：mp4、mov、m4v\u003c/li>\u003c/ul>\u003cp>Googleドライブ・Dropbox・OneDriveの共有リンクからも取り込めます。文字起こしエンジンは、Whisper（OpenAIの音声認識モデル）、Amazon Transcribe、端末内で処理するApple SpeechAnalyzer（iOS 26以降）から選べます。Premiumでは、1ファイルあたりWhisperで最長2時間、Amazon Transcribeで最長4時間まで処理できます。Amazon Transcribeは、ファイルの長さとは別に月ごとの利用時間の枠があります。\u003c/p>"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "話者識別（誰が話したかの区別）はできますか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "\u003cp>Premiumでご利用いただけます。音声・動画ファイルをWhisperまたはAmazon Transcribeで文字起こしするときに、話者ごとに発言を分けて記録します。Amazon Transcribeは最大10人まで区別します。\u003c/p>"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "何語に対応していますか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "\u003cp>ファイルの文字起こし（Whisper）は99言語と言語の自動判定に対応しています。リアルタイム文字起こしは、Appleの音声認識が対応する言語で使えます。翻訳はDeepLとGoogle翻訳から選べます。\u003c/p>"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "オフラインでも使えますか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "\u003cp>一部の機能は使えます。リアルタイム文字起こしは、ネットワークにつながっていないときに端末内のApple音声認識へ切り替わります（端末内認識に対応した言語のみ）。iOS 26以降では、ファイルの文字起こしに端末内で処理するSpeechAnalyzerを選べます。翻訳はGoogleのオフライン翻訳を選べます。要約やAIチャットなどのAI機能にはインターネット接続が必要です。\u003c/p>"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Apple Watchで録音できますか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "\u003cp>できます。iPhoneを持っていなくても、Apple Watch単体で録音できます。録音はあとでiPhoneへ転送され、文字起こしされます。1回に録音できる長さは、無料版で最大15分、Premiumで最大2時間です。\u003c/p>"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "アプリを開かずにすぐ録音を始められますか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "\u003cp>ロック画面ウィジェットから、ワンタップで録音を始められます。iOS 18以降ではコントロールセンターにも追加できます。日本のiPhoneでは、iOS 26.2以降でサイドボタンの長押しにTexterの音声入力を割り当てられます。\u003c/p>"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "議事録や要約を自動で作れますか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "\u003cp>作れます。議事録・インタビュー・講義・構造化要約など20種類のテンプレートから選ぶと、文字起こしを目的に合った形の要約に整えます。長い会議の話題を一覧できる「話題マップ」や「ワードクラウド」もあります。\u003c/p>"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "会議のタスク（アクションアイテム）を抜き出せますか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "\u003cp>できます。AIが文字起こしから「やること」を抽出し、担当者と期限も読み取って一覧にします。抽出したタスクはそのままリマインダーに登録でき、設定した日時に通知でお知らせします。\u003c/p>"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "保存した記録にあとから質問できますか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "\u003cp>できます。AIチャット「ノートに聞く」で、ノートの内容について「決まった納期は？」のように質問できます。無料版は1日3回まで、Premiumでは回数の制限なく使えます。\u003c/p>"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "どんな形式で書き出せますか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "\u003cul>\u003cli>ノート：テキスト、PDF、SRT字幕ファイル、字幕付き動画\u003c/li>\u003cli>要約：Markdown、テキスト、HTML、PDF\u003c/li>\u003c/ul>\u003cp>SlackのWebhookを設定すると、文字起こし結果をSlackに投稿することもできます。\u003c/p>"
-          }
-        },
-        {
-          "@type": "Question",
           "name": "録音やノートはどこに保存されますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "\u003cp>録音とノートは、お使いの端末内に保存されます。Texterのサーバーにノートを保管する同期機能はありません。機種変更やアプリの削除の前には、必要なノートを書き出しておいてください。\u003c/p>"
+            "text": "\u003cp>録音とノートは、お使いの端末内に保存されます。Texterのサーバーにノートを保管する同期機能はありません。アプリを削除するとノートも消えるので、機種変更やアプリの削除の前に、必要なノートを書き出してください。\u003c/p>"
           }
         },
         {
@@ -201,7 +409,7 @@
           "name": "音声やテキストが外部に送信されることはありますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "\u003cp>クラウドで処理する機能を使うときだけ、処理に必要な音声やテキストを各サービスの提供事業者に送信します。対象は、会話向けのリアルタイム音声認識、WhisperとAmazon Transcribeによるファイルの文字起こし、翻訳、要約やAIチャットなどのAI機能です。リアルタイム音声認識とAI機能は、初めて使うときにアプリ内で送信先を説明し、同意を確認します。詳しくは\u003ca href=\"https://texter.work/privacy-policy/\">プライバシーポリシー\u003c/a>をご確認ください。\u003c/p>"
+            "text": "\u003cp>クラウドで処理する機能を使うと、処理に必要な音声やテキストを各サービスの提供事業者に送信します。主な対象は、リアルタイム音声認識（Appleの音声認識を含む）、音声入力キーボード、WhisperとAmazon Transcribeによるファイルの文字起こし、翻訳、要約、内容まとめ、タスク抽出、AIチャット、話題マップ、AI文字起こし整形、Slack投稿、公開リンクです。詳しくは\u003ca href=\"https://texter.work/privacy-policy/\">プライバシーポリシー\u003c/a>をご確認ください。\u003c/p>"
           }
         },
         {
@@ -209,7 +417,23 @@
           "name": "要約やAIチャットに使ったノートは、AIの学習に使われますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "\u003cp>要約・AIチャットなどのAI機能では、ノートのテキストをOpenAIのAPIに送信して回答を生成します。OpenAI APIのデータ利用ポリシーにもとづき、送信したデータはOpenAIのモデル学習には使われません。\u003c/p>"
+            "text": "\u003cp>要約、内容まとめ、タスク抽出、AIチャットでは、ノートのテキストをOpenAIのAPIに送信して結果を生成します。OpenAI APIのデータ利用ポリシーにもとづき、送信したデータはOpenAIのモデル学習には使われません。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "権限のエラーで録音できません。",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>iPhoneの「設定」→「プライバシーとセキュリティ」→「マイク」でTexterを許可してください。「音声認識」も同じように許可します。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "問い合わせはどこからできますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>「設定」→「ヘルプとサポート」→「お問い合わせ」から送信してください。機能名、再現手順、端末とOSのバージョンを添えると、確認が早くなります。メールは\u003ca href=\"mailto:texter.work.app@gmail.com\">texter.work.app@gmail.com\u003c/a>です。\u003c/p>"
           }
         }
       ]
@@ -280,7 +504,9 @@ h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.8rem);line-heigh
 .toc{margin:28px 0 0;padding:18px 20px;background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:14px}
 .toc h2{margin:0;font-size:13px;letter-spacing:.08em;color:var(--sub);font-weight:600}
 .toc ul{margin:8px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 18px}
-.toc a{font-size:15px;font-weight:500}
+.toc a{display:inline-block;padding:10px 0;font-size:15px;font-weight:500}
+.back{margin:14px 0 0;font-size:14px}
+.back a{display:inline-block;padding:10px 0}
 .sec{margin-top:48px}
 .sec>h2{margin:0;padding-top:12px;border-top:1.5px solid var(--navy);color:var(--navy);font-size:clamp(1.3rem,3vw,1.6rem);line-height:1.4}
 .qa{margin-top:16px;padding:20px 22px;background:var(--card);border:1px solid var(--line);border-radius:14px}
@@ -317,12 +543,12 @@ footer p{margin:12px 0 0}
 <main id="main" class="wrap">
   <nav aria-label="パンくずリスト"><ol class="crumbs"><li><a href="/">Texter</a></li><li aria-current="page">よくある質問</li></ol></nav>
   <h1>よくある質問</h1>
-  <p class="intro">Texter（AI文字起こし・議事録アプリ）について、よくいただく質問への回答です。画面ごとの操作手順は<a href="https://texter-app.notion.site/faq-ja" target="_blank" rel="noopener noreferrer">使い方ガイド（Notion）</a>にまとめています。</p>
-  <p class="meta">最終更新 <time datetime="2026-10-05">2026-10-05</time></p>
-  <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul><li><a href="#about">Texterについて</a></li><li><a href="#transcription">文字起こし</a></li><li><a href="#notes">要約・タスク・書き出し</a></li><li><a href="#privacy">プライバシー・データの扱い</a></li></ul></nav>
+  <p class="intro">Texter（AI文字起こし・議事録アプリ）について、よくいただく質問への回答です。機能の説明に続けて、画面ごとの操作手順も載せています。手順はiPhone版のものです。</p>
+  <p class="meta">最終更新 <time datetime="2026-11-01">2026-11-01</time></p>
+  <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul><li><a href="#start">はじめに</a></li><li><a href="#voice">録音とリアルタイム文字起こし</a></li><li><a href="#files">ファイルの文字起こし</a></li><li><a href="#speakers">話者識別・言語・翻訳</a></li><li><a href="#image">画像とPDF</a></li><li><a href="#ai">要約・タスク・AIチャット</a></li><li><a href="#manage">ノートの管理と共有</a></li><li><a href="#premium">料金・Premium・支払い</a></li><li><a href="#privacy">プライバシー・データの扱い</a></li><li><a href="#support">困ったとき</a></li></ul></nav>
 
-    <section class="sec" id="about" aria-labelledby="about-h">
-      <h2 id="about-h">Texterについて</h2>
+    <section class="sec" id="start" aria-labelledby="start-h">
+      <h2 id="start-h">はじめに</h2>
       <article class="qa" id="what-is-texter">
         <h3>Texterはどんなアプリですか？</h3>
         <div class="a"><p>会議・取材・講義などの音声を文字にする、AI文字起こし・議事録アプリです。録音または音声・動画ファイルの取り込みから、文字起こし・話者識別・要約・アクションアイテム（タスク）の抽出までを自動で行います。保存したノートには、あとからAIチャットで質問できます。</p></div>
@@ -331,9 +557,192 @@ footer p{margin:12px 0 0}
         <h3>どの端末で使えますか？</h3>
         <div class="a"><ul><li>iPhone・iPad（iOS / iPadOS 16.0以降）</li><li>Apple Watch（watchOS 11以降）</li><li>Apple Silicon搭載のMac（iPad版アプリとして動作）</li><li>Android（Google Playで配信）</li></ul></div>
       </article>
+      <article class="qa" id="tabs">
+        <h3>画面の下のタブで何ができますか？</h3>
+        <div class="a"><ul><li>リスト：ノートの閲覧、検索、フォルダ管理</li><li>ボイス：リアルタイム文字起こしと、右上の翻訳アイコンからの翻訳</li><li>画像：画像、動画、PDFの文字起こし</li><li>設定：ファイルの取り込み、音声入力と文字起こし、テキストと表示、アプリ設定、ヘルプとサポート</li></ul></div>
+      </article>
+      <article class="qa" id="first-setup">
+        <h3>最初に設定しておくとよい項目はありますか？</h3>
+        <div class="a"><p>専門用語や社名を使う場合は、「設定」→「音声入力と文字起こし」→「単語登録（専門用語など）」で登録してください。翻訳を使う場合は、同じ画面の「翻訳」で翻訳先の言語とサービスを選べます。</p></div>
+      </article>
+      <article class="qa" id="quick-start">
+        <h3>アプリを開かずにすぐ録音を始められますか？</h3>
+        <div class="a"><p>ロック画面ウィジェットから、ワンタップで録音を始められます。iOS 18以降ではコントロールセンターにも追加できます。日本のiPhoneでは、iOS 26.2以降でサイドボタンの長押しにTexterの音声入力を割り当てられます。</p></div>
+      </article>
+      <p class="back"><a href="#toc-h">目次へ戻る</a></p>
+    </section>
+
+    <section class="sec" id="voice" aria-labelledby="voice-h">
+      <h2 id="voice-h">録音とリアルタイム文字起こし</h2>
+      <article class="qa" id="realtime">
+        <h3>会議をその場で文字起こしするにはどうしますか？</h3>
+        <div class="a"><p>「ボイス」タブでマイクをタップして話し、終わったら停止してください。言語と設定に応じて、会話向けのクラウド音声認識エンジンか、Appleの音声認識を使います。自動で保存したいときは、「設定」→「音声入力と文字起こし」→「リアルタイム結果の自動保存」をオンにしてください。無料版の上限は1回3分、1日15分です。</p></div>
+      </article>
+      <article class="qa" id="voice-accuracy">
+        <h3>認識の精度を上げるにはどうすればいいですか？</h3>
+        <div class="a"><p>マイクに近づいて話し、周囲の雑音を減らしてください。固有名詞は「単語登録（専門用語など）」に、表記と読みを半角スペースで区切って登録します（例：Texter てきすたー）。「音声録音設定」ではノイズ除去も設定できます。</p></div>
+      </article>
+      <article class="qa" id="voice-format">
+        <h3>句読点や段落を自動で整えられますか？</h3>
+        <div class="a"><p>「設定」の「AI文字起こし整形」をオンにすると、録音の完了後に句読点や段落を整えます。この項目が表示されない場合があります。</p></div>
+      </article>
+      <article class="qa" id="pip">
+        <h3>別のアプリを使いながら文字起こしを続けられますか？</h3>
+        <div class="a"><p>続けられます。リアルタイム文字起こしの画面をPiP（小窓）にすると、ほかのアプリに切り替えても文字起こしが続きます。無料版の時間の上限は同じように適用されます。</p></div>
+      </article>
+      <article class="qa" id="keyboard">
+        <h3>ほかのアプリでも音声入力できますか？</h3>
+        <div class="a"><p>Texterのキーボードを追加すると音声入力できます。iPhoneの設定でキーボードを追加し、「フルアクセスを許可」をオンにしてください。パスワードなどの入力欄では使えません。無料版は1日3分までです。</p></div>
+      </article>
+      <article class="qa" id="apple-watch">
+        <h3>Apple Watchで録音できますか？</h3>
+        <div class="a"><p>できます。iPhoneを持っていなくても、Apple Watch単体で録音できます。録音はあとでiPhoneへ転送され、文字起こしされます。1回に録音できる長さは、無料版で最大15分、Premiumで最大2時間です。録音できても、無料版の文字起こしの枠を超えると処理は止まります。</p></div>
+      </article>
+      <article class="qa" id="offline">
+        <h3>オフラインでも使えますか？</h3>
+        <div class="a"><p>一部の機能は使えます。リアルタイム文字起こしは、ネットワークにつながっていないときに端末内のApple音声認識へ切り替わります（端末内認識に対応した言語のみ）。iOS 26以降では、ファイルの文字起こしに端末内で処理するSpeechAnalyzerを選べます。翻訳はGoogleのオフライン翻訳を選べます。要約やAIチャットなどのAI機能にはインターネット接続が必要です。</p></div>
+      </article>
+      <p class="back"><a href="#toc-h">目次へ戻る</a></p>
+    </section>
+
+    <section class="sec" id="files" aria-labelledby="files-h">
+      <h2 id="files-h">ファイルの文字起こし</h2>
+      <article class="qa" id="import">
+        <h3>録音済みの音声や動画のファイルも文字起こしできますか？</h3>
+        <div class="a"><p>できます。「設定」→「ファイルをインポート」で「音声ファイルをインポート」か「動画をインポート」を選んでください。動画では「動画として保存」か「音声のみ抽出」を選びます。対応しているファイル形式は次のとおりです。</p><ul><li>音声：m4a、mp3、wav、aac、aiff、cafなど</li><li>動画：mp4、mov、m4v</li></ul></div>
+      </article>
+      <article class="qa" id="import-service">
+        <h3>文字起こしのサービスはどう選びますか？</h3>
+        <div class="a"><p>「設定」→「ファイルをインポート」→「音声認識サービスを選択」で選べます。</p><ul><li>Default：Appleの音声認識を使います</li><li>SpeechAnalyzer：端末内で処理します（iOS 26以降）</li><li>Whisper(OpenAI)：サーバーで処理します</li><li>Amazon Transcribe：サーバーで処理します（Premium）</li></ul></div>
+      </article>
+      <article class="qa" id="wrong-language">
+        <h3>日本語の音声が英語で文字起こしされます。</h3>
+        <div class="a"><p>「設定」→「ファイルをインポート」→「音声認識サービスを選択」の順に開き、Whisperの「認識言語」で日本語を選んでから、もう一度取り込んでください。それでも直らないときは、音声の状態と取り込み方法を添えてお問い合わせください。</p></div>
+      </article>
+      <article class="qa" id="cloud-link">
+        <h3>クラウドの共有リンクから取り込めますか？</h3>
+        <div class="a"><p>「設定」→「ファイルをインポート」→「リンクから取り込む」で、Googleドライブ、Dropbox、OneDriveの共有リンクを取り込めます。OneDriveはMicrosoftアカウントでのサインインが必要です。Zoomの録画リンクは直接取り込めないので、録画ファイルをダウンロードしてください。YouTubeなどの動画サービスのURLには対応していません。</p></div>
+      </article>
+      <article class="qa" id="silence-cut">
+        <h3>無音カットとは何ですか？</h3>
+        <div class="a"><p>取り込むときに無音の部分を自動で削除するPremiumの機能です。「設定」→「ファイルをインポート」の「無音を自動削除」で設定します。感度は弱、標準、強から選べます。</p></div>
+      </article>
+      <article class="qa" id="import-limit">
+        <h3>取り込みでエラーが出ます。上限に達したときはどうしますか？</h3>
+        <div class="a"><p>ファイルの上限を超えている可能性があります。Premiumの1ファイルの上限は、Whisperが1GB・2時間、Amazon Transcribeが2GB・4時間です。Amazon Transcribeには、プランごとの月間の利用枠もあります。無料版には月ごとの上限があります。ファイルを分割するか、軽い形式に変換してお試しください。無料版の枠を超えると、取り込みの上限画面にPremiumやインポートチケットの案内が出ます。チケットはWhisperの文字起こし専用で、2時間までの音声に使えます。</p></div>
+      </article>
+      <p class="back"><a href="#toc-h">目次へ戻る</a></p>
+    </section>
+
+    <section class="sec" id="speakers" aria-labelledby="speakers-h">
+      <h2 id="speakers-h">話者識別・言語・翻訳</h2>
+      <article class="qa" id="speaker-diarization">
+        <h3>話者識別（誰が話したかの区別）はできますか？</h3>
+        <div class="a"><p>Premiumでご利用いただけます。音声・動画ファイルをWhisperまたはAmazon Transcribeで文字起こしするときに、話者ごとに発言を分けて記録します。Whisperでは話者数を自動か人数で指定でき、Amazon Transcribeは最大10人まで区別します。リアルタイム文字起こしでも「話者識別（ベータ）」を使えます。</p></div>
+      </article>
+      <article class="qa" id="languages">
+        <h3>何語に対応していますか？</h3>
+        <div class="a"><p>ファイルの文字起こし（Whisper）は、99言語と言語の自動判定に対応しています。リアルタイム文字起こしの対応言語は、使う音声認識エンジンによって異なります。</p></div>
+      </article>
+      <article class="qa" id="translate-how">
+        <h3>話した内容を翻訳できますか？</h3>
+        <div class="a"><p>できます。方法は2つあります。</p><ul><li>翻訳画面：「ボイス」タブの右上にある翻訳アイコンをタップします。翻訳サービスはDeepL、Googleオンライン、Googleオフラインから選べ、「設定」→「音声入力と文字起こし」→「翻訳」で変更できます</li><li>リアルタイム翻訳：録音中にマイクの右に出る翻訳のボタンをオンにすると、文字起こしと同時に訳文が出ます。翻訳先は録音画面で選びます。Appleの翻訳機能を使うので、iOS 18以降が必要です</li></ul></div>
+      </article>
+      <p class="back"><a href="#toc-h">目次へ戻る</a></p>
+    </section>
+
+    <section class="sec" id="image" aria-labelledby="image-h">
+      <h2 id="image-h">画像とPDF</h2>
+      <article class="qa" id="ocr-how">
+        <h3>画像やPDFの文字を読み取るにはどうしますか？</h3>
+        <div class="a"><p>「画像」タブで「カメラまたは写真ライブラリから選択」「画像・PDFをインポート」「スクリーンショットから選択」のどれかを選んでください。読み取った結果は、保存ボタンでノートに残せます。</p></div>
+      </article>
+      <article class="qa" id="ocr-accuracy">
+        <h3>画像の文字をうまく読み取れません。</h3>
+        <div class="a"><p>明るい場所で、傾きや影が入らないように撮り直してください。「設定」→「音声入力と文字起こし」→「画像文字認識言語」で、対象の言語を選びます。PDFは解像度の高い原本をお試しください。</p></div>
+      </article>
+      <p class="back"><a href="#toc-h">目次へ戻る</a></p>
+    </section>
+
+    <section class="sec" id="ai" aria-labelledby="ai-h">
+      <h2 id="ai-h">要約・タスク・AIチャット</h2>
+      <article class="qa" id="summary">
+        <h3>議事録や要約を自動で作れますか？</h3>
+        <div class="a"><p>作れます。議事録、インタビュー、講義、構造化要約など20種類のテンプレートを用意しています。録音のあとに自動で要約するには、「設定」→「テキストと表示」→「要約 / 変換」の「自動要約」で設定してください。</p></div>
+      </article>
+      <article class="qa" id="action-items">
+        <h3>会議のタスク（アクションアイテム）を抜き出せますか？</h3>
+        <div class="a"><p>できます。AIが文字起こしから「やること」を抽出し、担当者と期限も読み取って一覧にします。抽出したタスクはそのままリマインダーに登録でき、設定した日時に通知でお知らせします。</p></div>
+      </article>
+      <article class="qa" id="ask-notes">
+        <h3>保存した記録にあとから質問できますか？</h3>
+        <div class="a"><p>できます。ノートの右下にあるチャットのアイコンをタップすると、そのノートについて「決まった納期は？」のように質問できます。ノート一覧の「記録から思い出す」では、複数のノートをまたいで質問できます。無料版は1日3回まで、Premiumでは回数の制限なく使えます。</p></div>
+      </article>
+      <article class="qa" id="topic-map">
+        <h3>話題マップはどこから開きますか？</h3>
+        <div class="a"><p>ノートの右上のメニューにある「可視化」から「話題マップ」を選んでください。長いノートの話題を分類して一覧にします。同じメニューからワードクラウドも開けます。</p></div>
+      </article>
+      <article class="qa" id="ai-title">
+        <h3>タイトルを自動で付けられますか？</h3>
+        <div class="a"><p>iOS 26以降の対応端末で、端末内のAIモデルが使える場合に、録音のあとでタイトルが自動で入ります。</p></div>
+      </article>
+      <p class="back"><a href="#toc-h">目次へ戻る</a></p>
+    </section>
+
+    <section class="sec" id="manage" aria-labelledby="manage-h">
+      <h2 id="manage-h">ノートの管理と共有</h2>
+      <article class="qa" id="folders">
+        <h3>ノートをフォルダで整理できますか？</h3>
+        <div class="a"><p>「リスト」タブの「フォルダ」で作成し、ノートは「フォルダに移動」で移せます。並び替えは保存日順、更新日順、タイトル順から選べます。</p></div>
+      </article>
+      <article class="qa" id="export">
+        <h3>ノートを共有したり書き出したりするにはどうしますか？</h3>
+        <div class="a"><p>ノートの右上のメニューにある「エクスポート」から選んでください。</p><ul><li>ノート：テキスト、PDF、SRT字幕ファイル、字幕付き動画</li><li>内容まとめ：Markdown、テキスト、HTML、PDF</li></ul><p>SRTは、字幕のデータがあるノートだけで選べます。「公開リンクを作成」を選ぶと、ノートをURLで共有できます。</p></div>
+      </article>
+      <article class="qa" id="slack">
+        <h3>Slackに投稿するにはどうしますか？</h3>
+        <div class="a"><p>「設定」→「アプリ設定」→「Slack投稿設定」でWebhook URLを入力し、テスト送信で確かめてください。</p></div>
+      </article>
+      <article class="qa" id="reminder">
+        <h3>リマインダーはどう設定しますか？</h3>
+        <div class="a"><p>ノートの上部にあるベルのアイコンから設定してください。繰り返しは1回のみ、毎日、毎週、毎月などから選べます。「その他の繰り返し設定...」では、より細かい間隔も選べます。スヌーズは1分後か5分後を選べます。</p></div>
+      </article>
+      <article class="qa" id="display">
+        <h3>文字の大きさや配置はどこで変えますか？</h3>
+        <div class="a"><p>「設定」→「テキストと表示」→「文字 ハイライト 字幕 センテンス」で変更してください。</p></div>
+      </article>
+      <article class="qa" id="subtitle-off">
+        <h3>動画の字幕を非表示にできますか？</h3>
+        <div class="a"><p>「設定」→「テキストと表示」→「文字 ハイライト 字幕 センテンス」の「字幕を表示」をオフにしてください。</p></div>
+      </article>
+      <p class="back"><a href="#toc-h">目次へ戻る</a></p>
+    </section>
+
+    <section class="sec" id="premium" aria-labelledby="premium-h">
+      <h2 id="premium-h">料金・Premium・支払い</h2>
       <article class="qa" id="price">
         <h3>無料で使えますか？料金はいくらですか？</h3>
         <div class="a"><p>アプリのダウンロードと基本機能は無料です。無料版には、文字起こしの時間や各機能の利用回数に上限があります。</p><p>上限を引き上げるTexter Premiumは、App Store（日本）で月額 ¥1,800、年額 ¥8,800、週額 ¥600 です。無料トライアルの有無と期間は、アプリ内の購入画面でご確認ください。</p></div>
+      </article>
+      <article class="qa" id="free-limits">
+        <h3>無料版の主な上限を教えてください。</h3>
+        <div class="a"><ul><li>リアルタイム認識：1回3分、1日15分</li><li>ファイルの文字起こし（Whisper）：月ごとの上限あり</li><li>要約：1日3回</li><li>AIチャット：1日3回</li><li>画像の文字起こし：1日5回</li><li>ワードクラウド：1日5回</li></ul><p>Amazon TranscribeはPremiumで利用できます。上限は変わる場合があります。最新の内容は、アプリのプラン比較で確認してください。</p></div>
+      </article>
+      <article class="qa" id="premium-what">
+        <h3>Premiumでは何が変わりますか？</h3>
+        <div class="a"><p>各機能の時間や回数の上限が大きくなり、広告が消えます。話者識別、Amazon Transcribe、無音カットも使えます。プランごとの内容は、アプリのプラン比較で確認してください。</p></div>
+      </article>
+      <article class="qa" id="charge">
+        <h3>追加で利用時間を購入できますか？</h3>
+        <div class="a"><p>Premiumの方は「追加チャージ」で購入できます。無料版の方には、取り込みの上限画面でWhisper用のインポートチケット（音声1時間ぶん）を案内する場合があります。チケットは自動更新されず、残りは失効しません。リアルタイム録音、要約、AIチャット、翻訳には使えません。</p></div>
+      </article>
+      <article class="qa" id="restore">
+        <h3>機種変更のあとにPremiumが有効になりません。</h3>
+        <div class="a"><p>購入時と同じApple IDでサインインし、アプリの「購入を復元」をお試しください。App Storeの購入履歴も確認してください。</p></div>
+      </article>
+      <article class="qa" id="billing">
+        <h3>請求や返金について教えてください。</h3>
+        <div class="a"><p>App Storeでの課金、領収書、返金は、Appleの規定に従います。誤って課金された場合は、Appleサポートにお問い合わせください。無料トライアルは、期間が終わると自動で課金が始まります。</p></div>
       </article>
       <article class="qa" id="cancel">
         <h3>Premiumの解約はどうすればいいですか？</h3>
@@ -343,74 +752,37 @@ footer p{margin:12px 0 0}
         <h3>法人で利用できますか？</h3>
         <div class="a"><p>はい。機能・料金・セキュリティ情報をまとめた<a href="/assets/pdf/texter-for-business.pdf">法人向け資料（PDF）</a>をご用意しています。ご相談は<a href="mailto:texter.work.app@gmail.com">texter.work.app@gmail.com</a>までお送りください。</p></div>
       </article>
-    </section>
-
-    <section class="sec" id="transcription" aria-labelledby="transcription-h">
-      <h2 id="transcription-h">文字起こし</h2>
-      <article class="qa" id="realtime">
-        <h3>会議をその場でリアルタイムに文字起こしできますか？</h3>
-        <div class="a"><p>できます。録音ボタンを押すと、話している内容がその場で文字になります。言語と設定に応じて、会話向けのクラウド音声認識エンジンか、Appleの音声認識を使います。無料版は1回の録音で使える時間に上限があります。</p></div>
-      </article>
-      <article class="qa" id="import">
-        <h3>録音済みの音声や動画ファイルも文字起こしできますか？対応形式は？</h3>
-        <div class="a"><p>できます。対応しているファイル形式は次のとおりです。</p><ul><li>音声：m4a、mp3、wav、aac、aiff、cafなど</li><li>動画：mp4、mov、m4v</li></ul><p>Googleドライブ・Dropbox・OneDriveの共有リンクからも取り込めます。文字起こしエンジンは、Whisper（OpenAIの音声認識モデル）、Amazon Transcribe、端末内で処理するApple SpeechAnalyzer（iOS 26以降）から選べます。Premiumでは、1ファイルあたりWhisperで最長2時間、Amazon Transcribeで最長4時間まで処理できます。Amazon Transcribeは、ファイルの長さとは別に月ごとの利用時間の枠があります。</p></div>
-      </article>
-      <article class="qa" id="speaker-diarization">
-        <h3>話者識別（誰が話したかの区別）はできますか？</h3>
-        <div class="a"><p>Premiumでご利用いただけます。音声・動画ファイルをWhisperまたはAmazon Transcribeで文字起こしするときに、話者ごとに発言を分けて記録します。Amazon Transcribeは最大10人まで区別します。</p></div>
-      </article>
-      <article class="qa" id="languages">
-        <h3>何語に対応していますか？</h3>
-        <div class="a"><p>ファイルの文字起こし（Whisper）は99言語と言語の自動判定に対応しています。リアルタイム文字起こしは、Appleの音声認識が対応する言語で使えます。翻訳はDeepLとGoogle翻訳から選べます。</p></div>
-      </article>
-      <article class="qa" id="offline">
-        <h3>オフラインでも使えますか？</h3>
-        <div class="a"><p>一部の機能は使えます。リアルタイム文字起こしは、ネットワークにつながっていないときに端末内のApple音声認識へ切り替わります（端末内認識に対応した言語のみ）。iOS 26以降では、ファイルの文字起こしに端末内で処理するSpeechAnalyzerを選べます。翻訳はGoogleのオフライン翻訳を選べます。要約やAIチャットなどのAI機能にはインターネット接続が必要です。</p></div>
-      </article>
-      <article class="qa" id="apple-watch">
-        <h3>Apple Watchで録音できますか？</h3>
-        <div class="a"><p>できます。iPhoneを持っていなくても、Apple Watch単体で録音できます。録音はあとでiPhoneへ転送され、文字起こしされます。1回に録音できる長さは、無料版で最大15分、Premiumで最大2時間です。</p></div>
-      </article>
-      <article class="qa" id="quick-start">
-        <h3>アプリを開かずにすぐ録音を始められますか？</h3>
-        <div class="a"><p>ロック画面ウィジェットから、ワンタップで録音を始められます。iOS 18以降ではコントロールセンターにも追加できます。日本のiPhoneでは、iOS 26.2以降でサイドボタンの長押しにTexterの音声入力を割り当てられます。</p></div>
-      </article>
-    </section>
-
-    <section class="sec" id="notes" aria-labelledby="notes-h">
-      <h2 id="notes-h">要約・タスク・書き出し</h2>
-      <article class="qa" id="summary">
-        <h3>議事録や要約を自動で作れますか？</h3>
-        <div class="a"><p>作れます。議事録・インタビュー・講義・構造化要約など20種類のテンプレートから選ぶと、文字起こしを目的に合った形の要約に整えます。長い会議の話題を一覧できる「話題マップ」や「ワードクラウド」もあります。</p></div>
-      </article>
-      <article class="qa" id="action-items">
-        <h3>会議のタスク（アクションアイテム）を抜き出せますか？</h3>
-        <div class="a"><p>できます。AIが文字起こしから「やること」を抽出し、担当者と期限も読み取って一覧にします。抽出したタスクはそのままリマインダーに登録でき、設定した日時に通知でお知らせします。</p></div>
-      </article>
-      <article class="qa" id="ask-notes">
-        <h3>保存した記録にあとから質問できますか？</h3>
-        <div class="a"><p>できます。AIチャット「ノートに聞く」で、ノートの内容について「決まった納期は？」のように質問できます。無料版は1日3回まで、Premiumでは回数の制限なく使えます。</p></div>
-      </article>
-      <article class="qa" id="export">
-        <h3>どんな形式で書き出せますか？</h3>
-        <div class="a"><ul><li>ノート：テキスト、PDF、SRT字幕ファイル、字幕付き動画</li><li>要約：Markdown、テキスト、HTML、PDF</li></ul><p>SlackのWebhookを設定すると、文字起こし結果をSlackに投稿することもできます。</p></div>
-      </article>
+      <p class="back"><a href="#toc-h">目次へ戻る</a></p>
     </section>
 
     <section class="sec" id="privacy" aria-labelledby="privacy-h">
       <h2 id="privacy-h">プライバシー・データの扱い</h2>
       <article class="qa" id="storage">
         <h3>録音やノートはどこに保存されますか？</h3>
-        <div class="a"><p>録音とノートは、お使いの端末内に保存されます。Texterのサーバーにノートを保管する同期機能はありません。機種変更やアプリの削除の前には、必要なノートを書き出しておいてください。</p></div>
+        <div class="a"><p>録音とノートは、お使いの端末内に保存されます。Texterのサーバーにノートを保管する同期機能はありません。アプリを削除するとノートも消えるので、機種変更やアプリの削除の前に、必要なノートを書き出してください。</p></div>
       </article>
       <article class="qa" id="data-sent">
         <h3>音声やテキストが外部に送信されることはありますか？</h3>
-        <div class="a"><p>クラウドで処理する機能を使うときだけ、処理に必要な音声やテキストを各サービスの提供事業者に送信します。対象は、会話向けのリアルタイム音声認識、WhisperとAmazon Transcribeによるファイルの文字起こし、翻訳、要約やAIチャットなどのAI機能です。リアルタイム音声認識とAI機能は、初めて使うときにアプリ内で送信先を説明し、同意を確認します。詳しくは<a href="/privacy-policy/">プライバシーポリシー</a>をご確認ください。</p></div>
+        <div class="a"><p>クラウドで処理する機能を使うと、処理に必要な音声やテキストを各サービスの提供事業者に送信します。主な対象は、リアルタイム音声認識（Appleの音声認識を含む）、音声入力キーボード、WhisperとAmazon Transcribeによるファイルの文字起こし、翻訳、要約、内容まとめ、タスク抽出、AIチャット、話題マップ、AI文字起こし整形、Slack投稿、公開リンクです。詳しくは<a href="/privacy-policy/">プライバシーポリシー</a>をご確認ください。</p></div>
       </article>
       <article class="qa" id="ai-training">
         <h3>要約やAIチャットに使ったノートは、AIの学習に使われますか？</h3>
-        <div class="a"><p>要約・AIチャットなどのAI機能では、ノートのテキストをOpenAIのAPIに送信して回答を生成します。OpenAI APIのデータ利用ポリシーにもとづき、送信したデータはOpenAIのモデル学習には使われません。</p></div>
+        <div class="a"><p>要約、内容まとめ、タスク抽出、AIチャットでは、ノートのテキストをOpenAIのAPIに送信して結果を生成します。OpenAI APIのデータ利用ポリシーにもとづき、送信したデータはOpenAIのモデル学習には使われません。</p></div>
       </article>
+      <p class="back"><a href="#toc-h">目次へ戻る</a></p>
+    </section>
+
+    <section class="sec" id="support" aria-labelledby="support-h">
+      <h2 id="support-h">困ったとき</h2>
+      <article class="qa" id="voice-permission">
+        <h3>権限のエラーで録音できません。</h3>
+        <div class="a"><p>iPhoneの「設定」→「プライバシーとセキュリティ」→「マイク」でTexterを許可してください。「音声認識」も同じように許可します。</p></div>
+      </article>
+      <article class="qa" id="contact">
+        <h3>問い合わせはどこからできますか？</h3>
+        <div class="a"><p>「設定」→「ヘルプとサポート」→「お問い合わせ」から送信してください。機能名、再現手順、端末とOSのバージョンを添えると、確認が早くなります。メールは<a href="mailto:texter.work.app@gmail.com">texter.work.app@gmail.com</a>です。</p></div>
+      </article>
+      <p class="back"><a href="#toc-h">目次へ戻る</a></p>
     </section>
   <section class="cta" aria-labelledby="cta-h">
     <h2 id="cta-h">次の会議から、録るだけ。</h2>
@@ -423,7 +795,7 @@ footer p{margin:12px 0 0}
 </main>
 <footer>
   <div class="wrap">
-    <ul><li><a href="/">ホーム</a></li><li><a href="https://texter-app.notion.site/faq-ja" target="_blank" rel="noopener noreferrer">使い方ガイド</a></li><li><a href="mailto:texter.work.app@gmail.com">お問い合わせ</a></li><li><a href="/terms-of-service/">利用規約</a></li><li><a href="/privacy-policy/">プライバシーポリシー</a></li><li><a href="/tokushoho/">特定商取引法に基づく表記</a></li><li><a href="/en/faq/" hreflang="en" lang="en">English</a></li></ul>
+    <ul><li><a href="/">ホーム</a></li><li><a href="mailto:texter.work.app@gmail.com">お問い合わせ</a></li><li><a href="/terms-of-service/">利用規約</a></li><li><a href="/privacy-policy/">プライバシーポリシー</a></li><li><a href="/tokushoho/">特定商取引法に基づく表記</a></li><li><a href="/en/faq/" hreflang="en" lang="en">English</a></li></ul>
     <p>© 2026 Texter app - Kyoto, Japan.</p>
   </div>
 </footer>
