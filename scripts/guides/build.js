@@ -7,7 +7,7 @@ const ORG_ID = `${SITE}/#organization`;
 const SITE_ID = `${SITE}/#website`;
 // Same provider token as the app's public note pages. The campaign token ties an App Store install to the guide and link position.
 const APP_STORE_PT = '489812';
-const CONDITIONS = '無料で始められます。無料版には時間と回数の上限があり、処理の前に広告が表示される場合があります。';
+const CONDITIONS = '無料で始められます。無料版の文字起こしには月ごとの上限があり、要約は1日3回までです。処理の前に広告が表示される場合があります。';
 const appStoreLink = (g, pos) => {
   const id = `${g.store}-${pos}`;
   if (id.length > 40) throw new Error(`campaign token too long: ${id}`);
