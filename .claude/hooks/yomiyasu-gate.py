@@ -46,7 +46,7 @@ try:
             sys.exit(0)
         code, out = run_check(staged=True)
         log(f"commit gate rc={code}")
-        if code == 1:
+        if code != 0:
             print(out, file=sys.stderr)
             sys.exit(2)
     elif event == "PostToolUse" and tool in ("Edit", "Write"):

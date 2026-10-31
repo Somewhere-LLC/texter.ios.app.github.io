@@ -5,7 +5,7 @@ Guides must have no warnings. Other pages may not gain warnings beyond scripts/y
 legal text and list-shaped FAQ answers trip the repeated-ending rule, and rewriting them just to satisfy a
 lint would change their meaning. Text in <pre> and <details> is left out because it quotes app output verbatim.
 
-Usage: check-yomiyasu.py [--self-test] [--update-baseline]
+Usage: check-yomiyasu.py [--self-test] [--update-baseline] [--staged]
 """
 import html
 import json
@@ -112,6 +112,12 @@ def main():
         return 0
     baseline = json.load(open(BASELINE, encoding="utf-8"))
     errors = check(pages, baseline)
+    if "--staged" in sys.argv:
+        # A committed page must match its generator, or the lint above judged a different text.
+        for rel, content in generated_pages().items():
+            path = os.path.join(ROOT, rel)
+            if not os.path.exists(path) or open(path, encoding="utf-8").read() != content:
+                errors.append(f"{rel}: 生成元と一致しません。npm run build を実行してください")
     for e in errors:
         print("NG " + e, file=sys.stderr)
     if errors:
