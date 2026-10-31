@@ -11,6 +11,7 @@ const entries = [
   'privacy-policy',
   'tokushoho',
   'faq',
+  'guides',
   'en',
   'css',
   'js',

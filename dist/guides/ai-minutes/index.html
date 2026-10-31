@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HDB32BHHL8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HDB32BHHL8', { 'cookie_flags': 'SameSite=None;Secure' });
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>録音から議事録を作る方法｜iPhoneで文字起こし・要約する手順と完成例</title>
+<meta name="description" content="2分の打ち合わせ音声から議事録を作った全手順です。iPhoneの操作画面、実際の出力、人が仕上げた完成版、チャットAI用のテンプレートを載せています。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://texter.work/guides/ai-minutes/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://texter.work/guides/ai-minutes/">
+<meta property="og:title" content="録音から議事録を作る方法｜iPhoneで文字起こし・要約する手順と完成例">
+<meta property="og:description" content="2分の打ち合わせ音声から議事録を作った全手順です。iPhoneの操作画面、実際の出力、人が仕上げた完成版、チャットAI用のテンプレートを載せています。">
+<meta property="og:site_name" content="Texter">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://texter.work/img/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="録音から議事録を作る方法｜iPhoneで文字起こし・要約する手順と完成例">
+<meta name="twitter:description" content="2分の打ち合わせ音声から議事録を作った全手順です。iPhoneの操作画面、実際の出力、人が仕上げた完成版、チャットAI用のテンプレートを載せています。">
+<meta name="twitter:image" content="https://texter.work/img/ogp.png">
+<meta name="apple-itunes-app" content="app-id=1482592304">
+<link rel="icon" href="/assets/favicon/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v=2">
+<link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png?v=2">
+<meta name="theme-color" content="#EDF4FF">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://texter.work/guides/ai-minutes/#article",
+      "headline": "録音から議事録を作る方法",
+      "description": "2分の打ち合わせ音声から議事録を作った全手順です。iPhoneの操作画面、実際の出力、人が仕上げた完成版、チャットAI用のテンプレートを載せています。",
+      "url": "https://texter.work/guides/ai-minutes/",
+      "inLanguage": "ja",
+      "datePublished": "2026-10-31",
+      "dateModified": "2026-10-31",
+      "image": "https://texter.work/assets/guides/ai-minutes/poster.webp",
+      "isPartOf": {
+        "@id": "https://texter.work/#website"
+      },
+      "about": {
+        "@id": "https://texter.work/#app"
+      },
+      "publisher": {
+        "@id": "https://texter.work/#organization"
+      },
+      "video": {
+        "@id": "https://texter.work/guides/ai-minutes/#video"
+      }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://texter.work/guides/ai-minutes/#video",
+      "name": "録音ファイルから議事録を作る操作",
+      "description": "音声ファイルを取り込み、文字起こし、要約、やることの確認、内容まとめまでを進める実際の操作画面です。待ち時間は早送りしています。",
+      "thumbnailUrl": [
+        "https://texter.work/assets/guides/ai-minutes/poster.webp"
+      ],
+      "contentUrl": "https://texter.work/assets/guides/ai-minutes/demo.mp4",
+      "uploadDate": "2026-10-31T09:00:00+09:00",
+      "duration": "PT54S",
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://texter.work/guides/ai-minutes/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Texter",
+          "item": "https://texter.work/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "活用ガイド",
+          "item": "https://texter.work/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "録音から議事録を作る方法",
+          "item": "https://texter.work/guides/ai-minutes/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{--accent:#6482FA;--deep:#5460D6;--navy:#17255A;--text:#444444;--sub:#5F6170;--line:rgba(23,37,90,.12);--card:#FFFFFF;--grad-a:#EDF4FF;--grad-b:#D6E4FC;
+  --f-jp:-apple-system,BlinkMacSystemFont,"SF Pro JP","Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;--f-mono:ui-monospace,Menlo,monospace;color-scheme:light}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:80px}
+body{margin:0;color:var(--text);font-family:var(--f-jp);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased;background:linear-gradient(180deg,var(--grad-a) 0%,var(--grad-b) 100%) fixed,var(--grad-b)}
+a{color:var(--deep)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip{position:fixed;left:12px;top:-60px;z-index:100;background:var(--navy);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+.skip:focus{top:12px}
+.wrap{max-width:760px;margin-inline:auto;padding-inline:20px}
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:18px;color:var(--navy)}
+.brand img{width:28px;height:28px;border-radius:7px}
+.nav ul{display:flex;gap:4px;margin:0;padding:0;list-style:none}
+.nav ul a{display:block;padding:8px 10px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;color:var(--text)}
+.crumbs{margin:28px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px;font-size:13px;color:var(--sub)}
+.crumbs li+li::before{content:"/";margin-right:6px}
+.crumbs a{color:var(--sub)}
+h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.6rem);line-height:1.25;font-weight:900}
+.lead{margin:16px 0 0}
+.meta{margin:10px 0 0;font-size:13px;color:var(--sub)}
+.toc{margin:28px 0 0;padding:18px 20px;background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:14px}
+.toc h2{margin:0;font-size:13px;color:var(--sub);font-weight:600}
+.toc ul{margin:8px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 18px}
+.toc a{font-size:15px;font-weight:500}
+.sec{margin-top:48px}
+.sec>h2{margin:0;padding-top:12px;border-top:1.5px solid var(--navy);color:var(--navy);font-size:clamp(1.3rem,3vw,1.6rem);line-height:1.4}
+.sec h3{margin:24px 0 0;color:var(--navy);font-size:17px;line-height:1.6}
+.sec p,.sec ul,.sec ol{margin:12px 0 0}
+.sec ul,.sec ol{padding-left:1.3em}
+.compare{width:100%;margin-top:16px;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;font-size:15px}
+.compare th,.compare td{padding:12px 14px;border:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.65}
+.compare thead th{background:#F2F5FD;color:var(--navy)}
+.doc{margin-top:12px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.doc p:first-child{margin-top:0}
+.steps{list-style:none;padding:0!important;counter-reset:s}
+.steps>li{counter-increment:s;margin-top:32px;padding:20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.steps>li>h3{margin:0}
+.steps>li>h3::before{content:counter(s) ". "}
+.shot{display:inline-block;width:min(46%,260px);margin:16px 10px 0 0;vertical-align:top}
+.shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:14px}
+.shot figcaption{margin-top:6px;font-size:13px;line-height:1.5;color:var(--sub)}
+.demo{margin:16px 0 0;max-width:300px}
+.demo video{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);background:#fff}
+.sample{display:block;width:100%;height:auto;margin-top:16px;border-radius:14px;background:#000}
+.note{font-size:14px}
+.raw{margin-top:14px}
+.raw summary{cursor:pointer;font-weight:600;color:var(--navy)}
+.code{margin:12px 0 0;padding:16px;overflow-x:auto;background:var(--navy);color:#fff;border-radius:12px;font:14px/1.7 var(--f-mono);white-space:pre-wrap;overflow-wrap:anywhere}
+.facts{display:grid;grid-template-columns:8em 1fr;gap:8px 12px;margin:16px 0 0;font-size:15px}
+.facts dt{font-weight:600;color:var(--navy)}
+.facts dd{margin:0}
+.cards{display:grid;gap:14px;margin:28px 0 0}
+.card{display:block;padding:20px 22px;background:var(--card);border:1px solid var(--line);border-radius:14px;text-decoration:none;color:var(--text)}
+.card strong{display:block;color:var(--navy);font-size:18px}
+.card span{display:block;margin-top:6px;font-size:15px}
+.cta{margin:56px 0 0;padding:28px 22px;background:var(--navy);color:#fff;border-radius:18px}
+.cta h2{margin:0;font-size:22px;line-height:1.4}
+.cta p{margin:8px 0 0;color:rgba(255,255,255,.85);font-size:15px}
+.cta .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.cta.inline{margin:32px 0 0;padding:20px 22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 20px;text-align:center;line-height:1.4;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px}
+.btn-solid{background:#fff;color:var(--navy)}
+.btn-line{color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)}
+footer{margin-top:64px;padding:28px 0 40px;border-top:1px solid var(--line);font-size:13px;color:var(--sub)}
+footer ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 16px}
+footer a{color:var(--sub)}
+footer p{margin:12px 0 0}
+@media (max-width:560px){.shot{width:calc(50% - 8px);margin-right:6px}.shot.wide{width:100%;max-width:320px;margin-right:0}.steps>li{padding:16px}.facts{grid-template-columns:1fr}.facts dd{margin-bottom:8px}.compare{font-size:14px}.compare th,.compare td{padding:10px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/"><img src="/img/appicon.png" alt="" width="28" height="28">Texter</a>
+  <nav aria-label="メイン"><ul><li><a href="/guides/">活用ガイド</a></li><li><a href="/faq/">よくある質問</a></li></ul></nav>
+</div></header>
+<main id="main" class="wrap">
+<nav aria-label="パンくずリスト"><ol class="crumbs"><li><a href="/">Texter</a></li><li><a href="/guides/">活用ガイド</a></li><li aria-current="page">録音から議事録を作る方法</li></ol></nav>
+<h1>録音から議事録を作る方法</h1>
+<p class="lead">録音があれば、文字起こしと要約までは自動で進みます。2分4秒の打ち合わせ音声では、要約の表示まで約40秒でした。この時間に、人が確認して仕上げる時間は入っていません。このページでは、iPhoneでの手順と完成した議事録を紹介します。</p>
+<p class="meta">検証日 <time datetime="2026-10-31">2026-10-31</time></p>
+<nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul><li><a href="#summary">結論</a></li><li><a href="#result">完成した議事録と、直した内容</a></li><li><a href="#steps">Texterで作る手順</a></li><li><a href="#check">人が直す3か所</a></li><li><a href="#chat-ai">チャットAIで作る場合のテンプレート</a></li><li><a href="#notes">始める前の注意</a></li><li><a href="#method">検証の条件</a></li></ul></nav>
+<section class="sec" id="summary" aria-labelledby="summary-h"><h2 id="summary-h">結論</h2>
+      <p>議事録は、録音、文字起こし、整理、人の確認の4段階で作れます。自動で進むのは文字起こしと要約までです。担当者と数字は、最後に人が確認してください。</p>
+      <table class="compare"><thead><tr><th scope="col">方法</th><th scope="col">向いている場面</th><th scope="col">注意点</th></tr></thead><tbody>
+        <tr><th scope="row">議事録アプリ</th><td>録音から整理までを1つのアプリで済ませたいとき</td><td>無料で使える時間や回数に上限がある</td></tr>
+        <tr><th scope="row">文字起こし＋チャットAI</th><td>すでに文字起こしがあり、形式を自由に指定したいとき</td><td>貼り付けてよい内容か、会社のルールを確かめる。今回は文字起こしに無い日付が混ざった</td></tr>
+      </tbody></table></section>
+<section class="sec" id="result" aria-labelledby="result-h"><h2 id="result-h">完成した議事録と、直した内容</h2>
+      <p>題材は、11月の新商品キャンペーンを決める架空の打ち合わせです。司会のAさんと担当のBさんが話します。同じ音声で試したいときは、<a href="/assets/guides/ai-minutes/sample-meeting.m4a">音声ファイル</a>（m4a、1MB）を使ってください。下の議事録は、アプリの出力を音声と照らして人が仕上げたものです。</p>
+      <div class="doc"><p><strong>新商品キャンペーン打ち合わせ</strong></p>
+      <p><strong>開催日時</strong>: 要追記（録音からは分かりません）<br><strong>参加者</strong>: Aさん、Bさん（ほかの参加者は要追記）</p>
+      <p><strong>決定事項</strong></p><ul><li>公開日は11月14日</li><li>メールマガジンは同日の午前10時に、約8,500人へ配信</li><li>クーポンは15％オフ、期限は11月30日まで</li></ul>
+      <p><strong>宿題</strong></p><ul><li>Aさん・佐藤さん: 11月10日に届く写真3点を、11月12日までに確認</li><li>Bさん: メール原稿を11月7日までに作成</li><li>Bさん: 山田さんへ納期の確認メールを今日中に送信</li></ul>
+      <p><strong>次回</strong>: 11月11日 午後3時</p></div>
+      <h3>アプリの出力から直した内容</h3>
+      <table class="compare"><thead><tr><th scope="col">アプリの出力（やること）</th><th scope="col">人が直した内容</th></tr></thead><tbody>
+        <tr><td>納品された写真3点を確認する／11月12日まで／担当の表示なし</td><td>写真3点を確認する。担当はAさんと佐藤さん、期限は11月12日</td></tr>
+        <tr><td>佐藤さんと一緒に写真を確認する／担当「私」</td><td>上の項目と同じ作業なので、1つにまとめる</td></tr>
+        <tr><td>メールの原稿を作る／担当「私」／11月7日まで</td><td>メールの原稿を作る。担当はBさん、期限は11月7日</td></tr>
+        <tr><td>山田さんに納期の確認メールを送る／今日中に／担当の表示なし</td><td>山田さんに納期の確認メールを送る。担当はBさん、期限は今日中</td></tr>
+      </tbody></table>
+      <details class="raw"><summary>要約の全文</summary><div class="doc"><p>11月の新商品「キャンプオン」の公開日や告知、担当について決めた打ち合わせです。<br>・特設ページのデザインは先週金曜日に完成。写真3点の納品は山田さんから11月10日の予定で、12日までに確認する。<br>・写真の確認は、話者と佐藤さんが担当する。<br>・公開日は11月14日、メールマガジンは同日午前10時に約8,500人へ配信する。<br>・クーポンは15％オフで、期限は11月30日まで。<br>・メール原稿は話者が11月7日までに作成し、山田さんには今日中に納期確認メールを送る。次回の打ち合わせは11月11日午後3時。</p></div></details>
+      <details class="raw"><summary>文字起こしの全文</summary><pre class="code"><code>それでは、11月の新商品キャンプオンの打ち合わせを始めます。
+今日は、公開日と担当を決めたいと思います。
+はい、よろしくお願いします。
+まず現状ですが、特設ページのデザインは、先週の金曜日に完成しました。
+ありがとうございます。公開日は、当初の予定通り、11月14日で大丈夫そうですか?
+えーと、写真の差し替えがまだ3点残っています
+カメラマンの山田さんに確認したところ納品は11月10日になるそうです
+なるほど、それなら10日に受け取って12日までに確認すれば間に合いますね
+はい、ただ確認の時間が少し短いのでチェックは2人で行いたいです
+わかりました写真の確認は私と佐藤さんで担当します
+メールマガジンの配信はどうしましょうか
+配信先はおよそ8500人です
+公開日の午前10時に送るのがいいと思います
+クーポンは付けますか
+去年は15%オフで購入率が少し上がりましたよね
+そうですね。今年も同じ15%で、期限を11月30日までにしましょう
+では、決定事項をまとめます
+公開日は11月14日、メールの配信は同じ日の午前10時です
+クーポンは15%オフで、期限は11月30日までです
+宿題は、私がメールの原稿を11月7日までに作ります
+山田さんには今日中に納期の確認メールを送ります
+よろしくお願いします
+次回の打ち合わせは11月11日の午後3時からにします
+今日はありがとうございました</code></pre></details></section><aside class="cta inline" aria-label="アプリで試す"><p>無料で始められます。無料版の文字起こしには月ごとの上限があり、要約は1日3回までです。処理の前に広告が表示される場合があります。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-ai-minutes-after-result&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-ai-minutes-after-result" data-store="app_store">iPhoneで議事録作成を試す（App Store）</a></div></aside>
+<section class="sec" id="steps" aria-labelledby="steps-h"><h2 id="steps-h">Texterで作る手順</h2>
+      <p>音声ファイルから議事録を作る手順です。その場で録音するときは、手順1の代わりに「ボイス」タブで録音してください。下の動画では、ノートがまだ無いときに「ボイス」タブに出る「音声・動画ファイルを読み込む」から同じ画面を開いています。</p>
+      <div class="demo"><video controls muted playsinline preload="none" poster="/assets/guides/ai-minutes/poster.webp" width="540" height="1308" aria-label="録音ファイルから議事録を作る操作"><source src="/assets/guides/ai-minutes/demo.mp4" type="video/mp4"></video></div>
+      <ol class="steps">
+        <li><h3>音声ファイルを取り込む</h3><p>「設定」タブの「ファイルをインポート」で「音声ファイルをインポート」を選び、ファイルを指定してください。</p><figure class="shot"><a href="/assets/guides/ai-minutes/01-import.webp"><img src="/assets/guides/ai-minutes/01-import.webp" alt="「ファイルをインポート」画面。音声ファイルや動画などの取り込み項目が並んでいる" width="600" height="746" loading="lazy" decoding="async"></a><figcaption>取り込み元を選ぶ画面</figcaption></figure></li>
+        <li><h3>文字起こしを待つ</h3><p>一覧に「文字起こしを実行中です...」と表示されます。2分4秒の音声は、取り込みから要約の表示まで約40秒でした。無料版では処理の前に広告が表示され、最後まで見ると処理が始まる場合があります。今回の環境では広告が表示されなかったので、約40秒に広告の時間は入っていません。</p><figure class="shot"><a href="/assets/guides/ai-minutes/02-processing.webp"><img src="/assets/guides/ai-minutes/02-processing.webp" alt="ノート一覧に取り込んだ音声があり、文字起こしを実行中と表示されている" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>処理中のノート一覧</figcaption></figure></li>
+        <li><h3>要約を読む</h3><p>ノートを開くと、タイトルと要約が自動で入っています。決定事項と数字を、音声と見比べてください。</p><figure class="shot wide"><a href="/assets/guides/ai-minutes/03-summary.webp"><img src="/assets/guides/ai-minutes/03-summary.webp" alt="自動で作られたタイトルと要約。公開日やクーポンの条件が箇条書きで並ぶ" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>タイトルの「キャンプオン」は誤りです</figcaption></figure></li>
+        <li><h3>「やること」を確認する</h3><p>画面を下へスクロールすると、抽出された作業の一覧が表示されます。担当と期限が欠けていないか確かめてください。項目の右のボタンから、リマインダーを設定できます。</p><figure class="shot wide"><a href="/assets/guides/ai-minutes/04-tasks.webp"><img src="/assets/guides/ai-minutes/04-tasks.webp" alt="やることの一覧。写真の確認、メール原稿の作成など4件が並ぶ" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>担当の表示がない項目があります</figcaption></figure></li>
+        <li><h3>「内容まとめ」で整理して書き出す</h3><p>本文の上の「内容まとめ」を押すと、話の流れと要点をまとめた文書ができます。今回は約7秒で完成しました。右上の共有ボタンから、Markdown、テキスト、HTML、PDFで書き出せます。</p><figure class="shot"><a href="/assets/guides/ai-minutes/05-doc-top.webp"><img src="/assets/guides/ai-minutes/05-doc-top.webp" alt="内容まとめの上部。やることと、話の流れを示すセクションが並ぶ" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>内容まとめの上部</figcaption></figure><figure class="shot"><a href="/assets/guides/ai-minutes/06-doc-points.webp"><img src="/assets/guides/ai-minutes/06-doc-points.webp" alt="内容まとめの下部。要点5項目とまとめの文章が並ぶ" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>要点とまとめ</figcaption></figure><figure class="shot"><a href="/assets/guides/ai-minutes/07-export.webp"><img src="/assets/guides/ai-minutes/07-export.webp" alt="共有ボタンのメニュー。Markdown、テキスト、HTML、PDFが並ぶ" width="600" height="497" loading="lazy" decoding="async"></a><figcaption>書き出し形式の選択</figcaption></figure></li>
+      </ol></section><aside class="cta inline" aria-label="アプリで試す"><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-ai-minutes-after-steps&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-ai-minutes-after-steps" data-store="app_store">iPhoneで議事録作成を試す（App Store）</a></div></aside>
+<section class="sec" id="check" aria-labelledby="check-h"><h2 id="check-h">人が直す3か所</h2>
+      <p>手順5で書き出したファイルをメモや文書ツールで開いてください。次の3か所を音声と見比べて直します。</p>
+      <h3>1. 聞き間違えた語と、それを含む文</h3>
+      <p>今回の誤りは、「キャンペーン」が「キャンプオン」になった1語だけでした。要約ではこの語が商品名として扱われ、「新商品『キャンプオン』」と書かれました。タイトルも同じ語を使っていたので、まず文字起こしの語を確かめ、要約とタイトルも直してください。人名の「山田さん」「佐藤さん」は、今回は正しく認識されました。社名や商品名は、「ボイス」タブ上部のアイコンから開く「単語登録」に登録できます。登録の効果は、今回は確かめていません。</p>
+      <h3>2. 「私」「話者」と書かれた担当者</h3>
+      <p>音声の中で「私」と言った人は2人います。写真の確認の「私」はAさんで、メール原稿の「私」はBさんです。アプリの出力では、どちらも担当「私」と表示されました。担当の欄は、実際の名前に置き換えてください。話者を区別する話者識別はPremiumの機能で、今回は確かめていません。</p>
+      <h3>3. 重複と、抜けた宛先や期限</h3>
+      <p>「やること」では、同じ写真確認が2件に分かれました。「内容まとめ」では宛先の「山田さん」が抜け、「納期の確認メールを送る」とだけ表示されました。出力は実行のたびに変わることがあります。公開日などの数字も含めて、最後に音声で確かめてください。</p></section>
+<section class="sec" id="chat-ai" aria-labelledby="chat-ai-h"><h2 id="chat-ai-h">チャットAIで作る場合のテンプレート</h2>
+      <p>文字起こしがすでにあるときは、次の文に続けて文字起こしを貼り付け、チャットAIに送ってください。担当が分からない項目には「不明」と書くよう指定しています。</p>
+      <pre class="code"><code>次の文字起こしから議事録を作ってください。
+形式は、決定事項／宿題（担当・期限）／次回の予定とします。
+- 文字起こしに書かれていないことは足さない
+- 担当や期限が特定できない場合は「不明」と書く
+- 「私」は人名に置き換えず、「不明（発言者が『私』）」と書く
+- 固有名詞で誤字の疑いがある語は、最後に一覧にする
+
+（ここに文字起こしを貼り付ける）</code></pre>
+      <p>同じ文字起こしをClaude（Sonnet 5.5）で1回実行した結果が、下の出力です。「キャンプオン」は誤字の候補に挙がり、「私」が同じ人物とは限らないことも書かれました。一方で、宿題の表には文字起こしに無い「11月4日」が混ざり、末尾で修正されました。チャットAIの出力も、音声と見比べてください。</p>
+      <details class="raw"><summary>チャットAIの出力（抜粋）</summary><div class="doc"><p><strong>宿題（担当・期限）</strong></p><ul><li>メールの原稿を作る／不明（発言者が「私」）／11月7日</li><li>カメラマンの山田さんに納期の確認メールを送る／不明（発言者が「私」）／11月4日ではなく「今日中」（打ち合わせ当日）</li><li>写真の確認（差し替え3点）を行う／不明（発言者が「私」）、佐藤さん／11月12日まで（納品は11月10日の予定）</li></ul><p><strong>誤字の疑いがある固有名詞</strong></p><ul><li>「キャンプオン」（商品名。表記が正しいか不明）</li><li>「山田さん」「佐藤さん」（表記は未確認）</li></ul><p>補足の出力: 「私」は2か所の宿題とも同じ人物かどうか、文字起こしからは判断できません。</p><p>出力の末尾の修正: 期限欄の「11月4日ではなく」は不要な記載で、正しくは「今日中（打ち合わせ当日。日付は不明）」。</p></div></details></section>
+<section class="sec" id="notes" aria-labelledby="notes-h"><h2 id="notes-h">始める前の注意</h2>
+      <ul>
+        <li>録音する前に、録音することと文字起こしサービスを使うことを参加者に伝えてください。社外の人がいる会議では、先に了承を得てください。</li>
+        <li>Texterのファイル文字起こしは、既定のWhisperではクラウドで処理するので、音声を外部のサービスに送信します。iOS 26以降なら、「音声認識サービスを選択」で端末内の処理も選択できる設定です。要約では、テキストを外部のサービスに送信します。詳しくは<a href="/faq/#data-sent">よくある質問</a>と<a href="/privacy-policy/">プライバシーポリシー</a>をご確認ください。</li>
+        <li>無料版の文字起こしには月ごとの上限があり、要約は1日3回までです。2分4秒の音声は、無料の状態で処理できました。上限は<a href="/faq/#price">料金と上限</a>で確認してください。</li>
+        <li>この記事の要約は、初期設定の「おまかせ」で作りました。「要約 / 変換」には「会議議事録」などのテンプレートもあります。テンプレートの出力は検証していません。</li>
+      </ul></section>
+<section class="sec" id="method" aria-labelledby="method-h"><h2 id="method-h">検証の条件</h2>
+      <dl class="facts">
+        <dt>検証日</dt><dd>2026-10-31</dd>
+        <dt>環境</dt><dd>iPhone 17 ProのSimulator（iOS 26.5）で動かした開発版のTexter（バージョン2.11.68）。開発用の表示は、画像と動画でぼかすか隠しています。初回の説明画面は事前に飛ばしました。製品版の見え方とは細部が異なる場合があります。</dd>
+        <dt>音声</dt><dd>台本をmacOSの2種類の合成音声で読み上げた、2分4秒のファイルです。雑音はありません。</dd>
+        <dt>文字起こしの一致</dt><dd>音声認識はアプリの既定のWhisperです。句読点と表記ゆれを除いた台本549字に対して、不一致は2字（一致率99.6％）でした。合成音声で1回測った結果なので、実際の会議の精度とは異なります。</dd>
+        <dt>掲載した出力</dt><dd>アプリとチャットAIの出力を転載しました。チャットAIの出力は抜粋で、表を箇条書きに直しています。</dd>
+      </dl></section>
+<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで試す</h2><p>Texterは、録音や音声ファイルから文字起こし、要約、やることの抽出までを行うアプリです。この手順はiPhone版のものです。無料で始められます。無料版の文字起こしには月ごとの上限があり、要約は1日3回までです。処理の前に広告が表示される場合があります。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-ai-minutes-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-ai-minutes-end" data-store="app_store">iPhoneで議事録作成を試す（App Store）</a><a class="btn btn-line" href="https://play.google.com/store/apps/details?id=com.matz.Texter" target="_blank" rel="noopener noreferrer" data-cta="guide-ai-minutes-end" data-store="google_play">Google Playで見る</a></div></section>
+</main>
+<footer><div class="wrap">
+  <ul><li><a href="/">ホーム</a></li><li><a href="/guides/">活用ガイド</a></li><li><a href="/faq/">よくある質問</a></li><li><a href="/terms-of-service/">利用規約</a></li><li><a href="/privacy-policy/">プライバシーポリシー</a></li><li><a href="/tokushoho/">特定商取引法に基づく表記</a></li></ul>
+  <p>© 2026 Texter app - Kyoto, Japan.</p>
+</div></footer>
+<script>
+(function(){
+  var send=function(name,el){if(window.gtag)gtag('event',name,{location:el.dataset.cta,store:el.dataset.store});};
+  var links=document.querySelectorAll('a[data-cta]');
+  links.forEach(function(a){
+    a.addEventListener('click',function(){send(a.dataset.store==='google_play'?'google_play_click':'app_store_click',a);});
+    if(!('IntersectionObserver' in window))return;
+    var seen=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){send('guide_cta_view',a);seen.disconnect();}});},{threshold:.5});
+    seen.observe(a);
+  });
+})();
+</script>
+</body>
+</html>

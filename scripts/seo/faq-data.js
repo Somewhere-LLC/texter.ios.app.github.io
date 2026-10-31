@@ -33,6 +33,7 @@ const ja = {
   ctaBody: 'Texterは無料で始められます。iPhone / iPad / Apple Watch / Mac (Apple Silicon) / Android対応。',
   footer: [
     { label: 'ホーム', href: '/' },
+    { label: '活用ガイド', href: '/guides/' },
     { label: 'お問い合わせ', href: 'mailto:texter.work.app@gmail.com' },
     { label: '利用規約', href: '/terms-of-service/' },
     { label: 'プライバシーポリシー', href: '/privacy-policy/' },

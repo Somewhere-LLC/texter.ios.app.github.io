@@ -8,6 +8,7 @@ const fs = require('fs');
 const path = require('path');
 const facts = require('./app-facts');
 const data = require('./faq-data');
+const guides = require('../guides/build');
 
 const root = path.resolve(__dirname, '..', '..');
 const SITE = facts.site;
@@ -316,6 +317,7 @@ function generate() {
     out[rel] = html;
     out[path.join(data[lang].path.slice(1), 'index.html')] = render(lang);
   }
+  Object.assign(out, guides.generate());
   return out;
 }
 
