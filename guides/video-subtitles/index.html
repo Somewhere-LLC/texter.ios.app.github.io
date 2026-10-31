@@ -164,7 +164,7 @@ h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.6rem);line-heigh
 .cta p{margin:8px 0 0;color:rgba(255,255,255,.85);font-size:15px}
 .cta .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
 .cta.inline{margin:32px 0 0;padding:20px 22px}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 20px;text-align:center;line-height:1.4;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px}
 .btn-solid{background:#fff;color:var(--navy)}
 .btn-line{color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)}
 footer{margin-top:64px;padding:28px 0 40px;border-top:1px solid var(--line);font-size:13px;color:var(--sub)}
@@ -207,11 +207,11 @@ footer p{margin:12px 0 0}
 <section class="sec" id="steps" aria-labelledby="steps-h"><h2 id="steps-h">Texterで作る手順</h2>
       <div class="demo"><video controls muted playsinline preload="none" poster="/assets/guides/video-subtitles/poster.webp" width="540" height="1308" aria-label="動画ファイルから字幕（SRT）を書き出す操作"><source src="/assets/guides/video-subtitles/demo.mp4" type="video/mp4"></video></div>
       <ol class="steps">
-        <li><h3>動画ファイルを取り込む</h3><p>「設定」タブの「ファイルをインポート」で「動画をインポート」を選び、「ファイル」アプリにある動画を指定してください。写真アプリの動画は、先に「ファイル」アプリへ保存してください。</p><figure class="shot"><a href="/assets/guides/video-subtitles/01-import.webp"><img src="/assets/guides/video-subtitles/01-import.webp" alt="「ファイルをインポート」画面。「動画をインポート」の項目がある" width="600" height="746" loading="lazy" decoding="async"></a><figcaption>「動画をインポート」を選ぶ</figcaption></figure><figure class="shot"><a href="/assets/guides/video-subtitles/02-pick.webp"><img src="/assets/guides/video-subtitles/02-pick.webp" alt="ファイルの選択画面に動画が1本表示されている" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>動画を指定する</figcaption></figure></li>
+        <li><h3>動画ファイルを取り込む</h3><p>「設定」タブの「ファイルをインポート」で「動画をインポート」を選び、「ファイル」アプリにある動画を指定してください。今回確認したのは、この手順です。写真アプリの動画は、先に「ファイル」アプリへ保存すると同じ手順で進められます。</p><figure class="shot"><a href="/assets/guides/video-subtitles/01-import.webp"><img src="/assets/guides/video-subtitles/01-import.webp" alt="「ファイルをインポート」画面。「動画をインポート」の項目がある" width="600" height="746" loading="lazy" decoding="async"></a><figcaption>「動画をインポート」を選ぶ</figcaption></figure><figure class="shot"><a href="/assets/guides/video-subtitles/02-pick.webp"><img src="/assets/guides/video-subtitles/02-pick.webp" alt="ファイルの選択画面に動画が1本表示されている" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>動画を指定する</figcaption></figure></li>
         <li><h3>処理方法を選ぶ</h3><p>「動画として保存」か「音声のみ抽出」を選んでください。今回は「動画として保存」を選びました。無料版では、処理の前に広告が表示される場合があります。今回の環境では広告が表示されず、15秒の動画の文字起こしは約8秒で終わりました。</p><figure class="shot"><a href="/assets/guides/video-subtitles/03-option.webp"><img src="/assets/guides/video-subtitles/03-option.webp" alt="動画の処理方法を選択するダイアログ" width="600" height="1024" loading="lazy" decoding="async"></a><figcaption>処理方法の選択</figcaption></figure></li>
         <li><h3>文字を確認する</h3><p>ノートを開いて、文字起こしの結果を読んでください。この文字が字幕になるので、誤字と表記を確かめます。「センテンス分割」がオフのときは、本文を編集しても字幕に反映されないという警告が出ます。文字を直すときは、書き出したSRTを編集してください。</p><figure class="shot"><a href="/assets/guides/video-subtitles/04-note.webp"><img src="/assets/guides/video-subtitles/04-note.webp" alt="ノート画面に、動画の話を文字にした3文が表示されている" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>文字起こしの結果</figcaption></figure></li>
         <li><h3>SRTを書き出す</h3><p>「共有」から「字幕(SRT)ファイルを共有」を選び、共有シートで保存先や送り先を指定してください。</p><figure class="shot"><a href="/assets/guides/video-subtitles/05-menu.webp"><img src="/assets/guides/video-subtitles/05-menu.webp" alt="共有メニュー。字幕(SRT)ファイルを共有の項目がある" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>共有メニュー</figcaption></figure><figure class="shot"><a href="/assets/guides/video-subtitles/06-sheet.webp"><img src="/assets/guides/video-subtitles/06-sheet.webp" alt="SRTファイルの共有シート。ファイルに保存などの項目が並ぶ" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>共有シート</figcaption></figure></li>
-      </ol></section><aside class="cta inline" aria-label="アプリで試す"><p>無料で始められます。無料版には時間と回数の上限があり、処理の前に広告が表示される場合があります。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-video-subtitles-after-steps&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-video-subtitles-after-steps" data-store="app_store">iPhoneでSRTを書き出す（App Store）</a></div></aside>
+      </ol></section><aside class="cta inline" aria-label="アプリで試す"><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-video-subtitles-after-steps&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-video-subtitles-after-steps" data-store="app_store">iPhoneでSRTを書き出す（App Store）</a></div></aside>
 <section class="sec" id="youtube" aria-labelledby="youtube-h"><h2 id="youtube-h">YouTubeにSRTを読み込む</h2>
       <p><a href="https://support.google.com/youtube/answer/2734796?hl=ja" target="_blank" rel="noopener noreferrer">YouTubeヘルプ</a>には、次の手順が載っています。ウェブ版のYouTube Studioの手順です。今回は、YouTubeへの実際のアップロードは行っていません。</p>
       <ol><li>YouTube Studioにログインし、左のメニューの「字幕」を開く</li><li>対象の動画を選び、必要なら「言語を追加」で言語を追加する</li><li>「作成」を押し、「ファイルをアップロード」を選ぶ</li><li>SRTファイルを指定して、「保存」を押す</li></ol><p>画面の表示が違うときは、上のヘルプを確認してください。</p></section>
@@ -251,7 +251,7 @@ footer p{margin:12px 0 0}
   var send=function(name,el){if(window.gtag)gtag('event',name,{location:el.dataset.cta,store:el.dataset.store});};
   var links=document.querySelectorAll('a[data-cta]');
   links.forEach(function(a){
-    a.addEventListener('click',function(){send('app_store_click',a);});
+    a.addEventListener('click',function(){send(a.dataset.store==='google_play'?'google_play_click':'app_store_click',a);});
     if(!('IntersectionObserver' in window))return;
     var seen=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){send('guide_cta_view',a);seen.disconnect();}});},{threshold:.5});
     seen.observe(a);
