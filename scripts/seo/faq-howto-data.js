@@ -5,7 +5,7 @@ const ja = [
   {
     id: 'start', title: 'はじめに', items: [
       { id: 'tabs', q: '画面の下のタブで何ができますか？',
-        a: '<ul><li>リスト：ノートの閲覧、検索、フォルダ管理</li><li>ボイス：リアルタイム文字起こしと、右上の翻訳アイコンからの同時翻訳</li><li>画像：画像、動画、PDFの文字起こし</li><li>設定：ファイルの取り込み、音声入力と文字起こし、テキストと表示、アプリ設定、ヘルプとサポート</li></ul>' },
+        a: '<ul><li>リスト：ノートの閲覧、検索、フォルダ管理</li><li>ボイス：リアルタイム文字起こしと、右上の翻訳アイコンからの翻訳</li><li>画像：画像、動画、PDFの文字起こし</li><li>設定：ファイルの取り込み、音声入力と文字起こし、テキストと表示、アプリ設定、ヘルプとサポート</li></ul>' },
       { id: 'first-setup', q: '最初に設定しておくとよい項目はありますか？',
         a: '<p>専門用語や社名を使う場合は、「設定」→「音声入力と文字起こし」→「単語登録（専門用語など）」で登録してください。翻訳を使う場合は、同じ画面の「翻訳」で翻訳先の言語とサービスを選べます。</p>' },
       { id: 'free-limits', q: '無料版の主な上限を教えてください。',
@@ -79,7 +79,7 @@ const ja = [
       { id: 'premium-what', q: 'Premiumでは何が変わりますか？',
         a: '<p>各機能の時間や回数の上限が大きくなり、広告が消えます。話者識別、Amazon Transcribe、無音カットも使えます。プランごとの内容は、アプリのプラン比較で確認してください。</p>' },
       { id: 'restore', q: '機種変更のあとにPremiumが有効になりません。',
-        a: '<p>購入時と同じApple IDでサインインし、アプリの「購入履歴を復元」をお試しください。App Storeの購入履歴も確認してください。</p>' },
+        a: '<p>購入時と同じApple IDでサインインし、アプリの「購入を復元」をお試しください。App Storeの購入履歴も確認してください。</p>' },
       { id: 'billing', q: '請求や返金について教えてください。',
         a: '<p>App Storeでの課金、領収書、返金は、Appleの規定に従います。誤って課金された場合は、Appleサポートにお問い合わせください。無料トライアルは、期間が終わると自動で課金が始まります。</p>' },
       { id: 'cancel', q: 'Premiumの解約はどうすればいいですか？',
@@ -102,7 +102,7 @@ const en = [
   {
     id: 'start', title: 'Getting started', items: [
       { id: 'tabs', q: 'What do the tabs at the bottom of the screen do?',
-        a: '<ul><li>List: browse and search notes, manage folders</li><li>Voice: live transcription, and live translation from the translate icon at the top right</li><li>Image: transcribe images, videos, and PDFs</li><li>Settings: file import, voice input and transcription, text and display, app settings, help</li></ul>' },
+        a: '<ul><li>List: browse and search notes, manage folders</li><li>Voice: live transcription, and translation from the translate icon at the top right</li><li>Image: transcribe images, videos, and PDFs</li><li>Settings: file import, voice input and transcription, text and display, app settings, help</li></ul>' },
       { id: 'first-setup', q: 'Which settings should I check first?',
         a: '<p>If you use technical terms or company names, register them under Settings → Voice Input &amp; Transcription → Word Registration (Technical Terms, etc.). For translation, choose the language and service in Translation Settings on the same screen.</p>' },
       { id: 'free-limits', q: 'What are the main limits on the free plan?',
@@ -176,7 +176,7 @@ const en = [
       { id: 'premium-what', q: 'What changes with Premium?',
         a: '<p>Premium raises the time and usage limits and removes ads. It also adds speaker labels, Amazon Transcribe, and silence removal. Check the plan comparison in the app for what each plan includes.</p>' },
       { id: 'restore', q: 'Premium is not active after I changed phones.',
-        a: '<p>Sign in with the Apple ID you used to buy, then try Restore Purchase in the app. Also check your App Store purchase history.</p>' },
+        a: '<p>Sign in with the Apple ID you used to buy, then try Restore Purchases in the app. Also check your App Store purchase history.</p>' },
       { id: 'billing', q: 'What about billing and refunds?',
         a: '<p>App Store charges, receipts, and refunds follow Apple’s rules. Contact Apple Support about an unintended charge. A free trial starts charging automatically when it ends.</p>' },
       { id: 'cancel', q: 'How do I cancel Premium?',

@@ -165,6 +165,7 @@ function render(lang) {
         <h3>${esc(q.q)}</h3>
         <div class="a">${/^<(p|ul|ol)\b/.test(q.a) ? q.a : `<p>${q.a}</p>`}</div>
       </article>`).join('\n      ')}
+      <p class="back"><a href="#toc-h">${esc(t.backToToc)}</a></p>
     </section>`).join('\n');
 
   return `<!DOCTYPE html>
@@ -244,7 +245,9 @@ h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.8rem);line-heigh
 .toc{margin:28px 0 0;padding:18px 20px;background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:14px}
 .toc h2{margin:0;font-size:13px;letter-spacing:.08em;color:var(--sub);font-weight:600}
 .toc ul{margin:8px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 18px}
-.toc a{font-size:15px;font-weight:500}
+.toc a{display:inline-block;padding:10px 0;font-size:15px;font-weight:500}
+.back{margin:14px 0 0;font-size:14px}
+.back a{display:inline-block;padding:10px 0}
 .sec{margin-top:48px}
 .sec>h2{margin:0;padding-top:12px;border-top:1.5px solid var(--navy);color:var(--navy);font-size:clamp(1.3rem,3vw,1.6rem);line-height:1.4}
 .qa{margin-top:16px;padding:20px 22px;background:var(--card);border:1px solid var(--line);border-radius:14px}

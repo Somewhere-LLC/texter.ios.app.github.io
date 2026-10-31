@@ -1,8 +1,9 @@
 // FAQ content for /faq/ and /en/faq/. Edit here, then run `node scripts/seo/build.js`.
-// Every answer was checked against the iOS app as of 2026-10-04.
+// Every answer was checked against the iOS app as of 2026-11-01.
 // Values that can change without an app update (trial length, betas) are left out on purpose.
 // Answers may use only <a>, <b>, <strong>, <br>, <ul>, <ol>, <li>, <p>.
 const howto = require('./faq-howto-data');
+const { arrange } = require('./faq-structure');
 const updated = '2026-11-01';
 
 const ja = {
@@ -18,6 +19,7 @@ const ja = {
   intro: 'Texter（AI文字起こし・議事録アプリ）について、よくいただく質問への回答です。機能の説明に続けて、画面ごとの操作手順も載せています。手順はiPhone版のものです。',
   updatedLabel: '最終更新',
   tocTitle: '目次',
+  backToToc: '目次へ戻る',
   crumb: 'よくある質問',
   crumbLabel: 'パンくずリスト',
   skip: '本文へスキップ',
@@ -107,6 +109,7 @@ const en = {
   intro: 'Answers to common questions about Texter, the AI transcription and meeting notes app. Step-by-step instructions follow the feature overview. The steps describe the iPhone app.',
   updatedLabel: 'Last updated',
   tocTitle: 'Contents',
+  backToToc: 'Back to contents',
   crumb: 'FAQ',
   crumbLabel: 'Breadcrumb',
   skip: 'Skip to content',
@@ -181,5 +184,8 @@ const en = {
     ...howto.en,
   ],
 };
+
+ja.sections = arrange('ja', ja.sections);
+en.sections = arrange('en', en.sections);
 
 module.exports = { updated, ja, en };
