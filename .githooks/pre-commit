@@ -1,0 +1,6 @@
+#!/bin/bash
+# Blocks commits whose Japanese pages break the yomiyasu rules. Enable with: git config core.hooksPath .githooks
+PAGE='\.html$|^scripts/(guides|seo|vendor)/|^scripts/check-yomiyasu|^scripts/yomiyasu-baseline'
+git diff --cached --name-only | grep -qE "$PAGE" || exit 0
+bash "$(git rev-parse --show-toplevel)/scripts/check-yomiyasu-staged.sh" || exit 1
+exit 0
