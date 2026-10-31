@@ -22,8 +22,13 @@ def log(msg):
         pass
 
 
-def run_check():
-    r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts/check-yomiyasu.py")], capture_output=True, text=True, timeout=90)
+def run_check(staged=False):
+    """A commit is judged on its staged snapshot, an edit on the working tree."""
+    if staged:
+        cmd = ["bash", os.path.join(ROOT, "scripts/check-yomiyasu-staged.sh")]
+    else:
+        cmd = [sys.executable, os.path.join(ROOT, "scripts/check-yomiyasu.py")]
+    r = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, timeout=90)
     return r.returncode, (r.stderr or r.stdout).strip()
 
 
@@ -39,7 +44,7 @@ try:
         if not re.search(r"(^|[;&|\s])git(\s+-\S+(\s+\S+)?)*\s+commit\b", inp.get("command", "")):
             log("skip: bash without git commit")
             sys.exit(0)
-        code, out = run_check()
+        code, out = run_check(staged=True)
         log(f"commit gate rc={code}")
         if code == 1:
             print(out, file=sys.stderr)
