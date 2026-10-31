@@ -5,6 +5,27 @@ const { VERIFIED, guides, index } = require('./data');
 const SITE = facts.site;
 const ORG_ID = `${SITE}/#organization`;
 const SITE_ID = `${SITE}/#website`;
+// Same provider token as the app's public note pages. The campaign token ties an App Store install to the guide and link position.
+const APP_STORE_PT = '489812';
+const CONDITIONS = '無料で始められます。無料版には時間と回数の上限があり、処理の前に広告が表示される場合があります。';
+const appStoreLink = (g, pos) => {
+  const id = `${g.store}-${pos}`;
+  if (id.length > 40) throw new Error(`campaign token too long: ${id}`);
+  return `<a class="btn btn-solid" href="${facts.appStore.ja}?pt=${APP_STORE_PT}&amp;ct=${id}&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="${id}" data-store="app_store">${esc(g.ctaLabel)}（App Store）</a>`;
+};
+const inlineCta = (g, pos) => `<aside class="cta inline" aria-label="アプリで試す"><p>${CONDITIONS}</p><div class="row">${appStoreLink(g, pos)}</div></aside>`;
+const TRACK = `<script>
+(function(){
+  var send=function(name,el){if(window.gtag)gtag('event',name,{location:el.dataset.cta,store:el.dataset.store});};
+  var links=document.querySelectorAll('a[data-cta]');
+  links.forEach(function(a){
+    a.addEventListener('click',function(){send('app_store_click',a);});
+    if(!('IntersectionObserver' in window))return;
+    var seen=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){send('guide_cta_view',a);seen.disconnect();}});},{threshold:.5});
+    seen.observe(a);
+  });
+})();
+</script>`;
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const jsonForScript = (obj) => JSON.stringify(obj, null, 2).replace(/</g, '\\u003c');
 
@@ -70,6 +91,7 @@ h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.6rem);line-heigh
 .cta h2{margin:0;font-size:22px;line-height:1.4}
 .cta p{margin:8px 0 0;color:rgba(255,255,255,.85);font-size:15px}
 .cta .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.cta.inline{margin:32px 0 0;padding:20px 22px}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px}
 .btn-solid{background:#fff;color:var(--navy)}
 .btn-line{color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)}
@@ -134,6 +156,7 @@ ${body}
   <ul><li><a href="/">ホーム</a></li><li><a href="/guides/">活用ガイド</a></li><li><a href="/faq/">よくある質問</a></li><li><a href="/terms-of-service/">利用規約</a></li><li><a href="/privacy-policy/">プライバシーポリシー</a></li><li><a href="/tokushoho/">特定商取引法に基づく表記</a></li></ul>
   <p>© 2026 Texter app - Kyoto, Japan.</p>
 </div></footer>
+${TRACK}
 </body>
 </html>
 `;
@@ -184,15 +207,14 @@ function renderGuide(g) {
       crumbLd(url, items),
     ],
   };
-  const sections = g.sections.map((s) => `<section class="sec" id="${s.id}" aria-labelledby="${s.id}-h"><h2 id="${s.id}-h">${esc(s.title)}</h2>${s.html.replace('__VIDEO__', player)}</section>`).join('\n');
-  const cta = (store) => `gtag('event','app_store_click',{location:'${g.store}',store:'${store}'})`;
+  const sections = g.sections.map((s) => `<section class="sec" id="${s.id}" aria-labelledby="${s.id}-h"><h2 id="${s.id}-h">${esc(s.title)}</h2>${s.html.replace('__VIDEO__', player)}</section>${s.cta ? inlineCta(g, s.cta) : ''}`).join('\n');
   const body = `${crumbs(items)}
 <h1>${esc(g.h1)}</h1>
 <p class="lead">${g.lead}</p>
 <p class="meta">検証日 <time datetime="${VERIFIED}">${VERIFIED}</time></p>
 <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul>${g.sections.map((s) => `<li><a href="#${s.id}">${esc(s.title)}</a></li>`).join('')}</ul></nav>
 ${sections}
-<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">${esc(g.ctaTitle)}</h2><p>${esc(g.ctaBody)}</p><div class="row"><a class="btn btn-solid" href="${facts.appStore.ja}" target="_blank" rel="noopener noreferrer" onclick="${cta('app_store')}">App Storeで見る</a><a class="btn btn-line" href="${facts.googlePlay}" target="_blank" rel="noopener noreferrer" onclick="${cta('google_play')}">Google Playで見る</a></div></section>`;
+<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">${esc(g.ctaTitle)}</h2><p>${esc(g.ctaBody)}${CONDITIONS}</p><div class="row">${appStoreLink(g, 'end')}<a class="btn btn-line" href="${facts.googlePlay}" target="_blank" rel="noopener noreferrer" data-cta="${g.store}-end" data-store="google_play">Google Playで見る</a></div></section>`;
   return shell({ title: g.title, description: g.description, url, ld, body, ogType: 'article' });
 }
 
