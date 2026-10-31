@@ -9,11 +9,11 @@ const wide = (html) => html.replace('class="shot"', 'class="shot wide"');
 
 const aiMinutes = {
   slug: 'ai-minutes',
-  title: '議事録を作る方法｜録音から完成までの手順と、人が直す3か所【実例つき】',
-  description: '2分の打ち合わせ音声から議事録を作った全手順です。文字起こしと要約の実際の出力、誤りの箇所、人が直した完成版、チャットAI用のテンプレートを載せています。',
-  crumb: '議事録を作る方法',
-  h1: '議事録を作る方法',
-  lead: '録音があれば、議事録の下書きは自動で作れます。2分4秒の打ち合わせ音声では、要約の表示まで約40秒でした。ただし、聞き間違えた語と担当者の表記は人が直しました。このページでは、実際の処理結果をもとに手順と直す箇所を説明します。',
+  title: '録音から議事録を作る方法｜iPhoneで文字起こし・要約する手順と完成例',
+  description: '2分の打ち合わせ音声から議事録を作った全手順です。iPhoneの操作画面、実際の出力、人が仕上げた完成版、チャットAI用のテンプレートを載せています。',
+  crumb: '録音から議事録を作る方法',
+  h1: '録音から議事録を作る方法',
+  lead: '録音があれば、文字起こしと要約までは自動で進みます。2分4秒の打ち合わせ音声では、要約の表示まで約40秒でした。この時間に、人が確認して仕上げる時間は入っていません。このページでは、iPhoneでの手順と完成した議事録を紹介します。',
   video: {
     src: '/assets/guides/ai-minutes/demo.mp4', poster: '/assets/guides/ai-minutes/poster.webp', w: 540, h: 1308, duration: 'PT54S',
     name: '録音ファイルから議事録を作る操作', description: '音声ファイルを取り込み、文字起こし、要約、やることの確認、内容まとめまでを進める実際の操作画面です。待ち時間は早送りしています。',
@@ -21,24 +21,25 @@ const aiMinutes = {
   store: 'guide-ai-minutes',
   sections: [
     { id: 'summary', title: '結論', html: `
-      <p>議事録は、録音、文字起こし、整理、人の確認の4段階で作ります。今回の音声では、文字起こしの誤りは549字中2字でした。それでも、完成前に<strong>聞き間違えた語、担当者、重複や抜けの3か所</strong>を人が直しました。</p>
+      <p>議事録は、録音、文字起こし、整理、人の確認の4段階で作れます。自動で進むのは文字起こしと要約までです。担当者と数字は、最後に人が確認してください。</p>
       <table class="compare"><thead><tr><th scope="col">方法</th><th scope="col">向いている場面</th><th scope="col">注意点</th></tr></thead><tbody>
         <tr><th scope="row">議事録アプリ</th><td>録音から整理までを1つのアプリで済ませたいとき</td><td>無料で使える時間や回数に上限がある</td></tr>
         <tr><th scope="row">文字起こし＋チャットAI</th><td>すでに文字起こしがあり、形式を自由に指定したいとき</td><td>貼り付けてよい内容か、会社のルールを確かめる。今回は文字起こしに無い日付が混ざった</td></tr>
       </tbody></table>` },
-    { id: 'result', title: 'アプリの出力と、人が直した議事録の完成例', html: `
-      <p>題材は、11月の新商品キャンペーンを決める架空の打ち合わせです。司会のAさんと担当のBさんが話します。同じ音声で試したいときは、<a href="/assets/guides/ai-minutes/sample-meeting.m4a">音声ファイル</a>（m4a、1MB）を使ってください。下の表の左列はアプリの「やること」の出力で、右列は音声と照らして直した内容です。</p>
+    { id: 'result', cta: 'after-result', title: '完成した議事録と、直した内容', html: `
+      <p>題材は、11月の新商品キャンペーンを決める架空の打ち合わせです。司会のAさんと担当のBさんが話します。同じ音声で試したいときは、<a href="/assets/guides/ai-minutes/sample-meeting.m4a">音声ファイル</a>（m4a、1MB）を使ってください。下の議事録は、アプリの出力を音声と照らして人が仕上げたものです。</p>
+      <div class="doc"><p><strong>新商品キャンペーン打ち合わせ</strong></p>
+      <p><strong>開催日時</strong>: 要追記（録音からは分かりません）<br><strong>参加者</strong>: Aさん、Bさん（ほかの参加者は要追記）</p>
+      <p><strong>決定事項</strong></p><ul><li>公開日は11月14日</li><li>メールマガジンは同日の午前10時に、約8,500人へ配信</li><li>クーポンは15％オフ、期限は11月30日まで</li></ul>
+      <p><strong>宿題</strong></p><ul><li>Aさん・佐藤さん: 11月10日に届く写真3点を、11月12日までに確認</li><li>Bさん: メール原稿を11月7日までに作成</li><li>Bさん: 山田さんへ納期の確認メールを今日中に送信</li></ul>
+      <p><strong>次回</strong>: 11月11日 午後3時</p></div>
+      <h3>アプリの出力から直した内容</h3>
       <table class="compare"><thead><tr><th scope="col">アプリの出力（やること）</th><th scope="col">人が直した内容</th></tr></thead><tbody>
         <tr><td>納品された写真3点を確認する／11月12日まで／担当の表示なし</td><td>写真3点を確認する。担当はAさんと佐藤さん、期限は11月12日</td></tr>
         <tr><td>佐藤さんと一緒に写真を確認する／担当「私」</td><td>上の項目と同じ作業なので、1つにまとめる</td></tr>
         <tr><td>メールの原稿を作る／担当「私」／11月7日まで</td><td>メールの原稿を作る。担当はBさん、期限は11月7日</td></tr>
         <tr><td>山田さんに納期の確認メールを送る／今日中に／担当の表示なし</td><td>山田さんに納期の確認メールを送る。担当はBさん、期限は今日中</td></tr>
       </tbody></table>
-      <h3>人が直した議事録</h3>
-      <div class="doc"><p><strong>新商品キャンペーン打ち合わせ</strong></p>
-      <p><strong>決定事項</strong></p><ul><li>公開日は11月14日</li><li>メールマガジンは同日の午前10時に、約8,500人へ配信</li><li>クーポンは15％オフ、期限は11月30日まで</li></ul>
-      <p><strong>宿題</strong></p><ul><li>Aさん・佐藤さん: 11月10日に届く写真3点を、11月12日までに確認</li><li>Bさん: メール原稿を11月7日までに作成</li><li>Bさん: 山田さんへ納期の確認メールを今日中に送信</li></ul>
-      <p><strong>次回</strong>: 11月11日 午後3時</p></div>
       <details class="raw"><summary>要約の全文</summary><div class="doc"><p>11月の新商品「キャンプオン」の公開日や告知、担当について決めた打ち合わせです。<br>・特設ページのデザインは先週金曜日に完成。写真3点の納品は山田さんから11月10日の予定で、12日までに確認する。<br>・写真の確認は、話者と佐藤さんが担当する。<br>・公開日は11月14日、メールマガジンは同日午前10時に約8,500人へ配信する。<br>・クーポンは15％オフで、期限は11月30日まで。<br>・メール原稿は話者が11月7日までに作成し、山田さんには今日中に納期確認メールを送る。次回の打ち合わせは11月11日午後3時。</p></div></details>
       <details class="raw"><summary>文字起こしの全文</summary><pre class="code"><code>それでは、11月の新商品キャンプオンの打ち合わせを始めます。
 今日は、公開日と担当を決めたいと思います。
@@ -64,7 +65,7 @@ const aiMinutes = {
 よろしくお願いします
 次回の打ち合わせは11月11日の午後3時からにします
 今日はありがとうございました</code></pre></details>` },
-    { id: 'steps', title: 'Texterで作る手順', html: `
+    { id: 'steps', cta: 'after-steps', title: 'Texterで作る手順', html: `
       <p>音声ファイルから議事録を作る手順です。その場で録音するときは、手順1の代わりに「ボイス」タブで録音してください。下の動画では、ノートがまだ無いときに「ボイス」タブに出る「音声・動画ファイルを読み込む」から同じ画面を開いています。</p>
       <div class="demo">__VIDEO__</div>
       <ol class="steps">
@@ -111,16 +112,17 @@ const aiMinutes = {
       </dl>` },
   ],
   ctaTitle: 'Texterで試す',
-  ctaBody: 'Texterは、録音や音声ファイルから文字起こし、要約、やることの抽出までを行うアプリです。無料で始められます。この手順はiPhone版のものです。',
+  ctaLabel: 'iPhoneで議事録作成を試す',
+  ctaBody: 'Texterは、録音や音声ファイルから文字起こし、要約、やることの抽出までを行うアプリです。この手順はiPhone版のものです。',
 };
 
 const videoSubtitles = {
   slug: 'video-subtitles',
-  title: '動画から字幕を作成する方法｜iPhoneでSRTを書き出す手順と実例',
+  title: 'iPhoneの動画からSRT字幕を作る方法｜書き出し手順と完成例',
   description: '15秒の動画から字幕ファイルのSRTを作った全手順です。実際のSRT、字幕付きの再生例、時刻のずれの実測、YouTubeで使うときの手順を載せています。',
-  crumb: '動画から字幕を作成する方法',
-  h1: '動画から字幕を作成する方法',
-  lead: '動画の音声を文字起こしして、時刻つきの字幕ファイル（SRT）にすると、YouTubeなどに読み込めます。このページでは、15秒の動画を実際に処理した結果と、公開前に確認する点を説明します。',
+  crumb: 'iPhoneの動画からSRT字幕を作る方法',
+  h1: 'iPhoneの動画からSRT字幕を作る方法',
+  lead: '動画の音声を文字起こしして時刻つきのSRTファイルにすると、YouTubeなどに読み込めます。このページの完成物はSRTで、字幕を映像に入れた動画は扱いません。15秒の動画を実際に処理した結果と、公開前に確認する点を説明します。',
   video: {
     src: '/assets/guides/video-subtitles/demo.mp4', poster: '/assets/guides/video-subtitles/poster.webp', w: 540, h: 1308, duration: 'PT53S',
     name: '動画ファイルから字幕（SRT）を書き出す操作', description: '動画ファイルを取り込み、文字起こしを確認して、字幕（SRT）ファイルを書き出すまでの実際の操作画面です。',
@@ -128,9 +130,9 @@ const videoSubtitles = {
   store: 'guide-video-subtitles',
   sections: [
     { id: 'summary', title: '結論', html: `
-      <p>字幕の作り方は、使い道で選んでください。YouTubeだけで公開するなら、YouTubeの自動字幕を先に試せます。字幕ファイルを手元に残したいときや、ほかのサービスでも使いたいときは、SRTを作ります。</p>
+      <p>この手順は、字幕ファイルを手元に残したい人や、複数のサービスで使いたい人に向いています。YouTubeだけで公開するなら、YouTubeの自動字幕も試せます。</p>
       <p>SRTは、番号、表示する時刻、字幕の文字だけでできたテキストファイルです。YouTubeヘルプの<a href="https://support.google.com/youtube/answer/2734698?hl=ja" target="_blank" rel="noopener noreferrer">対応形式の一覧</a>にも載っています。</p>` },
-    { id: 'result', title: '実際のSRTと再生結果の完成例', html: `
+    { id: 'result', cta: 'after-result', title: '実際のSRTと再生結果の完成例', html: `
       <p>下の動画には、Texterが書き出したSRTの字幕を表示しています。ブラウザで表示するために、形式だけVTTへ変換しました。字幕は、プレーヤーの字幕ボタンで切り替えられます。題材は、動画生成サービスで作った架空の人物の映像です。</p>
       <video class="sample" controls playsinline preload="metadata" poster="/assets/guides/video-subtitles/sample-poster.webp" width="960" height="540"><source src="/assets/guides/video-subtitles/sample.mp4" type="video/mp4"><track kind="captions" src="/assets/guides/video-subtitles/sample.vtt" srclang="ja" label="日本語" default></video>
       <p class="note">書き出されたファイル: <a href="/assets/guides/video-subtitles/sample.srt" download>sample.srt（297バイト）</a></p>
@@ -145,7 +147,7 @@ const videoSubtitles = {
 3
 00:00:10,000 --&gt; 00:00:15,060
 次に、よく使う文房具だけを手前に置きます。</code></pre>` },
-    { id: 'steps', title: 'Texterで作る手順', html: `
+    { id: 'steps', cta: 'after-steps', title: 'Texterで作る手順', html: `
       <div class="demo">__VIDEO__</div>
       <ol class="steps">
         <li><h3>動画ファイルを取り込む</h3><p>「設定」タブの「ファイルをインポート」で「動画をインポート」を選び、「ファイル」アプリにある動画を指定してください。写真アプリの動画は、先に「ファイル」アプリへ保存してください。</p>${fig('/assets/guides/video-subtitles/01-import.webp', '「ファイルをインポート」画面。「動画をインポート」の項目がある', '「動画をインポート」を選ぶ', 600, 746)}${fig('/assets/guides/video-subtitles/02-pick.webp', 'ファイルの選択画面に動画が1本表示されている', '動画を指定する', ...FULL)}</li>
@@ -183,7 +185,8 @@ const videoSubtitles = {
       </dl>` },
   ],
   ctaTitle: 'Texterで試す',
-  ctaBody: 'Texterは、音声や動画の文字起こしと字幕（SRT）の書き出しができるアプリです。無料で始められます。この手順はiPhone版のものです。',
+  ctaLabel: 'iPhoneでSRTを書き出す',
+  ctaBody: 'Texterは、音声や動画の文字起こしと字幕の書き出しができるアプリです。この手順はiPhone版のものです。',
 };
 
 const index = {

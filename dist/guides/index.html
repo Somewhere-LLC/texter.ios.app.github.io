@@ -143,6 +143,7 @@ h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.6rem);line-heigh
 .cta h2{margin:0;font-size:22px;line-height:1.4}
 .cta p{margin:8px 0 0;color:rgba(255,255,255,.85);font-size:15px}
 .cta .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.cta.inline{margin:32px 0 0;padding:20px 22px}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px}
 .btn-solid{background:#fff;color:var(--navy)}
 .btn-line{color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)}
@@ -163,11 +164,23 @@ footer p{margin:12px 0 0}
 <nav aria-label="パンくずリスト"><ol class="crumbs"><li><a href="/">Texter</a></li><li aria-current="page">活用ガイド</li></ol></nav>
 <h1>活用ガイド</h1>
 <p class="lead">実際にアプリを動かした手順と完成例、出力の誤りを載せています。</p>
-<div class="cards"><a class="card" href="/guides/ai-minutes/"><strong>議事録を作る方法</strong><span>2分の打ち合わせ音声から議事録を作った全手順です。文字起こしと要約の実際の出力、誤りの箇所、人が直した完成版、チャットAI用のテンプレートを載せています。</span></a><a class="card" href="/guides/video-subtitles/"><strong>動画から字幕を作成する方法</strong><span>15秒の動画から字幕ファイルのSRTを作った全手順です。実際のSRT、字幕付きの再生例、時刻のずれの実測、YouTubeで使うときの手順を載せています。</span></a></div>
+<div class="cards"><a class="card" href="/guides/ai-minutes/"><strong>録音から議事録を作る方法</strong><span>2分の打ち合わせ音声から議事録を作った全手順です。iPhoneの操作画面、実際の出力、人が仕上げた完成版、チャットAI用のテンプレートを載せています。</span></a><a class="card" href="/guides/video-subtitles/"><strong>iPhoneの動画からSRT字幕を作る方法</strong><span>15秒の動画から字幕ファイルのSRTを作った全手順です。実際のSRT、字幕付きの再生例、時刻のずれの実測、YouTubeで使うときの手順を載せています。</span></a></div>
 </main>
 <footer><div class="wrap">
   <ul><li><a href="/">ホーム</a></li><li><a href="/guides/">活用ガイド</a></li><li><a href="/faq/">よくある質問</a></li><li><a href="/terms-of-service/">利用規約</a></li><li><a href="/privacy-policy/">プライバシーポリシー</a></li><li><a href="/tokushoho/">特定商取引法に基づく表記</a></li></ul>
   <p>© 2026 Texter app - Kyoto, Japan.</p>
 </div></footer>
+<script>
+(function(){
+  var send=function(name,el){if(window.gtag)gtag('event',name,{location:el.dataset.cta,store:el.dataset.store});};
+  var links=document.querySelectorAll('a[data-cta]');
+  links.forEach(function(a){
+    a.addEventListener('click',function(){send('app_store_click',a);});
+    if(!('IntersectionObserver' in window))return;
+    var seen=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){send('guide_cta_view',a);seen.disconnect();}});},{threshold:.5});
+    seen.observe(a);
+  });
+})();
+</script>
 </body>
 </html>
