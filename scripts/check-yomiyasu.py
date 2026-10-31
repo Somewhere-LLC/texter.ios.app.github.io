@@ -15,7 +15,8 @@ import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-LINT = os.path.expanduser("~/.claude/skills/yomiyasu/scripts/yomiyasu_lint.py")
+# Vendored copy of the yomiyasu skill linter, so a clean checkout can build. Refresh it by copying from the skill.
+LINT = os.path.join(ROOT, "scripts", "vendor", "yomiyasu_lint.py")
 BASELINE = os.path.join(ROOT, "scripts", "yomiyasu-baseline.json")
 BASELINED = ["index.html", "faq/index.html", "privacy-policy/index.html", "terms-of-service/index.html", "tokushoho/index.html", "pdf/texter-for-business.html"]
 
