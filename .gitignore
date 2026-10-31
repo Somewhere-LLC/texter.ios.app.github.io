@@ -1,5 +1,7 @@
-# Claude Code settings
-.claude/
+# Claude Code settings (the project hook is tracked)
+.claude/*
+!.claude/settings.json
+!.claude/hooks/
 
 # OS generated files
 .DS_Store
