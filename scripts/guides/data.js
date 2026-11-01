@@ -124,6 +124,7 @@ const aiMinutes = {
 
 const videoSubtitles = {
   slug: 'video-subtitles',
+  modified: '2026-11-01',
   title: 'iPhoneの動画からSRT字幕を作る方法｜書き出し手順と完成例',
   description: '15秒の動画から字幕ファイルのSRTを作った全手順です。実際のSRT、字幕付きの再生例、時刻のずれの実測、YouTubeで使うときの手順を載せています。',
   crumb: 'iPhoneの動画からSRT字幕を作る方法',
@@ -179,7 +180,7 @@ const videoSubtitles = {
         <li>この手順はiPhoneのSimulatorで確認しました。ほかの端末では画面が異なる場合があります。</li>
       </ul>` },
     { id: 'data', title: '字幕を映像に入れたいときと、データの扱い', html: `
-      <p>Texterには、字幕を映像に入れた動画を書き出す機能もあります。この記事ではその手順を検証していないので、説明はSRTの作り方までです。</p>
+      <p>字幕を映像に入れた動画を書き出すには、<a href="/guides/iphone-subtitled-video/">字幕付き動画のガイド</a>をご覧ください。</p>
       <p>文字起こしは、既定のWhisperではクラウドで処理するので、音声を外部のサービスに送信します。iOS 26以降なら、「音声認識サービスを選択」で端末内で処理する方式も選べますが、サービスによってはSRTの項目が表示されない場合があります。無料版の文字起こしには上限があるので、<a href="/faq/#data-sent">データの扱い</a>と<a href="/pricing/">料金と上限</a>をご確認ください。</p>` },
     { id: 'method', title: '検証の条件', html: `
       <dl class="facts">
@@ -307,6 +308,70 @@ const pipGuide = {
   ctaBody: 'Texterは、録音から文字起こし、要約、やることの抽出までを行うアプリです。この手順はiPhone版のものです。',
 };
 
+const subtitledVideo = {
+  slug: 'iphone-subtitled-video',
+  verified: '2026-11-01',
+  published: '2026-11-01',
+  iosOnly: true,
+  title: 'iPhoneで字幕付き動画を作る方法｜書き出し手順と完成例',
+  description: 'Texterで動画を文字起こしして、字幕を映像に入れた動画を書き出す手順です。実機の画面、完成した動画、かかった時間、ファイルの大きさを載せています。',
+  crumb: 'iPhoneで字幕付き動画を作る方法',
+  h1: 'iPhoneで字幕付き動画を作る方法',
+  lead: 'Texterで動画を文字起こしすると、字幕を映像に入れた動画を書き出せます。15秒の動画を実機で処理した結果と手順を説明します。',
+  video: {
+    src: '/assets/guides/subtitled-video/sample.mp4', poster: '/assets/guides/subtitled-video/sample-poster.webp', w: 960, h: 540, duration: 'PT13S',
+    name: 'Texterで書き出した字幕付き動画の再生例', description: 'Texterで字幕を映像に入れた動画を、iPhoneで再生して画面収録したものです。音声は元の動画の音声を合わせています。',
+  },
+  store: 'guide-subtitled-video',
+  sections: [
+    { id: 'summary', title: '結論', html: `
+      <p>動画を「動画を保存」で取り込み、ノートの「共有」から「動画(字幕付き)を共有」を選んでください。字幕が映像に入るので、字幕ファイルを読み込めないサービスにも字幕付きで投稿できます。字幕を後から編集したいときは、<a href="/guides/video-subtitles/">SRTを作るガイド</a>をご覧ください。</p>` },
+    { id: 'result', cta: 'after-result', title: '完成した動画と結果', html: `
+      <div class="demo land">__VIDEO__</div>
+      <p class="note">書き出した動画をiPhoneで再生し、画面収録して切り抜きました。収録の都合で先頭の約2秒が欠けています。音声は元の動画の音声を合わせました。題材は、動画生成サービスで作った架空の人物の映像です。</p>
+      <dl class="facts">
+        <dt>元の動画</dt><dd>15秒、1280×720、約4MB</dd>
+        <dt>書き出しの品質</dt><dd>高速 (720p)</dd>
+        <dt>かかった時間</dt><dd>品質を選んでから共有シートが開くまで約7〜8秒でした（2回測定）。</dd>
+        <dt>書き出した動画</dt><dd>約15MB。元の動画の約4倍になりました。</dd>
+      </dl>
+      <p>字幕は2つに分かれました。1つ目は3文をまとめた字幕で、3行になり、表示は約10秒です。この3行は映像の下の約3分の1を覆いました。2つ目は1行でした。字幕の位置は下端、色は白い文字と黒い背景で、変えられません。語の途中で改行されることがあり、今回も「片付／け」「一箇／所」のように切れました。</p>
+      <p>文字の誤りはなく、表記だけが台本と違います。「五分」は「5分」に、「一か所」は「一箇所」になりました。</p>` },
+    { id: 'steps', cta: 'after-steps', title: '手順', html: `
+      <ol class="steps">
+        <li><h3>動画を取り込む</h3><p>「画像」タブの「動画ファイルをインポート」で動画を選び、「動画を保存」を押してください。「動画から音声のみを保存」を選ぶと映像が残りません。今回はファイルアプリの動画を取り込みました。写真アプリの動画は、同じ画面の「カメラまたはビデオライブラリから選択」から選べますが、今回は試していません。取り込むと文字起こしが始まり、終わるとノートが開きます。</p></li>
+        <li><h3>文字を確認する</h3><p>ノートを開いて、文字起こしの結果を読んでください。本文の「[スピーカー1]」は、今回の字幕には入りませんでした。設定の「センテンスごとに表示」（警告文では「センテンス分割」）がオフのときは、本文を編集しても字幕に反映されないという警告が出ます。名前の誤りを直すなら、先に設定をオンにしてください。</p>${fig('/assets/guides/subtitled-video/01-note.webp', '動画と文字起こしの本文が並ぶノートの画面', '取り込んだ動画のノート', ...FULL)}</li>
+        <li><h3>字幕付きの書き出しを選ぶ</h3><p>「共有」を押し、「動画(字幕付き)を共有」を選んでください。</p>${fig('/assets/guides/subtitled-video/02-menu.webp', '共有メニュー。動画(字幕付き)を共有の項目がある', '共有メニュー', ...FULL)}</li>
+        <li><h3>品質を選ぶ</h3><p>「高速 (720p)」か「高品質」を選ぶと、書き出しが始まります。今回は「高速 (720p)」を選びました。</p>${wide(fig('/assets/guides/subtitled-video/03-quality.webp', '書き出し品質を選択の画面', '品質の選択', ...FULL))}${fig('/assets/guides/subtitled-video/04-progress.webp', '字幕付き動画を作成中の表示と進み具合', '書き出し中の画面', ...FULL)}</li>
+        <li><h3>保存先を選ぶ</h3><p>共有シートで保存先や送り先を選んでください。書き出した動画はアプリに残らず、共有シートを閉じると作り直しになります。今回はファイルアプリに保存し、再生して字幕を確かめました。「ビデオを保存」を選べば写真アプリにも保存できます。</p>${fig('/assets/guides/subtitled-video/05-sheet.webp', '書き出した動画の共有シート', '共有シート', ...FULL)}</li>
+      </ol>` },
+    { id: 'check', title: '投稿する前の確認', html: `
+      <p>字幕は映像に入るので、書き出した後では字幕だけを直せません。投稿する前に最後まで再生して、次の2点を確かめてください。</p>
+      <ul>
+        <li>字幕が人物の顔や画面の中の文字に重ならないこと。字幕が長いと3行以上になり、映像の下の広い範囲を覆います</li>
+        <li>名前や専門用語が正しいこと</li>
+        <li>「動画(字幕付き)を共有」が共有メニューに出ないときは、そのノートに字幕の区間か元の動画が無い可能性があります。動画から取り込んだノートで試してください</li>
+      </ul>` },
+    { id: 'notes', title: '始める前の注意', html: `
+      <ul>
+        <li>無料版の文字起こしには上限があります。条件は<a href="/pricing/">料金と利用条件</a>にあります</li>
+        <li>既定の音声認識は音声を外部のサービスへ送信するので、<a href="/faq/#data-sent">データの扱い</a>を確認してください</li>
+        <li>長い動画と「高品質」の書き出しは、今回は検証していません。掲載した動画は960×540に縮小しています</li>
+      </ul>` },
+    { id: 'next', title: '関連するガイド', html: `<p>字幕ファイルを作るには<a href="/guides/video-subtitles/">SRTのガイド</a>、録音を議事録にするには<a href="/guides/ai-minutes/">議事録のガイド</a>をご覧ください。</p>` },
+    { id: 'method', title: '検証の条件', html: `
+      <dl class="facts">
+        <dt>検証した人</dt><dd>Texter運営</dd>
+        <dt>検証日</dt><dd>2026-11-01</dd>
+        <dt>環境</dt><dd>iPhone 17 Pro（iOS 27.0）、製品版のTexter（バージョン2.11.68）。無料の状態です。</dd>
+        <dt>動画</dt><dd>動画生成サービスRenoiseで作った、15秒の日本語の動画です。雑音はありません。実際に撮影した動画では、結果が異なる場合があります。</dd>
+      </dl>` },
+  ],
+  ctaTitle: 'Texterで試す',
+  ctaLabel: 'iPhoneで字幕付き動画を作る',
+  ctaBody: 'Texterは、音声や動画の文字起こしと字幕の書き出しができるアプリです。この手順はiPhone版のものです。',
+};
+
 const index = {
   title: '文字起こしと議事録の活用ガイド｜Texter',
   description: '議事録や動画字幕の作り方を、実際の操作画面と完成例で説明するガイドです。',
@@ -315,4 +380,4 @@ const index = {
   crumb: '活用ガイド',
 };
 
-module.exports = { VERIFIED, guides: [aiMinutes, videoSubtitles, sideButton, pipGuide], index };
+module.exports = { VERIFIED, guides: [aiMinutes, videoSubtitles, subtitledVideo, sideButton, pipGuide], index };
