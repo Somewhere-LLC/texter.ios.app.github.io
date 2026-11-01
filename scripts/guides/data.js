@@ -9,6 +9,7 @@ const wide = (html) => html.replace('class="shot"', 'class="shot wide"');
 
 const aiMinutes = {
   slug: 'ai-minutes',
+  modified: '2026-11-01',
   title: '録音から議事録を作る方法｜iPhoneで文字起こし・要約する手順と完成例',
   description: '2分の打ち合わせ音声から議事録を作った全手順です。iPhoneの操作画面、実際の出力、人が仕上げた完成版、チャットAI用のテンプレートを載せています。',
   crumb: '録音から議事録を作る方法',
@@ -66,7 +67,7 @@ const aiMinutes = {
 次回の打ち合わせは11月11日の午後3時からにします
 今日はありがとうございました</code></pre></details>` },
     { id: 'steps', cta: 'after-steps', title: 'Texterで作る手順', html: `
-      <p>音声ファイルから議事録を作る手順です。その場で録音するときは、手順1の代わりに「ボイス」タブで録音してください。下の動画では、ノートがまだ無いときに「ボイス」タブに出る「音声・動画ファイルを読み込む」から同じ画面を開いています。</p>
+      <p>音声ファイルから議事録を作る手順です。その場で録音するときは、手順1の代わりに「ボイス」タブで録音してください。<a href="/guides/iphone-side-button-recording/">サイドボタンの長押しで録音を始める</a>こともできます。下の動画では、ノートがまだ無いときに「ボイス」タブに出る「音声・動画ファイルを読み込む」から同じ画面を開いています。</p>
       <div class="demo">__VIDEO__</div>
       <ol class="steps">
         <li><h3>音声ファイルを取り込む</h3><p>「設定」タブの「ファイルをインポート」で「音声ファイルをインポート」を選び、ファイルを指定してください。</p>${fig('/assets/guides/ai-minutes/01-import.webp', '「ファイルをインポート」画面。音声ファイルや動画などの取り込み項目が並んでいる', '取り込み元を選ぶ画面', 600, 746)}</li>
@@ -75,6 +76,10 @@ const aiMinutes = {
         <li><h3>「やること」を確認する</h3><p>画面を下へスクロールすると、抽出された作業の一覧が表示されます。担当と期限が欠けていないか確かめてください。項目の右のボタンから、リマインダーを設定できます。</p>${wide(fig('/assets/guides/ai-minutes/04-tasks.webp', 'やることの一覧。写真の確認、メール原稿の作成など4件が並ぶ', '担当の表示がない項目があります', ...FULL))}</li>
         <li><h3>「内容まとめ」で整理して書き出す</h3><p>本文の上の「内容まとめ」を押すと、話の流れと要点をまとめた文書ができます。今回は約7秒で完成しました。右上の共有ボタンから、Markdown、テキスト、HTML、PDFで書き出せます。</p>${fig('/assets/guides/ai-minutes/05-doc-top.webp', '内容まとめの上部。やることと、話の流れを示すセクションが並ぶ', '内容まとめの上部', ...FULL)}${fig('/assets/guides/ai-minutes/06-doc-points.webp', '内容まとめの下部。要点5項目とまとめの文章が並ぶ', '要点とまとめ', ...FULL)}${fig('/assets/guides/ai-minutes/07-export.webp', '共有ボタンのメニュー。Markdown、テキスト、HTML、PDFが並ぶ', '書き出し形式の選択', 600, 497)}</li>
       </ol>` },
+    { id: 'voice-memo', title: 'ボイスメモで録音した音声を議事録にする', html: `
+      <p>長時間の文字起こし、要約、決定事項、担当者、期限まで整理したいときは、ボイスメモの録音をTexterに取り込んでください。</p>
+      <ol><li>ボイスメモで録音を開き、「…」→「共有」→「“ファイル”に保存」を選ぶ</li><li>Texterの「設定」→「ファイルをインポート」→「音声ファイルをインポート」でそのファイルを選ぶ</li><li>上の手順2以降と同じように進める</li></ol>
+      <p>この手順は2026-11-01に実機（iPhone 17 Pro、iOS 27.0、製品版2.11.68）で確かめました。無料枠と広告の条件は<a href="/pricing/">料金と利用条件</a>で確認できます。同じファイルをもう一度選ぶと「存在しないため、開けませんでした」と表示されたので、続けて取り込むときは保存し直してください。</p>` },
     { id: 'check', title: '人が直す3か所', html: `
       <p>手順5で書き出したファイルをメモや文書ツールで開いてください。次の3か所を音声と見比べて直します。</p>
       <h3>1. 聞き間違えた語と、それを含む文</h3>
@@ -191,6 +196,63 @@ const videoSubtitles = {
   ctaBody: 'Texterは、音声や動画の文字起こしと字幕の書き出しができるアプリです。この手順はiPhone版のものです。',
 };
 
+const sideButton = {
+  slug: 'iphone-side-button-recording',
+  published: '2026-11-01',
+  iosOnly: true,
+  verified: '2026-11-01',
+  title: 'iPhoneのサイドボタン長押しで録音・文字起こしを始める方法｜設定手順と実例',
+  description: 'iPhoneのサイドボタンを長押しして、Texterの録音と文字起こしを始める手順です。設定画面、実際の動作、保存されたノート、利用の条件を載せています。',
+  crumb: 'サイドボタンで録音を始める方法',
+  h1: 'iPhoneのサイドボタン長押しで録音・文字起こしを始める方法',
+  lead: 'Apple Accountの国または地域が日本で、日本国内にいるときは、iOS 26.2以降でサイドボタンに音声アプリを割り当てられます。Texterを選ぶと、長押しで録音と文字起こしが始まります。このページは、実機で確かめた手順と結果の説明です。',
+  video: {
+    src: '/assets/guides/side-button/demo.mp4', poster: '/assets/guides/side-button/poster.webp', w: 540, h: 1308, duration: 'PT38S',
+    name: 'サイドボタンの長押しでTexterの録音を始める操作', description: '設定アプリでサイドボタンにTexterを割り当て、ホーム画面で長押しして録音と文字起こしを始めるまでの実機の画面です。',
+  },
+  store: 'guide-side-button',
+  sections: [
+    { id: 'summary', title: '結論', html: `
+      <p>設定は1回だけです。「設定」アプリの「サイドボタン」でTexterを選ぶと、ホーム画面でサイドボタンを長押ししたときにTexterが開き、そのまま録音が始まります。会議が急に始まったときなど、アプリを探す時間を減らせます。</p>
+      <p>利用には、iOS 26.2以降で、Apple Accountの国または地域が日本であり、日本国内にいることが必要です（<a href="https://developer.apple.com/documentation/appintents/launching-your-voice-based-conversational-app-from-the-side-button-of-iphone" target="_blank" rel="noopener noreferrer">Appleの説明</a>）。Texterを選ぶと、サイドボタンの長押しではSiriが起動しなくなります。同じ画面にSiriの項目があるので、Siriに戻したいときはこちらを選んでください。Appleは、音声アプリを割り当てると一部のアクセシビリティ機能が使えなくなる場合があると<a href="https://support.apple.com/ja-jp/105103" target="_blank" rel="noopener noreferrer">案内しています</a>。サイドボタンのアクセシビリティ機能を使っている方は、先に確かめてください。</p>` },
+    { id: 'steps', cta: 'after-steps', title: '設定と録音の手順', html: `
+      <div class="demo">__VIDEO__</div>
+      <ol class="steps">
+        <li><h3>「設定」アプリで「サイドボタン」を開く</h3><p>Texterを一度開いて初期設定を終え、マイクと音声認識を許可してから、iPhoneの「設定」アプリを開いてください。項目やTexterが表示されないときは、iOSの版、Apple Accountの国または地域、現在地を確かめてください。</p>${fig('/assets/guides/side-button/01-settings.webp', '「設定」アプリの一覧。サイドボタンの項目がある', '「設定」アプリの一覧', 600, 1044)}</li>
+        <li><h3>Texterを選ぶ</h3><p>「音声対応アプリをサイドボタンに割り当てます」の一覧からTexterを選びます。チェックマークが付けば設定は完了です。</p>${fig('/assets/guides/side-button/02-side-button.webp', 'サイドボタンの設定画面。Texterにチェックマークが付いている', 'Texterを選んだ状態', 600, 696)}</li>
+        <li><h3>サイドボタンを長押しする</h3><p>Texterが開き、「ボイス」タブで録音が始まります。録音の開始ボタンを押す必要はありません。話した内容が画面に文字で表示されます。</p>${wide(fig('/assets/guides/side-button/03-recording.webp', '録音中の画面。話した内容が文字で並んでいる', '長押しで始まった録音の画面', ...FULL))}</li>
+        <li><h3>停止してノートを確認する</h3><p>画面下の停止ボタンを押してください。初期設定では、ノートが「リスト」タブに自動で保存されます。タイトルは、端末内のAIモデルを使える環境で自動で入ります。保存されないときは、「設定」→「音声入力と文字起こし」→「リアルタイム結果の自動保存」を確かめてください。</p>${fig('/assets/guides/side-button/04-note.webp', 'ノート一覧の先頭に、自動で付いたタイトルのノートがある', '保存されたノート', 600, 641)}</li>
+      </ol>` },
+    { id: 'result', title: '実際の結果', html: `
+      <p>打ち合わせの音声をMacのスピーカーで約22秒再生し、iPhoneで録音しました。録音を止めた後の文字起こしは次のとおりです。</p>
+      <pre class="code"><code>それでは、11月の新商品キャンペーンの打ち合わせを始めます。
+今日は公開日と担当を決めたいと思います。
+はい、よろしくお願いします。
+まず現状ですが、特設提示のデザインは先週の金曜日に完成しました。
+ありがとうございます。
+公開。</code></pre>
+      <p>「特設ページ」が「特設提示」になりました。最後の「公開。」は、音声の途中で録音を止めたための断片です。スピーカー越しの短い音声で試した結果なので、実際の会議の精度とは異なります。</p>` },
+    { id: 'notes', title: '始める前の注意', html: `
+      <ul>
+        <li>サイドボタンは本体の右側のボタンです。左側のアクションボタンは別の機能で、「設定」アプリにも別の項目があります</li>
+        <li>この機能はiPhoneのロック解除を必要とします。ロック中に押したときの動作は、今回確かめていません</li>
+        <li>無料版のリアルタイム文字起こしは、1回約3分で止まり、1日15分までです。サイドボタンで始めた録音で会議全体を文字にするには、Premiumが必要です。無料枠が残っていれば、<a href="/guides/ai-minutes/#voice-memo">ボイスメモの録音を取り込んで</a>文字にできます。枠は累積で、目安は音声30〜40分です。iOS 26以降なら、動画広告を見て端末内の方式も選べます。条件は<a href="/pricing/">料金と利用条件</a>で確認できます</li>
+        <li>録音する前に、参加者へ録音することを伝えてください</li>
+      </ul>` },
+    { id: 'next', title: '録音のあとにすること', html: `<p>録音から議事録を仕上げる手順は、<a href="/guides/ai-minutes/">録音から議事録を作る方法</a>で説明しています。ロック画面のウィジェットやコントロールセンターからの録音は、<a href="/faq/#quick-start">よくある質問</a>をご覧ください。</p>` },
+    { id: 'method', title: '検証の条件', html: `
+      <dl class="facts">
+        <dt>検証した人</dt><dd>Texter運営</dd>
+        <dt>検証日</dt><dd>2026-11-01</dd>
+        <dt>環境</dt><dd>iPhone 17 Pro（iOS 27.0）、製品版のTexter（バージョン2.11.68）。無料の状態で、初期設定と権限の許可を済ませた端末です。設定画面の別アプリの行はぼかしています。</dd>
+        <dt>音声</dt><dd>台本を合成音声で読み上げた音声を、Macのスピーカーで再生しました。</dd>
+      </dl>` },
+  ],
+  ctaTitle: 'Texterで試す',
+  ctaLabel: 'iPhoneでサイドボタン録音を試す',
+  ctaBody: 'Texterは、録音から文字起こし、要約、やることの抽出までを行うアプリです。この手順はiPhone版のものです。',
+};
+
 const index = {
   title: '文字起こしと議事録の活用ガイド｜Texter',
   description: '議事録や動画字幕の作り方を、実際の操作画面と完成例で説明するガイドです。',
@@ -199,4 +261,4 @@ const index = {
   crumb: '活用ガイド',
 };
 
-module.exports = { VERIFIED, guides: [aiMinutes, videoSubtitles], index };
+module.exports = { VERIFIED, guides: [aiMinutes, videoSubtitles, sideButton], index };

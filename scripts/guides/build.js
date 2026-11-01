@@ -180,6 +180,7 @@ const crumbLd = (url, items) => ({
 });
 
 function renderGuide(g) {
+  const verified = g.verified || VERIFIED;
   const url = `${SITE}/guides/${g.slug}/`;
   const items = [{ name: 'Texter', href: '/' }, { name: '活用ガイド', href: '/guides/' }, { name: g.crumb }];
   const v = g.video;
@@ -196,8 +197,8 @@ function renderGuide(g) {
         description: g.description,
         url,
         inLanguage: 'ja',
-        datePublished: VERIFIED,
-        dateModified: VERIFIED,
+        datePublished: g.published || VERIFIED,
+        dateModified: g.modified || verified,
         image: `${SITE}${v.poster}`,
         isPartOf: { '@id': SITE_ID },
         about: { '@id': `${SITE}/#app` },
@@ -211,7 +212,7 @@ function renderGuide(g) {
         description: v.description,
         thumbnailUrl: [`${SITE}${v.poster}`],
         contentUrl: `${SITE}${v.src}`,
-        uploadDate: `${VERIFIED}T09:00:00+09:00`,
+        uploadDate: `${verified}T09:00:00+09:00`,
         duration: v.duration,
         inLanguage: 'ja',
       },
@@ -222,10 +223,10 @@ function renderGuide(g) {
   const body = `${crumbs(items)}
 <h1>${esc(g.h1)}</h1>
 <p class="lead">${g.lead}</p>
-<p class="meta">検証日 <time datetime="${VERIFIED}">${VERIFIED}</time></p>
+<p class="meta">検証日 <time datetime="${verified}">${verified}</time></p>
 <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul>${g.sections.map((s) => `<li><a href="#${s.id}">${esc(s.title)}</a></li>`).join('')}</ul></nav>
 ${sections}
-<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">${esc(g.ctaTitle)}</h2><p>${esc(g.ctaBody)}${CONDITIONS}</p><div class="row">${appStoreLink(g, 'end')}<a class="btn btn-line" href="${facts.googlePlay}" target="_blank" rel="noopener noreferrer" data-cta="${g.store}-end" data-store="google_play">Google Playで見る</a></div></section>`;
+<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">${esc(g.ctaTitle)}</h2><p>${esc(g.ctaBody)}${CONDITIONS}</p><div class="row">${appStoreLink(g, 'end')}${g.iosOnly ? '' : `<a class="btn btn-line" href="${facts.googlePlay}" target="_blank" rel="noopener noreferrer" data-cta="${g.store}-end" data-store="google_play">Google Playで見る</a>`}</div></section>`;
   return shell({ title: g.title, description: g.description, url, ld, body, ogType: 'article' });
 }
 
