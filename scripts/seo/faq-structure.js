@@ -16,7 +16,7 @@ const ORDER = [
 const OVERRIDES = {
   ja: {
     'platform-diff': { q: 'iPhoneとAndroidで使える機能は違いますか？',
-      a: '<p>違いがあります。音声入力キーボード、Apple Watchでの録音、文字起こしチケット、追加チャージはiPhone版の機能です。Whisperの無料枠も別です。詳しくは<a href="/pricing/#android">料金と利用条件</a>をご覧ください。</p>' },
+      a: '<p>違いがあります。音声入力キーボード、Apple Watchでの録音、追加チャージはiPhone版の機能です。文字起こしチケットは両方で使えます。Whisperの無料枠も別です。詳しくは<a href="/pricing/#android">料金と利用条件</a>をご覧ください。</p>' },
     'not-suited': { q: 'Texterが向いていないのはどんな使い方ですか？',
       a: '<p>通信なしで話者識別まで使いたい場合や、無料のまま長時間をリアルタイムで記録したい場合には向いていません。ノートを複数の端末で同期する機能もありません。一覧は<a href="/pricing/#not-suited">料金と利用条件</a>をご覧ください。</p>' },
     realtime: { q: '会議をその場で文字起こしするにはどうしますか？',
@@ -54,7 +54,7 @@ const OVERRIDES = {
   },
   en: {
     'platform-diff': { q: 'Do iPhone and Android have the same features?',
-      a: '<p>No. The voice keyboard, Apple Watch recording, transcription tickets, and Add More Usage are on iPhone only. The free Whisper allowance also differs.</p>' },
+      a: '<p>No. The voice keyboard, Apple Watch recording, and Add More Usage are on iPhone only. Transcription tickets are available on both. The free Whisper allowance also differs.</p>' },
     'not-suited': { q: 'What is Texter not suited for?',
       a: '<p>It does not suit speaker labels without a network connection, or long live transcription on the free plan. It also has no feature that syncs notes across devices.</p>' },
     realtime: { q: 'How do I transcribe a meeting live?',
