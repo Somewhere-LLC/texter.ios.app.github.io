@@ -445,4 +445,4 @@ const index = {
   crumb: '活用ガイド',
 };
 
-module.exports = { VERIFIED, guides: [aiMinutes, videoSubtitles, subtitledVideo, sideButton, pipGuide, searchNotes], index };
+module.exports = { VERIFIED, guides: [aiMinutes, sideButton, pipGuide, searchNotes, subtitledVideo, videoSubtitles], index };
