@@ -9,6 +9,7 @@ const wide = (html) => html.replace('class="shot"', 'class="shot wide"');
 
 const aiMinutes = {
   slug: 'ai-minutes',
+  modified: '2026-11-01',
   title: '録音から議事録を作る方法｜iPhoneで文字起こし・要約する手順と完成例',
   description: '2分の打ち合わせ音声から議事録を作った全手順です。iPhoneの操作画面、実際の出力、人が仕上げた完成版、チャットAI用のテンプレートを載せています。',
   crumb: '録音から議事録を作る方法',
@@ -197,6 +198,7 @@ const videoSubtitles = {
 
 const sideButton = {
   slug: 'iphone-side-button-recording',
+  published: '2026-11-01',
   iosOnly: true,
   verified: '2026-11-01',
   title: 'iPhoneのサイドボタン長押しで録音・文字起こしを始める方法｜設定手順と実例',
