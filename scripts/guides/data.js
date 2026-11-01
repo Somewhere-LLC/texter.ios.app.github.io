@@ -77,7 +77,7 @@ const aiMinutes = {
         <li><h3>「内容まとめ」で整理して書き出す</h3><p>本文の上の「内容まとめ」を押すと、話の流れと要点をまとめた文書ができます。今回は約7秒で完成しました。右上の共有ボタンから、Markdown、テキスト、HTML、PDFで書き出せます。</p>${fig('/assets/guides/ai-minutes/05-doc-top.webp', '内容まとめの上部。やることと、話の流れを示すセクションが並ぶ', '内容まとめの上部', ...FULL)}${fig('/assets/guides/ai-minutes/06-doc-points.webp', '内容まとめの下部。要点5項目とまとめの文章が並ぶ', '要点とまとめ', ...FULL)}${fig('/assets/guides/ai-minutes/07-export.webp', '共有ボタンのメニュー。Markdown、テキスト、HTML、PDFが並ぶ', '書き出し形式の選択', 600, 497)}</li>
       </ol>` },
     { id: 'voice-memo', title: 'ボイスメモで録音した音声を議事録にする', html: `
-      <p>iPhone標準のボイスメモにも<a href="https://support.apple.com/ja-jp/guide/iphone/iph00953a982/ios" target="_blank" rel="noopener noreferrer">文字起こしの機能</a>があります。文字にするだけなら、まず標準の機能で足ります。決定事項、担当者、期限まで整理したいときは、録音をTexterに取り込んでください。</p>
+      <p>長時間の文字起こし、要約、決定事項、担当者、期限まで整理したいときは、ボイスメモの録音をTexterに取り込んでください。</p>
       <ol><li>ボイスメモで録音を開き、「…」→「共有」→「“ファイル”に保存」を選ぶ</li><li>Texterの「設定」→「ファイルをインポート」→「音声ファイルをインポート」でそのファイルを選ぶ</li><li>上の手順2以降と同じように進める</li></ol>
       <p>この手順は2026-11-01に実機（iPhone 17 Pro、iOS 27.0、製品版2.11.68）で確かめました。無料枠と広告の条件は<a href="/pricing/">料金と利用条件</a>で確認できます。同じファイルをもう一度選ぶと「存在しないため、開けませんでした」と表示されたので、続けて取り込むときは保存し直してください。</p>` },
     { id: 'check', title: '人が直す3か所', html: `
