@@ -70,6 +70,7 @@ const sections = [
 <div class="scroll"><table class="compare"><thead><tr><th scope="col">項目</th><th scope="col">iPhone</th><th scope="col">Android</th></tr></thead><tbody>
 <tr><th scope="row">無料のファイル文字起こし</th><td>処理時間の累積枠</td><td>別の枠（iPhoneとは共通ではありません）</td></tr>
 <tr><th scope="row">文字起こしチケット</th><td>あり（1時間 ${yen(ticket)}）</td><td>あり（1時間 ${yen(ticket)}）</td></tr>
+<tr><th scope="row">チケットの1ファイルの上限</th><td>1GB、2時間</td><td>256MB、2時間</td></tr>
 <tr><th scope="row">追加チャージ</th><td>あり</td><td>確認日の時点で提供していません</td></tr>
 <tr><th scope="row">音声入力キーボード</th><td>あり</td><td>なし</td></tr>
 <tr><th scope="row">Apple Watchでの録音</th><td>あり</td><td>なし</td></tr>
