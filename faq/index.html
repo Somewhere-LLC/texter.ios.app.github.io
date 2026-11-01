@@ -201,7 +201,7 @@
           "name": "取り込みでエラーが出ます。上限に達したときはどうしますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "\u003cp>ファイルの上限を超えている可能性があります。Premiumの1ファイルの上限は、Whisperが1GB・2時間、Amazon Transcribeが2GB・4時間です。Amazon Transcribeには、プランごとの月間の利用枠もあります。無料版には月ごとの上限があります。ファイルを分割するか、軽い形式に変換してお試しください。無料版の枠を超えると、取り込みの上限画面にPremiumやインポートチケットの案内が出ます。チケットはWhisperの文字起こし専用で、2時間までの音声に使えます。\u003c/p>"
+            "text": "\u003cp>ファイルの上限を超えている可能性があります。Premiumの1ファイルの上限は、Whisperが1GB・2時間、Amazon Transcribeが2GB・4時間です。Amazon Transcribeには、プランごとの月間の利用枠もあります。無料版のWhisperには、処理時間の累積枠があります。ファイルを分割するか、軽い形式に変換してお試しください。無料版の枠を超えると、取り込みの上限画面にPremiumや文字起こしチケットの案内が出ます。チケットはWhisperの文字起こし専用で、2時間までの音声に使えます。\u003c/p>"
           }
         },
         {
@@ -337,7 +337,7 @@
           "name": "無料で使えますか？料金はいくらですか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "\u003cp>アプリのダウンロードと基本機能は無料です。無料版には、文字起こしの時間や各機能の利用回数に上限があります。\u003c/p>\u003cp>上限を引き上げるTexter Premiumは、App Store（日本）で月額 ¥1,800、年額 ¥8,800、週額 ¥600 です。無料トライアルの有無と期間は、アプリ内の購入画面でご確認ください。\u003c/p>"
+            "text": "\u003cp>アプリのダウンロードと基本機能は無料です。無料版には、文字起こしの時間や各機能の利用回数に上限があります。条件の比較は\u003ca href=\"https://texter.work/pricing/\">料金と利用条件\u003c/a>をご覧ください。\u003c/p>\u003cp>上限を引き上げるTexter Premiumは、App Store（日本）で月額 ¥1,800、年額 ¥8,800 です。週額 ¥600 は解約時の案内でのみ表示されます。無料トライアルの有無と期間は、アプリ内の購入画面でご確認ください。\u003c/p>"
           }
         },
         {
@@ -345,7 +345,7 @@
           "name": "無料版の主な上限を教えてください。",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "\u003cul>\u003cli>リアルタイム認識：1回3分、1日15分\u003c/li>\u003cli>ファイルの文字起こし（Whisper）：月ごとの上限あり\u003c/li>\u003cli>要約：1日3回\u003c/li>\u003cli>AIチャット：1日3回\u003c/li>\u003cli>画像の文字起こし：1日5回\u003c/li>\u003cli>ワードクラウド：1日5回\u003c/li>\u003c/ul>\u003cp>Amazon TranscribeはPremiumで利用できます。上限は変わる場合があります。最新の内容は、アプリのプラン比較で確認してください。\u003c/p>"
+            "text": "\u003cul>\u003cli>リアルタイム認識：1回3分、1日15分\u003c/li>\u003cli>ファイルの文字起こし（Whisper）：処理時間の累積枠（音声でおよそ30〜40分が目安）\u003c/li>\u003cli>要約：1日3回\u003c/li>\u003cli>AIチャット：1日3回\u003c/li>\u003cli>画像の文字起こし：1日5回\u003c/li>\u003cli>ワードクラウド：1日5回\u003c/li>\u003c/ul>\u003cp>Amazon TranscribeはPremiumで利用できます。プランごとの比較は\u003ca href=\"https://texter.work/pricing/\">料金と利用条件\u003c/a>をご覧ください。上限は変わる場合があります。\u003c/p>"
           }
         },
         {
@@ -353,7 +353,15 @@
           "name": "Premiumでは何が変わりますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "\u003cp>各機能の時間や回数の上限が大きくなり、広告が消えます。話者識別、Amazon Transcribe、無音カットも使えます。プランごとの内容は、アプリのプラン比較で確認してください。\u003c/p>"
+            "text": "\u003cp>各機能の時間や回数の上限が大きくなり、広告が消えます。話者識別、Amazon Transcribe、取り込み時の自動無音カットも使えます。プランごとの内容は、アプリのプラン比較で確認してください。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "iPhoneとAndroidで使える機能は違いますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>違いがあります。音声入力キーボード、Apple Watchでの録音、文字起こしチケット、追加チャージはiPhone版の機能です。Whisperの無料枠も別です。詳しくは\u003ca href=\"https://texter.work/pricing/#android\">料金と利用条件\u003c/a>をご覧ください。\u003c/p>"
           }
         },
         {
@@ -361,7 +369,7 @@
           "name": "追加で利用時間を購入できますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "\u003cp>Premiumの方は「追加チャージ」で購入できます。無料版の方には、取り込みの上限画面でWhisper用のインポートチケット（音声1時間ぶん）を案内する場合があります。チケットは自動更新されず、残りは失効しません。リアルタイム録音、要約、AIチャット、翻訳には使えません。\u003c/p>"
+            "text": "\u003cp>「追加チャージ」で購入できます。無料版の方には、取り込みの上限画面でWhisper用の文字起こしチケット（音声1時間ぶん、\u003ca href=\"https://texter.work/pricing/\">料金\u003c/a>）を案内する場合があります。チケットは自動更新されず、残りは失効しません。リアルタイム録音、要約、AIチャット、翻訳には使えません。\u003c/p>"
           }
         },
         {
@@ -418,6 +426,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "\u003cp>要約、内容まとめ、タスク抽出、AIチャットでは、ノートのテキストをOpenAIのAPIに送信して結果を生成します。OpenAI APIのデータ利用ポリシーにもとづき、送信したデータはOpenAIのモデル学習には使われません。\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Texterが向いていないのはどんな使い方ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>通信なしで話者識別まで使いたい場合や、無料のまま長時間をリアルタイムで記録したい場合には向いていません。ノートを複数の端末で同期する機能もありません。一覧は\u003ca href=\"https://texter.work/pricing/#not-suited\">料金と利用条件\u003c/a>をご覧ください。\u003c/p>"
           }
         },
         {
@@ -629,7 +645,7 @@ footer p{margin:12px 0 0}
       </article>
       <article class="qa" id="import-limit">
         <h3>取り込みでエラーが出ます。上限に達したときはどうしますか？</h3>
-        <div class="a"><p>ファイルの上限を超えている可能性があります。Premiumの1ファイルの上限は、Whisperが1GB・2時間、Amazon Transcribeが2GB・4時間です。Amazon Transcribeには、プランごとの月間の利用枠もあります。無料版には月ごとの上限があります。ファイルを分割するか、軽い形式に変換してお試しください。無料版の枠を超えると、取り込みの上限画面にPremiumやインポートチケットの案内が出ます。チケットはWhisperの文字起こし専用で、2時間までの音声に使えます。</p></div>
+        <div class="a"><p>ファイルの上限を超えている可能性があります。Premiumの1ファイルの上限は、Whisperが1GB・2時間、Amazon Transcribeが2GB・4時間です。Amazon Transcribeには、プランごとの月間の利用枠もあります。無料版のWhisperには、処理時間の累積枠があります。ファイルを分割するか、軽い形式に変換してお試しください。無料版の枠を超えると、取り込みの上限画面にPremiumや文字起こしチケットの案内が出ます。チケットはWhisperの文字起こし専用で、2時間までの音声に使えます。</p></div>
       </article>
       <p class="back"><a href="#toc-h">目次へ戻る</a></p>
     </section>
@@ -722,19 +738,23 @@ footer p{margin:12px 0 0}
       <h2 id="premium-h">料金・Premium・支払い</h2>
       <article class="qa" id="price">
         <h3>無料で使えますか？料金はいくらですか？</h3>
-        <div class="a"><p>アプリのダウンロードと基本機能は無料です。無料版には、文字起こしの時間や各機能の利用回数に上限があります。</p><p>上限を引き上げるTexter Premiumは、App Store（日本）で月額 ¥1,800、年額 ¥8,800、週額 ¥600 です。無料トライアルの有無と期間は、アプリ内の購入画面でご確認ください。</p></div>
+        <div class="a"><p>アプリのダウンロードと基本機能は無料です。無料版には、文字起こしの時間や各機能の利用回数に上限があります。条件の比較は<a href="/pricing/">料金と利用条件</a>をご覧ください。</p><p>上限を引き上げるTexter Premiumは、App Store（日本）で月額 ¥1,800、年額 ¥8,800 です。週額 ¥600 は解約時の案内でのみ表示されます。無料トライアルの有無と期間は、アプリ内の購入画面でご確認ください。</p></div>
       </article>
       <article class="qa" id="free-limits">
         <h3>無料版の主な上限を教えてください。</h3>
-        <div class="a"><ul><li>リアルタイム認識：1回3分、1日15分</li><li>ファイルの文字起こし（Whisper）：月ごとの上限あり</li><li>要約：1日3回</li><li>AIチャット：1日3回</li><li>画像の文字起こし：1日5回</li><li>ワードクラウド：1日5回</li></ul><p>Amazon TranscribeはPremiumで利用できます。上限は変わる場合があります。最新の内容は、アプリのプラン比較で確認してください。</p></div>
+        <div class="a"><ul><li>リアルタイム認識：1回3分、1日15分</li><li>ファイルの文字起こし（Whisper）：処理時間の累積枠（音声でおよそ30〜40分が目安）</li><li>要約：1日3回</li><li>AIチャット：1日3回</li><li>画像の文字起こし：1日5回</li><li>ワードクラウド：1日5回</li></ul><p>Amazon TranscribeはPremiumで利用できます。プランごとの比較は<a href="/pricing/">料金と利用条件</a>をご覧ください。上限は変わる場合があります。</p></div>
       </article>
       <article class="qa" id="premium-what">
         <h3>Premiumでは何が変わりますか？</h3>
-        <div class="a"><p>各機能の時間や回数の上限が大きくなり、広告が消えます。話者識別、Amazon Transcribe、無音カットも使えます。プランごとの内容は、アプリのプラン比較で確認してください。</p></div>
+        <div class="a"><p>各機能の時間や回数の上限が大きくなり、広告が消えます。話者識別、Amazon Transcribe、取り込み時の自動無音カットも使えます。プランごとの内容は、アプリのプラン比較で確認してください。</p></div>
+      </article>
+      <article class="qa" id="platform-diff">
+        <h3>iPhoneとAndroidで使える機能は違いますか？</h3>
+        <div class="a"><p>違いがあります。音声入力キーボード、Apple Watchでの録音、文字起こしチケット、追加チャージはiPhone版の機能です。Whisperの無料枠も別です。詳しくは<a href="/pricing/#android">料金と利用条件</a>をご覧ください。</p></div>
       </article>
       <article class="qa" id="charge">
         <h3>追加で利用時間を購入できますか？</h3>
-        <div class="a"><p>Premiumの方は「追加チャージ」で購入できます。無料版の方には、取り込みの上限画面でWhisper用のインポートチケット（音声1時間ぶん）を案内する場合があります。チケットは自動更新されず、残りは失効しません。リアルタイム録音、要約、AIチャット、翻訳には使えません。</p></div>
+        <div class="a"><p>「追加チャージ」で購入できます。無料版の方には、取り込みの上限画面でWhisper用の文字起こしチケット（音声1時間ぶん、<a href="/pricing/">料金</a>）を案内する場合があります。チケットは自動更新されず、残りは失効しません。リアルタイム録音、要約、AIチャット、翻訳には使えません。</p></div>
       </article>
       <article class="qa" id="restore">
         <h3>機種変更のあとにPremiumが有効になりません。</h3>
@@ -774,6 +794,10 @@ footer p{margin:12px 0 0}
 
     <section class="sec" id="support" aria-labelledby="support-h">
       <h2 id="support-h">困ったとき</h2>
+      <article class="qa" id="not-suited">
+        <h3>Texterが向いていないのはどんな使い方ですか？</h3>
+        <div class="a"><p>通信なしで話者識別まで使いたい場合や、無料のまま長時間をリアルタイムで記録したい場合には向いていません。ノートを複数の端末で同期する機能もありません。一覧は<a href="/pricing/#not-suited">料金と利用条件</a>をご覧ください。</p></div>
+      </article>
       <article class="qa" id="voice-permission">
         <h3>権限のエラーで録音できません。</h3>
         <div class="a"><p>iPhoneの「設定」→「プライバシーとセキュリティ」→「マイク」でTexterを許可してください。「音声認識」も同じように許可します。</p></div>
@@ -795,7 +819,7 @@ footer p{margin:12px 0 0}
 </main>
 <footer>
   <div class="wrap">
-    <ul><li><a href="/">ホーム</a></li><li><a href="/guides/">活用ガイド</a></li><li><a href="mailto:texter.work.app@gmail.com">お問い合わせ</a></li><li><a href="/terms-of-service/">利用規約</a></li><li><a href="/privacy-policy/">プライバシーポリシー</a></li><li><a href="/tokushoho/">特定商取引法に基づく表記</a></li><li><a href="/en/faq/" hreflang="en" lang="en">English</a></li></ul>
+    <ul><li><a href="/">ホーム</a></li><li><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金と利用条件</a></li><li><a href="mailto:texter.work.app@gmail.com">お問い合わせ</a></li><li><a href="/terms-of-service/">利用規約</a></li><li><a href="/privacy-policy/">プライバシーポリシー</a></li><li><a href="/tokushoho/">特定商取引法に基づく表記</a></li><li><a href="/en/faq/" hreflang="en" lang="en">English</a></li></ul>
     <p>© 2026 Texter app - Kyoto, Japan.</p>
   </div>
 </footer>

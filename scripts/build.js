@@ -12,6 +12,7 @@ const entries = [
   'tokushoho',
   'faq',
   'guides',
+  'pricing',
   'en',
   'css',
   'js',

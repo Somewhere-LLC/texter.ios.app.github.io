@@ -1,13 +1,14 @@
 // Generates /guides/ and the guide pages from data.js. scripts/seo/build.js writes the output.
 const facts = require('../seo/app-facts');
 const { VERIFIED, guides, index } = require('./data');
+const pricing = require('./pricing');
 
 const SITE = facts.site;
 const ORG_ID = `${SITE}/#organization`;
 const SITE_ID = `${SITE}/#website`;
 // Same provider token as the app's public note pages. The campaign token ties an App Store install to the guide and link position.
 const APP_STORE_PT = '489812';
-const CONDITIONS = '無料で始められます。無料版の文字起こしには月ごとの上限があり、要約は1日3回までです。処理の前に広告が表示される場合があります。';
+const CONDITIONS = '無料で始められます。無料版の文字起こしには上限があり、要約は1日3回までです。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。';
 const appStoreLink = (g, pos) => {
   const id = `${g.store}-${pos}`;
   if (id.length > 40) throw new Error(`campaign token too long: ${id}`);
@@ -45,7 +46,7 @@ a{color:var(--deep)}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:18px;color:var(--navy)}
 .brand img{width:28px;height:28px;border-radius:7px}
 .nav ul{display:flex;gap:4px;margin:0;padding:0;list-style:none}
-.nav ul a{display:block;padding:8px 10px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;color:var(--text)}
+.nav ul a{display:block;padding:8px 10px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;color:var(--text);white-space:nowrap}
 .crumbs{margin:28px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px;font-size:13px;color:var(--sub)}
 .crumbs li+li::before{content:"/";margin-right:6px}
 .crumbs a{color:var(--sub)}
@@ -64,6 +65,15 @@ h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.6rem);line-heigh
 .compare{width:100%;margin-top:16px;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;font-size:15px}
 .compare th,.compare td{padding:12px 14px;border:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.65}
 .compare thead th{background:#F2F5FD;color:var(--navy)}
+.compare caption{padding:8px 0;text-align:left;font-size:14px;color:var(--sub)}
+.scroll{overflow-x:auto;margin-top:12px}
+.scroll .compare{margin-top:0}
+.plans{min-width:680px}
+.plans tbody th{min-width:128px}
+.plans th:first-child{position:sticky;left:0;background:#fff;z-index:1}
+.plans thead th:first-child{background:#F2F5FD}
+.sec article{margin-top:18px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.sec article h3{margin:0}
 .doc{margin-top:12px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
 .doc p:first-child{margin-top:0}
 .steps{list-style:none;padding:0!important;counter-reset:s}
@@ -99,7 +109,8 @@ footer{margin-top:64px;padding:28px 0 40px;border-top:1px solid var(--line);font
 footer ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 16px}
 footer a{color:var(--sub)}
 footer p{margin:12px 0 0}
-@media (max-width:560px){.shot{width:calc(50% - 8px);margin-right:6px}.shot.wide{width:100%;max-width:320px;margin-right:0}.steps>li{padding:16px}.facts{grid-template-columns:1fr}.facts dd{margin-bottom:8px}.compare{font-size:14px}.compare th,.compare td{padding:10px}}
+@media (max-width:400px){.nav ul .opt{display:none}}
+@media (max-width:560px){.nav ul a{padding:8px 5px;font-size:13px}.shot{width:calc(50% - 8px);margin-right:6px}.shot.wide{width:100%;max-width:320px;margin-right:0}.steps>li{padding:16px}.facts{grid-template-columns:1fr}.facts dd{margin-bottom:8px}.compare{font-size:14px}.compare th,.compare td{padding:10px}}
 `;
 
 const shell = ({ title, description, url, ld, body, ogType }) => `<!DOCTYPE html>
@@ -147,13 +158,13 @@ ${jsonForScript(ld)}
 <a class="skip" href="#main">本文へ移動</a>
 <header class="nav"><div class="wrap">
   <a class="brand" href="/"><img src="/img/appicon.png" alt="" width="28" height="28">Texter</a>
-  <nav aria-label="メイン"><ul><li><a href="/guides/">活用ガイド</a></li><li><a href="/faq/">よくある質問</a></li></ul></nav>
+  <nav aria-label="メイン"><ul><li class="opt"><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金</a></li><li><a href="/faq/">よくある質問</a></li></ul></nav>
 </div></header>
 <main id="main" class="wrap">
 ${body}
 </main>
 <footer><div class="wrap">
-  <ul><li><a href="/">ホーム</a></li><li><a href="/guides/">活用ガイド</a></li><li><a href="/faq/">よくある質問</a></li><li><a href="/terms-of-service/">利用規約</a></li><li><a href="/privacy-policy/">プライバシーポリシー</a></li><li><a href="/tokushoho/">特定商取引法に基づく表記</a></li></ul>
+  <ul><li><a href="/">ホーム</a></li><li><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金と利用条件</a></li><li><a href="/faq/">よくある質問</a></li><li><a href="/terms-of-service/">利用規約</a></li><li><a href="/privacy-policy/">プライバシーポリシー</a></li><li><a href="/tokushoho/">特定商取引法に基づく表記</a></li></ul>
   <p>© 2026 Texter app - Kyoto, Japan.</p>
 </div></footer>
 ${TRACK}
@@ -245,8 +256,61 @@ function renderIndex() {
   return shell({ title: index.title, description: index.description, url, ld, body, ogType: 'website' });
 }
 
+function renderPricing() {
+  const url = `${SITE}/pricing/`;
+  const p = pricing.page;
+  const items = [{ name: 'Texter', href: '/' }, { name: p.crumb }];
+  const plain = (html) => html.replace(/href="\//g, `href="${SITE}/`);
+  const ld = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'FAQPage',
+        '@id': `${url}#faq`,
+        url,
+        name: p.title,
+        description: p.description,
+        inLanguage: 'ja',
+        dateModified: pricing.CHECKED,
+        isPartOf: { '@id': SITE_ID },
+        about: { '@id': `${SITE}/#app` },
+        publisher: { '@id': ORG_ID },
+        mainEntity: pricing.questions.map((q) => ({ '@type': 'Question', name: q.q, acceptedAnswer: { '@type': 'Answer', text: plain(q.a) } })),
+      },
+      {
+        '@type': 'SoftwareApplication',
+        '@id': `${SITE}/#app`,
+        name: 'Texter',
+        operatingSystem: facts.operatingSystem,
+        offers: pricing.offers.map((o) => ({
+          '@type': 'Offer',
+          name: `${o.name}（iPhone版）`,
+          price: o.price,
+          priceCurrency: 'JPY',
+          eligibleRegion: 'JP',
+          url,
+          ...(o.period ? { priceSpecification: { '@type': 'UnitPriceSpecification', price: o.price, priceCurrency: 'JPY', billingDuration: o.period } } : {}),
+        })),
+      },
+      crumbLd(url, items),
+    ],
+  };
+  const sections = pricing.sections.map((s) => `<section class="sec" id="${s.id}" aria-labelledby="${s.id}-h"><h2 id="${s.id}-h">${esc(s.title)}</h2>${s.html}</section>`).join('\n');
+  const qa = pricing.questions.map((q) => `<article id="${q.id}"><h3>${esc(q.q)}</h3>${q.a}</article>`).join('\n');
+  const toc = [{ id: 'answers', title: 'よくある疑問' }, ...pricing.sections].map((s) => `<li><a href="#${s.id}">${esc(s.title)}</a></li>`).join('');
+  const body = `${crumbs(items)}
+<h1>${esc(p.h1)}</h1>
+<p class="lead">${esc(p.lead)}</p>
+<p class="meta">確認日 <time datetime="${pricing.CHECKED}">${pricing.CHECKED}</time>（Texter運営）</p>
+<nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul>${toc}</ul></nav>
+<section class="sec" id="answers" aria-labelledby="answers-h"><h2 id="answers-h">よくある疑問</h2>${qa}</section>
+${sections}
+<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterを試す</h2><p>Texterは無料で始められます。</p><div class="row"><a class="btn btn-solid" href="${facts.appStore.ja}?pt=${APP_STORE_PT}&amp;ct=pricing-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="pricing-end" data-store="app_store">App Storeで見る</a><a class="btn btn-line" href="${facts.googlePlay}" target="_blank" rel="noopener noreferrer" data-cta="pricing-end" data-store="google_play">Google Playで見る</a></div></section>`;
+  return shell({ title: p.title, description: p.description, url, ld, body, ogType: 'website' });
+}
+
 function generate() {
-  const out = { 'guides/index.html': renderIndex() };
+  const out = { 'guides/index.html': renderIndex(), 'pricing/index.html': renderPricing() };
   for (const g of guides) out[`guides/${g.slug}/index.html`] = renderGuide(g);
   return out;
 }

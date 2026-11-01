@@ -101,13 +101,20 @@ function checkGuide(rel, html, errors) {
   if (html.includes('__VIDEO__')) errors.push(`${rel}: video placeholder left in the page`);
 }
 
+function checkPricing(html, errors) {
+  const shown = { ...facts.jaPlans, monthly: facts.prices.monthly, yearly: facts.prices.yearly };
+  for (const [plan, price] of Object.entries(shown)) {
+    if (!html.includes(yen(price))) errors.push(`pricing/index.html: ${plan} price ${yen(price)} not shown`);
+  }
+}
+
 function checkSite(files, errors) {
   const sitemap = files['sitemap.xml'];
   for (const m of sitemap.matchAll(/<loc>https:\/\/texter\.work\/([^<]*)<\/loc>/g)) {
     const rel = m[1] === '' ? 'index.html' : `${m[1]}index.html`;
     if (!fs.existsSync(path.join(root, rel))) errors.push(`sitemap: ${m[1] || '/'} has no ${rel}`);
   }
-  for (const p of ['faq/', 'en/faq/', 'guides/', 'guides/ai-minutes/', 'guides/video-subtitles/']) if (!sitemap.includes(`https://texter.work/${p}<`)) errors.push(`sitemap: missing ${p}`);
+  for (const p of ['faq/', 'en/faq/', 'guides/', 'guides/ai-minutes/', 'guides/video-subtitles/', 'pricing/']) if (!sitemap.includes(`https://texter.work/${p}<`)) errors.push(`sitemap: missing ${p}`);
   // Any Disallow, for any user agent (including AI crawlers such as OAI-SearchBot), hides pages from search.
   if (/^[ \t]*Disallow:[ \t]*\S/im.test(files['robots.txt'])) errors.push('robots.txt: has a Disallow rule');
   const alternates = {};
@@ -116,7 +123,7 @@ function checkSite(files, errors) {
     const canon = (html.match(/<link rel="canonical" href="([^"]+)"/) || [])[1];
     const expect = 'https://texter.work/' + rel.replace(/index\.html$/, '');
     if (canon !== expect) errors.push(`${rel}: canonical ${canon} != ${expect}`);
-    if (rel.startsWith('guides/')) {
+    if (rel.startsWith('guides/') || rel.startsWith('pricing/')) {
       checkGuide(rel, html, errors);
       continue; // Guides exist in Japanese only, so they have no hreflang pairs.
     }
@@ -142,11 +149,12 @@ function run(files, { stale = true } = {}) {
   checkLp('en/index.html', 'en', files['en/index.html'], errors);
   checkFaq('faq/index.html', 'ja', files['faq/index.html'], errors);
   checkFaq('en/faq/index.html', 'en', files['en/faq/index.html'], errors);
+  checkPricing(files['pricing/index.html'], errors);
   checkSite(files, errors);
   return errors;
 }
 
-const files = Object.fromEntries(['index.html', 'en/index.html', 'faq/index.html', 'en/faq/index.html', 'guides/index.html', 'guides/ai-minutes/index.html', 'guides/video-subtitles/index.html', 'sitemap.xml', 'robots.txt'].map((f) => [f, read(f)]));
+const files = Object.fromEntries(['index.html', 'en/index.html', 'faq/index.html', 'en/faq/index.html', 'guides/index.html', 'guides/ai-minutes/index.html', 'guides/video-subtitles/index.html', 'pricing/index.html', 'sitemap.xml', 'robots.txt'].map((f) => [f, read(f)]));
 const errors = run(files);
 errors.forEach((e) => console.error('NG', e));
 if (errors.length) process.exit(1);
@@ -160,6 +168,7 @@ if (process.argv.includes('--self-test')) {
     ['LP feature heading renamed', 'en/index.html', (s) => s.replace('<h3>Topic map</h3>', '<h3>Topic graph</h3>')],
     ['FAQ question edited only in HTML', 'faq/index.html', (s) => s.replace(`>${firstQ}</h3>`, '>別の質問</h3>')],
     ['JSON-LD broken', 'en/faq/index.html', (s) => s.replace('"@type": "FAQPage"', '"@type": "FAQPage",,')],
+    ['pricing page loses a plan price', 'pricing/index.html', (s) => s.replaceAll('¥500', '¥600')],
     ['guide points at a missing asset', 'guides/ai-minutes/index.html', (s) => s.replaceAll('demo.mp4', 'gone.mp4')],
     ['guide JSON-LD broken', 'guides/video-subtitles/index.html', (s) => s.replace('"@type": "Article"', '"@type": "Article",,')],
     ['sitemap drops a guide', 'sitemap.xml', (s) => s.replace('https://texter.work/guides/ai-minutes/<', 'https://texter.work/guides/x/<')],

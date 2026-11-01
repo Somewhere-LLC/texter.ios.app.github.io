@@ -201,7 +201,7 @@
           "name": "I get an error when I import a file. What can I do at the limit?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "\u003cp>The file may be over the limit. With Premium, the per-file limits are 1 GB and 2 hours for Whisper, or 2 GB and 4 hours for Amazon Transcribe. Amazon Transcribe also has a monthly allowance that depends on your plan. The free plan has a monthly limit. Try splitting the file or converting it to a lighter format. When the free allowance runs out, the import limit screen offers Premium or an import ticket. Tickets are for Whisper transcription only and work for audio up to 2 hours.\u003c/p>"
+            "text": "\u003cp>The file may be over the limit. With Premium, the per-file limits are 1 GB and 2 hours for Whisper, or 2 GB and 4 hours for Amazon Transcribe. Amazon Transcribe also has a monthly allowance that depends on your plan. Whisper on the free plan has a cumulative allowance based on processing time. Try splitting the file or converting it to a lighter format. When the free allowance runs out, the import limit screen offers Premium or an import ticket. Tickets are for Whisper transcription only and work for audio up to 2 hours.\u003c/p>"
           }
         },
         {
@@ -345,7 +345,7 @@
           "name": "What are the main limits on the free plan?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "\u003cul>\u003cli>Real-time transcription: 3 minutes per session, 15 minutes a day\u003c/li>\u003cli>File transcription with Whisper: a monthly limit applies\u003c/li>\u003cli>Summaries: 3 a day\u003c/li>\u003cli>AI chat: 3 a day\u003c/li>\u003cli>Image transcription: 5 a day\u003c/li>\u003cli>Word cloud: 5 a day\u003c/li>\u003c/ul>\u003cp>Amazon Transcribe is available with Premium. Limits can change, so check the plan comparison in the app for the latest details.\u003c/p>"
+            "text": "\u003cul>\u003cli>Real-time transcription: 3 minutes per session, 15 minutes a day\u003c/li>\u003cli>File transcription with Whisper: a cumulative allowance based on processing time (roughly 30 to 40 minutes of audio)\u003c/li>\u003cli>Summaries: 3 a day\u003c/li>\u003cli>AI chat: 3 a day\u003c/li>\u003cli>Image transcription: 5 a day\u003c/li>\u003cli>Word cloud: 5 a day\u003c/li>\u003c/ul>\u003cp>Amazon Transcribe is available with Premium. Limits can change, so check the plan comparison in the app for the latest details.\u003c/p>"
           }
         },
         {
@@ -358,10 +358,18 @@
         },
         {
           "@type": "Question",
+          "name": "Do iPhone and Android have the same features?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>No. The voice keyboard, Apple Watch recording, transcription tickets, and Add More Usage are on iPhone only. The free Whisper allowance also differs.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Can I buy extra usage?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "\u003cp>Premium members can use Add More Usage. Free users may see an import ticket for one hour of Whisper transcription on the import limit screen. Tickets do not renew automatically, and unused time does not expire. They do not cover live recording, summaries, AI chat, or translation.\u003c/p>"
+            "text": "\u003cp>You can use Add More Usage. Free users may see a ticket for one hour of Whisper transcription on the import limit screen. Tickets do not renew automatically, and unused time does not expire. They do not cover live recording, summaries, AI chat, or translation.\u003c/p>"
           }
         },
         {
@@ -418,6 +426,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "\u003cp>Summaries, structured summaries, task extraction, and AI chat send the note text to the OpenAI API to generate results. Under the OpenAI API data usage policy, that data is not used to train OpenAI’s models.\u003c/p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Texter not suited for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>It does not suit speaker labels without a network connection, or long live transcription on the free plan. It also has no feature that syncs notes across devices.\u003c/p>"
           }
         },
         {
@@ -629,7 +645,7 @@ footer p{margin:12px 0 0}
       </article>
       <article class="qa" id="import-limit">
         <h3>I get an error when I import a file. What can I do at the limit?</h3>
-        <div class="a"><p>The file may be over the limit. With Premium, the per-file limits are 1 GB and 2 hours for Whisper, or 2 GB and 4 hours for Amazon Transcribe. Amazon Transcribe also has a monthly allowance that depends on your plan. The free plan has a monthly limit. Try splitting the file or converting it to a lighter format. When the free allowance runs out, the import limit screen offers Premium or an import ticket. Tickets are for Whisper transcription only and work for audio up to 2 hours.</p></div>
+        <div class="a"><p>The file may be over the limit. With Premium, the per-file limits are 1 GB and 2 hours for Whisper, or 2 GB and 4 hours for Amazon Transcribe. Amazon Transcribe also has a monthly allowance that depends on your plan. Whisper on the free plan has a cumulative allowance based on processing time. Try splitting the file or converting it to a lighter format. When the free allowance runs out, the import limit screen offers Premium or an import ticket. Tickets are for Whisper transcription only and work for audio up to 2 hours.</p></div>
       </article>
       <p class="back"><a href="#toc-h">Back to contents</a></p>
     </section>
@@ -726,15 +742,19 @@ footer p{margin:12px 0 0}
       </article>
       <article class="qa" id="free-limits">
         <h3>What are the main limits on the free plan?</h3>
-        <div class="a"><ul><li>Real-time transcription: 3 minutes per session, 15 minutes a day</li><li>File transcription with Whisper: a monthly limit applies</li><li>Summaries: 3 a day</li><li>AI chat: 3 a day</li><li>Image transcription: 5 a day</li><li>Word cloud: 5 a day</li></ul><p>Amazon Transcribe is available with Premium. Limits can change, so check the plan comparison in the app for the latest details.</p></div>
+        <div class="a"><ul><li>Real-time transcription: 3 minutes per session, 15 minutes a day</li><li>File transcription with Whisper: a cumulative allowance based on processing time (roughly 30 to 40 minutes of audio)</li><li>Summaries: 3 a day</li><li>AI chat: 3 a day</li><li>Image transcription: 5 a day</li><li>Word cloud: 5 a day</li></ul><p>Amazon Transcribe is available with Premium. Limits can change, so check the plan comparison in the app for the latest details.</p></div>
       </article>
       <article class="qa" id="premium-what">
         <h3>What changes with Premium?</h3>
         <div class="a"><p>Premium raises the time and usage limits and removes ads. It also adds speaker labels, Amazon Transcribe, and silence removal. Check the plan comparison in the app for what each plan includes.</p></div>
       </article>
+      <article class="qa" id="platform-diff">
+        <h3>Do iPhone and Android have the same features?</h3>
+        <div class="a"><p>No. The voice keyboard, Apple Watch recording, transcription tickets, and Add More Usage are on iPhone only. The free Whisper allowance also differs.</p></div>
+      </article>
       <article class="qa" id="charge">
         <h3>Can I buy extra usage?</h3>
-        <div class="a"><p>Premium members can use Add More Usage. Free users may see an import ticket for one hour of Whisper transcription on the import limit screen. Tickets do not renew automatically, and unused time does not expire. They do not cover live recording, summaries, AI chat, or translation.</p></div>
+        <div class="a"><p>You can use Add More Usage. Free users may see a ticket for one hour of Whisper transcription on the import limit screen. Tickets do not renew automatically, and unused time does not expire. They do not cover live recording, summaries, AI chat, or translation.</p></div>
       </article>
       <article class="qa" id="restore">
         <h3>Premium is not active after I changed phones.</h3>
@@ -774,6 +794,10 @@ footer p{margin:12px 0 0}
 
     <section class="sec" id="support" aria-labelledby="support-h">
       <h2 id="support-h">Troubleshooting and contact</h2>
+      <article class="qa" id="not-suited">
+        <h3>What is Texter not suited for?</h3>
+        <div class="a"><p>It does not suit speaker labels without a network connection, or long live transcription on the free plan. It also has no feature that syncs notes across devices.</p></div>
+      </article>
       <article class="qa" id="voice-permission">
         <h3>A permission error stops me from recording.</h3>
         <div class="a"><p>Open iPhone Settings → Privacy &amp; Security → Microphone and allow Texter. Allow Speech Recognition in the same way.</p></div>
