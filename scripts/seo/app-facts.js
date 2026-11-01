@@ -18,6 +18,8 @@ module.exports = {
   operatingSystem: 'iOS 16.0 or later, iPadOS, watchOS, macOS (Apple Silicon), Android',
   // JPY, as listed on the LP pricing section.
   prices: { weekly: 600, monthly: 1800, yearly: 8800 },
+  // JPY, from the App Store listing (checked 2026-11-01). Shown on /pricing/ only.
+  jaPlans: { ticket: 500, semiannual: 5400, tenHours: 3000, twentyHours: 6000, chargeRealtime: 2000, chargeAmazon: 2000, chargeTranslate: 1300 },
   ja: {
     alternateName: ['Texter 議事録・音声文字起こし', 'テキスター'],
     description: '会議や取材を録音すると、文字起こし・話者識別・要約・タスク整理までTexterが自動化。あとから過去の記録に質問して、元の発言まで戻れます。',

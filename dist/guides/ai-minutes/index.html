@@ -117,7 +117,7 @@ a{color:var(--deep)}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:18px;color:var(--navy)}
 .brand img{width:28px;height:28px;border-radius:7px}
 .nav ul{display:flex;gap:4px;margin:0;padding:0;list-style:none}
-.nav ul a{display:block;padding:8px 10px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;color:var(--text)}
+.nav ul a{display:block;padding:8px 10px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;color:var(--text);white-space:nowrap}
 .crumbs{margin:28px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px;font-size:13px;color:var(--sub)}
 .crumbs li+li::before{content:"/";margin-right:6px}
 .crumbs a{color:var(--sub)}
@@ -136,6 +136,15 @@ h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.6rem);line-heigh
 .compare{width:100%;margin-top:16px;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;font-size:15px}
 .compare th,.compare td{padding:12px 14px;border:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.65}
 .compare thead th{background:#F2F5FD;color:var(--navy)}
+.compare caption{padding:8px 0;text-align:left;font-size:14px;color:var(--sub)}
+.scroll{overflow-x:auto;margin-top:12px}
+.scroll .compare{margin-top:0}
+.plans{min-width:680px}
+.plans tbody th{min-width:128px}
+.plans th:first-child{position:sticky;left:0;background:#fff;z-index:1}
+.plans thead th:first-child{background:#F2F5FD}
+.sec article{margin-top:18px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.sec article h3{margin:0}
 .doc{margin-top:12px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
 .doc p:first-child{margin-top:0}
 .steps{list-style:none;padding:0!important;counter-reset:s}
@@ -171,14 +180,14 @@ footer{margin-top:64px;padding:28px 0 40px;border-top:1px solid var(--line);font
 footer ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 16px}
 footer a{color:var(--sub)}
 footer p{margin:12px 0 0}
-@media (max-width:560px){.shot{width:calc(50% - 8px);margin-right:6px}.shot.wide{width:100%;max-width:320px;margin-right:0}.steps>li{padding:16px}.facts{grid-template-columns:1fr}.facts dd{margin-bottom:8px}.compare{font-size:14px}.compare th,.compare td{padding:10px}}
+@media (max-width:560px){.nav ul a{padding:8px 5px;font-size:13px}.shot{width:calc(50% - 8px);margin-right:6px}.shot.wide{width:100%;max-width:320px;margin-right:0}.steps>li{padding:16px}.facts{grid-template-columns:1fr}.facts dd{margin-bottom:8px}.compare{font-size:14px}.compare th,.compare td{padding:10px}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
 <header class="nav"><div class="wrap">
   <a class="brand" href="/"><img src="/img/appicon.png" alt="" width="28" height="28">Texter</a>
-  <nav aria-label="メイン"><ul><li><a href="/guides/">活用ガイド</a></li><li><a href="/faq/">よくある質問</a></li></ul></nav>
+  <nav aria-label="メイン"><ul><li><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金</a></li><li><a href="/faq/">よくある質問</a></li></ul></nav>
 </div></header>
 <main id="main" class="wrap">
 <nav aria-label="パンくずリスト"><ol class="crumbs"><li><a href="/">Texter</a></li><li><a href="/guides/">活用ガイド</a></li><li aria-current="page">録音から議事録を作る方法</li></ol></nav>
@@ -230,7 +239,7 @@ footer p{margin:12px 0 0}
 山田さんには今日中に納期の確認メールを送ります
 よろしくお願いします
 次回の打ち合わせは11月11日の午後3時からにします
-今日はありがとうございました</code></pre></details></section><aside class="cta inline" aria-label="アプリで試す"><p>無料で始められます。無料版の文字起こしには月ごとの上限があり、要約は1日3回までです。処理の前に広告が表示される場合があります。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-ai-minutes-after-result&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-ai-minutes-after-result" data-store="app_store">iPhoneで議事録作成を試す（App Store）</a></div></aside>
+今日はありがとうございました</code></pre></details></section><aside class="cta inline" aria-label="アプリで試す"><p>無料で始められます。無料版の文字起こしには上限があり、要約は1日3回までです。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-ai-minutes-after-result&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-ai-minutes-after-result" data-store="app_store">iPhoneで議事録作成を試す（App Store）</a></div></aside>
 <section class="sec" id="steps" aria-labelledby="steps-h"><h2 id="steps-h">Texterで作る手順</h2>
       <p>音声ファイルから議事録を作る手順です。その場で録音するときは、手順1の代わりに「ボイス」タブで録音してください。下の動画では、ノートがまだ無いときに「ボイス」タブに出る「音声・動画ファイルを読み込む」から同じ画面を開いています。</p>
       <div class="demo"><video controls muted playsinline preload="none" poster="/assets/guides/ai-minutes/poster.webp" width="540" height="1308" aria-label="録音ファイルから議事録を作る操作"><source src="/assets/guides/ai-minutes/demo.mp4" type="video/mp4"></video></div>
@@ -265,21 +274,22 @@ footer p{margin:12px 0 0}
       <ul>
         <li>録音する前に、録音することと文字起こしサービスを使うことを参加者に伝えてください。社外の人がいる会議では、先に了承を得てください。</li>
         <li>Texterのファイル文字起こしは、既定のWhisperではクラウドで処理するので、音声を外部のサービスに送信します。iOS 26以降なら、「音声認識サービスを選択」で端末内の処理も選択できる設定です。要約では、テキストを外部のサービスに送信します。詳しくは<a href="/faq/#data-sent">よくある質問</a>と<a href="/privacy-policy/">プライバシーポリシー</a>をご確認ください。</li>
-        <li>無料版の文字起こしには月ごとの上限があり、要約は1日3回までです。2分4秒の音声は、無料の状態で処理できました。上限は<a href="/faq/#price">料金と上限</a>で確認してください。</li>
+        <li>無料版の文字起こしには上限があり、要約は1日3回までです。2分4秒の音声は、無料の状態で処理できました。上限は<a href="/pricing/">料金と上限</a>で確認してください。</li>
         <li>この記事の要約は、初期設定の「おまかせ」で作りました。「要約 / 変換」には「会議議事録」などのテンプレートもあります。テンプレートの出力は検証していません。</li>
       </ul></section>
 <section class="sec" id="method" aria-labelledby="method-h"><h2 id="method-h">検証の条件</h2>
       <dl class="facts">
+        <dt>検証した人</dt><dd>Texter運営</dd>
         <dt>検証日</dt><dd>2026-10-31</dd>
         <dt>環境</dt><dd>iPhone 17 ProのSimulator（iOS 26.5）で動かした開発版のTexter（バージョン2.11.68）。開発用の表示は、画像と動画でぼかすか隠しています。初回の説明画面は事前に飛ばしました。製品版の見え方とは細部が異なる場合があります。</dd>
         <dt>音声</dt><dd>台本をmacOSの2種類の合成音声で読み上げた、2分4秒のファイルです。雑音はありません。</dd>
         <dt>文字起こしの一致</dt><dd>音声認識はアプリの既定のWhisperです。句読点と表記ゆれを除いた台本549字に対して、不一致は2字（一致率99.6％）でした。合成音声で1回測った結果なので、実際の会議の精度とは異なります。</dd>
         <dt>掲載した出力</dt><dd>アプリとチャットAIの出力を転載しました。チャットAIの出力は抜粋で、表を箇条書きに直しています。</dd>
       </dl></section>
-<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで試す</h2><p>Texterは、録音や音声ファイルから文字起こし、要約、やることの抽出までを行うアプリです。この手順はiPhone版のものです。無料で始められます。無料版の文字起こしには月ごとの上限があり、要約は1日3回までです。処理の前に広告が表示される場合があります。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-ai-minutes-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-ai-minutes-end" data-store="app_store">iPhoneで議事録作成を試す（App Store）</a><a class="btn btn-line" href="https://play.google.com/store/apps/details?id=com.matz.Texter" target="_blank" rel="noopener noreferrer" data-cta="guide-ai-minutes-end" data-store="google_play">Google Playで見る</a></div></section>
+<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで試す</h2><p>Texterは、録音や音声ファイルから文字起こし、要約、やることの抽出までを行うアプリです。この手順はiPhone版のものです。無料で始められます。無料版の文字起こしには上限があり、要約は1日3回までです。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-ai-minutes-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-ai-minutes-end" data-store="app_store">iPhoneで議事録作成を試す（App Store）</a><a class="btn btn-line" href="https://play.google.com/store/apps/details?id=com.matz.Texter" target="_blank" rel="noopener noreferrer" data-cta="guide-ai-minutes-end" data-store="google_play">Google Playで見る</a></div></section>
 </main>
 <footer><div class="wrap">
-  <ul><li><a href="/">ホーム</a></li><li><a href="/guides/">活用ガイド</a></li><li><a href="/faq/">よくある質問</a></li><li><a href="/terms-of-service/">利用規約</a></li><li><a href="/privacy-policy/">プライバシーポリシー</a></li><li><a href="/tokushoho/">特定商取引法に基づく表記</a></li></ul>
+  <ul><li><a href="/">ホーム</a></li><li><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金と利用条件</a></li><li><a href="/faq/">よくある質問</a></li><li><a href="/terms-of-service/">利用規約</a></li><li><a href="/privacy-policy/">プライバシーポリシー</a></li><li><a href="/tokushoho/">特定商取引法に基づく表記</a></li></ul>
   <p>© 2026 Texter app - Kyoto, Japan.</p>
 </div></footer>
 <script>
