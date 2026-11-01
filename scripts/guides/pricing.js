@@ -89,10 +89,10 @@ const page = {
 const offers = [
   { name: '無料', price: 0 },
   { name: '文字起こしチケット（1時間）', price: ticket },
-  { name: 'Premium 月額', price: monthly },
-  { name: 'Premium 年額', price: yearly },
-  { name: '月10時間プラン', price: tenHours },
-  { name: '月20時間プラン', price: twentyHours },
+  { name: 'Premium 月額', price: monthly, period: 'P1M' },
+  { name: 'Premium 年額', price: yearly, period: 'P1Y' },
+  { name: '月10時間プラン', price: tenHours, period: 'P1M' },
+  { name: '月20時間プラン', price: twentyHours, period: 'P1M' },
 ];
 
 module.exports = { CHECKED, questions, sections, page, offers };

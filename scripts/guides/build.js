@@ -109,6 +109,7 @@ footer{margin-top:64px;padding:28px 0 40px;border-top:1px solid var(--line);font
 footer ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 16px}
 footer a{color:var(--sub)}
 footer p{margin:12px 0 0}
+@media (max-width:400px){.nav ul .opt{display:none}}
 @media (max-width:560px){.nav ul a{padding:8px 5px;font-size:13px}.shot{width:calc(50% - 8px);margin-right:6px}.shot.wide{width:100%;max-width:320px;margin-right:0}.steps>li{padding:16px}.facts{grid-template-columns:1fr}.facts dd{margin-bottom:8px}.compare{font-size:14px}.compare th,.compare td{padding:10px}}
 `;
 
@@ -157,7 +158,7 @@ ${jsonForScript(ld)}
 <a class="skip" href="#main">本文へ移動</a>
 <header class="nav"><div class="wrap">
   <a class="brand" href="/"><img src="/img/appicon.png" alt="" width="28" height="28">Texter</a>
-  <nav aria-label="メイン"><ul><li><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金</a></li><li><a href="/faq/">よくある質問</a></li></ul></nav>
+  <nav aria-label="メイン"><ul><li class="opt"><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金</a></li><li><a href="/faq/">よくある質問</a></li></ul></nav>
 </div></header>
 <main id="main" class="wrap">
 ${body}
@@ -281,7 +282,15 @@ function renderPricing() {
         '@id': `${SITE}/#app`,
         name: 'Texter',
         operatingSystem: facts.operatingSystem,
-        offers: pricing.offers.map((o) => ({ '@type': 'Offer', name: `${o.name}（iPhone版）`, price: o.price, priceCurrency: 'JPY', eligibleRegion: 'JP', url })),
+        offers: pricing.offers.map((o) => ({
+          '@type': 'Offer',
+          name: `${o.name}（iPhone版）`,
+          price: o.price,
+          priceCurrency: 'JPY',
+          eligibleRegion: 'JP',
+          url,
+          ...(o.period ? { priceSpecification: { '@type': 'UnitPriceSpecification', price: o.price, priceCurrency: 'JPY', billingDuration: o.period } } : {}),
+        })),
       },
       crumbLd(url, items),
     ],
