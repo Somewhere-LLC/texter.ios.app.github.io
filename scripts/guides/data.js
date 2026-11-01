@@ -253,6 +253,60 @@ const sideButton = {
   ctaBody: 'Texterは、録音から文字起こし、要約、やることの抽出までを行うアプリです。この手順はiPhone版のものです。',
 };
 
+const pipGuide = {
+  slug: 'iphone-pip-transcription',
+  verified: '2026-11-01',
+  published: '2026-11-01',
+  iosOnly: true,
+  title: 'iPhoneで別のアプリを使いながら録音・文字起こしする方法｜小窓の手順と実例',
+  description: 'Texterの小窓（ピクチャ・イン・ピクチャ）で、資料やSafariを見ながら文字起こしを確認する手順です。実機の画面、結果、無料版の条件を載せています。',
+  crumb: '別のアプリを使いながら文字起こしする方法',
+  h1: 'iPhoneで別のアプリを使いながら録音・文字起こしする方法',
+  lead: 'Texterの録音画面を小窓にすると、資料やSafariを見ながら、話した内容を文字で確認できます。実機で確かめた手順と結果を説明します。',
+  video: {
+    src: '/assets/guides/pip/demo.mp4', poster: '/assets/guides/pip/poster.webp', w: 540, h: 1308, duration: 'PT70S',
+    name: '別のアプリの上でTexterの文字起こしを小窓で確認する操作', description: 'Texterで録音を始めて小窓に切り替え、Safariを操作しながら文字起こしを確認し、Texterに戻って止めるまでの実機の画面です。約2秒ごとのスクリーンショットをつないでいます。',
+  },
+  store: 'guide-pip',
+  sections: [
+    { id: 'summary', title: '結論', html: `
+      <p>録音中に画面の左下にある小窓のボタンを押して、別のアプリへ移ってください。文字起こしは小窓の中で続きます。資料を読みながら発言を確かめたいときや、話を聞きながらメモや調べ物をしたいときに使えます。</p>` },
+    { id: 'steps', cta: 'after-steps', title: '手順', html: `
+      <div class="demo">__VIDEO__</div>
+      <p class="note">動画は約2秒ごとのスクリーンショットをつないだもので、音は入っていません。</p>
+      <ol class="steps">
+        <li><h3>録音を始める</h3><p>「ボイス」タブでマイクのボタンを押してください。話した内容が画面に表示されます。</p>${fig('/assets/guides/pip/01-start.webp', '録音中の画面。左下に小窓のボタンがある', '録音中の画面', ...FULL)}</li>
+        <li><h3>小窓に切り替える</h3><p>録音中に出る左下のボタンを押すと、画面の上に小窓が表示されます。×で小窓を閉じても録音は止まりません。</p>${fig('/assets/guides/pip/02-pip.webp', 'ホーム画面の上に小窓が出ている', 'ホーム画面に戻った状態', ...FULL)}</li>
+        <li><h3>別のアプリを開く</h3><p>ホーム画面に戻って、使いたいアプリを開いてください。小窓は残り、文字起こしが続きます。</p>${wide(fig('/assets/guides/pip/03-safari.webp', 'Safariで開いたページの上に小窓があり、文字起こしが表示されている', 'Safariの上の小窓', ...FULL))}${fig('/assets/guides/pip/04-scroll.webp', 'ページをスクロールしても小窓の文字が増えている', 'スクロールしても続く', ...FULL)}</li>
+        <li><h3>Texterに戻って止める</h3><p>Texterに戻り、停止のボタンを押してください。初期設定では、文字起こしはノートに残ります。</p>${fig('/assets/guides/pip/05-stop.webp', '停止後の画面に文字起こしが並んでいる', '停止後の画面', ...FULL)}</li>
+      </ol>` },
+    { id: 'result', title: '実際の結果', html: `
+      <p>打ち合わせの音声をMacのスピーカーで再生し、約50秒録音しました。途中で小窓に切り替えてSafariを操作しても、文字起こしは途切れませんでした。冒頭の文字起こしは次のとおりです。</p>
+      <pre class="code"><code>それでは、11月の新商品キャンペーンの打ち合わせを始めます。
+今日は公開日と担当を決めたいと思います。
+はい、よろしくお願いします。
+まず現状ですが、特設展示のデザインは先週の金曜日に完成しました。</code></pre>
+      <p>「特設ページ」が「特設展示」になりました。同じ音声でも、録音のたびに誤りの箇所は変わります。この検証はスピーカー越しの合成音声なので、実際の会議の精度とは異なります。</p>` },
+    { id: 'notes', title: '始める前の注意', html: `
+      <ul>
+        <li>無料版のリアルタイム文字起こしは、1回約3分、1日15分までです。1回の上限に達すると、小窓に「無料版の3分制限に達しました」と表示され、録音は止まります。Texterに戻ると有料プランの案内が出ますが、閉じれば文字起こしを確認できます。長い会議で使うならPremiumを確認してください。条件は<a href="/pricing/">料金と利用条件</a>にあります</li>
+        <li>文字にするのはマイクが拾った音です。イヤホンで聞いている動画の音は文字になりません</li>
+        <li>録音する前に、参加者へ録音することを伝えてください</li>
+      </ul>` },
+    { id: 'next', title: '関連するガイド', html: `<p>録音をすばやく始めるには<a href="/guides/iphone-side-button-recording/">サイドボタンのガイド</a>、録音を議事録にするには<a href="/guides/ai-minutes/">議事録のガイド</a>をご覧ください。</p>` },
+    { id: 'method', title: '検証の条件', html: `
+      <dl class="facts">
+        <dt>検証した人</dt><dd>Texter運営</dd>
+        <dt>検証日</dt><dd>2026-11-01</dd>
+        <dt>環境</dt><dd>iPhone 17 Pro（iOS 27.0）、製品版のTexter（バージョン2.11.68）。無料の状態です。</dd>
+        <dt>音声</dt><dd>台本を合成音声で読み上げた音声を、Macのスピーカーで再生しました。</dd>
+      </dl>` },
+  ],
+  ctaTitle: 'Texterで試す',
+  ctaLabel: 'iPhoneで小窓の文字起こしを試す',
+  ctaBody: 'Texterは、録音から文字起こし、要約、やることの抽出までを行うアプリです。この手順はiPhone版のものです。',
+};
+
 const index = {
   title: '文字起こしと議事録の活用ガイド｜Texter',
   description: '議事録や動画字幕の作り方を、実際の操作画面と完成例で説明するガイドです。',
@@ -261,4 +315,4 @@ const index = {
   crumb: '活用ガイド',
 };
 
-module.exports = { VERIFIED, guides: [aiMinutes, videoSubtitles, sideButton], index };
+module.exports = { VERIFIED, guides: [aiMinutes, videoSubtitles, sideButton, pipGuide], index };
