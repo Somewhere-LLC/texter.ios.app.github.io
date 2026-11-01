@@ -14,7 +14,7 @@ const appStoreLink = (g, pos) => {
   if (id.length > 40) throw new Error(`campaign token too long: ${id}`);
   return `<a class="btn btn-solid" href="${facts.appStore.ja}?pt=${APP_STORE_PT}&amp;ct=${id}&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="${id}" data-store="app_store">${esc(g.ctaLabel)}（App Store）</a>`;
 };
-const inlineCta = (g, pos) => `<aside class="cta inline" aria-label="アプリで試す">${pos === 'after-result' ? `<p>${CONDITIONS}</p>` : ''}<div class="row">${appStoreLink(g, pos)}</div></aside>`;
+const inlineCta = (g, pos) => `<aside class="cta inline" aria-label="アプリで試す">${pos === 'after-result' ? `<p>${g.conditions || CONDITIONS}</p>` : ''}<div class="row">${appStoreLink(g, pos)}</div></aside>`;
 const TRACK = `<script>
 (function(){
   var send=function(name,el){if(window.gtag)gtag('event',name,{location:el.dataset.cta,store:el.dataset.store});};
@@ -185,7 +185,7 @@ function renderGuide(g) {
   const url = `${SITE}/guides/${g.slug}/`;
   const items = [{ name: 'Texter', href: '/' }, { name: '活用ガイド', href: '/guides/' }, { name: g.crumb }];
   const v = g.video;
-  const player = `<video controls muted playsinline preload="none" poster="${v.poster}" width="${v.w}" height="${v.h}" aria-label="${esc(v.name)}"><source src="${v.src}" type="video/mp4"></video>`;
+  const player = !v ? '' : `<video controls muted playsinline preload="none" poster="${v.poster}" width="${v.w}" height="${v.h}" aria-label="${esc(v.name)}"><source src="${v.src}" type="video/mp4"></video>`;
   const ids = g.sections.map((s) => s.id);
   if (new Set(ids).size !== ids.length) throw new Error(`duplicate section id in ${g.slug}`);
   const ld = {
@@ -200,13 +200,13 @@ function renderGuide(g) {
         inLanguage: 'ja',
         datePublished: g.published || VERIFIED,
         dateModified: g.modified || verified,
-        image: `${SITE}${v.poster}`,
+        image: `${SITE}${v ? v.poster : g.image}`,
         isPartOf: { '@id': SITE_ID },
         about: { '@id': `${SITE}/#app` },
         publisher: { '@id': ORG_ID },
-        video: { '@id': `${url}#video` },
+        ...(v ? { video: { '@id': `${url}#video` } } : {}),
       },
-      {
+      ...(v ? [{
         '@type': 'VideoObject',
         '@id': `${url}#video`,
         name: v.name,
@@ -216,7 +216,7 @@ function renderGuide(g) {
         uploadDate: `${verified}T09:00:00+09:00`,
         duration: v.duration,
         inLanguage: 'ja',
-      },
+      }] : []),
       crumbLd(url, items),
     ],
   };
@@ -227,7 +227,7 @@ function renderGuide(g) {
 <p class="meta">検証日 <time datetime="${verified}">${verified}</time></p>
 <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul>${g.sections.map((s) => `<li><a href="#${s.id}">${esc(s.title)}</a></li>`).join('')}</ul></nav>
 ${sections}
-<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">${esc(g.ctaTitle)}</h2><p>${esc(g.ctaBody)}${CONDITIONS}</p><div class="row">${appStoreLink(g, 'end')}${g.iosOnly ? '' : `<a class="btn btn-line" href="${facts.googlePlay}" target="_blank" rel="noopener noreferrer" data-cta="${g.store}-end" data-store="google_play">Google Playで見る</a>`}</div></section>`;
+<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">${esc(g.ctaTitle)}</h2><p>${esc(g.ctaBody)}${g.conditions || CONDITIONS}</p><div class="row">${appStoreLink(g, 'end')}${g.iosOnly ? '' : `<a class="btn btn-line" href="${facts.googlePlay}" target="_blank" rel="noopener noreferrer" data-cta="${g.store}-end" data-store="google_play">Google Playで見る</a>`}</div></section>`;
   return shell({ title: g.title, description: g.description, url, ld, body, ogType: 'article' });
 }
 
