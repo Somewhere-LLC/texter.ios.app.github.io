@@ -214,7 +214,7 @@ const sideButton = {
   sections: [
     { id: 'summary', title: '結論', html: `
       <p>設定は1回だけです。「設定」アプリの「サイドボタン」でTexterを選ぶと、ホーム画面でサイドボタンを長押ししたときにTexterが開き、そのまま録音が始まります。会議が急に始まったときなど、アプリを探す時間を減らせます。</p>
-      <p>利用には、iOS 26.2以降で、Apple Accountの国または地域が日本であり、日本国内にいることが必要です（<a href="https://developer.apple.com/documentation/appintents/launching-your-voice-based-conversational-app-from-the-side-button-of-iphone" target="_blank" rel="noopener noreferrer">Appleの説明</a>）。Texterを選ぶと、サイドボタンの長押しではSiriが起動しなくなります。同じ画面にSiriの項目があるので、Siriに戻したいときはこちらを選んでください。</p>` },
+      <p>利用には、iOS 26.2以降で、Apple Accountの国または地域が日本であり、日本国内にいることが必要です（<a href="https://developer.apple.com/documentation/appintents/launching-your-voice-based-conversational-app-from-the-side-button-of-iphone" target="_blank" rel="noopener noreferrer">Appleの説明</a>）。Texterを選ぶと、サイドボタンの長押しではSiriが起動しなくなります。同じ画面にSiriの項目があるので、Siriに戻したいときはこちらを選んでください。Appleは、音声アプリを割り当てると一部のアクセシビリティ機能が使えなくなる場合があると<a href="https://support.apple.com/ja-jp/105103" target="_blank" rel="noopener noreferrer">案内しています</a>。サイドボタンのアクセシビリティ機能を使っている方は、先に確かめてください。</p>` },
     { id: 'steps', cta: 'after-steps', title: '設定と録音の手順', html: `
       <div class="demo">__VIDEO__</div>
       <ol class="steps">
