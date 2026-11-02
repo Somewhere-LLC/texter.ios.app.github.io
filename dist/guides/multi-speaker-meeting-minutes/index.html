@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HDB32BHHL8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HDB32BHHL8', { 'cookie_flags': 'SameSite=None;Secure' });
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>複数人の会議を話者ごとに文字起こしして議事録を作る方法｜Texter</title>
+<meta name="description" content="iPhoneのTexterで会議の音声を話者識別して文字起こしする手順。スピーカーのラベルをタップして話者名を一括変更し、決定事項と担当を確認して議事録に仕上げる方法を説明します。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://texter.work/guides/multi-speaker-meeting-minutes/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://texter.work/guides/multi-speaker-meeting-minutes/">
+<meta property="og:title" content="複数人の会議を話者ごとに文字起こしして議事録を作る方法｜Texter">
+<meta property="og:description" content="iPhoneのTexterで会議の音声を話者識別して文字起こしする手順。スピーカーのラベルをタップして話者名を一括変更し、決定事項と担当を確認して議事録に仕上げる方法を説明します。">
+<meta property="og:site_name" content="Texter">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://texter.work/img/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="複数人の会議を話者ごとに文字起こしして議事録を作る方法｜Texter">
+<meta name="twitter:description" content="iPhoneのTexterで会議の音声を話者識別して文字起こしする手順。スピーカーのラベルをタップして話者名を一括変更し、決定事項と担当を確認して議事録に仕上げる方法を説明します。">
+<meta name="twitter:image" content="https://texter.work/img/ogp.png">
+<meta name="apple-itunes-app" content="app-id=1482592304">
+<link rel="icon" href="/assets/favicon/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v=2">
+<link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png?v=2">
+<meta name="theme-color" content="#EDF4FF">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://texter.work/guides/multi-speaker-meeting-minutes/#article",
+      "headline": "複数人の会議を話者ごとに文字起こしして議事録を作る方法",
+      "description": "iPhoneのTexterで会議の音声を話者識別して文字起こしする手順。スピーカーのラベルをタップして話者名を一括変更し、決定事項と担当を確認して議事録に仕上げる方法を説明します。",
+      "url": "https://texter.work/guides/multi-speaker-meeting-minutes/",
+      "inLanguage": "ja",
+      "datePublished": "2026-11-02",
+      "dateModified": "2026-11-02",
+      "image": "https://texter.work/assets/guides/multi-speaker-minutes/poster.webp",
+      "isPartOf": {
+        "@id": "https://texter.work/#website"
+      },
+      "about": {
+        "@id": "https://texter.work/#app"
+      },
+      "publisher": {
+        "@id": "https://texter.work/#organization"
+      },
+      "video": {
+        "@id": "https://texter.work/guides/multi-speaker-meeting-minutes/#video"
+      }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://texter.work/guides/multi-speaker-meeting-minutes/#video",
+      "name": "会議音声の取り込みと話者名の一括変更",
+      "description": "会議の音声ファイルをSimulatorで取り込み、話者別の文字起こしを開いて、同じ話者の発言をまとめて改名する操作です。待ち時間を省いています。",
+      "thumbnailUrl": [
+        "https://texter.work/assets/guides/multi-speaker-minutes/poster.webp"
+      ],
+      "contentUrl": "https://texter.work/assets/guides/multi-speaker-minutes/demo.mp4",
+      "uploadDate": "2026-11-02T09:00:00+09:00",
+      "duration": "PT53S",
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://texter.work/guides/multi-speaker-meeting-minutes/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Texter",
+          "item": "https://texter.work/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "活用ガイド",
+          "item": "https://texter.work/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "複数人の会議を話者ごとに議事録にする方法",
+          "item": "https://texter.work/guides/multi-speaker-meeting-minutes/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{--accent:#6482FA;--deep:#5460D6;--navy:#17255A;--text:#444444;--sub:#5F6170;--line:rgba(23,37,90,.12);--card:#FFFFFF;--grad-a:#EDF4FF;--grad-b:#D6E4FC;
+  --f-jp:-apple-system,BlinkMacSystemFont,"SF Pro JP","Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;--f-mono:ui-monospace,Menlo,monospace;color-scheme:light}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:80px}
+body{margin:0;color:var(--text);font-family:var(--f-jp);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased;background:linear-gradient(180deg,var(--grad-a) 0%,var(--grad-b) 100%) fixed,var(--grad-b)}
+a{color:var(--deep)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip{position:fixed;left:12px;top:-60px;z-index:100;background:var(--navy);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+.skip:focus{top:12px}
+.wrap{max-width:760px;margin-inline:auto;padding-inline:20px}
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:18px;color:var(--navy)}
+.brand img{width:28px;height:28px;border-radius:7px}
+.nav ul{display:flex;gap:4px;margin:0;padding:0;list-style:none}
+.nav ul a{display:block;padding:8px 10px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;color:var(--text);white-space:nowrap}
+.crumbs{margin:28px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px;font-size:13px;color:var(--sub)}
+.crumbs li+li::before{content:"/";margin-right:6px}
+.crumbs a{color:var(--sub)}
+h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.6rem);line-height:1.25;font-weight:900}
+.lead{margin:16px 0 0}
+.meta{margin:10px 0 0;font-size:13px;color:var(--sub)}
+.toc{margin:28px 0 0;padding:18px 20px;background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:14px}
+.toc h2{margin:0;font-size:13px;color:var(--sub);font-weight:600}
+.toc ul{margin:8px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 18px}
+.toc a{font-size:15px;font-weight:500}
+.sec{margin-top:48px}
+.sec>h2{margin:0;padding-top:12px;border-top:1.5px solid var(--navy);color:var(--navy);font-size:clamp(1.3rem,3vw,1.6rem);line-height:1.4}
+.sec h3{margin:24px 0 0;color:var(--navy);font-size:17px;line-height:1.6}
+.sec p,.sec ul,.sec ol{margin:12px 0 0}
+.sec ul,.sec ol{padding-left:1.3em}
+.compare{width:100%;margin-top:16px;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;font-size:15px}
+.compare th,.compare td{padding:12px 14px;border:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.65}
+.compare thead th{background:#F2F5FD;color:var(--navy)}
+.compare caption{padding:8px 0;text-align:left;font-size:14px;color:var(--sub)}
+.scroll{overflow-x:auto;margin-top:12px}
+.scroll .compare{margin-top:0}
+.plans{min-width:680px}
+.plans tbody th{min-width:128px}
+.plans th:first-child{position:sticky;left:0;background:#fff;z-index:1}
+.plans thead th:first-child{background:#F2F5FD}
+.sec article{margin-top:18px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.sec article h3{margin:0}
+.doc{margin-top:12px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.doc p:first-child{margin-top:0}
+.steps{list-style:none;padding:0!important;counter-reset:s}
+.steps>li{counter-increment:s;margin-top:32px;padding:20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.steps>li>h3{margin:0}
+.steps>li>h3::before{content:counter(s) ". "}
+.shot{display:inline-block;width:min(46%,260px);margin:16px 10px 0 0;vertical-align:top}
+.shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:14px}
+.shot figcaption{margin-top:6px;font-size:13px;line-height:1.5;color:var(--sub)}
+.demo{margin:16px 0 0;max-width:300px}
+.demo.land{max-width:none}
+.demo video{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);background:#fff}
+.sample{display:block;width:100%;height:auto;margin-top:16px;border-radius:14px;background:#000}
+.note{font-size:14px}
+.raw{margin-top:14px}
+.raw summary{cursor:pointer;font-weight:600;color:var(--navy)}
+.code{margin:12px 0 0;padding:16px;overflow-x:auto;background:var(--navy);color:#fff;border-radius:12px;font:14px/1.7 var(--f-mono);white-space:pre-wrap;overflow-wrap:anywhere}
+.facts{display:grid;grid-template-columns:8em 1fr;gap:8px 12px;margin:16px 0 0;font-size:15px}
+.facts dt{font-weight:600;color:var(--navy)}
+.facts dd{margin:0}
+.cards{display:grid;gap:14px;margin:28px 0 0}
+.card{display:block;padding:20px 22px;background:var(--card);border:1px solid var(--line);border-radius:14px;text-decoration:none;color:var(--text)}
+.card strong{display:block;color:var(--navy);font-size:18px}
+.card span{display:block;margin-top:6px;font-size:15px}
+.cta{margin:56px 0 0;padding:28px 22px;background:var(--navy);color:#fff;border-radius:18px}
+.cta h2{margin:0;font-size:22px;line-height:1.4}
+.cta p{margin:8px 0 0;color:rgba(255,255,255,.85);font-size:15px}
+.cta .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.cta.inline{margin:32px 0 0;padding:20px 22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 20px;text-align:center;line-height:1.4;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px}
+.btn-solid{background:#fff;color:var(--navy)}
+.btn-line{color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)}
+footer{margin-top:64px;padding:28px 0 40px;border-top:1px solid var(--line);font-size:13px;color:var(--sub)}
+footer ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 16px}
+footer a{color:var(--sub)}
+footer p{margin:12px 0 0}
+@media (max-width:400px){.nav ul .opt{display:none}}
+@media (max-width:560px){.nav ul a{padding:8px 5px;font-size:13px}.shot{width:calc(50% - 8px);margin-right:6px}.shot.wide{width:100%;max-width:320px;margin-right:0}.steps>li{padding:16px}.facts{grid-template-columns:1fr}.facts dd{margin-bottom:8px}.compare{font-size:14px}.compare th,.compare td{padding:10px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/"><img src="/img/appicon.png" alt="" width="28" height="28">Texter</a>
+  <nav aria-label="メイン"><ul><li class="opt"><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金</a></li><li><a href="/faq/">よくある質問</a></li></ul></nav>
+</div></header>
+<main id="main" class="wrap">
+<nav aria-label="パンくずリスト"><ol class="crumbs"><li><a href="/">Texter</a></li><li><a href="/guides/">活用ガイド</a></li><li aria-current="page">複数人の会議を話者ごとに議事録にする方法</li></ol></nav>
+<h1>複数人の会議を話者ごとに文字起こしして議事録を作る方法</h1>
+<p class="lead">複数人の打ち合わせでは、発言だけでなく「誰が言ったか」も議事録の手がかりになります。Texterで録音を話者ごとに分け、スピーカーのラベルを実際の名前に直してから、決定事項と担当を確認する手順を説明します。</p>
+<p class="meta">更新日 <time datetime="2026-11-02">2026-11-02</time></p>
+<nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul><li><a href="#overview">最初に知っておくこと</a></li><li><a href="#steps">話者ごとに文字起こしする手順</a></li><li><a href="#rename">ラベルをタップして話者名を一括変更する</a></li><li><a href="#minutes">発言を確認して議事録に仕上げる</a></li><li><a href="#troubleshooting">ラベルが出ない・話者が違うとき</a></li><li><a href="#notes">利用前に確認すること</a></li><li><a href="#method">このページの確認範囲</a></li></ul></nav>
+<section class="sec" id="overview" aria-labelledby="overview-h"><h2 id="overview-h">最初に知っておくこと</h2>
+      <p>この手順は、iPhone版で会議の音声ファイルをWhisperで文字起こしする場合です。<strong>話者識別はPremiumで「話者識別」をオンにしたときに使えます。</strong>アプリは声の違いを「スピーカー1」「スピーカー2」のように区別しますが、名前を自動で特定するものではありません。誰の発言かを音声で確かめ、名前を付けてください。</p>
+      <p>会議中に録音する場合は「ボイス」タブから始められます。ここでは録音済みの音声ファイルを取り込む方法を説明します。</p></section>
+<section class="sec" id="steps" aria-labelledby="steps-h"><h2 id="steps-h">話者ごとに文字起こしする手順</h2>
+      <p>動画では、会議の音声ファイルを取り込み、話者ごとの文字起こしを確認して、話者名を一括変更するまでを紹介します。処理を待つ場面は省いています。</p>
+      <div class="demo"><video controls muted playsinline preload="none" poster="/assets/guides/multi-speaker-minutes/poster.webp" width="540" height="1174" aria-label="会議音声の取り込みと話者名の一括変更"><source src="/assets/guides/multi-speaker-minutes/demo.mp4" type="video/mp4"></video></div>
+      <ol class="steps">
+        <li><h3>録音を用意する</h3><p>参加者に録音することを伝え、iPhoneのボイスメモやTexterで会議を録音します。端末を発言者の声が拾える場所に置き、重なって話す場面は後で聞き直せるようにしてください。ボイスメモの音声は、共有から「“ファイル”に保存」でファイルアプリへ保存できます。</p></li>
+        <li><h3>Whisperの話者識別をオンにする</h3><p>Texterの「設定」→「ファイルをインポート」→「音声認識サービスを選択」を開き、Whisperを選びます。Whisperの「話者識別」をオンにしてください。Premiumでない場合はプランの案内が開きます。「話者数」は、分かっていれば人数を選び、分からなければ「自動検出」を選びます。</p></li>
+        <li><h3>音声を取り込む</h3><p>「設定」→「ファイルをインポート」→「音声ファイルをインポート」で録音を選びます。文字起こしが終わったら「リスト」からノートを開いてください。取り込みの画面と基本操作は<a href="/guides/ai-minutes/#steps">録音から議事録を作るガイド</a>にもあります。</p></li>
+        <li><h3>話者ラベルと発言を照合する</h3><p>本文に出る「[スピーカー1]」などのラベルを見て、録音を再生しながら各ラベルが誰の声か確かめます。同じ人の発言が別のラベルに分かれたり、声が重なった箇所で誤って割り当てられたりすることがあるため、担当者が決まる発言は特に確認してください。</p><figure class="shot wide"><a href="/assets/guides/multi-speaker-minutes/speaker-labels.png"><img src="/assets/guides/multi-speaker-minutes/speaker-labels.png" alt="会議音声の文字起こしでスピーカー1とスピーカー2の発言が交互に表示された画面" width="1206" height="2622" loading="lazy" decoding="async"></a><figcaption>取り込んだ会議音声の文字起こし。2人の発言に別々のラベルが付いています</figcaption></figure></li>
+      </ol></section><aside class="cta inline" aria-label="アプリで試す"><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-speaker-minutes-after-steps&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-speaker-minutes-after-steps" data-store="app_store">iPhoneで話者識別を試す（App Store）</a></div></aside>
+<section class="sec" id="rename" aria-labelledby="rename-h"><h2 id="rename-h">ラベルをタップして話者名を一括変更する</h2>
+      <p><strong>「[スピーカー1]」などの話者ラベルをタップ</strong>し、「話者名を変更」を選びます。確認した名前を入力して「保存」を押すと、そのノートで同じ話者ラベルが付いた発言の名前をまとめて変更できます。動画では「[スピーカー2]」を説明用の名前「担当者A」に変更しました。変更画面には対象の発言が17件と表示されています。</p>
+      <p>表示がカード形式のときはカードのスピーカー欄を、本文形式のときは本文中の話者見出しをタップします。変更前に、そのラベルの発言がすべて同じ人か録音で確認してください。別の人の発言まで同じラベルに分類されている場合、名前だけを一括変更しても分類の誤りは直りません。</p>
+      <figure class="shot wide"><a href="/assets/guides/multi-speaker-minutes/rename-dialog.png"><img src="/assets/guides/multi-speaker-minutes/rename-dialog.png" alt="話者名を変更する画面に、この話者の発言17件をまとめて変更すると表示されている" width="1206" height="2622" loading="lazy" decoding="async"></a><figcaption>「保存」で同じ話者の発言17件をまとめて変更します</figcaption></figure>
+      <figure class="shot wide"><a href="/assets/guides/multi-speaker-minutes/renamed-transcript.png"><img src="/assets/guides/multi-speaker-minutes/renamed-transcript.png" alt="文字起こしの複数箇所に担当者Aのラベルが表示された変更後の画面" width="1206" height="2622" loading="lazy" decoding="async"></a><figcaption>変更後の本文。複数の発言に「担当者A」が表示されています</figcaption></figure></section>
+<section class="sec" id="minutes" aria-labelledby="minutes-h"><h2 id="minutes-h">発言を確認して議事録に仕上げる</h2>
+      <p>ノートの「要約」や「内容まとめ」を起点に、会議名、参加者、決定事項、保留事項、担当者と期限を整理します。「要約 / 変換」には「会議議事録」テンプレートもあります。要約だけでは「私」が誰か確定できない場合があるので、担当者は名前を付けた文字起こしと録音に戻って確認してください。</p>
+      <div class="doc"><p><strong>掲載音声からまとめた議事録の記入例</strong></p><p>会議名：新商品キャンペーン打ち合わせ<br>発言者：担当者A、話者1（名前は要確認）<br>決定事項：公開日は11月14日。メールマガジンは同日午前10時に配信。クーポンは15％オフで11月30日まで<br>担当と期限：話者1がメール原稿を11月7日までに作成。写真3点は11月12日までに確認<br>次回：11月11日午後3時</p></div>
+      <p>数字、固有名詞、期限、担当は、元の音声と照らしてから共有します。日時や参加者が録音から分からないときは、推測で埋めず「要確認」と書いてください。書き出し方は<a href="/guides/ai-minutes/#steps">通常の議事録ガイド</a>の手順5を参照できます。</p></section>
+<section class="sec" id="troubleshooting" aria-labelledby="troubleshooting-h"><h2 id="troubleshooting-h">ラベルが出ない・話者が違うとき</h2>
+      <ul>
+        <li>ラベルが出ない場合は、取り込み前にWhisperの「話者識別」をオンにしたか、Premiumが有効かを確認してください。すでに文字起こししたノートに、設定変更だけでラベルが追加されるわけではありません</li>
+        <li>発言者の境目が違う場合は、その箇所を再生して確かめてください。話者名の一括変更は、同じラベルの名前を直す操作です</li>
+        <li>複数人が同時に話した箇所や遠くの声は、担当を誤って判断しやすいので、議事録に載せる前に聞き直してください</li>
+      </ul></section>
+<section class="sec" id="notes" aria-labelledby="notes-h"><h2 id="notes-h">利用前に確認すること</h2>
+      <ul>
+        <li>話者識別には通信が必要です。Whisperでのファイル文字起こしは音声を外部のサービスへ送り、要約はテキストを外部のサービスへ送ります。<a href="/faq/#data-sent">データの扱い</a>と会議の共有ルールを確認してください</li>
+        <li>Premiumプランごとに文字起こしの上限が異なります。長い会議の前に<a href="/pricing/">料金と利用条件</a>を確認してください</li>
+      </ul></section>
+<section class="sec" id="method" aria-labelledby="method-h"><h2 id="method-h">このページの確認範囲</h2>
+      <dl class="facts"><dt>確認日</dt><dd>2026-11-02</dd><dt>確認環境</dt><dd>iPhone 17 ProのSimulator（iOS 26.5）、Texter開発版2.11.68</dd><dt>掲載動画・画像</dt><dd>指定の会議音声を取り込んで得た文字起こしと、話者ラベル17件を一括変更した実際の画面です。動画は待ち時間を省いています。</dd><dt>未測定</dt><dd>実際の会議での話者識別の精度と議事録テンプレートの出力は測定していません。</dd></dl></section>
+<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで会議を記録する</h2><p>Texterでは、会議の録音を話者ごとに文字起こしし、要約や議事録の作成に使えます。話者識別はPremiumの機能です。通信が必要で、プランごとに文字起こしの時間上限が異なります。<a href="/pricing/">料金と利用条件</a>をご確認ください。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-speaker-minutes-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-speaker-minutes-end" data-store="app_store">iPhoneで話者識別を試す（App Store）</a></div></section>
+</main>
+<footer><div class="wrap">
+  <ul><li><a href="/">ホーム</a></li><li><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金と利用条件</a></li><li><a href="/faq/">よくある質問</a></li><li><a href="/terms-of-service/">利用規約</a></li><li><a href="/privacy-policy/">プライバシーポリシー</a></li><li><a href="/tokushoho/">特定商取引法に基づく表記</a></li></ul>
+  <p>© 2026 Texter app - Kyoto, Japan.</p>
+</div></footer>
+<script>
+(function(){
+  var send=function(name,el){if(window.gtag)gtag('event',name,{location:el.dataset.cta,store:el.dataset.store});};
+  var links=document.querySelectorAll('a[data-cta]');
+  links.forEach(function(a){
+    a.addEventListener('click',function(){send(a.dataset.store==='google_play'?'google_play_click':'app_store_click',a);});
+    if(!('IntersectionObserver' in window))return;
+    var seen=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){send('guide_cta_view',a);seen.disconnect();}});},{threshold:.5});
+    seen.observe(a);
+  });
+})();
+</script>
+</body>
+</html>
