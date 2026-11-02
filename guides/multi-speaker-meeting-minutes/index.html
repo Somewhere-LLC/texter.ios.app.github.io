@@ -47,7 +47,7 @@
       "inLanguage": "ja",
       "datePublished": "2026-11-02",
       "dateModified": "2026-11-02",
-      "image": "https://texter.work/assets/guides/multi-speaker-minutes/speaker-labels.png",
+      "image": "https://texter.work/assets/guides/multi-speaker-minutes/poster.webp",
       "isPartOf": {
         "@id": "https://texter.work/#website"
       },
@@ -56,7 +56,23 @@
       },
       "publisher": {
         "@id": "https://texter.work/#organization"
+      },
+      "video": {
+        "@id": "https://texter.work/guides/multi-speaker-meeting-minutes/#video"
       }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://texter.work/guides/multi-speaker-meeting-minutes/#video",
+      "name": "会議音声の話者識別設定とファイル選択",
+      "description": "指定された会議音声をSimulatorで選ぶまでの操作と、別の会議の話者ラベル表示例です。開発環境では文字起こし開始時に認証エラーが発生したため、両者は連続した処理結果ではありません。",
+      "thumbnailUrl": [
+        "https://texter.work/assets/guides/multi-speaker-minutes/poster.webp"
+      ],
+      "contentUrl": "https://texter.work/assets/guides/multi-speaker-minutes/demo.mp4",
+      "uploadDate": "2026-11-02T09:00:00+09:00",
+      "duration": "PT15S",
+      "inLanguage": "ja"
     },
     {
       "@type": "BreadcrumbList",
@@ -183,11 +199,13 @@ footer p{margin:12px 0 0}
 <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul><li><a href="#overview">最初に知っておくこと</a></li><li><a href="#steps">話者ごとに文字起こしする手順</a></li><li><a href="#rename">ラベルをタップして話者名を一括変更する</a></li><li><a href="#minutes">発言を確認して議事録に仕上げる</a></li><li><a href="#troubleshooting">ラベルが出ない・話者が違うとき</a></li><li><a href="#notes">利用前に確認すること</a></li><li><a href="#method">このページの確認範囲</a></li></ul></nav>
 <section class="sec" id="overview" aria-labelledby="overview-h"><h2 id="overview-h">最初に知っておくこと</h2>
       <p>この手順は、iPhone版で会議の音声ファイルをWhisperで文字起こしする場合です。<strong>話者識別はPremiumで「話者識別」をオンにしたときに使えます。</strong>アプリは声の違いを「スピーカー1」「スピーカー2」のように区別しますが、名前を自動で特定するものではありません。誰の発言かを音声で確かめ、名前を付けてください。</p>
-      <p>会議中に録音する場合は「ボイス」タブから始められます。リアルタイムの話者識別はベータ版なので、ここでは音声ファイルを取り込む方法を中心に説明します。録音済みの音声も対象です。</p></section>
+      <p>会議中に録音する場合は「ボイス」タブから始められます。ここでは録音済みの音声ファイルを取り込む方法を説明します。</p></section>
 <section class="sec" id="steps" aria-labelledby="steps-h"><h2 id="steps-h">話者ごとに文字起こしする手順</h2>
+      <p>動画では、指定された会議音声をSimulatorで選択するまでの画面を収録しました。提供ファイルは<code>.mp4</code>という名前ですが中身は音声のみのため、<code>.m4a</code>として取り込んでいます。開発環境では文字起こし開始時に認証エラーが出たため、最後の話者ラベルは<strong>別の会議の表示例</strong>です。指定音声から得た結果ではありません。</p>
+      <div class="demo"><video controls muted playsinline preload="none" poster="/assets/guides/multi-speaker-minutes/poster.webp" width="540" height="1174" aria-label="会議音声の話者識別設定とファイル選択"><source src="/assets/guides/multi-speaker-minutes/demo.mp4" type="video/mp4"></video></div>
       <ol class="steps">
         <li><h3>録音を用意する</h3><p>参加者に録音することを伝え、iPhoneのボイスメモやTexterで会議を録音します。端末を発言者の声が拾える場所に置き、重なって話す場面は後で聞き直せるようにしてください。ボイスメモの音声は、共有から「“ファイル”に保存」でファイルアプリへ保存できます。</p></li>
-        <li><h3>Whisperの話者識別をオンにする</h3><p>Texterの「設定」→「音声認識サービスを選択」を開き、Whisperを選びます。Whisperの「話者識別」をオンにしてください。Premiumでない場合はプランの案内が開きます。「話者数」は、分かっていれば人数を選び、分からなければ「自動検出」を選びます。</p></li>
+        <li><h3>Whisperの話者識別をオンにする</h3><p>Texterの「設定」→「ファイルをインポート」→「音声認識サービスを選択」を開き、Whisperを選びます。Whisperの「話者識別」をオンにしてください。Premiumでない場合はプランの案内が開きます。「話者数」は、分かっていれば人数を選び、分からなければ「自動検出」を選びます。</p></li>
         <li><h3>音声を取り込む</h3><p>「設定」→「ファイルをインポート」→「音声ファイルをインポート」で録音を選びます。文字起こしが終わったら「リスト」からノートを開いてください。取り込みの画面と基本操作は<a href="/guides/ai-minutes/#steps">録音から議事録を作るガイド</a>にもあります。</p></li>
         <li><h3>話者ラベルと発言を照合する</h3><p>本文に出る「[スピーカー1]」などのラベルを見て、録音を再生しながら各ラベルが誰の声か確かめます。同じ人の発言が別のラベルに分かれたり、声が重なった箇所で誤って割り当てられたりすることがあるため、担当者が決まる発言は特に確認してください。</p><figure class="shot wide"><a href="/assets/guides/multi-speaker-minutes/speaker-labels.png"><img src="/assets/guides/multi-speaker-minutes/speaker-labels.png" alt="文字起こしの本文にスピーカー1、スピーカー2、スピーカー3のラベルが付いたTexterの画面" width="1206" height="2622" loading="lazy" decoding="async"></a><figcaption>話者ラベルの表示例。アプリの紹介用に収録した画面です</figcaption></figure></li>
       </ol></section><aside class="cta inline" aria-label="アプリで試す"><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-speaker-minutes-after-steps&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-speaker-minutes-after-steps" data-store="app_store">iPhoneで話者識別を試す（App Store）</a></div></aside>
@@ -211,7 +229,7 @@ footer p{margin:12px 0 0}
         <li>Premiumプランごとに文字起こしの上限が異なります。長い会議の前に<a href="/pricing/">料金と利用条件</a>を確認してください</li>
       </ul></section>
 <section class="sec" id="method" aria-labelledby="method-h"><h2 id="method-h">このページの確認範囲</h2>
-      <dl class="facts"><dt>確認日</dt><dd>2026-11-02</dd><dt>操作の根拠</dt><dd>Texter iPhone版の話者識別設定、話者名変更画面と一括変更処理を確認しました。</dd><dt>掲載画像</dt><dd>Texterのアプリ紹介用に収録した、3人の話者ラベルの表示例です。このページ用に新たな会議を録音した結果ではありません。</dd><dt>未測定</dt><dd>実際の会議での話者識別の精度、処理時間、議事録テンプレートの出力は測定していません。</dd></dl></section>
+      <dl class="facts"><dt>確認日</dt><dd>2026-11-02</dd><dt>操作の根拠</dt><dd>Texter iPhone版の話者識別設定、ファイル選択画面、話者名の一括変更処理を確認しました。</dd><dt>掲載動画</dt><dd>指定音声をSimulatorで選ぶまでを収録し、後半に別の会議の話者ラベル表示例を載せています。開発環境では文字起こし開始時に認証エラーが出たため、指定音声の処理結果は掲載していません。</dd><dt>掲載画像</dt><dd>Texterのアプリ紹介用に収録した、3人の話者ラベルの表示例です。このページ用に新たな会議を録音した結果ではありません。</dd><dt>未測定</dt><dd>実際の会議での話者識別の精度、処理時間、議事録テンプレートの出力は測定していません。</dd></dl></section>
 <section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで会議を記録する</h2><p>Texterでは、会議の録音を話者ごとに文字起こしし、要約や議事録の作成に使えます。話者識別はPremiumの機能です。通信が必要で、プランごとに文字起こしの時間上限が異なります。<a href="/pricing/">料金と利用条件</a>をご確認ください。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-speaker-minutes-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-speaker-minutes-end" data-store="app_store">iPhoneで話者識別を試す（App Store）</a></div></section>
 </main>
 <footer><div class="wrap">
