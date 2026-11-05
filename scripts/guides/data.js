@@ -495,12 +495,166 @@ const multiSpeakerMinutes = {
   ctaBody: 'Texterでは、会議の録音を話者ごとに文字起こしし、要約や議事録の作成に使えます。',
 };
 
+const voiceMemosVsTexter = {
+  slug: 'iphone-voice-memos-vs-texter',
+  verified: '2026-11-05',
+  published: '2026-11-05',
+  metaLabel: '確認日',
+  iosOnly: true,
+  title: 'iPhoneのボイスメモとTexterの違い｜標準機能で足りる場合と、Texterを使う場合',
+  description: 'iPhoneのボイスメモの文字起こしで足りる場面と、Texterを検討する場面の選び分けです。Appleの公式資料で確認したボイスメモの機能と、Texterの話者識別、議事録、過去の録音への質問を比べます。',
+  crumb: 'ボイスメモとTexterの違い',
+  h1: 'iPhoneのボイスメモとTexterの違い',
+  lead: 'ボイスメモにも、日本語の文字起こしがあります。録音して読み返すだけなら、標準機能で足りる場面は多いです。ボイスメモで足りる条件と、Texterを使う理由になる条件を分けて説明します。',
+  image: '/img/ogp.png',
+  store: 'guide-voice-memos',
+  sections: [
+    { id: 'summary', title: '結論', html: `
+      <p>1人で話した内容を録音し、あとで読んだり検索したりするだけなら、ボイスメモで足ります。複数人の会議で誰が話したかを残したいとき、議事録の形に整えたいとき、過去の録音をまたいで質問したいときは、Texterを検討してください。</p>
+      <p>先に標準のボイスメモで試し、足りない点が出てから取り込む使い方もできます。ボイスメモの録音は、Texterに取り込めます。</p>` },
+    { id: 'choose', title: 'やりたいこと別の選び方', html: `
+      <div class="scroll"><table class="compare"><thead><tr><th scope="col">やりたいこと</th><th scope="col">ボイスメモ</th><th scope="col">Texter</th></tr></thead><tbody>
+        <tr><th scope="row">録音して、日本語の文字起こしを読む</th><td>できる。iPhone 12以降で、録音中も録音後も表示できる</td><td>できる。無料版には時間の上限がある</td></tr>
+        <tr><th scope="row">録音を、タイトルや文字起こしの語で探す</th><td>できる。検索欄に入力する</td><td>ノート一覧の検索欄で探せる</td></tr>
+        <tr><th scope="row">要約する</th><td>Apple Intelligenceの作文ツールで要約できる。対応する機種と言語が要る</td><td>要約のテンプレートが20種類ある。無料版は1日3回まで</td></tr>
+        <tr><th scope="row">誰が話したかを分ける</th><td>Appleの資料に記載がない</td><td>Premiumの話者識別でできる</td></tr>
+        <tr><th scope="row">担当と期限つきの「やること」を取り出す</th><td>Appleの資料に記載がない</td><td>「やること」の抽出がある</td></tr>
+        <tr><th scope="row">複数の録音をまたいで質問する</th><td>Appleの資料に記載がない</td><td>「思い出す」でできる。無料版は1日3回まで</td></tr>
+        <tr><th scope="row">別のアプリを使いながら録音する</th><td>できる。ほかのアプリでオーディオの再生が始まると録音は止まる</td><td>小窓を出して、別のアプリを使いながら文字起こしを続けられる。ほかのアプリで音声を再生したときの動きは、確かめていない</td></tr>
+        <tr><th scope="row">費用</th><td>OS標準のアプリ。追加の費用の記載は、読んだ資料にない</td><td>無料版に上限がある。Premiumの価格は料金ページにある</td></tr>
+        <tr><th scope="row">音声の送り先</th><td>文字起こしをどこで処理するかは、読んだ2ページに記載がない</td><td>既定のWhisperは、音声をクラウドへ送る。iOS 26以降では、端末内で処理する方式も選べる</td></tr>
+        <tr><th scope="row">ほかの端末で同じ録音を使う</th><td>iCloudでボイスメモをオンにすると、同じApple Accountの端末に表示される</td><td>Premiumのクラウド同期で、テキストと要約を同期する。録音そのものは同期しない。一部のPremiumでは同期を使えない場合がある</td></tr>
+      </tbody></table></div>
+      <p class="note">「Appleの資料に記載がない」は、資料に書かれていないという意味です。ボイスメモの実機では確かめていないので、できないとは断定しません。</p>` },
+    { id: 'voice-memos', title: 'ボイスメモでできること', html: `
+      <p>Appleのサポート資料（iOS 26版）に書かれている内容です。</p>
+      <ul>
+        <li>文字起こしの対応。iPhone 12以降の日本語を含む10言語で使えます。一部の国や地域では使えません</li>
+        <li>録音中の表示。波形の上部を上にスワイプし、文字起こしのボタンを押すと、最新の語が強調された文字起こしをリアルタイムで見られます</li>
+        <li>録音後のコピー。「文字起こしを表示」で一部を、「文字起こしをコピー」で全体をコピーできます</li>
+        <li>検索。録音のリストの検索欄に語を入れると、タイトルか文字起こしにその語を含む録音だけが表示される方式です。文字起こしの中で語を選ぶと、波形のその位置に再生ヘッドが表示されます</li>
+        <li>要約。Apple Intelligenceの作文ツールで、文字起こしを要約できます。Appleの資料では、Apple Intelligenceはベータ版の扱いです</li>
+        <li>編集。一時停止と再開、トリミング、再録音、「声を分離」でのバックグラウンドサウンドの除去など</li>
+        <li>同期。iCloudでボイスメモをオンにすると、録音は同じApple Accountのほかの端末に自動で表示されます</li>
+      </ul>
+      <p>出典は、Appleの<a href="https://support.apple.com/ja-jp/guide/iphone/iph00953a982/26/ios/26" target="_blank" rel="noopener noreferrer">ボイスメモの文字起こしを表示する</a>と<a href="https://support.apple.com/ja-jp/guide/iphone/iph4d2a39a3b/26/ios/26" target="_blank" rel="noopener noreferrer">ボイスメモで録音する</a>です。</p>` },
+    { id: 'texter', title: 'Texterを検討する場面', html: `
+      <h3>話者ごとに分けたいとき</h3>
+      <p>Premiumの話者識別では、発言が話者ごとに分かれて記録されます。話者数は、Whisperなら自動か人数で指定でき、Amazon Transcribeなら最大10人まで区別します。話者のラベルを名前に直す手順は、<a href="/guides/multi-speaker-meeting-minutes/">複数人の会議のガイド</a>をご覧ください。</p>
+      <h3>議事録の形にしたいとき</h3>
+      <p>要約のテンプレートを選び、「やること」と「内容まとめ」まで作れます。手順と、出力に残った誤りは<a href="/guides/ai-minutes/">議事録のガイド</a>に載せています。担当者と数字は、人が確認してから使ってください。</p>
+      <h3>過去の録音をまたいで探したいとき</h3>
+      <p>「思い出す」で複数のノートに質問すると、答えと根拠のノートが返ります。実際の回答と、答えが返らなかった例は<a href="/guides/iphone-search-past-recordings/">過去の録音を探すガイド</a>にあります。</p>
+      <h3>録音のほかに使いたい機能があるとき</h3>
+      <p>動画の字幕付き書き出しとSRT、別のアプリを使いながらの小窓での文字起こし、サイドボタンでの即時録音も使えます。一覧は<a href="/guides/">活用ガイド</a>をご覧ください。</p>` },
+    { id: 'import', title: 'ボイスメモの録音をTexterに取り込む', html: `
+      <ol><li>ボイスメモで録音を開き、「…」→「共有」→「“ファイル”に保存」を選ぶ</li><li>Texterの「設定」→「ファイルをインポート」→「音声ファイルをインポート」でそのファイルを選ぶ</li></ol>
+      <p>この手順は、2026-11-01に実機（iPhone 17 Pro、iOS 27.0、製品版2.11.68）で確かめました。同じファイルをもう一度選ぶと「存在しないため、開けませんでした」と表示されたので、続けて取り込むときは保存し直してください。</p>` },
+    { id: 'notes', title: '選ぶ前の注意', html: `
+      <ul>
+        <li>Texterの無料版には上限があります。リアルタイムの文字起こしは1回3分、1日15分です。条件は<a href="/pricing/">料金と利用条件</a>で確認してください</li>
+        <li>Texterのファイル文字起こしは、既定のWhisperでは音声をクラウドへ送ります。端末内で処理する設定は<a href="/guides/iphone-offline-transcription/">音声を端末の外に送らない方法</a>で説明しています</li>
+        <li>録音の精度は、環境や話し方しだいです。ボイスメモとTexterの文字起こしを同じ音声で比べる検証は、していません</li>
+      </ul>` },
+    { id: 'method', title: '確認の範囲', html: `
+      <dl class="facts">
+        <dt>確認した人</dt><dd>Texter運営</dd>
+        <dt>確認日</dt><dd>2026-11-05</dd>
+        <dt>ボイスメモ側</dt><dd>Appleのサポート資料（iPhoneユーザガイド、iOS 26版）を読んで確認しました。iOS 27版は読んでいないので、iOS 27で機能が増えている場合があります。実機でボイスメモを操作した確認はしていません。</dd>
+        <dt>Texter側</dt><dd>各ガイドの検証結果と、料金ページの内容を使いました。取り込みの手順だけは、実機で確認しています。</dd>
+        <dt>していない検証</dt><dd>同じ音声での文字起こしの精度と処理時間の比較、Apple Intelligenceの作文ツールの操作です。</dd>
+      </dl>` },
+  ],
+  ctaTitle: 'Texterで試す',
+  ctaLabel: 'iPhoneでTexterを試す',
+  ctaBody: 'Texterは、録音や音声ファイルから文字起こし、要約、やることの抽出までを行うアプリです。この手順はiPhone版のものです。',
+};
+
+const offlineTranscription = {
+  slug: 'iphone-offline-transcription',
+  verified: '2026-11-05',
+  published: '2026-11-05',
+  metaLabel: '確認日',
+  iosOnly: true,
+  title: 'iPhoneで音声を端末の外に送らずに文字起こしする方法｜Texterで端末内に収まる範囲',
+  description: 'Texterで音声を端末の外へ送らずに文字起こしする設定と、通信が要る機能の一覧です。SpeechAnalyzerを選ぶ手順、Whisperへ切り替わる場合、要約やAIチャットの送信先を、アプリの実装と画面の文言から確認しました。',
+  crumb: '音声を端末の外に送らずに文字起こしする方法',
+  h1: 'iPhoneで音声を端末の外に送らずに文字起こしする方法',
+  lead: '音声を外に出したくないときは、文字起こしの方式を自分で選ぶ必要があります。Texterの既定は、音声をクラウドへ送る方式です。端末の中だけで済む範囲と、通信が要る範囲を、アプリのコードと画面の文言から整理しました。',
+  image: '/img/ogp.png',
+  store: 'guide-offline',
+  sections: [
+    { id: 'summary', title: '結論', html: `
+      <p>音声ファイルを端末の中だけで文字起こしするには、iOS 26以降で、取り込みの「音声認識サービス」をSpeechAnalyzerに変えます。既定のWhisperは、音声をクラウドへ送ります。</p>
+      <p>端末内で済むのは、この文字起こしと、いくつかの補助機能だけです。日本語の録音中の文字起こしは、クラウドのエンジンを使います。話者識別はクラウド処理です。要約と日本語のAIチャットは、確認したコードではクラウドのAIサービスへテキストを送ります。</p>
+      <p>Texterは、通信なしですべてが動くアプリではありません。音声を送らないことを優先するときは、下の表で使う機能を選んでください。</p>` },
+    { id: 'map', title: '処理ごとの送信先', html: `
+      <div class="scroll"><table class="compare"><thead><tr><th scope="col">処理</th><th scope="col">端末内で済む条件</th><th scope="col">通信が要る場合</th></tr></thead><tbody>
+        <tr><th scope="row">音声ファイルの文字起こし（取り込み）</th><td>音声認識サービスをSpeechAnalyzerにする（iOS 26以降）。初回は言語モデルのダウンロードに通信が要る</td><td>既定のWhisperとAmazon Transcribeは、音声をサーバーへ送る</td></tr>
+        <tr><th scope="row">録音中の文字起こし</th><td>日本語、英語、中国語、韓国語では、端末内で済む方式はない。ほかの言語はAppleの音声認識を使い、端末が対応していて、ネットワークに接続できない状態のときだけ、端末内の認識を指定する</td><td>日本語、英語、中国語、韓国語は、クラウドの音声認識（AmiVoiceかSoniox）へ音声を送る。どちらになるかはサーバーの設定とアカウントを作った時期で決まり、利用者は選べない。ほかの言語でも、接続できる状態では端末内の認識を指定しないので、Appleのサーバーが使われる場合がある</td></tr>
+        <tr><th scope="row">タイトルの自動生成</th><td>iOS 26以降で、端末内のAIモデルが使える端末では、端末内だけで作る</td><td>端末内のAIモデルが使えないと、自動のタイトルは付かず、既定の名前のままになる。クラウドへの切り替えはない</td></tr>
+        <tr><th scope="row">要約</th><td>端末内で処理する経路は、確認したコードにはなかった</td><td>クラウドのAIサービスへテキストを送る</td></tr>
+        <tr><th scope="row">内容まとめ、やること</th><td>端末内のAIモデルを先に試す設定はあるが、確認したコードでは既定でオフ</td><td>既定では、クラウドのAIサービスへテキストを送る</td></tr>
+        <tr><th scope="row">AIチャット</th><td>アプリの表示言語が日本語以外で、ツールを使わない短いノートなど、一部の条件では端末内</td><td>アプリの表示言語が日本語のときと、ノートの検索などのツールを使う会話は、クラウドのAIサービスへテキストを送る。「思い出す」の経路は、個別には確認していない</td></tr>
+        <tr><th scope="row">音声入力キーボード</th><td>iOS 26以降では、クラウドの認識が失敗した入力だけを、端末内のSpeechAnalyzerで文字にする</td><td>確定する文字は、クラウドの音声認識（Soniox）で作る。どの方式を使うかは、サーバーの設定で変わる</td></tr>
+        <tr><th scope="row">AI文字起こし整形（設定でオンにしたとき）</th><td>端末内のAIモデルが使える端末では、端末内で処理する</td><td>使えない端末では、クラウドへ送る場合がある</td></tr>
+        <tr><th scope="row">話者識別</th><td>端末内の方式は確認できなかった</td><td>クラウドで処理する</td></tr>
+        <tr><th scope="row">録音中の翻訳</th><td>Appleの翻訳機能で処理する。言語パックのダウンロードが要る</td><td>翻訳画面のDeepLとGoogleはクラウド。「Google Offline」だけが端末内。翻訳画面の音声入力は、接続中ならAppleのサーバーで認識される場合がある</td></tr>
+      </tbody></table></div>
+      <p class="note">この表は、アプリのコード（バージョン2.11.71）で確認した既定の動きです。サーバーから配信される設定で変わる場合があります。</p>` },
+    { id: 'steps', cta: 'after-steps', title: '端末内で音声ファイルを文字起こしする手順', html: `
+      <ol class="steps">
+        <li><h3>iOSの版を確かめる</h3><p>SpeechAnalyzerはiOS 26以降の機能です。それより前のiPhoneでは選べません。</p></li>
+        <li><h3>「音声認識サービスを選択」を開く</h3><p>Texterの「設定」→「ファイルをインポート」→「音声認識サービスを選択」を開きます。一覧には、Default、SpeechAnalyzer、Whisper(OpenAI)、Amazon Transcribeが並びます。</p></li>
+        <li><h3>SpeechAnalyzerを選ぶ</h3><p>Defaultは、Appleの音声認識です。端末内で処理されるとは限らないので選ばないでください。SpeechAnalyzerは、初回に言語のモデルを端末へダウンロードします。このときは通信が要ります。</p></li>
+        <li><h3>言語を選ぶ</h3><p>SpeechAnalyzerの欄の下で、文字起こしする言語を選びます。選ばなかった場合の言語は、端末の言語に近いものです。対応する言語が見つからないと、処理が失敗してWhisperへ切り替わります。</p></li>
+        <li><h3>音声ファイルを取り込む</h3><p>「設定」→「ファイルをインポート」→「音声ファイルをインポート」でファイルを選びます。無料版では、取り込みの前に動画広告が表示されます。</p></li>
+      </ol>
+      <p>アプリの説明文の記載は、「すべて端末内で処理される」です。この手順の画面は、今回は実機で操作していません。</p>` },
+    { id: 'fallback', title: 'SpeechAnalyzerが失敗するとWhisperへ切り替わる', html: `
+      <p>コードでは、SpeechAnalyzerでの処理にエラーが起きると、同じ音声をWhisperで処理し直します。Whisperは音声をクラウドへ送ります。確認したコードの範囲では、切り替える前に確認の画面を出す処理は見つかりませんでした。</p>
+      <p>コードでは、選んだ言語にSpeechAnalyzerが対応していないとき、言語のモデルの準備に失敗したとき、文字起こしの途中でエラーが起きたときに、この切り替えが起きます。音声を端末の外へ出さないことが条件なら、この切り替えを受け入れられるかを先に判断してください。通信できない状態で切り替えが起きた場合の動きは、検証していません。</p>` },
+    { id: 'other', title: '文字起こし以外で通信するもの', html: `
+      <ul>
+        <li>起動時の確認。認証の確認（App Check）、サーバーから配信される設定（Remote Config）、匿名のログインです。設定は最大1.5秒だけ待ち、取得できなければアプリ内の既定値で動きます</li>
+        <li>広告。プランにかかわらず、起動時に広告のSDK（Google Mobile Ads）を初期化します。広告の効果の計測。Apple Search Adsの経由かどうかをAppleへ問い合わせる処理と、Meta広告からのインストールをAppleの仕組み（SKAdNetwork）で知らせる処理が、起動時にあります。どちらも、済むまでの1回だけが対象です。AWSの認証の初期化も、起動時に実行されます</li>
+        <li>利用状況の計測とクラッシュの報告。送る項目にノートの本文が含まれていないことまでは、確認していません</li>
+      </ul>` },
+    { id: 'storage', title: '保存先と、外へ出る操作', html: `
+      <ul>
+        <li>録音とノートは、端末内に保存されます</li>
+        <li>クラウド同期は、Premiumの任意の機能です。範囲を選んでから始めます。送るのはテキスト、要約、区間の情報などで、録音ファイルは送りません。サインインしただけでは、ノートは自動でクラウドに保存されません</li>
+        <li>公開リンクを作ると、リンクを知っている人がそのノートの本文を読めます。取り消しても、すでに見た人やコピーされた内容は消せません</li>
+        <li>Texter MCPは、Premiumとサインインが要ります。オンにすると、Macのツールから読めるように、そのノートのテキストをクラウドへ送ります。録音の元のファイルは送りません。同意を求められ、Claude Codeなどのツールに渡した内容は、あとから取り消せません</li>
+      </ul>` },
+    { id: 'consent', title: '同意の画面について', html: `
+      <p>バージョン2.11.71では、音声の送信やAI機能ごとの同意の画面は出ません。アプリの最初の画面から「次へ」、スキップ、スワイプのどれかで進んだ時点で、利用規約とプライバシーポリシーに同意したことになります。公開リンクの作成とTexter MCPには、それぞれ確認の画面があります。送信先は<a href="/privacy-policy/">プライバシーポリシー</a>で確認してください。</p>` },
+    { id: 'not-suited', title: '向いていない場面', html: `
+      <ul>
+        <li>通信できない場所で、話者識別、要約、日本語のAIチャットを使いたい場合</li>
+        <li>どの音声も例外なく端末の外へ出さない、という保証が必要な場合。SpeechAnalyzerが失敗したときの切り替えがあり、通信の中身も実機で観測していないためです</li>
+        <li>iOS 26より前のiPhoneで、端末内の文字起こしを使いたい場合</li>
+      </ul>` },
+    { id: 'next', title: '関連するページ', html: `<p>料金と上限は<a href="/pricing/">料金と利用条件</a>、データの扱いは<a href="/faq/#data-sent">よくある質問</a>をご覧ください。標準のボイスメモとの使い分けは<a href="/guides/iphone-voice-memos-vs-texter/">ボイスメモとTexterの違い</a>で説明しています。</p>` },
+    { id: 'method', title: '確認の範囲', html: `
+      <dl class="facts">
+        <dt>確認した人</dt><dd>Texter運営</dd>
+        <dt>確認日</dt><dd>2026-11-05</dd>
+        <dt>確認したもの</dt><dd>iPhone版Texter（バージョン2.11.71）のソースコードと、日本語の画面の文言です。</dd>
+        <dt>確認していないこと</dt><dd>実機での通信の観測、機内モードでの動作、SpeechAnalyzerが失敗したときの切り替えの再現、サーバーから配信される設定の本番の値、使えるiPhoneの機種と言語の一覧です。</dd>
+      </dl>` },
+  ],
+  ctaTitle: 'Texterで試す',
+  ctaLabel: 'iPhoneで端末内の文字起こしを試す',
+  ctaBody: 'Texterは、録音や音声ファイルから文字起こし、要約、やることの抽出までを行うアプリです。この手順はiPhone版のものです。',
+};
+
 const index = {
   title: '文字起こしと議事録の活用ガイド｜Texter',
-  description: '複数人の会議を話者ごとに文字起こしする方法、議事録の作り方、録音や検索、字幕作成まで、Texterの使い方を説明するガイドです。',
+  description: '複数人の会議の話者識別、議事録の作り方、標準のボイスメモとの使い分け、端末の外へ音声を送らない設定、録音の検索、字幕作成まで、Texterの使い方を説明するガイドです。',
   h1: '活用ガイド',
-  lead: '文字起こし、議事録、録音の検索や字幕作成を、操作画面と確認事項を交えて説明します。',
+  lead: '文字起こし、議事録、録音の検索や字幕作成を、操作画面と確認事項を交えて説明します。標準のボイスメモとの違いと、音声を端末の外へ送るかどうかの整理も載せています。',
   crumb: '活用ガイド',
 };
 
-module.exports = { VERIFIED, guides: [aiMinutes, multiSpeakerMinutes, sideButton, pipGuide, searchNotes, subtitledVideo, videoSubtitles], index };
+module.exports = { VERIFIED, guides: [aiMinutes, multiSpeakerMinutes, voiceMemosVsTexter, sideButton, pipGuide, searchNotes, offlineTranscription, subtitledVideo, videoSubtitles], index };
