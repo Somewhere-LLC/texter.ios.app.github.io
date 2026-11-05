@@ -205,7 +205,7 @@ function render(lang) {
 <meta name="twitter:title" content="${esc(t.title)}">
 <meta name="twitter:description" content="${esc(t.description)}">
 <meta name="twitter:image" content="${SITE}${t.ogImage}">
-<meta name="apple-itunes-app" content="app-id=${facts.appStoreId}">
+<meta name="apple-itunes-app" content="app-id=${facts.appStoreId}, affiliate-data=pt=${facts.appStorePt}&amp;ct=${lang === 'ja' ? 'faq' : 'faq-en'}-banner">
 <link rel="icon" href="/assets/favicon/favicon.ico?v=2" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v=2">
 <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png?v=2">
@@ -293,7 +293,7 @@ ${body}
     <h2 id="cta-h">${esc(t.ctaTitle)}</h2>
     <p>${t.ctaBody}</p>
     <div class="row">
-      <a class="btn btn-solid" href="${t.appStore}" target="_blank" rel="noopener noreferrer">App Store</a>
+      <a class="btn btn-solid" href="${t.appStore}?pt=${facts.appStorePt}&amp;ct=${lang === 'ja' ? 'faq' : 'faq-en'}&amp;mt=8" target="_blank" rel="noopener noreferrer">App Store</a>
       <a class="btn btn-line" href="${facts.googlePlay}" target="_blank" rel="noopener noreferrer">Google Play</a>
     </div>
   </section>
