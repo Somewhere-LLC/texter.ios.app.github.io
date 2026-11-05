@@ -43,6 +43,8 @@ function checkLp(file, lang, html, errors) {
     if (html.includes('¥')) errors.push(`${file}: English page shows a yen price`);
     if (app.offers.some((o) => o.price !== '0')) errors.push(`${file}: English JSON-LD lists a paid price`);
   }
+  // The weekly plan is offered only when cancelling, so it must not be listed as a general offer.
+  if (app.offers.some((o) => o.priceSpecification?.billingDuration === 'P1W')) errors.push(`${file}: weekly plan listed in JSON-LD (it is only offered on cancellation)`);
   // The yearly price exists only in the pricing toggle script, so match against the raw HTML.
   for (const o of app.offers) {
     if (lang === 'en') break;
@@ -165,6 +167,7 @@ if (process.argv.includes('--self-test')) {
   const firstQ = data.ja.sections[0].items[0].q;
   const mutations = [
     ['LP price changed', 'index.html', (s) => s.replaceAll('¥1,800', '¥2,000')],
+    ['weekly plan back in LP JSON-LD', 'index.html', (s) => s.replace('"billingDuration": "P1M"', '"billingDuration": "P1W"')],
     ['LP feature heading renamed', 'en/index.html', (s) => s.replace('<h3>Topic map</h3>', '<h3>Topic graph</h3>')],
     ['FAQ question edited only in HTML', 'faq/index.html', (s) => s.replace(`>${firstQ}</h3>`, '>別の質問</h3>')],
     ['JSON-LD broken', 'en/faq/index.html', (s) => s.replace('"@type": "FAQPage"', '"@type": "FAQPage",,')],

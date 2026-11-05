@@ -87,7 +87,7 @@ const ja = {
     {
       id: 'privacy', title: 'プライバシー・データの扱い', items: [
         { id: 'storage', q: '録音やノートはどこに保存されますか？',
-          a: '<p>録音とノートは、お使いの端末内に保存されます。Texterのサーバーにノートを保管する同期機能はありません。機種変更やアプリの削除の前には、必要なノートを書き出しておいてください。</p>' },
+          a: '<p>録音とノートは、お使いの端末内に保存されます。Premiumでは、サインインしてアプリで同期を始めると、選んだノートのテキスト・要約・分析結果をクラウドに保存し、同じアカウントの端末で使えます。録音・動画・画像・PDFの原本は同期しません。一部のPremiumでは、現在同期を使えない場合があります。同期していないノートと原本はアプリを削除すると消えるので、機種変更やアプリの削除の前に書き出しておいてください。</p>' },
         { id: 'data-sent', q: '音声やテキストが外部に送信されることはありますか？',
           a: '<p>クラウドで処理する機能を使うときだけ、処理に必要な音声やテキストを各サービスの提供事業者に送信します。対象は、会話向けのリアルタイム音声認識、WhisperとAmazon Transcribeによるファイルの文字起こし、翻訳、要約やAIチャットなどのAI機能です。リアルタイム音声認識とAI機能は、初めて使うときにアプリ内で送信先を説明し、同意を確認します。詳しくは<a href="/privacy-policy/">プライバシーポリシー</a>をご確認ください。</p>' },
         { id: 'ai-training', q: '要約やAIチャットに使ったノートは、AIの学習に使われますか？',
@@ -176,7 +176,7 @@ const en = {
     {
       id: 'privacy', title: 'Privacy and your data', items: [
         { id: 'storage', q: 'Where are my recordings and notes stored?',
-          a: '<p>Recordings and notes are stored on your device. Texter has no sync feature that keeps your notes on our servers. Export any notes you need before you switch phones or delete the app.</p>' },
+          a: '<p>Recordings and notes are stored on your device. With Premium, you can sign in and turn on sync in the app. The text, summaries, and analysis results of the notes you choose are then stored in the cloud so you can use them on devices signed in to the same account. Original audio, video, image, and PDF files are not synced. Sync may not be available yet for some Premium purchases. Notes you have not synced and original files are removed when you delete the app, so export anything you need before you switch phones or delete the app.</p>' },
         { id: 'data-sent', q: 'Is my audio or text ever sent outside the device?',
           a: '<p>Only when you use a feature that runs in the cloud. Texter then sends the audio or text that feature needs to its service provider. These features are conversational live transcription, file transcription with Whisper or Amazon Transcribe, translation, and AI features such as summaries and AI chat. The first time you use live transcription or an AI feature, the app explains where the data goes and asks for your consent. See the <a href="/en/privacy-policy/">Privacy Policy</a> for details.</p>' },
         { id: 'ai-training', q: 'Are notes I use with summaries or AI chat used to train AI models?',
