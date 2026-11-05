@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HDB32BHHL8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HDB32BHHL8', { 'cookie_flags': 'SameSite=None;Secure' });
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>iPhoneのボイスメモとTexterの違い｜標準機能で足りる場合と、Texterを使う場合</title>
+<meta name="description" content="iPhoneのボイスメモの文字起こしで足りる場面と、Texterを検討する場面の選び分けです。Appleの公式資料で確認したボイスメモの機能と、Texterの話者識別、議事録、過去の録音への質問を比べます。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://texter.work/guides/iphone-voice-memos-vs-texter/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://texter.work/guides/iphone-voice-memos-vs-texter/">
+<meta property="og:title" content="iPhoneのボイスメモとTexterの違い｜標準機能で足りる場合と、Texterを使う場合">
+<meta property="og:description" content="iPhoneのボイスメモの文字起こしで足りる場面と、Texterを検討する場面の選び分けです。Appleの公式資料で確認したボイスメモの機能と、Texterの話者識別、議事録、過去の録音への質問を比べます。">
+<meta property="og:site_name" content="Texter">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://texter.work/img/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="iPhoneのボイスメモとTexterの違い｜標準機能で足りる場合と、Texterを使う場合">
+<meta name="twitter:description" content="iPhoneのボイスメモの文字起こしで足りる場面と、Texterを検討する場面の選び分けです。Appleの公式資料で確認したボイスメモの機能と、Texterの話者識別、議事録、過去の録音への質問を比べます。">
+<meta name="twitter:image" content="https://texter.work/img/ogp.png">
+<meta name="apple-itunes-app" content="app-id=1482592304">
+<link rel="icon" href="/assets/favicon/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v=2">
+<link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png?v=2">
+<meta name="theme-color" content="#EDF4FF">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://texter.work/guides/iphone-voice-memos-vs-texter/#article",
+      "headline": "iPhoneのボイスメモとTexterの違い",
+      "description": "iPhoneのボイスメモの文字起こしで足りる場面と、Texterを検討する場面の選び分けです。Appleの公式資料で確認したボイスメモの機能と、Texterの話者識別、議事録、過去の録音への質問を比べます。",
+      "url": "https://texter.work/guides/iphone-voice-memos-vs-texter/",
+      "inLanguage": "ja",
+      "datePublished": "2026-11-05",
+      "dateModified": "2026-11-05",
+      "image": "https://texter.work/img/ogp.png",
+      "isPartOf": {
+        "@id": "https://texter.work/#website"
+      },
+      "about": {
+        "@id": "https://texter.work/#app"
+      },
+      "publisher": {
+        "@id": "https://texter.work/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://texter.work/guides/iphone-voice-memos-vs-texter/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Texter",
+          "item": "https://texter.work/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "活用ガイド",
+          "item": "https://texter.work/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "ボイスメモとTexterの違い",
+          "item": "https://texter.work/guides/iphone-voice-memos-vs-texter/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{--accent:#6482FA;--deep:#5460D6;--navy:#17255A;--text:#444444;--sub:#5F6170;--line:rgba(23,37,90,.12);--card:#FFFFFF;--grad-a:#EDF4FF;--grad-b:#D6E4FC;
+  --f-jp:-apple-system,BlinkMacSystemFont,"SF Pro JP","Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;--f-mono:ui-monospace,Menlo,monospace;color-scheme:light}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:80px}
+body{margin:0;color:var(--text);font-family:var(--f-jp);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased;background:linear-gradient(180deg,var(--grad-a) 0%,var(--grad-b) 100%) fixed,var(--grad-b)}
+a{color:var(--deep)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip{position:fixed;left:12px;top:-60px;z-index:100;background:var(--navy);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+.skip:focus{top:12px}
+.wrap{max-width:760px;margin-inline:auto;padding-inline:20px}
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:18px;color:var(--navy)}
+.brand img{width:28px;height:28px;border-radius:7px}
+.nav ul{display:flex;gap:4px;margin:0;padding:0;list-style:none}
+.nav ul a{display:block;padding:8px 10px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;color:var(--text);white-space:nowrap}
+.crumbs{margin:28px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px;font-size:13px;color:var(--sub)}
+.crumbs li+li::before{content:"/";margin-right:6px}
+.crumbs a{color:var(--sub)}
+h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.6rem);line-height:1.25;font-weight:900}
+.lead{margin:16px 0 0}
+.meta{margin:10px 0 0;font-size:13px;color:var(--sub)}
+.toc{margin:28px 0 0;padding:18px 20px;background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:14px}
+.toc h2{margin:0;font-size:13px;color:var(--sub);font-weight:600}
+.toc ul{margin:8px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 18px}
+.toc a{font-size:15px;font-weight:500}
+.sec{margin-top:48px}
+.sec>h2{margin:0;padding-top:12px;border-top:1.5px solid var(--navy);color:var(--navy);font-size:clamp(1.3rem,3vw,1.6rem);line-height:1.4}
+.sec h3{margin:24px 0 0;color:var(--navy);font-size:17px;line-height:1.6}
+.sec p,.sec ul,.sec ol{margin:12px 0 0}
+.sec ul,.sec ol{padding-left:1.3em}
+.compare{width:100%;margin-top:16px;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;font-size:15px}
+.compare th,.compare td{padding:12px 14px;border:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.65}
+.compare thead th{background:#F2F5FD;color:var(--navy)}
+.compare caption{padding:8px 0;text-align:left;font-size:14px;color:var(--sub)}
+.scroll{overflow-x:auto;margin-top:12px}
+.scroll .compare{margin-top:0}
+.plans{min-width:680px}
+.plans tbody th{min-width:128px}
+.plans th:first-child{position:sticky;left:0;background:#fff;z-index:1}
+.plans thead th:first-child{background:#F2F5FD}
+.sec article{margin-top:18px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.sec article h3{margin:0}
+.doc{margin-top:12px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.doc p:first-child{margin-top:0}
+.steps{list-style:none;padding:0!important;counter-reset:s}
+.steps>li{counter-increment:s;margin-top:32px;padding:20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.steps>li>h3{margin:0}
+.steps>li>h3::before{content:counter(s) ". "}
+.shot{display:inline-block;width:min(46%,260px);margin:16px 10px 0 0;vertical-align:top}
+.shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:14px}
+.shot figcaption{margin-top:6px;font-size:13px;line-height:1.5;color:var(--sub)}
+.demo{margin:16px 0 0;max-width:300px}
+.demo.land{max-width:none}
+.demo video{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);background:#fff}
+.sample{display:block;width:100%;height:auto;margin-top:16px;border-radius:14px;background:#000}
+.note{font-size:14px}
+.raw{margin-top:14px}
+.raw summary{cursor:pointer;font-weight:600;color:var(--navy)}
+.code{margin:12px 0 0;padding:16px;overflow-x:auto;background:var(--navy);color:#fff;border-radius:12px;font:14px/1.7 var(--f-mono);white-space:pre-wrap;overflow-wrap:anywhere}
+.facts{display:grid;grid-template-columns:8em 1fr;gap:8px 12px;margin:16px 0 0;font-size:15px}
+.facts dt{font-weight:600;color:var(--navy)}
+.facts dd{margin:0}
+.cards{display:grid;gap:14px;margin:28px 0 0}
+.card{display:block;padding:20px 22px;background:var(--card);border:1px solid var(--line);border-radius:14px;text-decoration:none;color:var(--text)}
+.card strong{display:block;color:var(--navy);font-size:18px}
+.card span{display:block;margin-top:6px;font-size:15px}
+.cta{margin:56px 0 0;padding:28px 22px;background:var(--navy);color:#fff;border-radius:18px}
+.cta h2{margin:0;font-size:22px;line-height:1.4}
+.cta p{margin:8px 0 0;color:rgba(255,255,255,.85);font-size:15px}
+.cta .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.cta.inline{margin:32px 0 0;padding:20px 22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 20px;text-align:center;line-height:1.4;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px}
+.btn-solid{background:#fff;color:var(--navy)}
+.btn-line{color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)}
+footer{margin-top:64px;padding:28px 0 40px;border-top:1px solid var(--line);font-size:13px;color:var(--sub)}
+footer ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 16px}
+footer a{color:var(--sub)}
+footer p{margin:12px 0 0}
+@media (max-width:400px){.nav ul .opt{display:none}}
+@media (max-width:560px){.nav ul a{padding:8px 5px;font-size:13px}.shot{width:calc(50% - 8px);margin-right:6px}.shot.wide{width:100%;max-width:320px;margin-right:0}.steps>li{padding:16px}.facts{grid-template-columns:1fr}.facts dd{margin-bottom:8px}.compare{font-size:14px}.compare th,.compare td{padding:10px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/"><img src="/img/appicon.png" alt="" width="28" height="28">Texter</a>
+  <nav aria-label="メイン"><ul><li class="opt"><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金</a></li><li><a href="/faq/">よくある質問</a></li></ul></nav>
+</div></header>
+<main id="main" class="wrap">
+<nav aria-label="パンくずリスト"><ol class="crumbs"><li><a href="/">Texter</a></li><li><a href="/guides/">活用ガイド</a></li><li aria-current="page">ボイスメモとTexterの違い</li></ol></nav>
+<h1>iPhoneのボイスメモとTexterの違い</h1>
+<p class="lead">ボイスメモにも、日本語の文字起こしがあります。録音して読み返すだけなら、標準機能で足りる場面は多いです。ボイスメモで足りる条件と、Texterを使う理由になる条件を分けて説明します。</p>
+<p class="meta">確認日 <time datetime="2026-11-05">2026-11-05</time></p>
+<nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul><li><a href="#summary">結論</a></li><li><a href="#choose">やりたいこと別の選び方</a></li><li><a href="#voice-memos">ボイスメモでできること</a></li><li><a href="#texter">Texterを検討する場面</a></li><li><a href="#import">ボイスメモの録音をTexterに取り込む</a></li><li><a href="#notes">選ぶ前の注意</a></li><li><a href="#method">確認の範囲</a></li></ul></nav>
+<section class="sec" id="summary" aria-labelledby="summary-h"><h2 id="summary-h">結論</h2>
+      <p>1人で話した内容を録音し、あとで読んだり検索したりするだけなら、ボイスメモで足ります。複数人の会議で誰が話したかを残したいとき、議事録の形に整えたいとき、過去の録音をまたいで質問したいときは、Texterを検討してください。</p>
+      <p>先に標準のボイスメモで試し、足りない点が出てから取り込む使い方もできます。ボイスメモの録音は、Texterに取り込めます。</p></section>
+<section class="sec" id="choose" aria-labelledby="choose-h"><h2 id="choose-h">やりたいこと別の選び方</h2>
+      <div class="scroll"><table class="compare"><thead><tr><th scope="col">やりたいこと</th><th scope="col">ボイスメモ</th><th scope="col">Texter</th></tr></thead><tbody>
+        <tr><th scope="row">録音して、日本語の文字起こしを読む</th><td>できる。iPhone 12以降で、録音中も録音後も表示できる</td><td>できる。無料版には時間の上限がある</td></tr>
+        <tr><th scope="row">録音を、タイトルや文字起こしの語で探す</th><td>できる。検索欄に入力する</td><td>ノート一覧の検索欄で探せる</td></tr>
+        <tr><th scope="row">要約する</th><td>Apple Intelligenceの作文ツールで要約できる。対応する機種と言語が要る</td><td>要約のテンプレートが20種類ある。無料版は1日3回まで</td></tr>
+        <tr><th scope="row">誰が話したかを分ける</th><td>Appleの資料に記載がない</td><td>Premiumの話者識別でできる</td></tr>
+        <tr><th scope="row">担当と期限つきの「やること」を取り出す</th><td>Appleの資料に記載がない</td><td>「やること」の抽出がある</td></tr>
+        <tr><th scope="row">複数の録音をまたいで質問する</th><td>Appleの資料に記載がない</td><td>「思い出す」でできる。無料版は1日3回まで</td></tr>
+        <tr><th scope="row">別のアプリを使いながら録音する</th><td>できる。ほかのアプリでオーディオの再生が始まると録音は止まる</td><td>小窓を出して、別のアプリを使いながら文字起こしを続けられる。ほかのアプリで音声を再生したときの動きは、確かめていない</td></tr>
+        <tr><th scope="row">費用</th><td>OS標準のアプリ。追加の費用の記載は、読んだ資料にない</td><td>無料版に上限がある。Premiumの価格は料金ページにある</td></tr>
+        <tr><th scope="row">音声の送り先</th><td>文字起こしをどこで処理するかは、読んだ2ページに記載がない</td><td>既定のWhisperは、音声をクラウドへ送る。iOS 26以降では、端末内で処理する方式も選べる</td></tr>
+        <tr><th scope="row">ほかの端末で同じ録音を使う</th><td>iCloudでボイスメモをオンにすると、同じApple Accountの端末に表示される</td><td>Premiumのクラウド同期で、テキストと要約を同期する。録音そのものは同期しない。一部のPremiumでは同期を使えない場合がある</td></tr>
+      </tbody></table></div>
+      <p class="note">「Appleの資料に記載がない」は、資料に書かれていないという意味です。ボイスメモの実機では確かめていないので、できないとは断定しません。</p></section>
+<section class="sec" id="voice-memos" aria-labelledby="voice-memos-h"><h2 id="voice-memos-h">ボイスメモでできること</h2>
+      <p>Appleのサポート資料（iOS 26版）に書かれている内容です。</p>
+      <ul>
+        <li>文字起こしの対応。iPhone 12以降の日本語を含む10言語で使えます。一部の国や地域では使えません</li>
+        <li>録音中の表示。波形の上部を上にスワイプし、文字起こしのボタンを押すと、最新の語が強調された文字起こしをリアルタイムで見られます</li>
+        <li>録音後のコピー。「文字起こしを表示」で一部を、「文字起こしをコピー」で全体をコピーできます</li>
+        <li>検索。録音のリストの検索欄に語を入れると、タイトルか文字起こしにその語を含む録音だけが表示される方式です。文字起こしの中で語を選ぶと、波形のその位置に再生ヘッドが表示されます</li>
+        <li>要約。Apple Intelligenceの作文ツールで、文字起こしを要約できます。Appleの資料では、Apple Intelligenceはベータ版の扱いです</li>
+        <li>編集。一時停止と再開、トリミング、再録音、「声を分離」でのバックグラウンドサウンドの除去など</li>
+        <li>同期。iCloudでボイスメモをオンにすると、録音は同じApple Accountのほかの端末に自動で表示されます</li>
+      </ul>
+      <p>出典は、Appleの<a href="https://support.apple.com/ja-jp/guide/iphone/iph00953a982/26/ios/26" target="_blank" rel="noopener noreferrer">ボイスメモの文字起こしを表示する</a>と<a href="https://support.apple.com/ja-jp/guide/iphone/iph4d2a39a3b/26/ios/26" target="_blank" rel="noopener noreferrer">ボイスメモで録音する</a>です。</p></section>
+<section class="sec" id="texter" aria-labelledby="texter-h"><h2 id="texter-h">Texterを検討する場面</h2>
+      <h3>話者ごとに分けたいとき</h3>
+      <p>Premiumの話者識別では、発言が話者ごとに分かれて記録されます。話者数は、Whisperなら自動か人数で指定でき、Amazon Transcribeなら最大10人まで区別します。話者のラベルを名前に直す手順は、<a href="/guides/multi-speaker-meeting-minutes/">複数人の会議のガイド</a>をご覧ください。</p>
+      <h3>議事録の形にしたいとき</h3>
+      <p>要約のテンプレートを選び、「やること」と「内容まとめ」まで作れます。手順と、出力に残った誤りは<a href="/guides/ai-minutes/">議事録のガイド</a>に載せています。担当者と数字は、人が確認してから使ってください。</p>
+      <h3>過去の録音をまたいで探したいとき</h3>
+      <p>「思い出す」で複数のノートに質問すると、答えと根拠のノートが返ります。実際の回答と、答えが返らなかった例は<a href="/guides/iphone-search-past-recordings/">過去の録音を探すガイド</a>にあります。</p>
+      <h3>録音のほかに使いたい機能があるとき</h3>
+      <p>動画の字幕付き書き出しとSRT、別のアプリを使いながらの小窓での文字起こし、サイドボタンでの即時録音も使えます。一覧は<a href="/guides/">活用ガイド</a>をご覧ください。</p></section>
+<section class="sec" id="import" aria-labelledby="import-h"><h2 id="import-h">ボイスメモの録音をTexterに取り込む</h2>
+      <ol><li>ボイスメモで録音を開き、「…」→「共有」→「“ファイル”に保存」を選ぶ</li><li>Texterの「設定」→「ファイルをインポート」→「音声ファイルをインポート」でそのファイルを選ぶ</li></ol>
+      <p>この手順は、2026-11-01に実機（iPhone 17 Pro、iOS 27.0、製品版2.11.68）で確かめました。同じファイルをもう一度選ぶと「存在しないため、開けませんでした」と表示されたので、続けて取り込むときは保存し直してください。</p></section>
+<section class="sec" id="notes" aria-labelledby="notes-h"><h2 id="notes-h">選ぶ前の注意</h2>
+      <ul>
+        <li>Texterの無料版には上限があります。リアルタイムの文字起こしは1回3分、1日15分です。条件は<a href="/pricing/">料金と利用条件</a>で確認してください</li>
+        <li>Texterのファイル文字起こしは、既定のWhisperでは音声をクラウドへ送ります。端末内で処理する設定は<a href="/guides/iphone-offline-transcription/">音声を端末の外に送らない方法</a>で説明しています</li>
+        <li>録音の精度は、環境や話し方しだいです。ボイスメモとTexterの文字起こしを同じ音声で比べる検証は、していません</li>
+      </ul></section>
+<section class="sec" id="method" aria-labelledby="method-h"><h2 id="method-h">確認の範囲</h2>
+      <dl class="facts">
+        <dt>確認した人</dt><dd>Texter運営</dd>
+        <dt>確認日</dt><dd>2026-11-05</dd>
+        <dt>ボイスメモ側</dt><dd>Appleのサポート資料（iPhoneユーザガイド、iOS 26版）を読んで確認しました。iOS 27版は読んでいないので、iOS 27で機能が増えている場合があります。実機でボイスメモを操作した確認はしていません。</dd>
+        <dt>Texter側</dt><dd>各ガイドの検証結果と、料金ページの内容を使いました。取り込みの手順だけは、実機で確認しています。</dd>
+        <dt>していない検証</dt><dd>同じ音声での文字起こしの精度と処理時間の比較、Apple Intelligenceの作文ツールの操作です。</dd>
+      </dl></section>
+<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで試す</h2><p>Texterは、録音や音声ファイルから文字起こし、要約、やることの抽出までを行うアプリです。この手順はiPhone版のものです。無料で始められます。無料版の文字起こしには上限があり、要約は1日3回までです。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-voice-memos-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-voice-memos-end" data-store="app_store">iPhoneでTexterを試す（App Store）</a></div></section>
+</main>
+<footer><div class="wrap">
+  <ul><li><a href="/">ホーム</a></li><li><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金と利用条件</a></li><li><a href="/faq/">よくある質問</a></li><li><a href="/terms-of-service/">利用規約</a></li><li><a href="/privacy-policy/">プライバシーポリシー</a></li><li><a href="/tokushoho/">特定商取引法に基づく表記</a></li></ul>
+  <p>© 2026 Texter app - Kyoto, Japan.</p>
+</div></footer>
+<script>
+(function(){
+  var send=function(name,el){if(window.gtag)gtag('event',name,{location:el.dataset.cta,store:el.dataset.store});};
+  var links=document.querySelectorAll('a[data-cta]');
+  links.forEach(function(a){
+    a.addEventListener('click',function(){send(a.dataset.store==='google_play'?'google_play_click':'app_store_click',a);});
+    if(!('IntersectionObserver' in window))return;
+    var seen=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){send('guide_cta_view',a);seen.disconnect();}});},{threshold:.5});
+    seen.observe(a);
+  });
+})();
+</script>
+</body>
+</html>
