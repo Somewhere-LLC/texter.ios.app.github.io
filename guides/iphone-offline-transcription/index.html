@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HDB32BHHL8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HDB32BHHL8', { 'cookie_flags': 'SameSite=None;Secure' });
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>iPhoneで音声を端末の外に送らずに文字起こしする方法｜Texterで端末内に収まる範囲</title>
+<meta name="description" content="Texterで音声を端末の外へ送らずに文字起こしする設定と、通信が要る機能の一覧です。SpeechAnalyzerを選ぶ手順、Whisperへ切り替わる場合、要約やAIチャットの送信先を、アプリの実装と画面の文言から確認しました。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://texter.work/guides/iphone-offline-transcription/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://texter.work/guides/iphone-offline-transcription/">
+<meta property="og:title" content="iPhoneで音声を端末の外に送らずに文字起こしする方法｜Texterで端末内に収まる範囲">
+<meta property="og:description" content="Texterで音声を端末の外へ送らずに文字起こしする設定と、通信が要る機能の一覧です。SpeechAnalyzerを選ぶ手順、Whisperへ切り替わる場合、要約やAIチャットの送信先を、アプリの実装と画面の文言から確認しました。">
+<meta property="og:site_name" content="Texter">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://texter.work/img/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="iPhoneで音声を端末の外に送らずに文字起こしする方法｜Texterで端末内に収まる範囲">
+<meta name="twitter:description" content="Texterで音声を端末の外へ送らずに文字起こしする設定と、通信が要る機能の一覧です。SpeechAnalyzerを選ぶ手順、Whisperへ切り替わる場合、要約やAIチャットの送信先を、アプリの実装と画面の文言から確認しました。">
+<meta name="twitter:image" content="https://texter.work/img/ogp.png">
+<meta name="apple-itunes-app" content="app-id=1482592304">
+<link rel="icon" href="/assets/favicon/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v=2">
+<link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png?v=2">
+<meta name="theme-color" content="#EDF4FF">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://texter.work/guides/iphone-offline-transcription/#article",
+      "headline": "iPhoneで音声を端末の外に送らずに文字起こしする方法",
+      "description": "Texterで音声を端末の外へ送らずに文字起こしする設定と、通信が要る機能の一覧です。SpeechAnalyzerを選ぶ手順、Whisperへ切り替わる場合、要約やAIチャットの送信先を、アプリの実装と画面の文言から確認しました。",
+      "url": "https://texter.work/guides/iphone-offline-transcription/",
+      "inLanguage": "ja",
+      "datePublished": "2026-11-05",
+      "dateModified": "2026-11-05",
+      "image": "https://texter.work/img/ogp.png",
+      "isPartOf": {
+        "@id": "https://texter.work/#website"
+      },
+      "about": {
+        "@id": "https://texter.work/#app"
+      },
+      "publisher": {
+        "@id": "https://texter.work/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://texter.work/guides/iphone-offline-transcription/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Texter",
+          "item": "https://texter.work/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "活用ガイド",
+          "item": "https://texter.work/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "音声を端末の外に送らずに文字起こしする方法",
+          "item": "https://texter.work/guides/iphone-offline-transcription/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{--accent:#6482FA;--deep:#5460D6;--navy:#17255A;--text:#444444;--sub:#5F6170;--line:rgba(23,37,90,.12);--card:#FFFFFF;--grad-a:#EDF4FF;--grad-b:#D6E4FC;
+  --f-jp:-apple-system,BlinkMacSystemFont,"SF Pro JP","Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;--f-mono:ui-monospace,Menlo,monospace;color-scheme:light}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:80px}
+body{margin:0;color:var(--text);font-family:var(--f-jp);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased;background:linear-gradient(180deg,var(--grad-a) 0%,var(--grad-b) 100%) fixed,var(--grad-b)}
+a{color:var(--deep)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip{position:fixed;left:12px;top:-60px;z-index:100;background:var(--navy);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+.skip:focus{top:12px}
+.wrap{max-width:760px;margin-inline:auto;padding-inline:20px}
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:18px;color:var(--navy)}
+.brand img{width:28px;height:28px;border-radius:7px}
+.nav ul{display:flex;gap:4px;margin:0;padding:0;list-style:none}
+.nav ul a{display:block;padding:8px 10px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;color:var(--text);white-space:nowrap}
+.crumbs{margin:28px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px;font-size:13px;color:var(--sub)}
+.crumbs li+li::before{content:"/";margin-right:6px}
+.crumbs a{color:var(--sub)}
+h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.6rem);line-height:1.25;font-weight:900}
+.lead{margin:16px 0 0}
+.meta{margin:10px 0 0;font-size:13px;color:var(--sub)}
+.toc{margin:28px 0 0;padding:18px 20px;background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:14px}
+.toc h2{margin:0;font-size:13px;color:var(--sub);font-weight:600}
+.toc ul{margin:8px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 18px}
+.toc a{font-size:15px;font-weight:500}
+.sec{margin-top:48px}
+.sec>h2{margin:0;padding-top:12px;border-top:1.5px solid var(--navy);color:var(--navy);font-size:clamp(1.3rem,3vw,1.6rem);line-height:1.4}
+.sec h3{margin:24px 0 0;color:var(--navy);font-size:17px;line-height:1.6}
+.sec p,.sec ul,.sec ol{margin:12px 0 0}
+.sec ul,.sec ol{padding-left:1.3em}
+.compare{width:100%;margin-top:16px;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;font-size:15px}
+.compare th,.compare td{padding:12px 14px;border:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.65}
+.compare thead th{background:#F2F5FD;color:var(--navy)}
+.compare caption{padding:8px 0;text-align:left;font-size:14px;color:var(--sub)}
+.scroll{overflow-x:auto;margin-top:12px}
+.scroll .compare{margin-top:0}
+.plans{min-width:680px}
+.plans tbody th{min-width:128px}
+.plans th:first-child{position:sticky;left:0;background:#fff;z-index:1}
+.plans thead th:first-child{background:#F2F5FD}
+.sec article{margin-top:18px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.sec article h3{margin:0}
+.doc{margin-top:12px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.doc p:first-child{margin-top:0}
+.steps{list-style:none;padding:0!important;counter-reset:s}
+.steps>li{counter-increment:s;margin-top:32px;padding:20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.steps>li>h3{margin:0}
+.steps>li>h3::before{content:counter(s) ". "}
+.shot{display:inline-block;width:min(46%,260px);margin:16px 10px 0 0;vertical-align:top}
+.shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:14px}
+.shot figcaption{margin-top:6px;font-size:13px;line-height:1.5;color:var(--sub)}
+.demo{margin:16px 0 0;max-width:300px}
+.demo.land{max-width:none}
+.demo video{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);background:#fff}
+.sample{display:block;width:100%;height:auto;margin-top:16px;border-radius:14px;background:#000}
+.note{font-size:14px}
+.raw{margin-top:14px}
+.raw summary{cursor:pointer;font-weight:600;color:var(--navy)}
+.code{margin:12px 0 0;padding:16px;overflow-x:auto;background:var(--navy);color:#fff;border-radius:12px;font:14px/1.7 var(--f-mono);white-space:pre-wrap;overflow-wrap:anywhere}
+.facts{display:grid;grid-template-columns:8em 1fr;gap:8px 12px;margin:16px 0 0;font-size:15px}
+.facts dt{font-weight:600;color:var(--navy)}
+.facts dd{margin:0}
+.cards{display:grid;gap:14px;margin:28px 0 0}
+.card{display:block;padding:20px 22px;background:var(--card);border:1px solid var(--line);border-radius:14px;text-decoration:none;color:var(--text)}
+.card strong{display:block;color:var(--navy);font-size:18px}
+.card span{display:block;margin-top:6px;font-size:15px}
+.cta{margin:56px 0 0;padding:28px 22px;background:var(--navy);color:#fff;border-radius:18px}
+.cta h2{margin:0;font-size:22px;line-height:1.4}
+.cta p{margin:8px 0 0;color:rgba(255,255,255,.85);font-size:15px}
+.cta .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.cta.inline{margin:32px 0 0;padding:20px 22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 20px;text-align:center;line-height:1.4;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px}
+.btn-solid{background:#fff;color:var(--navy)}
+.btn-line{color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)}
+footer{margin-top:64px;padding:28px 0 40px;border-top:1px solid var(--line);font-size:13px;color:var(--sub)}
+footer ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 16px}
+footer a{color:var(--sub)}
+footer p{margin:12px 0 0}
+@media (max-width:400px){.nav ul .opt{display:none}}
+@media (max-width:560px){.nav ul a{padding:8px 5px;font-size:13px}.shot{width:calc(50% - 8px);margin-right:6px}.shot.wide{width:100%;max-width:320px;margin-right:0}.steps>li{padding:16px}.facts{grid-template-columns:1fr}.facts dd{margin-bottom:8px}.compare{font-size:14px}.compare th,.compare td{padding:10px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/"><img src="/img/appicon.png" alt="" width="28" height="28">Texter</a>
+  <nav aria-label="メイン"><ul><li class="opt"><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金</a></li><li><a href="/faq/">よくある質問</a></li></ul></nav>
+</div></header>
+<main id="main" class="wrap">
+<nav aria-label="パンくずリスト"><ol class="crumbs"><li><a href="/">Texter</a></li><li><a href="/guides/">活用ガイド</a></li><li aria-current="page">音声を端末の外に送らずに文字起こしする方法</li></ol></nav>
+<h1>iPhoneで音声を端末の外に送らずに文字起こしする方法</h1>
+<p class="lead">音声を外に出したくないときは、文字起こしの方式を自分で選ぶ必要があります。Texterの既定は、音声をクラウドへ送る方式です。端末の中だけで済む範囲と、通信が要る範囲を、アプリのコードと画面の文言から整理しました。</p>
+<p class="meta">確認日 <time datetime="2026-11-05">2026-11-05</time></p>
+<nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul><li><a href="#summary">結論</a></li><li><a href="#map">処理ごとの送信先</a></li><li><a href="#steps">端末内で音声ファイルを文字起こしする手順</a></li><li><a href="#fallback">SpeechAnalyzerが失敗するとWhisperへ切り替わる</a></li><li><a href="#storage">保存先と、外へ出る操作</a></li><li><a href="#not-suited">向いていない場面</a></li><li><a href="#next">関連するページ</a></li><li><a href="#method">確認の範囲</a></li></ul></nav>
+<section class="sec" id="summary" aria-labelledby="summary-h"><h2 id="summary-h">結論</h2>
+      <p>音声ファイルを端末の中だけで文字起こしするには、iOS 26以降で、取り込みの「音声認識サービス」をSpeechAnalyzerに変えます。既定のWhisperは、音声をクラウドへ送ります。</p>
+      <p>端末内で済むのは、この文字起こしと、いくつかの補助機能だけです。日本語の録音中の文字起こしは、クラウドのエンジンを使います。話者識別はクラウド処理です。要約と日本語のAIチャットは、確認したコードではクラウドのAIサービスへテキストを送ります。</p>
+      <p>Texterは、通信なしですべてが動くアプリではありません。音声を送らないことを優先するときは、下の表で使う機能を選んでください。</p></section>
+<section class="sec" id="map" aria-labelledby="map-h"><h2 id="map-h">処理ごとの送信先</h2>
+      <div class="scroll"><table class="compare"><thead><tr><th scope="col">処理</th><th scope="col">端末内で済む条件</th><th scope="col">通信が要る場合</th></tr></thead><tbody>
+        <tr><th scope="row">音声ファイルの文字起こし（取り込み）</th><td>音声認識サービスをSpeechAnalyzerにする（iOS 26以降）。初回は言語モデルのダウンロードに通信が要る</td><td>既定のWhisperとAmazon Transcribeは、音声をサーバーへ送る</td></tr>
+        <tr><th scope="row">録音中の文字起こし</th><td>日本語、英語、中国語、韓国語では、端末内で済む方式はない。ほかの言語はAppleの音声認識を使い、端末が対応していて、ネットワークに接続できない状態のときだけ、端末内の認識を指定する</td><td>日本語、英語、中国語、韓国語は、クラウドの音声認識へ音声を送る。使うクラウドの音声認識は、サーバーの設定などで決まり、利用者は選べない。ほかの言語でも、接続できる状態では端末内の認識を指定しないので、Appleのサーバーが使われる場合がある</td></tr>
+        <tr><th scope="row">タイトルの自動生成</th><td>iOS 26以降で、端末内のAIモデルが使える端末では、端末内だけで作る</td><td>端末内のAIモデルが使えないと、自動のタイトルは付かず、既定の名前のままになる。クラウドへの切り替えはない</td></tr>
+        <tr><th scope="row">要約</th><td>端末内で処理する経路は、確認したコードにはなかった</td><td>クラウドのAIサービスへテキストを送る</td></tr>
+        <tr><th scope="row">内容まとめ、やること</th><td>端末内のAIモデルを先に試す設定はあるが、確認したコードでは既定でオフ</td><td>既定では、クラウドのAIサービスへテキストを送る</td></tr>
+        <tr><th scope="row">AIチャット</th><td>アプリの表示言語が日本語以外で、ツールを使わない短いノートなど、一部の条件では端末内</td><td>アプリの表示言語が日本語のときと、ノートの検索などのツールを使う会話は、クラウドのAIサービスへテキストを送る。「思い出す」の経路は、個別には確認していない</td></tr>
+        <tr><th scope="row">音声入力キーボード</th><td>iOS 26以降では、クラウドの認識が失敗した入力だけを、端末内のSpeechAnalyzerで文字にする</td><td>確定する文字は、クラウドの音声認識で作る。どの方式を使うかは、サーバーの設定で変わる</td></tr>
+        <tr><th scope="row">AI文字起こし整形（設定でオンにしたとき）</th><td>端末内のAIモデルが使える端末では、端末内で処理する</td><td>使えない端末では、クラウドへ送る場合がある</td></tr>
+        <tr><th scope="row">話者識別</th><td>端末内の方式は確認できなかった</td><td>クラウドで処理する</td></tr>
+        <tr><th scope="row">録音中の翻訳</th><td>Appleの翻訳機能で処理する。言語パックのダウンロードが要る</td><td>翻訳画面のDeepLとGoogleはクラウド。「Google Offline」だけが端末内。翻訳画面の音声入力は、接続中ならAppleのサーバーで認識される場合がある</td></tr>
+      </tbody></table></div>
+      <p class="note">この表は、アプリのコード（バージョン2.11.71）で確認した既定の動きです。サーバーから配信される設定で変わる場合があります。</p></section>
+<section class="sec" id="steps" aria-labelledby="steps-h"><h2 id="steps-h">端末内で音声ファイルを文字起こしする手順</h2>
+      <ol class="steps">
+        <li><h3>iOSの版を確かめる</h3><p>SpeechAnalyzerはiOS 26以降の機能です。それより前のiPhoneでは選べません。</p></li>
+        <li><h3>「音声認識サービスを選択」を開く</h3><p>Texterの「設定」→「ファイルをインポート」→「音声認識サービスを選択」を開きます。一覧には、Default、SpeechAnalyzer、Whisper(OpenAI)、Amazon Transcribeが並びます。</p></li>
+        <li><h3>SpeechAnalyzerを選ぶ</h3><p>Defaultは、Appleの音声認識です。端末内で処理されるとは限らないので選ばないでください。SpeechAnalyzerは、初回に言語のモデルを端末へダウンロードします。このときは通信が要ります。</p></li>
+        <li><h3>言語を選ぶ</h3><p>SpeechAnalyzerの欄の下で、文字起こしする言語を選びます。選ばなかった場合の言語は、端末の言語に近いものです。対応する言語が見つからないと、処理が失敗してWhisperへ切り替わります。</p></li>
+        <li><h3>音声ファイルを取り込む</h3><p>「設定」→「ファイルをインポート」→「音声ファイルをインポート」でファイルを選びます。無料版では、取り込みの前に動画広告が表示されます。</p></li>
+      </ol>
+      <p>アプリの説明文の記載は、「すべて端末内で処理される」です。この手順の画面は、今回は実機で操作していません。</p></section><aside class="cta inline" aria-label="アプリで試す"><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-offline-after-steps&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-offline-after-steps" data-store="app_store">iPhoneで端末内の文字起こしを試す（App Store）</a></div></aside>
+<section class="sec" id="fallback" aria-labelledby="fallback-h"><h2 id="fallback-h">SpeechAnalyzerが失敗するとWhisperへ切り替わる</h2>
+      <p>コードでは、SpeechAnalyzerでの処理にエラーが起きると、同じ音声をWhisperで処理し直します。Whisperは音声をクラウドへ送ります。確認したコードの範囲では、切り替える前に確認の画面を出す処理は見つかりませんでした。</p>
+      <p>コードでは、選んだ言語にSpeechAnalyzerが対応していないとき、言語のモデルの準備に失敗したとき、文字起こしの途中でエラーが起きたときに、この切り替えが起きます。音声を端末の外へ出さないことが条件なら、この切り替えを受け入れられるかを先に判断してください。通信できない状態で切り替えが起きた場合の動きは、検証していません。</p></section>
+<section class="sec" id="storage" aria-labelledby="storage-h"><h2 id="storage-h">保存先と、外へ出る操作</h2>
+      <ul>
+        <li>録音とノートは、端末内に保存されます</li>
+        <li>クラウド同期は、Premiumの任意の機能です。範囲を選んでから始めます。送るのはテキスト、要約、区間の情報などで、録音ファイルは送りません。サインインしただけでは、ノートは自動でクラウドに保存されません</li>
+        <li>公開リンクを作ると、リンクを知っている人がそのノートの本文を読めます。取り消しても、すでに見た人やコピーされた内容は消せません</li>
+        <li>Texter MCPは、Premiumとサインインが要ります。オンにすると、Macのツールから読めるように、そのノートのテキストをクラウドへ送ります。録音の元のファイルは送りません。同意を求められ、Claude Codeなどのツールに渡した内容は、あとから取り消せません</li>
+      </ul></section>
+<section class="sec" id="not-suited" aria-labelledby="not-suited-h"><h2 id="not-suited-h">向いていない場面</h2>
+      <ul>
+        <li>通信できない場所で、話者識別、要約、日本語のAIチャットを使いたい場合</li>
+        <li>どの音声も例外なく端末の外へ出さない、という保証が必要な場合。SpeechAnalyzerが失敗したときの切り替えがあり、通信の中身も実機で観測していないためです</li>
+        <li>iOS 26より前のiPhoneで、端末内の文字起こしを使いたい場合</li>
+      </ul></section>
+<section class="sec" id="next" aria-labelledby="next-h"><h2 id="next-h">関連するページ</h2><p>料金と上限は<a href="/pricing/">料金と利用条件</a>、データの扱いは<a href="/faq/#data-sent">よくある質問</a>をご覧ください。標準のボイスメモとの使い分けは<a href="/guides/iphone-voice-memos-vs-texter/">ボイスメモとTexterの違い</a>で説明しています。</p></section>
+<section class="sec" id="method" aria-labelledby="method-h"><h2 id="method-h">確認の範囲</h2>
+      <dl class="facts">
+        <dt>確認した人</dt><dd>Texter運営</dd>
+        <dt>確認日</dt><dd>2026-11-05</dd>
+        <dt>確認したもの</dt><dd>iPhone版Texter（バージョン2.11.71）のソースコードと、日本語の画面の文言です。</dd>
+        <dt>確認していないこと</dt><dd>実機での通信の観測、機内モードでの動作、SpeechAnalyzerが失敗したときの切り替えの再現、サーバーから配信される設定の本番の値、使えるiPhoneの機種と言語の一覧です。</dd>
+      </dl></section>
+<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで試す</h2><p>Texterは、録音や音声ファイルから文字起こし、要約、やることの抽出までを行うアプリです。この手順はiPhone版のものです。無料で始められます。無料版の文字起こしには上限があり、要約は1日3回までです。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-offline-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-offline-end" data-store="app_store">iPhoneで端末内の文字起こしを試す（App Store）</a></div></section>
+</main>
+<footer><div class="wrap">
+  <ul><li><a href="/">ホーム</a></li><li><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金と利用条件</a></li><li><a href="/faq/">よくある質問</a></li><li><a href="/terms-of-service/">利用規約</a></li><li><a href="/privacy-policy/">プライバシーポリシー</a></li><li><a href="/tokushoho/">特定商取引法に基づく表記</a></li></ul>
+  <p>© 2026 Texter app - Kyoto, Japan.</p>
+</div></footer>
+<script>
+(function(){
+  var send=function(name,el){if(window.gtag)gtag('event',name,{location:el.dataset.cta,store:el.dataset.store});};
+  var links=document.querySelectorAll('a[data-cta]');
+  links.forEach(function(a){
+    a.addEventListener('click',function(){send(a.dataset.store==='google_play'?'google_play_click':'app_store_click',a);});
+    if(!('IntersectionObserver' in window))return;
+    var seen=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){send('guide_cta_view',a);seen.disconnect();}});},{threshold:.5});
+    seen.observe(a);
+  });
+})();
+</script>
+</body>
+</html>
