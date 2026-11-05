@@ -304,6 +304,10 @@ ${body}
     <p>© 2026 Texter app - Kyoto, Japan.</p>
   </div>
 </footer>
+<script>
+// ストアへのクリックをガイドと同じイベント名・項目で送る（PR #8 のリニューアルで外れていた）
+(function(){document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="apps.apple.com"],a[href*="play.google.com"]');if(!a||!window.gtag)return;var store=/play\\.google\\.com/.test(a.href)?'google_play':'app_store';var s=a.closest('[id],header,footer');gtag('event',store==='google_play'?'google_play_click':'app_store_click',{location:a.dataset.cta||('${lang === 'ja' ? 'faq' : 'faq-en'}-'+(s?(s.id||s.tagName.toLowerCase()):'page')),store:store});});})();
+</script>
 </body>
 </html>
 `;
