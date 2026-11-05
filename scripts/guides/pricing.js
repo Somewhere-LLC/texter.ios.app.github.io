@@ -75,7 +75,7 @@ const sections = [
 <tr><th scope="row">音声入力キーボード</th><td>あり</td><td>なし</td></tr>
 <tr><th scope="row">Apple Watchでの録音</th><td>あり</td><td>なし</td></tr>
 </tbody></table></div>` },
-  { id: 'not-suited', title: 'Texterが向いていない使い方', html: `<ul><li>無料のまま長時間をリアルタイムで記録したい場合：1回3分で止まる</li><li>無料枠で毎月ファイルを処理したい場合：iPhone版のWhisperの無料枠は累積する</li><li>通信なしで話者識別まで使いたい場合：話者識別には通信が必要。通信なしで使えるのは、対応端末のApple音声認識とSpeechAnalyzerだけ</li><li>チケットで2時間を超える音声を処理したい場合：Premiumが必要</li><li>複数の端末でノートを同期したい場合：同期の機能なし</li></ul>` },
+  { id: 'not-suited', title: 'Texterが向いていない使い方', html: `<ul><li>無料のまま長時間をリアルタイムで記録したい場合：1回3分で止まる</li><li>無料枠で毎月ファイルを処理したい場合：iPhone版のWhisperの無料枠は累積する</li><li>通信なしで話者識別まで使いたい場合：話者識別には通信が必要。通信なしで使えるのは、対応端末のApple音声認識とSpeechAnalyzerだけ</li><li>チケットで2時間を超える音声を処理したい場合：Premiumが必要</li><li>無料のまま複数の端末でノートを同期したい場合：同期はPremiumで使える。録音などの原本は同期しない</li></ul>` },
   { id: 'method', title: '確認の方法', html: `<dl class="facts"><dt>確認日</dt><dd>${CHECKED}</dd><dt>確認した人</dt><dd>Texter運営</dd><dt>料金</dt><dd>App Store（日本）の表示</dd><dt>上限</dt><dd>iPhone版2.11.68の実装と、配信中の設定値</dd></dl><p class="note">上限は変わる場合があります。最新の内容は、アプリのプラン比較と購入画面で確認してください。よくある質問は<a href="/faq/">こちら</a>です。</p>` },
 ];
 
