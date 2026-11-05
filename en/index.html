@@ -1339,5 +1339,11 @@ html[lang=en] .h1 .ch{white-space:pre}
         window.addEventListener('resize', sync);
       })();
     </script>
+<script>
+// ストアへのクリックをガイドと同じイベント名・項目で送る（PR #8 のリニューアルで外れていた）
+(function(){document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="apps.apple.com"],a[href*="play.google.com"]');if(!a||!window.gtag)return;var store=/play\.google\.com/.test(a.href)?'google_play':'app_store';var s=a.closest('[id],header,footer');gtag('event',store==='google_play'?'google_play_click':'app_store_click',{location:a.dataset.cta||('lp-en-'+(s?(s.id||s.tagName.toLowerCase()):'page')),store:store});});})();
+// 料金の区画が画面に出たら一度だけ送る（週次レポートの「料金到達」）
+(function(){var p=document.getElementById('pricing');if(!p||!('IntersectionObserver' in window))return;var o=new IntersectionObserver(function(es){if(!es.some(function(e){return e.isIntersecting}))return;if(window.gtag)gtag('event','pricing_view');o.disconnect();},{threshold:0,rootMargin:'0px 0px -30% 0px'});o.observe(p);})();
+</script>
 </body>
 </html>

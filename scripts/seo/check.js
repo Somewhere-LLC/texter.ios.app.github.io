@@ -34,6 +34,7 @@ function jsonLd(html, file, errors) {
 const nodes = (blocks) => blocks.flatMap((b) => b['@graph'] || [b]);
 
 function checkLp(file, lang, html, errors) {
+  if (!html.includes("'app_store_click'")) errors.push(`${file}: store clicks are not sent to GA4 (app_store_click)`);
   const graph = nodes(jsonLd(html, file, errors));
   const app = graph.find((n) => n['@type'] === 'SoftwareApplication');
   if (!app) return errors.push(`${file}: no SoftwareApplication`);
@@ -69,6 +70,7 @@ function checkLp(file, lang, html, errors) {
 }
 
 function checkFaq(file, lang, html, errors) {
+  if (!html.includes("'app_store_click'")) errors.push(`${file}: store clicks are not sent to GA4 (app_store_click)`);
   const graph = nodes(jsonLd(html, file, errors));
   const faq = graph.find((n) => n['@type'] === 'FAQPage');
   if (!faq) return errors.push(`${file}: no FAQPage`);
@@ -167,6 +169,8 @@ if (process.argv.includes('--self-test')) {
   const firstQ = data.ja.sections[0].items[0].q;
   const mutations = [
     ['LP price changed', 'index.html', (s) => s.replaceAll('¥1,800', '¥2,000')],
+    ['LP store click tracking removed', 'index.html', (s) => s.replaceAll("'app_store_click'", "'x'")],
+    ['FAQ store click tracking removed', 'faq/index.html', (s) => s.replaceAll("'app_store_click'", "'x'")],
     ['weekly plan back in LP JSON-LD', 'index.html', (s) => s.replace('"billingDuration": "P1M"', '"billingDuration": "P1W"')],
     ['LP feature heading renamed', 'en/index.html', (s) => s.replace('<h3>Topic map</h3>', '<h3>Topic graph</h3>')],
     ['FAQ question edited only in HTML', 'faq/index.html', (s) => s.replace(`>${firstQ}</h3>`, '>別の質問</h3>')],
