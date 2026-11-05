@@ -20,6 +20,7 @@ import hashlib
 import json
 import os
 import re
+import shlex
 import subprocess
 import sys
 import time
@@ -29,8 +30,8 @@ ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 DATA_FILE = os.path.join(HERE, "disclosure-data.json")
 LOG = os.path.expanduser("~/.claude/logs/texter-site-disclosure.log")
 # This gate and its rule describe the categories, so they are not scanned.
-SELF = re.compile(r"^(\.claude/hooks/disclosure-|\.claude/rules/public-disclosure\.md$)")
-SKIP_PATH = re.compile(r"^(dist/|node_modules/|assets/|img/|scripts/vendor/|\.git/)|package-lock\.json$")
+SELF = re.compile(r"^(\.claude/hooks/disclosure-gate\.py|\.claude/rules/public-disclosure\.md)$")
+SKIP_PATH = re.compile(r"^(node_modules/|\.git/)|(^|/)package-lock\.json$")
 TEXT_EXT = re.compile(r"\.(html|xml|txt|md|json|js|py|sh|css|conf|yml|yaml)$|^\.githooks/")
 
 PATTERNS = {
@@ -156,7 +157,7 @@ def add_baseline(path, word):
 def report(findings, where):
     lines = [f"[disclosure-gate] 公開してはいけない可能性のある記載が{len(findings)}件あります（{where}）。"]
     for path, no, key, shown in findings[:15]:
-        kind = key if key in PATTERNS else "name-or-identifier"
+        kind = key if key in PATTERNS or key == "unscannable-stdin" else "name-or-identifier"
         lines.append(f"  {path}:{no}  {kind}  「{shown}」")
     lines.append("  基盤サービスの固有名、内部の構成、秘密情報、弱点の手がかりは書かず、「クラウドの音声認識」のような一般名で書き直してください。")
     lines.append("  方針: .claude/rules/public-disclosure.md。法的に必要な既存の記載だけは --add-baseline で許可し、PRで人の承認を受けます。")
@@ -254,32 +255,57 @@ def segments(cmd):
 
 
 FILE_ARG = re.compile(r"(?:--body-file|--notes-file|--input|-F|--file)\s+(\S+)")
-FIELD_FILE = re.compile(r"(?:-F|--field)\s+\w+=@(\S+)")
+FIELD_FILE = re.compile(r"(?:-F|--field|-f|--raw-field)\s+['\"]?[\w\[\].-]+=@([^\s'\"]+)")
 STDIN_ARG = re.compile(r"(?:--body-file|--notes-file|--input|-F|--file)\s+-(?:\s|$)")
 WRITE_API = re.compile(r"(--input\b|-X\s*(POST|PATCH|PUT|DELETE)\b|--method[ =](POST|PATCH|PUT|DELETE)\b|(^|\s)(-f|-F|--field|--raw-field)\b)")
+UNSCANNABLE = "\0unscannable-stdin\0"
+
+
+def read_file(path, cwd):
+    try:
+        with open(path if os.path.isabs(path) else os.path.join(cwd, path), encoding="utf-8") as fh:
+            return fh.read()
+    except (OSError, UnicodeDecodeError):
+        return None
 
 
 def public_text(cmd, cwd):
     """The text of each public write in a Bash command: the segment, any file it reads, and piped standard input."""
     texts = []
-    for seg in segments(cmd):
+    segs = segments(cmd)
+    for seg in segs:
         if not VERB.search(seg):
             continue
         if re.match(r"\s*gh\s+api\b", seg) and not WRITE_API.search(seg):
             continue
         texts.append(seg)
-        if STDIN_ARG.search(seg) and "<<" not in seg:
-            # The body comes from a pipe. Its producer is another segment, so scan the whole command.
+        if STDIN_ARG.search(seg) and not re.search(r"<<(?!<)", seg):
+            # The body comes from a pipe or a redirect. Scan the whole command and every file a producer reads.
             texts.append(cmd)
+            if "$(" in cmd or "`" in cmd:
+                texts.append(UNSCANNABLE)
+            for other in segs:
+                if other is seg:
+                    continue
+                try:
+                    toks = shlex.split(other)
+                except ValueError:
+                    toks = other.split()
+                for tok in toks:
+                    if not tok.startswith("-"):
+                        body = read_file(tok.lstrip("<"), cwd)
+                        if body:
+                            texts.append(body)
+            for m in re.finditer(r"<\s*([^\s<>|&;]+)", seg):
+                body = read_file(m.group(1).strip("'\""), cwd)
+                if body:
+                    texts.append(body)
         for m in list(FILE_ARG.finditer(seg)) + list(FIELD_FILE.finditer(seg)):
             f = m.group(1).strip("'\"")
-            if f == "-":
-                continue
-            try:
-                with open(f if os.path.isabs(f) else os.path.join(cwd, f), encoding="utf-8") as fh:
-                    texts.append(fh.read())
-            except OSError:
-                pass
+            if f != "-":
+                body = read_file(f, cwd)
+                if body:
+                    texts.append(body)
     return texts
 
 
@@ -337,6 +363,15 @@ def self_test():
             except DataError:
                 ok = True
             expect(f"a {label} data file stops the gate", ok)
+    with tempfile.TemporaryDirectory() as td:
+        with open(os.path.join(td, "payload.txt"), "w", encoding="utf-8") as f:
+            f.write("本文 ZzVendorName")
+        scanned = lambda c: any("ZzVendorName" in x for x in public_text(c, td))
+        expect("a file piped into --body-file - is read", scanned("cat payload.txt | gh pr comment 3 --body-file -"))
+        expect("a file redirected into --body-file - is read", scanned("gh pr comment 3 --body-file - < payload.txt"))
+        expect("a quoted -F field file is read", scanned("gh api repos/o/r/issues/1/comments -F 'body=@payload.txt'"))
+        expect("a nested -F field file is read", scanned("gh api repos/o/r/issues/1/comments -F 'a[b]=@payload.txt'"))
+        expect("a stdin body from a command substitution is unscannable", UNSCANNABLE in public_text('echo "$(cat x)" | gh pr comment 3 --body-file -', td))
     print("self-test:", "FAIL" if fails else "PASS")
     return 1 if fails else 0
 
@@ -360,7 +395,10 @@ def hook_main():
         data = load()
         findings = []
         for t in texts:
-            findings.extend(scan_text(t, "(コマンドの本文)", data))
+            if t == UNSCANNABLE:
+                findings.append(("(コマンド)", 0, "unscannable-stdin", "標準入力の本文は検査できません。ファイルに書いて --body-file <パス> で渡してください"))
+            else:
+                findings.extend(scan_text(t, "(コマンドの本文)", data))
     except DataError as e:
         log(f"blocked: {e}")
         print(f"[disclosure-gate] {e}", file=sys.stderr)
@@ -404,7 +442,7 @@ def main(argv):
         where = "リポジトリ全体"
     elif mode == "--msg" and len(argv) == 3:
         with open(argv[2], encoding="utf-8") as fh:
-            text = "\n".join(l for l in fh.read().splitlines() if not l.startswith("#"))
+            text = fh.read()  # a "#" line stays in a -m or -F message, so every line is scanned
         f = scan_text(text, "(コミットメッセージ)", data)
         where = "コミットメッセージ"
     else:

@@ -29,6 +29,16 @@
  ],
  "baseline": [
   [
+   "dist/terms-of-service/index.html",
+   "b5cb7a49089633b87eddb20b435ada523254bada617e1af0edaee44a10ae5fbb",
+   "3347fe421406017d8b44f23f70a388c3c6daa1d565675de8eba62808f18603e5"
+  ],
+  [
+   "dist/terms-of-service/index.html",
+   "b5cb7a49089633b87eddb20b435ada523254bada617e1af0edaee44a10ae5fbb",
+   "fc2a81fdff2689f78c20879c69be49d2ce79963df9fcf9b32a0b3e09c707f4f3"
+  ],
+  [
    "terms-of-service/index.html",
    "b5cb7a49089633b87eddb20b435ada523254bada617e1af0edaee44a10ae5fbb",
    "3347fe421406017d8b44f23f70a388c3c6daa1d565675de8eba62808f18603e5"
