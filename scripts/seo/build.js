@@ -293,7 +293,7 @@ ${body}
     <h2 id="cta-h">${esc(t.ctaTitle)}</h2>
     <p>${t.ctaBody}</p>
     <div class="row">
-      <a class="btn btn-solid" href="${t.appStore}" target="_blank" rel="noopener noreferrer">App Store</a>
+      <a class="btn btn-solid" href="${t.appStore}?pt=${facts.appStorePt}&amp;ct=${lang === 'ja' ? 'faq' : 'faq-en'}&amp;mt=8" target="_blank" rel="noopener noreferrer">App Store</a>
       <a class="btn btn-line" href="${facts.googlePlay}" target="_blank" rel="noopener noreferrer">Google Play</a>
     </div>
   </section>

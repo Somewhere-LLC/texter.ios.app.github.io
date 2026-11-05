@@ -7,7 +7,7 @@ const SITE = facts.site;
 const ORG_ID = `${SITE}/#organization`;
 const SITE_ID = `${SITE}/#website`;
 // Same provider token as the app's public note pages. The campaign token ties an App Store install to the guide and link position.
-const APP_STORE_PT = '489812';
+const APP_STORE_PT = facts.appStorePt;
 const CONDITIONS = '無料で始められます。無料版の文字起こしには上限があり、要約は1日3回までです。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。';
 const appStoreLink = (g, pos) => {
   const id = `${g.store}-${pos}`;

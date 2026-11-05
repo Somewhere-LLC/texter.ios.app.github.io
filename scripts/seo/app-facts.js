@@ -12,6 +12,8 @@ module.exports = {
     address: { addressLocality: 'Kyoto', addressCountry: 'JP' },
   },
   appStoreId: '1482592304',
+  // App Store のキャンペーン計測（pt=プロバイダトークン、ct=キャンペーン名）
+  appStorePt: '489812',
   playId: 'com.matz.Texter',
   appStore: { ja: 'https://apps.apple.com/jp/app/id1482592304', en: 'https://apps.apple.com/app/id1482592304' },
   googlePlay: 'https://play.google.com/store/apps/details?id=com.matz.Texter',
