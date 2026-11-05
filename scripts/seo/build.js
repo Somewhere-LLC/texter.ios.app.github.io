@@ -94,7 +94,7 @@ function appGraph(lang, pageTitle) {
         sameAs: [facts.appStore[lang], facts.googlePlay],
         featureList: f.features,
         offers: lang === 'ja'
-          ? [offer(f.offers.free), offer(f.offers.weekly, 'weekly'), offer(f.offers.monthly, 'monthly'), offer(f.offers.yearly, 'yearly')]
+          ? [offer(f.offers.free), offer(f.offers.monthly, 'monthly'), offer(f.offers.yearly, 'yearly')]
           : [{ '@type': 'Offer', name: f.offers.free, price: '0', priceCurrency: 'USD' }],
         publisher: { '@id': ORG_ID },
         author: { '@id': ORG_ID },
