@@ -70,13 +70,22 @@ def sha(s):
     return hashlib.sha256(s.encode("utf-8")).hexdigest()
 
 
+class DataError(Exception):
+    pass
+
+
 def load(path=None):
+    """Fails closed: a missing or malformed data file must stop the gate, not silently disable it."""
     try:
         with open(path or DATA_FILE, encoding="utf-8") as f:
             d = json.load(f)
-    except (OSError, ValueError):
-        d = {}
-    return {"tokens": set(d.get("tokens", [])), "baseline": {tuple(x) for x in d.get("baseline", [])}}
+        tokens = set(d["tokens"])
+        baseline = {tuple(x) for x in d["baseline"] if len(x) == 3}
+    except (OSError, ValueError, KeyError, TypeError) as e:
+        raise DataError(f"disclosure-data.json を読めません（{type(e).__name__}）。検査を止めます") from e
+    if not tokens:
+        raise DataError("disclosure-data.json に名前の一覧がありません。検査を止めます")
+    return {"tokens": tokens, "baseline": baseline}
 
 
 def save(d):
@@ -106,14 +115,42 @@ def keys_in_line(line, tokens):
             yield name, m.group(0)[:40]
 
 
+ESCAPE_U = re.compile(r"\\u([0-9a-fA-F]{4})")
+
+
+def unescape(line):
+    """Undo \\uXXXX and \\n so an escape in front of a name (JSON or source) cannot glue it to the previous word."""
+    line = ESCAPE_U.sub(lambda m: chr(int(m.group(1), 16)), line)
+    return line.replace("\\n", " ").replace("\\r", " ").replace("\\t", " ")
+
+
 def scan_text(text, path, data, label=""):
     out = []
     for no, line in enumerate(text.splitlines(), 1):
-        for key, shown in keys_in_line(line, data["tokens"]):
-            if (path, key) in data["baseline"]:
+        lh = sha(line.strip())
+        for key, shown in keys_in_line(unescape(line), data["tokens"]):
+            # An allowance covers only the reviewed line, so the same name added elsewhere in the file is still caught.
+            if (path, key, lh) in data["baseline"]:
                 continue
             out.append((path, no, key, shown))
     return out
+
+
+def add_baseline(path, word):
+    d = load()
+    key = word if word in PATTERNS else sha("".join(WORD.findall(word)).lower())
+    n = 0
+    with open(os.path.join(ROOT, path), encoding="utf-8") as f:
+        for line in f.read().splitlines():
+            if any(k == key for k, _ in keys_in_line(line, d["tokens"])):
+                d["baseline"].add((path, key, sha(line.strip())))
+                n += 1
+    if not n:
+        print("該当する行がありません。許可を追加しません", file=sys.stderr)
+        return 2
+    save(d)
+    print(f"added {n} baseline line(s)")
+    return 0
 
 
 def report(findings, where):
@@ -216,28 +253,41 @@ def segments(cmd):
     return ["".join(s) for s in segs if "".join(s).strip()]
 
 
+FILE_ARG = re.compile(r"(?:--body-file|--notes-file|--input|-F|--file)\s+(\S+)")
+FIELD_FILE = re.compile(r"(?:-F|--field)\s+\w+=@(\S+)")
+STDIN_ARG = re.compile(r"(?:--body-file|--notes-file|--input|-F|--file)\s+-(?:\s|$)")
+WRITE_API = re.compile(r"(--input\b|-X\s*(POST|PATCH|PUT|DELETE)\b|--method[ =](POST|PATCH|PUT|DELETE)\b|(^|\s)(-f|-F|--field|--raw-field)\b)")
+
+
 def public_text(cmd, cwd):
-    """The text of each public write in a Bash command: the segment itself plus any --body-file or -F file."""
+    """The text of each public write in a Bash command: the segment, any file it reads, and piped standard input."""
     texts = []
     for seg in segments(cmd):
         if not VERB.search(seg):
             continue
-        if re.match(r"\s*gh\s+api\b", seg) and not re.search(r"\b(body|title|message)=", seg):
+        if re.match(r"\s*gh\s+api\b", seg) and not WRITE_API.search(seg):
             continue
         texts.append(seg)
-        for m in re.finditer(r"(?:--body-file|--notes-file|-F|--file)\s+(\S+)", seg):
+        if STDIN_ARG.search(seg) and "<<" not in seg:
+            # The body comes from a pipe. Its producer is another segment, so scan the whole command.
+            texts.append(cmd)
+        for m in list(FILE_ARG.finditer(seg)) + list(FIELD_FILE.finditer(seg)):
             f = m.group(1).strip("'\"")
-            if f != "-":
-                try:
-                    with open(os.path.join(cwd, f) if not os.path.isabs(f) else f, encoding="utf-8") as fh:
-                        texts.append(fh.read())
-                except OSError:
-                    pass
+            if f == "-":
+                continue
+            try:
+                with open(f if os.path.isabs(f) else os.path.join(cwd, f), encoding="utf-8") as fh:
+                    texts.append(fh.read())
+            except OSError:
+                pass
     return texts
 
 
 def self_test():
-    d = {"tokens": {sha("zzvendorname"), sha("remoteflagx")}, "baseline": {("ok.html", sha("zzvendorname"))}}
+    d = {
+        "tokens": {sha("zzvendorname"), sha("remoteflagx")},
+        "baseline": {("ok.html", sha("zzvendorname"), sha("ZzVendorName"))},
+    }
     fails = []
 
     def expect(name, cond):
@@ -248,9 +298,13 @@ def self_test():
     expect("name as a word", bool(scan_text("音声はZzVendorNameへ送る", "a.html", d)))
     expect("name as a pair", bool(scan_text("Remote Flag X を使う", "a.html", d)))
     expect("name inside a host", bool(scan_text("api.zzvendorname.com", "a.html", d)))
-    expect("baseline allows a legal text", not scan_text("ZzVendorName", "ok.html", d))
+    expect("a unicode escape does not hide a name", bool(scan_text("\\u3092ZzVendorName", "a.json", d)))
+    expect("a newline escape does not hide a name", bool(scan_text("x\\nZzVendorName", "a.js", d)))
+    expect("baseline allows the reviewed line", not scan_text("ZzVendorName", "ok.html", d))
+    expect("baseline does not cover another line of the same file", bool(scan_text("ZzVendorName を追記", "ok.html", d)))
     expect("baseline is per path", bool(scan_text("ZzVendorName", "other.html", d)))
     expect("general wording passes", not scan_text("クラウドの音声認識へ音声を送る", "a.html", d))
+    expect("a sentence break does not join words", not scan_text("in the zz. Vendor name here", "a.html", {"tokens": {sha("zzvendor")}, "baseline": set()}))
     expect("private repo path", bool(scan_text("Texter/Features/Foo.swift", "a.html", d)))
     expect("flag name", bool(scan_text("sync_rollout_enabled", "a.html", d)))
     expect("secret", bool(scan_text("key AKIA" + "A" * 16, "a.html", d)))
@@ -261,10 +315,28 @@ def self_test():
     chain = "git commit -m ok && git show HEAD | grep -c ZzVendorName"
     t = public_text(chain, "/")
     expect("a later grep in the chain is not scanned", len(t) == 1 and "ZzVendorName" not in t[0])
+    heredoc_chain = "git commit -q -F - <<'EOF'\nok\nEOF\ngrep -c ZzVendorName x"
+    expect("a grep after a heredoc commit is not scanned", not any("ZzVendorName" in x for x in public_text(heredoc_chain, "/")))
     expect("gh pr comment is public", len(public_text("gh pr comment 3 --body 'x ZzVendorName'", "/")) == 1)
+    piped = "printf 'x ZzVendorName' | gh pr comment 3 --body-file -"
+    expect("a body piped through standard input is scanned", any("ZzVendorName" in x for x in public_text(piped, "/")))
+    expect("gh api --input is public", len(public_text("gh api repos/a/b/issues/1/comments --input payload.json", "/")) >= 1)
+    expect("gh api with an explicit write method is public", bool(public_text("gh api -X POST repos/a/b/issues/1/comments", "/")))
     expect("gh api read is not public", not public_text("gh api repos/a/b/pulls --jq .x", "/"))
     expect("gh api write is public", len(public_text("gh api repos/a/b/issues/1/comments -f body='x'", "/")) == 1)
     expect("ls is not public", not public_text("ls -la", "/"))
+    import tempfile
+    with tempfile.TemporaryDirectory() as td:
+        bad = os.path.join(td, "bad.json")
+        with open(bad, "w", encoding="utf-8") as f:
+            f.write("{not json")
+        for label, path in (("missing", os.path.join(td, "none.json")), ("malformed", bad)):
+            try:
+                load(path)
+                ok = False
+            except DataError:
+                ok = True
+            expect(f"a {label} data file stops the gate", ok)
     print("self-test:", "FAIL" if fails else "PASS")
     return 1 if fails else 0
 
@@ -280,14 +352,25 @@ def hook_main():
         return 0
     cmd = (data_in.get("tool_input") or {}).get("command", "")
     cwd = data_in.get("cwd") or ROOT
-    texts = public_text(cmd, cwd)
-    if not texts:
-        log("skip: bash without a public write")
+    try:
+        texts = public_text(cmd, cwd)
+        if not texts:
+            log("skip: bash without a public write")
+            return 0
+        data = load()
+        findings = []
+        for t in texts:
+            findings.extend(scan_text(t, "(コマンドの本文)", data))
+    except DataError as e:
+        log(f"blocked: {e}")
+        print(f"[disclosure-gate] {e}", file=sys.stderr)
+        return 2
+    except Exception as e:  # a gate that cannot decide must not let a public write through
+        log(f"error: {e!r}")
+        if VERB.search(cmd):
+            print(f"[disclosure-gate] 検査に失敗したので止めます: {e!r}", file=sys.stderr)
+            return 2
         return 0
-    data = load()
-    findings = []
-    for t in texts:
-        findings.extend(scan_text(t, "(コマンドの本文)", data))
     log(f"checked {len(texts)} text(s), findings={len(findings)}")
     if findings:
         print(report(findings, "commit・PR・コメントの本文"), file=sys.stderr)
@@ -302,18 +385,16 @@ def main(argv):
     if mode == "--self-test":
         return self_test()
     if mode == "--add-token" and len(argv) == 3:
-        d = load()
+        try:
+            d = load()
+        except DataError:
+            d = {"tokens": set(), "baseline": set()}
         d["tokens"].add(sha("".join(WORD.findall(argv[2])).lower()))
         save(d)
         print("added a hash")
         return 0
     if mode == "--add-baseline" and len(argv) == 4:
-        d = load()
-        key = argv[3] if argv[3] in PATTERNS else sha("".join(WORD.findall(argv[3])).lower())
-        d["baseline"].add((argv[2], key))
-        save(d)
-        print("added a baseline entry")
-        return 0
+        return add_baseline(argv[2], argv[3])
     data = load()
     if mode == "--staged":
         f = staged_findings(data)
@@ -339,6 +420,10 @@ def main(argv):
 if __name__ == "__main__":
     try:
         sys.exit(main(sys.argv))
-    except Exception as e:  # a broken gate must not take the session down; the log shows why
+    except DataError as e:
+        log(f"blocked: {e}")
+        print(f"[disclosure-gate] {e}", file=sys.stderr)
+        sys.exit(2)
+    except Exception as e:
         log(f"error: {e!r}")
-        sys.exit(0 if len(sys.argv) == 1 else 2)
+        sys.exit(2)
