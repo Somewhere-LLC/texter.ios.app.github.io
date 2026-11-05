@@ -224,7 +224,7 @@ function renderGuide(g) {
   const body = `${crumbs(items)}
 <h1>${esc(g.h1)}</h1>
 <p class="lead">${g.lead}</p>
-<p class="meta">${esc(g.metaLabel || '検証日')} <time datetime="${verified}">${verified}</time></p>
+<p class="meta">${esc(g.metaLabel || '検証日')} <time datetime="${g.metaDate || verified}">${g.metaDate || verified}</time></p>
 <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul>${g.sections.map((s) => `<li><a href="#${s.id}">${esc(s.title)}</a></li>`).join('')}</ul></nav>
 ${sections}
 <section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">${esc(g.ctaTitle)}</h2><p>${esc(g.ctaBody)}${g.conditions || CONDITIONS}</p><div class="row">${appStoreLink(g, 'end')}${g.iosOnly ? '' : `<a class="btn btn-line" href="${facts.googlePlay}" target="_blank" rel="noopener noreferrer" data-cta="${g.store}-end" data-store="google_play">Google Playで見る</a>`}</div></section>`;
