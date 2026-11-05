@@ -1,6 +1,11 @@
 #!/bin/bash
-# Blocks commits whose Japanese pages break the yomiyasu rules. Enable with: git config core.hooksPath .githooks
+# Blocks commits whose Japanese pages break the yomiyasu rules, or that publish internal information.
+# Enable with: git config core.hooksPath .githooks
+top=$(git rev-parse --show-toplevel) || exit 0
+if [ -f "$top/.claude/hooks/disclosure-gate.py" ]; then
+  python3 "$top/.claude/hooks/disclosure-gate.py" --staged || exit 1
+fi
 PAGE='\.html$|^scripts/(guides|seo|vendor)/|^scripts/check-yomiyasu|^scripts/yomiyasu-baseline'
 git diff --cached --name-only | grep -qE "$PAGE" || exit 0
-bash "$(git rev-parse --show-toplevel)/scripts/check-yomiyasu-staged.sh" || exit 1
+bash "$top/scripts/check-yomiyasu-staged.sh" || exit 1
 exit 0

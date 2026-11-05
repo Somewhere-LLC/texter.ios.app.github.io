@@ -2,6 +2,7 @@
 .claude/*
 !.claude/settings.json
 !.claude/hooks/
+!.claude/rules/
 
 # OS generated files
 .DS_Store

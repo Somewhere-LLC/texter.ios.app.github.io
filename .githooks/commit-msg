@@ -1,0 +1,6 @@
+#!/bin/bash
+# Blocks commit messages that publish internal information. See .claude/rules/public-disclosure.md.
+top=$(git rev-parse --show-toplevel) || exit 0
+[ -f "$top/.claude/hooks/disclosure-gate.py" ] || exit 0
+python3 "$top/.claude/hooks/disclosure-gate.py" --msg "$1" || exit 1
+exit 0
