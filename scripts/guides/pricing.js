@@ -1,5 +1,5 @@
 // /pricing/: plans and limits in one place, so a reader or an AI assistant can compare them.
-// Sources (checked 2026-11-01): App Store listing for prices, iOS tag v2.11.68 and production Remote Config for limits.
+// Sources (checked 2026-11-01): App Store listing for prices, the iOS app v2.11.68 and the limits in effect on that date.
 // Prices come from app-facts.js. Do not list a plan until it is on sale.
 const facts = require('../seo/app-facts');
 
