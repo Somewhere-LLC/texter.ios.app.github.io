@@ -7,7 +7,7 @@ const ORDER = [
   { id: 'speakers', ja: '話者識別・言語・翻訳', en: 'Speakers, languages, and translation', items: ['speaker-diarization', 'languages', 'translate-how'] },
   { id: 'image', ja: '画像とPDF', en: 'Images and PDFs', items: ['ocr-how', 'ocr-accuracy'] },
   { id: 'ai', ja: '要約・タスク・AIチャット', en: 'Summaries, tasks, and AI chat', items: ['summary', 'action-items', 'ask-notes', 'topic-map', 'ai-title'] },
-  { id: 'manage', ja: 'ノートの管理と共有', en: 'Managing and sharing notes', items: ['folders', 'export', 'slack', 'reminder', 'display', 'subtitle-off'] },
+  { id: 'manage', ja: 'ノートの管理と共有', en: 'Managing and sharing notes', items: ['folders', 'export', 'share-choice', 'slack', 'reminder', 'display', 'subtitle-off'] },
   { id: 'premium', ja: '料金・Premium・支払い', en: 'Pricing, Premium, and billing', items: ['price', 'free-limits', 'premium-what', 'platform-diff', 'charge', 'restore', 'billing', 'cancel', 'business'] },
   { id: 'privacy', ja: 'プライバシー・データの扱い', en: 'Privacy and your data', items: ['storage', 'data-sent', 'ai-training'] },
   { id: 'support', ja: '困ったとき', en: 'Troubleshooting and contact', items: ['not-suited', 'voice-permission', 'contact'] },
@@ -15,6 +15,10 @@ const ORDER = [
 
 const OVERRIDES = {
   ja: {
+    'action-items': { q: '会議のタスク（アクションアイテム）を抜き出せますか？',
+      a: '<p>できます。要約を作ると、ノートの「やること」欄に、作業と担当と期限が並びます。通知を登録するボタンは、項目の右のアイコンです。期限が日時として読めないときは、通知の日時を自分で入れてください。</p><p>通知が届くのは、操作したiPhoneだけです。担当者の名前があっても、その人には届きません。Apple純正の「リマインダー」アプリにも登録されません。iPhone版で確かめた内容です。公開された会議で試した結果と手順は、<a href="/guides/iphone-meeting-action-items-reminder/">会議のやることから通知を設定する方法</a>をご覧ください。</p>' },
+    'share-choice': { q: '同期、公開リンク、書き出しはどう使い分けますか？',
+      a: '<p>やりたいことに合わせて選んでください。</p><ul><li>自分の別の端末でノートを使いたいときは、Premiumのクラウド同期を使います。サインインして同期を始めると、同じアカウントの端末でノートを使えます。録音などの原本は同期しません</li><li>相手にURLを渡して読んでもらいたいときは、公開リンクを使います。ノートの右上のメニューの「エクスポート」にある「公開リンクを作成」で作ります。相手はブラウザで読めるので、アプリは要りません</li><li>文書として保存したり提出したりしたいときは、PDFやテキストに書き出します。同じ「エクスポート」から選びます</li></ul><p>iPhone版で公開リンクを試したところ、相手のページには題、要約（ノートの上部の「内容のまとめ」の文）、文字起こしが表示されました。音声とやることの欄はありませんでした。リンクを知っている人なら誰でも読めますが、検索エンジンには表示されません。同じメニューの「公開リンクを管理」にある「公開を取り消す」を押すと、同じリンクは「このノートは共有されていません」と表示されます。すでに見た人がコピーした内容は消せません。画面は<a href="/guides/iphone-meeting-action-items-reminder/#share">会議のやることのガイド</a>に載せています。</p>' },
     'platform-diff': { q: 'iPhoneとAndroidで使える機能は違いますか？',
       a: '<p>違いがあります。音声入力キーボード、Apple Watchでの録音、追加チャージはiPhone版の機能です。文字起こしチケットは両方で使えます。Whisperの無料枠も別です。詳しくは<a href="/pricing/#android">料金と利用条件</a>をご覧ください。</p>' },
     'not-suited': { q: 'Texterが向いていないのはどんな使い方ですか？',
@@ -53,6 +57,10 @@ const OVERRIDES = {
       a: '<p>要約、内容まとめ、タスク抽出、AIチャットでは、ノートのテキストをOpenAIのAPIに送信して結果を生成します。OpenAI APIのデータ利用ポリシーにもとづき、送信したデータはOpenAIのモデル学習には使われません。</p>' },
   },
   en: {
+    'action-items': { q: 'Can Texter pull action items out of a meeting?',
+      a: '<p>Yes. When you create a summary, the To-Dos section of the note lists each task with its owner and due date. Tap the icon to the right of an item to schedule a notification on that iPhone. If the due date cannot be read as a date and time, set the time yourself.</p><p>The notification goes only to the iPhone you used. Listing an owner does not notify that person, and nothing is added to the Apple Reminders app. The step-by-step guide is in Japanese: <a href="/guides/iphone-meeting-action-items-reminder/">setting notifications from meeting to-dos</a>.</p>' },
+    'share-choice': { q: 'Should I use sync, a public link, or export?',
+      a: '<p>Choose by what you want to do.</p><ul><li>Use your notes on your other devices: Premium cloud sync. Sign in and start sync to use your notes on devices with the same account. Original recordings are not synced</li><li>Let someone read a note from a URL: a public link. Open the menu at the top right of the note and choose Create Public Link under Export. The reader does not need the app</li><li>Keep or submit a document: export to PDF or text from the same Export menu</li></ul><p>In our test, the public page showed the title, the summary, and the transcript, with no audio and no to-do list. Anyone with the link can read it, but search engines do not list it. After Revoke Public Link, the same link shows that the note is no longer shared. Copies that someone already made cannot be removed.</p>' },
     'platform-diff': { q: 'Do iPhone and Android have the same features?',
       a: '<p>No. The voice keyboard, Apple Watch recording, and Add More Usage are on iPhone only. Transcription tickets are available on both. The free Whisper allowance also differs.</p>' },
     'not-suited': { q: 'What is Texter not suited for?',

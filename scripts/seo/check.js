@@ -166,7 +166,7 @@ function run(files, { stale = true } = {}) {
   return errors;
 }
 
-const files = Object.fromEntries(['index.html', 'en/index.html', 'faq/index.html', 'en/faq/index.html', 'guides/index.html', 'guides/ai-minutes/index.html', 'guides/multi-speaker-meeting-minutes/index.html', 'guides/video-subtitles/index.html', 'guides/iphone-side-button-recording/index.html', 'guides/iphone-pip-transcription/index.html', 'guides/iphone-subtitled-video/index.html', 'guides/iphone-search-past-recordings/index.html', 'guides/iphone-voice-memos-vs-texter/index.html', 'guides/iphone-offline-transcription/index.html', 'pricing/index.html', 'sitemap.xml', 'robots.txt'].map((f) => [f, read(f)]));
+const files = Object.fromEntries(['index.html', 'en/index.html', 'faq/index.html', 'en/faq/index.html', 'guides/index.html', 'guides/ai-minutes/index.html', 'guides/iphone-meeting-action-items-reminder/index.html', 'guides/multi-speaker-meeting-minutes/index.html', 'guides/video-subtitles/index.html', 'guides/iphone-side-button-recording/index.html', 'guides/iphone-pip-transcription/index.html', 'guides/iphone-subtitled-video/index.html', 'guides/iphone-search-past-recordings/index.html', 'guides/iphone-voice-memos-vs-texter/index.html', 'guides/iphone-offline-transcription/index.html', 'pricing/index.html', 'sitemap.xml', 'robots.txt'].map((f) => [f, read(f)]));
 const errors = run(files);
 errors.forEach((e) => console.error('NG', e));
 if (errors.length) process.exit(1);

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HDB32BHHL8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HDB32BHHL8', { 'cookie_flags': 'SameSite=None;Secure' });
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>会議のやることを抽出し、iPhoneで通知を設定する方法｜担当と期限の確認から通知まで</title>
+<meta name="description" content="Texterが会議から抽出した「やること」を確認し、iPhoneに通知を設定するまでの手順です。公開された会議で試した5件の確認結果、届いた通知、担当者には通知が届かないこと、公開リンクで相手に見える内容を載せています。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://texter.work/guides/iphone-meeting-action-items-reminder/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://texter.work/guides/iphone-meeting-action-items-reminder/">
+<meta property="og:title" content="会議のやることを抽出し、iPhoneで通知を設定する方法｜担当と期限の確認から通知まで">
+<meta property="og:description" content="Texterが会議から抽出した「やること」を確認し、iPhoneに通知を設定するまでの手順です。公開された会議で試した5件の確認結果、届いた通知、担当者には通知が届かないこと、公開リンクで相手に見える内容を載せています。">
+<meta property="og:site_name" content="Texter">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://texter.work/img/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="会議のやることを抽出し、iPhoneで通知を設定する方法｜担当と期限の確認から通知まで">
+<meta name="twitter:description" content="Texterが会議から抽出した「やること」を確認し、iPhoneに通知を設定するまでの手順です。公開された会議で試した5件の確認結果、届いた通知、担当者には通知が届かないこと、公開リンクで相手に見える内容を載せています。">
+<meta name="twitter:image" content="https://texter.work/img/ogp.png">
+<meta name="apple-itunes-app" content="app-id=1482592304">
+<link rel="icon" href="/assets/favicon/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v=2">
+<link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png?v=2">
+<meta name="theme-color" content="#EDF4FF">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://texter.work/guides/iphone-meeting-action-items-reminder/#article",
+      "headline": "会議のやることを抽出し、iPhoneで通知を設定する方法",
+      "description": "Texterが会議から抽出した「やること」を確認し、iPhoneに通知を設定するまでの手順です。公開された会議で試した5件の確認結果、届いた通知、担当者には通知が届かないこと、公開リンクで相手に見える内容を載せています。",
+      "url": "https://texter.work/guides/iphone-meeting-action-items-reminder/",
+      "inLanguage": "ja",
+      "datePublished": "2026-11-05",
+      "dateModified": "2026-11-05",
+      "image": "https://texter.work/assets/guides/meeting-tasks/04-lock.webp",
+      "isPartOf": {
+        "@id": "https://texter.work/#website"
+      },
+      "about": {
+        "@id": "https://texter.work/#app"
+      },
+      "publisher": {
+        "@id": "https://texter.work/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://texter.work/guides/iphone-meeting-action-items-reminder/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Texter",
+          "item": "https://texter.work/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "活用ガイド",
+          "item": "https://texter.work/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "会議のやることから通知を設定する方法",
+          "item": "https://texter.work/guides/iphone-meeting-action-items-reminder/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{--accent:#6482FA;--deep:#5460D6;--navy:#17255A;--text:#444444;--sub:#5F6170;--line:rgba(23,37,90,.12);--card:#FFFFFF;--grad-a:#EDF4FF;--grad-b:#D6E4FC;
+  --f-jp:-apple-system,BlinkMacSystemFont,"SF Pro JP","Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;--f-mono:ui-monospace,Menlo,monospace;color-scheme:light}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:80px}
+body{margin:0;color:var(--text);font-family:var(--f-jp);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased;background:linear-gradient(180deg,var(--grad-a) 0%,var(--grad-b) 100%) fixed,var(--grad-b)}
+a{color:var(--deep)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip{position:fixed;left:12px;top:-60px;z-index:100;background:var(--navy);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+.skip:focus{top:12px}
+.wrap{max-width:760px;margin-inline:auto;padding-inline:20px}
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:18px;color:var(--navy)}
+.brand img{width:28px;height:28px;border-radius:7px}
+.nav ul{display:flex;gap:4px;margin:0;padding:0;list-style:none}
+.nav ul a{display:block;padding:8px 10px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;color:var(--text);white-space:nowrap}
+.crumbs{margin:28px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px;font-size:13px;color:var(--sub)}
+.crumbs li+li::before{content:"/";margin-right:6px}
+.crumbs a{color:var(--sub)}
+h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.6rem);line-height:1.25;font-weight:900}
+.lead{margin:16px 0 0}
+.meta{margin:10px 0 0;font-size:13px;color:var(--sub)}
+.toc{margin:28px 0 0;padding:18px 20px;background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:14px}
+.toc h2{margin:0;font-size:13px;color:var(--sub);font-weight:600}
+.toc ul{margin:8px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 18px}
+.toc a{font-size:15px;font-weight:500}
+.sec{margin-top:48px}
+.sec>h2{margin:0;padding-top:12px;border-top:1.5px solid var(--navy);color:var(--navy);font-size:clamp(1.3rem,3vw,1.6rem);line-height:1.4}
+.sec h3{margin:24px 0 0;color:var(--navy);font-size:17px;line-height:1.6}
+.sec p,.sec ul,.sec ol{margin:12px 0 0}
+.sec ul,.sec ol{padding-left:1.3em}
+.compare{width:100%;margin-top:16px;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;font-size:15px}
+.compare th,.compare td{padding:12px 14px;border:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.65}
+.compare thead th{background:#F2F5FD;color:var(--navy)}
+.compare caption{padding:8px 0;text-align:left;font-size:14px;color:var(--sub)}
+.scroll{overflow-x:auto;margin-top:12px}
+.scroll .compare{margin-top:0}
+.plans{min-width:680px}
+.plans tbody th{min-width:128px}
+.plans th:first-child{position:sticky;left:0;background:#fff;z-index:1}
+.plans thead th:first-child{background:#F2F5FD}
+.sec article{margin-top:18px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.sec article h3{margin:0}
+.doc{margin-top:12px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.doc p:first-child{margin-top:0}
+.steps{list-style:none;padding:0!important;counter-reset:s}
+.steps>li{counter-increment:s;margin-top:32px;padding:20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.steps>li>h3{margin:0}
+.steps>li>h3::before{content:counter(s) ". "}
+.shot{display:inline-block;width:min(46%,260px);margin:16px 10px 0 0;vertical-align:top}
+.shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:14px}
+.shot figcaption{margin-top:6px;font-size:13px;line-height:1.5;color:var(--sub)}
+.demo{margin:16px 0 0;max-width:300px}
+.demo.land{max-width:none}
+.demo video{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);background:#fff}
+.sample{display:block;width:100%;height:auto;margin-top:16px;border-radius:14px;background:#000}
+.note{font-size:14px}
+.raw{margin-top:14px}
+.raw summary{cursor:pointer;font-weight:600;color:var(--navy)}
+.code{margin:12px 0 0;padding:16px;overflow-x:auto;background:var(--navy);color:#fff;border-radius:12px;font:14px/1.7 var(--f-mono);white-space:pre-wrap;overflow-wrap:anywhere}
+.facts{display:grid;grid-template-columns:8em 1fr;gap:8px 12px;margin:16px 0 0;font-size:15px}
+.facts dt{font-weight:600;color:var(--navy)}
+.facts dd{margin:0}
+.cards{display:grid;gap:14px;margin:28px 0 0}
+.card{display:block;padding:20px 22px;background:var(--card);border:1px solid var(--line);border-radius:14px;text-decoration:none;color:var(--text)}
+.card strong{display:block;color:var(--navy);font-size:18px}
+.card span{display:block;margin-top:6px;font-size:15px}
+.cta{margin:56px 0 0;padding:28px 22px;background:var(--navy);color:#fff;border-radius:18px}
+.cta h2{margin:0;font-size:22px;line-height:1.4}
+.cta p{margin:8px 0 0;color:rgba(255,255,255,.85);font-size:15px}
+.cta .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.cta.inline{margin:32px 0 0;padding:20px 22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 20px;text-align:center;line-height:1.4;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px}
+.btn-solid{background:#fff;color:var(--navy)}
+.btn-line{color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)}
+footer{margin-top:64px;padding:28px 0 40px;border-top:1px solid var(--line);font-size:13px;color:var(--sub)}
+footer ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 16px}
+footer a{color:var(--sub)}
+footer p{margin:12px 0 0}
+@media (max-width:400px){.nav ul .opt{display:none}}
+@media (max-width:560px){.nav ul a{padding:8px 5px;font-size:13px}.shot{width:calc(50% - 8px);margin-right:6px}.shot.wide{width:100%;max-width:320px;margin-right:0}.steps>li{padding:16px}.facts{grid-template-columns:1fr}.facts dd{margin-bottom:8px}.compare{font-size:14px}.compare th,.compare td{padding:10px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/"><img src="/img/appicon.png" alt="" width="28" height="28">Texter</a>
+  <nav aria-label="メイン"><ul><li class="opt"><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金</a></li><li><a href="/faq/">よくある質問</a></li></ul></nav>
+</div></header>
+<main id="main" class="wrap">
+<nav aria-label="パンくずリスト"><ol class="crumbs"><li><a href="/">Texter</a></li><li><a href="/guides/">活用ガイド</a></li><li aria-current="page">会議のやることから通知を設定する方法</li></ol></nav>
+<h1>会議のやることを抽出し、iPhoneで通知を設定する方法</h1>
+<p class="lead">公開された15分44秒の会議をTexterで文字起こしし、抽出された「やること」から通知を設定しました。担当と期限を人が確かめた結果、実際に届いた通知、通知が届く範囲を、画面と一緒に説明します。</p>
+<p class="meta">検証日 <time datetime="2026-11-05">2026-11-05</time></p>
+<nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul><li><a href="#summary">結論</a></li><li><a href="#result">抽出されたやることと、人が確かめた結果</a></li><li><a href="#steps">通知を設定する手順</a></li><li><a href="#set-all">「すべて設定」を押したときの動き</a></li><li><a href="#who">通知が届く範囲</a></li><li><a href="#share">担当者に内容を渡すとき</a></li><li><a href="#notes">始める前の注意</a></li><li><a href="#next">関連するガイド</a></li><li><a href="#method">検証の条件</a></li></ul></nav>
+<section class="sec" id="summary" aria-labelledby="summary-h"><h2 id="summary-h">結論</h2>
+      <p>要約を作ると、ノートの「やること」欄に、作業と担当と期限が並びます。項目の右のアイコンを押すと、その項目の通知が登録されます。登録された日時を確かめてから使ってください。今回は、期限が「今から」の項目が、その日の12:00に通知予定と表示されました。確かめたのは22:59で、12:00はもう過ぎていました。</p>
+      <p>通知が届くのは、操作したiPhoneだけです。担当者の名前が表示されていても、その人には届きません。Apple純正の「リマインダー」アプリにも登録されませんでした。担当者に伝えるときは、内容を直してから、メールやチャットで送ってください。</p>
+      <p>抽出された5件のうち4件は、会議の取りまとめと一致しました。1件には、結論に無い内容が混ざっていました。やることの文、担当、期限は、アプリの中では書き換えられません。項目を一覧から消すこともできませんでした。直した内容は、議事録の側に書いてください。</p></section>
+<section class="sec" id="result" aria-labelledby="result-h"><h2 id="result-h">抽出されたやることと、人が確かめた結果</h2>
+      <p>こども家庭庁が公開している会議の録画を取り込み、要約を作りました。「やること」欄に並んだのは5件です。各項目を、公開されている議事録と取りまとめのコメントと照らし合わせました。</p>
+      <figure class="shot"><a href="/assets/guides/meeting-tasks/01-tasks.webp"><img src="/assets/guides/meeting-tasks/01-tasks.webp" alt="やること欄に5件が並び、各項目に担当と期限が表示されている" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>「やること」欄</figcaption></figure>
+      <div class="scroll"><table class="compare"><thead><tr><th scope="col">やること（抜粋）</th><th scope="col">担当・期限の表示</th><th scope="col">議事録と照らし合わせた結果</th></tr></thead><tbody>
+        <tr><th scope="row">各省庁の自走化に向けて支援を強化する</th><td>こども家庭庁・今から</td><td>取りまとめと一致。説明したのは総合政策担当。期限は「今から」で、日付は決まっていない</td></tr>
+        <tr><th scope="row">「意見プラス」の情報発信にホームページを活用する</th><td>こども家庭庁・表示なし</td><td>取りまとめと一致。取りまとめにも期限は書かれていない</td></tr>
+        <tr><th scope="row">民間主体の運営体制に向けて論点整理と議論を進める</th><td>こども家庭庁・令和８年度より</td><td>取りまとめと一致。期限は年度で、通知の日時にはならない</td></tr>
+        <tr><th scope="row">関係団体へのヒアリングなどを行う</th><td>こども家庭庁・次年度以降</td><td>取りまとめと一致。期限は年度で、通知の日時にはならない</td></tr>
+        <tr><th scope="row">SNS発信から既存サイトへ誘導する方法を検討する</th><td>担当部局・今後</td><td>一部が違う。取りまとめの結論は、全国フォーラムを終えて既存サイトへ誘導すること。SNS発信は、担当課の説明にあった内容</td></tr>
+      </tbody></table></div>
+      <p>担当は、5件とも組織の名前でした。議事録では、上の4件の事業は総合政策担当が、5件目は母子保健課が説明しています。課の名前で管理するなら、議事録の側で書き直してください。</p>
+      <p>取りまとめには、やることとして読める文がほかにもありました。「意見プラス」の認知を学校の活用などで広げること、見直した後も効果を検証することです。この2つは、一覧に入りませんでした。抜けが無いかは、取りまとめや結論の文と照らして確かめてください。</p>
+      <p class="note">出典: こども家庭庁「令和８年度 行政事業レビュー 公開プロセス」の議事録、取りまとめコメント、議題4の録画（<a href="https://www.cfa.go.jp/project-review/2026">資料と議事録</a>、<a href="https://www.youtube.com/watch?v=fPigAILJGWI">録画</a>）。Texter運営が録画の音声をTexterで文字起こしし、出力を議事録と照らし合わせて作成しました。議事録と取りまとめの文言は、一部を抜粋し、要約しています。</p></section><aside class="cta inline" aria-label="アプリで試す"><p>無料で始められます。無料版の文字起こしには上限があり、要約は1日3回までです。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-meeting-tasks-after-result&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-meeting-tasks-after-result" data-store="app_store">iPhoneで会議のやることを通知する（App Store）</a></div></aside>
+<section class="sec" id="steps" aria-labelledby="steps-h"><h2 id="steps-h">通知を設定する手順</h2>
+      <ol class="steps">
+        <li><h3>「やること」欄を開く</h3><p>会議のノートを開き、画面を下へスクロールします。ノートの上部の「内容のまとめ」より下に、「やること」欄があります。要約をまだ作っていないノートには表示されません。録音から要約までの手順は<a href="/guides/ai-minutes/">議事録のガイド</a>をご覧ください。</p></li>
+        <li><h3>担当と期限を確かめる</h3><p>各項目の下に、担当が灰色の枠で、期限が薄い文字で表示されます。上の表のように、議事録と照らして確かめてください。項目を長押しすると「この項目を報告」が出ます。文や担当を書き換えるメニューはありませんでした。</p><figure class="shot"><a href="/assets/guides/meeting-tasks/07-report.webp"><img src="/assets/guides/meeting-tasks/07-report.webp" alt="項目を長押しすると「この項目を報告」だけが表示される" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>長押しのメニュー</figcaption></figure></li>
+        <li><h3>項目の右のアイコンを押す</h3><p>初めて押したときは、通知を許可するかを聞かれます。「許可」を選んでください。期限が「今から」の1件目は、押しただけで「2026/11/05 12:00に通知予定」と表示されました。過ぎた日時でも、確認の画面は出ずに登録されました。過ぎた日時のままで通知が届くかは、確かめていません。次の手順で日時を直してください。</p><figure class="shot"><a href="/assets/guides/meeting-tasks/02-registered.webp"><img src="/assets/guides/meeting-tasks/02-registered.webp" alt="1件目に緑のチェックが付き、2026/11/05 12:00に通知予定と表示されている" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>登録された直後の表示</figcaption></figure></li>
+        <li><h3>鉛筆のアイコンで日時を直す</h3><p>「通知日時を設定」の画面が開きます。やることの文、担当、期限は表示されるだけで、変えられるのは「通知日時」だけです。日付と時刻を選んで「保存」を押します。今回は23:04に直しました。</p><figure class="shot"><a href="/assets/guides/meeting-tasks/03-edit-time.webp"><img src="/assets/guides/meeting-tasks/03-edit-time.webp" alt="通知日時を設定の画面。通知日時は2026/11/05の午後11:04で、下にリマインダーを削除のボタンがある" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>「通知日時を設定」の画面</figcaption></figure></li>
+        <li><h3>通知を受け取る</h3><p>23:04に、iPhoneに通知が届きました。1行目はやることの文、2行目は「期限: 今から」です。ロック画面にも同じ通知が残りました。</p><figure class="shot wide"><a href="/assets/guides/meeting-tasks/05-banner.webp"><img src="/assets/guides/meeting-tasks/05-banner.webp" alt="画面の上に、やることの文と「期限: 今から」の通知が表示されている" width="600" height="117" loading="lazy" decoding="async"></a><figcaption>届いた通知</figcaption></figure><figure class="shot"><a href="/assets/guides/meeting-tasks/04-lock.webp"><img src="/assets/guides/meeting-tasks/04-lock.webp" alt="ロック画面の11:04の表示の下に、やることの通知が残っている" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>ロック画面の通知</figcaption></figure></li>
+        <li><h3>要らない通知を外す</h3><p>結論と違う項目や、二重に管理したくない項目は、鉛筆のアイコンから「リマインダーを削除」を押します。通知の登録だけが消え、項目は一覧に残ります。今回は5件目の通知を外しました。項目そのものを一覧から消すメニューは、見つかりませんでした。長押しの「この項目を報告」を押した後の動きは、試していません。</p></li>
+      </ol></section><aside class="cta inline" aria-label="アプリで試す"><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-meeting-tasks-after-steps&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-meeting-tasks-after-steps" data-store="app_store">iPhoneで会議のやることを通知する（App Store）</a></div></aside>
+<section class="sec" id="set-all" aria-labelledby="set-all-h"><h2 id="set-all-h">「すべて設定」を押したときの動き</h2>
+      <p>欄の右上の「すべて設定」を押すと、残りの4件がまとめて登録されました。4件とも「通知日時未設定」と表示されました。通知の日時が決まっていないので、このままでは鳴る日時がありません。期限が「令和８年度より」「今後」のように日時にならない項目は、鉛筆のアイコンから日時を入れてください。</p>
+      <p>先に登録した1件目は、23:04の登録のまま変わりませんでした。同じ項目が二重に登録されることはありませんでした。日時が未設定の項目の画面を開くと、通知日時には翌日の9:00が入っていました。ここで「保存」を押した場合の動きは、試していません。</p>
+      <figure class="shot"><a href="/assets/guides/meeting-tasks/06-set-all.webp"><img src="/assets/guides/meeting-tasks/06-set-all.webp" alt="1件目は23:04に通知予定、残りの4件は通知日時未設定と表示されている" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>「すべて設定」の後</figcaption></figure></section>
+<section class="sec" id="who" aria-labelledby="who-h"><h2 id="who-h">通知が届く範囲</h2>
+      <ul>
+        <li>通知は、操作したiPhoneにだけ届きます。担当者の名前があっても、その人のiPhoneには送られません。アプリのコードでも確認しました</li>
+        <li>Apple純正の「リマインダー」アプリには登録されませんでした。通知の登録の後に開くと、「リマインダーなし」と表示されました。「リマインダー」へのアクセスの許可も求められませんでした</li>
+        <li>コードで確認した範囲では、やることの通知は1回だけ鳴ります。繰り返しや、あとでもう一度知らせる設定はありません。ノート全体の通知は、ノートの上部のベルから設定でき、繰り返しも選べます（<a href="/faq/#reminder">よくある質問</a>）</li>
+        <li>届いた通知を押したときに開く画面は、確かめていません</li>
+      </ul></section>
+<section class="sec" id="share" aria-labelledby="share-h"><h2 id="share-h">担当者に内容を渡すとき</h2>
+      <p>担当者に知らせるときは、直したやることを、メールやチャットで送ってください。ノートの公開リンクを使うと、相手はアプリが無くても、ブラウザでノートを読めます。ただし、公開リンクのページに、やることの欄はありません。</p>
+      <p>ノートの右上のメニューから、「エクスポート」の「公開リンクを作成」を押します。確認の画面には、リンクを知っている人なら誰でも読めること、検索エンジンには表示されないことが書かれています。「公開」を押すと、リンクが作られました。公開リンクを作ると、ノートの文がサーバーへ送られます（<a href="/faq/#data-sent">データの扱い</a>）。</p>
+      <figure class="shot"><a href="/assets/guides/meeting-tasks/08-link-confirm.webp"><img src="/assets/guides/meeting-tasks/08-link-confirm.webp" alt="公開リンクを作成しますか、の確認画面。公開、次回から確認せず公開、キャンセルのボタンがある" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>公開の前の確認</figcaption></figure>
+      <p>リンクを作った後は、同じメニューの項目が「公開リンクを管理」に変わります。ここから、リンクのコピー、共有、取り消しができます。下の画像では、リンクの文字をぼかしました。</p>
+      <figure class="shot"><a href="/assets/guides/meeting-tasks/09-link-manage.webp"><img src="/assets/guides/meeting-tasks/09-link-manage.webp" alt="リンクをコピー、リンクを共有、公開を取り消すのボタンが並ぶ。上のリンクはぼかしてある" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>「公開リンクを管理」の画面</figcaption></figure>
+      <p>iPhoneのSafariで開くと、題、要約、文字起こしの順に表示されました。要約は、ノートの上部の「内容のまとめ」の欄と同じ文です。本文の下にある「内容まとめ」のタブとは別のものです。音声と、やることの欄はありません。アプリで付けた話者の名前も、文字起こしには表示されませんでした。最後に「Texterで自分のノートを作る」のボタンと、「Texter で作成」「このページを報告する」のリンクがあります。</p>
+      <figure class="shot wide"><a href="/assets/guides/meeting-tasks/10-web-top.webp"><img src="/assets/guides/meeting-tasks/10-web-top.webp" alt="公開リンクのページの上部。Texterのノートという表示、題、要約の文が並ぶ" width="600" height="1073" loading="lazy" decoding="async"></a><figcaption>相手に見えるページの上部</figcaption></figure>
+      <figure class="shot wide"><a href="/assets/guides/meeting-tasks/11-web-bottom.webp"><img src="/assets/guides/meeting-tasks/11-web-bottom.webp" alt="ページの最後。文字起こしの終わりと、Texterで自分のノートを作るのボタン" width="600" height="1073" loading="lazy" decoding="async"></a><figcaption>ページの最後</figcaption></figure>
+      <p>「公開を取り消す」を押すと、確認の画面が出ます。取り消した後に同じリンクを開くと、「このノートは共有されていません」「このリンクは無効か、共有が取り消されました。」と表示されました。取り消しても、すでに見た人がコピーした内容は消せません。</p>
+      <figure class="shot wide"><a href="/assets/guides/meeting-tasks/12-web-revoked.webp"><img src="/assets/guides/meeting-tasks/12-web-revoked.webp" alt="このノートは共有されていません、と表示されたページ" width="600" height="496" loading="lazy" decoding="async"></a><figcaption>取り消した後のページ</figcaption></figure>
+      <p>同期、公開リンク、書き出しの使い分けは、<a href="/faq/#share-choice">よくある質問</a>にまとめています。</p></section>
+<section class="sec" id="notes" aria-labelledby="notes-h"><h2 id="notes-h">始める前の注意</h2>
+      <ul>
+        <li>やることの文、担当、期限は、要約と一緒にAIが作るものです。会議で決まっていない内容が入ることがあります。今回の5件目では、説明の中の話が結論に混ざりました</li>
+        <li>期限の言葉は、日時に読める場合だけ自動で通知の日時になります。登録された日時が過ぎていないか、毎回確かめてください</li>
+        <li>要約とやることを作るときは、ノートのテキストが外部のサービスへ送られます。詳しくは<a href="/faq/#data-sent">データの扱い</a>をご覧ください</li>
+        <li>向かない場面があります。会議の参加者全員に自動で通知を送りたいとき、Apple純正の「リマインダー」やカレンダーで管理したいときです。担当者への通知と「リマインダー」への登録は、どちらも行われませんでした。カレンダーへ登録する処理も、コードでは見つかりませんでした</li>
+      </ul></section>
+<section class="sec" id="next" aria-labelledby="next-h"><h2 id="next-h">関連するガイド</h2><p>録音から要約を作るまでは<a href="/guides/ai-minutes/">議事録のガイド</a>、発言者を分けるには<a href="/guides/multi-speaker-meeting-minutes/">複数人の会議のガイド</a>をご覧ください。</p></section>
+<section class="sec" id="method" aria-labelledby="method-h"><h2 id="method-h">検証の条件</h2>
+      <dl class="facts">
+        <dt>検証した人</dt><dd>Texter運営</dd>
+        <dt>検証日</dt><dd>2026-11-05</dd>
+        <dt>環境</dt><dd>iPhone 17 ProのSimulator（iOS 26.5）で動かした開発版のTexter（バージョン2.11.68）。やることと通知の処理が、公開中のバージョン2.11.71と同じであることを、コードで確認しました。公開リンクは、開発版の環境で作り、確認の後に取り消しました。</dd>
+        <dt>音声</dt><dd>こども家庭庁の公開プロセスの議題4の録画（15分44秒、5人）。<a href="/guides/ai-minutes/#public-meeting">議事録のガイド</a>で使ったものと同じノートです。</dd>
+        <dt>確かめたこと</dt><dd>やることの5件の内容、通知の許可、1件目の通知が23:04に届くこと、「すべて設定」の結果、通知の登録の削除、Apple純正の「リマインダー」アプリの表示、公開リンクのページと取り消し後の表示です。</dd>
+        <dt>確かめていないこと</dt><dd>実機のiPhoneでの動き、届いた通知を押したときの画面、過ぎた日時のままの通知、日時が未設定の項目に日時を保存した後の通知、別の端末での表示、公開中のバージョンで作った公開リンクのページです。</dd>
+      </dl></section>
+<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで試す</h2><p>Texterは、録音の文字起こしと要約から、やることの抽出と通知の設定までを行うアプリです。この手順はiPhone版のものです。無料で始められます。無料版の文字起こしには上限があり、要約は1日3回までです。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-meeting-tasks-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-meeting-tasks-end" data-store="app_store">iPhoneで会議のやることを通知する（App Store）</a></div></section>
+</main>
+<footer><div class="wrap">
+  <ul><li><a href="/">ホーム</a></li><li><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金と利用条件</a></li><li><a href="/faq/">よくある質問</a></li><li><a href="/terms-of-service/">利用規約</a></li><li><a href="/privacy-policy/">プライバシーポリシー</a></li><li><a href="/tokushoho/">特定商取引法に基づく表記</a></li></ul>
+  <p>© 2026 Texter app - Kyoto, Japan.</p>
+</div></footer>
+<script>
+(function(){
+  var send=function(name,el){if(window.gtag)gtag('event',name,{location:el.dataset.cta,store:el.dataset.store});};
+  var links=document.querySelectorAll('a[data-cta]');
+  links.forEach(function(a){
+    a.addEventListener('click',function(){send(a.dataset.store==='google_play'?'google_play_click':'app_store_click',a);});
+    if(!('IntersectionObserver' in window))return;
+    var seen=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){send('guide_cta_view',a);seen.disconnect();}});},{threshold:.5});
+    seen.observe(a);
+  });
+})();
+</script>
+</body>
+</html>
