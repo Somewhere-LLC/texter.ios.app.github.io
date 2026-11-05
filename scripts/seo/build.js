@@ -205,7 +205,7 @@ function render(lang) {
 <meta name="twitter:title" content="${esc(t.title)}">
 <meta name="twitter:description" content="${esc(t.description)}">
 <meta name="twitter:image" content="${SITE}${t.ogImage}">
-<meta name="apple-itunes-app" content="app-id=${facts.appStoreId}">
+<meta name="apple-itunes-app" content="app-id=${facts.appStoreId}, affiliate-data=pt=${facts.appStorePt}&amp;ct=${lang === 'ja' ? 'faq' : 'faq-en'}-banner">
 <link rel="icon" href="/assets/favicon/favicon.ico?v=2" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v=2">
 <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png?v=2">

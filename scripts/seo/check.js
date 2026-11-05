@@ -34,6 +34,8 @@ function jsonLd(html, file, errors) {
 const nodes = (blocks) => blocks.flatMap((b) => b['@graph'] || [b]);
 
 function checkLp(file, lang, html, errors) {
+  // Safari's Smart App Banner is built from this meta tag, so the campaign goes in affiliate-data.
+  if (!/<meta name="apple-itunes-app" content="app-id=\d+, affiliate-data=pt=\d+&amp;ct=[a-z0-9-]+">/.test(html)) errors.push(`${file}: Smart App Banner without campaign (affiliate-data)`);
   // App Store links carry the campaign (pt/ct) so App Store Connect can split downloads by page.
   for (const m of html.matchAll(/href="(https:\/\/apps\.apple\.com[^"]*)"/g)) if (!/[?]pt=\d+&amp;ct=[a-z0-9-]+&amp;mt=8$/.test(m[1])) errors.push(`${file}: App Store link without campaign (pt/ct): ${m[1]}`);
   if (!html.includes("'app_store_click'")) errors.push(`${file}: store clicks are not sent to GA4 (app_store_click)`);
@@ -72,6 +74,8 @@ function checkLp(file, lang, html, errors) {
 }
 
 function checkFaq(file, lang, html, errors) {
+  // Safari's Smart App Banner is built from this meta tag, so the campaign goes in affiliate-data.
+  if (!/<meta name="apple-itunes-app" content="app-id=\d+, affiliate-data=pt=\d+&amp;ct=[a-z0-9-]+">/.test(html)) errors.push(`${file}: Smart App Banner without campaign (affiliate-data)`);
   // App Store links carry the campaign (pt/ct) so App Store Connect can split downloads by page.
   for (const m of html.matchAll(/href="(https:\/\/apps\.apple\.com[^"]*)"/g)) if (!/[?]pt=\d+&amp;ct=[a-z0-9-]+&amp;mt=8$/.test(m[1])) errors.push(`${file}: App Store link without campaign (pt/ct): ${m[1]}`);
   if (!html.includes("'app_store_click'")) errors.push(`${file}: store clicks are not sent to GA4 (app_store_click)`);
@@ -175,6 +179,7 @@ if (process.argv.includes('--self-test')) {
     ['LP price changed', 'index.html', (s) => s.replaceAll('¥1,800', '¥2,000')],
     ['LP App Store link loses its campaign', 'index.html', (s) => s.replace('?pt=489812&amp;ct=lp&amp;mt=8"', '"')],
     ['FAQ App Store link loses its campaign', 'en/faq/index.html', (s) => s.replace('?pt=489812&amp;ct=faq-en&amp;mt=8"', '"')],
+    ['Smart App Banner loses its campaign', 'faq/index.html', (s) => s.replace(/, affiliate-data=[^"]*"/, '"')],
     ['LP store click tracking removed', 'index.html', (s) => s.replaceAll("'app_store_click'", "'x'")],
     ['FAQ store click tracking removed', 'faq/index.html', (s) => s.replaceAll("'app_store_click'", "'x'")],
     ['weekly plan back in LP JSON-LD', 'index.html', (s) => s.replace('"billingDuration": "P1M"', '"billingDuration": "P1W"')],
