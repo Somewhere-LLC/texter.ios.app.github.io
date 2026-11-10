@@ -2,7 +2,7 @@
   'use strict';
   function send(name, values) {
     if (location.hostname !== 'texter.work' || typeof window.gtag !== 'function') return;
-    window.gtag('event', name, values || {});
+    window.gtag('event', name, Object.assign({ lp_language: document.documentElement.lang }, values || {}));
   }
 
   send('interview_lp_view');

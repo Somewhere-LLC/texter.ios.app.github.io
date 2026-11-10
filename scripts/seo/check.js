@@ -121,6 +121,7 @@ function checkPricing(html, errors) {
 }
 
 function checkSite(files, errors) {
+  if (!files['sitemap.xml'].includes('https://texter.work/en/interview/<')) errors.push('sitemap: missing en/interview/');
   const sitemap = files['sitemap.xml'];
   for (const m of sitemap.matchAll(/<loc>https:\/\/texter\.work\/([^<]*)<\/loc>/g)) {
     const rel = m[1] === '' ? 'index.html' : `${m[1]}index.html`;
@@ -135,7 +136,7 @@ function checkSite(files, errors) {
     const canon = (html.match(/<link rel="canonical" href="([^"]+)"/) || [])[1];
     const expect = 'https://texter.work/' + rel.replace(/index\.html$/, '');
     if (canon !== expect) errors.push(`${rel}: canonical ${canon} != ${expect}`);
-    if (rel.startsWith('guides/') || rel.startsWith('pricing/') || rel.startsWith('interview/')) {
+    if (rel.startsWith('guides/') || rel.startsWith('pricing/')) {
       checkGuide(rel, html, errors);
       continue; // Guides exist in Japanese only, so they have no hreflang pairs.
     }
@@ -152,6 +153,40 @@ function checkSite(files, errors) {
   }
 }
 
+function checkInterview(html, errors) {
+  const file = 'en/interview/index.html';
+  jsonLd(html, file, errors);
+  if (html.includes('¥') || html.includes('apps.apple.com/jp/')) errors.push(`${file}: Japan-specific price or storefront`);
+  const content = html.match(/<script type="application\/json" id="interview-demo-content">([\s\S]*?)<\/script>/);
+  try {
+    const demo = JSON.parse(content ? content[1] : '');
+    for (const id of ['first', 'second', 'third']) {
+      const transcript = read(`assets/interview/en/${id}.txt`).trim();
+      if (!html.includes(transcript) || !transcript.includes(demo.sources[id].quote)) errors.push(`${file}: ${id} transcript does not match its source`);
+    }
+    for (const id of ['budget', 'change', 'access']) {
+      const example = demo.examples[id];
+      if (!example.answer || !example.sources.length) throw new Error(`missing example ${id}`);
+      for (const source of example.sources) {
+        if (!demo.sources[source]) throw new Error(`unknown source ${source}`);
+        const quote = (example.quotes || {})[source];
+        if (quote && !read(`assets/interview/en/${source}.txt`).includes(quote)) errors.push(`${file}: ${id} quote missing from transcript`);
+      }
+    }
+  } catch (e) {
+    errors.push(`${file}: invalid demo content (${e.message})`);
+  }
+  for (const match of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
+    const url = decode(match[1]);
+    if (/^(https?:|data:)/.test(url)) continue;
+    const [pathname, hash] = url.split('#');
+    const target = path.resolve(root, 'en/interview', pathname.split('?')[0] || 'index.html');
+    const resolved = target.endsWith('/') || !path.extname(target) ? path.join(target, 'index.html') : target;
+    if (!fs.existsSync(resolved)) { errors.push(`${file}: missing ${url}`); continue; }
+    if (hash && !read(path.relative(root, resolved)).includes(`id="${hash}"`)) errors.push(`${file}: missing anchor ${url}`);
+  }
+}
+
 function run(files, { stale = true } = {}) {
   const errors = [];
   if (stale) for (const [rel, content] of Object.entries(generate())) {
@@ -162,11 +197,12 @@ function run(files, { stale = true } = {}) {
   checkFaq('faq/index.html', 'ja', files['faq/index.html'], errors);
   checkFaq('en/faq/index.html', 'en', files['en/faq/index.html'], errors);
   checkPricing(files['pricing/index.html'], errors);
+  checkInterview(files['en/interview/index.html'], errors);
   checkSite(files, errors);
   return errors;
 }
 
-const files = Object.fromEntries(['index.html', 'en/index.html', 'faq/index.html', 'en/faq/index.html', 'guides/index.html', 'guides/ai-minutes/index.html', 'guides/iphone-meeting-action-items-reminder/index.html', 'guides/multi-speaker-meeting-minutes/index.html', 'guides/video-subtitles/index.html', 'guides/iphone-side-button-recording/index.html', 'guides/iphone-pip-transcription/index.html', 'guides/iphone-subtitled-video/index.html', 'guides/iphone-search-past-recordings/index.html', 'guides/iphone-voice-memos-vs-texter/index.html', 'guides/iphone-offline-transcription/index.html', 'pricing/index.html', 'interview/index.html', 'sitemap.xml', 'robots.txt'].map((f) => [f, read(f)]));
+const files = Object.fromEntries(['index.html', 'en/index.html', 'faq/index.html', 'en/faq/index.html', 'guides/index.html', 'guides/ai-minutes/index.html', 'guides/iphone-meeting-action-items-reminder/index.html', 'guides/multi-speaker-meeting-minutes/index.html', 'guides/video-subtitles/index.html', 'guides/iphone-side-button-recording/index.html', 'guides/iphone-pip-transcription/index.html', 'guides/iphone-subtitled-video/index.html', 'guides/iphone-search-past-recordings/index.html', 'guides/iphone-voice-memos-vs-texter/index.html', 'guides/iphone-offline-transcription/index.html', 'pricing/index.html', 'interview/index.html', 'en/interview/index.html', 'sitemap.xml', 'robots.txt'].map((f) => [f, read(f)]));
 const errors = run(files);
 errors.forEach((e) => console.error('NG', e));
 if (errors.length) process.exit(1);
@@ -202,6 +238,10 @@ if (process.argv.includes('--self-test')) {
     ['LP feature card with extra attributes', 'index.html', (s) => s.replace('<h3>ワードクラウド</h3>', '<h3>ワードクラウド</h3></article><article class="cell reveal" id="x"><h3>新機能</h3>')],
     ['LP feature card without a heading', 'index.html', (s) => s.replace('<h3>ワードクラウド</h3>', '<h3>ワードクラウド</h3></article><article class="cell"><p>見出しなし</p>')],
     ['hreflang points to a wrong page', 'en/faq/index.html', (s) => s.replace('hreflang="ja" href="https://texter.work/faq/"', 'hreflang="ja" href="https://texter.work/"')],
+    ['interview demo source changed', 'en/interview/index.html', (s) => s.replace('"quote":"We have budgeted five thousand dollars."', '"quote":"An unsupported statement."')],
+    ['interview audio missing', 'en/interview/index.html', (s) => s.replace('en/first.m4a', 'en/missing.m4a')],
+    ['interview anchor missing', 'en/interview/index.html', (s) => s.replace('../faq/#import', '../faq/#missing')],
+    ['interview hreflang missing', 'interview/index.html', (s) => s.replace('<link rel="alternate" hreflang="en" href="https://texter.work/en/interview/">', '')],
     ['yen price back on the English LP', 'en/index.html', (s) => s.replace('A weekly plan is also available.', 'A ¥600 weekly plan is available.')],
     ['yen price back in the English FAQ', 'en/faq/index.html', (s) => s.replace('comes in weekly, monthly, and yearly plans.', 'is ¥1,800 per month.')],
     ['generated page edited by hand', 'en/faq/index.html', (s) => s.replace('</footer>', '<p>hand edit</p></footer>')],

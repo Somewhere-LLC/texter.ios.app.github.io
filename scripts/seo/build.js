@@ -288,7 +288,7 @@ footer p{margin:12px 0 0}
   <p class="intro">${t.intro}</p>
   <p class="meta">${esc(t.updatedLabel)} <time datetime="${data.updated}">${data.updated}</time></p>
   <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">${esc(t.tocTitle)}</h2><ul>${toc}</ul></nav>
-${body}${lang === 'ja' ? '\n  <aside class="sec" aria-label="取材での活用"><h2>取材・インタビューに使いたい方へ</h2><p>文字起こしから内容の整理、過去の発言確認までの流れは、<a href="/interview/">取材向けの活用例と操作デモ</a>でご覧いただけます。</p></aside>' : ''}
+${body}${lang === 'ja' ? '\n  <aside class="sec" aria-label="取材での活用"><h2>取材・インタビューに使いたい方へ</h2><p>文字起こしから内容の整理、過去の発言確認までの流れは、<a href="/interview/">取材向けの活用例と操作デモ</a>でご覧いただけます。</p></aside>' : '\n  <aside class="sec" aria-label="Using Texter for interviews"><h2>Writing from interviews?</h2><p>From transcription to summaries and checking past statements, explore the <a href="/en/interview/">interview workflow and interactive demo</a>.</p></aside>'}
   <section class="cta" aria-labelledby="cta-h">
     <h2 id="cta-h">${esc(t.ctaTitle)}</h2>
     <p>${t.ctaBody}</p>

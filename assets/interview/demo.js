@@ -14,6 +14,12 @@
     access: { answer: '2回目は、記事の文字を大きくして読みやすさを確かめたいと話しています。3回目にも、文字の大きさや読みやすさを整えることに触れています。', sources: ['second', 'third'], quotes: { second: '記事の文字を大きくして、読みやすさも確かめたいです。' } }
   };
   var selected = 'budget';
+  var localized = document.getElementById('interview-demo-content');
+  var content = localized ? JSON.parse(localized.textContent) : null;
+  if (content) {
+    sources = content.sources;
+    examples = content.examples;
+  }
   var answer = document.getElementById('answer-text');
   var sourceList = document.getElementById('answer-sources');
   var buttons = demo.querySelectorAll('[data-question]');
@@ -39,7 +45,7 @@
     quote.textContent = (examples[selected].quotes || {})[id] || item.quote;
     var action = document.createElement('span');
     action.className = 'source-action';
-    action.textContent = '発言を開く ↗';
+    action.textContent = content ? content.action : '発言を開く ↗';
     link.append(meta, quote, action);
     return link;
   }
