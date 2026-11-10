@@ -226,7 +226,7 @@ function renderGuide(g) {
 <p class="lead">${g.lead}</p>
 <p class="meta">${esc(g.metaLabel || '検証日')} <time datetime="${g.metaDate || verified}">${g.metaDate || verified}</time></p>
 <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul>${g.sections.map((s) => `<li><a href="#${s.id}">${esc(s.title)}</a></li>`).join('')}</ul></nav>
-${sections}
+${sections}${g.slug === 'iphone-search-past-recordings' ? '\n<aside class="toc" aria-label="取材での活用"><h2>取材音声を、次の原稿に生かす</h2><p>取材の文字起こしから過去の発言の確認まで。<a href="/interview/">取材向けの使い方・操作デモ・料金</a>をご覧ください。</p></aside>' : ''}
 <section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">${esc(g.ctaTitle)}</h2><p>${esc(g.ctaBody)}${g.conditions || CONDITIONS}</p><div class="row">${appStoreLink(g, 'end')}${g.iosOnly ? '' : `<a class="btn btn-line" href="${facts.googlePlay}" target="_blank" rel="noopener noreferrer" data-cta="${g.store}-end" data-store="google_play">Google Playで見る</a>`}</div></section>`;
   return shell({ title: g.title, description: g.description, url, ld, body, ogType: 'article' });
 }
@@ -254,6 +254,7 @@ function renderIndex() {
   const body = `${crumbs(items)}
 <h1>${esc(index.h1)}</h1>
 <p class="lead">${esc(index.lead)}</p>
+<aside class="toc" aria-label="取材での活用"><h2>取材・インタビューに使いたい方へ</h2><p><a href="/interview/">文字起こしから引用確認までの使い方</a>を、取材版の操作デモと料金の選び方で紹介しています。</p></aside>
 <div class="cards">${guides.map((g) => `<a class="card" href="/guides/${g.slug}/"><strong>${esc(g.h1)}</strong><span>${esc(g.description)}</span></a>`).join('')}</div>`;
   return shell({ title: index.title, description: index.description, url, ld, body, ogType: 'website' });
 }
