@@ -136,6 +136,7 @@ function checkSite(files, errors) {
     const canon = (html.match(/<link rel="canonical" href="([^"]+)"/) || [])[1];
     const expect = 'https://texter.work/' + rel.replace(/index\.html$/, '');
     if (canon !== expect) errors.push(`${rel}: canonical ${canon} != ${expect}`);
+    if (rel === 'interview/index.html') checkGuide(rel, html, errors);
     if (rel.startsWith('guides/') || rel.startsWith('pricing/')) {
       checkGuide(rel, html, errors);
       continue; // Guides exist in Japanese only, so they have no hreflang pairs.
@@ -242,6 +243,7 @@ if (process.argv.includes('--self-test')) {
     ['interview audio missing', 'en/interview/index.html', (s) => s.replace('en/first.m4a', 'en/missing.m4a')],
     ['interview anchor missing', 'en/interview/index.html', (s) => s.replace('../faq/#import', '../faq/#missing')],
     ['interview hreflang missing', 'interview/index.html', (s) => s.replace('<link rel="alternate" hreflang="en" href="https://texter.work/en/interview/">', '')],
+    ['Japanese interview JSON-LD broken', 'interview/index.html', (s) => s.replace('"@type":"WebPage"', '"@type":"WebPage",,')],
     ['yen price back on the English LP', 'en/index.html', (s) => s.replace('A weekly plan is also available.', 'A ¥600 weekly plan is available.')],
     ['yen price back in the English FAQ', 'en/faq/index.html', (s) => s.replace('comes in weekly, monthly, and yearly plans.', 'is ¥1,800 per month.')],
     ['generated page edited by hand', 'en/faq/index.html', (s) => s.replace('</footer>', '<p>hand edit</p></footer>')],
