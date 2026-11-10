@@ -305,6 +305,7 @@ function renderPricing() {
 <h1>${esc(p.h1)}</h1>
 <p class="lead">${esc(p.lead)}</p>
 <p class="meta">確認日 <time datetime="${pricing.CHECKED}">${pricing.CHECKED}</time>（Texter運営）</p>
+<aside class="toc" aria-label="取材での活用"><h2>取材に使うなら</h2><p>手元の音声を1本文字にする方法と、話者識別や内容の整理まで使う場合の選び方は、<a href="/interview/#pricing">取材向けの料金案内</a>でも確認できます。</p></aside>
 <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul>${toc}</ul></nav>
 <section class="sec" id="answers" aria-labelledby="answers-h"><h2 id="answers-h">よくある疑問</h2>${qa}</section>
 ${sections}
