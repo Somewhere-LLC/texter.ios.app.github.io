@@ -6,6 +6,11 @@ a{color:var(--blue);text-underline-offset:4px}
 a:hover{text-decoration-thickness:2px}
 button,a,summary,audio{-webkit-tap-highlight-color:transparent}
 :focus-visible{outline:3px solid var(--blue);outline-offset:5px}
+:lang(en) h1{letter-spacing:-.045em;line-height:1.12}
+:lang(en) h2{letter-spacing:-.035em;line-height:1.25}
+:lang(en) .note-question,:lang(en) .note-answer{grid-template-columns:68px 1fr}
+:lang(en) .fine,:lang(en) .hero-note figcaption,:lang(en) .price-scope{font-size:12px}
+:lang(en) .hero-note{min-width:0}
 h1,h2,h3,h4,p,figure,blockquote{margin:0}
 h1,h2,h3,h4{color:var(--ink);font-feature-settings:"palt"}
 button{font:inherit}
@@ -165,3 +170,4 @@ footer p{width:100%;margin-top:8px}
 @media(max-width:360px){.wrap{width:calc(100% - 32px)}.site-header .nav-demo{display:none}.hero h1{font-size:32px}.demo-header h3{font-size:15px}.demo-count{display:none}.audio-mark{display:none}.button{padding:12px 16px;font-size:12px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}.button:hover{transform:none}}
 @media(max-width:700px){.recording .audio-mark{display:none}.recording strong{font-size:12px}.record-icon{flex-shrink:0}.source-card{min-height:92px}}
+@media(max-width:700px){.site-header .nav-demo{display:none}:lang(en) .hero h1{line-height:1.12;letter-spacing:-.045em}:lang(en) .site-header nav{gap:12px;flex-shrink:0}:lang(en) .site-header nav a{white-space:nowrap}:lang(en) .demo-disclosure,:lang(en) .section-footnote,:lang(en) .source-content>p:first-child{font-size:12px}}
