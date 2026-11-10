@@ -156,7 +156,9 @@ function checkSite(files, errors) {
 
 function checkInterview(html, errors) {
   const file = 'en/interview/index.html';
-  jsonLd(html, file, errors);
+  const graph = nodes(jsonLd(html, file, errors));
+  const webpage = graph.find((node) => node['@type'] === 'WebPage');
+  if (!webpage || !webpage.isPartOf || webpage.isPartOf['@id'] !== `${facts.site}/#website`) errors.push(`${file}: WebPage must reference the existing WebSite`);
   if (html.includes('¥') || html.includes('apps.apple.com/jp/')) errors.push(`${file}: Japan-specific price or storefront`);
   const content = html.match(/<script type="application\/json" id="interview-demo-content">([\s\S]*?)<\/script>/);
   try {
@@ -244,6 +246,7 @@ if (process.argv.includes('--self-test')) {
     ['interview anchor missing', 'en/interview/index.html', (s) => s.replace('../faq/#import', '../faq/#missing')],
     ['interview hreflang missing', 'interview/index.html', (s) => s.replace('<link rel="alternate" hreflang="en" href="https://texter.work/en/interview/">', '')],
     ['Japanese interview JSON-LD broken', 'interview/index.html', (s) => s.replace('"@type":"WebPage"', '"@type":"WebPage",,')],
+    ['interview references a missing WebSite', 'en/interview/index.html', (s) => s.replace('"isPartOf":{"@id":"https://texter.work/#website"}', '"isPartOf":{"@id":"https://texter.work/en/#website"}')],
     ['yen price back on the English LP', 'en/index.html', (s) => s.replace('A weekly plan is also available.', 'A ¥600 weekly plan is available.')],
     ['yen price back in the English FAQ', 'en/faq/index.html', (s) => s.replace('comes in weekly, monthly, and yearly plans.', 'is ¥1,800 per month.')],
     ['generated page edited by hand', 'en/faq/index.html', (s) => s.replace('</footer>', '<p>hand edit</p></footer>')],
