@@ -37,8 +37,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://texter.work/faq/"/>
   </url>
   <url><loc>https://texter.work/pricing/</loc><lastmod>2026-11-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://texter.work/interview/</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://texter.work/en/interview/</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://texter.work/interview/</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://texter.work/interview/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://texter.work/en/interview/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://texter.work/interview/"/>
+  </url>
+  <url>
+    <loc>https://texter.work/en/interview/</loc><lastmod>2026-11-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://texter.work/interview/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://texter.work/en/interview/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://texter.work/interview/"/>
+  </url>
   <url><loc>https://texter.work/guides/</loc><lastmod>2026-11-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://texter.work/guides/ai-minutes/</loc><lastmod>2026-11-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://texter.work/guides/iphone-meeting-action-items-reminder/</loc><lastmod>2026-11-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
