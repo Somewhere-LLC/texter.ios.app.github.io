@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const facts = require('./app-facts');
 const data = require('./faq-data');
+const { guides } = require('../guides/data');
 const { generate } = require('./build');
 
 const root = path.resolve(__dirname, '..', '..');
@@ -127,7 +128,7 @@ function checkSite(files, errors) {
     const rel = m[1] === '' ? 'index.html' : `${m[1]}index.html`;
     if (!fs.existsSync(path.join(root, rel))) errors.push(`sitemap: ${m[1] || '/'} has no ${rel}`);
   }
-  for (const p of ['faq/', 'en/faq/', 'guides/', 'guides/ai-minutes/', 'guides/multi-speaker-meeting-minutes/', 'guides/video-subtitles/', 'guides/iphone-side-button-recording/', 'guides/iphone-pip-transcription/', 'guides/iphone-subtitled-video/', 'guides/iphone-search-past-recordings/', 'guides/iphone-voice-memos-vs-texter/', 'guides/iphone-offline-transcription/', 'pricing/', 'interview/']) if (!sitemap.includes(`https://texter.work/${p}<`)) errors.push(`sitemap: missing ${p}`);
+  for (const p of ['faq/', 'en/faq/', 'guides/', ...guides.map((g) => `guides/${g.slug}/`), 'pricing/', 'interview/']) if (!sitemap.includes(`https://texter.work/${p}<`)) errors.push(`sitemap: missing ${p}`);
   // Any Disallow, for any user agent (including AI crawlers such as OAI-SearchBot), hides pages from search.
   if (/^[ \t]*Disallow:[ \t]*\S/im.test(files['robots.txt'])) errors.push('robots.txt: has a Disallow rule');
   const alternates = {};
@@ -205,7 +206,7 @@ function run(files, { stale = true } = {}) {
   return errors;
 }
 
-const files = Object.fromEntries(['index.html', 'en/index.html', 'faq/index.html', 'en/faq/index.html', 'guides/index.html', 'guides/ai-minutes/index.html', 'guides/iphone-meeting-action-items-reminder/index.html', 'guides/multi-speaker-meeting-minutes/index.html', 'guides/video-subtitles/index.html', 'guides/iphone-side-button-recording/index.html', 'guides/iphone-pip-transcription/index.html', 'guides/iphone-subtitled-video/index.html', 'guides/iphone-search-past-recordings/index.html', 'guides/iphone-voice-memos-vs-texter/index.html', 'guides/iphone-offline-transcription/index.html', 'pricing/index.html', 'interview/index.html', 'en/interview/index.html', 'sitemap.xml', 'robots.txt'].map((f) => [f, read(f)]));
+const files = Object.fromEntries(['index.html', 'en/index.html', 'faq/index.html', 'en/faq/index.html', 'guides/index.html', ...guides.map((g) => `guides/${g.slug}/index.html`), 'pricing/index.html', 'interview/index.html', 'en/interview/index.html', 'sitemap.xml', 'robots.txt'].map((f) => [f, read(f)]));
 const errors = run(files);
 errors.forEach((e) => console.error('NG', e));
 if (errors.length) process.exit(1);
@@ -229,6 +230,8 @@ if (process.argv.includes('--self-test')) {
     ['guide points at a missing asset', 'guides/ai-minutes/index.html', (s) => s.replaceAll('demo.mp4', 'gone.mp4')],
     ['speaker guide points at a missing image', 'guides/multi-speaker-meeting-minutes/index.html', (s) => s.replaceAll('speaker-labels.png', 'gone.png')],
     ['guide JSON-LD broken', 'guides/video-subtitles/index.html', (s) => s.replace('"@type": "Article"', '"@type": "Article",,')],
+    ['writer guide JSON-LD broken', 'guides/interview-transcription-writing/index.html', (s) => s.replace('"@type": "Article"', '"@type": "Article",,')],
+    ['sitemap drops writer guide', 'sitemap.xml', (s) => s.replace('https://texter.work/guides/interview-transcription-writing/<', 'https://texter.work/guides/x/<')],
     ['sitemap drops a guide', 'sitemap.xml', (s) => s.replace('https://texter.work/guides/ai-minutes/<', 'https://texter.work/guides/x/<')],
     ['robots blocks a path', 'robots.txt', (s) => s.replace('Allow: /', 'Allow: /\nDisallow: /faq/')],
     ['sitemap drops FAQ', 'sitemap.xml', (s) => s.replace('https://texter.work/faq/<', 'https://texter.work/faq-old/<')],
