@@ -275,6 +275,8 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .hero-top{grid-column:1/span 8;margin-top:clamp(12px,2vh,22px)}
 .hero-side{grid-column:9/span 4;align-self:end;display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding-bottom:6px}
 .hero .scrub{grid-column:1/-1}
+.hero-route{grid-column:1/-1;margin-top:18px;font-size:14px;color:var(--deep)}
+.hero-route a{display:inline-block;padding-block:8px;text-underline-offset:4px}
 .h1{word-break:keep-all;color:var(--navy);font-weight:900;font-size:clamp(2.6rem,6vw,5.4rem);line-height:1.1;letter-spacing:-.02em}
 .h1 .line{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
 .h1 .ch{display:inline-block}
@@ -546,7 +548,12 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .plan li{display:flex;gap:10px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(23,37,90,.06);font-size:15px}
 .plan li svg{width:18px;height:18px;color:var(--accent);flex:none;transform:translateY(3px)}
 .plan .btn{width:100%}
+.plan .desc + .btn{margin-top:16px}
 .foot-note{margin-top:20px;font-size:13px;color:var(--sub)}
+.ticket-option{margin-top:24px;padding:20px 0;border-block:1px solid var(--ln)}
+.ticket-option h3{font-size:18px;color:var(--navy)}
+.ticket-option p{margin-top:8px;font-size:14px;color:var(--sub);max-width:64em}
+.ticket-option a{text-underline-offset:4px}
 
 /* reviews */
 .quotes{margin-top:clamp(40px,5vw,72px);row-gap:24px}
@@ -736,6 +743,7 @@ html[lang=en] .h1 .ch{white-space:pre}
       <p class="stats"><span>App Store <b>4.1</b></span><span>·</span><span><b>50,000+</b> downloads</span><span>·</span><span><b>99</b> languages</span></p>
     </div>
 
+    <p class="hero-route"><a href="/en/interview/">Using Texter for interviews? Explore the workflow →</a></p>
     <div class="scrub" id="scrub">
       <div class="scrub-title"><b>Jump back to the moment.</b><span>Drag through last month's meetings.</span></div>
       <div class="scrub-meta"><span><b>Q.</b> What deadline did we set last month?</span><span class="hint">Drag the handle to scrub through July's recordings</span></div>
@@ -796,7 +804,7 @@ html[lang=en] .h1 .ch{white-space:pre}
       <div class="feats">
         <article class="feat reveal"><div class="k"><span class="mono">01.1</span><svg class="ico"><use href="#i-mic"/></svg></div><h3>Record and transcribe live</h3><p>One tap on the record button turns speech into text as people talk. Long meetings and lectures are captured in full.</p></article>
         <article class="feat reveal"><div class="k"><span class="mono">01.2</span><svg class="ico"><use href="#i-file"/></svg></div><h3>Import audio and video files</h3><p>Bring in voice memos, meeting-tool recordings and video files for transcription. Your past recordings live in Texter too.</p></article>
-        <article class="feat reveal"><div class="k"><span class="mono">01.3</span><svg class="ico"><use href="#i-watch"/></svg></div><h3>Apple Watch and widgets</h3><p>Record on Apple Watch alone and transfer to iPhone later. Start instantly from the Lock Screen widget, a long press of the side button (iOS 26.2+, Japan only), Siri or Shortcuts.</p></article>
+        <article class="feat reveal"><div class="k"><span class="mono">01.3</span><svg class="ico"><use href="#i-watch"/></svg></div><h3>Apple Watch and widgets</h3><p>Record on Apple Watch alone and transfer to iPhone later. Start from the Lock Screen widget, Siri or Shortcuts. A long press of the side button is also supported on iOS 26.2 or later when your Apple Account country or region is Japan and you are in Japan.</p></article>
       </div>
     </div>
   </div>
@@ -836,7 +844,7 @@ html[lang=en] .h1 .ch{white-space:pre}
       </figure>
       <div class="feats">
         <article class="feat reveal"><div class="k"><span class="mono">02.1</span><svg class="ico"><use href="#i-lines"/></svg></div><h3>Accurate transcription with speaker labels</h3><p>Transcribed by the latest engines, including Whisper (OpenAI). Punctuation is cleaned up and each speaker is kept apart.</p></article>
-        <article class="feat reveal"><div class="k"><span class="mono">02.2</span><svg class="ico"><use href="#i-spark"/></svg></div><h3>Summaries and structured notes</h3><p>Summarize with 20 templates for meetings, interviews, lectures and more. For structured notes, the AI picks the format that fits, such as a two-column comparison or a flowchart.</p></article>
+        <article class="feat reveal"><div class="k"><span class="mono">02.2</span><svg class="ico"><use href="#i-spark"/></svg></div><h3>Summaries and structured notes</h3><p>Summarize with 20 templates for meetings, interviews, lectures and more. For structured notes, the AI picks the format that fits, such as a two-column comparison or a flowchart. <a href="/guides/interview-transcription-writing/#actual-sample" hreflang="ja">See actual transcript and summary output (Japanese)</a>.</p></article>
         <article class="feat reveal"><div class="k"><span class="mono">02.3</span><svg class="ico"><use href="#i-globe"/></svg></div><h3>99 languages and translation</h3><p>Transcribe audio and video files in 99 languages. With DeepL and Google Translate, translate the transcript on the spot.</p></article>
       </div>
     </div>
@@ -902,7 +910,7 @@ html[lang=en] .h1 .ch{white-space:pre}
     <div class="ch-rule"><p class="eyebrow"><span class="tc">18:00</span><span>04 — Act</span></p><span class="en">ACT</span></div>
     <div class="grid ch-head">
       <h2 class="h2" id="act-title"><span class="w">Even the to-dos,</span><span class="w">picked up for you.</span></h2>
-      <p class="lead">The AI pulls out what needs doing. No more retyping after the meeting.</p>
+      <p class="lead">The AI suggests tasks to help organize your follow-up. Review the owners and deadlines before using them.</p>
     </div>
     <div class="grid ch-body flip">
       <figure class="fig reveal">
@@ -932,7 +940,7 @@ html[lang=en] .h1 .ch{white-space:pre}
         <figcaption class="cap">Screens are illustrative.</figcaption>
       </figure>
       <div class="feats">
-        <article class="feat reveal"><div class="k"><span class="mono">04.1</span><svg class="ico"><use href="#i-check"/></svg></div><h3>Tasks, extracted automatically</h3><p>“Can you handle that” and “by next week” are easy to miss. The AI catches the tasks buried in conversation and lists them.</p></article>
+        <article class="feat reveal"><div class="k"><span class="mono">04.1</span><svg class="ico"><use href="#i-check"/></svg></div><h3>Tasks, extracted automatically</h3><p>The AI lists potential tasks from phrases such as “Can you handle that” and “by next week.” Check them against the original words before acting.</p></article>
         <article class="feat reveal"><div class="k"><span class="mono">04.2</span><svg class="ico"><use href="#i-bell"/></svg></div><h3>One-tap reminders</h3><p>Due dates and owners are read from the conversation, and each task becomes a reminder in one tap. Texter notifies you at the time you set.</p></article>
         <article class="feat reveal"><div class="k"><span class="mono">04.3</span><svg class="ico"><use href="#i-share"/></svg></div><h3>Share and export</h3><p>Export the transcript, summary and action items as text, PDF or Markdown, and share them with your team on the spot.</p></article>
       </div>
@@ -985,6 +993,7 @@ html[lang=en] .h1 .ch{white-space:pre}
       <h2 class="h2" id="pricing-title"><span class="w">Start</span><span class="w">for free.</span></h2>
       <p class="lead">Move to Premium when you want more.</p>
     </div>
+    <p class="foot-note">The allowances below apply to the iPhone app. Android features and limits differ. <a href="/en/faq/#price">Check pricing and conditions</a>.</p>
     <div class="toggle"><span class="lbl act" id="lblM">Monthly</span><button class="sw" id="planSw" role="switch" aria-checked="false" aria-label="Yearly billing"></button><span class="lbl" id="lblY">Yearly</span><span class="off" id="offChip" hidden>Best value</span></div>
     <div class="grid plans">
       <div class="plan">
@@ -993,20 +1002,22 @@ html[lang=en] .h1 .ch{white-space:pre}
         <p class="eq">&nbsp;</p>
         <p class="desc">Try it free</p>
         <ul>
-          <li><svg class="ico"><use href="#i-tick"/></svg>Live transcription (3 min)</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>Live transcription (3 min/session, 15 min/day)</li>
           <li><svg class="ico"><use href="#i-tick"/></svg>Text from images (5 per day)</li>
           <li><svg class="ico"><use href="#i-tick"/></svg>Live translation</li>
-          <li><svg class="ico"><use href="#i-tick"/></svg>Audio and video transcription (short clips)</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>File transcription (cumulative processing-time allowance)</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>Summaries and AI chat (3 uses each per day)</li>
         </ul>
+        <p class="desc"><a href="/en/interview/#pricing">Ways to transcribe a 60-minute recording</a></p>
         <a class="btn btn-line" href="https://apps.apple.com/app/id1482592304?pt=489812&amp;ct=lp-en&amp;mt=8" target="_blank" rel="noopener noreferrer">Start free</a>
       </div>
       <div class="plan">
-        <div class="nm"><span>PREMIUM</span><span class="pop">3-day free trial</span></div>
+        <div class="nm"><span>PREMIUM</span></div>
         <p class="price" id="pPrice">Monthly</p>
         <p class="eq" id="pEq">Billed monthly in your local currency</p>
-        <p class="desc">Includes a 3-day free trial</p>
+        <p class="desc">Eligible monthly subscriptions may include a free trial. Check the purchase screen for eligibility and duration.</p>
         <ul>
-          <li><svg class="ico"><use href="#i-tick"/></svg>No monthly cap on audio &amp; video import</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>No monthly cap for the file method supporting up to 1 GB and 2 hours per file</li>
           <li><svg class="ico"><use href="#i-tick"/></svg><span>Real-time transcription (<span id="rtHours">5</span> hours/month)</span></li>
           <li><svg class="ico"><use href="#i-tick"/></svg><span>Amazon Transcribe (<span id="awsHours">3</span> hours/month)</span></li>
           <li><svg class="ico"><use href="#i-tick"/></svg>Ask-your-notes AI chat (across all notes)</li>
@@ -1018,10 +1029,16 @@ html[lang=en] .h1 .ch{white-space:pre}
           <li><svg class="ico"><use href="#i-tick"/></svg>Word cloud</li>
           <li><svg class="ico"><use href="#i-tick"/></svg>No ads</li>
         </ul>
-        <a class="btn btn-solid" href="https://apps.apple.com/app/id1482592304?pt=489812&amp;ct=lp-en&amp;mt=8" target="_blank" rel="noopener noreferrer">Start the free trial</a>
+        <p class="desc"><a href="/en/faq/#import-limit">Compare file limits</a>. Subscriptions renew automatically; billing begins after any free trial ends.</p>
+        <a class="btn btn-solid" href="https://apps.apple.com/app/id1482592304?pt=489812&amp;ct=lp-en&amp;mt=8" target="_blank" rel="noopener noreferrer">View plans on the App Store</a>
       </div>
     </div>
-    <p class="foot-note">Need it for a short stretch? A weekly plan is also available. Prices vary by country and are shown in your local currency on the App Store.</p>
+    <aside class="ticket-option" aria-labelledby="ticket-title">
+      <h3 id="ticket-title">Just one recording? Consider a transcription ticket.</h3>
+      <p>A ticket covers file transcription without a subscription or automatic renewal. It may appear when your free cloud transcription allowance runs out; it is not shown in some cases, including an active Premium subscription.</p>
+      <p>Tickets do not include speaker labels or automatic silence removal, and do not increase summary or AI chat limits. <a href="/en/interview/#pricing">See ticket conditions and options</a>.</p>
+    </aside>
+    <p class="foot-note">Prices vary by country and are shown in your local currency on the App Store. Check the app for current offers and conditions. <a href="/en/faq/#price">Pricing details</a>.</p>
   </div>
 </section>
 

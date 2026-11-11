@@ -312,6 +312,8 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .hero-top{grid-column:1/span 8;margin-top:clamp(12px,2vh,22px)}
 .hero-side{grid-column:9/span 4;align-self:end;display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding-bottom:6px}
 .hero .scrub{grid-column:1/-1}
+.hero-route{grid-column:1/-1;margin-top:18px;font-size:14px;color:var(--deep)}
+.hero-route a{display:inline-block;padding-block:8px;text-underline-offset:4px}
 .h1{word-break:keep-all;color:var(--navy);font-weight:900;font-size:clamp(2.6rem,6vw,5.4rem);line-height:1.1;letter-spacing:-.02em}
 .h1 .line{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
 .h1 .ch{display:inline-block}
@@ -583,7 +585,12 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .plan li{display:flex;gap:10px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(23,37,90,.06);font-size:15px}
 .plan li svg{width:18px;height:18px;color:var(--accent);flex:none;transform:translateY(3px)}
 .plan .btn{width:100%}
+.plan .desc + .btn{margin-top:16px}
 .foot-note{margin-top:20px;font-size:13px;color:var(--sub)}
+.ticket-option{margin-top:24px;padding:20px 0;border-block:1px solid var(--ln)}
+.ticket-option h3{font-size:18px;color:var(--navy)}
+.ticket-option p{margin-top:8px;font-size:14px;color:var(--sub);max-width:64em}
+.ticket-option a{text-underline-offset:4px}
 
 /* reviews */
 .quotes{margin-top:clamp(40px,5vw,72px);row-gap:24px}
@@ -771,6 +778,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       <p class="stats"><span>App Store <b>4.1</b></span><span>・</span><span><b>50,000+</b> ダウンロード</span><span>・</span><span><b>99</b>言語</span></p>
     </div>
 
+    <p class="hero-route"><a href="/interview/">取材・インタビューに使う方へ →</a></p>
     <div class="scrub" id="scrub">
       <div class="scrub-title"><b>その瞬間に、戻れる。</b><span>先月の会議を、ドラッグで辿ってみてください。</span></div>
       <div class="scrub-meta"><span><b>Q.</b> 先月の定例で決まった納期は？</span><span class="hint">ハンドルをドラッグして、7月の記録をさかのぼる</span></div>
@@ -831,7 +839,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       <div class="feats">
         <article class="feat reveal"><div class="k"><span class="mono">01.1</span><svg class="ico"><use href="#i-mic"/></svg></div><h3>録音してそのまま文字起こし</h3><p>録音ボタンひとつで、話しながらリアルタイムに文字化。長時間の会議や講義もそのまま記録できます。</p></article>
         <article class="feat reveal"><div class="k"><span class="mono">01.2</span><svg class="ico"><use href="#i-file"/></svg></div><h3>音声・動画ファイルを取り込む</h3><p>ボイスメモや会議ツールの録音、動画ファイルを取り込んで文字起こし。過去の記録もTexterに集約できます。</p></article>
-        <article class="feat reveal"><div class="k"><span class="mono">01.3</span><svg class="ico"><use href="#i-watch"/></svg></div><h3>Apple Watch・ウィジェット</h3><p>Apple Watch単体で録音し、あとでiPhoneへ転送。ロック画面ウィジェット、サイドボタン長押し（iOS 26.2〜）、Siri・ショートカットからも即録音。<a href="/guides/iphone-side-button-recording/">サイドボタンで録音を始める方法</a></p></article>
+        <article class="feat reveal"><div class="k"><span class="mono">01.3</span><svg class="ico"><use href="#i-watch"/></svg></div><h3>Apple Watch・ウィジェット</h3><p>Apple Watch単体で録音し、あとでiPhoneへ転送。ロック画面ウィジェット、Siri・ショートカットからも即録音。日本では、iOS 26.2以降でサイドボタン長押しにも対応します（Apple Accountの国または地域が日本で、日本国内にいる場合）。<a href="/guides/iphone-side-button-recording/">サイドボタンで録音を始める方法</a></p></article>
       </div>
     </div>
   </div>
@@ -871,7 +879,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       </figure>
       <div class="feats">
         <article class="feat reveal"><div class="k"><span class="mono">02.1</span><svg class="ico"><use href="#i-lines"/></svg></div><h3>高精度な文字起こしと話者識別</h3><p>Whisper (OpenAI) を含む最新エンジンで文字起こし。句読点も自動で整え、誰の発言かを分けて記録します。</p></article>
-        <article class="feat reveal"><div class="k"><span class="mono">02.2</span><svg class="ico"><use href="#i-spark"/></svg></div><h3>要約と内容まとめ</h3><p>会議・取材・講義など20種のテンプレートで要約。内容まとめは2カラム比較やフローチャートなど、内容に合う形式をAIが選びます。</p></article>
+        <article class="feat reveal"><div class="k"><span class="mono">02.2</span><svg class="ico"><use href="#i-spark"/></svg></div><h3>要約と内容まとめ</h3><p>会議・取材・講義など20種のテンプレートで要約。内容まとめは2カラム比較やフローチャートなど、内容に合う形式をAIが選びます。<a href="/guides/interview-transcription-writing/#actual-sample">実際の文字起こし・要約を見る</a></p></article>
         <article class="feat reveal"><div class="k"><span class="mono">02.3</span><svg class="ico"><use href="#i-globe"/></svg></div><h3>99言語の文字起こしと翻訳</h3><p>音声・動画ファイルは99言語の文字起こしに対応。DeepL・Google翻訳と連携し、文字起こしをその場で翻訳できます。</p></article>
       </div>
     </div>
@@ -937,7 +945,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
     <div class="ch-rule"><p class="eyebrow"><span class="tc">18:00</span><span>04 — 行動する</span></p><span class="en">ACT</span></div>
     <div class="grid ch-head">
       <h2 class="h2" id="act-title"><span class="w">やることまで、</span><span class="w">自動で拾う。</span></h2>
-      <p class="lead">AIが「やるべきこと」を自動で抽出。会議後の転記作業は、もういりません。<a href="/guides/iphone-meeting-action-items-reminder/">やることから通知を設定する方法</a></p>
+      <p class="lead">AIがタスク候補を抽出し、会議後の整理を手伝います。担当者や期限を確認して活用できます。<a href="/guides/iphone-meeting-action-items-reminder/">やることから通知を設定する方法</a></p>
     </div>
     <div class="grid ch-body flip">
       <figure class="fig reveal">
@@ -967,7 +975,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <figcaption class="cap">※ 画面はイメージです</figcaption>
       </figure>
       <div class="feats">
-        <article class="feat reveal"><div class="k"><span class="mono">04.1</span><svg class="ico"><use href="#i-check"/></svg></div><h3>タスクを自動抽出</h3><p>「〜しておいて」「来週までに」。会話の中に埋もれたタスクをAIが見逃さず拾い上げ、リストにまとめます。</p></article>
+        <article class="feat reveal"><div class="k"><span class="mono">04.1</span><svg class="ico"><use href="#i-check"/></svg></div><h3>タスクを自動抽出</h3><p>「〜しておいて」「来週までに」。会話からタスク候補をAIが抽出し、リストにまとめます。内容は元の発言と照合してください。</p></article>
         <article class="feat reveal"><div class="k"><span class="mono">04.2</span><svg class="ico"><use href="#i-bell"/></svg></div><h3>ワンタップでリマインダー</h3><p>期限・担当者も読み取って、そのままリマインダーに登録。設定した日時に通知でお知らせします。</p></article>
         <article class="feat reveal"><div class="k"><span class="mono">04.3</span><svg class="ico"><use href="#i-share"/></svg></div><h3>共有・書き出し</h3><p>文字起こし・要約・アクションアイテムをテキストやPDF、Markdownで書き出し。チームへの共有もその場で。</p></article>
       </div>
@@ -1007,7 +1015,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       <li class="row reveal"><span class="n">2</span><h3>ライター・ブロガー</h3><p>インタビューやアイデア出しを声で行い、執筆速度を加速。クリエイティブな作業に集中。<a href="/interview/">取材音声の文字起こしと活用例</a></p><svg class="ico"><use href="#i-arrow"/></svg></li>
       <li class="row reveal"><span class="n">3</span><h3>聴覚サポート</h3><p>リアルタイム文字起こしでコミュニケーションを円滑に。誰もが会話に参加できる環境を。</p><svg class="ico"><use href="#i-arrow"/></svg></li>
       <li class="row reveal"><span class="n">4</span><h3>語学学習</h3><p>発音チェックや、PDF教材のテキスト化に。効率的な学習をサポート。</p><svg class="ico"><use href="#i-arrow"/></svg></li>
-      <li class="row reveal"><span class="n">5</span><h3>リサーチャー・研究者</h3><p>インタビューを話題マップで俯瞰し、内容まとめでレポート下書きを自動生成。知識整理が圧倒的にラクに。</p><svg class="ico"><use href="#i-arrow"/></svg></li>
+      <li class="row reveal"><span class="n">5</span><h3>リサーチャー・研究者</h3><p>インタビューを話題マップで俯瞰し、内容まとめでレポート下書きを自動生成。<a href="/interview/#recall">過去の取材を横断して確かめるデモ</a></p><svg class="ico"><use href="#i-arrow"/></svg></li>
     </ol>
   </div>
 </section>
@@ -1020,6 +1028,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       <h2 class="h2" id="pricing-title"><span class="w">まずは、</span><span class="w">無料で。</span></h2>
       <p class="lead">もっと使いたくなったら、Premiumへ。</p>
     </div>
+    <p class="foot-note">以下はiPhone版・日本の料金と利用枠です。Android版は条件が異なります。<a href="/pricing/#android">対応表と利用条件</a></p>
     <div class="toggle"><span class="lbl act" id="lblM">月額</span><button class="sw" id="planSw" role="switch" aria-checked="false" aria-label="年額払い"></button><span class="lbl" id="lblY">年額</span><span class="off" id="offChip" hidden>月額払い比 約59%OFF</span></div>
     <div class="grid plans">
       <div class="plan">
@@ -1032,16 +1041,18 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
           <li><svg class="ico"><use href="#i-tick"/></svg>画像文字起こし（5回/日）</li>
           <li><svg class="ico"><use href="#i-tick"/></svg>リアルタイム翻訳</li>
           <li><svg class="ico"><use href="#i-tick"/></svg>ファイルの文字起こし（処理時間の累積枠）</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>要約・AIチャット（各1日3回）</li>
         </ul>
+        <p class="desc"><a href="/pricing/#sixty-minutes">60分の録音を処理する条件</a></p>
         <a class="btn btn-line" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=lp&amp;mt=8" target="_blank" rel="noopener noreferrer">無料で始める</a>
       </div>
       <div class="plan">
-        <div class="nm"><span>PREMIUM</span><span class="pop">3日間無料トライアル</span></div>
+        <div class="nm"><span>PREMIUM</span></div>
         <p class="price" id="pPrice">¥1,800<small>/月</small></p>
         <p class="eq" id="pEq">&nbsp;</p>
-        <p class="desc">3日間無料トライアル付き</p>
+        <p class="desc">月額の対象者には3日間無料トライアル。適用条件・期間は購入画面で確認できます。</p>
         <ul>
-          <li><svg class="ico"><use href="#i-tick"/></svg>音声・動画取り込み 月の枠なし</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>ファイル文字起こしは月の枠なし（1GB・2時間/件までの方式）</li>
           <li><svg class="ico"><use href="#i-tick"/></svg><span>リアルタイム音声認識 (<span id="rtHours">5</span>時間/月)</span></li>
           <li><svg class="ico"><use href="#i-tick"/></svg><span>Amazon Transcribe (<span id="awsHours">3</span>時間/月)</span></li>
           <li><svg class="ico"><use href="#i-tick"/></svg>「ノートに聞く」AIチャット（すべてのノート対応）</li>
@@ -1053,10 +1064,16 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
           <li><svg class="ico"><use href="#i-tick"/></svg>ワードクラウド</li>
           <li><svg class="ico"><use href="#i-tick"/></svg>広告非表示</li>
         </ul>
-        <a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=lp&amp;mt=8" target="_blank" rel="noopener noreferrer">無料トライアルを始める</a>
+        <p class="desc"><a href="/pricing/#file-limits">方式別の上限</a>をご確認ください。自動更新の契約で、無料トライアル後は課金が始まります。</p>
+        <a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=lp&amp;mt=8" target="_blank" rel="noopener noreferrer">App Storeでプランを確認する</a>
       </div>
     </div>
-    <p class="foot-note">単発の文字起こしチケット（1時間 ¥500）もあります。週額 ¥600 は解約時の案内でのみ表示されます。条件の比較は<a href="/pricing/">料金と利用条件</a>をご覧ください。</p>
+    <aside class="ticket-option" aria-labelledby="ticket-title">
+      <h3 id="ticket-title">今回の1本だけなら、文字起こしチケット。</h3>
+      <p>音声1時間 ¥500・自動更新なし。クラウド文字起こしの無料枠を使い切ったときに案内される、ファイル文字起こし専用のチケットです。Premium加入中など、表示されない条件があります。</p>
+      <p>話者識別・自動無音カットには使えません。要約・AIチャットの回数も増えません。<a href="/pricing/#ticket">チケットの範囲と購入条件を見る</a></p>
+    </aside>
+    <p class="foot-note">週額 ¥600 は解約時の案内でのみ表示されます。条件の比較は<a href="/pricing/">料金と利用条件</a>をご覧ください。</p>
   </div>
 </section>
 
