@@ -591,6 +591,12 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .ticket-option h3{font-size:18px;color:var(--navy)}
 .ticket-option p{margin-top:8px;font-size:14px;color:var(--sub);max-width:64em}
 .ticket-option a{text-underline-offset:4px}
+.recording-options{margin-top:28px;max-width:64em}
+.recording-options h3{font-size:18px;color:var(--navy)}
+.recording-options p,.recording-options dl{margin-top:12px;font-size:14px;color:var(--sub)}
+.recording-options dl>div{padding:12px 0;border-bottom:1px solid var(--ln)}
+.recording-options dt{font-weight:700;color:var(--navy)}
+.recording-options dd{margin:4px 0 0}
 
 /* reviews */
 .quotes{margin-top:clamp(40px,5vw,72px);row-gap:24px}
@@ -1073,6 +1079,15 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       <p>音声1時間 ¥500・自動更新なし。クラウド文字起こしの無料枠を使い切ったときに案内される、ファイル文字起こし専用のチケットです。Premium加入中など、表示されない条件があります。</p>
       <p>話者識別・自動無音カットには使えません。要約・AIチャットの回数も増えません。<a href="/pricing/#ticket">チケットの範囲と購入条件を見る</a></p>
     </aside>
+    <section class="recording-options" aria-labelledby="recording-options-title">
+      <h3 id="recording-options-title">録音済みの60分、どれで文字にする？</h3>
+      <dl>
+        <div><dt>まず無料で試す</dt><dd>iOS 26以降の対応端末では、広告視聴で端末内文字起こしを利用できます。クラウドの無料枠が残っていれば、60分のファイル1件を取り込む方法もあります。</dd></div>
+        <div><dt>無料枠を使い切り、文字起こしだけをしたい</dt><dd>チケットが表示される場合は、60分まで1枚 ¥500。要約やAIチャットの枠は増えません。</dd></div>
+        <div><dt>繰り返し取材し、話者識別やAIも使いたい</dt><dd>Premiumでは要約・AIチャットの回数制限がなくなります。ファイルの文字起こしには方式ごとの上限があります。</dd></div>
+      </dl>
+      <p>リアルタイム録音の無料枠（1回3分・1日15分）とは別です。<a href="/pricing/#sixty-minutes">対応条件と60分の比較を見る</a></p>
+    </section>
     <p class="foot-note">週額 ¥600 は解約時の案内でのみ表示されます。条件の比較は<a href="/pricing/">料金と利用条件</a>をご覧ください。</p>
   </div>
 </section>
