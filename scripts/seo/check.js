@@ -250,7 +250,7 @@ if (process.argv.includes('--self-test')) {
     ['interview hreflang missing', 'interview/index.html', (s) => s.replace('<link rel="alternate" hreflang="en" href="https://texter.work/en/interview/">', '')],
     ['Japanese interview JSON-LD broken', 'interview/index.html', (s) => s.replace('"@type":"WebPage"', '"@type":"WebPage",,')],
     ['interview references a missing WebSite', 'en/interview/index.html', (s) => s.replace('"isPartOf":{"@id":"https://texter.work/#website"}', '"isPartOf":{"@id":"https://texter.work/en/#website"}')],
-    ['yen price back on the English LP', 'en/index.html', (s) => s.replace('A weekly plan is also available.', 'A ¥600 weekly plan is available.')],
+    ['yen price back on the English LP', 'en/index.html', (s) => s.replace('</body>', '<p>¥600</p></body>')],
     ['yen price back in the English FAQ', 'en/faq/index.html', (s) => s.replace('comes in weekly, monthly, and yearly plans.', 'is ¥1,800 per month.')],
     ['generated page edited by hand', 'en/faq/index.html', (s) => s.replace('</footer>', '<p>hand edit</p></footer>')],
   ];
