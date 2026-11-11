@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HDB32BHHL8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HDB32BHHL8', { 'cookie_flags': 'SameSite=None;Secure' });
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>卒論・研究インタビューの文字起こし｜逐語録の確認と引用の残し方</title>
+<meta name="description" content="卒論や研究のインタビュー音声を文字にした後、音声照合・対象者コードへの置換・引用確認を進める手順。自動出力と逐語録、分析メモを分ける記入例と、クラウド処理・保存先を確認する項目をまとめました。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://texter.work/guides/research-interview-transcription/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://texter.work/guides/research-interview-transcription/">
+<meta property="og:title" content="卒論・研究インタビューの文字起こし｜逐語録の確認と引用の残し方">
+<meta property="og:description" content="卒論や研究のインタビュー音声を文字にした後、音声照合・対象者コードへの置換・引用確認を進める手順。自動出力と逐語録、分析メモを分ける記入例と、クラウド処理・保存先を確認する項目をまとめました。">
+<meta property="og:site_name" content="Texter">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://texter.work/img/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="卒論・研究インタビューの文字起こし｜逐語録の確認と引用の残し方">
+<meta name="twitter:description" content="卒論や研究のインタビュー音声を文字にした後、音声照合・対象者コードへの置換・引用確認を進める手順。自動出力と逐語録、分析メモを分ける記入例と、クラウド処理・保存先を確認する項目をまとめました。">
+<meta name="twitter:image" content="https://texter.work/img/ogp.png">
+<meta name="apple-itunes-app" content="app-id=1482592304">
+<link rel="icon" href="/assets/favicon/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v=2">
+<link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png?v=2">
+<meta name="theme-color" content="#EDF4FF">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://texter.work/guides/research-interview-transcription/#article",
+      "headline": "卒論・研究インタビューを文字起こしし、確認できる記録にする",
+      "description": "卒論や研究のインタビュー音声を文字にした後、音声照合・対象者コードへの置換・引用確認を進める手順。自動出力と逐語録、分析メモを分ける記入例と、クラウド処理・保存先を確認する項目をまとめました。",
+      "url": "https://texter.work/guides/research-interview-transcription/",
+      "inLanguage": "ja",
+      "datePublished": "2026-11-11",
+      "dateModified": "2026-11-11",
+      "image": "https://texter.work/img/ogp.png",
+      "isPartOf": {
+        "@id": "https://texter.work/#website"
+      },
+      "about": {
+        "@id": "https://texter.work/#app"
+      },
+      "publisher": {
+        "@id": "https://texter.work/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://texter.work/guides/research-interview-transcription/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Texter",
+          "item": "https://texter.work/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "活用ガイド",
+          "item": "https://texter.work/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "研究インタビューの文字起こし",
+          "item": "https://texter.work/guides/research-interview-transcription/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{--accent:#6482FA;--deep:#5460D6;--navy:#17255A;--text:#444444;--sub:#5F6170;--line:rgba(23,37,90,.12);--card:#FFFFFF;--grad-a:#EDF4FF;--grad-b:#D6E4FC;
+  --f-jp:-apple-system,BlinkMacSystemFont,"SF Pro JP","Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;--f-mono:ui-monospace,Menlo,monospace;color-scheme:light}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:80px}
+body{margin:0;color:var(--text);font-family:var(--f-jp);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased;background:linear-gradient(180deg,var(--grad-a) 0%,var(--grad-b) 100%) fixed,var(--grad-b)}
+a{color:var(--deep)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip{position:fixed;left:12px;top:-60px;z-index:100;background:var(--navy);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+.skip:focus{top:12px}
+.wrap{max-width:760px;margin-inline:auto;padding-inline:20px}
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:18px;color:var(--navy)}
+.brand img{width:28px;height:28px;border-radius:7px}
+.nav ul{display:flex;gap:4px;margin:0;padding:0;list-style:none}
+.nav ul a{display:block;padding:8px 10px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;color:var(--text);white-space:nowrap}
+.crumbs{margin:28px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px;font-size:13px;color:var(--sub)}
+.crumbs li+li::before{content:"/";margin-right:6px}
+.crumbs a{color:var(--sub)}
+h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.6rem);line-height:1.25;font-weight:900}
+.lead{margin:16px 0 0}
+.meta{margin:10px 0 0;font-size:13px;color:var(--sub)}
+.toc{margin:28px 0 0;padding:18px 20px;background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:14px}
+.toc h2{margin:0;font-size:13px;color:var(--sub);font-weight:600}
+.toc ul{margin:8px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 18px}
+.toc a{font-size:15px;font-weight:500}
+.sec{margin-top:48px}
+.sec>h2{margin:0;padding-top:12px;border-top:1.5px solid var(--navy);color:var(--navy);font-size:clamp(1.3rem,3vw,1.6rem);line-height:1.4}
+.sec h3{margin:24px 0 0;color:var(--navy);font-size:17px;line-height:1.6}
+.sec p,.sec ul,.sec ol{margin:12px 0 0}
+.sec ul,.sec ol{padding-left:1.3em}
+.compare{width:100%;margin-top:16px;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;font-size:15px}
+.compare th,.compare td{padding:12px 14px;border:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.65}
+.compare thead th{background:#F2F5FD;color:var(--navy)}
+.compare caption{padding:8px 0;text-align:left;font-size:14px;color:var(--sub)}
+.scroll{overflow-x:auto;margin-top:12px}
+.scroll .compare{margin-top:0}
+.plans{min-width:680px}
+.plans tbody th{min-width:128px}
+.plans th:first-child{position:sticky;left:0;background:#fff;z-index:1}
+.plans thead th:first-child{background:#F2F5FD}
+.sec article{margin-top:18px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.sec article h3{margin:0}
+.doc{margin-top:12px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.doc p:first-child{margin-top:0}
+.steps{list-style:none;padding:0!important;counter-reset:s}
+.steps>li{counter-increment:s;margin-top:32px;padding:20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.steps>li>h3{margin:0}
+.steps>li>h3::before{content:counter(s) ". "}
+.shot{display:inline-block;width:min(46%,260px);margin:16px 10px 0 0;vertical-align:top}
+.shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:14px}
+.shot figcaption{margin-top:6px;font-size:13px;line-height:1.5;color:var(--sub)}
+.demo{margin:16px 0 0;max-width:300px}
+.demo.land{max-width:none}
+.demo video{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);background:#fff}
+.sample{display:block;width:100%;height:auto;margin-top:16px;border-radius:14px;background:#000}
+.note{font-size:14px}
+.raw{margin-top:14px}
+.raw summary{cursor:pointer;font-weight:600;color:var(--navy)}
+.code{margin:12px 0 0;padding:16px;overflow-x:auto;background:var(--navy);color:#fff;border-radius:12px;font:14px/1.7 var(--f-mono);white-space:pre-wrap;overflow-wrap:anywhere}
+.facts{display:grid;grid-template-columns:8em 1fr;gap:8px 12px;margin:16px 0 0;font-size:15px}
+.facts dt{font-weight:600;color:var(--navy)}
+.facts dd{margin:0}
+.cards{display:grid;gap:14px;margin:28px 0 0}
+.card{display:block;padding:20px 22px;background:var(--card);border:1px solid var(--line);border-radius:14px;text-decoration:none;color:var(--text)}
+.card strong{display:block;color:var(--navy);font-size:18px}
+.card span{display:block;margin-top:6px;font-size:15px}
+.cta{margin:56px 0 0;padding:28px 22px;background:var(--navy);color:#fff;border-radius:18px}
+.cta h2{margin:0;font-size:22px;line-height:1.4}
+.cta p{margin:8px 0 0;color:rgba(255,255,255,.85);font-size:15px}
+.cta .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.cta.inline{margin:32px 0 0;padding:20px 22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 20px;text-align:center;line-height:1.4;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px}
+.btn-solid{background:#fff;color:var(--navy)}
+.btn-line{color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)}
+footer{margin-top:64px;padding:28px 0 40px;border-top:1px solid var(--line);font-size:13px;color:var(--sub)}
+footer ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 16px}
+footer a{color:var(--sub)}
+footer p{margin:12px 0 0}
+@media (max-width:400px){.nav ul .opt{display:none}}
+@media (max-width:560px){.nav ul a{padding:8px 5px;font-size:13px}.shot{width:calc(50% - 8px);margin-right:6px}.shot.wide{width:100%;max-width:320px;margin-right:0}.steps>li{padding:16px}.facts{grid-template-columns:1fr}.facts dd{margin-bottom:8px}.compare{font-size:14px}.compare th,.compare td{padding:10px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/"><img src="/img/appicon.png" alt="" width="28" height="28">Texter</a>
+  <nav aria-label="メイン"><ul><li class="opt"><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金</a></li><li><a href="/faq/">よくある質問</a></li></ul></nav>
+</div></header>
+<main id="main" class="wrap">
+<nav aria-label="パンくずリスト"><ol class="crumbs"><li><a href="/">Texter</a></li><li><a href="/guides/">活用ガイド</a></li><li aria-current="page">研究インタビューの文字起こし</li></ol></nav>
+<h1>卒論・研究インタビューを文字起こしし、確認できる記録にする</h1>
+<p class="lead">研究で使うインタビューは、読みやすくまとめる前に、どの発言をどう確認したかを残します。自動の文字起こしを下書きにし、原音と照合した記録、共有用のコピー、分析メモを分ける手順を紹介します。逐語録の表記やデータの扱いは、指導教員・所属先・研究計画の基準に従ってください。</p>
+<p class="meta">更新日 <time datetime="2026-11-11">2026-11-11</time></p>
+<nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul><li><a href="#before-import">取り込む前に、研究の条件を確認する</a></li><li><a href="#four-records">自動出力・逐語録・分析メモを分ける</a></li><li><a href="#workflow">録音から確認用の記録を作る手順</a></li><li><a href="#record-template">聞き取りが曖昧な箇所も残せる確認表</a></li><li><a href="#sharing">対象者コードへの置換と、共有先を確認する</a></li><li><a href="#next">文字起こしの後に使うガイド</a></li></ul></nav>
+<section class="sec" id="before-import" aria-labelledby="before-import-h"><h2 id="before-import-h">取り込む前に、研究の条件を確認する</h2>
+      <p>録音してよいことと、外部サービスで処理・保存してよいことは分けて確認します。相手に説明した利用目的と、研究計画で認められた方法に合うかを、先に確かめてください。</p>
+      <ul><li>録音・文字起こし・引用について説明し、必要な同意を得ているか</li><li>音声や文字をクラウドへ送ってよいか。AIによる要約や分析にも使ってよいか</li><li>原音・逐語録・対象者との対応表を、誰がどこに保存し、いつまで管理するか</li><li>沈黙、相づち、言い直し、重なった発話を、どの表記で残すか</li></ul>
+      <p>日本音声学会の<a href="https://www.psj.gr.jp/jpn/rinri" target="_blank" rel="noopener noreferrer">研究倫理ガイドライン</a>でも、目的・方法の説明と同意、同意された範囲での利用、個人情報の管理、公表時の配慮が示されています。対象や分野によって条件は異なるため、所属先の手続きをこのページで置き換えることはできません。</p></section>
+<section class="sec" id="four-records" aria-labelledby="four-records-h"><h2 id="four-records-h">自動出力・逐語録・分析メモを分ける</h2>
+      <p>次の分け方は、Texter運営が提案する作業例です。アプリが自動で作る分類ではありません。ファイル名にも段階を入れると、未確認の文を引用する取り違えを減らせます。</p>
+      <table class="compare" style="table-layout:fixed"><colgroup><col style="width:24%"><col style="width:40%"><col style="width:36%"></colgroup><thead><tr><th scope="col">記録</th><th scope="col">残す内容</th><th scope="col">使い方</th></tr></thead><tbody>
+        <tr><th scope="row">原音</th><td>編集していない音声と、収録日・対象者コード</td><td>発言と前後の文脈を確かめる</td></tr>
+        <tr><th scope="row">自動出力</th><td>アプリから書き出した未修正の文字起こし</td><td>どこを修正したか比較する。確認済みの逐語録とは区別する</td></tr>
+        <tr><th scope="row">照合後</th><td>音声と照合して修正した文、聞き取り状態、表記ルール、共有範囲に応じた対象者コード</td><td>研究計画に必要な逐語録や、確認用の記録にする</td></tr>
+        <tr><th scope="row">分析メモ</th><td>研究者の解釈、分類、疑問、要約</td><td>本人の発言と区別して読み、原音へ戻れるようにする</td></tr>
+      </tbody></table>
+      <p>自動文字起こしは、相づちや言い直しを省いたり、句読点を補ったりすることがあります。沈黙の長さや話し方自体を分析する場合、必要な情報が残っているか音声で確認してください。AI要約を、本人の言葉がそのまま残った逐語録として使わないでください。</p></section>
+<section class="sec" id="workflow" aria-labelledby="workflow-h"><h2 id="workflow-h">録音から確認用の記録を作る手順</h2>
+      <ol class="steps">
+        <li><h3>原音と取材メモを保管する</h3><p>録音の原本を、研究計画で決めた場所に保管します。対象者コード、録音日、ファイルの識別名を控えます。ファイル名にも個人名を入れる必要があるか見直してください。</p></li>
+        <li><h3>利用できる方式で文字起こしする</h3><p>Texterのファイル取り込みを使う場合は、<a href="/guides/ai-minutes/#steps">画面付きの取り込み手順</a>を確認できます。端末内の方式を選ぶだけでは、音声を外部に送らない保証にはなりません。<a href="/guides/iphone-offline-transcription/#not-suited">方式の条件と、向いていない用途</a>を先に確認してください。外部送信が認められないデータは、条件を満たすと確認できるまで取り込まないでください。</p></li>
+        <li><h3>自動出力の控えを残す</h3><p>文字起こしを書き出し、確認用のコピーで修正します。研究で必要な保存期間や形式は所属先に確認してください。アプリ内のノートだけを原音の保管先にしないでください。</p></li>
+        <li><h3>発言者と本文を音声で照合する</h3><p>話者ラベルを使う場合も、音声を聞いて誰の発言かを確認します。人名、数字、否定、言い直しを確かめ、聞き取れない箇所は推測で埋めず、未確定と分かる印を残します。<a href="/guides/multi-speaker-meeting-minutes/">話者識別と話者名の変更手順</a>も参考にしてください。</p></li>
+        <li><h3>分析・共有用のコピーを作る</h3><p>原音と照合した記録から、必要な範囲の作業用コピーを作ります。個人を特定できる情報や共有相手を確認し、本文とは別に分析メモを書きます。引用には、元の発言に戻れる情報を添えてください。</p></li>
+      </ol></section><aside class="cta inline" aria-label="アプリで試す"><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-research-interview-after-steps&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-research-interview-after-steps" data-store="app_store">App StoreでTexterを見る（App Store）</a></div></aside>
+<section class="sec" id="record-template" aria-labelledby="record-template-h"><h2 id="record-template-h">聞き取りが曖昧な箇所も残せる確認表</h2>
+      <p>下の記入例は、この説明用に運営が作った架空の文章です。実際の研究データやアプリの出力ではありません。表記も一例なので、研究で採用したルールに合わせてください。</p>
+      <dl class="facts">
+        <dt>出典</dt><dd>対象者コード／録音の識別名／発言の再生位置を記入</dd>
+        <dt>原発言の確認用メモ</dt><dd>「ええと、去年の、いや一昨年の秋に、［聞き取り未確定］で始めました」</dd>
+        <dt>残す情報</dt><dd>「去年」から「一昨年」への言い直しを残す。固有名詞は推測で埋めない</dd>
+        <dt>確認状況</dt><dd>時期の言い直しは音声照合済み。固有名詞は再確認が必要</dd>
+        <dt>分析メモ</dt><dd>活動を始めた時期についての発言。日付への換算は録音日と照合してから行う</dd>
+      </dl>
+      <p>引用候補ごとに、対象者コード、再生位置、前後の発言、修正した箇所、確認状況を残します。未確定の単語が論旨に関わる場合は、確認できるまで言い切りに直さないでください。</p>
+      <h3>自動出力に起きた認識違いを見る</h3>
+      <p>既存の<a href="/guides/interview-transcription-writing/#actual-sample">約3分の架空取材を処理した実例</a>では、台本の「焼く量」が「薬料」と認識されました。未修正の出力、台本、音声、アプリ画面を比較できます。1人の合成音声による例であり、研究インタビューや複数人の自然な会話での精度を示すものではありません。</p></section>
+<section class="sec" id="sharing" aria-labelledby="sharing-h"><h2 id="sharing-h">対象者コードへの置換と、共有先を確認する</h2>
+      <p>名前を「P01」に変えても、声、勤務先、地名、日付、珍しい経験の組み合わせで本人が分かる場合があります。名前の置換だけで、個人が特定できなくなったとは判断しないでください。実名とコードの対応表も、共有用の記録とは分けて管理します。</p>
+      <p>音声の端末内処理を選んでも、別途使うAI機能やクラウド同期まで端末内だけで完結するとは限りません。文字起こしの方式、要約・AIへの入力、同期や書き出しの共有先をそれぞれ確認します。Premiumの同期対象と原本の扱いは<a href="/faq/#storage">保存と同期のFAQ</a>をご覧ください。</p>
+      <p>Texterの機能説明だけで、個別の研究計画に適合するとは判断できません。外部処理や共有を認められていない場合は、指導教員や所属先に方法を確認してから進めてください。</p></section>
+<section class="sec" id="next" aria-labelledby="next-h"><h2 id="next-h">文字起こしの後に使うガイド</h2>
+      <ul><li><a href="/interview/">取材向けの使い方・過去の発言を確認する操作デモ</a></li><li><a href="/guides/interview-transcription-writing/#quote-sheet">原稿用の引用候補を残す確認表</a></li><li><a href="/pricing/#sixty-minutes">60分の録音ファイルを処理する条件</a></li></ul>
+      <p>このページは、記録を確認しやすく残すための作業例です。研究方法の選択、審査、同意の取得、データ管理の判断は、所属先の基準に沿って行ってください。</p></section>
+<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">利用条件を確かめてから、録音を文字に</h2><p>研究で使える処理方法と保存先を確認したうえで、文字起こしを進めてください。無料で始められます。無料版の文字起こしには上限があり、要約は1日3回までです。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-research-interview-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-research-interview-end" data-store="app_store">App StoreでTexterを見る（App Store）</a></div></section>
+</main>
+<footer><div class="wrap">
+  <ul><li><a href="/">ホーム</a></li><li><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金と利用条件</a></li><li><a href="/faq/">よくある質問</a></li><li><a href="/terms-of-service/">利用規約</a></li><li><a href="/privacy-policy/">プライバシーポリシー</a></li><li><a href="/tokushoho/">特定商取引法に基づく表記</a></li></ul>
+  <p>© 2026 Texter app - Kyoto, Japan.</p>
+</div></footer>
+<script>
+(function(){
+  var send=function(name,el){if(window.gtag)gtag('event',name,{location:el.dataset.cta,store:el.dataset.store});};
+  var links=document.querySelectorAll('a[data-cta]');
+  links.forEach(function(a){
+    a.addEventListener('click',function(){send(a.dataset.store==='google_play'?'google_play_click':'app_store_click',a);});
+    if(!('IntersectionObserver' in window))return;
+    var seen=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){send('guide_cta_view',a);seen.disconnect();}});},{threshold:.5});
+    seen.observe(a);
+  });
+})();
+</script>
+</body>
+</html>
