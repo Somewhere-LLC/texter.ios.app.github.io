@@ -1,7 +1,7 @@
 /* Additions for /subtitle/. The base styles come from ../interview/style.css. */
 video{display:block;width:100%;height:auto;background:#0e1430;border-radius:8px}
 .hero-video{background:#fff;border:1px solid #d8dff0;border-radius:12px;box-shadow:0 24px 64px #253d7e12;padding:12px;min-width:0}
-.hero-video figcaption{font-size:10px;line-height:1.8;color:var(--muted);padding:12px 6px 2px}
+.hero-video figcaption{font-size:12px;line-height:1.8;color:var(--muted);padding:12px 6px 2px}
 .sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
 .sample-card{border:1px solid var(--line);border-radius:10px;padding:28px;min-width:0}
 .sample-card h3{font-size:18px;margin-top:8px;margin-bottom:18px}
