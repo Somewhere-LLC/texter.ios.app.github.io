@@ -13,6 +13,7 @@ const entries = [
   'guides',
   'pricing',
   'interview',
+  'subtitle',
   'en',
   'img',
   'robots.txt',

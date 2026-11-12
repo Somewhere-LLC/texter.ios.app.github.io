@@ -1,0 +1,17 @@
+/* Additions for /subtitle/. The base styles come from ../interview/style.css. */
+video{display:block;width:100%;height:auto;background:#0e1430;border-radius:8px}
+.hero-video{background:#fff;border:1px solid #d8dff0;border-radius:12px;box-shadow:0 24px 64px #253d7e12;padding:12px;min-width:0}
+.hero-video figcaption{font-size:10px;line-height:1.8;color:var(--muted);padding:12px 6px 2px}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.sample-card{border:1px solid var(--line);border-radius:10px;padding:28px;min-width:0}
+.sample-card h3{font-size:18px;margin-top:8px;margin-bottom:18px}
+.srt{margin:0;padding:18px 20px;background:var(--wash);border-radius:8px;font:12px/1.9 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink);white-space:pre-wrap;overflow-wrap:anywhere}
+.sample-facts{display:grid;grid-template-columns:88px 1fr;gap:10px 14px;margin:20px 0 0;font-size:12px;line-height:1.9}
+.sample-facts dt{color:var(--muted);font-size:11px}
+.sample-facts dd{margin:0;color:var(--ink)}
+.sample-links{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:20px;font-size:11px;font-weight:600}
+.choose{margin-top:56px}
+.choose>h3{font-size:16px}
+.choose .plan{background:#fff}
+.plan ul{padding-left:18px;margin:16px 0 0;font-size:12px;line-height:2}
+@media(max-width:700px){.sample-grid{grid-template-columns:1fr;gap:15px}.sample-card{padding:23px}.sample-card h3{font-size:16px}.srt{font-size:11px;padding:14px}.sample-facts{grid-template-columns:76px 1fr;font-size:11px}.choose{margin-top:38px}.choose>h3{font-size:14px}}

@@ -128,7 +128,7 @@ function checkSite(files, errors) {
     const rel = m[1] === '' ? 'index.html' : `${m[1]}index.html`;
     if (!fs.existsSync(path.join(root, rel))) errors.push(`sitemap: ${m[1] || '/'} has no ${rel}`);
   }
-  for (const p of ['faq/', 'en/faq/', 'guides/', ...guides.map((g) => `guides/${g.slug}/`), 'pricing/', 'interview/']) if (!sitemap.includes(`https://texter.work/${p}<`)) errors.push(`sitemap: missing ${p}`);
+  for (const p of ['faq/', 'en/faq/', 'guides/', ...guides.map((g) => `guides/${g.slug}/`), 'pricing/', 'interview/', 'subtitle/']) if (!sitemap.includes(`https://texter.work/${p}<`)) errors.push(`sitemap: missing ${p}`);
   // Any Disallow, for any user agent (including AI crawlers such as OAI-SearchBot), hides pages from search.
   if (/^[ \t]*Disallow:[ \t]*\S/im.test(files['robots.txt'])) errors.push('robots.txt: has a Disallow rule');
   const alternates = {};
@@ -138,7 +138,7 @@ function checkSite(files, errors) {
     const expect = 'https://texter.work/' + rel.replace(/index\.html$/, '');
     if (canon !== expect) errors.push(`${rel}: canonical ${canon} != ${expect}`);
     if (rel === 'interview/index.html') checkGuide(rel, html, errors);
-    if (rel.startsWith('guides/') || rel.startsWith('pricing/')) {
+    if (rel.startsWith('guides/') || rel.startsWith('pricing/') || rel.startsWith('subtitle/')) {
       checkGuide(rel, html, errors);
       continue; // Guides exist in Japanese only, so they have no hreflang pairs.
     }
@@ -180,15 +180,39 @@ function checkInterview(html, errors) {
   } catch (e) {
     errors.push(`${file}: invalid demo content (${e.message})`);
   }
-  for (const match of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
+  checkLocalLinks(file, html, errors);
+}
+
+// Every relative link, asset and anchor on a hand-written page must exist in the repo.
+function checkLocalLinks(file, html, errors) {
+  for (const match of html.matchAll(/(?:href|src|poster)="([^"]+)"/g)) {
     const url = decode(match[1]);
     if (/^(https?:|data:)/.test(url)) continue;
     const [pathname, hash] = url.split('#');
-    const target = path.resolve(root, 'en/interview', pathname.split('?')[0] || 'index.html');
-    const resolved = target.endsWith('/') || !path.extname(target) ? path.join(target, 'index.html') : target;
+    const target = pathname ? path.resolve(root, path.dirname(file), pathname.split('?')[0]) : path.join(root, file);
+    const resolved = pathname.endsWith('/') || (pathname && !path.extname(target)) ? path.join(target, 'index.html') : target;
     if (!fs.existsSync(resolved)) { errors.push(`${file}: missing ${url}`); continue; }
     if (hash && !read(path.relative(root, resolved)).includes(`id="${hash}"`)) errors.push(`${file}: missing anchor ${url}`);
   }
+}
+
+function checkSubtitle(html, errors) {
+  const file = 'subtitle/index.html';
+  const graph = nodes(jsonLd(html, file, errors));
+  const webpage = graph.find((node) => node['@type'] === 'WebPage');
+  if (!webpage || !webpage.isPartOf || webpage.isPartOf['@id'] !== `${facts.site}/#website`) errors.push(`${file}: WebPage must reference the existing WebSite`);
+  const title = decode((html.match(/<title>([^<]*)<\/title>/) || [])[1] || '');
+  if (webpage && webpage.name !== title) errors.push(`${file}: WebPage.name differs from <title>`);
+  if (!/<meta name="apple-itunes-app" content="app-id=\d+, affiliate-data=pt=\d+&amp;ct=[a-z0-9-]+">/.test(html)) errors.push(`${file}: Smart App Banner without campaign (affiliate-data)`);
+  for (const m of html.matchAll(/href="(https:\/\/apps\.apple\.com[^"]*)"/g)) if (!/[?]pt=\d+&amp;ct=subtitle-[a-z0-9-]+&amp;mt=8$/.test(m[1])) errors.push(`${file}: App Store link without campaign (pt/ct): ${m[1]}`);
+  if (!html.includes('src="../assets/subtitle/tracking.js"') || !read('assets/subtitle/tracking.js').includes("'subtitle_store_click'")) errors.push(`${file}: store clicks are not sent to GA4 (subtitle_store_click)`);
+  // Prices must be the ones the pricing data lists.
+  const known = new Set([...Object.values(facts.prices), ...Object.values(facts.jaPlans)].map(yen).concat(['¥0', yen(Math.round(facts.prices.yearly / 12))]));
+  for (const m of text(html).matchAll(/¥[\d,]+/g)) if (!known.has(m[0])) errors.push(`${file}: price ${m[0]} is not in app-facts`);
+  // The SRT shown on the page must be the exported file, unedited.
+  const shown = decode((html.match(/<pre class="srt"[^>]*><code>([\s\S]*?)<\/code><\/pre>/) || [])[1] || '').trim();
+  if (shown !== read('assets/guides/video-subtitles/sample.srt').replace(/\r/g, '').trim()) errors.push(`${file}: the SRT on the page differs from the exported file`);
+  checkLocalLinks(file, html, errors);
 }
 
 function run(files, { stale = true } = {}) {
@@ -202,11 +226,12 @@ function run(files, { stale = true } = {}) {
   checkFaq('en/faq/index.html', 'en', files['en/faq/index.html'], errors);
   checkPricing(files['pricing/index.html'], errors);
   checkInterview(files['en/interview/index.html'], errors);
+  checkSubtitle(files['subtitle/index.html'], errors);
   checkSite(files, errors);
   return errors;
 }
 
-const files = Object.fromEntries(['index.html', 'en/index.html', 'faq/index.html', 'en/faq/index.html', 'guides/index.html', ...guides.map((g) => `guides/${g.slug}/index.html`), 'pricing/index.html', 'interview/index.html', 'en/interview/index.html', 'sitemap.xml', 'robots.txt'].map((f) => [f, read(f)]));
+const files = Object.fromEntries(['index.html', 'en/index.html', 'faq/index.html', 'en/faq/index.html', 'guides/index.html', ...guides.map((g) => `guides/${g.slug}/index.html`), 'pricing/index.html', 'interview/index.html', 'en/interview/index.html', 'subtitle/index.html', 'sitemap.xml', 'robots.txt'].map((f) => [f, read(f)]));
 const errors = run(files);
 errors.forEach((e) => console.error('NG', e));
 if (errors.length) process.exit(1);
@@ -250,6 +275,14 @@ if (process.argv.includes('--self-test')) {
     ['interview hreflang missing', 'interview/index.html', (s) => s.replace('<link rel="alternate" hreflang="en" href="https://texter.work/en/interview/">', '')],
     ['Japanese interview JSON-LD broken', 'interview/index.html', (s) => s.replace('"@type":"WebPage"', '"@type":"WebPage",,')],
     ['interview references a missing WebSite', 'en/interview/index.html', (s) => s.replace('"isPartOf":{"@id":"https://texter.work/#website"}', '"isPartOf":{"@id":"https://texter.work/en/#website"}')],
+    ['subtitle page points at a missing sample', 'subtitle/index.html', (s) => s.replace('subtitled-video/sample.mp4', 'subtitled-video/gone.mp4')],
+    ['subtitle page anchor missing', 'subtitle/index.html', (s) => s.replace('../faq/#silence-cut', '../faq/#missing')],
+    ['subtitle page SRT edited by hand', 'subtitle/index.html', (s) => s.replace('机の片付けを紹介します。', '机の片づけを紹介します。')],
+    ['subtitle page price changed', 'subtitle/index.html', (s) => s.replaceAll('¥500', '¥700')],
+    ['subtitle App Store link loses its campaign', 'subtitle/index.html', (s) => s.replace('?pt=489812&amp;ct=subtitle-end&amp;mt=8"', '"')],
+    ['subtitle page tracking removed', 'subtitle/index.html', (s) => s.replace('<script src="../assets/subtitle/tracking.js" defer></script>', '')],
+    ['subtitle page JSON-LD broken', 'subtitle/index.html', (s) => s.replace('"@type":"WebPage"', '"@type":"WebPage",,')],
+    ['sitemap drops the subtitle page', 'sitemap.xml', (s) => s.replace('https://texter.work/subtitle/<', 'https://texter.work/subtitles/<')],
     ['yen price back on the English LP', 'en/index.html', (s) => s.replace('</body>', '<p>¥600</p></body>')],
     ['yen price back in the English FAQ', 'en/faq/index.html', (s) => s.replace('comes in weekly, monthly, and yearly plans.', 'is ¥1,800 per month.')],
     ['generated page edited by hand', 'en/faq/index.html', (s) => s.replace('</footer>', '<p>hand edit</p></footer>')],
