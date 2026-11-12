@@ -209,6 +209,8 @@ function checkUseCasePage(file, name, html, errors) {
   // Prices must be the ones the pricing data lists.
   const known = new Set([...Object.values(facts.prices), ...Object.values(facts.jaPlans)].map(yen).concat(['¥0', yen(Math.round(facts.prices.yearly / 12))]));
   for (const m of text(html).matchAll(/¥[\d,]+/g)) if (!known.has(m[0])) errors.push(`${file}: price ${m[0]} is not in app-facts`);
+  // Google Play links carry the page as the campaign, so installs can be split by page.
+  for (const m of html.matchAll(/href="(https:\/\/play\.google\.com[^"]*)"/g)) if (!m[1].includes(`utm_campaign%3D${name}`)) errors.push(`${file}: Google Play link without campaign: ${m[1]}`);
   checkLocalLinks(file, html, errors);
   if (name !== 'subtitle') return;
   // The SRT shown on the page must be the exported file, unedited.
@@ -290,6 +292,7 @@ if (process.argv.includes('--self-test')) {
     ['hearing App Store link loses its campaign', 'hearing-support/index.html', (s) => s.replace('?pt=489812&amp;ct=hearing-end&amp;mt=8"', '"')],
     ['hearing page tracking removed', 'hearing-support/index.html', (s) => s.replace('<script src="../assets/hearing/tracking.js" defer></script>', '')],
     ['hearing page mail link is accepted', 'hearing-support/index.html', (s) => s.replace('mailto:texter.work.app@gmail.com?subject=', 'mailto:texter.work.app@gmail.com?x=1&subject='), true],
+    ['hearing Google Play link loses its campaign', 'hearing-support/index.html', (s) => s.replace('utm_campaign%3Dhearing', 'utm_campaign%3Dx')],
     ['sitemap drops the hearing page', 'sitemap.xml', (s) => s.replace('https://texter.work/hearing-support/<', 'https://texter.work/hearing/<')],
     ['yen price back on the English LP', 'en/index.html', (s) => s.replace('</body>', '<p>¥600</p></body>')],
     ['yen price back in the English FAQ', 'en/faq/index.html', (s) => s.replace('comes in weekly, monthly, and yearly plans.', 'is ¥1,800 per month.')],

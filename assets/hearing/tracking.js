@@ -24,11 +24,13 @@
   if (!('IntersectionObserver' in window)) return;
   var observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
-      if (!entry.isIntersecting || entry.intersectionRatio < 0.15) return;
+      if (!entry.isIntersecting) return;
       send(entry.target.id === 'pricing' ? 'hearing_pricing_view' : 'hearing_contact_view');
       observer.unobserve(entry.target);
     });
-  }, { threshold: 0.15 });
+  // Fire once the top quarter of the viewport has been passed. A ratio threshold never fires on sections
+  // taller than several screens, so the trigger is a margin instead.
+  }, { threshold: 0, rootMargin: '0px 0px -25% 0px' });
   ['pricing', 'contact'].forEach(function (id) {
     var section = document.getElementById(id);
     if (section) observer.observe(section);
