@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HDB32BHHL8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HDB32BHHL8', { 'cookie_flags': 'SameSite=None;Secure' });
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>ポッドキャストや対談の録音から概要欄の下書きを作る方法｜約21分のトークで試した結果</title>
+<meta name="description" content="約21分の対談の音声をTexterで文字起こしし、内容まとめを書き出して、概要欄の下書きにした結果です。かかった時間、8つに分かれた話題、書き出した文の例、本文と照らした数値、自動の要約が作られなかった場面を載せています。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://texter.work/guides/podcast-transcription-show-notes/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://texter.work/guides/podcast-transcription-show-notes/">
+<meta property="og:title" content="ポッドキャストや対談の録音から概要欄の下書きを作る方法｜約21分のトークで試した結果">
+<meta property="og:description" content="約21分の対談の音声をTexterで文字起こしし、内容まとめを書き出して、概要欄の下書きにした結果です。かかった時間、8つに分かれた話題、書き出した文の例、本文と照らした数値、自動の要約が作られなかった場面を載せています。">
+<meta property="og:site_name" content="Texter">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://texter.work/img/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ポッドキャストや対談の録音から概要欄の下書きを作る方法｜約21分のトークで試した結果">
+<meta name="twitter:description" content="約21分の対談の音声をTexterで文字起こしし、内容まとめを書き出して、概要欄の下書きにした結果です。かかった時間、8つに分かれた話題、書き出した文の例、本文と照らした数値、自動の要約が作られなかった場面を載せています。">
+<meta name="twitter:image" content="https://texter.work/img/ogp.png">
+<meta name="apple-itunes-app" content="app-id=1482592304">
+<link rel="icon" href="/assets/favicon/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v=2">
+<link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png?v=2">
+<meta name="theme-color" content="#EDF4FF">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://texter.work/guides/podcast-transcription-show-notes/#article",
+      "headline": "ポッドキャストや対談の録音から概要欄の下書きを作る方法",
+      "description": "約21分の対談の音声をTexterで文字起こしし、内容まとめを書き出して、概要欄の下書きにした結果です。かかった時間、8つに分かれた話題、書き出した文の例、本文と照らした数値、自動の要約が作られなかった場面を載せています。",
+      "url": "https://texter.work/guides/podcast-transcription-show-notes/",
+      "inLanguage": "ja",
+      "datePublished": "2026-11-12",
+      "dateModified": "2026-11-12",
+      "image": "https://texter.work/img/ogp.png",
+      "isPartOf": {
+        "@id": "https://texter.work/#website"
+      },
+      "about": {
+        "@id": "https://texter.work/#app"
+      },
+      "publisher": {
+        "@id": "https://texter.work/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://texter.work/guides/podcast-transcription-show-notes/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Texter",
+          "item": "https://texter.work/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "活用ガイド",
+          "item": "https://texter.work/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "対談の録音から概要欄の下書きを作る方法",
+          "item": "https://texter.work/guides/podcast-transcription-show-notes/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{--accent:#6482FA;--deep:#5460D6;--navy:#17255A;--text:#444444;--sub:#5F6170;--line:rgba(23,37,90,.12);--card:#FFFFFF;--grad-a:#EDF4FF;--grad-b:#D6E4FC;
+  --f-jp:-apple-system,BlinkMacSystemFont,"SF Pro JP","Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;--f-mono:ui-monospace,Menlo,monospace;color-scheme:light}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:80px}
+body{margin:0;color:var(--text);font-family:var(--f-jp);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased;background:linear-gradient(180deg,var(--grad-a) 0%,var(--grad-b) 100%) fixed,var(--grad-b)}
+a{color:var(--deep)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip{position:fixed;left:12px;top:-60px;z-index:100;background:var(--navy);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+.skip:focus{top:12px}
+.wrap{max-width:760px;margin-inline:auto;padding-inline:20px}
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:18px;color:var(--navy)}
+.brand img{width:28px;height:28px;border-radius:7px}
+.nav ul{display:flex;gap:4px;margin:0;padding:0;list-style:none}
+.nav ul a{display:block;padding:8px 10px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;color:var(--text);white-space:nowrap}
+.crumbs{margin:28px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px;font-size:13px;color:var(--sub)}
+.crumbs li+li::before{content:"/";margin-right:6px}
+.crumbs a{color:var(--sub)}
+h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.6rem);line-height:1.25;font-weight:900}
+.lead{margin:16px 0 0}
+.meta{margin:10px 0 0;font-size:13px;color:var(--sub)}
+.toc{margin:28px 0 0;padding:18px 20px;background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:14px}
+.toc h2{margin:0;font-size:13px;color:var(--sub);font-weight:600}
+.toc ul{margin:8px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 18px}
+.toc a{font-size:15px;font-weight:500}
+.sec{margin-top:48px}
+.sec>h2{margin:0;padding-top:12px;border-top:1.5px solid var(--navy);color:var(--navy);font-size:clamp(1.3rem,3vw,1.6rem);line-height:1.4}
+.sec h3{margin:24px 0 0;color:var(--navy);font-size:17px;line-height:1.6}
+.sec p,.sec ul,.sec ol{margin:12px 0 0}
+.sec ul,.sec ol{padding-left:1.3em}
+.compare{width:100%;margin-top:16px;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;font-size:15px}
+.compare th,.compare td{padding:12px 14px;border:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.65}
+.compare thead th{background:#F2F5FD;color:var(--navy)}
+.compare caption{padding:8px 0;text-align:left;font-size:14px;color:var(--sub)}
+.scroll{overflow-x:auto;margin-top:12px}
+.scroll .compare{margin-top:0}
+.plans{min-width:680px}
+.plans tbody th{min-width:128px}
+.plans th:first-child{position:sticky;left:0;background:#fff;z-index:1}
+.plans thead th:first-child{background:#F2F5FD}
+.sec article{margin-top:18px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.sec article h3{margin:0}
+.doc{margin-top:12px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.doc p:first-child{margin-top:0}
+.steps{list-style:none;padding:0!important;counter-reset:s}
+.steps>li{counter-increment:s;margin-top:32px;padding:20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.steps>li>h3{margin:0}
+.steps>li>h3::before{content:counter(s) ". "}
+.shot{display:inline-block;width:min(46%,260px);margin:16px 10px 0 0;vertical-align:top}
+.shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:14px}
+.shot figcaption{margin-top:6px;font-size:13px;line-height:1.5;color:var(--sub)}
+.shot.land{display:block;width:100%;max-width:680px;margin-right:0}
+.demo{margin:16px 0 0;max-width:300px}
+.demo.land{max-width:none}
+.demo figcaption{margin-top:6px;font-size:13px;line-height:1.5;color:var(--sub)}
+.demo video{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);background:#fff}
+.sample{display:block;width:100%;height:auto;margin-top:16px;border-radius:14px;background:#000}
+.note{font-size:14px}
+.raw{margin-top:14px}
+.raw summary{cursor:pointer;font-weight:600;color:var(--navy)}
+.code{margin:12px 0 0;padding:16px;overflow-x:auto;background:var(--navy);color:#fff;border-radius:12px;font:14px/1.7 var(--f-mono);white-space:pre-wrap;overflow-wrap:anywhere}
+.facts{display:grid;grid-template-columns:8em 1fr;gap:8px 12px;margin:16px 0 0;font-size:15px}
+.facts dt{font-weight:600;color:var(--navy)}
+.facts dd{margin:0}
+.cards{display:grid;gap:14px;margin:28px 0 0}
+.card{display:block;padding:20px 22px;background:var(--card);border:1px solid var(--line);border-radius:14px;text-decoration:none;color:var(--text)}
+.card strong{display:block;color:var(--navy);font-size:18px}
+.card span{display:block;margin-top:6px;font-size:15px}
+.cta{margin:56px 0 0;padding:28px 22px;background:var(--navy);color:#fff;border-radius:18px}
+.cta h2{margin:0;font-size:22px;line-height:1.4}
+.cta p{margin:8px 0 0;color:rgba(255,255,255,.85);font-size:15px}
+.cta .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.cta.inline{margin:32px 0 0;padding:20px 22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 20px;text-align:center;line-height:1.4;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px}
+.btn-solid{background:#fff;color:var(--navy)}
+.btn-line{color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)}
+footer{margin-top:64px;padding:28px 0 40px;border-top:1px solid var(--line);font-size:13px;color:var(--sub)}
+footer ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 16px}
+footer a{color:var(--sub)}
+footer p{margin:12px 0 0}
+@media (max-width:400px){.nav ul .opt{display:none}}
+@media (max-width:560px){.nav ul a{padding:8px 5px;font-size:13px}.shot{width:calc(50% - 8px);margin-right:6px}.shot.wide{width:100%;max-width:320px;margin-right:0}.steps>li{padding:16px}.facts{grid-template-columns:1fr}.facts dd{margin-bottom:8px}.compare{font-size:14px}.compare th,.compare td{padding:10px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/"><img src="/img/appicon.png" alt="" width="28" height="28">Texter</a>
+  <nav aria-label="メイン"><ul><li class="opt"><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金</a></li><li><a href="/faq/">よくある質問</a></li></ul></nav>
+</div></header>
+<main id="main" class="wrap">
+<nav aria-label="パンくずリスト"><ol class="crumbs"><li><a href="/">Texter</a></li><li><a href="/guides/">活用ガイド</a></li><li aria-current="page">対談の録音から概要欄の下書きを作る方法</li></ol></nav>
+<h1>ポッドキャストや対談の録音から概要欄の下書きを作る方法</h1>
+<p class="lead">ポッドキャストや対談を公開するとき、概要欄や紹介記事を書く作業が残ります。録音を文字にして、話題ごとのまとめを書き出すと、下書きの材料がそろいます。約21分の対談の音声で、実際に試しました。題材は、YouTubeで公開されているトーク番組の音声です。ポッドキャストの配信そのものではありません。</p>
+<p class="meta">検証日 <time datetime="2026-11-12">2026-11-12</time></p>
+<nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul><li><a href="#summary">結論</a></li><li><a href="#result">約21分の対談で試した結果</a></li><li><a href="#steps">概要欄の下書きを作る手順</a></li><li><a href="#show-notes">概要欄の下書きの例</a></li><li><a href="#verify">内容まとめを本文と照らした結果</a></li><li><a href="#notes">公開する前の注意</a></li><li><a href="#next">関連するガイド</a></li><li><a href="#method">検証の条件</a></li></ul></nav>
+<section class="sec" id="summary" aria-labelledby="summary-h"><h2 id="summary-h">結論</h2>
+      <p>約21分の対談は約6分で文字になり、「内容まとめ」で8つの話題に整理できました。話題ごとに短い説明と要点が付くので、概要欄の章立てや、紹介記事の見出しの下書きに使えます。書き出しはMarkdown、テキスト、HTML、PDFから選べました。</p>
+      <p>そのまま公開できる文にはなりません。出演者の名前の表記、数値、発言の引用は、本文と音声で確かめる必要があります。再生位置の時刻も、書き出した文には入りません。</p></section>
+<section class="sec" id="result" aria-labelledby="result-h"><h2 id="result-h">約21分の対談で試した結果</h2>
+      <dl class="facts">
+        <dt>音声</dt><dd>20分52秒。2人が、寄せられたコメントに答えていく対談です</dd>
+        <dt>かかった時間</dt><dd>取り込みを始めてから、文字起こしが終わるまで約6分でした（1回の測定）</dd>
+        <dt>文字起こし</dt><dd>アプリからコピーした本文は、改行を含めて6,780文字でした。話者のラベルは付いていません</dd>
+        <dt>自動の要約</dt><dd>今回は作られませんでした。同じ日に要約を3回作った後だったので、無料版の1日3回の上限に当たったとみられます。原因は確かめていません。文字起こしの直後に、Premiumの案内が表示されました</dd>
+        <dt>内容まとめ</dt><dd>本文の上の「内容まとめ」を押して作りました。8つの話題に分かれ、それぞれに説明と要点が付く形です。無料の状態で作れました</dd>
+        <dt>書き出し</dt><dd>Markdownで書き出したファイルは、3,136文字でした。表題、副題、話題ごとの説明と要点、最後のまとめが入ります。画面に出る発言の引用と「やること」は、入りませんでした</dd>
+      </dl>
+      <figure class="shot land"><a href="/assets/guides/talk-show-notes/note.webp"><img src="/assets/guides/talk-show-notes/note.webp" alt="対談のノートの上の部分。質問する、内容まとめ、本文をコピーのボタンがある" width="600" height="343" loading="lazy" decoding="async"></a><figcaption>文字起こしが終わった後のノートの上の部分。自動の要約は付いていない。本文は、出演者の名前が入るので切っている</figcaption></figure><figure class="shot"><a href="/assets/guides/talk-show-notes/topic-summary.webp"><img src="/assets/guides/talk-show-notes/topic-summary.webp" alt="内容まとめの画面。2つ目の話題の要点と、3つ目の話題の説明、発言の引用が表示されている" width="600" height="1100" loading="lazy" decoding="async"></a><figcaption>内容まとめ。話題ごとに説明、発言の引用、要点が並ぶ</figcaption></figure>
+      <p>表題は「気候変動適応を見直す」、副題は「国際目標から地域づくりまで、社会全体で考える気候危機への取り組み」と付きました。副題は、回の一行説明の候補になります。8つの話題の見出しは、次のとおりです。どれもアプリの出力のままです。</p>
+      <ol>
+        <li>気候変動適応を見直す</li>
+        <li>気候変動への適応：緩和との両立と限界</li>
+        <li>気候変動適応の限界：分野ごと</li>
+        <li>パリ協定とIPCC：1.5度目標へ</li>
+        <li>カーボンニュートラル：個人の限界</li>
+        <li>カーボンニュートラル目標：緩和偏重</li>
+        <li>気候変動への適応：緩和と長期対策</li>
+        <li>気候変動適応：自然と共に住みよい街</li>
+      </ol>
+      <p>2つ目の話題を、書き出したMarkdownのまま載せます。修正していません。</p>
+      <pre class="code"><code>## 2. 気候変動への適応：緩和との両立と限界
+
+気候変動への適応をめぐり、適応には限界があるというコメントや、まずCO2排出削減を優先すべきだという意見が紹介された。話者は、緩和と適応の両方が重要であり、どんな変化にも適応できると考えているわけではないと説明する。
+
+### 要点
+
+- 適応には限界があり、猛暑など人間が対応しきれない状況がすでに近づいているという懸念が示された。
+- 適応を語る前にCO2排出を抑える緩和策を優先すべきだという意見が、コメントの背景にあると捉えている。
+- 緩和はCO2排出を減らして温暖化を抑える取り組みで、適応は進行する気候変動への対応を指す。
+- 話者の基本姿勢は緩和と適応の両立であり、気候変動がどこまで進んでも適応可能だとは主張していない。</code></pre>
+      <p class="note">題材は、YouTubeのチャンネル「CCCA」が公開しているトーク番組の音声です。音声だけで配信されているポッドキャストではありません。出典は「検証の条件」に書いています。</p></section><aside class="cta inline" aria-label="アプリで試す"><p>無料で始められます。無料版の文字起こしには上限があり、要約は1日3回までです。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-talk-show-notes-after-result&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-talk-show-notes-after-result" data-store="app_store">iPhoneで対談の録音を文字にする（App Store）</a></div></aside>
+<section class="sec" id="steps" aria-labelledby="steps-h"><h2 id="steps-h">概要欄の下書きを作る手順</h2>
+      <ol class="steps">
+        <li><h3>録音を取り込む</h3><p>「設定」タブの「ファイルをインポート」を開き、「音声ファイルをインポート」で録音を選びます。今回は、「ファイル」アプリで音声を長押しし、「共有」からTexterを選んで取り込みました。取り込みの画面は<a href="/guides/ai-minutes/#steps">議事録のガイド</a>に載せています。</p></li>
+        <li><h3>本文を読んで、誤りを直す</h3><p>文字起こしが終わったら、ノートを開いて本文を読みます。出演者の名前、番組名、数値の表記を先に確かめます。</p></li>
+        <li><h3>内容まとめを作る</h3><p>本文の上にある「内容まとめ」を押します。今回は、8つの話題のまとめができるまで、30秒かかりませんでした。</p></li>
+        <li><h3>書き出す</h3><p>内容まとめの右上の共有ボタンを押すと、Markdown、テキスト、HTML、PDFから形式を選べます。形式を選ぶと共有シートが開き、コピーや「ファイル」への保存ができます。</p></li>
+        <li><h3>概要欄に整える</h3><p>書き出した見出しと要点から、公開する文を自分で組み立てます。次の節に例を載せています。</p></li>
+      </ol></section><aside class="cta inline" aria-label="アプリで試す"><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-talk-show-notes-after-steps&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-talk-show-notes-after-steps" data-store="app_store">iPhoneで対談の録音を文字にする（App Store）</a></div></aside>
+<section class="sec" id="show-notes" aria-labelledby="show-notes-h"><h2 id="show-notes-h">概要欄の下書きの例</h2>
+      <p>下は、今回の出力から運営が組み立てた例です。アプリが自動で作る形式ではありません。コピーして、自分の番組に合わせて直せます。</p>
+      <pre class="code"><code>寄せられたコメントをもとに、気候変動への「適応」と「緩和」の関係を2人で話しました。
+適応に限界はあるのか、1.5度目標は達成できるのか、堤防だけに頼らない街づくりとは何かを取り上げます。
+
+00:00 はじめに
+??:?? 適応と緩和は両立させるもの
+??:?? 適応の限界は分野ごとに違う
+??:?? パリ協定と1.5度目標
+??:?? 個人の努力の限界と、社会の転換
+??:?? 時間のかかる対策は早く計画する
+??:?? 自然を生かした街づくり</code></pre>
+      <p>紹介文は、話題の要点をもとに運営が書きました。章の名前は、8つの話題から6つを選び、見出しと要点をもとに書き直しています。1つ目（番組の紹介）は「はじめに」にまとめ、6つ目（緩和だけに頼るリスク）は、概要欄を短くするために外しました。</p>
+      <p>「??:??」は、再生位置の時刻を入れる場所です。書き出した文には時刻が入らないので、録音を再生して自分で埋めてください。最初の章は再生の始まりなので、00:00のままにします。公開の前に、出演者の名前の表記と、「2010年比で約45%削減」「計画を作っている市区町村は約2%」の数値も確かめます。</p></section>
+<section class="sec" id="verify" aria-labelledby="verify-h"><h2 id="verify-h">内容まとめを本文と照らした結果</h2>
+      <p>内容まとめから数値のある文を3つ選び、本文を検索して確かめました。3つとも、本文に同じ内容がありました。</p>
+      <div class="scroll"><table class="compare"><thead><tr><th scope="col">内容まとめの文</th><th scope="col">本文の該当箇所</th></tr></thead><tbody>
+        <tr><th scope="row">IPCCの報告書は、2030年頃までにCO2を2010年比で約45％削減する目安を示す。</th><td>「2010年比で2030年頃にはCO2排出を約45%削減をして」</td></tr>
+        <tr><th scope="row">全国の市区町村で気候変動適応計画を策定しているのは約2%にとどまると説明された。</th><td>「今全国の市区町村で」「気候変動適応計画が策定されてるのって」「2%ぐらいしかいない状況なんですけど」</td></tr>
+        <tr><th scope="row">2005年頃には、適応を強調すると緩和を軽視しかねないという国際的な議論があった。</th><td>「2005年とかそのあたりには」「国際的にあったと記憶してまして」「あんまり前面に押し出すと緩和しなくてもいいんじゃないかな」</td></tr>
+      </tbody></table></div>
+      <p>確かめたのは3つだけです。ほかの文が正しいことは、確かめていません。本文には、「カーボンニュータル」（1か所）や「賞味ゼロ」のような誤認識がありました。後者は、文脈から「正味ゼロ」と考えられます。内容まとめでは「カーボンニュートラル」と書かれていました。ただし、まとめが本文に無い言い回しになる場合もあるので、引用として使う文は本文で確かめてください。</p></section>
+<section class="sec" id="notes" aria-labelledby="notes-h"><h2 id="notes-h">公開する前の注意</h2>
+      <ul>
+        <li>出演者の名前は、音から漢字が推測されて出力されます。今回の出力にも2人の名前が入りましたが、表記が正しいかは確かめていません。このページには、名前の入った部分を載せていません。公開する文では、本人や番組の公式の表記に合わせてください</li>
+        <li>内容まとめの「発言の引用」は、話し言葉を整えた文になる場合があります。発言として紹介するときは、音声を聞いて確かめてください</li>
+        <li>文字起こしの全文を記事として載せるときは、誤認識を直してから公開してください。全文を載せることで検索からの流入が増えるかは、このページでは確かめていません</li>
+        <li>無料版の要約は、1日3回までです。同じ日に何本も処理すると、自動の要約が作られない場合があります</li>
+        <li>無料版のファイルの文字起こしには、処理時間で数える累積の枠があります。目安は、音声でおよそ30〜40分です。1時間前後の回が無料版でどこまで文字になるかは、今回は確かめていません。条件は<a href="/pricing/">料金と利用条件</a>にあります</li>
+        <li>既定の方式は、文字起こしのために音声を、内容まとめのために文字を、外部のサービスへ送る方式です。ゲストが出演する回は、録音と処理について先に伝えてください。<a href="/faq/#data-sent">データの扱い</a></li>
+        <li>ほかの人の番組を文字にして公開するときは、番組の利用条件を確認してください</li>
+      </ul></section>
+<section class="sec" id="next" aria-labelledby="next-h"><h2 id="next-h">関連するガイド</h2><p>動画に字幕を付けるには<a href="/subtitle/">動画の字幕づくりのページ</a>、インタビューを原稿にするには<a href="/guides/interview-transcription-writing/">インタビューを原稿にするガイド</a>、話題の広がりを見渡すには<a href="/guides/interview-topic-map/">話題マップのガイド</a>をご覧ください。</p></section>
+<section class="sec" id="method" aria-labelledby="method-h"><h2 id="method-h">検証の条件</h2>
+      <dl class="facts">
+        <dt>検証した人</dt><dd>Texter運営</dd>
+        <dt>検証日</dt><dd>2026-11-12</dd>
+        <dt>環境</dt><dd>iPhone 17 ProのSimulator（iOS 26.5）で動かした開発版のTexter（バージョン2.11.73）。無料の状態で、文字起こしの方式は既定のままです。製品版では、画面や結果が異なる場合があります。今回の環境では広告が出ませんでした。製品版の無料版では、取り込みの前に動画広告が出る場合があります。内容まとめの画面写真は、開発用の表示が入る上端を切っています。</dd>
+        <dt>音声</dt><dd>「A-PLATube #3 『適応』する必要って本当にあるの？ Twitterのコメントに答えてみた」（<a href="https://www.youtube.com/watch?v=w2QRku_-Ilw" target="_blank" rel="noopener noreferrer">YouTube</a>、公開元のチャンネルはCCCA）。YouTube上で「<a href="https://support.google.com/youtube/answer/2797468?hl=ja" target="_blank" rel="noopener noreferrer">クリエイティブ・コモンズ 表示（CC BY）</a>」のライセンスが表示されています（2026-11-12に確認）。音声だけを取り出し、加工せずに取り込みました。</dd>
+        <dt>掲載した文</dt><dd>話題の見出し、2つ目の話題の文、本文の抜粋は、Texter運営がアプリで処理して得た出力です。公開元が作成・確認したものではありません。本文の全文と、内容まとめの全文は載せていません。</dd>
+        <dt>確かめていないこと</dt><dd>音声と本文の聞き比べ、出演者の名前の表記、話者を分けた場合の結果、音声だけで配信されているポッドキャストでの結果</dd>
+      </dl></section>
+<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで試す</h2><p>Texterは、録音や音声ファイルから文字起こしと要約を作るアプリです。この手順はiPhone版のものです。無料で始められます。無料版の文字起こしには上限があり、要約は1日3回までです。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-talk-show-notes-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-talk-show-notes-end" data-store="app_store">iPhoneで対談の録音を文字にする（App Store）</a></div></section>
+</main>
+<footer><div class="wrap">
+  <ul><li><a href="/">ホーム</a></li><li><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金と利用条件</a></li><li><a href="/faq/">よくある質問</a></li><li><a href="/terms-of-service/">利用規約</a></li><li><a href="/privacy-policy/">プライバシーポリシー</a></li><li><a href="/tokushoho/">特定商取引法に基づく表記</a></li></ul>
+  <p>© 2026 Texter app - Kyoto, Japan.</p>
+</div></footer>
+<script>
+(function(){
+  var send=function(name,el){if(window.gtag)gtag('event',name,{location:el.dataset.cta,store:el.dataset.store});};
+  var links=document.querySelectorAll('a[data-cta]');
+  links.forEach(function(a){
+    a.addEventListener('click',function(){send(a.dataset.store==='google_play'?'google_play_click':'app_store_click',a);});
+    if(!('IntersectionObserver' in window))return;
+    var seen=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){send('guide_cta_view',a);seen.disconnect();}});},{threshold:.5});
+    seen.observe(a);
+  });
+})();
+</script>
+</body>
+</html>
