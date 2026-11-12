@@ -1045,6 +1045,100 @@ CMIP5などの全球モデルは世界全体を計算するため、日本海側
   ctaBody: 'Texterは、録音や音声ファイルから文字起こしと要約を作るアプリです。この手順はiPhone版のものです。',
 };
 
+const interviewTopics = {
+  slug: 'interview-topic-map',
+  verified: '2026-11-12',
+  published: '2026-11-12',
+  iosOnly: true,
+  title: 'インタビューを話題ごとに整理する方法｜質的調査の下準備に話題マップを試した結果',
+  description: '約11分の公開インタビューをTexterで文字起こしし、話題マップで7つの話題に分けた結果です。話題名と件数、話題に入った発言、名前がずれた話題、誤認識、質的調査で使うときの注意を載せています。',
+  crumb: 'インタビューを話題ごとに整理する方法',
+  h1: 'インタビューを話題ごとに整理する方法',
+  lead: 'インタビューを文字にした後、どの話題がどこで語られたかを見渡すと、読み込む順番を決めやすくなります。Texterの話題マップを、約11分の公開インタビューで実際に試しました。',
+  image: '/img/ogp.png',
+  store: 'guide-interview-topic-map',
+  sections: [
+    { id: 'summary', title: '結論', html: `
+      <p>約11分のインタビューは、話題マップで7つの話題に分かれました。話題を押すと、その話題に入った発言が一覧で出ます。全体を見渡す下準備には使えました。</p>
+      <p>話題の名前は、そのままでは分析に使えません。たとえ話に出た語や、誤認識の語が名前になった話題がありました。研究のコードは、発言を読んでから自分で付けてください。</p>` },
+    { id: 'result', cta: 'after-result', title: '約11分のインタビューで試した結果', html: `
+      <dl class="facts">
+        <dt>音声</dt><dd>10分57秒。聞き手1人と研究者1人の対話です</dd>
+        <dt>かかった時間</dt><dd>取り込みを始めてから、ノートができるまで約3分半でした（1回の測定）</dd>
+        <dt>文字起こし</dt><dd>アプリからコピーした本文は、改行を含めて4,084文字でした。話者のラベルは付いていません</dd>
+        <dt>要約</dt><dd>628文字。文字起こしの後に、操作をしなくても作られました</dd>
+        <dt>話題マップ</dt><dd>7つの話題。各話題の件数を合わせると91件でした</dd>
+      </dl>
+      ${wide(fig('/assets/guides/interview-topics/note.webp', 'インタビューのノートの画面。題名の下に、内容のまとめが表示されている', '取り込んだ後のノート', ...FULL))}
+      <p>アプリが作った要約の全文です。修正していません。テキストは<a href="/assets/guides/interview-topics/summary.txt" download>ファイル</a>でも確認できます。</p>
+      <pre class="code"><code>中心テーマ：地域における気候変動適応を進めるため、計画の現状を分析し、知識の共有や支援を通じて課題を解消すること。
+
+1. 地域気候変動適応計画を分析している
+   藤田さんは、地方公共団体の取り組みを社会学的に分析し、適応の準備状況や優れた点、改善点を明らかにしようとしている。国内で策定された約80件の計画を、海外研究を参考に作成したチェック表で調べている。
+
+2. 日本の計画には不確実性を扱う強みがある
+   多くの計画が気候変動予測の不確実性を認識し、複数のRCPシナリオやモデル結果を用いている。海外の研究では不確実性の記載が不十分な例もあり、日本の特徴と考えられる。
+
+3. 適応策の費用と効果の検討が課題
+   適応策には費用がかかる一方、被害を抑える効果も期待できる。両者を踏まえて策定された計画は国内に見当たらず、検討項目の充実が必要だと指摘する。
+
+4. 予測が不確実でも、起こりうるリスクへの認識が必要
+   気候変動の影響が確実に起きるとは限らないことや、将来の問題として遠く感じられることが、対策の遅れにつながる可能性がある。確率論的に起こりうる現象として理解を広げることが重要である。
+
+5. 専門知識を分かりやすく届ける必要がある
+   地域気候変動適応センターの活動では、専門知識の習得が課題として挙げられている。知見や考え方を分かりやすく提供し、自治体や地域の人々が身近な適応策について知る機会を増やすことが求められる。</code></pre>
+      <p class="note">題材は、YouTubeのチャンネル「CCCA」が公開しているインタビューの音声です。出典は「検証の条件」に書いています。</p>` },
+    { id: 'steps', cta: 'after-steps', title: '話題マップを開く手順', html: `
+      <ol class="steps">
+        <li><h3>録音を取り込む</h3><p>「設定」タブの「ファイルをインポート」を開き、「音声ファイルをインポート」で録音を選びます。取り込みの画面は<a href="/guides/ai-minutes/#steps">議事録のガイド</a>に載せています。</p></li>
+        <li><h3>話題マップを開く</h3><p>ノートの右上のメニューを開き、「可視化」の「話題マップ」を選びます。今回は、1分かからずに作成が終わりました。</p></li>
+        <li><h3>話題の一覧を見る</h3><p>上に話題の丸、下に話題の一覧が出ます。丸の数字と一覧の件数は、その話題に入った発言の数です。</p>${fig('/assets/guides/interview-topics/topic-map.webp', '話題マップの画面。7つの丸に話題名と件数が付いている', '7つの話題に分かれた話題マップ', 600, 1100)}${fig('/assets/guides/interview-topics/topic-list.webp', '話題の一覧。地域気候変動適応計画30件、改善点分析14件などが並ぶ', '話題の一覧と件数', 600, 1100)}</li>
+        <li><h3>話題に入った発言を読む</h3><p>話題を押すと、その話題に入った発言が番号つきで並びます。ここで、話題名と中身が合っているかを確かめます。</p>${fig('/assets/guides/interview-topics/topic-detail.webp', '「地震対策」の話題を開いた画面。11件のパラグラフとして、発言が番号つきで並んでいる', '「地震対策」に入った発言', 600, 1100)}</li>
+      </ol>` },
+    { id: 'topics', title: '7つの話題と、名前がずれた例', html: `
+      <div class="scroll"><table class="compare"><thead><tr><th scope="col">話題名（アプリの表示）</th><th scope="col">件数</th><th scope="col">本文と照らして分かったこと</th></tr></thead><tbody>
+        <tr><th scope="row">地域気候変動適応計画</th><td>30件</td><td>インタビューの中心の話題。本文にも同じ語がある</td></tr>
+        <tr><th scope="row">改善点分析</th><td>14件</td><td>中身は確かめていない</td></tr>
+        <tr><th scope="row">コストベネフィット分析</th><td>13件</td><td>本文に「適応策のコストと」「ベネフィットの両者を勘案して」とある</td></tr>
+        <tr><th scope="row">地震対策</th><td>11件</td><td>中身は、対策に移るまでのハードルの話。地震は、聞き手が出したたとえ</td></tr>
+        <tr><th scope="row">経営科学</th><td>10件</td><td>本文の「多くの分析した経営科学の中で」から付いた名前。この箇所は誤認識と考えられる</td></tr>
+        <tr><th scope="row">不十分性分析</th><td>8件</td><td>中身は確かめていない</td></tr>
+        <tr><th scope="row">行政官の専門知識習得の課…</th><td>5件</td><td>名前は画面の幅で切れている。本文に「専門知識の習得」とある</td></tr>
+      </tbody></table></div>
+      <p>「地震対策」を開くと、「例えば地震の対策みたいなものは」に続いて、「実際に対策に移るまでのハードルがあるっていうのは」という聞き手の質問が並びました。この話題の中身は気候変動への対策の遅れで、地震の話ではありません。</p>
+      <p>「経営科学」は、インタビューに出てこない分野の名前です。文脈からは、分析した計画や研究を指す語が、別の語として認識されたと考えられます。誤認識の語が、そのまま話題名になりました。</p>` },
+    { id: 'errors', title: '見つけた誤認識', html: `
+      <p>本文を読んで、誤りと考えられる箇所を見つけました。音声と聞き比べてはいないので、正しい語は文脈からの推定です。表は見つけた例で、すべてではありません。</p>
+      <div class="scroll"><table class="compare"><thead><tr><th scope="col">本文の表記</th><th scope="col">文脈から考えられる語</th></tr></thead><tbody>
+        <tr><th scope="row">富士山は気候変動適応センターで</th><td>話し手の名前。冒頭では正しく表記されている</td></tr>
+        <tr><th scope="row">適用策を検討するための項目</th><td>適応策。ほかの箇所では「適応策」と表記されている</td></tr>
+        <tr><th scope="row">多くの分析した経営科学の中で</th><td>不明。分析した計画や研究を指すと読める</td></tr>
+      </tbody></table></div>
+      <p>話し手の名前が別の語になると、検索で見つかりません。引用する発言は、音声で確かめてください。</p>` },
+    { id: 'research', title: '質的調査で使うときの注意', html: `
+      <ul>
+        <li>話題マップは、アプリが発言を自動で分けた結果です。研究のコーディングの代わりにはなりません。読む順番を決める下準備として使ってください</li>
+        <li>今回の本文には、話者のラベルがありません。聞き手の質問と話し手の答えが、同じ話題に並びます。話者を分けるには、Premiumの話者識別が要ります。話者を分けた結果は、今回は確かめていません</li>
+        <li>話題に入らなかった発言があるかは、確かめていません。本文は170行で、各話題の件数の合計は91件でした。数え方が同じかは分からないので、漏れの有無は本文を通して読んで確かめてください</li>
+        <li>要約は、話し手の言葉をそのまま残したものではありません。引用には使わず、本文と音声に戻ってください</li>
+        <li>話題マップの作成と要約は、処理のために文字を外部へ送ります。研究計画と同意の範囲に合うかを、先に確認してください。確認する項目は<a href="/guides/research-interview-transcription/#before-import">研究インタビューのガイド</a>にまとめています</li>
+      </ul>` },
+    { id: 'next', title: '関連するガイド', html: `<p>逐語録の確認と引用の残し方は<a href="/guides/research-interview-transcription/">研究インタビューのガイド</a>、取材を原稿にする手順は<a href="/guides/interview-transcription-writing/">インタビューを原稿にするガイド</a>、話者を分ける手順は<a href="/guides/multi-speaker-meeting-minutes/">話者ごとの議事録のガイド</a>をご覧ください。料金と上限は<a href="/pricing/">料金と利用条件</a>にあります。</p>` },
+    { id: 'method', title: '検証の条件', html: `
+      <dl class="facts">
+        <dt>検証した人</dt><dd>Texter運営</dd>
+        <dt>検証日</dt><dd>2026-11-12</dd>
+        <dt>環境</dt><dd>${ENV}。無料の状態で、文字起こしの方式は既定のままです。製品版では、画面や結果が異なる場合があります。話題マップの画面写真は、開発用の表示が入る上端を切っています。</dd>
+        <dt>音声</dt><dd>「A-PLATube #7 藤田研究員に聞く！日本の地域適応計画は優れてる？」（<a href="https://www.youtube.com/watch?v=EV1QHWqYfUU" target="_blank" rel="noopener noreferrer">YouTube</a>、公開元のチャンネルはCCCA）。YouTube上で「<a href="https://support.google.com/youtube/answer/2797468?hl=ja" target="_blank" rel="noopener noreferrer">クリエイティブ・コモンズ 表示（CC BY）</a>」のライセンスが表示されています（2026-11-12に確認）。音声だけを取り出し、加工せずに取り込みました。</dd>
+        <dt>掲載した文</dt><dd>要約、本文の抜粋、話題名は、Texter運営がアプリで処理して得た出力です。公開元が作成・確認したものではありません。本文の全文は載せていません。</dd>
+        <dt>確かめていないこと</dt><dd>音声と本文の聞き比べ、7つの話題すべての中身、同じ音声でもう一度作ったときに同じ話題になるか、話者を分けた場合の結果</dd>
+      </dl>` },
+  ],
+  ctaTitle: 'Texterで試す',
+  ctaLabel: 'iPhoneでインタビューを文字にする',
+  ctaBody: 'Texterは、録音や音声ファイルから文字起こしと要約を作るアプリです。この手順はiPhone版のものです。',
+};
+
 const researchInterview = {
   slug: 'research-interview-transcription',
   published: '2026-11-11',
@@ -1114,4 +1208,4 @@ const index = {
   crumb: '活用ガイド',
 };
 
-module.exports = { VERIFIED, guides: [interviewWriting, researchInterview, lectureNotes, aiMinutes, meetingTasks, multiSpeakerMinutes, voiceMemosVsTexter, sideButton, pipGuide, searchNotes, offlineTranscription, subtitledVideo, videoSubtitles], index };
+module.exports = { VERIFIED, guides: [interviewWriting, researchInterview, interviewTopics, lectureNotes, aiMinutes, meetingTasks, multiSpeakerMinutes, voiceMemosVsTexter, sideButton, pipGuide, searchNotes, offlineTranscription, subtitledVideo, videoSubtitles], index };
