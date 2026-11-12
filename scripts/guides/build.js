@@ -9,13 +9,14 @@ const ORG_ID = `${SITE}/#organization`;
 const SITE_ID = `${SITE}/#website`;
 // Same provider token as the app's public note pages. The campaign token ties an App Store install to the guide and link position.
 const APP_STORE_PT = facts.appStorePt;
-const CONDITIONS = '無料で始められます。手元の録音を取り込むと、目安として音声30〜40分ぶんまで、無料で文字にできます（使った分は累積します）。要約は1日3回まで無料です。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。';
+const CONDITIONS = '無料で始められます。iPhone版では、手元の録音を取り込むと、目安として音声30〜40分ぶんまで無料で文字にできます（この枠は、毎月は戻りません）。その場で録音しながらの文字起こしは1回3分、1日15分までで、要約は1日3回まで無料です。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。';
 // A small link under the lead, so a reader who is already convinced does not have to scroll to the first button.
-const topLink = (g) => `<p class="try"><a href="${facts.appStore.ja}?pt=${APP_STORE_PT}&amp;ct=${g.store}-top&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="${g.store}-top" data-store="app_store">${esc(g.topLabel || '無料で試す（App Store）')}</a></p>`;
+const topLink = (g) => { if (`${g.store}-top`.length > 40) throw new Error(`campaign token too long: ${g.store}-top`); return `<p class="try"><a href="${facts.appStore.ja}?pt=${APP_STORE_PT}&amp;ct=${g.store}-top&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="${g.store}-top" data-store="app_store">${esc(g.topLabel || '無料で試す（App Store）')}</a></p>`; };
 // Test conditions stay on the page, folded, so the body reads as a guide and not as a test report.
+// A section that credits a CC BY source stays open, so the credit is always visible.
 const sectionBody = (s, player) => {
   const html = s.html.replace('__VIDEO__', player);
-  return s.id === 'method' ? `<details class="raw"><summary>${esc(s.title)}を見る</summary>${html}</details>` : html;
+  return s.id === 'method' && !html.includes('CC BY') ? `<details class="raw"><summary>開いて読む</summary>${html}</details>` : html;
 };
 const appStoreLink = (g, pos) => {
   const id = `${g.store}-${pos}`;
