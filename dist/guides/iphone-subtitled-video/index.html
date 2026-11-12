@@ -123,6 +123,8 @@ a{color:var(--deep)}
 .crumbs a{color:var(--sub)}
 h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.6rem);line-height:1.25;font-weight:900}
 .lead{margin:16px 0 0}
+.try{margin:16px 0 0}
+.try a{display:inline-flex;align-items:center;min-height:44px;padding:8px 18px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:15px}
 .meta{margin:10px 0 0;font-size:13px;color:var(--sub)}
 .toc{margin:28px 0 0;padding:18px 20px;background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:14px}
 .toc h2{margin:0;font-size:13px;color:var(--sub);font-weight:600}
@@ -196,7 +198,8 @@ footer p{margin:12px 0 0}
 <main id="main" class="wrap">
 <nav aria-label="パンくずリスト"><ol class="crumbs"><li><a href="/">Texter</a></li><li><a href="/guides/">活用ガイド</a></li><li aria-current="page">iPhoneで字幕付き動画を作る方法</li></ol></nav>
 <h1>iPhoneで字幕付き動画を作る方法</h1>
-<p class="lead">Texterで動画を文字起こしすると、字幕を映像に入れた動画を書き出せます。15秒の動画を実機で処理した結果と手順を説明します。</p>
+<p class="lead">Texterで動画を文字起こしすると、字幕を映像に入れた動画を書き出せます。字幕ファイルを読み込めないサービスにも、字幕付きのまま投稿できます。15秒の動画では、書き出しは約7〜8秒でした。手順と、完成した動画を紹介します。</p>
+<p class="try"><a href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-subtitled-video-top&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-subtitled-video-top" data-store="app_store">無料で試す（App Store）</a></p>
 <p class="meta">検証日 <time datetime="2026-11-01">2026-11-01</time></p>
 <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul><li><a href="#summary">結論</a></li><li><a href="#result">完成した動画と結果</a></li><li><a href="#steps">手順</a></li><li><a href="#check">投稿する前の確認</a></li><li><a href="#notes">始める前の注意</a></li><li><a href="#next">関連するガイド</a></li><li><a href="#method">検証の条件</a></li></ul></nav>
 <section class="sec" id="summary" aria-labelledby="summary-h"><h2 id="summary-h">結論</h2>
@@ -211,7 +214,7 @@ footer p{margin:12px 0 0}
         <dt>書き出した動画</dt><dd>約15MB。元の動画の約4倍になりました。</dd>
       </dl>
       <p>字幕は2つに分かれました。1つ目は3文をまとめた字幕で、3行になり、表示は約10秒です。この3行は映像の下の約3分の1を覆いました。2つ目は1行でした。字幕の位置は下端、色は白い文字と黒い背景で、変えられません。語の途中で改行されることがあり、今回も「片付／け」「一箇／所」のように切れました。</p>
-      <p>文字の誤りはなく、表記だけが台本と違います。「五分」は「5分」に、「一か所」は「一箇所」になりました。</p></section><aside class="cta inline" aria-label="アプリで試す"><p>無料で始められます。無料版の文字起こしには上限があり、要約は1日3回までです。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-subtitled-video-after-result&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-subtitled-video-after-result" data-store="app_store">iPhoneで字幕付き動画を作る（App Store）</a></div></aside>
+      <p>文字の誤りはなく、表記だけが台本と違います。「五分」は「5分」に、「一か所」は「一箇所」になりました。</p></section><aside class="cta inline" aria-label="アプリで試す"><p>無料で始められます。手元の録音を取り込むと、目安として音声30〜40分ぶんまで、無料で文字にできます（使った分は累積します）。要約は1日3回まで無料です。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-subtitled-video-after-result&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-subtitled-video-after-result" data-store="app_store">iPhoneで字幕付き動画を作る（App Store）</a></div></aside>
 <section class="sec" id="steps" aria-labelledby="steps-h"><h2 id="steps-h">手順</h2>
       <ol class="steps">
         <li><h3>動画を取り込む</h3><p>「画像」タブの「動画ファイルをインポート」で動画を選び、「動画を保存」を押してください。「動画から音声のみを保存」を選ぶと映像が残りません。今回はファイルアプリの動画を取り込みました。写真アプリの動画は、同じ画面の「カメラまたはビデオライブラリから選択」から選べますが、今回は試していません。取り込むと文字起こしが始まり、終わるとノートが開きます。</p></li>
@@ -234,15 +237,15 @@ footer p{margin:12px 0 0}
         <li>長い動画と「高品質」の書き出しは、今回は検証していません。掲載した動画は960×540に縮小しています</li>
       </ul></section>
 <section class="sec" id="next" aria-labelledby="next-h"><h2 id="next-h">関連するガイド</h2><p>字幕ファイルを作るには<a href="/guides/video-subtitles/">SRTのガイド</a>、録音を議事録にするには<a href="/guides/ai-minutes/">議事録のガイド</a>をご覧ください。</p></section>
-<section class="sec" id="method" aria-labelledby="method-h"><h2 id="method-h">検証の条件</h2>
+<section class="sec" id="method" aria-labelledby="method-h"><h2 id="method-h">検証の条件</h2><details class="raw"><summary>検証の条件を見る</summary>
       <dl class="facts">
         <dt>検証した人</dt><dd>Texter運営</dd>
         <dt>検証日</dt><dd>2026-11-01</dd>
         <dt>環境</dt><dd>iPhone 17 Pro（iOS 27.0）、製品版のTexter（バージョン2.11.68）。無料の状態です。</dd>
         <dt>動画</dt><dd>動画生成サービスRenoiseで作った、15秒の日本語の動画です。雑音はありません。実際に撮影した動画では、結果が異なる場合があります。</dd>
-      </dl></section>
+      </dl></details></section>
 <aside class="toc" aria-label="動画づくりでの活用"><h2>動画に字幕を付けたい方へ</h2><p>SRTと字幕付き動画の使い分け、実際の出力、料金の選び方は、<a href="/subtitle/">動画の字幕づくりのページ</a>にまとめています。</p></aside>
-<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで試す</h2><p>Texterは、音声や動画の文字起こしと字幕の書き出しができるアプリです。この手順はiPhone版のものです。無料で始められます。無料版の文字起こしには上限があり、要約は1日3回までです。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-subtitled-video-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-subtitled-video-end" data-store="app_store">iPhoneで字幕付き動画を作る（App Store）</a></div></section>
+<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで試す</h2><p>Texterは、音声や動画の文字起こしと字幕の書き出しができるアプリです。この手順はiPhone版のものです。無料で始められます。手元の録音を取り込むと、目安として音声30〜40分ぶんまで、無料で文字にできます（使った分は累積します）。要約は1日3回まで無料です。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-subtitled-video-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-subtitled-video-end" data-store="app_store">iPhoneで字幕付き動画を作る（App Store）</a></div></section>
 </main>
 <footer><div class="wrap">
   <ul><li><a href="/">ホーム</a></li><li><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金と利用条件</a></li><li><a href="/faq/">よくある質問</a></li><li><a href="/terms-of-service/">利用規約</a></li><li><a href="/privacy-policy/">プライバシーポリシー</a></li><li><a href="/tokushoho/">特定商取引法に基づく表記</a></li></ul>

@@ -1,6 +1,7 @@
 // Generates /guides/ and the guide pages from data.js. scripts/seo/build.js writes the output.
 const facts = require('../seo/app-facts');
-const { VERIFIED, guides, index } = require('./data');
+const { VERIFIED, guides, index, groups } = require('./data');
+for (const g of guides) if (!g.card || !groups.some((gr) => gr.id === g.group)) throw new Error(`guide needs card and group: ${g.slug}`);
 const pricing = require('./pricing');
 
 const SITE = facts.site;
@@ -8,7 +9,14 @@ const ORG_ID = `${SITE}/#organization`;
 const SITE_ID = `${SITE}/#website`;
 // Same provider token as the app's public note pages. The campaign token ties an App Store install to the guide and link position.
 const APP_STORE_PT = facts.appStorePt;
-const CONDITIONS = '無料で始められます。無料版の文字起こしには上限があり、要約は1日3回までです。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。';
+const CONDITIONS = '無料で始められます。手元の録音を取り込むと、目安として音声30〜40分ぶんまで、無料で文字にできます（使った分は累積します）。要約は1日3回まで無料です。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。';
+// A small link under the lead, so a reader who is already convinced does not have to scroll to the first button.
+const topLink = (g) => `<p class="try"><a href="${facts.appStore.ja}?pt=${APP_STORE_PT}&amp;ct=${g.store}-top&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="${g.store}-top" data-store="app_store">${esc(g.topLabel || '無料で試す（App Store）')}</a></p>`;
+// Test conditions stay on the page, folded, so the body reads as a guide and not as a test report.
+const sectionBody = (s, player) => {
+  const html = s.html.replace('__VIDEO__', player);
+  return s.id === 'method' ? `<details class="raw"><summary>${esc(s.title)}を見る</summary>${html}</details>` : html;
+};
 const appStoreLink = (g, pos) => {
   const id = `${g.store}-${pos}`;
   if (id.length > 40) throw new Error(`campaign token too long: ${id}`);
@@ -52,6 +60,8 @@ a{color:var(--deep)}
 .crumbs a{color:var(--sub)}
 h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.6rem);line-height:1.25;font-weight:900}
 .lead{margin:16px 0 0}
+.try{margin:16px 0 0}
+.try a{display:inline-flex;align-items:center;min-height:44px;padding:8px 18px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:15px}
 .meta{margin:10px 0 0;font-size:13px;color:var(--sub)}
 .toc{margin:28px 0 0;padding:18px 20px;background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:14px}
 .toc h2{margin:0;font-size:13px;color:var(--sub);font-weight:600}
@@ -222,10 +232,11 @@ function renderGuide(g) {
       crumbLd(url, items),
     ],
   };
-  const sections = g.sections.map((s) => `<section class="sec" id="${s.id}" aria-labelledby="${s.id}-h"><h2 id="${s.id}-h">${esc(s.title)}</h2>${s.html.replace('__VIDEO__', player)}</section>${s.cta ? inlineCta(g, s.cta) : ''}`).join('\n');
+  const sections = g.sections.map((s) => `<section class="sec" id="${s.id}" aria-labelledby="${s.id}-h"><h2 id="${s.id}-h">${esc(s.title)}</h2>${sectionBody(s, player)}</section>${s.cta ? inlineCta(g, s.cta) : ''}`).join('\n');
   const body = `${crumbs(items)}
 <h1>${esc(g.h1)}</h1>
 <p class="lead">${g.lead}</p>
+${topLink(g)}
 <p class="meta">${esc(g.metaLabel || '検証日')} <time datetime="${g.metaDate || verified}">${g.metaDate || verified}</time></p>
 <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul>${g.sections.map((s) => `<li><a href="#${s.id}">${esc(s.title)}</a></li>`).join('')}</ul></nav>
 ${sections}${g.slug === 'iphone-search-past-recordings' ? '\n<aside class="toc" aria-label="取材での活用"><h2>取材音声を、次の原稿に生かす</h2><p>取材の文字起こしから過去の発言の確認まで。<a href="/interview/">取材向けの使い方・操作デモ・料金</a>をご覧ください。</p></aside>' : ''}${['video-subtitles', 'iphone-subtitled-video'].includes(g.slug) ? '\n<aside class="toc" aria-label="動画づくりでの活用"><h2>動画に字幕を付けたい方へ</h2><p>SRTと字幕付き動画の使い分け、実際の出力、料金の選び方は、<a href="/subtitle/">動画の字幕づくりのページ</a>にまとめています。</p></aside>' : ''}
@@ -258,7 +269,8 @@ function renderIndex() {
 <p class="lead">${esc(index.lead)}</p>
 <aside class="toc" aria-label="取材での活用"><h2>取材・インタビューに使いたい方へ</h2><p><a href="/interview/">文字起こしから引用確認までの使い方</a>を、取材版の操作デモと料金の選び方で紹介しています。</p></aside>
 <aside class="toc" aria-label="動画づくりでの活用"><h2>動画に字幕を付けたい方へ</h2><p><a href="/subtitle/">SRTと字幕付き動画の作り方</a>を、実際の出力と料金の選び方で紹介しています。</p></aside>
-<div class="cards">${guides.map((g) => `<a class="card" href="/guides/${g.slug}/"><strong>${esc(g.h1)}</strong><span>${esc(g.description)}</span></a>`).join('')}</div>`;
+${groups.map((gr) => `<section class="sec" aria-labelledby="${gr.id}-h"><h2 id="${gr.id}-h">${esc(gr.title)}</h2><div class="cards">${guides.filter((g) => g.group === gr.id).map((g) => `<a class="card" href="/guides/${g.slug}/"><strong>${esc(g.h1)}</strong><span>${esc(g.card)}</span></a>`).join('')}</div></section>`).join('\n')}
+<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">手元の録音を1本、文字にしてみる</h2><p>${CONDITIONS}</p><div class="row"><a class="btn btn-solid" href="${facts.appStore.ja}?pt=${APP_STORE_PT}&amp;ct=guides-index-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guides-index-end" data-store="app_store">App Storeで見る</a><a class="btn btn-line" href="${facts.googlePlay}" target="_blank" rel="noopener noreferrer" data-cta="guides-index-end" data-store="google_play">Google Playで見る</a></div></section>`;
   return shell({ title: index.title, description: index.description, url, ld, body, ogType: 'website' });
 }
 

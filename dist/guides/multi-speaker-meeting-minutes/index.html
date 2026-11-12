@@ -123,6 +123,8 @@ a{color:var(--deep)}
 .crumbs a{color:var(--sub)}
 h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.6rem);line-height:1.25;font-weight:900}
 .lead{margin:16px 0 0}
+.try{margin:16px 0 0}
+.try a{display:inline-flex;align-items:center;min-height:44px;padding:8px 18px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:15px}
 .meta{margin:10px 0 0;font-size:13px;color:var(--sub)}
 .toc{margin:28px 0 0;padding:18px 20px;background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:14px}
 .toc h2{margin:0;font-size:13px;color:var(--sub);font-weight:600}
@@ -196,7 +198,8 @@ footer p{margin:12px 0 0}
 <main id="main" class="wrap">
 <nav aria-label="パンくずリスト"><ol class="crumbs"><li><a href="/">Texter</a></li><li><a href="/guides/">活用ガイド</a></li><li aria-current="page">複数人の会議を話者ごとに議事録にする方法</li></ol></nav>
 <h1>複数人の会議を話者ごとに文字起こしして議事録を作る方法</h1>
-<p class="lead">複数人の打ち合わせでは、発言だけでなく「誰が言ったか」も議事録の手がかりになります。Texterで録音を話者ごとに分け、スピーカーのラベルを実際の名前に直してから、決定事項と担当を確認する手順を説明します。</p>
+<p class="lead">会議の録音を取り込むと、発言が「スピーカー1」「スピーカー2」のように話者ごとに分かれ、ラベルを1つ直すと、同じ話者の発言がまとめて実際の名前に変わります。誰が言ったかが残るので、決定事項と担当を確かめやすくなります。話者識別はPremiumの機能です。手順と、公開された5人の会議で確かめた結果を説明します。</p>
+<p class="try"><a href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-speaker-minutes-top&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-speaker-minutes-top" data-store="app_store">App Storeで見る</a></p>
 <p class="meta">更新日 <time datetime="2026-11-05">2026-11-05</time></p>
 <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul><li><a href="#overview">最初に知っておくこと</a></li><li><a href="#steps">話者ごとに文字起こしする手順</a></li><li><a href="#rename">ラベルをタップして話者名を一括変更する</a></li><li><a href="#public-meeting">公開された会議で話者の区別を確かめた結果</a></li><li><a href="#minutes">発言を確認して議事録に仕上げる</a></li><li><a href="#troubleshooting">ラベルが出ない・話者が違うとき</a></li><li><a href="#notes">利用前に確認すること</a></li><li><a href="#method">このページの確認範囲</a></li></ul></nav>
 <section class="sec" id="overview" aria-labelledby="overview-h"><h2 id="overview-h">最初に知っておくこと</h2>
@@ -247,8 +250,8 @@ footer p{margin:12px 0 0}
         <li>話者識別には通信が必要です。Whisperでのファイル文字起こしは音声を外部のサービスへ送り、要約はテキストを外部のサービスへ送ります。<a href="/faq/#data-sent">データの扱い</a>と会議の共有ルールを確認してください</li>
         <li>Premiumプランごとに文字起こしの上限が異なります。長い会議の前に<a href="/pricing/">料金と利用条件</a>を確認してください</li>
       </ul></section>
-<section class="sec" id="method" aria-labelledby="method-h"><h2 id="method-h">このページの確認範囲</h2>
-      <dl class="facts"><dt>確認日</dt><dd>2026-11-02</dd><dt>確認環境</dt><dd>iPhone 17 ProのSimulator（iOS 26.5）、Texter開発版2.11.68</dd><dt>掲載動画・画像</dt><dd>指定の会議音声を取り込んで得た文字起こしと、話者ラベル17件を一括変更した実際の画面です。動画は待ち時間を省いています。</dd><dt>公開会議の検証</dt><dd>2026-11-05、同じSimulatorと開発版で実施しました。こども家庭庁が公開している会議の録画（15分44秒、話者5人）を取り込み、話者の切り替わりを公開の議事録と照らし合わせました。1件の会議で1回試した結果です。</dd><dt>未測定</dt><dd>会議室で録音した音声と、発言が重なる会議での話者識別は測っていません。議事録テンプレートの出力も測っていません。</dd></dl></section>
+<section class="sec" id="method" aria-labelledby="method-h"><h2 id="method-h">このページの確認範囲</h2><details class="raw"><summary>このページの確認範囲を見る</summary>
+      <dl class="facts"><dt>確認日</dt><dd>2026-11-02</dd><dt>確認環境</dt><dd>iPhone 17 ProのSimulator（iOS 26.5）、Texter開発版2.11.68</dd><dt>掲載動画・画像</dt><dd>指定の会議音声を取り込んで得た文字起こしと、話者ラベル17件を一括変更した実際の画面です。動画は待ち時間を省いています。</dd><dt>公開会議の検証</dt><dd>2026-11-05、同じSimulatorと開発版で実施しました。こども家庭庁が公開している会議の録画（15分44秒、話者5人）を取り込み、話者の切り替わりを公開の議事録と照らし合わせました。1件の会議で1回試した結果です。</dd><dt>未測定</dt><dd>会議室で録音した音声と、発言が重なる会議での話者識別は測っていません。議事録テンプレートの出力も測っていません。</dd></dl></details></section>
 <section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで会議を記録する</h2><p>Texterでは、会議の録音を話者ごとに文字起こしし、要約や議事録の作成に使えます。話者識別はPremiumの機能です。通信が必要で、プランごとに文字起こしの時間上限が異なります。<a href="/pricing/">料金と利用条件</a>をご確認ください。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-speaker-minutes-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-speaker-minutes-end" data-store="app_store">iPhoneで話者識別を試す（App Store）</a></div></section>
 </main>
 <footer><div class="wrap">
