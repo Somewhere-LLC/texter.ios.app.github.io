@@ -6,6 +6,8 @@ const ENV = 'iPhone 17 ProのSimulator（iOS 26.5）で動かした開発版のT
 const fig = (src, alt, cap, w, h) => `<figure class="shot"><a href="${src}"><img src="${src}" alt="${alt}" width="${w}" height="${h}" loading="lazy" decoding="async"></a><figcaption>${cap}</figcaption></figure>`;
 const FULL = [600, 1304];
 const wide = (html) => html.replace('class="shot"', 'class="shot wide"');
+// Landscape screenshots (a desktop browser) are shown at the full column width.
+const land = (html) => html.replace('class="shot"', 'class="shot land"');
 
 const aiMinutes = {
   slug: 'ai-minutes',
@@ -158,9 +160,9 @@ const aiMinutes = {
 
 const videoSubtitles = {
   slug: 'video-subtitles',
-  modified: '2026-11-01',
+  modified: '2026-11-12',
   title: 'iPhoneの動画からSRT字幕を作る方法｜書き出し手順と完成例',
-  description: '15秒の動画から字幕ファイルのSRTを作った全手順です。実際のSRT、字幕付きの再生例、時刻のずれの実測、YouTubeで使うときの手順を載せています。',
+  description: '15秒の動画から字幕ファイルのSRTを作った全手順です。実際のSRT、字幕付きの再生例、時刻のずれの実測、YouTubeに読み込んで自動字幕と比べた結果を載せています。',
   crumb: 'iPhoneの動画からSRT字幕を作る方法',
   h1: 'iPhoneの動画からSRT字幕を作る方法',
   lead: '動画の音声を文字起こしして時刻つきのSRTファイルにすると、YouTubeなどに読み込めます。このページの完成物はSRTで、字幕を映像に入れた動画は扱いません。15秒の動画を実際に処理した結果と、公開前に確認する点を説明します。',
@@ -197,8 +199,23 @@ const videoSubtitles = {
         <li><h3>SRTを書き出す</h3><p>「共有」から「字幕(SRT)ファイルを共有」を選び、共有シートで保存先や送り先を指定してください。</p>${fig('/assets/guides/video-subtitles/05-menu.webp', '共有メニュー。字幕(SRT)ファイルを共有の項目がある', '共有メニュー', ...FULL)}${fig('/assets/guides/video-subtitles/06-sheet.webp', 'SRTファイルの共有シート。ファイルに保存などの項目が並ぶ', '共有シート', ...FULL)}</li>
       </ol>` },
     { id: 'youtube', title: 'YouTubeにSRTを読み込む', html: `
-      <p><a href="https://support.google.com/youtube/answer/2734796?hl=ja" target="_blank" rel="noopener noreferrer">YouTubeヘルプ</a>には、次の手順が載っています。ウェブ版のYouTube Studioの手順です。今回は、YouTubeへの実際のアップロードは行っていません。</p>
-      <ol><li>YouTube Studioにログインし、左のメニューの「字幕」を開く</li><li>対象の動画を選び、必要なら「言語を追加」で言語を追加する</li><li>「作成」を押し、「ファイルをアップロード」を選ぶ</li><li>SRTファイルを指定して、「保存」を押す</li></ol><p>画面の表示が違うときは、上のヘルプを確認してください。</p>` },
+      <p>上のSRTを、ウェブ版のYouTube Studioで実際に読み込みました。動画は非公開の設定で、2026-11-12に試した結果です。YouTubeの画面は変わることがあるので、表示が違うときは<a href="https://support.google.com/youtube/answer/2734796?hl=ja" target="_blank" rel="noopener noreferrer">YouTubeヘルプ</a>を確認してください。</p>
+      <ol class="steps">
+        <li><h3>動画の言語を決める</h3><p>YouTube Studioで動画を開き、左のメニューの「字幕」を選びます。最初に動画の言語を聞かれたので、「日本語」を選んで「確認」を押しました。「これを自分のチャンネルのデフォルトにする」は、外しても進めます。</p></li>
+        <li><h3>自動の字幕を確かめる</h3><p>この動画には、アップロードしてすぐにYouTubeの自動字幕が付いていました。字幕の行の鉛筆のボタンを押すと、「既存の日本語の字幕が上書きされます」という確認が出ます。「続行」を押すと編集画面が開き、自動字幕の内容を読めました。</p>${land(fig('/assets/guides/video-subtitles/yt-01-auto.webp', 'YouTube Studioの字幕の編集画面。自動字幕が2つの区切りで表示されている', 'YouTubeの自動字幕。2つに分かれ、「文房具」が「文房牛」になっていた', 1088, 456))}</li>
+        <li><h3>SRTを読み込む</h3><p>編集画面の「テキストとして編集」の右にあるメニューから「ファイルをアップロード」を選びます。ファイルの形式は「タイムコードあり」のまま「続行」を押し、SRTを指定しました。字幕は、SRTと同じ3つに入れ替わりました。</p>${land(fig('/assets/guides/video-subtitles/yt-02-uploaded.webp', 'YouTube Studioの字幕の編集画面。SRTの3つの字幕が並んでいる', 'SRTを読み込んだ後の編集画面', 1088, 456))}</li>
+        <li><h3>公開する</h3><p>右上の「公開」を押すと、「日本語の字幕を公開しました」と表示されました。字幕の一覧には、読み込んだ字幕と自動字幕の2行が並びます。</p>${land(fig('/assets/guides/video-subtitles/yt-03-list.webp', '字幕の一覧。日本語（動画の言語）と日本語（自動字幕起こし）の2行がある', '公開した後の字幕の一覧', 1000, 240))}</li>
+      </ol>
+      <h3>再生して確かめた結果</h3>
+      <p>動画の再生画面で字幕をオンにすると、字幕の選択肢は「日本語」の1つだけでした。7.5秒の位置で、SRTの2つ目の字幕がそのまま表示されました。</p>
+      ${land(fig('/assets/guides/video-subtitles/yt-04-watch.webp', 'YouTubeの再生画面。映像の下に「まず、いらない紙を1か所に集めます。」と字幕が出ている', '再生画面に出た、SRTの2つ目の字幕', 1032, 580))}
+      <div class="scroll"><table class="compare"><thead><tr><th scope="col">項目</th><th scope="col">YouTubeの自動字幕</th><th scope="col">読み込んだSRT</th></tr></thead><tbody>
+      <tr><th scope="row">字幕の数</th><td>2つ</td><td>3つ</td></tr>
+      <tr><th scope="row">区切り</th><td>「紙を1／箇所に」のように、文の途中で切れた</td><td>1〜2文ごと</td></tr>
+      <tr><th scope="row">文字の誤り</th><td>「文房具」が「文房牛」</td><td>なし</td></tr>
+      <tr><th scope="row">句読点</th><td>読点なし</td><td>あり</td></tr>
+      </tbody></table></div>
+      <p class="note">15秒の動画1本で比べた結果です。自動字幕の内容は、動画や時期によって変わります。ほかの動画でも同じ差が出るとは限りません。編集画面の時刻は、秒とフレームの組で表示されました。</p>` },
     { id: 'check', title: '公開前に確認する3つの点', html: `
       <h3>1. 字幕が出るタイミング</h3>
       <p>今回の動画で無音の区間を測ると、3つの字幕はどれも話し始めより約0.2〜0.5秒早く表示されました。口の動きと合わせたい動画は、再生して確かめてください。</p>
@@ -224,6 +241,7 @@ const videoSubtitles = {
         <dt>動画</dt><dd>動画生成サービスRenoiseで作った、15秒の日本語の動画です。雑音はありません。音声認識はアプリの既定のWhisperです。実際に撮影した動画では、結果が異なる場合があります。</dd>
         <dt>時刻の測定</dt><dd>ffmpegのsilencedetect（-35dB、0.25秒以上）で無音の区間を検出し、SRTの時刻と比べました。</dd>
         <dt>掲載したSRT</dt><dd>アプリが書き出したファイルをそのまま掲載しました。</dd>
+        <dt>YouTubeでの確認</dt><dd>2026-11-12に、ウェブ版のYouTube Studio（パソコンのChrome）で行いました。動画は非公開の設定です。再生画面の字幕は、動画の持ち主としてログインした状態で確かめました。</dd>
       </dl>` },
   ],
   ctaTitle: 'Texterで試す',
