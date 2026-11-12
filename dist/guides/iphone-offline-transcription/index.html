@@ -185,11 +185,20 @@ footer p{margin:12px 0 0}
 <p class="lead">iOS 26以降のiPhoneでは、音声ファイルの文字起こしに、端末の中で処理する方式を選べます。既定の方式は音声をクラウドへ送るので、外に出したくない録音では、先に切り替えてください。端末内の処理に失敗すると、クラウドの方式に切り替わる場合があります。切り替える手順と、端末の中だけで済む範囲、通信が要る範囲を、アプリのコードと画面の文言から整理しました。</p>
 <p class="try"><a href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-offline-top&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-offline-top" data-store="app_store">無料で試す（App Store）</a></p>
 <p class="meta">確認日 <time datetime="2026-11-05">2026-11-05</time></p>
-<nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul><li><a href="#summary">結論</a></li><li><a href="#map">処理ごとの送信先</a></li><li><a href="#steps">端末内で音声ファイルを文字起こしする手順</a></li><li><a href="#fallback">SpeechAnalyzerが失敗するとWhisperへ切り替わる</a></li><li><a href="#storage">保存先と、外へ出る操作</a></li><li><a href="#not-suited">向いていない場面</a></li><li><a href="#next">関連するページ</a></li><li><a href="#method">確認の範囲</a></li></ul></nav>
+<nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul><li><a href="#summary">結論</a></li><li><a href="#steps">端末内で音声ファイルを文字起こしする手順</a></li><li><a href="#map">処理ごとの送信先</a></li><li><a href="#fallback">SpeechAnalyzerが失敗するとWhisperへ切り替わる</a></li><li><a href="#storage">保存先と、外へ出る操作</a></li><li><a href="#not-suited">向いていない場面</a></li><li><a href="#next">関連するページ</a></li><li><a href="#method">確認の範囲</a></li></ul></nav>
 <section class="sec" id="summary" aria-labelledby="summary-h"><h2 id="summary-h">結論</h2>
       <p>音声ファイルを端末の中だけで文字起こしするには、iOS 26以降で、取り込みの「音声認識サービス」をSpeechAnalyzerに変えます。既定のWhisperは、音声をクラウドへ送ります。</p>
       <p>端末内で済むのは、この文字起こしと、いくつかの補助機能だけです。日本語の録音中の文字起こしは、クラウドのエンジンを使います。話者識別はクラウド処理です。要約と日本語のAIチャットは、確認したコードではクラウドのAIサービスへテキストを送ります。</p>
       <p>Texterは、通信なしですべてが動くアプリではありません。音声を送らないことを優先するときは、下の表で使う機能を選んでください。</p></section>
+<section class="sec" id="steps" aria-labelledby="steps-h"><h2 id="steps-h">端末内で音声ファイルを文字起こしする手順</h2>
+      <ol class="steps">
+        <li><h3>iOSの版を確かめる</h3><p>SpeechAnalyzerはiOS 26以降の機能です。それより前のiPhoneでは選べません。</p></li>
+        <li><h3>「音声認識サービスを選択」を開く</h3><p>Texterの「設定」→「ファイルをインポート」→「音声認識サービスを選択」を開きます。一覧には、Default、SpeechAnalyzer、Whisper(OpenAI)、Amazon Transcribeが並びます。</p></li>
+        <li><h3>SpeechAnalyzerを選ぶ</h3><p>Defaultは、Appleの音声認識です。端末内で処理されるとは限らないので選ばないでください。SpeechAnalyzerは、初回に言語のモデルを端末へダウンロードします。このときは通信が要ります。</p></li>
+        <li><h3>言語を選ぶ</h3><p>SpeechAnalyzerの欄の下で、文字起こしする言語を選びます。選ばなかった場合の言語は、端末の言語に近いものです。対応する言語が見つからないと、処理が失敗してWhisperへ切り替わります。</p></li>
+        <li><h3>音声ファイルを取り込む</h3><p>「設定」→「ファイルをインポート」→「音声ファイルをインポート」でファイルを選びます。無料版では、取り込みの前に動画広告が表示されます。</p></li>
+      </ol>
+      <p>アプリの説明文の記載は、「すべて端末内で処理される」です。この手順の画面は、今回は実機で操作していません。</p></section><aside class="cta inline" aria-label="アプリで試す"><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-offline-after-steps&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-offline-after-steps" data-store="app_store">iPhoneで端末内の文字起こしを試す（App Store）</a></div></aside>
 <section class="sec" id="map" aria-labelledby="map-h"><h2 id="map-h">処理ごとの送信先</h2>
       <div class="scroll"><table class="compare"><thead><tr><th scope="col">処理</th><th scope="col">端末内で済む条件</th><th scope="col">通信が要る場合</th></tr></thead><tbody>
         <tr><th scope="row">音声ファイルの文字起こし（取り込み）</th><td>音声認識サービスをSpeechAnalyzerにする（iOS 26以降）。初回は言語モデルのダウンロードに通信が要る</td><td>既定のWhisperとAmazon Transcribeは、音声をサーバーへ送る</td></tr>
@@ -204,15 +213,6 @@ footer p{margin:12px 0 0}
         <tr><th scope="row">録音中の翻訳</th><td>Appleの翻訳機能で処理する。言語パックのダウンロードが要る</td><td>翻訳画面のDeepLとGoogleはクラウド。「Google Offline」だけが端末内。翻訳画面の音声入力は、接続中ならAppleのサーバーで認識される場合がある</td></tr>
       </tbody></table></div>
       <p class="note">この表は、アプリのコード（バージョン2.11.71）で確認した既定の動きです。サーバーから配信される設定で変わる場合があります。</p></section>
-<section class="sec" id="steps" aria-labelledby="steps-h"><h2 id="steps-h">端末内で音声ファイルを文字起こしする手順</h2>
-      <ol class="steps">
-        <li><h3>iOSの版を確かめる</h3><p>SpeechAnalyzerはiOS 26以降の機能です。それより前のiPhoneでは選べません。</p></li>
-        <li><h3>「音声認識サービスを選択」を開く</h3><p>Texterの「設定」→「ファイルをインポート」→「音声認識サービスを選択」を開きます。一覧には、Default、SpeechAnalyzer、Whisper(OpenAI)、Amazon Transcribeが並びます。</p></li>
-        <li><h3>SpeechAnalyzerを選ぶ</h3><p>Defaultは、Appleの音声認識です。端末内で処理されるとは限らないので選ばないでください。SpeechAnalyzerは、初回に言語のモデルを端末へダウンロードします。このときは通信が要ります。</p></li>
-        <li><h3>言語を選ぶ</h3><p>SpeechAnalyzerの欄の下で、文字起こしする言語を選びます。選ばなかった場合の言語は、端末の言語に近いものです。対応する言語が見つからないと、処理が失敗してWhisperへ切り替わります。</p></li>
-        <li><h3>音声ファイルを取り込む</h3><p>「設定」→「ファイルをインポート」→「音声ファイルをインポート」でファイルを選びます。無料版では、取り込みの前に動画広告が表示されます。</p></li>
-      </ol>
-      <p>アプリの説明文の記載は、「すべて端末内で処理される」です。この手順の画面は、今回は実機で操作していません。</p></section><aside class="cta inline" aria-label="アプリで試す"><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-offline-after-steps&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-offline-after-steps" data-store="app_store">iPhoneで端末内の文字起こしを試す（App Store）</a></div></aside>
 <section class="sec" id="fallback" aria-labelledby="fallback-h"><h2 id="fallback-h">SpeechAnalyzerが失敗するとWhisperへ切り替わる</h2>
       <p>コードでは、SpeechAnalyzerでの処理にエラーが起きると、同じ音声をWhisperで処理し直します。Whisperは音声をクラウドへ送ります。確認したコードの範囲では、切り替える前に確認の画面を出す処理は見つかりませんでした。</p>
       <p>コードでは、選んだ言語にSpeechAnalyzerが対応していないとき、言語のモデルの準備に失敗したとき、文字起こしの途中でエラーが起きたときに、この切り替えが起きます。音声を端末の外へ出さないことが条件なら、この切り替えを受け入れられるかを先に判断してください。通信できない状態で切り替えが起きた場合の動きは、検証していません。</p></section>
@@ -236,7 +236,7 @@ footer p{margin:12px 0 0}
         <dt>確認したもの</dt><dd>iPhone版Texter（バージョン2.11.71）のソースコードと、日本語の画面の文言です。</dd>
         <dt>確認していないこと</dt><dd>実機での通信の観測、機内モードでの動作、SpeechAnalyzerが失敗したときの切り替えの再現、サーバーから配信される設定の本番の値、使えるiPhoneの機種と言語の一覧です。</dd>
       </dl></details></section>
-<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで試す</h2><p>Texterは、録音や音声ファイルから文字起こし、要約、やることの抽出までを行うアプリです。この手順はiPhone版のものです。無料で始められます。iPhone版では、手元の録音を取り込むと、目安として音声30〜40分ぶんまで無料で文字にできます（この枠は、毎月は戻りません）。その場で録音しながらの文字起こしは1回3分、1日15分までで、要約は1日3回まで無料です。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-offline-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-offline-end" data-store="app_store">iPhoneで端末内の文字起こしを試す（App Store）</a></div></section>
+<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで試す</h2><p>Texterは、録音や音声ファイルから文字起こし、要約、やることの抽出までを行うアプリです。この手順はiPhone版のものです。無料で始められます。iPhone版の無料版では、手元の録音を取り込むと、目安として音声30〜40分ぶんまで文字にできます（この枠は、毎月は戻りません）。その場で録音しながらの文字起こしは1回3分、1日15分まで、要約は1日3回までです。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-offline-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-offline-end" data-store="app_store">iPhoneで端末内の文字起こしを試す（App Store）</a></div></section>
 </main>
 <footer><div class="wrap">
   <ul><li><a href="/">ホーム</a></li><li><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金と利用条件</a></li><li><a href="/faq/">よくある質問</a></li><li><a href="/terms-of-service/">利用規約</a></li><li><a href="/privacy-policy/">プライバシーポリシー</a></li><li><a href="/tokushoho/">特定商取引法に基づく表記</a></li></ul>

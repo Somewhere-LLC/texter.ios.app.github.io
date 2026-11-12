@@ -28,7 +28,7 @@ const aiMinutes = {
   store: 'guide-ai-minutes',
   sections: [
     { id: 'summary', title: '結論', html: `
-      <p>議事録は、録音、文字起こし、整理、人の確認の4段階で作れます。自動で進むのは文字起こしと要約までです。担当者と数字は、最後に人が確認してください。</p>
+      <p>議事録は、録音、文字起こし、整理、人の確認の4段階で作れます。自動で進むのは文字起こしと要約までです。担当者、数字、固有名詞は、最後に人が確認してください。</p>
       <p>公開された15分44秒の会議でも試しました。要約の表示までは約1分でした。6事業の結論はすべて要約に入り、直す箇所は5か所です。詳しくは<a href="#public-meeting">公開された会議の録画で試した結果</a>で説明します。</p>
       <table class="compare"><thead><tr><th scope="col">方法</th><th scope="col">向いている場面</th><th scope="col">注意点</th></tr></thead><tbody>
         <tr><th scope="row">議事録アプリ</th><td>録音から整理までを1つのアプリで済ませたいとき</td><td>無料で使える時間や回数に上限がある</td></tr>
@@ -177,6 +177,8 @@ const videoSubtitles = {
   store: 'guide-video-subtitles',
   sections: [
     { id: 'summary', title: '結論', html: `
+      <p>動画を取り込み、共有メニューから書き出すと、時刻つきのSRTができます。15秒の動画の文字起こしは、約8秒でした。</p>
+      <p>このSRTをYouTubeに読み込み、YouTubeの自動字幕と比べています。自動字幕は文の途中で切れ、「文房具」が「文房牛」になっていました。読み込んだSRTは1〜2文ごとの区切りで、文字の誤りはありません。15秒の動画1本で比べた結果です。画面と比較表は<a href="#youtube">YouTubeにSRTを読み込む</a>をご覧ください。</p>
       <p>この手順は、字幕ファイルを手元に残したい人や、複数のサービスで使いたい人に向いています。YouTubeだけで公開するなら、YouTubeの自動字幕も試せます。</p>
       <p>SRTは、番号、表示する時刻、字幕の文字だけでできたテキストファイルです。YouTubeヘルプの<a href="https://support.google.com/youtube/answer/2734698?hl=ja" target="_blank" rel="noopener noreferrer">対応形式の一覧</a>にも載っています。</p>` },
     { id: 'result', cta: 'after-result', title: '実際のSRTと再生結果の完成例', html: `
@@ -679,6 +681,15 @@ const offlineTranscription = {
       <p>音声ファイルを端末の中だけで文字起こしするには、iOS 26以降で、取り込みの「音声認識サービス」をSpeechAnalyzerに変えます。既定のWhisperは、音声をクラウドへ送ります。</p>
       <p>端末内で済むのは、この文字起こしと、いくつかの補助機能だけです。日本語の録音中の文字起こしは、クラウドのエンジンを使います。話者識別はクラウド処理です。要約と日本語のAIチャットは、確認したコードではクラウドのAIサービスへテキストを送ります。</p>
       <p>Texterは、通信なしですべてが動くアプリではありません。音声を送らないことを優先するときは、下の表で使う機能を選んでください。</p>` },
+    { id: 'steps', cta: 'after-steps', title: '端末内で音声ファイルを文字起こしする手順', html: `
+      <ol class="steps">
+        <li><h3>iOSの版を確かめる</h3><p>SpeechAnalyzerはiOS 26以降の機能です。それより前のiPhoneでは選べません。</p></li>
+        <li><h3>「音声認識サービスを選択」を開く</h3><p>Texterの「設定」→「ファイルをインポート」→「音声認識サービスを選択」を開きます。一覧には、Default、SpeechAnalyzer、Whisper(OpenAI)、Amazon Transcribeが並びます。</p></li>
+        <li><h3>SpeechAnalyzerを選ぶ</h3><p>Defaultは、Appleの音声認識です。端末内で処理されるとは限らないので選ばないでください。SpeechAnalyzerは、初回に言語のモデルを端末へダウンロードします。このときは通信が要ります。</p></li>
+        <li><h3>言語を選ぶ</h3><p>SpeechAnalyzerの欄の下で、文字起こしする言語を選びます。選ばなかった場合の言語は、端末の言語に近いものです。対応する言語が見つからないと、処理が失敗してWhisperへ切り替わります。</p></li>
+        <li><h3>音声ファイルを取り込む</h3><p>「設定」→「ファイルをインポート」→「音声ファイルをインポート」でファイルを選びます。無料版では、取り込みの前に動画広告が表示されます。</p></li>
+      </ol>
+      <p>アプリの説明文の記載は、「すべて端末内で処理される」です。この手順の画面は、今回は実機で操作していません。</p>` },
     { id: 'map', title: '処理ごとの送信先', html: `
       <div class="scroll"><table class="compare"><thead><tr><th scope="col">処理</th><th scope="col">端末内で済む条件</th><th scope="col">通信が要る場合</th></tr></thead><tbody>
         <tr><th scope="row">音声ファイルの文字起こし（取り込み）</th><td>音声認識サービスをSpeechAnalyzerにする（iOS 26以降）。初回は言語モデルのダウンロードに通信が要る</td><td>既定のWhisperとAmazon Transcribeは、音声をサーバーへ送る</td></tr>
@@ -693,15 +704,6 @@ const offlineTranscription = {
         <tr><th scope="row">録音中の翻訳</th><td>Appleの翻訳機能で処理する。言語パックのダウンロードが要る</td><td>翻訳画面のDeepLとGoogleはクラウド。「Google Offline」だけが端末内。翻訳画面の音声入力は、接続中ならAppleのサーバーで認識される場合がある</td></tr>
       </tbody></table></div>
       <p class="note">この表は、アプリのコード（バージョン2.11.71）で確認した既定の動きです。サーバーから配信される設定で変わる場合があります。</p>` },
-    { id: 'steps', cta: 'after-steps', title: '端末内で音声ファイルを文字起こしする手順', html: `
-      <ol class="steps">
-        <li><h3>iOSの版を確かめる</h3><p>SpeechAnalyzerはiOS 26以降の機能です。それより前のiPhoneでは選べません。</p></li>
-        <li><h3>「音声認識サービスを選択」を開く</h3><p>Texterの「設定」→「ファイルをインポート」→「音声認識サービスを選択」を開きます。一覧には、Default、SpeechAnalyzer、Whisper(OpenAI)、Amazon Transcribeが並びます。</p></li>
-        <li><h3>SpeechAnalyzerを選ぶ</h3><p>Defaultは、Appleの音声認識です。端末内で処理されるとは限らないので選ばないでください。SpeechAnalyzerは、初回に言語のモデルを端末へダウンロードします。このときは通信が要ります。</p></li>
-        <li><h3>言語を選ぶ</h3><p>SpeechAnalyzerの欄の下で、文字起こしする言語を選びます。選ばなかった場合の言語は、端末の言語に近いものです。対応する言語が見つからないと、処理が失敗してWhisperへ切り替わります。</p></li>
-        <li><h3>音声ファイルを取り込む</h3><p>「設定」→「ファイルをインポート」→「音声ファイルをインポート」でファイルを選びます。無料版では、取り込みの前に動画広告が表示されます。</p></li>
-      </ol>
-      <p>アプリの説明文の記載は、「すべて端末内で処理される」です。この手順の画面は、今回は実機で操作していません。</p>` },
     { id: 'fallback', title: 'SpeechAnalyzerが失敗するとWhisperへ切り替わる', html: `
       <p>コードでは、SpeechAnalyzerでの処理にエラーが起きると、同じ音声をWhisperで処理し直します。Whisperは音声をクラウドへ送ります。確認したコードの範囲では、切り替える前に確認の画面を出す処理は見つかりませんでした。</p>
       <p>コードでは、選んだ言語にSpeechAnalyzerが対応していないとき、言語のモデルの準備に失敗したとき、文字起こしの途中でエラーが起きたときに、この切り替えが起きます。音声を端末の外へ出さないことが条件なら、この切り替えを受け入れられるかを先に判断してください。通信できない状態で切り替えが起きた場合の動きは、検証していません。</p>` },
@@ -1317,12 +1319,8 @@ const researchInterview = {
   image: '/img/ogp.png',
   store: 'guide-research-interview',
   sections: [
-    { id: 'before-import', title: '取り込む前に、研究の条件を確認する', html: `
-      <p>録音してよいことと、外部サービスで処理・保存してよいことは分けて確認します。相手に説明した利用目的と、研究計画で認められた方法に合うかを、先に確かめてください。</p>
-      <ul><li>録音・文字起こし・引用について説明し、必要な同意を得ているか</li><li>音声や文字をクラウドへ送ってよいか。AIによる要約や分析にも使ってよいか</li><li>原音・逐語録・対象者との対応表を、誰がどこに保存し、いつまで管理するか</li><li>沈黙、相づち、言い直し、重なった発話を、どの表記で残すか</li></ul>
-      <p>日本音声学会の<a href="https://www.psj.gr.jp/jpn/rinri" target="_blank" rel="noopener noreferrer">研究倫理ガイドライン</a>でも、目的・方法の説明と同意、同意された範囲での利用、個人情報の管理、公表時の配慮が示されています。対象や分野によって条件は異なるため、所属先の手続きをこのページで置き換えることはできません。</p>` },
     { id: 'four-records', title: '自動出力・逐語録・分析メモを分ける', html: `
-      <p>次の分け方は、Texter運営が提案する作業例です。アプリが自動で作る分類ではありません。ファイル名にも段階を入れると、未確認の文を引用する取り違えを減らせます。</p>
+      <p>このガイドの手順で残すのは、次の4つの記録です。分け方は、Texter運営が提案する作業例です。アプリが自動で作る分類ではありません。ファイル名にも段階を入れると、未確認の文を引用する取り違えを減らせます。</p>
       <table class="compare" style="table-layout:fixed"><colgroup><col style="width:24%"><col style="width:40%"><col style="width:36%"></colgroup><thead><tr><th scope="col">記録</th><th scope="col">残す内容</th><th scope="col">使い方</th></tr></thead><tbody>
         <tr><th scope="row">原音</th><td>編集していない音声と、収録日・対象者コード</td><td>発言と前後の文脈を確かめる</td></tr>
         <tr><th scope="row">自動出力</th><td>アプリから書き出した未修正の文字起こし</td><td>どこを修正したか比較する。確認済みの逐語録とは区別する</td></tr>
@@ -1330,6 +1328,10 @@ const researchInterview = {
         <tr><th scope="row">分析メモ</th><td>研究者の解釈、分類、疑問、要約</td><td>本人の発言と区別して読み、原音へ戻れるようにする</td></tr>
       </tbody></table>
       <p>自動文字起こしは、相づちや言い直しを省いたり、句読点を補ったりすることがあります。沈黙の長さや話し方自体を分析する場合、必要な情報が残っているか音声で確認してください。AI要約を、本人の言葉がそのまま残った逐語録として使わないでください。</p>` },
+    { id: 'before-import', title: '取り込む前に、研究の条件を確認する', html: `
+      <p>録音してよいことと、外部サービスで処理・保存してよいことは分けて確認します。相手に説明した利用目的と、研究計画で認められた方法に合うかを、先に確かめてください。</p>
+      <ul><li>録音・文字起こし・引用について説明し、必要な同意を得ているか</li><li>音声や文字をクラウドへ送ってよいか。AIによる要約や分析にも使ってよいか</li><li>原音・逐語録・対象者との対応表を、誰がどこに保存し、いつまで管理するか</li><li>沈黙、相づち、言い直し、重なった発話を、どの表記で残すか</li></ul>
+      <p>日本音声学会の<a href="https://www.psj.gr.jp/jpn/rinri" target="_blank" rel="noopener noreferrer">研究倫理ガイドライン</a>でも、目的・方法の説明と同意、同意された範囲での利用、個人情報の管理、公表時の配慮が示されています。対象や分野によって条件は異なるため、所属先の手続きをこのページで置き換えることはできません。</p>` },
     { id: 'workflow', cta: 'after-steps', title: '録音から確認用の記録を作る手順', html: `
       <ol class="steps">
         <li><h3>原音と取材メモを保管する</h3><p>録音の原本を、研究計画で決めた場所に保管します。対象者コード、録音日、ファイルの識別名を控えます。ファイル名にも個人名を入れる必要があるか見直してください。</p></li>
