@@ -13,13 +13,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>iPhoneの動画からSRT字幕を作る方法｜書き出し手順と完成例</title>
-<meta name="description" content="15秒の動画から字幕ファイルのSRTを作った全手順です。実際のSRT、字幕付きの再生例、時刻のずれの実測、YouTubeで使うときの手順を載せています。">
+<meta name="description" content="15秒の動画から字幕ファイルのSRTを作った全手順です。実際のSRT、字幕付きの再生例、時刻のずれの実測、YouTubeに読み込んで自動字幕と比べた結果を載せています。">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://texter.work/guides/video-subtitles/">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://texter.work/guides/video-subtitles/">
 <meta property="og:title" content="iPhoneの動画からSRT字幕を作る方法｜書き出し手順と完成例">
-<meta property="og:description" content="15秒の動画から字幕ファイルのSRTを作った全手順です。実際のSRT、字幕付きの再生例、時刻のずれの実測、YouTubeで使うときの手順を載せています。">
+<meta property="og:description" content="15秒の動画から字幕ファイルのSRTを作った全手順です。実際のSRT、字幕付きの再生例、時刻のずれの実測、YouTubeに読み込んで自動字幕と比べた結果を載せています。">
 <meta property="og:site_name" content="Texter">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:image" content="https://texter.work/img/ogp.png">
@@ -27,7 +27,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="iPhoneの動画からSRT字幕を作る方法｜書き出し手順と完成例">
-<meta name="twitter:description" content="15秒の動画から字幕ファイルのSRTを作った全手順です。実際のSRT、字幕付きの再生例、時刻のずれの実測、YouTubeで使うときの手順を載せています。">
+<meta name="twitter:description" content="15秒の動画から字幕ファイルのSRTを作った全手順です。実際のSRT、字幕付きの再生例、時刻のずれの実測、YouTubeに読み込んで自動字幕と比べた結果を載せています。">
 <meta name="twitter:image" content="https://texter.work/img/ogp.png">
 <meta name="apple-itunes-app" content="app-id=1482592304">
 <link rel="icon" href="/assets/favicon/favicon.ico?v=2" sizes="any">
@@ -42,11 +42,11 @@
       "@type": "Article",
       "@id": "https://texter.work/guides/video-subtitles/#article",
       "headline": "iPhoneの動画からSRT字幕を作る方法",
-      "description": "15秒の動画から字幕ファイルのSRTを作った全手順です。実際のSRT、字幕付きの再生例、時刻のずれの実測、YouTubeで使うときの手順を載せています。",
+      "description": "15秒の動画から字幕ファイルのSRTを作った全手順です。実際のSRT、字幕付きの再生例、時刻のずれの実測、YouTubeに読み込んで自動字幕と比べた結果を載せています。",
       "url": "https://texter.work/guides/video-subtitles/",
       "inLanguage": "ja",
       "datePublished": "2026-10-31",
-      "dateModified": "2026-11-01",
+      "dateModified": "2026-11-12",
       "image": "https://texter.work/assets/guides/video-subtitles/poster.webp",
       "isPartOf": {
         "@id": "https://texter.work/#website"
@@ -154,6 +154,7 @@ h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.6rem);line-heigh
 .shot{display:inline-block;width:min(46%,260px);margin:16px 10px 0 0;vertical-align:top}
 .shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:14px}
 .shot figcaption{margin-top:6px;font-size:13px;line-height:1.5;color:var(--sub)}
+.shot.land{display:block;width:100%;max-width:680px;margin-right:0}
 .demo{margin:16px 0 0;max-width:300px}
 .demo.land{max-width:none}
 .demo figcaption{margin-top:6px;font-size:13px;line-height:1.5;color:var(--sub)}
@@ -225,8 +226,23 @@ footer p{margin:12px 0 0}
         <li><h3>SRTを書き出す</h3><p>「共有」から「字幕(SRT)ファイルを共有」を選び、共有シートで保存先や送り先を指定してください。</p><figure class="shot"><a href="/assets/guides/video-subtitles/05-menu.webp"><img src="/assets/guides/video-subtitles/05-menu.webp" alt="共有メニュー。字幕(SRT)ファイルを共有の項目がある" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>共有メニュー</figcaption></figure><figure class="shot"><a href="/assets/guides/video-subtitles/06-sheet.webp"><img src="/assets/guides/video-subtitles/06-sheet.webp" alt="SRTファイルの共有シート。ファイルに保存などの項目が並ぶ" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>共有シート</figcaption></figure></li>
       </ol></section><aside class="cta inline" aria-label="アプリで試す"><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-video-subtitles-after-steps&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-video-subtitles-after-steps" data-store="app_store">iPhoneでSRTを書き出す（App Store）</a></div></aside>
 <section class="sec" id="youtube" aria-labelledby="youtube-h"><h2 id="youtube-h">YouTubeにSRTを読み込む</h2>
-      <p><a href="https://support.google.com/youtube/answer/2734796?hl=ja" target="_blank" rel="noopener noreferrer">YouTubeヘルプ</a>には、次の手順が載っています。ウェブ版のYouTube Studioの手順です。今回は、YouTubeへの実際のアップロードは行っていません。</p>
-      <ol><li>YouTube Studioにログインし、左のメニューの「字幕」を開く</li><li>対象の動画を選び、必要なら「言語を追加」で言語を追加する</li><li>「作成」を押し、「ファイルをアップロード」を選ぶ</li><li>SRTファイルを指定して、「保存」を押す</li></ol><p>画面の表示が違うときは、上のヘルプを確認してください。</p></section>
+      <p>上のSRTを、ウェブ版のYouTube Studioで実際に読み込みました。動画は非公開の設定で、2026-11-12に試した結果です。YouTubeの画面は変わることがあるので、表示が違うときは<a href="https://support.google.com/youtube/answer/2734796?hl=ja" target="_blank" rel="noopener noreferrer">YouTubeヘルプ</a>を確認してください。</p>
+      <ol class="steps">
+        <li><h3>動画の言語を決める</h3><p>YouTube Studioで動画を開き、左のメニューの「字幕」を選びます。最初に動画の言語を聞かれたので、「日本語」を選んで「確認」を押しました。「これを自分のチャンネルのデフォルトにする」は、外しても進めます。</p></li>
+        <li><h3>自動字幕を確かめる</h3><p>この動画には、YouTubeの自動字幕が既に付いていました。字幕の行の鉛筆のボタンを押すと、「既存の日本語の字幕が上書きされます」という確認が出ます。「続行」を押すと編集画面が開き、自動字幕の内容を読めました。</p><figure class="shot land"><a href="/assets/guides/video-subtitles/yt-01-auto.webp"><img src="/assets/guides/video-subtitles/yt-01-auto.webp" alt="YouTube Studioの字幕の編集画面。自動字幕が2つの区切りで表示されている" width="1088" height="456" loading="lazy" decoding="async"></a><figcaption>YouTubeの自動字幕。2つに分かれ、「文房具」が「文房牛」になっていた</figcaption></figure></li>
+        <li><h3>SRTを読み込む</h3><p>編集画面の「テキストとして編集」の右にあるメニューから「ファイルをアップロード」を選びます。ファイルの形式は「タイムコードあり」のまま「続行」を押し、SRTを指定しました。字幕は、SRTと同じ3つに入れ替わりました。</p><figure class="shot land"><a href="/assets/guides/video-subtitles/yt-02-uploaded.webp"><img src="/assets/guides/video-subtitles/yt-02-uploaded.webp" alt="YouTube Studioの字幕の編集画面。SRTの3つの字幕が並んでいる" width="1088" height="456" loading="lazy" decoding="async"></a><figcaption>SRTを読み込んだ後の編集画面</figcaption></figure></li>
+        <li><h3>公開する</h3><p>右上の「公開」を押すと、「日本語の字幕を公開しました」と表示されました。字幕の一覧には、読み込んだ字幕と自動字幕の2行が並びます。</p><figure class="shot land"><a href="/assets/guides/video-subtitles/yt-03-list.webp"><img src="/assets/guides/video-subtitles/yt-03-list.webp" alt="字幕の一覧。日本語（動画の言語）と日本語（自動字幕起こし）の2行がある" width="1000" height="240" loading="lazy" decoding="async"></a><figcaption>公開した後の字幕の一覧</figcaption></figure></li>
+      </ol>
+      <h3>再生して確かめた結果</h3>
+      <p>動画の再生画面で字幕をオンにすると、字幕の選択肢は「日本語」の1つだけでした。7.5秒の位置で、SRTの2つ目の字幕がそのまま表示されました。</p>
+      <figure class="shot land"><a href="/assets/guides/video-subtitles/yt-04-watch.webp"><img src="/assets/guides/video-subtitles/yt-04-watch.webp" alt="YouTubeの再生画面。映像の下に「まず、いらない紙を1か所に集めます。」と字幕が出ている" width="1032" height="580" loading="lazy" decoding="async"></a><figcaption>再生画面に出た、SRTの2つ目の字幕</figcaption></figure>
+      <div class="scroll"><table class="compare"><thead><tr><th scope="col">項目</th><th scope="col">YouTubeの自動字幕</th><th scope="col">読み込んだSRT</th></tr></thead><tbody>
+      <tr><th scope="row">字幕の数</th><td>2つ</td><td>3つ</td></tr>
+      <tr><th scope="row">区切り</th><td>「紙を1／箇所に」のように、文の途中で切れた</td><td>1〜2文ごと</td></tr>
+      <tr><th scope="row">文字の誤り</th><td>「文房具」が「文房牛」</td><td>なし</td></tr>
+      <tr><th scope="row">句読点</th><td>読点なし</td><td>あり</td></tr>
+      </tbody></table></div>
+      <p class="note">15秒の動画1本で比べた結果です。自動字幕の内容は、動画や時期によって変わります。ほかの動画でも同じ差が出るとは限りません。編集画面の時刻は、秒とフレームの組で表示されます。「05:23」は5秒23フレームで、SRTの6秒とほぼ同じ位置です。</p></section>
 <section class="sec" id="check" aria-labelledby="check-h"><h2 id="check-h">公開前に確認する3つの点</h2>
       <h3>1. 字幕が出るタイミング</h3>
       <p>今回の動画で無音の区間を測ると、3つの字幕はどれも話し始めより約0.2〜0.5秒早く表示されました。口の動きと合わせたい動画は、再生して確かめてください。</p>
@@ -252,6 +268,7 @@ footer p{margin:12px 0 0}
         <dt>動画</dt><dd>動画生成サービスRenoiseで作った、15秒の日本語の動画です。雑音はありません。音声認識はアプリの既定のWhisperです。実際に撮影した動画では、結果が異なる場合があります。</dd>
         <dt>時刻の測定</dt><dd>ffmpegのsilencedetect（-35dB、0.25秒以上）で無音の区間を検出し、SRTの時刻と比べました。</dd>
         <dt>掲載したSRT</dt><dd>アプリが書き出したファイルをそのまま掲載しました。</dd>
+        <dt>YouTubeでの確認</dt><dd>2026-11-12に、ウェブ版のYouTube Studio（パソコンのChrome）で行いました。動画は非公開の設定です。再生画面の字幕は、動画の持ち主としてログインした状態で確かめました。</dd>
       </dl></section>
 <aside class="toc" aria-label="動画づくりでの活用"><h2>動画に字幕を付けたい方へ</h2><p>SRTと字幕付き動画の使い分け、実際の出力、料金の選び方は、<a href="/subtitle/">動画の字幕づくりのページ</a>にまとめています。</p></aside>
 <section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで試す</h2><p>Texterは、音声や動画の文字起こしと字幕の書き出しができるアプリです。この手順はiPhone版のものです。無料で始められます。無料版の文字起こしには上限があり、要約は1日3回までです。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-video-subtitles-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-video-subtitles-end" data-store="app_store">iPhoneでSRTを書き出す（App Store）</a><a class="btn btn-line" href="https://play.google.com/store/apps/details?id=com.matz.Texter" target="_blank" rel="noopener noreferrer" data-cta="guide-video-subtitles-end" data-store="google_play">Google Playで見る</a></div></section>
