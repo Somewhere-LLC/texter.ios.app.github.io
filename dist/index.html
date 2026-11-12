@@ -320,8 +320,6 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .js .h1 .ch{animation:rise .9s var(--ease) both;animation-delay:calc(var(--i) * 40ms + 120ms)}
 @keyframes rise{from{transform:translateY(105%)}to{transform:none}}
 .one{margin-top:14px;font-size:clamp(1rem,1.3vw,1.2rem);color:var(--text);font-weight:500}
-.stats{font-size:14px;color:var(--sub);display:flex;flex-wrap:wrap;gap:4px 12px}
-.stats b{color:var(--navy);font-weight:700;font-variant-numeric:tabular-nums}
 
 /* scrubber */
 .scrub{position:relative;margin-top:clamp(18px,3vh,34px);--track:96px;--lane:124px}
@@ -574,7 +572,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .off[hidden]{display:none}
 .off{display:inline-block;font-size:12px;font-weight:600;background:#E9EDFF;color:var(--deep);padding:3px 9px;border-radius:999px;margin-left:6px;vertical-align:1px}
 .plans{margin-top:24px;align-items:start;row-gap:24px}
-.plan{grid-column:span 6;background:rgba(255,255,255,.88);border-radius:var(--r-card);box-shadow:var(--shadow-soft);padding:28px;display:flex;flex-direction:column}
+.plan{grid-column:span 4;background:rgba(255,255,255,.88);border-radius:var(--r-card);box-shadow:var(--shadow-soft);padding:28px;display:flex;flex-direction:column}
 .plan .nm{display:flex;align-items:center;justify-content:space-between;font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--sub)}
 .plan .pop{background:var(--deep);color:#fff;padding:3px 10px;border-radius:999px;letter-spacing:0;font-weight:600;font-size:12px}
 .price{margin-top:12px;font-weight:800;font-size:clamp(2.6rem,4vw,3.4rem);line-height:1.05;letter-spacing:-.03em;color:var(--navy);font-variant-numeric:tabular-nums}
@@ -584,13 +582,12 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .plan ul{margin-top:18px;margin-bottom:24px;border-top:1px solid rgba(23,37,90,.08)}
 .plan li{display:flex;gap:10px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(23,37,90,.06);font-size:15px}
 .plan li svg{width:18px;height:18px;color:var(--accent);flex:none;transform:translateY(3px)}
+.plan li.no{color:var(--sub)}
+.plan li.no>span{width:18px;flex:none;text-align:center}
+@media (max-width:1000px){.plan{grid-column:1/-1}}
 .plan .btn{width:100%}
 .plan .desc + .btn{margin-top:16px}
 .foot-note{margin-top:20px;font-size:13px;color:var(--sub)}
-.ticket-option{margin-top:24px;padding:20px 0;border-block:1px solid var(--ln)}
-.ticket-option h3{font-size:18px;color:var(--navy)}
-.ticket-option p{margin-top:8px;font-size:14px;color:var(--sub);max-width:64em}
-.ticket-option a{text-underline-offset:4px}
 .recording-options{margin-top:28px;max-width:64em}
 .recording-options h3{font-size:18px;color:var(--navy)}
 .recording-options p,.recording-options dl{margin-top:12px;font-size:14px;color:var(--sub)}
@@ -601,6 +598,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 /* reviews */
 .quotes{margin-top:clamp(40px,5vw,72px);row-gap:24px}
 .quote{grid-column:span 4;background:rgba(255,255,255,.78);border-radius:var(--r-card);box-shadow:var(--shadow-soft);padding:24px;display:flex;flex-direction:column;gap:12px}
+.quote .ctx{font-size:13px;font-weight:700;color:var(--navy)}
 .quote .st{font-size:13px;letter-spacing:2px;color:var(--accent)}
 .quote blockquote{font-size:16px;font-weight:500;line-height:1.8;color:var(--text)}
 .quote cite{margin-top:auto;font-style:normal;font-size:13px;color:var(--sub)}
@@ -690,7 +688,6 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   .footer nav{grid-column:span 12}
   .biz{padding:22px}
 }
-@media (max-width:380px){.stats{gap:4px 10px}}
 @media (prefers-reduced-motion:reduce){
   .js .h1 .ch{animation:none}
   .js .h2 .w{clip-path:none;transition:none}
@@ -781,7 +778,6 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=lp&amp;mt=8" target="_blank" rel="noopener noreferrer"><svg><use href="#i-apple"/></svg>App Store</a>
         <a class="btn btn-line" href="https://play.google.com/store/apps/details?id=com.matz.Texter" target="_blank" rel="noopener noreferrer"><svg><use href="#i-gplay"/></svg>Google Play</a>
       </div>
-      <p class="stats"><span>App Store <b>4.1</b></span><span>・</span><span><b>50,000+</b> ダウンロード</span><span>・</span><span><b>99</b>言語</span></p>
     </div>
 
     <p class="hero-route"><a href="/interview/">取材・インタビューに使う方へ →</a></p>
@@ -1013,16 +1009,15 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   <div class="wrap">
     <div class="ch-rule"><p class="eyebrow"><span class="tc">30:00</span><span>06 — 活用例</span></p><span class="en">USE CASES</span></div>
     <div class="grid ch-head">
-      <h2 class="h2" id="use-title"><span class="w">ビジネスから学習まで、</span><span class="w">あらゆるシーンで。</span></h2>
-      <p class="lead">話す場所があれば、Texterの出番があります。</p>
+      <h2 class="h2" id="use-title"><span class="w">場面に合う</span><span class="w">使い方を。</span></h2>
+      <p class="lead">あなたの作業に近い使い方から、ご覧ください。</p>
     </div>
     <ol class="rows" style="list-style:none;padding:0;margin-bottom:0">
-      <li class="row reveal"><span class="n">1</span><h3>議事録作成</h3><p>会議の内容を自動で記録し、要約までAIにお任せ。チームの生産性を大幅アップ。<a href="/guides/ai-minutes/">録音から議事録を作る方法</a></p><svg class="ico"><use href="#i-arrow"/></svg></li>
-      <li class="row reveal"><span class="n">2</span><h3>ライター・ブロガー</h3><p>インタビューやアイデア出しを声で行い、執筆速度を加速。クリエイティブな作業に集中。<a href="/interview/">取材音声の文字起こしと活用例</a></p><svg class="ico"><use href="#i-arrow"/></svg></li>
-      <li class="row reveal"><span class="n">3</span><h3>聴覚サポート</h3><p>リアルタイム文字起こしでコミュニケーションを円滑に。誰もが会話に参加できる環境を。</p><svg class="ico"><use href="#i-arrow"/></svg></li>
-      <li class="row reveal"><span class="n">4</span><h3>語学学習</h3><p>発音チェックや、PDF教材のテキスト化に。効率的な学習をサポート。</p><svg class="ico"><use href="#i-arrow"/></svg></li>
-      <li class="row reveal"><span class="n">5</span><h3>リサーチャー・研究者</h3><p>インタビューを話題マップで俯瞰し、内容まとめでレポート下書きを自動生成。<a href="/interview/#recall">過去の取材を横断して確かめるデモ</a></p><svg class="ico"><use href="#i-arrow"/></svg></li>
+      <li class="row reveal"><span class="n">1</span><h3>インタビューする人へ</h3><p>取材の録音を文字にして、要約で整理。過去の取材にも、根拠の発言つきで質問できます。<a href="/interview/">取材・インタビューでの使い方</a></p><svg class="ico"><use href="#i-arrow"/></svg></li>
+      <li class="row reveal"><span class="n">2</span><h3>動画を作る人へ</h3><p>動画を取り込んで文字起こし。字幕ファイルのSRTか、字幕を入れた動画で書き出せます。<a href="/subtitle/">動画の字幕づくり</a></p><svg class="ico"><use href="#i-arrow"/></svg></li>
+      <li class="row reveal"><span class="n">3</span><h3>聴覚サポートに</h3><p>会話をその場で文字にして、画面で見せられます。無料版のリアルタイム文字起こしは、1回3分・1日15分までです。</p><svg class="ico"><use href="#i-arrow"/></svg></li>
     </ol>
+    <p class="foot-note">会議の議事録づくりは<a href="/guides/ai-minutes/">録音から議事録を作る方法</a>、そのほかの使い方は<a href="/guides/">活用ガイド</a>をご覧ください。</p>
   </div>
 </section>
 
@@ -1073,12 +1068,21 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <p class="desc"><a href="/pricing/#file-limits">方式別の上限</a>をご確認ください。自動更新の契約で、無料トライアル後は課金が始まります。</p>
         <a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=lp&amp;mt=8" target="_blank" rel="noopener noreferrer">App Storeでプランを確認する</a>
       </div>
+      <div class="plan" id="ticket-plan">
+        <div class="nm"><span>TICKET</span></div>
+        <p class="price">¥500<small>/音声1時間</small></p>
+        <p class="eq">自動更新なし</p>
+        <p class="desc">今回の1本だけ、文字にしたい</p>
+        <ul>
+          <li><svg class="ico"><use href="#i-tick"/></svg>ファイル文字起こし専用のチケット</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>残った時間は失効しません</li>
+          <li class="no"><span aria-hidden="true">×</span>話者識別・自動無音カットには使えません</li>
+          <li class="no"><span aria-hidden="true">×</span>要約・AIチャットの回数は増えません</li>
+        </ul>
+        <p class="desc">クラウド文字起こしの無料枠を使い切ったときに、アプリの上限画面で案内されます。Premium加入中など、表示されない条件があります。</p>
+        <a class="btn btn-line" href="/pricing/#ticket">チケットの範囲と購入条件を見る</a>
+      </div>
     </div>
-    <aside class="ticket-option" aria-labelledby="ticket-title">
-      <h3 id="ticket-title">今回の1本だけなら、文字起こしチケット。</h3>
-      <p>音声1時間 ¥500・自動更新なし。クラウド文字起こしの無料枠を使い切ったときに案内される、ファイル文字起こし専用のチケットです。Premium加入中など、表示されない条件があります。</p>
-      <p>話者識別・自動無音カットには使えません。要約・AIチャットの回数も増えません。<a href="/pricing/#ticket">チケットの範囲と購入条件を見る</a></p>
-    </aside>
     <section class="recording-options" aria-labelledby="recording-options-title">
       <h3 id="recording-options-title">録音済みの60分、どれで文字にする？</h3>
       <dl>
@@ -1095,15 +1099,15 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 <!-- ============ 08 REVIEWS 48:00 ============ -->
 <section class="block field" id="reviews" data-tc="48:00" aria-labelledby="reviews-title">
   <div class="wrap">
-    <div class="ch-rule"><p class="eyebrow"><span class="tc">48:00</span><span>08 — レビュー</span></p><span class="en">APP STORE 4.1</span></div>
+    <div class="ch-rule"><p class="eyebrow"><span class="tc">48:00</span><span>08 — レビュー</span></p><span class="en">APP STORE REVIEWS</span></div>
     <div class="grid ch-head">
       <h2 class="h2" id="reviews-title"><span class="w">ユーザーの声。</span></h2>
       <p class="lead">App Storeに寄せられたレビューから、原文のまま。</p>
     </div>
     <div class="grid quotes">
-      <figure class="quote reveal"><span class="st" role="img" aria-label="星5つ">★★★★★</span><blockquote>「ライターです。ここまで性能が良いとは期待以上でした！これまで全て手打ちしていたときに比べて随分助かります。早速一年で契約しました。」</blockquote><cite>ともころう 様</cite></figure>
-      <figure class="quote reveal"><span class="st" role="img" aria-label="星5つ">★★★★★</span><blockquote>「補聴器をつけても聞き取る事が難しい母に画面を見せて理解してもらえるので、とても助かっております。」</blockquote><cite>ののはるちゃん 様</cite></figure>
-      <figure class="quote reveal"><span class="st" role="img" aria-label="星5つ">★★★★★</span><blockquote>「OCRが他のスキャナーアプリなどと比較しても速くて正確です。ほぼ100%の精度で読み取ってくれます。」</blockquote><cite>yuta-mom 様</cite></figure>
+      <figure class="quote reveal"><p class="ctx">ライターの方</p><span class="st" role="img" aria-label="星5つ">★★★★★</span><blockquote>「ライターです。ここまで性能が良いとは期待以上でした！これまで全て手打ちしていたときに比べて随分助かります。早速一年で契約しました。」</blockquote><cite>ともころう 様</cite></figure>
+      <figure class="quote reveal"><p class="ctx">ご家族との会話・聴覚サポート</p><span class="st" role="img" aria-label="星5つ">★★★★★</span><blockquote>「補聴器をつけても聞き取る事が難しい母に画面を見せて理解してもらえるので、とても助かっております。」</blockquote><cite>ののはるちゃん 様</cite></figure>
+      <figure class="quote reveal"><p class="ctx">画像の文字起こし</p><span class="st" role="img" aria-label="星5つ">★★★★★</span><blockquote>「OCRが他のスキャナーアプリなどと比較しても速くて正確です。ほぼ100%の精度で読み取ってくれます。」</blockquote><cite>yuta-mom 様</cite></figure>
     </div>
   </div>
 </section>
