@@ -207,7 +207,7 @@ function checkSubtitle(html, errors) {
   for (const m of html.matchAll(/href="(https:\/\/apps\.apple\.com[^"]*)"/g)) if (!/[?]pt=\d+&amp;ct=subtitle-[a-z0-9-]+&amp;mt=8$/.test(m[1])) errors.push(`${file}: App Store link without campaign (pt/ct): ${m[1]}`);
   if (!html.includes('src="../assets/subtitle/tracking.js"') || !read('assets/subtitle/tracking.js').includes("'subtitle_store_click'")) errors.push(`${file}: store clicks are not sent to GA4 (subtitle_store_click)`);
   // Prices must be the ones the pricing data lists.
-  const known = new Set([...Object.values(facts.prices), ...Object.values(facts.jaPlans)].map(yen).concat(['¥0', '¥733']));
+  const known = new Set([...Object.values(facts.prices), ...Object.values(facts.jaPlans)].map(yen).concat(['¥0', yen(Math.round(facts.prices.yearly / 12))]));
   for (const m of text(html).matchAll(/¥[\d,]+/g)) if (!known.has(m[0])) errors.push(`${file}: price ${m[0]} is not in app-facts`);
   // The SRT shown on the page must be the exported file, unedited.
   const shown = decode((html.match(/<pre class="srt"[^>]*><code>([\s\S]*?)<\/code><\/pre>/) || [])[1] || '').trim();
