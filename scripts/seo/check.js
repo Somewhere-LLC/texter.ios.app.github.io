@@ -128,7 +128,7 @@ function checkSite(files, errors) {
     const rel = m[1] === '' ? 'index.html' : `${m[1]}index.html`;
     if (!fs.existsSync(path.join(root, rel))) errors.push(`sitemap: ${m[1] || '/'} has no ${rel}`);
   }
-  for (const p of ['faq/', 'en/faq/', 'guides/', ...guides.map((g) => `guides/${g.slug}/`), 'pricing/', 'interview/', 'subtitle/']) if (!sitemap.includes(`https://texter.work/${p}<`)) errors.push(`sitemap: missing ${p}`);
+  for (const p of ['faq/', 'en/faq/', 'guides/', ...guides.map((g) => `guides/${g.slug}/`), 'pricing/', 'interview/', 'subtitle/', 'hearing-support/']) if (!sitemap.includes(`https://texter.work/${p}<`)) errors.push(`sitemap: missing ${p}`);
   // Any Disallow, for any user agent (including AI crawlers such as OAI-SearchBot), hides pages from search.
   if (/^[ \t]*Disallow:[ \t]*\S/im.test(files['robots.txt'])) errors.push('robots.txt: has a Disallow rule');
   const alternates = {};
@@ -138,7 +138,7 @@ function checkSite(files, errors) {
     const expect = 'https://texter.work/' + rel.replace(/index\.html$/, '');
     if (canon !== expect) errors.push(`${rel}: canonical ${canon} != ${expect}`);
     if (rel === 'interview/index.html') checkGuide(rel, html, errors);
-    if (rel.startsWith('guides/') || rel.startsWith('pricing/') || rel.startsWith('subtitle/')) {
+    if (rel.startsWith('guides/') || rel.startsWith('pricing/') || rel.startsWith('subtitle/') || rel.startsWith('hearing-support/')) {
       checkGuide(rel, html, errors);
       continue; // Guides exist in Japanese only, so they have no hreflang pairs.
     }
@@ -187,7 +187,7 @@ function checkInterview(html, errors) {
 function checkLocalLinks(file, html, errors) {
   for (const match of html.matchAll(/(?:href|src|poster)="([^"]+)"/g)) {
     const url = decode(match[1]);
-    if (/^(https?:|data:)/.test(url)) continue;
+    if (/^(https?:|data:|mailto:|tel:)/.test(url)) continue;
     const [pathname, hash] = url.split('#');
     const target = pathname ? path.resolve(root, path.dirname(file), pathname.split('?')[0]) : path.join(root, file);
     const resolved = pathname.endsWith('/') || (pathname && !path.extname(target)) ? path.join(target, 'index.html') : target;
@@ -196,23 +196,24 @@ function checkLocalLinks(file, html, errors) {
   }
 }
 
-function checkSubtitle(html, errors) {
-  const file = 'subtitle/index.html';
+// The use-case pages written by hand: /subtitle/ and /hearing-support/. `name` is the campaign and event prefix.
+function checkUseCasePage(file, name, html, errors) {
   const graph = nodes(jsonLd(html, file, errors));
   const webpage = graph.find((node) => node['@type'] === 'WebPage');
   if (!webpage || !webpage.isPartOf || webpage.isPartOf['@id'] !== `${facts.site}/#website`) errors.push(`${file}: WebPage must reference the existing WebSite`);
   const title = decode((html.match(/<title>([^<]*)<\/title>/) || [])[1] || '');
   if (webpage && webpage.name !== title) errors.push(`${file}: WebPage.name differs from <title>`);
   if (!/<meta name="apple-itunes-app" content="app-id=\d+, affiliate-data=pt=\d+&amp;ct=[a-z0-9-]+">/.test(html)) errors.push(`${file}: Smart App Banner without campaign (affiliate-data)`);
-  for (const m of html.matchAll(/href="(https:\/\/apps\.apple\.com[^"]*)"/g)) if (!/[?]pt=\d+&amp;ct=subtitle-[a-z0-9-]+&amp;mt=8$/.test(m[1])) errors.push(`${file}: App Store link without campaign (pt/ct): ${m[1]}`);
-  if (!html.includes('src="../assets/subtitle/tracking.js"') || !read('assets/subtitle/tracking.js').includes("'subtitle_store_click'")) errors.push(`${file}: store clicks are not sent to GA4 (subtitle_store_click)`);
+  for (const m of html.matchAll(/href="(https:\/\/apps\.apple\.com[^"]*)"/g)) if (!new RegExp(`[?]pt=\\d+&amp;ct=${name}-[a-z0-9-]+&amp;mt=8$`).test(m[1])) errors.push(`${file}: App Store link without campaign (pt/ct): ${m[1]}`);
+  if (!html.includes(`src="../assets/${name}/tracking.js"`) || !read(`assets/${name}/tracking.js`).includes(`'${name}_store_click'`)) errors.push(`${file}: store clicks are not sent to GA4 (${name}_store_click)`);
   // Prices must be the ones the pricing data lists.
   const known = new Set([...Object.values(facts.prices), ...Object.values(facts.jaPlans)].map(yen).concat(['¥0', yen(Math.round(facts.prices.yearly / 12))]));
   for (const m of text(html).matchAll(/¥[\d,]+/g)) if (!known.has(m[0])) errors.push(`${file}: price ${m[0]} is not in app-facts`);
+  checkLocalLinks(file, html, errors);
+  if (name !== 'subtitle') return;
   // The SRT shown on the page must be the exported file, unedited.
   const shown = decode((html.match(/<pre class="srt"[^>]*><code>([\s\S]*?)<\/code><\/pre>/) || [])[1] || '').trim();
   if (shown !== read('assets/guides/video-subtitles/sample.srt').replace(/\r/g, '').trim()) errors.push(`${file}: the SRT on the page differs from the exported file`);
-  checkLocalLinks(file, html, errors);
 }
 
 function run(files, { stale = true } = {}) {
@@ -226,12 +227,13 @@ function run(files, { stale = true } = {}) {
   checkFaq('en/faq/index.html', 'en', files['en/faq/index.html'], errors);
   checkPricing(files['pricing/index.html'], errors);
   checkInterview(files['en/interview/index.html'], errors);
-  checkSubtitle(files['subtitle/index.html'], errors);
+  checkUseCasePage('subtitle/index.html', 'subtitle', files['subtitle/index.html'], errors);
+  checkUseCasePage('hearing-support/index.html', 'hearing', files['hearing-support/index.html'], errors);
   checkSite(files, errors);
   return errors;
 }
 
-const files = Object.fromEntries(['index.html', 'en/index.html', 'faq/index.html', 'en/faq/index.html', 'guides/index.html', ...guides.map((g) => `guides/${g.slug}/index.html`), 'pricing/index.html', 'interview/index.html', 'en/interview/index.html', 'subtitle/index.html', 'sitemap.xml', 'robots.txt'].map((f) => [f, read(f)]));
+const files = Object.fromEntries(['index.html', 'en/index.html', 'faq/index.html', 'en/faq/index.html', 'guides/index.html', ...guides.map((g) => `guides/${g.slug}/index.html`), 'pricing/index.html', 'interview/index.html', 'en/interview/index.html', 'subtitle/index.html', 'hearing-support/index.html', 'sitemap.xml', 'robots.txt'].map((f) => [f, read(f)]));
 const errors = run(files);
 errors.forEach((e) => console.error('NG', e));
 if (errors.length) process.exit(1);
@@ -283,6 +285,12 @@ if (process.argv.includes('--self-test')) {
     ['subtitle page tracking removed', 'subtitle/index.html', (s) => s.replace('<script src="../assets/subtitle/tracking.js" defer></script>', '')],
     ['subtitle page JSON-LD broken', 'subtitle/index.html', (s) => s.replace('"@type":"WebPage"', '"@type":"WebPage",,')],
     ['sitemap drops the subtitle page', 'sitemap.xml', (s) => s.replace('https://texter.work/subtitle/<', 'https://texter.work/subtitles/<')],
+    ['hearing page anchor missing', 'hearing-support/index.html', (s) => s.replace('../faq/#offline', '../faq/#missing')],
+    ['hearing page price changed', 'hearing-support/index.html', (s) => s.replaceAll('¥1,800', '¥1,700')],
+    ['hearing App Store link loses its campaign', 'hearing-support/index.html', (s) => s.replace('?pt=489812&amp;ct=hearing-end&amp;mt=8"', '"')],
+    ['hearing page tracking removed', 'hearing-support/index.html', (s) => s.replace('<script src="../assets/hearing/tracking.js" defer></script>', '')],
+    ['hearing page mail link is accepted', 'hearing-support/index.html', (s) => s.replace('mailto:texter.work.app@gmail.com?subject=', 'mailto:texter.work.app@gmail.com?x=1&subject='), true],
+    ['sitemap drops the hearing page', 'sitemap.xml', (s) => s.replace('https://texter.work/hearing-support/<', 'https://texter.work/hearing/<')],
     ['yen price back on the English LP', 'en/index.html', (s) => s.replace('</body>', '<p>¥600</p></body>')],
     ['yen price back in the English FAQ', 'en/faq/index.html', (s) => s.replace('comes in weekly, monthly, and yearly plans.', 'is ¥1,800 per month.')],
     ['generated page edited by hand', 'en/faq/index.html', (s) => s.replace('</footer>', '<p>hand edit</p></footer>')],

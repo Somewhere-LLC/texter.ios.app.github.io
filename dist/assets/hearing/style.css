@@ -1,0 +1,13 @@
+/* Additions for /hearing-support/. The base styles come from ../interview/style.css. */
+.note-body.talk p{font-size:19px;line-height:1.9;color:var(--ink);font-weight:600}
+.note-body.talk p+p{margin-top:14px}
+.card-title{font-size:17px;margin-top:8px}
+@media(max-width:700px){.note-body.talk p{font-size:17px}.card-title{font-size:16px}}
+/* Readers of this page include people who need larger text, so the small print is larger than on the other pages. */
+.fine,.hero .fine,.plan>p.fine{font-size:13px!important;line-height:1.9}
+.plan>p:not(.plan-label):not(.price),.workflow p,.faq-list details p,.pricing-note,.hero-note figcaption{font-size:14px}
+.workflow a,.feature-note,.plan>a,.plan-label,.quote-credit span{font-size:13px}
+.faq-list summary{font-size:15px}
+.site-header nav a{font-size:14px}
+.hero-lead{font-size:16px}
+@media(max-width:700px){.site-header nav a{font-size:13px}.hero-lead{font-size:15px}.section-heading>p:last-child:not(.eyebrow){font-size:14px}.hero-bottom span{font-size:13px}}
