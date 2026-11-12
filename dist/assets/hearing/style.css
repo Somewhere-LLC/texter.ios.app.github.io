@@ -10,4 +10,7 @@
 .faq-list summary{font-size:15px}
 .site-header nav a{font-size:14px}
 .hero-lead{font-size:16px}
-@media(max-width:700px){.site-header nav a{font-size:13px}.hero-lead{font-size:15px}.section-heading>p:last-child:not(.eyebrow){font-size:14px}.hero-bottom span{font-size:13px}}
+.hero-bottom span,.price-scope{font-size:13px}
+.text-link{font-size:14px}
+.final-cta p:not(.eyebrow):not(.fine){font-size:15px}
+@media(max-width:700px){.site-header nav a{font-size:13px}.hero-lead{font-size:15px}.section-heading>p:last-child:not(.eyebrow){font-size:14px}.final-cta p:not(.eyebrow):not(.fine){font-size:14px}}
