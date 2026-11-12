@@ -1,0 +1,5 @@
+/* Additions for /hearing-support/. The base styles come from ../interview/style.css. */
+.note-body.talk p{font-size:19px;line-height:1.9;color:var(--ink);font-weight:600}
+.note-body.talk p+p{margin-top:14px}
+.card-title{font-size:17px;margin-top:8px}
+@media(max-width:700px){.note-body.talk p{font-size:17px}.card-title{font-size:16px}}

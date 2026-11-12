@@ -14,6 +14,7 @@ const entries = [
   'pricing',
   'interview',
   'subtitle',
+  'hearing-support',
   'en',
   'img',
   'robots.txt',
