@@ -229,7 +229,7 @@ footer p{margin:12px 0 0}
       <p>上のSRTを、ウェブ版のYouTube Studioで実際に読み込みました。動画は非公開の設定で、2026-11-12に試した結果です。YouTubeの画面は変わることがあるので、表示が違うときは<a href="https://support.google.com/youtube/answer/2734796?hl=ja" target="_blank" rel="noopener noreferrer">YouTubeヘルプ</a>を確認してください。</p>
       <ol class="steps">
         <li><h3>動画の言語を決める</h3><p>YouTube Studioで動画を開き、左のメニューの「字幕」を選びます。最初に動画の言語を聞かれたので、「日本語」を選んで「確認」を押しました。「これを自分のチャンネルのデフォルトにする」は、外しても進めます。</p></li>
-        <li><h3>自動の字幕を確かめる</h3><p>この動画には、アップロードしてすぐにYouTubeの自動字幕が付いていました。字幕の行の鉛筆のボタンを押すと、「既存の日本語の字幕が上書きされます」という確認が出ます。「続行」を押すと編集画面が開き、自動字幕の内容を読めました。</p><figure class="shot land"><a href="/assets/guides/video-subtitles/yt-01-auto.webp"><img src="/assets/guides/video-subtitles/yt-01-auto.webp" alt="YouTube Studioの字幕の編集画面。自動字幕が2つの区切りで表示されている" width="1088" height="456" loading="lazy" decoding="async"></a><figcaption>YouTubeの自動字幕。2つに分かれ、「文房具」が「文房牛」になっていた</figcaption></figure></li>
+        <li><h3>自動字幕を確かめる</h3><p>この動画には、YouTubeの自動字幕が既に付いていました。字幕の行の鉛筆のボタンを押すと、「既存の日本語の字幕が上書きされます」という確認が出ます。「続行」を押すと編集画面が開き、自動字幕の内容を読めました。</p><figure class="shot land"><a href="/assets/guides/video-subtitles/yt-01-auto.webp"><img src="/assets/guides/video-subtitles/yt-01-auto.webp" alt="YouTube Studioの字幕の編集画面。自動字幕が2つの区切りで表示されている" width="1088" height="456" loading="lazy" decoding="async"></a><figcaption>YouTubeの自動字幕。2つに分かれ、「文房具」が「文房牛」になっていた</figcaption></figure></li>
         <li><h3>SRTを読み込む</h3><p>編集画面の「テキストとして編集」の右にあるメニューから「ファイルをアップロード」を選びます。ファイルの形式は「タイムコードあり」のまま「続行」を押し、SRTを指定しました。字幕は、SRTと同じ3つに入れ替わりました。</p><figure class="shot land"><a href="/assets/guides/video-subtitles/yt-02-uploaded.webp"><img src="/assets/guides/video-subtitles/yt-02-uploaded.webp" alt="YouTube Studioの字幕の編集画面。SRTの3つの字幕が並んでいる" width="1088" height="456" loading="lazy" decoding="async"></a><figcaption>SRTを読み込んだ後の編集画面</figcaption></figure></li>
         <li><h3>公開する</h3><p>右上の「公開」を押すと、「日本語の字幕を公開しました」と表示されました。字幕の一覧には、読み込んだ字幕と自動字幕の2行が並びます。</p><figure class="shot land"><a href="/assets/guides/video-subtitles/yt-03-list.webp"><img src="/assets/guides/video-subtitles/yt-03-list.webp" alt="字幕の一覧。日本語（動画の言語）と日本語（自動字幕起こし）の2行がある" width="1000" height="240" loading="lazy" decoding="async"></a><figcaption>公開した後の字幕の一覧</figcaption></figure></li>
       </ol>
@@ -242,7 +242,7 @@ footer p{margin:12px 0 0}
       <tr><th scope="row">文字の誤り</th><td>「文房具」が「文房牛」</td><td>なし</td></tr>
       <tr><th scope="row">句読点</th><td>読点なし</td><td>あり</td></tr>
       </tbody></table></div>
-      <p class="note">15秒の動画1本で比べた結果です。自動字幕の内容は、動画や時期によって変わります。ほかの動画でも同じ差が出るとは限りません。編集画面の時刻は、秒とフレームの組で表示されました。</p></section>
+      <p class="note">15秒の動画1本で比べた結果です。自動字幕の内容は、動画や時期によって変わります。ほかの動画でも同じ差が出るとは限りません。編集画面の時刻は、秒とフレームの組で表示されます。「05:23」は5秒23フレームで、SRTの6秒とほぼ同じ位置です。</p></section>
 <section class="sec" id="check" aria-labelledby="check-h"><h2 id="check-h">公開前に確認する3つの点</h2>
       <h3>1. 字幕が出るタイミング</h3>
       <p>今回の動画で無音の区間を測ると、3つの字幕はどれも話し始めより約0.2〜0.5秒早く表示されました。口の動きと合わせたい動画は、再生して確かめてください。</p>
