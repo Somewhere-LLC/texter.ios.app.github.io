@@ -107,6 +107,8 @@ a{color:var(--deep)}
 .crumbs a{color:var(--sub)}
 h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.6rem);line-height:1.25;font-weight:900}
 .lead{margin:16px 0 0}
+.try{margin:16px 0 0}
+.try a{display:inline-flex;align-items:center;min-height:44px;padding:8px 18px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:15px}
 .meta{margin:10px 0 0;font-size:13px;color:var(--sub)}
 .toc{margin:28px 0 0;padding:18px 20px;background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:14px}
 .toc h2{margin:0;font-size:13px;color:var(--sub);font-weight:600}
@@ -180,7 +182,8 @@ footer p{margin:12px 0 0}
 <main id="main" class="wrap">
 <nav aria-label="パンくずリスト"><ol class="crumbs"><li><a href="/">Texter</a></li><li><a href="/guides/">活用ガイド</a></li><li aria-current="page">過去の録音を質問して探す方法</li></ol></nav>
 <h1>過去の録音や会議の内容をiPhoneで探す方法</h1>
-<p class="lead">Texterの「思い出す」では、保存した複数のノートをまたいで質問できます。2つの会議にまたがる質問をした結果と、答えが返らなかった例を、実機の画面で説明します。</p>
+<p class="lead">Texterの「思い出す」に文章で質問すると、保存した複数のノートから、答えと根拠の抜粋が返ります。2つの会議にまたがる質問では、納品日と期限の両方が1回で返り、どちらも元の内容と一致しました。記録に無いことを聞いたときの返答も、実機の画面で説明します。</p>
+<p class="try"><a href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-search-notes-top&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-search-notes-top" data-store="app_store">無料で試す（App Store）</a></p>
 <p class="meta">検証日 <time datetime="2026-11-01">2026-11-01</time></p>
 <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul><li><a href="#summary">結論</a></li><li><a href="#result">実際に返った回答</a></li><li><a href="#steps">手順</a></li><li><a href="#check">答えを使う前の確認</a></li><li><a href="#notes">始める前の注意</a></li><li><a href="#next">関連するガイド</a></li><li><a href="#method">検証の条件</a></li></ul></nav>
 <section class="sec" id="summary" aria-labelledby="summary-h"><h2 id="summary-h">結論</h2>
@@ -220,14 +223,14 @@ footer p{margin:12px 0 0}
       </ul>
       <figure class="shot wide"><a href="/assets/guides/search-notes/05-limit.webp"><img src="/assets/guides/search-notes/05-limit.webp" alt="入力欄の上に「本日の無料回数を使い切りました」と出ている" width="552" height="1200" loading="lazy" decoding="async"></a><figcaption>回数を使い切った画面</figcaption></figure><figure class="shot"><a href="/assets/guides/search-notes/06-paywall.webp"><img src="/assets/guides/search-notes/06-paywall.webp" alt="「思い出す」を開いたときに出る有料プランの案内" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>0回で開いたときの画面</figcaption></figure></section>
 <section class="sec" id="next" aria-labelledby="next-h"><h2 id="next-h">関連するガイド</h2><p>取材の発言を原稿で引用するには<a href="/guides/interview-transcription-writing/">文字起こしと引用確認のガイド</a>、録音を議事録にするには<a href="/guides/ai-minutes/">議事録のガイド</a>、録音をすばやく始めるには<a href="/guides/iphone-side-button-recording/">サイドボタンのガイド</a>をご覧ください。</p></section>
-<section class="sec" id="method" aria-labelledby="method-h"><h2 id="method-h">検証の条件</h2>
+<section class="sec" id="method" aria-labelledby="method-h"><h2 id="method-h">検証の条件</h2><details class="raw"><summary>開いて読む</summary>
       <dl class="facts">
         <dt>検証した人</dt><dd>Texter運営</dd>
         <dt>検証日</dt><dd>2026-11-01</dd>
         <dt>環境</dt><dd>iPhone 17 Pro（iOS 27.0）、製品版のTexter（バージョン2.11.68）。無料の状態です。</dd>
         <dt>音声</dt><dd>台本を合成音声で読み上げ、Macのスピーカーで再生して録音しました。1本目は約2分の会議です。2本目は約75秒の台本のうち、約57秒で録音が止まりました。無料版の制限を案内する画面が出たためです。最後のマーカーの本数と発注の期限は、文字になっていません。</dd>
         <dt>ノート</dt><dd>端末にはほかの検証用のノートもあり、ホームの表示は32件でした。この日の検証では、質問を4回試しました。3回が送信され、1回は上限で送れませんでした。</dd>
-      </dl></section>
+      </dl></details></section>
 <aside class="toc" aria-label="取材での活用"><h2>取材音声を、次の原稿に生かす</h2><p>取材の文字起こしから過去の発言の確認まで。<a href="/interview/">取材向けの使い方・操作デモ・料金</a>をご覧ください。</p></aside>
 <section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで試す</h2><p>Texterは、録音の文字起こしや要約に加えて、保存したノートへの質問ができるアプリです。この手順はiPhone版のものです。無料で始められます。無料版では、ノートへの質問が1日3回までで、録音の文字起こしにも上限があります。詳しい条件は<a href="/pricing/">料金と利用条件</a>をご覧ください。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-search-notes-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-search-notes-end" data-store="app_store">iPhoneで過去の録音を探す（App Store）</a></div></section>
 </main>

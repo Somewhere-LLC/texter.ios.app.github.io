@@ -107,6 +107,8 @@ a{color:var(--deep)}
 .crumbs a{color:var(--sub)}
 h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.6rem);line-height:1.25;font-weight:900}
 .lead{margin:16px 0 0}
+.try{margin:16px 0 0}
+.try a{display:inline-flex;align-items:center;min-height:44px;padding:8px 18px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:15px}
 .meta{margin:10px 0 0;font-size:13px;color:var(--sub)}
 .toc{margin:28px 0 0;padding:18px 20px;background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:14px}
 .toc h2{margin:0;font-size:13px;color:var(--sub);font-weight:600}
@@ -180,13 +182,18 @@ footer p{margin:12px 0 0}
 <main id="main" class="wrap">
 <nav aria-label="パンくずリスト"><ol class="crumbs"><li><a href="/">Texter</a></li><li><a href="/guides/">活用ガイド</a></li><li aria-current="page">会議のやることから通知を設定する方法</li></ol></nav>
 <h1>会議のやることを抽出し、iPhoneで通知を設定する方法</h1>
-<p class="lead">公開された15分44秒の会議をTexterで文字起こしし、抽出された「やること」から通知を設定しました。担当と期限を人が確かめた結果、実際に届いた通知、通知が届く範囲を、画面と一緒に説明します。</p>
+<p class="lead">会議の録音を要約すると、作業・担当・期限が「やること」として並び、項目ごとにiPhoneの通知を設定できます。公開された15分44秒の会議では5件が抽出され、4件は会議の取りまとめと一致しました。届いた通知、通知が届く範囲、人が確かめる点を、画面と一緒に説明します。</p>
+<p class="try"><a href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-meeting-tasks-top&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-meeting-tasks-top" data-store="app_store">無料で試す（App Store）</a></p>
 <p class="meta">検証日 <time datetime="2026-11-05">2026-11-05</time></p>
 <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul><li><a href="#summary">結論</a></li><li><a href="#result">抽出されたやることと、人が確かめた結果</a></li><li><a href="#steps">通知を設定する手順</a></li><li><a href="#set-all">「すべて設定」を押したときの動き</a></li><li><a href="#who">通知が届く範囲</a></li><li><a href="#share">担当者に内容を渡すとき</a></li><li><a href="#notes">始める前の注意</a></li><li><a href="#next">関連するガイド</a></li><li><a href="#method">検証の条件</a></li></ul></nav>
 <section class="sec" id="summary" aria-labelledby="summary-h"><h2 id="summary-h">結論</h2>
-      <p>要約を作ると、ノートの「やること」欄に、作業と担当と期限が並びます。項目の右のアイコンを押すと、その項目の通知が登録されます。登録された日時を確かめてから使ってください。今回は、期限が「今から」の項目が、その日の12:00に通知予定と表示されました。確かめたのは22:59で、12:00はもう過ぎていました。</p>
-      <p>通知が届くのは、操作したiPhoneだけです。担当者の名前が表示されていても、その人には届きません。Apple純正の「リマインダー」アプリにも登録されませんでした。担当者に伝えるときは、内容を直してから、メールやチャットで送ってください。</p>
-      <p>抽出された5件のうち4件は、会議の取りまとめと一致しました。1件には、結論に無い内容が混ざっていました。やることの文、担当、期限は、アプリの中では書き換えられません。項目を一覧から消すこともできませんでした。直した内容は、議事録の側に書いてください。</p></section>
+      <p>要約を作ると、ノートの「やること」欄に、作業と担当と期限が並びます。項目の右のアイコンを押すと、その項目の通知がiPhoneに登録されます。公開された会議では5件が抽出され、4件は会議の取りまとめと一致しました。残る1件には、結論に無い内容が混ざっていました。</p>
+      <h3>使う前に知っておくこと</h3>
+      <ul>
+        <li>通知が届くのは、操作したiPhoneだけです。担当者の名前が表示されていても、その人には届きません。Apple純正の「リマインダー」アプリにも登録されませんでした。担当者に伝えるときは、内容を直してから、メールやチャットで送ってください</li>
+        <li>登録された日時は、確かめてから使ってください。今回は、期限が「今から」の項目が、その日の12:00に通知予定と表示されました。確かめたのは22:59で、12:00はもう過ぎていました</li>
+        <li>やることの文、担当、期限は、アプリの中では書き換えられません。項目を一覧から消すこともできませんでした。直した内容は、議事録の側に書いてください</li>
+      </ul></section>
 <section class="sec" id="result" aria-labelledby="result-h"><h2 id="result-h">抽出されたやることと、人が確かめた結果</h2>
       <p>こども家庭庁が公開している会議の録画を取り込み、要約を作りました。「やること」欄に並んだのは5件です。各項目を、公開されている議事録と取りまとめのコメントと照らし合わせました。</p>
       <figure class="shot"><a href="/assets/guides/meeting-tasks/01-tasks.webp"><img src="/assets/guides/meeting-tasks/01-tasks.webp" alt="やること欄に5件が並び、各項目に担当と期限が表示されている" width="600" height="1304" loading="lazy" decoding="async"></a><figcaption>「やること」欄</figcaption></figure>
@@ -199,7 +206,7 @@ footer p{margin:12px 0 0}
       </tbody></table></div>
       <p>担当は、5件とも組織の名前でした。議事録では、上の4件の事業は総合政策担当が、5件目は母子保健課が説明しています。課の名前で管理するなら、議事録の側で書き直してください。</p>
       <p>取りまとめには、やることとして読める文がほかにもありました。「意見プラス」の認知を学校の活用などで広げること、見直した後も効果を検証することです。この2つは、一覧に入りませんでした。抜けが無いかは、取りまとめや結論の文と照らして確かめてください。</p>
-      <p class="note">出典: こども家庭庁「令和８年度 行政事業レビュー 公開プロセス」の議事録、取りまとめコメント、議題4の録画（<a href="https://www.cfa.go.jp/project-review/2026">資料と議事録</a>、<a href="https://www.youtube.com/watch?v=fPigAILJGWI">録画</a>）。Texter運営が録画の音声をTexterで文字起こしし、出力を議事録と照らし合わせて作成しました。議事録と取りまとめの文言は、一部を抜粋し、要約しています。</p></section><aside class="cta inline" aria-label="アプリで試す"><p>無料で始められます。無料版の文字起こしには上限があり、要約は1日3回までです。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-meeting-tasks-after-result&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-meeting-tasks-after-result" data-store="app_store">iPhoneで会議のやることを通知する（App Store）</a></div></aside>
+      <p class="note">出典: こども家庭庁「令和８年度 行政事業レビュー 公開プロセス」の議事録、取りまとめコメント、議題4の録画（<a href="https://www.cfa.go.jp/project-review/2026">資料と議事録</a>、<a href="https://www.youtube.com/watch?v=fPigAILJGWI">録画</a>）。Texter運営が録画の音声をTexterで文字起こしし、出力を議事録と照らし合わせて作成しました。議事録と取りまとめの文言は、一部を抜粋し、要約しています。</p></section><aside class="cta inline" aria-label="アプリで試す"><p>無料で始められます。iPhone版では、手元の録音を取り込むと、目安として音声30〜40分ぶんまで無料で文字にできます（この枠は、毎月は戻りません）。その場で録音しながらの文字起こしは1回3分、1日15分までで、要約は1日3回まで無料です。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-meeting-tasks-after-result&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-meeting-tasks-after-result" data-store="app_store">iPhoneで会議のやることを通知する（App Store）</a></div></aside>
 <section class="sec" id="steps" aria-labelledby="steps-h"><h2 id="steps-h">通知を設定する手順</h2>
       <ol class="steps">
         <li><h3>「やること」欄を開く</h3><p>会議のノートを開き、画面を下へスクロールします。ノートの上部の「内容のまとめ」より下に、「やること」欄があります。要約をまだ作っていないノートには表示されません。録音から要約までの手順は<a href="/guides/ai-minutes/">議事録のガイド</a>をご覧ください。</p></li>
@@ -240,7 +247,7 @@ footer p{margin:12px 0 0}
         <li>向かない場面があります。会議の参加者全員に自動で通知を送りたいとき、Apple純正の「リマインダー」やカレンダーで管理したいときです。担当者への通知と「リマインダー」への登録は、どちらも行われませんでした。カレンダーへ登録する処理も、コードでは見つかりませんでした</li>
       </ul></section>
 <section class="sec" id="next" aria-labelledby="next-h"><h2 id="next-h">関連するガイド</h2><p>録音から要約を作るまでは<a href="/guides/ai-minutes/">議事録のガイド</a>、発言者を分けるには<a href="/guides/multi-speaker-meeting-minutes/">複数人の会議のガイド</a>をご覧ください。</p></section>
-<section class="sec" id="method" aria-labelledby="method-h"><h2 id="method-h">検証の条件</h2>
+<section class="sec" id="method" aria-labelledby="method-h"><h2 id="method-h">検証の条件</h2><details class="raw"><summary>開いて読む</summary>
       <dl class="facts">
         <dt>検証した人</dt><dd>Texter運営</dd>
         <dt>検証日</dt><dd>2026-11-05</dd>
@@ -248,8 +255,8 @@ footer p{margin:12px 0 0}
         <dt>音声</dt><dd>こども家庭庁の公開プロセスの議題4の録画（15分44秒、5人）。<a href="/guides/ai-minutes/#public-meeting">議事録のガイド</a>で使ったものと同じノートです。</dd>
         <dt>確かめたこと</dt><dd>やることの5件の内容、通知の許可、1件目の通知が23:04に届くこと、「すべて設定」の結果、通知の登録の削除、Apple純正の「リマインダー」アプリの表示、公開リンクのページと取り消し後の表示です。</dd>
         <dt>確かめていないこと</dt><dd>実機のiPhoneでの動き、届いた通知を押したときの画面、過ぎた日時のままの通知、日時が未設定の項目に日時を保存した後の通知、別の端末での表示、公開中のバージョンで作った公開リンクのページです。</dd>
-      </dl></section>
-<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで試す</h2><p>Texterは、録音の文字起こしと要約から、やることの抽出と通知の設定までを行うアプリです。この手順はiPhone版のものです。無料で始められます。無料版の文字起こしには上限があり、要約は1日3回までです。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-meeting-tasks-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-meeting-tasks-end" data-store="app_store">iPhoneで会議のやることを通知する（App Store）</a></div></section>
+      </dl></details></section>
+<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで試す</h2><p>Texterは、録音の文字起こしと要約から、やることの抽出と通知の設定までを行うアプリです。この手順はiPhone版のものです。無料で始められます。iPhone版では、手元の録音を取り込むと、目安として音声30〜40分ぶんまで無料で文字にできます（この枠は、毎月は戻りません）。その場で録音しながらの文字起こしは1回3分、1日15分までで、要約は1日3回まで無料です。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-meeting-tasks-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-meeting-tasks-end" data-store="app_store">iPhoneで会議のやることを通知する（App Store）</a></div></section>
 </main>
 <footer><div class="wrap">
   <ul><li><a href="/">ホーム</a></li><li><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金と利用条件</a></li><li><a href="/faq/">よくある質問</a></li><li><a href="/terms-of-service/">利用規約</a></li><li><a href="/privacy-policy/">プライバシーポリシー</a></li><li><a href="/tokushoho/">特定商取引法に基づく表記</a></li></ul>

@@ -11,6 +11,8 @@ const land = (html) => html.replace('class="shot"', 'class="shot land"');
 
 const aiMinutes = {
   slug: 'ai-minutes',
+  group: 'meeting',
+  card: '2分の音声が、約40秒で要約になりました。手順と、人が仕上げた完成版を載せています。',
   modified: '2026-11-05',
   metaLabel: '更新日',
   metaDate: '2026-11-05',
@@ -18,7 +20,7 @@ const aiMinutes = {
   description: '2分の打ち合わせ音声から議事録を作った全手順です。iPhoneの操作画面、実際の出力、人が仕上げた完成版、チャットAI用のテンプレートと、公開された15分の会議で試した結果を載せています。',
   crumb: '録音から議事録を作る方法',
   h1: '録音から議事録を作る方法',
-  lead: '録音があれば、文字起こしと要約までは自動で進みます。2分4秒の打ち合わせ音声では、要約の表示まで約40秒でした。この時間に、人が確認して仕上げる時間は入っていません。このページでは、iPhoneでの手順と完成した議事録を紹介します。',
+  lead: '録音を取り込むと、文字起こし、要約、やることの一覧までが自動でできます。2分4秒の打ち合わせ音声では、要約の表示まで約40秒でした。人がするのは、担当者、数字、固有名詞の確認と仕上げです。iPhoneでの手順と、完成した議事録を紹介します。',
   video: {
     src: '/assets/guides/ai-minutes/demo.mp4', poster: '/assets/guides/ai-minutes/poster.webp', w: 540, h: 1308, duration: 'PT54S',
     name: '録音ファイルから議事録を作る操作', description: '音声ファイルを取り込み、文字起こし、要約、やることの確認、内容まとめまでを進める実際の操作画面です。待ち時間は早送りしています。',
@@ -72,13 +74,13 @@ const aiMinutes = {
 次回の打ち合わせは11月11日の午後3時からにします
 今日はありがとうございました</code></pre></details>` },
     { id: 'steps', cta: 'after-steps', title: 'Texterで作る手順', html: `
-      <p>音声ファイルから議事録を作る手順です。その場で録音するときは、手順1の代わりに「ボイス」タブで録音してください。<a href="/guides/iphone-side-button-recording/">サイドボタンの長押しで録音を始める</a>こともできます。下の動画では、ノートがまだ無いときに「ボイス」タブに出る「音声・動画ファイルを読み込む」から同じ画面を開いています。</p>
+      <p>音声ファイルから議事録を作る手順です。その場で録音するときは、手順1の代わりに「ボイス」タブで録音してください。無料版では、「ボイス」タブの録音は1回約3分で止まります。長い会議を無料で試すときは、ボイスメモで録音して、<a href="#voice-memo">下の手順</a>で取り込んでください。<a href="/guides/iphone-side-button-recording/">サイドボタンの長押しで録音を始める</a>こともできます。下の動画では、ノートがまだ無いときに「ボイス」タブに出る「音声・動画ファイルを読み込む」から同じ画面を開いています。</p>
       <div class="demo">__VIDEO__</div>
       <ol class="steps">
         <li><h3>音声ファイルを取り込む</h3><p>「設定」タブの「ファイルをインポート」で「音声ファイルをインポート」を選び、ファイルを指定してください。</p>${fig('/assets/guides/ai-minutes/01-import.webp', '「ファイルをインポート」画面。音声ファイルや動画などの取り込み項目が並んでいる', '取り込み元を選ぶ画面', 600, 746)}</li>
         <li><h3>文字起こしを待つ</h3><p>一覧に「文字起こしを実行中です...」と表示されます。2分4秒の音声は、取り込みから要約の表示まで約40秒でした。無料版では処理の前に広告が表示され、最後まで見ると処理が始まる場合があります。今回の環境では広告が表示されなかったので、約40秒に広告の時間は入っていません。</p>${fig('/assets/guides/ai-minutes/02-processing.webp', 'ノート一覧に取り込んだ音声があり、文字起こしを実行中と表示されている', '処理中のノート一覧', ...FULL)}</li>
-        <li><h3>要約を読む</h3><p>ノートを開くと、タイトルと要約が自動で入っています。決定事項と数字を、音声と見比べてください。</p>${wide(fig('/assets/guides/ai-minutes/03-summary.webp', '自動で作られたタイトルと要約。公開日やクーポンの条件が箇条書きで並ぶ', 'タイトルの「キャンプオン」は誤りです', ...FULL))}</li>
-        <li><h3>「やること」を確認する</h3><p>画面を下へスクロールすると、抽出された作業の一覧が表示されます。担当と期限が欠けていないか確かめてください。項目の右のボタンから、リマインダーを設定できます。</p>${wide(fig('/assets/guides/ai-minutes/04-tasks.webp', 'やることの一覧。写真の確認、メール原稿の作成など4件が並ぶ', '担当の表示がない項目があります', ...FULL))}</li>
+        <li><h3>要約を読む</h3><p>ノートを開くと、タイトルと要約が自動で入っています。決定事項と数字を、音声と見比べてください。</p>${wide(fig('/assets/guides/ai-minutes/03-summary.webp', '自動で作られたタイトルと要約。公開日やクーポンの条件が箇条書きで並ぶ', '自動で入ったタイトルと要約', ...FULL))}</li>
+        <li><h3>「やること」を確認する</h3><p>画面を下へスクロールすると、抽出された作業の一覧が表示されます。担当と期限が欠けていないか確かめてください。項目の右のボタンから、リマインダーを設定できます。</p>${wide(fig('/assets/guides/ai-minutes/04-tasks.webp', 'やることの一覧。写真の確認、メール原稿の作成など4件が並ぶ', '抽出された「やること」の一覧', ...FULL))}</li>
         <li><h3>「内容まとめ」で整理して書き出す</h3><p>本文の上の「内容まとめ」を押すと、話の流れと要点をまとめた文書ができます。今回は約7秒で完成しました。右上の共有ボタンから、Markdown、テキスト、HTML、PDFで書き出せます。</p>${fig('/assets/guides/ai-minutes/05-doc-top.webp', '内容まとめの上部。やることと、話の流れを示すセクションが並ぶ', '内容まとめの上部', ...FULL)}${fig('/assets/guides/ai-minutes/06-doc-points.webp', '内容まとめの下部。要点5項目とまとめの文章が並ぶ', '要点とまとめ', ...FULL)}${fig('/assets/guides/ai-minutes/07-export.webp', '共有ボタンのメニュー。Markdown、テキスト、HTML、PDFが並ぶ', '書き出し形式の選択', 600, 497)}</li>
       </ol>` },
     { id: 'voice-memo', title: 'ボイスメモで録音した音声を議事録にする', html: `
@@ -160,12 +162,14 @@ const aiMinutes = {
 
 const videoSubtitles = {
   slug: 'video-subtitles',
+  group: 'video',
+  card: '時刻つきの字幕ファイルを書き出して、YouTubeに読み込むまでの手順です。',
   modified: '2026-11-12',
   title: 'iPhoneの動画からSRT字幕を作る方法｜書き出し手順と完成例',
   description: '15秒の動画から字幕ファイルのSRTを作った全手順です。実際のSRT、字幕付きの再生例、時刻のずれの実測、YouTubeに読み込んで自動字幕と比べた結果を載せています。',
   crumb: 'iPhoneの動画からSRT字幕を作る方法',
   h1: 'iPhoneの動画からSRT字幕を作る方法',
-  lead: '動画の音声を文字起こしして時刻つきのSRTファイルにすると、YouTubeなどに読み込めます。このページの完成物はSRTで、字幕を映像に入れた動画は扱いません。15秒の動画を実際に処理した結果と、公開前に確認する点を説明します。',
+  lead: '動画をTexterに取り込むと、時刻つきの字幕ファイル（SRT）を書き出せます。SRTは、YouTubeなどに読み込めて、文字を後から直せるテキストのファイルです。15秒の動画で実際に作ったSRTと、YouTubeに読み込んで自動字幕と比べた結果を紹介します。字幕を映像に入れた動画が欲しいときは、<a href="/guides/iphone-subtitled-video/">字幕付き動画のガイド</a>をご覧ください。',
   video: {
     src: '/assets/guides/video-subtitles/demo.mp4', poster: '/assets/guides/video-subtitles/poster.webp', w: 540, h: 1308, duration: 'PT53S',
     name: '動画ファイルから字幕（SRT）を書き出す操作', description: '動画ファイルを取り込み、文字起こしを確認して、字幕（SRT）ファイルを書き出すまでの実際の操作画面です。',
@@ -251,6 +255,8 @@ const videoSubtitles = {
 
 const sideButton = {
   slug: 'iphone-side-button-recording',
+  group: 'record',
+  card: 'サイドボタンの長押しで、録音と文字起こしをすぐ始める設定です。',
   published: '2026-11-01',
   iosOnly: true,
   verified: '2026-11-01',
@@ -258,7 +264,7 @@ const sideButton = {
   description: 'iPhoneのサイドボタンを長押しして、Texterの録音と文字起こしを始める手順です。設定画面、実際の動作、保存されたノート、利用の条件を載せています。',
   crumb: 'サイドボタンで録音を始める方法',
   h1: 'iPhoneのサイドボタン長押しで録音・文字起こしを始める方法',
-  lead: 'Apple Accountの国または地域が日本で、日本国内にいるときは、iOS 26.2以降でサイドボタンに音声アプリを割り当てられます。Texterを選ぶと、長押しで録音と文字起こしが始まります。このページは、実機で確かめた手順と結果の説明です。',
+  lead: 'サイドボタンを長押しすると、Texterが開いて、録音と文字起こしがそのまま始まります。アプリを探す手間が無いので、急に会議が始まったときも、すぐ録音できます。設定は1回です。無料版の録音は1回約3分で止まるので、会議を通して使うときはPremiumを選びます。使える条件は、iOS 26.2以降で、Apple Accountの国または地域が日本にあり、日本国内にいることです。実機で確かめた手順と結果を説明します。',
   video: {
     src: '/assets/guides/side-button/demo.mp4', poster: '/assets/guides/side-button/poster.webp', w: 540, h: 1308, duration: 'PT38S',
     name: 'サイドボタンの長押しでTexterの録音を始める操作', description: '設定アプリでサイドボタンにTexterを割り当て、ホーム画面で長押しして録音と文字起こしを始めるまでの実機の画面です。',
@@ -309,6 +315,8 @@ const sideButton = {
 
 const pipGuide = {
   slug: 'iphone-pip-transcription',
+  group: 'record',
+  card: '資料やSafariを見ながら、小窓で文字起こしを確認します。',
   verified: '2026-11-01',
   published: '2026-11-01',
   iosOnly: true,
@@ -363,6 +371,8 @@ const pipGuide = {
 
 const subtitledVideo = {
   slug: 'iphone-subtitled-video',
+  group: 'video',
+  card: '字幕を映像に入れた動画を書き出します。字幕ファイルを読み込めないサービスにも投稿できます。',
   verified: '2026-11-01',
   published: '2026-11-01',
   iosOnly: true,
@@ -370,7 +380,7 @@ const subtitledVideo = {
   description: 'Texterで動画を文字起こしして、字幕を映像に入れた動画を書き出す手順です。実機の画面、完成した動画、かかった時間、ファイルの大きさを載せています。',
   crumb: 'iPhoneで字幕付き動画を作る方法',
   h1: 'iPhoneで字幕付き動画を作る方法',
-  lead: 'Texterで動画を文字起こしすると、字幕を映像に入れた動画を書き出せます。15秒の動画を実機で処理した結果と手順を説明します。',
+  lead: 'Texterで動画を文字起こしすると、字幕を映像に入れた動画を書き出せます。字幕ファイルを読み込めないサービスにも、字幕付きのまま投稿できます。15秒の動画では、書き出しは約7〜8秒でした。手順と、完成した動画を紹介します。',
   video: {
     src: '/assets/guides/subtitled-video/sample.mp4', poster: '/assets/guides/subtitled-video/sample-poster.webp', w: 960, h: 540, duration: 'PT13S',
     name: 'Texterで書き出した字幕付き動画の再生例', description: 'Texterで字幕を映像に入れた動画を、iPhoneで再生して画面収録したものです。音声は元の動画の音声を合わせています。',
@@ -427,6 +437,8 @@ const subtitledVideo = {
 
 const searchNotes = {
   slug: 'iphone-search-past-recordings',
+  group: 'meeting',
+  card: '複数の録音に文章で質問して、答えと根拠のノートを確かめます。',
   verified: '2026-11-01',
   published: '2026-11-01',
   iosOnly: true,
@@ -434,7 +446,7 @@ const searchNotes = {
   description: 'Texterの「思い出す」で、複数の録音から答えを探す手順です。実機の画面、実際に返った回答と根拠、答えが返らなかった例、無料版の回数制限を載せています。',
   crumb: '過去の録音を質問して探す方法',
   h1: '過去の録音や会議の内容をiPhoneで探す方法',
-  lead: 'Texterの「思い出す」では、保存した複数のノートをまたいで質問できます。2つの会議にまたがる質問をした結果と、答えが返らなかった例を、実機の画面で説明します。',
+  lead: 'Texterの「思い出す」に文章で質問すると、保存した複数のノートから、答えと根拠の抜粋が返ります。2つの会議にまたがる質問では、納品日と期限の両方が1回で返り、どちらも元の内容と一致しました。記録に無いことを聞いたときの返答も、実機の画面で説明します。',
   image: '/assets/guides/search-notes/03-answer.webp',
   store: 'guide-search-notes',
   conditions: '無料で始められます。無料版では、ノートへの質問が1日3回までで、録音の文字起こしにも上限があります。詳しい条件は<a href="/pricing/">料金と利用条件</a>をご覧ください。',
@@ -492,6 +504,9 @@ const searchNotes = {
 
 const multiSpeakerMinutes = {
   slug: 'multi-speaker-meeting-minutes',
+  group: 'meeting',
+  card: '発言を話者ごとに分け、ラベルを実際の名前へ一括で直す手順です（Premium）。',
+  topLabel: 'App Storeで見る',
   verified: '2026-11-02',
   published: '2026-11-02',
   modified: '2026-11-05',
@@ -502,7 +517,7 @@ const multiSpeakerMinutes = {
   description: 'iPhoneのTexterで会議の音声を話者識別して文字起こしする手順。公開された5人の会議で話者の区別を議事録と照らし合わせた結果、話者名の一括変更、議事録に仕上げる方法を説明します。',
   crumb: '複数人の会議を話者ごとに議事録にする方法',
   h1: '複数人の会議を話者ごとに文字起こしして議事録を作る方法',
-  lead: '複数人の打ち合わせでは、発言だけでなく「誰が言ったか」も議事録の手がかりになります。Texterで録音を話者ごとに分け、スピーカーのラベルを実際の名前に直してから、決定事項と担当を確認する手順を説明します。',
+  lead: '「話者識別」をオンにして会議の録音を取り込むと、発言が「スピーカー1」「スピーカー2」のように話者ごとに分かれます。ラベルを1つ直すと、同じ話者の発言がまとめて実際の名前に変わる仕組みです。誰が言ったかが残るので、決定事項と担当を確かめやすくなります。話者識別はPremiumの機能です。手順と、公開された5人の会議で確かめた結果を説明します。',
   video: {
     src: '/assets/guides/multi-speaker-minutes/demo.mp4', poster: '/assets/guides/multi-speaker-minutes/poster.webp', w: 540, h: 1174, duration: 'PT53S',
     name: '会議音声の取り込みと話者名の一括変更', description: '会議の音声ファイルをSimulatorで取り込み、話者別の文字起こしを開いて、同じ話者の発言をまとめて改名する操作です。待ち時間を省いています。',
@@ -568,6 +583,8 @@ const multiSpeakerMinutes = {
 
 const voiceMemosVsTexter = {
   slug: 'iphone-voice-memos-vs-texter',
+  group: 'record',
+  card: '標準のボイスメモで足りる場面と、Texterを足す場面を分けて説明します。',
   verified: '2026-11-05',
   published: '2026-11-05',
   metaLabel: '確認日',
@@ -576,14 +593,14 @@ const voiceMemosVsTexter = {
   description: 'iPhoneのボイスメモの文字起こしで足りる場面と、Texterを検討する場面の選び分けです。Appleの公式資料で確認したボイスメモの機能と、Texterの話者識別、議事録、過去の録音への質問を比べます。',
   crumb: 'ボイスメモとTexterの違い',
   h1: 'iPhoneのボイスメモとTexterの違い',
-  lead: 'ボイスメモにも、日本語の文字起こしがあります。録音して読み返すだけなら、標準機能で足りる場面は多いです。ボイスメモで足りる条件と、Texterを使う理由になる条件を分けて説明します。',
+  lead: 'ボイスメモの録音は、Texterに取り込めます。話者ごとに分けたい（Premium）、議事録の形に整えたい、過去の録音をまたいで質問したい。この3つのどれかが必要なら、Texterが向いています。録音して読み返すだけなら、標準のボイスメモで十分です。足りる条件と、Texterを使う理由になる条件を分けて説明します。',
   image: '/img/ogp.png',
   store: 'guide-voice-memos',
   sections: [
     { id: 'summary', title: '結論', html: `
       <p>1人で話した内容を録音し、あとで読んだり検索したりするだけなら、ボイスメモで足ります。複数人の会議で誰が話したかを残したいとき、議事録の形に整えたいとき、過去の録音をまたいで質問したいときは、Texterを検討してください。</p>
       <p>先に標準のボイスメモで試し、足りない点が出てから取り込む使い方もできます。ボイスメモの録音は、Texterに取り込めます。</p>` },
-    { id: 'choose', title: 'やりたいこと別の選び方', html: `
+    { id: 'choose', cta: 'after-result', title: 'やりたいこと別の選び方', html: `
       <div class="scroll"><table class="compare"><thead><tr><th scope="col">やりたいこと</th><th scope="col">ボイスメモ</th><th scope="col">Texter</th></tr></thead><tbody>
         <tr><th scope="row">録音して、日本語の文字起こしを読む</th><td>できる。iPhone 12以降で、録音中も録音後も表示できる</td><td>できる。無料版には時間の上限がある</td></tr>
         <tr><th scope="row">録音を、タイトルや文字起こしの語で探す</th><td>できる。検索欄に入力する</td><td>ノート一覧の検索欄で探せる</td></tr>
@@ -592,7 +609,7 @@ const voiceMemosVsTexter = {
         <tr><th scope="row">担当と期限つきの「やること」を取り出す</th><td>Appleの資料に記載がない</td><td>「やること」の抽出がある</td></tr>
         <tr><th scope="row">複数の録音をまたいで質問する</th><td>Appleの資料に記載がない</td><td>「思い出す」でできる。無料版は1日3回まで</td></tr>
         <tr><th scope="row">別のアプリを使いながら録音する</th><td>できる。ほかのアプリでオーディオの再生が始まると録音は止まる</td><td>小窓を出して、別のアプリを使いながら文字起こしを続けられる。ほかのアプリで音声を再生したときの動きは、確かめていない</td></tr>
-        <tr><th scope="row">費用</th><td>OS標準のアプリ。追加の費用の記載は、読んだ資料にない</td><td>無料版に上限がある。Premiumの価格は料金ページにある</td></tr>
+        <tr><th scope="row">費用</th><td>OS標準のアプリ。追加の費用の記載は、読んだ資料にない</td><td>無料で始められる。録音の取り込みは、目安として音声30〜40分ぶんまで無料（累積）。Premiumの価格は料金ページにある</td></tr>
         <tr><th scope="row">音声の送り先</th><td>文字起こしをどこで処理するかは、読んだ2ページに記載がない</td><td>既定のWhisperは、音声をクラウドへ送る。iOS 26以降では、端末内で処理する方式も選べる</td></tr>
         <tr><th scope="row">ほかの端末で同じ録音を使う</th><td>iCloudでボイスメモをオンにすると、同じApple Accountの端末に表示される</td><td>Premiumのクラウド同期で、テキストと要約を同期する。録音そのものは同期しない。一部のPremiumでは同期を使えない場合がある</td></tr>
       </tbody></table></div>
@@ -644,6 +661,8 @@ const voiceMemosVsTexter = {
 
 const offlineTranscription = {
   slug: 'iphone-offline-transcription',
+  group: 'record',
+  card: '端末の中だけで文字起こしする設定と、通信が要る機能の一覧です。',
   verified: '2026-11-05',
   published: '2026-11-05',
   metaLabel: '確認日',
@@ -652,7 +671,7 @@ const offlineTranscription = {
   description: 'Texterで音声を端末の外へ送らずに文字起こしする設定と、通信が要る機能の一覧です。SpeechAnalyzerを選ぶ手順、Whisperへ切り替わる場合、要約やAIチャットの送信先を、アプリの実装と画面の文言から確認しました。',
   crumb: '音声を端末の外に送らずに文字起こしする方法',
   h1: 'iPhoneで音声を端末の外に送らずに文字起こしする方法',
-  lead: '音声を外に出したくないときは、文字起こしの方式を自分で選ぶ必要があります。Texterの既定は、音声をクラウドへ送る方式です。端末の中だけで済む範囲と、通信が要る範囲を、アプリのコードと画面の文言から整理しました。',
+  lead: 'iOS 26以降のiPhoneでは、音声ファイルの文字起こしに、端末の中で処理する方式を選べます。既定の方式は音声をクラウドへ送るので、外に出したくない録音では、先に切り替えてください。端末内の処理に失敗すると、クラウドの方式に切り替わる場合があります。切り替える手順と、端末の中だけで済む範囲、通信が要る範囲を、アプリのコードと画面の文言から整理しました。',
   image: '/img/ogp.png',
   store: 'guide-offline',
   sections: [
@@ -714,6 +733,8 @@ const offlineTranscription = {
 
 const meetingTasks = {
   slug: 'iphone-meeting-action-items-reminder',
+  group: 'meeting',
+  card: '要約から作業・担当・期限を取り出し、iPhoneに通知を設定します。',
   verified: '2026-11-05',
   published: '2026-11-05',
   iosOnly: true,
@@ -721,14 +742,18 @@ const meetingTasks = {
   description: 'Texterが会議から抽出した「やること」を確認し、iPhoneに通知を設定するまでの手順です。公開された会議で試した5件の確認結果、届いた通知、担当者には通知が届かないこと、公開リンクで相手に見える内容を載せています。',
   crumb: '会議のやることから通知を設定する方法',
   h1: '会議のやることを抽出し、iPhoneで通知を設定する方法',
-  lead: '公開された15分44秒の会議をTexterで文字起こしし、抽出された「やること」から通知を設定しました。担当と期限を人が確かめた結果、実際に届いた通知、通知が届く範囲を、画面と一緒に説明します。',
+  lead: '会議の録音を要約すると、作業・担当・期限が「やること」として並び、項目ごとにiPhoneの通知を設定できます。公開された15分44秒の会議では5件が抽出され、4件は会議の取りまとめと一致しました。届いた通知、通知が届く範囲、人が確かめる点を、画面と一緒に説明します。',
   image: '/assets/guides/meeting-tasks/04-lock.webp',
   store: 'guide-meeting-tasks',
   sections: [
     { id: 'summary', title: '結論', html: `
-      <p>要約を作ると、ノートの「やること」欄に、作業と担当と期限が並びます。項目の右のアイコンを押すと、その項目の通知が登録されます。登録された日時を確かめてから使ってください。今回は、期限が「今から」の項目が、その日の12:00に通知予定と表示されました。確かめたのは22:59で、12:00はもう過ぎていました。</p>
-      <p>通知が届くのは、操作したiPhoneだけです。担当者の名前が表示されていても、その人には届きません。Apple純正の「リマインダー」アプリにも登録されませんでした。担当者に伝えるときは、内容を直してから、メールやチャットで送ってください。</p>
-      <p>抽出された5件のうち4件は、会議の取りまとめと一致しました。1件には、結論に無い内容が混ざっていました。やることの文、担当、期限は、アプリの中では書き換えられません。項目を一覧から消すこともできませんでした。直した内容は、議事録の側に書いてください。</p>` },
+      <p>要約を作ると、ノートの「やること」欄に、作業と担当と期限が並びます。項目の右のアイコンを押すと、その項目の通知がiPhoneに登録されます。公開された会議では5件が抽出され、4件は会議の取りまとめと一致しました。残る1件には、結論に無い内容が混ざっていました。</p>
+      <h3>使う前に知っておくこと</h3>
+      <ul>
+        <li>通知が届くのは、操作したiPhoneだけです。担当者の名前が表示されていても、その人には届きません。Apple純正の「リマインダー」アプリにも登録されませんでした。担当者に伝えるときは、内容を直してから、メールやチャットで送ってください</li>
+        <li>登録された日時は、確かめてから使ってください。今回は、期限が「今から」の項目が、その日の12:00に通知予定と表示されました。確かめたのは22:59で、12:00はもう過ぎていました</li>
+        <li>やることの文、担当、期限は、アプリの中では書き換えられません。項目を一覧から消すこともできませんでした。直した内容は、議事録の側に書いてください</li>
+      </ul>` },
     { id: 'result', cta: 'after-result', title: '抽出されたやることと、人が確かめた結果', html: `
       <p>こども家庭庁が公開している会議の録画を取り込み、要約を作りました。「やること」欄に並んだのは5件です。各項目を、公開されている議事録と取りまとめのコメントと照らし合わせました。</p>
       ${fig('/assets/guides/meeting-tasks/01-tasks.webp', 'やること欄に5件が並び、各項目に担当と期限が表示されている', '「やること」欄', ...FULL)}
@@ -799,6 +824,8 @@ const meetingTasks = {
 
 const interviewWriting = {
   slug: 'interview-transcription-writing',
+  group: 'interview',
+  card: '使いたい発言を選び、音声で確かめてから原稿に移す手順です。',
   published: '2026-11-11',
   modified: '2026-11-12',
   metaLabel: '更新日',
@@ -943,6 +970,8 @@ const interviewWriting = {
 
 const lectureNotes = {
   slug: 'lecture-recording-review-notes',
+  group: 'interview',
+  card: '36分の講義を、要約と確認問題で復習した例です。',
   verified: '2026-11-12',
   published: '2026-11-12',
   iosOnly: true,
@@ -1058,6 +1087,8 @@ CMIP5などの全球モデルは世界全体を計算するため、日本海側
 
 const interviewTopics = {
   slug: 'interview-topic-map',
+  group: 'interview',
+  card: '約11分のインタビューが、7つの話題に分かれました。読む順番を決める下準備に使えます。',
   verified: '2026-11-12',
   published: '2026-11-12',
   iosOnly: true,
@@ -1065,7 +1096,7 @@ const interviewTopics = {
   description: '約11分の公開インタビューをTexterで文字起こしし、話題マップで7つの話題に分けた結果です。話題名と件数、話題に入った本文、名前がずれた話題、誤認識、質的調査で使うときの注意を載せています。',
   crumb: 'インタビューを話題ごとに整理する方法',
   h1: 'インタビューを話題ごとに整理する方法',
-  lead: 'インタビューを文字にした後、どの話題がどこで語られたかを見渡すと、読み込む順番を決めやすくなります。Texterの話題マップを、約11分の公開インタビューで実際に試しました。',
+  lead: 'インタビューを取り込んだ後、メニューから「話題マップ」を開くと、話の内容が話題ごとに分かれて表示されます。約11分の公開インタビューは7つの話題に分かれ、話題を押すと、その話題に入った本文の段落が一覧で出ました。どこから読み込むかを決める下準備に使えます。',
   image: '/img/ogp.png',
   store: 'guide-interview-topic-map',
   sections: [
@@ -1164,6 +1195,8 @@ const interviewTopics = {
 
 const talkShowNotes = {
   slug: 'podcast-transcription-show-notes',
+  group: 'interview',
+  card: '約21分の対談を8つの話題に整理して、概要欄の下書きにします。',
   verified: '2026-11-12',
   published: '2026-11-12',
   iosOnly: true,
@@ -1171,7 +1204,7 @@ const talkShowNotes = {
   description: '約21分の対談の音声をTexterで文字起こしし、内容まとめを書き出して、概要欄の下書きにした結果です。かかった時間、8つに分かれた話題、書き出した文の例、本文と照らした数値、自動の要約が作られなかった場面を載せています。',
   crumb: '対談の録音から概要欄の下書きを作る方法',
   h1: 'ポッドキャストや対談の録音から概要欄の下書きを作る方法',
-  lead: 'ポッドキャストや対談を公開するとき、概要欄や紹介記事を書く作業が残ります。録音を文字にして、話題ごとのまとめを書き出すと、下書きの材料がそろいます。約21分の対談の音声で、実際に試しました。題材は、YouTubeで公開されているトーク番組の音声です。ポッドキャストの配信そのものではありません。',
+  lead: 'ポッドキャストや対談を公開するとき、概要欄や紹介記事を書く作業が残ります。録音を取り込んで「内容まとめ」を押すと、話題ごとの説明と要点がまとまり、下書きの材料がそろいます。約21分の対談は約6分で文字になり、8つの話題に整理できました。',
   image: '/img/ogp.png',
   store: 'guide-talk-show-notes',
   sections: [
@@ -1180,7 +1213,7 @@ const talkShowNotes = {
       <p>そのまま公開できる文にはなりません。出演者の名前の表記、数値、発言の引用は、本文と音声で確かめる必要があります。再生位置の時刻も、書き出した文には入りません。</p>` },
     { id: 'result', cta: 'after-result', title: '約21分の対談で試した結果', html: `
       <dl class="facts">
-        <dt>音声</dt><dd>20分52秒。2人が、寄せられたコメントに答えていく対談です</dd>
+        <dt>音声</dt><dd>20分52秒。2人が、寄せられたコメントに答えていく対談です。YouTubeで公開されているトーク番組の音声で、ポッドキャストの配信そのものではありません</dd>
         <dt>かかった時間</dt><dd>取り込みを始めてから、文字起こしが終わるまで約6分でした（1回の測定）</dd>
         <dt>文字起こし</dt><dd>アプリからコピーした本文は、改行を含めて6,780文字でした。話者のラベルは付いていません</dd>
         <dt>自動の要約</dt><dd>今回は作られませんでした。同じ日に要約を3回作った後だったので、無料版の1日3回の上限に当たったとみられます。原因は確かめていません。文字起こしの直後に、Premiumの案内が表示されました</dd>
@@ -1269,6 +1302,8 @@ const talkShowNotes = {
 
 const researchInterview = {
   slug: 'research-interview-transcription',
+  group: 'interview',
+  card: '自動の文字起こしを下書きにして、原音と照合した記録を残します。',
   published: '2026-11-11',
   modified: '2026-11-11',
   metaLabel: '更新日',
@@ -1278,7 +1313,7 @@ const researchInterview = {
   description: '卒論や研究のインタビュー音声を文字にした後、音声照合・対象者コードへの置換・引用確認を進める手順。自動出力と逐語録、分析メモを分ける記入例と、クラウド処理・保存先を確認する項目をまとめました。',
   crumb: '研究インタビューの文字起こし',
   h1: '卒論・研究インタビューを文字起こしし、確認できる記録にする',
-  lead: '研究で使うインタビューは、読みやすくまとめる前に、どの発言をどう確認したかを残します。自動の文字起こしを下書きにし、原音と照合した記録、共有用のコピー、分析メモを分ける手順を紹介します。逐語録の表記やデータの扱いは、指導教員・所属先・研究計画の基準に従ってください。',
+  lead: 'インタビューの録音を自動で文字にすると、逐語録づくりを、音声と照らして直す作業から始められます。自動の文字起こしを下書きにし、原音と照合した記録、共有用のコピー、分析メモを分けて残す手順と、確認表の記入例を紹介します。逐語録の表記やデータの扱いは、指導教員・所属先・研究計画の基準に従ってください。',
   image: '/img/ogp.png',
   store: 'guide-research-interview',
   sections: [
@@ -1328,12 +1363,19 @@ const researchInterview = {
   ctaBody: '研究で使える処理方法と保存先を確認したうえで、文字起こしを進めてください。',
 };
 
+const groups = [
+  { id: 'meeting', title: '会議を議事録にする' },
+  { id: 'interview', title: '取材・研究・講義・対談を整理する' },
+  { id: 'video', title: '動画に字幕を付ける' },
+  { id: 'record', title: '録音のしかたと、方式の選び方' },
+];
+
 const index = {
   title: '文字起こしと議事録の活用ガイド｜Texter',
   description: '複数人の会議の話者識別、議事録の作り方、標準のボイスメモとの使い分け、端末の外へ音声を送らない設定、録音の検索、字幕作成まで、Texterの使い方を説明するガイドです。',
   h1: '活用ガイド',
-  lead: '文字起こし、議事録、録音の検索や字幕作成を、操作画面と確認事項を交えて説明します。標準のボイスメモとの違いと、音声を端末の外へ送るかどうかの整理も載せています。',
+  lead: '会議の議事録、取材の原稿、講義の復習、動画の字幕など、録音を文字にした後の進め方を、実際の画面と結果で紹介します。やりたいことに近いガイドからお読みください。',
   crumb: '活用ガイド',
 };
 
-module.exports = { VERIFIED, guides: [interviewWriting, researchInterview, interviewTopics, lectureNotes, talkShowNotes, aiMinutes, meetingTasks, multiSpeakerMinutes, voiceMemosVsTexter, sideButton, pipGuide, searchNotes, offlineTranscription, subtitledVideo, videoSubtitles], index };
+module.exports = { VERIFIED, guides: [interviewWriting, researchInterview, interviewTopics, lectureNotes, talkShowNotes, aiMinutes, meetingTasks, multiSpeakerMinutes, voiceMemosVsTexter, sideButton, pipGuide, searchNotes, offlineTranscription, subtitledVideo, videoSubtitles], index, groups };

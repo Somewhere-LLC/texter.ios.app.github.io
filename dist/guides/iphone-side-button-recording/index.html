@@ -123,6 +123,8 @@ a{color:var(--deep)}
 .crumbs a{color:var(--sub)}
 h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.6rem);line-height:1.25;font-weight:900}
 .lead{margin:16px 0 0}
+.try{margin:16px 0 0}
+.try a{display:inline-flex;align-items:center;min-height:44px;padding:8px 18px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:15px}
 .meta{margin:10px 0 0;font-size:13px;color:var(--sub)}
 .toc{margin:28px 0 0;padding:18px 20px;background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:14px}
 .toc h2{margin:0;font-size:13px;color:var(--sub);font-weight:600}
@@ -196,7 +198,8 @@ footer p{margin:12px 0 0}
 <main id="main" class="wrap">
 <nav aria-label="パンくずリスト"><ol class="crumbs"><li><a href="/">Texter</a></li><li><a href="/guides/">活用ガイド</a></li><li aria-current="page">サイドボタンで録音を始める方法</li></ol></nav>
 <h1>iPhoneのサイドボタン長押しで録音・文字起こしを始める方法</h1>
-<p class="lead">Apple Accountの国または地域が日本で、日本国内にいるときは、iOS 26.2以降でサイドボタンに音声アプリを割り当てられます。Texterを選ぶと、長押しで録音と文字起こしが始まります。このページは、実機で確かめた手順と結果の説明です。</p>
+<p class="lead">サイドボタンを長押しすると、Texterが開いて、録音と文字起こしがそのまま始まります。アプリを探す手間が無いので、急に会議が始まったときも、すぐ録音できます。設定は1回です。無料版の録音は1回約3分で止まるので、会議を通して使うときはPremiumを選びます。使える条件は、iOS 26.2以降で、Apple Accountの国または地域が日本にあり、日本国内にいることです。実機で確かめた手順と結果を説明します。</p>
+<p class="try"><a href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-side-button-top&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-side-button-top" data-store="app_store">無料で試す（App Store）</a></p>
 <p class="meta">検証日 <time datetime="2026-11-01">2026-11-01</time></p>
 <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul><li><a href="#summary">結論</a></li><li><a href="#steps">設定と録音の手順</a></li><li><a href="#result">実際の結果</a></li><li><a href="#notes">始める前の注意</a></li><li><a href="#next">録音のあとにすること</a></li><li><a href="#method">検証の条件</a></li></ul></nav>
 <section class="sec" id="summary" aria-labelledby="summary-h"><h2 id="summary-h">結論</h2>
@@ -228,14 +231,14 @@ footer p{margin:12px 0 0}
       </ul></section>
 <section class="sec" id="next" aria-labelledby="next-h"><h2 id="next-h">録音のあとにすること</h2><p>録音から議事録を仕上げる手順は、<a href="/guides/ai-minutes/">録音から議事録を作る方法</a>で説明しています。ロック画面のウィジェットやコントロールセンターからの録音は、<a href="/faq/#quick-start">よくある質問</a>をご覧ください。</p>
       <p>取材を録音したあとは、文字起こしから内容の整理、過去の発言確認へつなげられます。<a href="/interview/">取材向けの活用例と操作デモ</a>をまとめました。</p></section>
-<section class="sec" id="method" aria-labelledby="method-h"><h2 id="method-h">検証の条件</h2>
+<section class="sec" id="method" aria-labelledby="method-h"><h2 id="method-h">検証の条件</h2><details class="raw"><summary>開いて読む</summary>
       <dl class="facts">
         <dt>検証した人</dt><dd>Texter運営</dd>
         <dt>検証日</dt><dd>2026-11-01</dd>
         <dt>環境</dt><dd>iPhone 17 Pro（iOS 27.0）、製品版のTexter（バージョン2.11.68）。無料の状態で、初期設定と権限の許可を済ませた端末です。設定画面の別アプリの行はぼかしています。</dd>
         <dt>音声</dt><dd>台本を合成音声で読み上げた音声を、Macのスピーカーで再生しました。</dd>
-      </dl></section>
-<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで試す</h2><p>Texterは、録音から文字起こし、要約、やることの抽出までを行うアプリです。この手順はiPhone版のものです。無料で始められます。無料版の文字起こしには上限があり、要約は1日3回までです。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-side-button-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-side-button-end" data-store="app_store">iPhoneでサイドボタン録音を試す（App Store）</a></div></section>
+      </dl></details></section>
+<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで試す</h2><p>Texterは、録音から文字起こし、要約、やることの抽出までを行うアプリです。この手順はiPhone版のものです。無料で始められます。iPhone版では、手元の録音を取り込むと、目安として音声30〜40分ぶんまで無料で文字にできます（この枠は、毎月は戻りません）。その場で録音しながらの文字起こしは1回3分、1日15分までで、要約は1日3回まで無料です。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-side-button-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-side-button-end" data-store="app_store">iPhoneでサイドボタン録音を試す（App Store）</a></div></section>
 </main>
 <footer><div class="wrap">
   <ul><li><a href="/">ホーム</a></li><li><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金と利用条件</a></li><li><a href="/faq/">よくある質問</a></li><li><a href="/terms-of-service/">利用規約</a></li><li><a href="/privacy-policy/">プライバシーポリシー</a></li><li><a href="/tokushoho/">特定商取引法に基づく表記</a></li></ul>

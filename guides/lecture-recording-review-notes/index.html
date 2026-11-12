@@ -107,6 +107,8 @@ a{color:var(--deep)}
 .crumbs a{color:var(--sub)}
 h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.6rem);line-height:1.25;font-weight:900}
 .lead{margin:16px 0 0}
+.try{margin:16px 0 0}
+.try a{display:inline-flex;align-items:center;min-height:44px;padding:8px 18px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:15px}
 .meta{margin:10px 0 0;font-size:13px;color:var(--sub)}
 .toc{margin:28px 0 0;padding:18px 20px;background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:14px}
 .toc h2{margin:0;font-size:13px;color:var(--sub);font-weight:600}
@@ -181,6 +183,7 @@ footer p{margin:12px 0 0}
 <nav aria-label="パンくずリスト"><ol class="crumbs"><li><a href="/">Texter</a></li><li><a href="/guides/">活用ガイド</a></li><li aria-current="page">講義の録音から復習ノートを作る方法</li></ol></nav>
 <h1>講義の録音を文字起こしして復習ノートにする方法</h1>
 <p class="lead">講義の録音を取り込むと、文字起こしと要約ができます。要約を読んで全体をつかみ、本文で確かめ、確認問題で理解を試す流れを、36分の公開講義で実際に試しました。</p>
+<p class="try"><a href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-lecture-notes-top&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-lecture-notes-top" data-store="app_store">無料で試す（App Store）</a></p>
 <p class="meta">検証日 <time datetime="2026-11-12">2026-11-12</time></p>
 <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul><li><a href="#summary">結論</a></li><li><a href="#result">36分の講義で試した結果</a></li><li><a href="#steps">復習ノートを作る手順</a></li><li><a href="#note-example">復習ノートの例</a></li><li><a href="#verify">要約を本文と照らした結果</a></li><li><a href="#errors">見つけた誤認識</a></li><li><a href="#quiz">チャットで確認問題を作った結果</a></li><li><a href="#notes">始める前の注意</a></li><li><a href="#next">関連するガイド</a></li><li><a href="#method">検証の条件</a></li></ul></nav>
 <section class="sec" id="summary" aria-labelledby="summary-h"><h2 id="summary-h">結論</h2>
@@ -213,7 +216,7 @@ CMIP5などの全球モデルは世界全体を計算するため、日本海側
 5. データの特性を踏まえ、影響評価につなげる
 気象データは、熱中症リスクや洪水などを評価するモデルに入力され、自治体や市民の対策に役立てられる。長期的な温暖化傾向だけで災害リスクは判断できず、極端現象の変動も考慮する必要がある。データの作成手法と限界を理解し、目的に応じて利用することが大切である。</code></pre>
       <p>要約のテキストは<a href="/assets/guides/lecture-notes/summary.txt" download>ファイル</a>でも確認できます。</p>
-      <p class="note">題材は、YouTubeのチャンネル「CCCA」が公開している講義の音声です。出典は「検証の条件」に書いています。要約は講義を短くまとめたもので、講義の内容そのものではありません。</p></section><aside class="cta inline" aria-label="アプリで試す"><p>無料で始められます。無料版の文字起こしには上限があり、要約は1日3回までです。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-lecture-notes-after-result&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-lecture-notes-after-result" data-store="app_store">iPhoneで講義の録音を文字にする（App Store）</a></div></aside>
+      <p class="note">題材は、YouTubeのチャンネル「CCCA」が公開している講義の音声です。出典は「検証の条件」に書いています。要約は講義を短くまとめたもので、講義の内容そのものではありません。</p></section><aside class="cta inline" aria-label="アプリで試す"><p>無料で始められます。iPhone版では、手元の録音を取り込むと、目安として音声30〜40分ぶんまで無料で文字にできます（この枠は、毎月は戻りません）。その場で録音しながらの文字起こしは1回3分、1日15分までで、要約は1日3回まで無料です。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-lecture-notes-after-result&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-lecture-notes-after-result" data-store="app_store">iPhoneで講義の録音を文字にする（App Store）</a></div></aside>
 <section class="sec" id="steps" aria-labelledby="steps-h"><h2 id="steps-h">復習ノートを作る手順</h2>
       <ol class="steps">
         <li><h3>録音を取り込む</h3><p>「設定」タブの「ファイルをインポート」を開き、「音声ファイルをインポート」で録音を選びます。今回は、「ファイル」アプリに置いた音声を選びました。取り込みの画面は<a href="/guides/ai-minutes/#steps">議事録のガイド</a>に載せています。</p></li>
@@ -279,7 +282,7 @@ CMIP5などの全球モデルは世界全体を計算するため、日本海側
         <dt>掲載した文</dt><dd>要約、本文の抜粋、確認問題は、Texter運営がアプリで処理して得た出力です。公開元が作成・確認したものではありません。本文の全文は載せていません。</dd>
         <dt>確かめていないこと</dt><dd>音声と本文の聞き比べ、誤りの割合、ほかの講義や端末での速さ</dd>
       </dl></section>
-<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで試す</h2><p>Texterは、録音や音声ファイルから文字起こしと要約を作るアプリです。この手順はiPhone版のものです。無料で始められます。無料版の文字起こしには上限があり、要約は1日3回までです。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-lecture-notes-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-lecture-notes-end" data-store="app_store">iPhoneで講義の録音を文字にする（App Store）</a></div></section>
+<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで試す</h2><p>Texterは、録音や音声ファイルから文字起こしと要約を作るアプリです。この手順はiPhone版のものです。無料で始められます。iPhone版では、手元の録音を取り込むと、目安として音声30〜40分ぶんまで無料で文字にできます（この枠は、毎月は戻りません）。その場で録音しながらの文字起こしは1回3分、1日15分までで、要約は1日3回まで無料です。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-lecture-notes-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-lecture-notes-end" data-store="app_store">iPhoneで講義の録音を文字にする（App Store）</a></div></section>
 </main>
 <footer><div class="wrap">
   <ul><li><a href="/">ホーム</a></li><li><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金と利用条件</a></li><li><a href="/faq/">よくある質問</a></li><li><a href="/terms-of-service/">利用規約</a></li><li><a href="/privacy-policy/">プライバシーポリシー</a></li><li><a href="/tokushoho/">特定商取引法に基づく表記</a></li></ul>

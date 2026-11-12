@@ -107,6 +107,8 @@ a{color:var(--deep)}
 .crumbs a{color:var(--sub)}
 h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.6rem);line-height:1.25;font-weight:900}
 .lead{margin:16px 0 0}
+.try{margin:16px 0 0}
+.try a{display:inline-flex;align-items:center;min-height:44px;padding:8px 18px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:15px}
 .meta{margin:10px 0 0;font-size:13px;color:var(--sub)}
 .toc{margin:28px 0 0;padding:18px 20px;background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:14px}
 .toc h2{margin:0;font-size:13px;color:var(--sub);font-weight:600}
@@ -180,7 +182,8 @@ footer p{margin:12px 0 0}
 <main id="main" class="wrap">
 <nav aria-label="パンくずリスト"><ol class="crumbs"><li><a href="/">Texter</a></li><li><a href="/guides/">活用ガイド</a></li><li aria-current="page">音声を端末の外に送らずに文字起こしする方法</li></ol></nav>
 <h1>iPhoneで音声を端末の外に送らずに文字起こしする方法</h1>
-<p class="lead">音声を外に出したくないときは、文字起こしの方式を自分で選ぶ必要があります。Texterの既定は、音声をクラウドへ送る方式です。端末の中だけで済む範囲と、通信が要る範囲を、アプリのコードと画面の文言から整理しました。</p>
+<p class="lead">iOS 26以降のiPhoneでは、音声ファイルの文字起こしに、端末の中で処理する方式を選べます。既定の方式は音声をクラウドへ送るので、外に出したくない録音では、先に切り替えてください。端末内の処理に失敗すると、クラウドの方式に切り替わる場合があります。切り替える手順と、端末の中だけで済む範囲、通信が要る範囲を、アプリのコードと画面の文言から整理しました。</p>
+<p class="try"><a href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-offline-top&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-offline-top" data-store="app_store">無料で試す（App Store）</a></p>
 <p class="meta">確認日 <time datetime="2026-11-05">2026-11-05</time></p>
 <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul><li><a href="#summary">結論</a></li><li><a href="#map">処理ごとの送信先</a></li><li><a href="#steps">端末内で音声ファイルを文字起こしする手順</a></li><li><a href="#fallback">SpeechAnalyzerが失敗するとWhisperへ切り替わる</a></li><li><a href="#storage">保存先と、外へ出る操作</a></li><li><a href="#not-suited">向いていない場面</a></li><li><a href="#next">関連するページ</a></li><li><a href="#method">確認の範囲</a></li></ul></nav>
 <section class="sec" id="summary" aria-labelledby="summary-h"><h2 id="summary-h">結論</h2>
@@ -226,14 +229,14 @@ footer p{margin:12px 0 0}
         <li>iOS 26より前のiPhoneで、端末内の文字起こしを使いたい場合</li>
       </ul></section>
 <section class="sec" id="next" aria-labelledby="next-h"><h2 id="next-h">関連するページ</h2><p>料金と上限は<a href="/pricing/">料金と利用条件</a>、データの扱いは<a href="/faq/#data-sent">よくある質問</a>をご覧ください。標準のボイスメモとの使い分けは<a href="/guides/iphone-voice-memos-vs-texter/">ボイスメモとTexterの違い</a>で説明しています。</p><p>録音から文字起こし、発言の確認までの流れは<a href="/interview/">取材・インタビューでの使い方</a>をご覧ください。クラウド方式の文字起こしや要約・AIチャットでは、処理のためにデータを外部サービスへ送ります。</p></section>
-<section class="sec" id="method" aria-labelledby="method-h"><h2 id="method-h">確認の範囲</h2>
+<section class="sec" id="method" aria-labelledby="method-h"><h2 id="method-h">確認の範囲</h2><details class="raw"><summary>開いて読む</summary>
       <dl class="facts">
         <dt>確認した人</dt><dd>Texter運営</dd>
         <dt>確認日</dt><dd>2026-11-05</dd>
         <dt>確認したもの</dt><dd>iPhone版Texter（バージョン2.11.71）のソースコードと、日本語の画面の文言です。</dd>
         <dt>確認していないこと</dt><dd>実機での通信の観測、機内モードでの動作、SpeechAnalyzerが失敗したときの切り替えの再現、サーバーから配信される設定の本番の値、使えるiPhoneの機種と言語の一覧です。</dd>
-      </dl></section>
-<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで試す</h2><p>Texterは、録音や音声ファイルから文字起こし、要約、やることの抽出までを行うアプリです。この手順はiPhone版のものです。無料で始められます。無料版の文字起こしには上限があり、要約は1日3回までです。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-offline-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-offline-end" data-store="app_store">iPhoneで端末内の文字起こしを試す（App Store）</a></div></section>
+      </dl></details></section>
+<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで試す</h2><p>Texterは、録音や音声ファイルから文字起こし、要約、やることの抽出までを行うアプリです。この手順はiPhone版のものです。無料で始められます。iPhone版では、手元の録音を取り込むと、目安として音声30〜40分ぶんまで無料で文字にできます（この枠は、毎月は戻りません）。その場で録音しながらの文字起こしは1回3分、1日15分までで、要約は1日3回まで無料です。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-offline-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-offline-end" data-store="app_store">iPhoneで端末内の文字起こしを試す（App Store）</a></div></section>
 </main>
 <footer><div class="wrap">
   <ul><li><a href="/">ホーム</a></li><li><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金と利用条件</a></li><li><a href="/faq/">よくある質問</a></li><li><a href="/terms-of-service/">利用規約</a></li><li><a href="/privacy-policy/">プライバシーポリシー</a></li><li><a href="/tokushoho/">特定商取引法に基づく表記</a></li></ul>
