@@ -6,6 +6,19 @@
   }
 
   send('interview_lp_view');
+  // Send visitors to the interview product page on the App Store. iPad keeps the default page until the
+  // interview page has Japanese iPad screenshots. iPadOS Safari reports itself as a Mac, hence the touch check.
+  var isIpad = /iPad/.test(navigator.userAgent) || (/Macintosh/.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
+  if (!isIpad) {
+    document.querySelectorAll('a[data-ppid]').forEach(function (link) {
+      try {
+        var url = new URL(link.href);
+        url.searchParams.set('ppid', link.dataset.ppid);
+        link.href = url.toString();
+      } catch (e) { /* keep the default link */ }
+    });
+  }
+
   document.querySelectorAll('a[data-store]').forEach(function (link) {
     function record(event) {
       if (event.type === 'auxclick' && event.button !== 1) return;
