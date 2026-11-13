@@ -195,6 +195,13 @@ function checkInterview(html, errors) {
   checkLocalLinks(file, html, errors);
 }
 
+// The Japanese interview page: only the WebPage/WebSite link. checkInterview holds checks for the English page alone (no yen, no Japanese storefront), so it is not reused here.
+function checkJaInterview(html, errors) {
+  const file = 'interview/index.html';
+  const webpage = nodes(jsonLd(html, file, errors)).find((node) => node['@type'] === 'WebPage');
+  if (!webpage || !webpage.isPartOf || webpage.isPartOf['@id'] !== `${facts.site}/#website`) errors.push(`${file}: WebPage must reference the existing WebSite`);
+}
+
 // Every relative link, asset and anchor on a hand-written page must exist in the repo.
 function checkLocalLinks(file, html, errors) {
   for (const match of html.matchAll(/(?:href|src|poster)="([^"]+)"/g)) {
@@ -241,6 +248,7 @@ function run(files, { stale = true } = {}) {
   checkFaq('en/faq/index.html', 'en', files['en/faq/index.html'], errors);
   checkPricing(files['pricing/index.html'], errors);
   checkInterview(files['en/interview/index.html'], errors);
+  checkJaInterview(files['interview/index.html'], errors);
   checkUseCasePage('subtitle/index.html', 'subtitle', files['subtitle/index.html'], errors);
   checkUseCasePage('hearing-support/index.html', 'hearing', files['hearing-support/index.html'], errors);
   checkSite(files, errors);
@@ -290,6 +298,7 @@ if (process.argv.includes('--self-test')) {
     ['interview anchor missing', 'en/interview/index.html', (s) => s.replace('../faq/#import', '../faq/#missing')],
     ['interview hreflang missing', 'interview/index.html', (s) => s.replace('<link rel="alternate" hreflang="en" href="https://texter.work/en/interview/">', '')],
     ['Japanese interview JSON-LD broken', 'interview/index.html', (s) => s.replace('"@type":"WebPage"', '"@type":"WebPage",,')],
+    ['Japanese interview references a missing WebSite', 'interview/index.html', (s) => s.replace('"isPartOf":{"@id":"https://texter.work/#website"}', '"isPartOf":{"@id":"https://texter.work/ja/#website"}')],
     ['interview references a missing WebSite', 'en/interview/index.html', (s) => s.replace('"isPartOf":{"@id":"https://texter.work/#website"}', '"isPartOf":{"@id":"https://texter.work/en/#website"}')],
     ['subtitle page points at a missing sample', 'subtitle/index.html', (s) => s.replace('subtitled-video/sample.mp4', 'subtitled-video/gone.mp4')],
     ['subtitle page anchor missing', 'subtitle/index.html', (s) => s.replace('../faq/#silence-cut', '../faq/#missing')],
