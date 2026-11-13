@@ -1381,7 +1381,7 @@ const aiToolsMcp = {
   image: '/img/ogp.png',
   store: 'guide-ai-tools-mcp',
   topLabel: 'Texterを入手する（App Store）',
-  conditions: 'Texter MCPは、Premiumに含まれる機能です。プランは<a href="/pricing/#plans">料金と利用条件</a>で比べられます。',
+  conditions: 'Texter MCPは、Premiumで使える機能です。ファミリー共有で受け取ったプランなど、一部のPremiumでは使えない場合があります。条件は<a href="/pricing/#sync-conditions">料金と利用条件</a>で確認できます。',
   sections: [
     { id: 'summary', cta: 'after-result', title: 'できること', html: `
 <p>Texterの文字起こしを、ChatGPTやClaudeなどのAIツールに読ませて質問できます。AIツールは、読めるようにしたノートを検索し、本文を読んで答えます。ノートをコピーして貼り付ける手間は要りません。</p>
@@ -1409,7 +1409,7 @@ const aiToolsMcp = {
 <p class="note">このページで実際に試したのは、ノート1件の状態です。複数のノートをまたぐ頼み方は、機能の仕様をもとに書きました。答えは、元のノートと見比べて確かめてください。</p>` },
     { id: 'before', title: '使う前に', html: `
 <ul>
-<li>Premiumへの加入が必要です</li>
+<li>Premiumへの加入が必要です。自分で購入した自動更新のプランが対象で、ファミリー共有で受け取ったプランなど、一部のPremiumでは、現在使えない場合があります</li>
 <li>Texterを最新のバージョンにしてください</li>
 <li>Texterで、AppleかGoogleのアカウントでサインインし、ノートを同期している必要があります</li>
 </ul>
@@ -1485,7 +1485,7 @@ codex mcp login texter</pre>
 <li>AIの答えは、元のノートと見比べて確かめてください。文字起こしの誤りがあることもあります</li>
 <li>同じアカウントでつないだAIツールすべてが、読めるようにしたノートの対象です。読めるようにするノートは、必要なものだけにしてください</li>
 </ul>
-<p>送る内容と保存の扱いは、<a href="/privacy-policy/">プライバシーポリシー</a>の「外部のAIツールとの連携」に書いています。</p>` },
+<p>送る内容と保存の扱いは、<a href="/privacy-policy/">プライバシーポリシー</a>の「外部のAIツールとの連携（Texter MCP）について」に書いています。</p>` },
     { id: 'revoke', title: '接続を解除する', html: `
 <ol>
 <li>Texterで「設定 &gt; アカウント &gt; Texter MCP」を開く</li>
@@ -1523,7 +1523,7 @@ codex mcp login texter</pre>
     lead: 'Ask ChatGPT, Claude, or Muse about your meeting and lecture transcripts without copying and pasting them. This feature is called Texter MCP. You choose which notes can be read. This guide covers the setup and shows the answers we actually got.',
     topLabel: 'Get Texter (App Store)',
     metaLabel: 'Last verified',
-    conditions: 'Texter MCP is included with Premium. See the <a href="/en/#pricing">pricing section</a> for the plans.',
+    conditions: 'Texter MCP is a Premium feature. It may not be available with some Premium subscriptions, such as one received through Family Sharing. See the <a href="/en/#pricing">pricing section</a> for the plans.',
     sections: [
     { id: 'summary', cta: 'after-result', title: 'What it does', html: `
 <p>You can ask AI tools such as ChatGPT and Claude about your Texter transcripts. The AI tool searches the notes you have made readable, reads the text, and answers from it. You don't need to copy and paste a note.</p>
@@ -1551,7 +1551,7 @@ codex mcp login texter</pre>
 <p class="note">On this page we tested with a single readable note. The requests that span several notes are written from the feature's specification. Check the answers against the original notes.</p>` },
     { id: 'before', title: 'Before you start', html: `
 <ul>
-<li>You need Premium</li>
+<li>You need Premium. It applies to an auto-renewing plan you purchased yourself. With some Premium subscriptions, such as one received through Family Sharing, it may not be available at this time</li>
 <li>Update Texter to the latest version</li>
 <li>In Texter, sign in with Apple or Google and sync your notes</li>
 </ul>

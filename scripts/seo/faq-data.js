@@ -83,7 +83,7 @@ const ja = {
         { id: 'export', q: 'どんな形式で書き出せますか？',
           a: '<ul><li>ノート：テキスト、PDF、SRT字幕ファイル、字幕付き動画</li><li>要約：Markdown、テキスト、HTML、PDF</li></ul><p>SlackのWebhookを設定すると、文字起こし結果をSlackに投稿することもできます。</p>' },
         { id: 'ai-tools', q: 'ChatGPTやClaudeから、Texterのノートを読めますか？',
-          a: '<p>読めます。Premiumに含まれるTexter MCPを使うと、ChatGPT、Claude、MuseなどのAIツールから、自分で選んだノートを検索して読めます。AIツールに渡るのは、アプリで読めるようにしたノートのテキストと、作成日時などの情報です。録音などの元のファイルは送りません。手順は<a href="/guides/ai-tools-mcp/">Texter MCPの使い方</a>をご覧ください。</p>' },
+          a: '<p>読めます。PremiumのTexter MCPを使うと、ChatGPT、Claude、MuseなどのAIツールから、自分で選んだノートを検索して読めます。ただし、一部のPremiumは現在対象外です。AIツールに渡るのは、アプリで読めるようにしたノートのテキスト、要約、話者名、作成日時などの情報です。録音などの元のファイルは送りません。手順は<a href="/guides/ai-tools-mcp/">Texter MCPの使い方</a>をご覧ください。</p>' },
       ],
     },
     {
@@ -174,7 +174,7 @@ const en = {
         { id: 'export', q: 'Which export formats are available?',
           a: '<ul><li>Notes: text, PDF, SRT subtitle file, video with captions</li><li>Summaries: Markdown, text, HTML, PDF</li></ul><p>You can also post transcripts to Slack by setting up a Slack webhook.</p>' },
         { id: 'ai-tools', q: 'Can ChatGPT or Claude read my Texter notes?',
-          a: '<p>Yes. With Texter MCP, which is included with Premium, AI tools such as ChatGPT, Claude, and Muse can search and read the notes you choose. The tool receives the text of the notes you make readable in the app, along with details such as when they were created. Recordings and other original files are not sent. See <a href="/en/guides/ai-tools-mcp/">how to use Texter MCP</a> for the steps.</p>' },
+          a: '<p>Yes. With Texter MCP, a Premium feature, AI tools such as ChatGPT, Claude, and Muse can search and read the notes you choose. It may not be available with some Premium subscriptions at this time. The tool receives the text, summaries, and speaker names of the notes you make readable in the app, along with details such as when they were created. Recordings and other original files are not sent. See <a href="/en/guides/ai-tools-mcp/">how to use Texter MCP</a> for the steps.</p>' },
       ],
     },
     {

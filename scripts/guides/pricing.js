@@ -29,7 +29,8 @@ const plansTable = `<div class="scroll"><table class="compare plans"><caption>iP
 <tr><th scope="row">音声入力キーボード</th><td>1日3分</td><td>無料と同じ</td><td>リアルタイムと共通の枠</td><td>リアルタイムと共通の枠</td><td>リアルタイムと共通の枠</td><td>リアルタイムと共通の枠</td></tr>
 <tr><th scope="row">クラウド翻訳</th><td>1入力300字、1日1,000字</td><td>無料と同じ</td><td>1日10万字</td><td>1日10万字</td><td>1日10万字</td><td>1日10万字</td></tr>
 <tr><th scope="row">話者識別</th><td>なし</td><td>なし</td><td>あり</td><td>あり</td><td>あり</td><td>あり</td></tr>
-<tr><th scope="row">AIツールからノートを読む（<a href="/guides/ai-tools-mcp/">Texter MCP</a>）</th><td>なし</td><td>なし</td><td>あり</td><td>あり</td><td>あり</td><td>あり</td></tr>
+<tr><th scope="row">クラウド同期（テキストと要約）</th><td>なし</td><td>なし</td><td>条件つき</td><td>条件つき</td><td>条件つき</td><td>条件つき</td></tr>
+<tr><th scope="row">AIツールからノートを読む（<a href="/guides/ai-tools-mcp/">Texter MCP</a>）</th><td>なし</td><td>なし</td><td>条件つき</td><td>条件つき</td><td>条件つき</td><td>条件つき</td></tr>
 <tr><th scope="row">要約</th><td>3回/日</td><td>無料と同じ</td><td>回数の上限なし</td><td>回数の上限なし</td><td>回数の上限なし</td><td>回数の上限なし</td></tr>
 <tr><th scope="row">AIチャット</th><td>3回/日</td><td>無料と同じ</td><td>回数の上限なし</td><td>回数の上限なし</td><td>回数の上限なし</td><td>回数の上限なし</td></tr>
 <tr><th scope="row">画像の文字起こし</th><td>5回/日</td><td>無料と同じ</td><td>1,000単位/日</td><td>1,000単位/日</td><td>1,000単位/日</td><td>1,000単位/日</td></tr>
@@ -50,7 +51,7 @@ const sections = [
 <tr><th scope="row">3時間を超える音声を1本で処理したい</th><td>Amazon Transcribe（1本4時間まで）。10時間（${yen(tenHours)}/月）、20時間、年額、月額＋追加チャージ</td></tr>
 </tbody></table></div>` },
   { id: 'plans', title: 'プランの比較', html: `${plansTable}
-<p class="note">Texter MCPの行は、2026-11-13に、iPhone版2.11.74で確認しました。文字起こしチケットだけでは使えません。</p>` },
+<p class="note" id="sync-conditions">クラウド同期とTexter MCPは、iPhone版で、AppleかGoogleのアカウントでサインインし、自分で購入した自動更新のプランが有効なときに使えます。ファミリー共有で受け取ったプランと、紹介特典だけの期間は対象外です。文字起こしチケットだけでも使えません。このほか、一部のPremiumでは、現在使えない場合があります。使えるかどうかは、アプリの「設定」の「アカウント」で確かめてください。Texter MCPで読めるのは、同期したノートのうち、自分で選んだものです。録音などの原本は同期しません。この2行は、2026-11-13に、iPhone版2.11.74で確認しました。</p>` },
   { id: 'counting', title: '時間の数え方', html: `<div class="scroll"><table class="compare"><thead><tr><th scope="col">機能</th><th scope="col">数えるもの</th><th scope="col">枠が戻る時期</th></tr></thead><tbody>
 <tr><th scope="row">Whisper（無料）</th><td>サーバーの処理時間</td><td>累積するので、月ごとには戻りません</td></tr>
 <tr><th scope="row">Whisper（チケット）</th><td>音声の長さ（秒単位で切り上げ）</td><td>残りは失効しません</td></tr>
