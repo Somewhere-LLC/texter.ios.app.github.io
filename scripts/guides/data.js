@@ -689,7 +689,8 @@ const offlineTranscription = {
         <li><h3>言語を選ぶ</h3><p>SpeechAnalyzerの欄の下で、文字起こしする言語を選びます。選ばなかった場合の言語は、端末の言語に近いものです。対応する言語が見つからないと、処理が失敗してWhisperへ切り替わります。</p></li>
         <li><h3>音声ファイルを取り込む</h3><p>「設定」→「ファイルをインポート」→「音声ファイルをインポート」でファイルを選びます。無料版では、取り込みの前に動画広告が表示されます。</p></li>
       </ol>
-      <p>アプリの説明文の記載は、「すべて端末内で処理される」です。この手順の画面は、今回は実機で操作していません。</p>` },
+      ${fig('/assets/guides/offline/01-service.webp', '「音声認識サービスを選択」の画面。上から2つ目の、端末内で処理する方式にチェックが付いている', '手順3：端末内で処理する方式を選んだ状態', ...FULL)}${fig('/assets/guides/offline/02-language.webp', '「音声認識言語」の画面。「自動検出」にチェックが付き、その下に言語の一覧が並ぶ', '手順4：言語を選ぶ画面', ...FULL)}
+      <p>アプリの説明文の記載は、「すべて端末内で処理される」です。上の2枚は、2026-11-13に、iPhoneのSimulatorで動かした開発版（バージョン2.11.74）の画面です。端末内の方式での文字起こしの結果は、実機では確かめていません。</p>` },
     { id: 'map', title: '処理ごとの送信先', html: `
       <div class="scroll"><table class="compare"><thead><tr><th scope="col">処理</th><th scope="col">端末内で済む条件</th><th scope="col">通信が要る場合</th></tr></thead><tbody>
         <tr><th scope="row">音声ファイルの文字起こし（取り込み）</th><td>音声認識サービスをSpeechAnalyzerにする（iOS 26以降）。初回は言語モデルのダウンロードに通信が要る</td><td>既定のWhisperとAmazon Transcribeは、音声をサーバーへ送る</td></tr>
@@ -724,7 +725,7 @@ const offlineTranscription = {
       <dl class="facts">
         <dt>確認した人</dt><dd>Texter運営</dd>
         <dt>確認日</dt><dd>2026-11-05</dd>
-        <dt>確認したもの</dt><dd>iPhone版Texter（バージョン2.11.71）のソースコードと、日本語の画面の文言です。</dd>
+        <dt>確認したもの</dt><dd>iPhone版Texter（バージョン2.11.71）のソースコードと、日本語の画面の文言です。手順3と4の画面は、2026-11-13に、Simulatorで動かした開発版（バージョン2.11.74）で撮りました。</dd>
         <dt>確認していないこと</dt><dd>実機での通信の観測、機内モードでの動作、SpeechAnalyzerが失敗したときの切り替えの再現、サーバーから配信される設定の本番の値、使えるiPhoneの機種と言語の一覧です。</dd>
       </dl>` },
   ],
