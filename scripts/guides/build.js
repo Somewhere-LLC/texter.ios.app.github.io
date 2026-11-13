@@ -11,19 +11,32 @@ const SITE_ID = `${SITE}/#website`;
 const APP_STORE_PT = facts.appStorePt;
 const CONDITIONS = '無料で始められます。iPhone版の無料版では、手元の録音を取り込むと、目安として音声30〜40分ぶんまで文字にできます（この枠は、毎月は戻りません）。その場で録音しながらの文字起こしは1回3分、1日15分まで、要約は1日3回までです。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。';
 // A small link under the lead, so a reader who is already convinced does not have to scroll to the first button.
-const topLink = (g) => { if (`${g.store}-top`.length > 40) throw new Error(`campaign token too long: ${g.store}-top`); return `<p class="try"><a href="${facts.appStore.ja}?pt=${APP_STORE_PT}&amp;ct=${g.store}-top&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="${g.store}-top" data-store="app_store">${esc(g.topLabel || '無料で試す（App Store）')}</a></p>`; };
+const topLink = (g, L = LANG.ja) => { if (`${g.store}-top`.length > 40) throw new Error(`campaign token too long: ${g.store}-top`); return `<p class="try"><a href="${L.appStore}?pt=${APP_STORE_PT}&amp;ct=${g.store}-top&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="${g.store}-top" data-store="app_store">${esc(g.topLabel || L.tryLabel)}</a></p>`; };
 // Test conditions stay on the page, folded, so the body reads as a guide and not as a test report.
 // A section that credits a CC BY source stays open, so the credit is always visible.
+// Page strings by language. English guides exist only where a guide sets `en` (they have no guide index, so they link to the home page only).
+const LANG = {
+  ja: {
+    lang: 'ja', locale: 'ja_JP', skip: '本文へ移動', navLabel: 'メイン', crumbLabel: 'パンくずリスト', tocLabel: '目次', home: '/', metaLabel: '検証日', guidesName: '活用ガイド', storeLabel: 'App Store', appStore: facts.appStore.ja, inlineAria: 'アプリで試す', tryLabel: '無料で試す（App Store）',
+    nav: [['/guides/', '活用ガイド', 'opt'], ['/pricing/', '料金'], ['/faq/', 'よくある質問']],
+    footer: [['/', 'ホーム'], ['/guides/', '活用ガイド'], ['/pricing/', '料金と利用条件'], ['/faq/', 'よくある質問'], ['/terms-of-service/', '利用規約'], ['/privacy-policy/', 'プライバシーポリシー'], ['/tokushoho/', '特定商取引法に基づく表記']],
+  },
+  en: {
+    lang: 'en', locale: 'en_US', skip: 'Skip to content', navLabel: 'Main', crumbLabel: 'Breadcrumb', tocLabel: 'Contents', home: '/en/', metaLabel: 'Last verified', guidesName: '', storeLabel: 'App Store', appStore: facts.appStore.en, inlineAria: 'Try the app', tryLabel: 'Try for free (App Store)',
+    nav: [['/en/#pricing', 'Pricing'], ['/en/faq/', 'FAQ']],
+    footer: [['/en/', 'Home'], ['/en/#pricing', 'Pricing'], ['/en/faq/', 'FAQ'], ['/en/terms-of-service/', 'Terms of Service'], ['/en/privacy-policy/', 'Privacy Policy']],
+  },
+};
 const sectionBody = (s, player) => {
   const html = s.html.replace('__VIDEO__', player);
   return s.id === 'method' && !html.includes('CC BY') ? `<details class="raw"><summary>開いて読む</summary>${html}</details>` : html;
 };
-const appStoreLink = (g, pos) => {
+const appStoreLink = (g, pos, L = LANG.ja) => {
   const id = `${g.store}-${pos}`;
   if (id.length > 40) throw new Error(`campaign token too long: ${id}`);
-  return `<a class="btn btn-solid" href="${facts.appStore.ja}?pt=${APP_STORE_PT}&amp;ct=${id}&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="${id}" data-store="app_store">${esc(g.ctaLabel)}（App Store）</a>`;
+  return `<a class="btn btn-solid" href="${L.appStore}?pt=${APP_STORE_PT}&amp;ct=${id}&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="${id}" data-store="app_store">${esc(g.ctaLabel)}${L.lang === 'ja' ? '（App Store）' : ' (App Store)'}</a>`;
 };
-const inlineCta = (g, pos) => `<aside class="cta inline" aria-label="アプリで試す">${pos === 'after-result' ? `<p>${g.conditions || CONDITIONS}</p>` : ''}<div class="row">${appStoreLink(g, pos)}</div></aside>`;
+const inlineCta = (g, pos, L = LANG.ja) => `<aside class="cta inline" aria-label="${L.inlineAria}">${pos === 'after-result' ? `<p>${g.conditions || CONDITIONS}</p>` : ''}<div class="row">${appStoreLink(g, pos, L)}</div></aside>`;
 const TRACK = `<script>
 (function(){
   var send=function(name,el){if(window.gtag)gtag('event',name,{location:el.dataset.cta,store:el.dataset.store});};
@@ -94,6 +107,8 @@ h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.6rem);line-heigh
 .shot{display:inline-block;width:min(46%,260px);margin:16px 10px 0 0;vertical-align:top}
 .shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:14px}
 .shot figcaption{margin-top:6px;font-size:13px;line-height:1.5;color:var(--sub)}
+.ask{margin:12px 0 0;padding:14px 16px;background:#fff;border-left:4px solid var(--accent);border-radius:8px;color:var(--navy);font-weight:600}
+.url{margin:16px 0 0;padding:14px 16px;background:#fff;border:2px solid var(--accent);border-radius:12px;font:600 17px/1.6 var(--f-mono);overflow-wrap:anywhere;color:var(--navy)}
 .shot.land{display:block;width:100%;max-width:680px;margin-right:0}
 .demo{margin:16px 0 0;max-width:300px}
 .demo.land{max-width:none}
@@ -127,8 +142,8 @@ footer p{margin:12px 0 0}
 @media (max-width:560px){.nav ul a{padding:8px 5px;font-size:13px}.shot{width:calc(50% - 8px);margin-right:6px}.shot.wide{width:100%;max-width:320px;margin-right:0}.steps>li{padding:16px}.facts{grid-template-columns:1fr}.facts dd{margin-bottom:8px}.compare{font-size:14px}.compare th,.compare td{padding:10px}}
 `;
 
-const shell = ({ title, description, url, ld, body, ogType }) => `<!DOCTYPE html>
-<html lang="ja">
+const shell = ({ title, description, url, ld, body, ogType, L = LANG.ja, robots = 'index, follow', alternates = '' }) => `<!DOCTYPE html>
+<html lang="${L.lang}">
 <head>
 <meta charset="utf-8">
 <!-- Google Analytics 4 -->
@@ -143,14 +158,14 @@ const shell = ({ title, description, url, ld, body, ogType }) => `<!DOCTYPE html
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="${url}">
+<meta name="robots" content="${robots}">
+<link rel="canonical" href="${url}">${alternates}
 <meta property="og:type" content="${ogType}">
 <meta property="og:url" content="${url}">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:site_name" content="Texter">
-<meta property="og:locale" content="ja_JP">
+<meta property="og:locale" content="${L.locale}">
 <meta property="og:image" content="${SITE}/img/ogp.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -169,16 +184,16 @@ ${jsonForScript(ld)}
 <style>${CSS}</style>
 </head>
 <body>
-<a class="skip" href="#main">本文へ移動</a>
+<a class="skip" href="#main">${L.skip}</a>
 <header class="nav"><div class="wrap">
-  <a class="brand" href="/"><img src="/img/appicon.png" alt="" width="28" height="28">Texter</a>
-  <nav aria-label="メイン"><ul><li class="opt"><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金</a></li><li><a href="/faq/">よくある質問</a></li></ul></nav>
+  <a class="brand" href="${L.home}"><img src="/img/appicon.png" alt="" width="28" height="28">Texter</a>
+  <nav aria-label="${L.navLabel}"><ul>${L.nav.map(([h, n, c]) => `<li${c ? ` class="${c}"` : ''}><a href="${h}">${n}</a></li>`).join('')}</ul></nav>
 </div></header>
 <main id="main" class="wrap">
 ${body}
 </main>
 <footer><div class="wrap">
-  <ul><li><a href="/">ホーム</a></li><li><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金と利用条件</a></li><li><a href="/faq/">よくある質問</a></li><li><a href="/terms-of-service/">利用規約</a></li><li><a href="/privacy-policy/">プライバシーポリシー</a></li><li><a href="/tokushoho/">特定商取引法に基づく表記</a></li></ul>
+  <ul>${L.footer.map(([h, n]) => `<li><a href="${h}">${n}</a></li>`).join('')}</ul>
   <p>© 2026 Texter app - Kyoto, Japan.</p>
 </div></footer>
 ${TRACK}
@@ -186,17 +201,22 @@ ${TRACK}
 </html>
 `;
 
-const crumbs = (items) => `<nav aria-label="パンくずリスト"><ol class="crumbs">${items.map((c) => (c.href ? `<li><a href="${c.href}">${esc(c.name)}</a></li>` : `<li aria-current="page">${esc(c.name)}</li>`)).join('')}</ol></nav>`;
+const crumbs = (items, L = LANG.ja) => `<nav aria-label="${L.crumbLabel}"><ol class="crumbs">${items.map((c) => (c.href ? `<li><a href="${c.href}">${esc(c.name)}</a></li>` : `<li aria-current="page">${esc(c.name)}</li>`)).join('')}</ol></nav>`;
 const crumbLd = (url, items) => ({
   '@type': 'BreadcrumbList',
   '@id': `${url}#breadcrumb`,
   itemListElement: items.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.href ? `${SITE}${c.href}` : url })),
 });
 
-function renderGuide(g) {
+function renderGuide(g0, lang = 'ja') {
+  const L = LANG[lang];
+  const g = lang === 'en' ? { ...g0, ...g0.en } : g0;
   const verified = g.verified || VERIFIED;
-  const url = `${SITE}/guides/${g.slug}/`;
-  const items = [{ name: 'Texter', href: '/' }, { name: '活用ガイド', href: '/guides/' }, { name: g.crumb }];
+  const url = lang === 'en' ? `${SITE}/en/guides/${g.slug}/` : `${SITE}/guides/${g.slug}/`;
+  // An English guide has no guide index, so its breadcrumb goes from the English home straight to the page.
+  const items = lang === 'en' ? [{ name: 'Texter', href: '/en/' }, { name: g.crumb }] : [{ name: 'Texter', href: '/' }, { name: '活用ガイド', href: '/guides/' }, { name: g.crumb }];
+  const pair = g0.en ? [['ja', `${SITE}/guides/${g.slug}/`], ['en', `${SITE}/en/guides/${g.slug}/`], ['x-default', `${SITE}/guides/${g.slug}/`]] : [];
+  const alternates = pair.map(([l, h]) => `\n<link rel="alternate" hreflang="${l}" href="${h}">`).join('');
   const v = g.video;
   const player = !v ? '' : `<video controls muted playsinline preload="none" poster="${v.poster}" width="${v.w}" height="${v.h}" aria-label="${esc(v.name)}"><source src="${v.src}" type="video/mp4"></video>`;
   const ids = g.sections.map((s) => s.id);
@@ -210,7 +230,7 @@ function renderGuide(g) {
         headline: g.h1,
         description: g.description,
         url,
-        inLanguage: 'ja',
+        inLanguage: L.lang,
         datePublished: g.published || VERIFIED,
         dateModified: g.modified || verified,
         image: `${SITE}${v ? v.poster : g.image}`,
@@ -233,16 +253,16 @@ function renderGuide(g) {
       crumbLd(url, items),
     ],
   };
-  const sections = g.sections.map((s) => `<section class="sec" id="${s.id}" aria-labelledby="${s.id}-h"><h2 id="${s.id}-h">${esc(s.title)}</h2>${sectionBody(s, player)}</section>${s.cta ? inlineCta(g, s.cta) : ''}`).join('\n');
-  const body = `${crumbs(items)}
+  const sections = g.sections.map((s) => `<section class="sec" id="${s.id}" aria-labelledby="${s.id}-h"><h2 id="${s.id}-h">${esc(s.title)}</h2>${sectionBody(s, player)}</section>${s.cta ? inlineCta(g, s.cta, L) : ''}`).join('\n');
+  const body = `${crumbs(items, L)}
 <h1>${esc(g.h1)}</h1>
 <p class="lead">${g.lead}</p>
-${topLink(g)}
-<p class="meta">${esc(g.metaLabel || '検証日')} <time datetime="${g.metaDate || verified}">${g.metaDate || verified}</time></p>
-<nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul>${g.sections.map((s) => `<li><a href="#${s.id}">${esc(s.title)}</a></li>`).join('')}</ul></nav>
+${topLink(g, L)}
+<p class="meta">${esc(g.metaLabel || L.metaLabel)} <time datetime="${g.metaDate || verified}">${g.metaDate || verified}</time></p>
+<nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">${L.tocLabel}</h2><ul>${g.sections.map((s) => `<li><a href="#${s.id}">${esc(s.title)}</a></li>`).join('')}</ul></nav>
 ${sections}${g.slug === 'iphone-search-past-recordings' ? '\n<aside class="toc" aria-label="取材での活用"><h2>取材音声を、次の原稿に生かす</h2><p>取材の文字起こしから過去の発言の確認まで。<a href="/interview/">取材向けの使い方・操作デモ・料金</a>をご覧ください。</p></aside>' : ''}${['video-subtitles', 'iphone-subtitled-video'].includes(g.slug) ? '\n<aside class="toc" aria-label="動画づくりでの活用"><h2>動画に字幕を付けたい方へ</h2><p>SRTと字幕付き動画の使い分け、実際の出力、料金の選び方は、<a href="/subtitle/">動画の字幕づくりのページ</a>にまとめています。</p></aside>' : ''}
-<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">${esc(g.ctaTitle)}</h2><p>${esc(g.ctaBody)}${g.conditions || CONDITIONS}</p><div class="row">${appStoreLink(g, 'end')}${g.iosOnly ? '' : `<a class="btn btn-line" href="${facts.googlePlay}" target="_blank" rel="noopener noreferrer" data-cta="${g.store}-end" data-store="google_play">Google Playで見る</a>`}</div></section>`;
-  return shell({ title: g.title, description: g.description, url, ld, body, ogType: 'article' });
+<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">${esc(g.ctaTitle)}</h2><p>${esc(g.ctaBody)}${g.conditions || CONDITIONS}</p><div class="row">${appStoreLink(g, 'end', L)}${g.iosOnly ? '' : `<a class="btn btn-line" href="${facts.googlePlay}" target="_blank" rel="noopener noreferrer" data-cta="${g.store}-end" data-store="google_play">Google Playで見る</a>`}</div></section>`;
+  return shell({ title: g.title, description: g.description, url, ld, body, ogType: 'article', L, alternates });
 }
 
 function renderIndex() {
@@ -331,7 +351,10 @@ ${sections}
 
 function generate() {
   const out = { 'guides/index.html': renderIndex(), 'pricing/index.html': renderPricing() };
-  for (const g of guides) out[`guides/${g.slug}/index.html`] = renderGuide(g);
+  for (const g of guides) {
+    out[`guides/${g.slug}/index.html`] = renderGuide(g);
+    if (g.en) out[`en/guides/${g.slug}/index.html`] = renderGuide(g, 'en');
+  }
   return out;
 }
 

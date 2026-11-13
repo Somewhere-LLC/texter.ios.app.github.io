@@ -128,7 +128,7 @@ function checkSite(files, errors) {
     const rel = m[1] === '' ? 'index.html' : `${m[1]}index.html`;
     if (!fs.existsSync(path.join(root, rel))) errors.push(`sitemap: ${m[1] || '/'} has no ${rel}`);
   }
-  for (const p of ['faq/', 'en/faq/', 'guides/', ...guides.map((g) => `guides/${g.slug}/`), 'pricing/', 'interview/', 'subtitle/', 'hearing-support/']) if (!sitemap.includes(`https://texter.work/${p}<`)) errors.push(`sitemap: missing ${p}`);
+  for (const p of ['faq/', 'en/faq/', 'guides/', ...guides.map((g) => `guides/${g.slug}/`), ...guides.filter((g) => g.en).map((g) => `en/guides/${g.slug}/`), 'pricing/', 'interview/', 'subtitle/', 'hearing-support/']) if (!sitemap.includes(`https://texter.work/${p}<`)) errors.push(`sitemap: missing ${p}`);
   // Any Disallow, for any user agent (including AI crawlers such as OAI-SearchBot), hides pages from search.
   if (/^[ \t]*Disallow:[ \t]*\S/im.test(files['robots.txt'])) errors.push('robots.txt: has a Disallow rule');
   const alternates = {};
@@ -138,6 +138,18 @@ function checkSite(files, errors) {
     const expect = 'https://texter.work/' + rel.replace(/index\.html$/, '');
     if (canon !== expect) errors.push(`${rel}: canonical ${canon} != ${expect}`);
     if (rel === 'interview/index.html') checkGuide(rel, html, errors);
+    if (rel.startsWith('en/guides/')) {
+      // An English guide pairs with its Japanese guide only; both pages carry ja, en and x-default.
+      checkGuide(rel, html, errors);
+      const slug = rel.split('/')[2];
+      for (const r of [rel, `guides/${slug}/index.html`]) {
+        const h = files[r] || '';
+        for (const [l, u] of [['ja', `https://texter.work/guides/${slug}/`], ['en', `https://texter.work/en/guides/${slug}/`], ['x-default', `https://texter.work/guides/${slug}/`]]) {
+          if (!h.includes(`<link rel="alternate" hreflang="${l}" href="${u}">`)) errors.push(`${r}: hreflang ${l} should be ${u}`);
+        }
+      }
+      continue;
+    }
     if (rel.startsWith('guides/') || rel.startsWith('pricing/') || rel.startsWith('subtitle/') || rel.startsWith('hearing-support/')) {
       checkGuide(rel, html, errors);
       continue; // Guides exist in Japanese only, so they have no hreflang pairs.
@@ -235,7 +247,7 @@ function run(files, { stale = true } = {}) {
   return errors;
 }
 
-const files = Object.fromEntries(['index.html', 'en/index.html', 'faq/index.html', 'en/faq/index.html', 'guides/index.html', ...guides.map((g) => `guides/${g.slug}/index.html`), 'pricing/index.html', 'interview/index.html', 'en/interview/index.html', 'subtitle/index.html', 'hearing-support/index.html', 'sitemap.xml', 'robots.txt'].map((f) => [f, read(f)]));
+const files = Object.fromEntries(['index.html', 'en/index.html', 'faq/index.html', 'en/faq/index.html', 'guides/index.html', ...guides.map((g) => `guides/${g.slug}/index.html`), ...guides.filter((g) => g.en).map((g) => `en/guides/${g.slug}/index.html`), 'pricing/index.html', 'interview/index.html', 'en/interview/index.html', 'subtitle/index.html', 'hearing-support/index.html', 'sitemap.xml', 'robots.txt'].map((f) => [f, read(f)]));
 const errors = run(files);
 errors.forEach((e) => console.error('NG', e));
 if (errors.length) process.exit(1);
