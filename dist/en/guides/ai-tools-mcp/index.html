@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HDB32BHHL8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HDB32BHHL8', { 'cookie_flags': 'SameSite=None;Secure' });
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>How to use Texter MCP: read your Texter notes from AI tools</title>
+<meta name="description" content="Connect AI tools such as Claude and ChatGPT to Texter MCP, then search and read the Texter notes you chose to make readable. Setup steps, what can be read, and how to disconnect.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://texter.work/en/guides/ai-tools-mcp/">
+<link rel="alternate" hreflang="ja" href="https://texter.work/guides/ai-tools-mcp/">
+<link rel="alternate" hreflang="en" href="https://texter.work/en/guides/ai-tools-mcp/">
+<link rel="alternate" hreflang="x-default" href="https://texter.work/guides/ai-tools-mcp/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://texter.work/en/guides/ai-tools-mcp/">
+<meta property="og:title" content="How to use Texter MCP: read your Texter notes from AI tools">
+<meta property="og:description" content="Connect AI tools such as Claude and ChatGPT to Texter MCP, then search and read the Texter notes you chose to make readable. Setup steps, what can be read, and how to disconnect.">
+<meta property="og:site_name" content="Texter">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://texter.work/img/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to use Texter MCP: read your Texter notes from AI tools">
+<meta name="twitter:description" content="Connect AI tools such as Claude and ChatGPT to Texter MCP, then search and read the Texter notes you chose to make readable. Setup steps, what can be read, and how to disconnect.">
+<meta name="twitter:image" content="https://texter.work/img/ogp.png">
+<meta name="apple-itunes-app" content="app-id=1482592304">
+<link rel="icon" href="/assets/favicon/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v=2">
+<link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png?v=2">
+<meta name="theme-color" content="#EDF4FF">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://texter.work/en/guides/ai-tools-mcp/#article",
+      "headline": "How to use Texter MCP: read your notes from AI tools",
+      "description": "Connect AI tools such as Claude and ChatGPT to Texter MCP, then search and read the Texter notes you chose to make readable. Setup steps, what can be read, and how to disconnect.",
+      "url": "https://texter.work/en/guides/ai-tools-mcp/",
+      "inLanguage": "en",
+      "datePublished": "2026-11-13",
+      "dateModified": "2026-11-13",
+      "image": "https://texter.work/img/ogp.png",
+      "isPartOf": {
+        "@id": "https://texter.work/#website"
+      },
+      "about": {
+        "@id": "https://texter.work/#app"
+      },
+      "publisher": {
+        "@id": "https://texter.work/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://texter.work/en/guides/ai-tools-mcp/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Texter",
+          "item": "https://texter.work/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Using Texter MCP",
+          "item": "https://texter.work/en/guides/ai-tools-mcp/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{--accent:#6482FA;--deep:#5460D6;--navy:#17255A;--text:#444444;--sub:#5F6170;--line:rgba(23,37,90,.12);--card:#FFFFFF;--grad-a:#EDF4FF;--grad-b:#D6E4FC;
+  --f-jp:-apple-system,BlinkMacSystemFont,"SF Pro JP","Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;--f-mono:ui-monospace,Menlo,monospace;color-scheme:light}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:80px}
+body{margin:0;color:var(--text);font-family:var(--f-jp);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased;background:linear-gradient(180deg,var(--grad-a) 0%,var(--grad-b) 100%) fixed,var(--grad-b)}
+a{color:var(--deep)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip{position:fixed;left:12px;top:-60px;z-index:100;background:var(--navy);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+.skip:focus{top:12px}
+.wrap{max-width:760px;margin-inline:auto;padding-inline:20px}
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:18px;color:var(--navy)}
+.brand img{width:28px;height:28px;border-radius:7px}
+.nav ul{display:flex;gap:4px;margin:0;padding:0;list-style:none}
+.nav ul a{display:block;padding:8px 10px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;color:var(--text);white-space:nowrap}
+.crumbs{margin:28px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px;font-size:13px;color:var(--sub)}
+.crumbs li+li::before{content:"/";margin-right:6px}
+.crumbs a{color:var(--sub)}
+h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.6rem);line-height:1.25;font-weight:900}
+.lead{margin:16px 0 0}
+.try{margin:16px 0 0}
+.try a{display:inline-flex;align-items:center;min-height:44px;padding:8px 18px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:15px}
+.meta{margin:10px 0 0;font-size:13px;color:var(--sub)}
+.toc{margin:28px 0 0;padding:18px 20px;background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:14px}
+.toc h2{margin:0;font-size:13px;color:var(--sub);font-weight:600}
+.toc ul{margin:8px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 18px}
+.toc a{font-size:15px;font-weight:500}
+.sec{margin-top:48px}
+.sec>h2{margin:0;padding-top:12px;border-top:1.5px solid var(--navy);color:var(--navy);font-size:clamp(1.3rem,3vw,1.6rem);line-height:1.4}
+.sec h3{margin:24px 0 0;color:var(--navy);font-size:17px;line-height:1.6}
+.sec p,.sec ul,.sec ol{margin:12px 0 0}
+.sec ul,.sec ol{padding-left:1.3em}
+.compare{width:100%;margin-top:16px;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;font-size:15px}
+.compare th,.compare td{padding:12px 14px;border:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.65}
+.compare thead th{background:#F2F5FD;color:var(--navy)}
+.compare caption{padding:8px 0;text-align:left;font-size:14px;color:var(--sub)}
+.scroll{overflow-x:auto;margin-top:12px}
+.scroll .compare{margin-top:0}
+.plans{min-width:680px}
+.plans tbody th{min-width:128px}
+.plans th:first-child{position:sticky;left:0;background:#fff;z-index:1}
+.plans thead th:first-child{background:#F2F5FD}
+.sec article{margin-top:18px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.sec article h3{margin:0}
+.doc{margin-top:12px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.doc p:first-child{margin-top:0}
+.steps{list-style:none;padding:0!important;counter-reset:s}
+.steps>li{counter-increment:s;margin-top:32px;padding:20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.steps>li>h3{margin:0}
+.steps>li>h3::before{content:counter(s) ". "}
+.shot{display:inline-block;width:min(46%,260px);margin:16px 10px 0 0;vertical-align:top}
+.shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:14px}
+.shot figcaption{margin-top:6px;font-size:13px;line-height:1.5;color:var(--sub)}
+.ask{margin:12px 0 0;padding:14px 16px;background:#fff;border-left:4px solid var(--accent);border-radius:8px;color:var(--navy);font-weight:600}
+.url{margin:16px 0 0;padding:14px 16px;background:#fff;border:2px solid var(--accent);border-radius:12px;font:600 17px/1.6 var(--f-mono);overflow-wrap:anywhere;color:var(--navy)}
+.shot.land{display:block;width:100%;max-width:680px;margin-right:0}
+.demo{margin:16px 0 0;max-width:300px}
+.demo.land{max-width:none}
+.demo figcaption{margin-top:6px;font-size:13px;line-height:1.5;color:var(--sub)}
+.demo video{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);background:#fff}
+.sample{display:block;width:100%;height:auto;margin-top:16px;border-radius:14px;background:#000}
+.note{font-size:14px}
+.raw{margin-top:14px}
+.raw summary{cursor:pointer;font-weight:600;color:var(--navy)}
+.code{margin:12px 0 0;padding:16px;overflow-x:auto;background:var(--navy);color:#fff;border-radius:12px;font:14px/1.7 var(--f-mono);white-space:pre-wrap;overflow-wrap:anywhere}
+.facts{display:grid;grid-template-columns:8em 1fr;gap:8px 12px;margin:16px 0 0;font-size:15px}
+.facts dt{font-weight:600;color:var(--navy)}
+.facts dd{margin:0}
+.cards{display:grid;gap:14px;margin:28px 0 0}
+.card{display:block;padding:20px 22px;background:var(--card);border:1px solid var(--line);border-radius:14px;text-decoration:none;color:var(--text)}
+.card strong{display:block;color:var(--navy);font-size:18px}
+.card span{display:block;margin-top:6px;font-size:15px}
+.cta{margin:56px 0 0;padding:28px 22px;background:var(--navy);color:#fff;border-radius:18px}
+.cta h2{margin:0;font-size:22px;line-height:1.4}
+.cta p{margin:8px 0 0;color:rgba(255,255,255,.85);font-size:15px}
+.cta .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.cta.inline{margin:32px 0 0;padding:20px 22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 20px;text-align:center;line-height:1.4;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px}
+.btn-solid{background:#fff;color:var(--navy)}
+.btn-line{color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)}
+footer{margin-top:64px;padding:28px 0 40px;border-top:1px solid var(--line);font-size:13px;color:var(--sub)}
+footer ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 16px}
+footer a{color:var(--sub)}
+footer p{margin:12px 0 0}
+@media (max-width:400px){.nav ul .opt{display:none}}
+@media (max-width:560px){.nav ul a{padding:8px 5px;font-size:13px}.shot{width:calc(50% - 8px);margin-right:6px}.shot.wide{width:100%;max-width:320px;margin-right:0}.steps>li{padding:16px}.facts{grid-template-columns:1fr}.facts dd{margin-bottom:8px}.compare{font-size:14px}.compare th,.compare td{padding:10px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/en/"><img src="/img/appicon.png" alt="" width="28" height="28">Texter</a>
+  <nav aria-label="Main"><ul><li><a href="/en/#pricing">Pricing</a></li><li><a href="/en/faq/">FAQ</a></li></ul></nav>
+</div></header>
+<main id="main" class="wrap">
+<nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="/en/">Texter</a></li><li aria-current="page">Using Texter MCP</li></ol></nav>
+<h1>How to use Texter MCP: read your notes from AI tools</h1>
+<p class="lead">With Texter MCP, AI tools such as Claude and ChatGPT can search and read the Texter notes you have made readable. This guide covers setup, what can be read, and how to disconnect.</p>
+<p class="try"><a href="https://apps.apple.com/app/id1482592304?pt=489812&amp;ct=guide-ai-tools-mcp-top&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-ai-tools-mcp-top" data-store="app_store">Get Texter (App Store)</a></p>
+<p class="meta">Last verified <time datetime="2026-11-12">2026-11-12</time></p>
+<nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">Contents</h2><ul><li><a href="#summary">Overview</a></li><li><a href="#uses">What you can do with it</a></li><li><a href="#before">Before you start</a></li><li><a href="#step1">Step 1: Connect your AI tool</a></li><li><a href="#step2">Step 2: Choose the notes to make readable</a></li><li><a href="#step3">Step 3: Try it in your AI tool</a></li><li><a href="#control">You choose what can be read</a></li><li><a href="#scope">Safety</a></li><li><a href="#revoke">Disconnect</a></li><li><a href="#trouble">Troubleshooting</a></li><li><a href="#faq">FAQ</a></li></ul></nav>
+<section class="sec" id="summary" aria-labelledby="summary-h"><h2 id="summary-h">Overview</h2>
+<p>From your own AI tool, you can list, search, read, and get summaries of the notes you have made readable in Texter. Just ask the tool, and it finds the passage you need in your past notes.</p>
+<p>Here is what happened when we tried it. Only one note was readable: the transcript of a video called "The harm of eating late at night" (originally in Japanese).</p>
+<dl class="facts">
+<dt>Asked</dt><dd>"Give me the key points of my newest note in three lines." (ChatGPT)</dd>
+<dt>Returned</dt><dd>Three lines of key points and a link to open the note in Texter.</dd>
+<dt>Asked</dt><dd>"Find the note about blood sugar and tell me what it says about blood sugar before bed." (ChatGPT)</dd>
+<dt>Returned</dt><dd>It found the note and answered with a quote from the text.</dd>
+<dt>Asked</dt><dd>"Check the text: what does it say about bones and hormones?" (Claude)</dd>
+<dt>Returned</dt><dd>It quoted the two relevant lines and pointed out that the transcript might contain errors.</dd>
+</dl>
+<p>A search for "meeting" returned no results, because none of the readable notes contained that word.</p></section>
+<section class="sec" id="uses" aria-labelledby="uses-h"><h2 id="uses-h">What you can do with it</h2>
+<h3>Review your work meetings</h3>
+<p class="ask">"Sort out what we decided in last month's meetings and which tasks are still open."</p>
+<p>The tool can look across the records of several meetings, so you can check without opening each set of minutes one by one.</p>
+<h3>Put past conversations to work</h3>
+<p class="ask">"From my last three meetings with Company A, summarize their requests and draft a proposal."</p>
+<p>You can use past conversations as the basis for a proposal or a report.</p>
+<h3>Look back on your own thinking</h3>
+<p class="ask">"Sort out the issues I keep bringing up over the past three months."</p>
+<p>Over a growing body of notes, you can look back on how your interests and ways of thinking have changed.</p>
+<p>An AI tool can read only the notes you have made readable. Check its answers against the original notes.</p></section>
+<section class="sec" id="before" aria-labelledby="before-h"><h2 id="before-h">Before you start</h2>
+<ul>
+<li>Texter MCP is available with Premium</li>
+<li>Update Texter to the latest version</li>
+<li>In Texter, sign in with Apple or Google and sync your notes</li>
+</ul>
+<p>If you don't see "Texter MCP" in the app, update the app, wait a while, and open it again.</p></section>
+<section class="sec" id="step1" aria-labelledby="step1-h"><h2 id="step1-h">Step 1: Connect your AI tool</h2>
+<p>For every tool, the connection URL is the same.</p>
+<p class="url">https://mcp.texter.work/mcp</p>
+<p>When you start connecting, Texter opens a screen asking whether to allow the connection.</p>
+<ul><li>Sign in with the same account you use in the Texter app (Apple or Google)</li><li>Check the source shown on the screen (for example, chatgpt.com)</li><li>The screen warns you not to allow a connection you did not start yourself. Allow it only if you did</li></ul>
+<h3>Claude (claude.ai)</h3>
+<ol><li>Open claude.ai in a desktop browser</li><li>In the connector settings, choose to add a custom connector</li><li>Enter the URL above and add it</li><li>When the Texter screen opens, sign in and allow access</li></ol>
+
+<p>Depending on your plan or settings, this option may not appear. If it doesn't, check Claude's help.</p>
+<h3>Claude Code</h3>
+<p>Run this command in a terminal on your computer.</p>
+<pre class="code">claude mcp add --transport http texter https://mcp.texter.work/mcp</pre>
+<p>Then open <code>/mcp</code> in Claude Code, select texter, and authenticate. The Texter allow screen opens in your browser; sign in and allow access.</p>
+<h3>Codex</h3>
+<p>Run these two commands in order in a terminal on your computer.</p>
+<pre class="code">codex mcp add texter --url https://mcp.texter.work/mcp
+codex mcp login texter</pre>
+<h3>ChatGPT</h3>
+<p>These steps are from a session we ran on the real screens on November 12, 2026. The labels below are from the Japanese interface and may read differently in yours.</p>
+<ol><li>Open the plugins screen. From "Add" at the top right, choose to add a custom MCP server</li><li>Enter a name such as "Texter"</li><li>Set the connection type to server URL and enter the URL above</li><li>Choose OAuth for authentication</li><li>Read the risk notice, check the box confirming you understand, and create it</li><li>When the Texter screen opens, sign in and allow access</li></ol>
+<p>Depending on your plan or your administrator's settings, this option may not appear. If it doesn't, check ChatGPT's help.</p>
+
+<h3>Muse</h3>
+<p>These steps are from a session we ran on the real screens on November 12, 2026.</p>
+<ol><li>In a Muse chat, say you want to connect to Texter MCP (use the URL above) with a custom connector</li><li>On the connection card that appears, tap "Connect"</li><li>Read the notice and tap "Next". Enter <code>texter-meta-muse</code> as the client ID and tap "Add"</li><li>When the Texter screen opens, sign in and allow access</li></ol>
+<p>Muse may ask whether to allow sharing information with mcp.texter.work each time it uses the tool. If you choose to allow once, it asks every time, and it can time out while it waits. To avoid being asked every time, you can choose to always allow this site.</p>
+
+<h3>Check that it connected</h3>
+<p>In Texter, open "Settings &gt; Account &gt; Texter MCP". The tool you connected appears under "Connected AI tools".</p></section>
+<section class="sec" id="step2" aria-labelledby="step2-h"><h2 id="step2-h">Step 2: Choose the notes to make readable</h2>
+<p>Connecting alone does not let the tool read anything. An AI tool can read only the notes you have made readable in Texter. Start with one.</p>
+<ol class="steps"><li><h3>Make a note readable</h3>
+<p>Open a note in Texter and choose "Make Readable with Texter MCP" from its menu. You can also choose notes from "Settings &gt; Account &gt; Texter MCP".</p>
+<p>A confirmation screen explains the following. After reading it, tap "Agree and Make Readable".</p>
+<ul><li>The text of this note is sent to the cloud</li><li>Recordings and other original files are not sent</li><li>Content already given to tools can't be taken back</li></ul>
+<p>How to select several notes at once is covered in the next section, "You choose what can be read".</p>
+<p>When the status reads "Readable by connected tools", you're ready. If it says "Preparing", wait a moment.</p>
+<figure class="shot"><a href="/assets/guides/ai-tools-mcp/09_note_keep_en.webp"><img src="/assets/guides/ai-tools-mcp/09_note_keep_en.webp" alt="The Texter MCP screen. It shows "Readable by connected tools" and a button to make the note unreadable" width="599" height="1304" loading="lazy" decoding="async"></a><figcaption>A note that has been made readable</figcaption></figure>
+</li></ol></section><aside class="cta inline" aria-label="Try the app"><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/app/id1482592304?pt=489812&amp;ct=guide-ai-tools-mcp-after-steps&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-ai-tools-mcp-after-steps" data-store="app_store">Get Texter (App Store)</a></div></aside>
+<section class="sec" id="step3" aria-labelledby="step3-h"><h2 id="step3-h">Step 3: Try it in your AI tool</h2>
+<p>Try asking your AI tool something like this.</p>
+<ul>
+<li>Give me the key points of my newest Texter note in three lines</li>
+<li>Find my Texter note about blood sugar and tell me what it says about the time before bed</li>
+<li>Read my Texter note "note title" and summarize the decisions</li>
+</ul>
+<p>Search looks for notes that contain the words you use, so short words work best. Even if you ask in a full sentence, most AI tools break it into words. Zero results does not mean the note doesn't exist, so try different words.</p>
+<p>If it can't find the note, also paste the ID line from the example prompt under "Try reading it from the AI tool" on the Texter MCP screen.</p>
+<figure class="shot"><a href="/assets/guides/ai-tools-mcp/03_ready_en.webp"><img src="/assets/guides/ai-tools-mcp/03_ready_en.webp" alt="The Texter MCP screen. It shows an example prompt under "Try reading it from the AI tool", with the note ID line and Copy and Share buttons" width="599" height="1304" loading="lazy" decoding="async"></a><figcaption>The "Try reading it from the AI tool" screen</figcaption></figure></section>
+<section class="sec" id="control" aria-labelledby="control-h"><h2 id="control-h">You choose what can be read</h2>
+<ul>
+<li>You can make notes readable one at a time</li>
+<li>Under "Settings &gt; Account &gt; Texter MCP", open "Readable notes" and tap "Select" to make several notes readable or unreadable at once. "Select All" picks only the notes that exist now, not notes you create later</li>
+<li>There is a setting to make new notes readable automatically. It is optional, and until you turn it on, new notes do not become readable on their own</li>
+<li>You can see the connected tools under "Connected AI tools", and remove any you don't need with "Disconnect"</li>
+<li>Access is read-only. An AI tool cannot edit or delete your notes</li>
+</ul>
+<figure class="shot"><a href="/assets/guides/ai-tools-mcp/08_notes_selecting_en.webp"><img src="/assets/guides/ai-tools-mcp/08_notes_selecting_en.webp" alt="The Readable Notes screen with several notes selected" width="599" height="1304" loading="lazy" decoding="async"></a><figcaption>Selecting several notes</figcaption></figure><figure class="shot"><a href="/assets/guides/ai-tools-mcp/05_autoAllowOff_en.webp"><img src="/assets/guides/ai-tools-mcp/05_autoAllowOff_en.webp" alt="The setting that makes new notes readable automatically, turned off" width="599" height="1304" loading="lazy" decoding="async"></a><figcaption>The automatic setting (off)</figcaption></figure></section>
+<section class="sec" id="scope" aria-labelledby="scope-h"><h2 id="scope-h">Safety</h2>
+<ul>
+<li>Only the notes you made readable in the app can be read</li>
+<li>You can disconnect at any time. After you do, that AI tool can no longer read your notes</li>
+<li>Content already given to an AI tool can't be taken back. What happens to it afterward follows that tool's terms and settings</li>
+<li>Check the AI's answers against the original note. Transcripts can contain errors</li>
+</ul>
+<p>Right after you make a note unreadable, it may still be readable until the change takes effect. Disconnecting a tool takes effect immediately.</p>
+<p>Every AI tool connected to the same account can read the notes you have made readable. Make only the notes you need readable.</p></section>
+<section class="sec" id="revoke" aria-labelledby="revoke-h"><h2 id="revoke-h">Disconnect</h2>
+<ol>
+<li>In Texter, open "Settings &gt; Account &gt; Texter MCP"</li>
+<li>Under "Connected AI tools", tap "Disconnect" next to the tool</li>
+<li>Confirm. Disconnecting cuts the connection on every device</li>
+</ol>
+<p>If the connection also remains on the AI tool's side, remove it in that tool's settings. To stop a single note from being read, choose "Make Unreadable with Texter MCP" from the note's menu.</p>
+<p>A disconnected tool can no longer read your notes from that moment. If you make individual notes unreadable instead, they may still be readable until the change takes effect.</p>
+<figure class="shot"><a href="/assets/guides/ai-tools-mcp/11_grants_list_en.webp"><img src="/assets/guides/ai-tools-mcp/11_grants_list_en.webp" alt="The Connected AI tools screen listing the tools you connected" width="599" height="1304" loading="lazy" decoding="async"></a><figcaption>The "Connected AI tools" list</figcaption></figure></section>
+<section class="sec" id="trouble" aria-labelledby="trouble-h"><h2 id="trouble-h">Troubleshooting</h2>
+<dl class="facts">
+<dt>No Texter MCP in the app</dt><dd>Update the app, wait a while, and open it again.</dd>
+<dt>"Available with Premium"</dt><dd>Texter MCP is available with Premium. Also check that you are not signed in with a different account than the one you used to purchase.</dd>
+<dt>Connected, but not shown in the app</dt><dd>Check that on the consent screen you signed in with the same Apple or Google account as this iPhone.</dd>
+<dt>A note can't be found</dt><dd>Check that the note is readable and its status reads "Readable by connected tools". Searching again with a shorter word also helps.</dd>
+<dt>Stuck on "Preparing"</dt><dd>Check your connection and wait a while. If it says "Couldn't send", try again.</dd>
+</dl></section>
+<section class="sec" id="faq" aria-labelledby="faq-h"><h2 id="faq-h">FAQ</h2>
+<article><h3>Does the audio of my recording go to the AI tool?</h3><p>The text of the notes you made readable is sent. Recordings and other original files are not.</p></article>
+<article><h3>Can an AI tool change my notes?</h3><p>No. Access is read-only, so it cannot edit or delete them.</p></article>
+<article><h3>What happens if I stop Premium?</h3><p>AI tools can no longer read your notes. If you resume, they can read them again.</p></article>
+<article><h3>Can I keep using a connection I have used for a long time?</h3><p>Your AI tool may ask you to reconnect. If it does, connect again with the same steps.</p></article>
+<article><h3>What if my iPhone is offline?</h3><p>While your iPhone is offline, the last synced content is read.</p></article>
+<article><h3>Are tools on my computer listed per device?</h3><p>No. Tools on your computer appear as one entry, not one per device.</p></article>
+<p class="note">Last verified 2026-11-12. Screens and steps can change as each tool updates. Claude, ChatGPT, Codex, and Muse are trademarks of their respective owners.</p></section>
+<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Try it in Texter</h2><p>Texter is an iPhone app that transcribes and summarizes your recordings. Texter MCP is available with Premium. See the <a href="/en/#pricing">pricing section</a> for details.</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/app/id1482592304?pt=489812&amp;ct=guide-ai-tools-mcp-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-ai-tools-mcp-end" data-store="app_store">Get Texter (App Store)</a></div></section>
+</main>
+<footer><div class="wrap">
+  <ul><li><a href="/en/">Home</a></li><li><a href="/en/#pricing">Pricing</a></li><li><a href="/en/faq/">FAQ</a></li><li><a href="/en/terms-of-service/">Terms of Service</a></li><li><a href="/en/privacy-policy/">Privacy Policy</a></li></ul>
+  <p>© 2026 Texter app - Kyoto, Japan.</p>
+</div></footer>
+<script>
+(function(){
+  var send=function(name,el){if(window.gtag)gtag('event',name,{location:el.dataset.cta,store:el.dataset.store});};
+  var links=document.querySelectorAll('a[data-cta]');
+  links.forEach(function(a){
+    a.addEventListener('click',function(){send(a.dataset.store==='google_play'?'google_play_click':'app_store_click',a);});
+    if(!('IntersectionObserver' in window))return;
+    var seen=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){send('guide_cta_view',a);seen.disconnect();}});},{threshold:.5});
+    seen.observe(a);
+  });
+})();
+</script>
+</body>
+</html>
