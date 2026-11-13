@@ -49,7 +49,8 @@ const sections = [
 <tr><th scope="row">話者を分けたい</th><td>Premiumの各プラン</td></tr>
 <tr><th scope="row">3時間を超える音声を1本で処理したい</th><td>Amazon Transcribe（1本4時間まで）。10時間（${yen(tenHours)}/月）、20時間、年額、月額＋追加チャージ</td></tr>
 </tbody></table></div>` },
-  { id: 'plans', title: 'プランの比較', html: plansTable },
+  { id: 'plans', title: 'プランの比較', html: `${plansTable}
+<p class="note">Texter MCPの行は、2026-11-13に、iPhone版2.11.74で確認しました。文字起こしチケットだけでは使えません。</p>` },
   { id: 'counting', title: '時間の数え方', html: `<div class="scroll"><table class="compare"><thead><tr><th scope="col">機能</th><th scope="col">数えるもの</th><th scope="col">枠が戻る時期</th></tr></thead><tbody>
 <tr><th scope="row">Whisper（無料）</th><td>サーバーの処理時間</td><td>累積するので、月ごとには戻りません</td></tr>
 <tr><th scope="row">Whisper（チケット）</th><td>音声の長さ（秒単位で切り上げ）</td><td>残りは失効しません</td></tr>
