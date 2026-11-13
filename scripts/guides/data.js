@@ -1381,7 +1381,7 @@ const aiToolsMcp = {
   image: '/img/ogp.png',
   store: 'guide-ai-tools-mcp',
   topLabel: 'Texterを入手する（App Store）',
-  conditions: 'Texter MCPは、Premiumで使える機能です。ファミリー共有で受け取ったプランなど、一部のPremiumでは使えない場合があります。条件は<a href="/pricing/#sync-conditions">料金と利用条件</a>で確認できます。',
+  conditions: 'Texter MCPは、Premiumで使える機能です。ファミリー共有で受け取ったプランでは使えません。このほか、一部のPremiumでも、現在使えない場合があります。条件は<a href="/pricing/#sync-conditions">料金と利用条件</a>で確認できます。',
   sections: [
     { id: 'summary', cta: 'after-result', title: 'できること', html: `
 <p>Texterの文字起こしを、ChatGPTやClaudeなどのAIツールに読ませて質問できます。AIツールは、読めるようにしたノートを検索し、本文を読んで答えます。ノートをコピーして貼り付ける手間は要りません。</p>
@@ -1409,7 +1409,7 @@ const aiToolsMcp = {
 <p class="note">このページで実際に試したのは、ノート1件の状態です。複数のノートをまたぐ頼み方は、機能の仕様をもとに書きました。答えは、元のノートと見比べて確かめてください。</p>` },
     { id: 'before', title: '使う前に', html: `
 <ul>
-<li>Premiumへの加入が必要です。自分で購入した自動更新のプランが対象で、ファミリー共有で受け取ったプランなど、一部のPremiumでは、現在使えない場合があります</li>
+<li>Premiumへの加入が必要です。対象は、自分で購入した自動更新のプランです。ファミリー共有で受け取ったプランでは使えません。このほか、一部のPremiumでも、現在使えない場合があります</li>
 <li>Texterを最新のバージョンにしてください</li>
 <li>Texterで、AppleかGoogleのアカウントでサインインし、ノートを同期している必要があります</li>
 </ul>
@@ -1498,13 +1498,13 @@ codex mcp login texter</pre>
     { id: 'trouble', title: 'うまくいかないとき', html: `
 <dl class="facts">
 <dt>アプリに項目が無い</dt><dd>アプリを最新にして、しばらく待ってから開き直してください。</dd>
-<dt>「Premiumで使えます」と出る</dt><dd>Texter MCPはPremiumで使えます。購入したときと別のアカウントでサインインしていないかも確かめてください。</dd>
+<dt>「Premiumで使えます」と出る</dt><dd>Texter MCPはPremiumで使えます。購入したときと別のアカウントでサインインしていないかも確かめてください。ファミリー共有で受け取ったプランでは使えません。</dd>
 <dt>接続したのにアプリに出ない</dt><dd>許可の画面で、このiPhoneと同じAppleかGoogleのアカウントでサインインしたか確かめてください。</dd>
 <dt>ノートが見つからない</dt><dd>そのノートを読めるようにしてあるか、状態が「接続したツールから読めます」かを確かめてください。短い語で検索し直すのも有効です。</dd>
 <dt>「準備中」のまま</dt><dd>通信を確かめて、しばらく待ってください。「送れませんでした」と出たときは、もう一度試してください。</dd>
 </dl>` },
     { id: 'faq', title: 'よくある質問', html: `
-<article><h3>録音の音声もAIツールに渡りますか。</h3><p>読めるようにしたノートのテキストを送ります。録音などの元のファイルは送りません。</p></article>
+<article><h3>録音の音声もAIツールに渡りますか。</h3><p>読めるようにしたノートのテキスト、要約、話者名、作成日時などの情報を送ります。録音などの元のファイルは送りません。</p></article>
 <article><h3>AIツールからノートを変えられますか。</h3><p>読み取り専用なので、書き換えや削除はできません。</p></article>
 <article><h3>Premiumをやめるとどうなりますか。</h3><p>AIツールからノートを読めなくなります。再開すると、また読めます。</p></article>
 <article><h3>長く使った接続は、そのまま使えますか。</h3><p>AIツールから、接続し直しを求められることがあります。そのときは、同じ手順で接続し直してください。</p></article>
@@ -1523,7 +1523,7 @@ codex mcp login texter</pre>
     lead: 'Ask ChatGPT, Claude, or Muse about your meeting and lecture transcripts without copying and pasting them. This feature is called Texter MCP. You choose which notes can be read. This guide covers the setup and shows the answers we actually got.',
     topLabel: 'Get Texter (App Store)',
     metaLabel: 'Last verified',
-    conditions: 'Texter MCP is a Premium feature. It may not be available with some Premium subscriptions, such as one received through Family Sharing. See the <a href="/en/#pricing">pricing section</a> for the plans.',
+    conditions: 'Texter MCP is a Premium feature. It is not available with a plan received through Family Sharing, and it may also be unavailable with some other Premium subscriptions at this time. See <a href="#before">Before you start</a> for the conditions.',
     sections: [
     { id: 'summary', cta: 'after-result', title: 'What it does', html: `
 <p>You can ask AI tools such as ChatGPT and Claude about your Texter transcripts. The AI tool searches the notes you have made readable, reads the text, and answers from it. You don't need to copy and paste a note.</p>
@@ -1551,7 +1551,7 @@ codex mcp login texter</pre>
 <p class="note">On this page we tested with a single readable note. The requests that span several notes are written from the feature's specification. Check the answers against the original notes.</p>` },
     { id: 'before', title: 'Before you start', html: `
 <ul>
-<li>You need Premium. It applies to an auto-renewing plan you purchased yourself. With some Premium subscriptions, such as one received through Family Sharing, it may not be available at this time</li>
+<li>You need Premium. Texter MCP works only with an auto-renewing plan you purchased yourself. It is not available with a plan received through Family Sharing, and it may also be unavailable with some other Premium subscriptions at this time</li>
 <li>Update Texter to the latest version</li>
 <li>In Texter, sign in with Apple or Google and sync your notes</li>
 </ul>
@@ -1638,13 +1638,13 @@ codex mcp login texter</pre>
     { id: 'trouble', title: 'Troubleshooting', html: `
 <dl class="facts">
 <dt>No Texter MCP in the app</dt><dd>Update the app, wait a while, and open it again.</dd>
-<dt>"Available with Premium"</dt><dd>Texter MCP is available with Premium. Also check that you are not signed in with a different account than the one you used to purchase.</dd>
+<dt>"Available with Premium"</dt><dd>Texter MCP is available with Premium. Also check that you are not signed in with a different account than the one you used to purchase. It is not available with a plan received through Family Sharing.</dd>
 <dt>Connected, but not shown in the app</dt><dd>Check that on the consent screen you signed in with the same Apple or Google account as this iPhone.</dd>
 <dt>A note can't be found</dt><dd>Check that the note is readable and its status reads "Readable by connected tools". Searching again with a shorter word also helps.</dd>
 <dt>Stuck on "Preparing"</dt><dd>Check your connection and wait a while. If it says "Couldn't send", try again.</dd>
 </dl>` },
     { id: 'faq', title: 'FAQ', html: `
-<article><h3>Does the audio of my recording go to the AI tool?</h3><p>The text of the notes you made readable is sent. Recordings and other original files are not.</p></article>
+<article><h3>Does the audio of my recording go to the AI tool?</h3><p>The text, summaries, and speaker names of the notes you made readable are sent, along with details such as when they were created. Recordings and other original files are not.</p></article>
 <article><h3>Can an AI tool change my notes?</h3><p>No. Access is read-only, so it cannot edit or delete them.</p></article>
 <article><h3>What happens if I stop Premium?</h3><p>AI tools can no longer read your notes. If you resume, they can read them again.</p></article>
 <article><h3>Can I keep using a connection I have used for a long time?</h3><p>Your AI tool may ask you to reconnect. If it does, connect again with the same steps.</p></article>
