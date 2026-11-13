@@ -13,9 +13,9 @@ const aiMinutes = {
   slug: 'ai-minutes',
   group: 'meeting',
   card: '2分の音声が、約40秒で要約になりました。手順と、人が仕上げた完成版を載せています。',
-  modified: '2026-11-05',
+  modified: '2026-11-13',
   metaLabel: '更新日',
-  metaDate: '2026-11-05',
+  metaDate: '2026-11-13',
   title: '録音から議事録を作る方法｜iPhoneで文字起こし・要約する手順と完成例',
   description: '2分の打ち合わせ音声から議事録を作った全手順です。iPhoneの操作画面、実際の出力、人が仕上げた完成版、チャットAI用のテンプレートと、公開された15分の会議で試した結果を載せています。',
   crumb: '録音から議事録を作る方法',
@@ -164,7 +164,7 @@ const videoSubtitles = {
   slug: 'video-subtitles',
   group: 'video',
   card: '時刻つきの字幕ファイルを書き出して、YouTubeに読み込むまでの手順です。',
-  modified: '2026-11-12',
+  modified: '2026-11-13',
   title: 'iPhoneの動画からSRT字幕を作る方法｜書き出し手順と完成例',
   description: '15秒の動画から字幕ファイルのSRTを作った全手順です。実際のSRT、字幕付きの再生例、時刻のずれの実測、YouTubeに読み込んで自動字幕と比べた結果を載せています。',
   crumb: 'iPhoneの動画からSRT字幕を作る方法',
@@ -257,6 +257,7 @@ const videoSubtitles = {
 
 const sideButton = {
   slug: 'iphone-side-button-recording',
+  modified: '2026-11-13',
   group: 'record',
   card: 'サイドボタンの長押しで、録音と文字起こしをすぐ始める設定です。',
   published: '2026-11-01',
@@ -317,6 +318,7 @@ const sideButton = {
 
 const pipGuide = {
   slug: 'iphone-pip-transcription',
+  modified: '2026-11-13',
   group: 'record',
   card: '資料やSafariを見ながら、小窓で文字起こしを確認します。',
   verified: '2026-11-01',
@@ -373,6 +375,7 @@ const pipGuide = {
 
 const subtitledVideo = {
   slug: 'iphone-subtitled-video',
+  modified: '2026-11-13',
   group: 'video',
   card: '字幕を映像に入れた動画を書き出します。字幕ファイルを読み込めないサービスにも投稿できます。',
   verified: '2026-11-01',
@@ -439,6 +442,7 @@ const subtitledVideo = {
 
 const searchNotes = {
   slug: 'iphone-search-past-recordings',
+  modified: '2026-11-13',
   group: 'meeting',
   card: '複数の録音に文章で質問して、答えと根拠のノートを確かめます。',
   verified: '2026-11-01',
@@ -511,9 +515,9 @@ const multiSpeakerMinutes = {
   topLabel: 'App Storeで見る',
   verified: '2026-11-02',
   published: '2026-11-02',
-  modified: '2026-11-05',
+  modified: '2026-11-13',
   metaLabel: '更新日',
-  metaDate: '2026-11-05',
+  metaDate: '2026-11-13',
   iosOnly: true,
   title: '複数人の会議を話者ごとに文字起こしして議事録を作る方法｜Texter',
   description: 'iPhoneのTexterで会議の音声を話者識別して文字起こしする手順。公開された5人の会議で話者の区別を議事録と照らし合わせた結果、話者名の一括変更、議事録に仕上げる方法を説明します。',
@@ -585,6 +589,7 @@ const multiSpeakerMinutes = {
 
 const voiceMemosVsTexter = {
   slug: 'iphone-voice-memos-vs-texter',
+  modified: '2026-11-13',
   group: 'record',
   card: '標準のボイスメモで足りる場面と、Texterを足す場面を分けて説明します。',
   verified: '2026-11-05',
@@ -737,6 +742,7 @@ const offlineTranscription = {
 
 const meetingTasks = {
   slug: 'iphone-meeting-action-items-reminder',
+  modified: '2026-11-13',
   group: 'meeting',
   card: '要約から作業・担当・期限を取り出し、iPhoneに通知を設定します。',
   verified: '2026-11-05',
@@ -831,9 +837,9 @@ const interviewWriting = {
   group: 'interview',
   card: '使いたい発言を選び、音声で確かめてから原稿に移す手順です。',
   published: '2026-11-11',
-  modified: '2026-11-12',
+  modified: '2026-11-13',
   metaLabel: '更新日',
-  metaDate: '2026-11-12',
+  metaDate: '2026-11-13',
   iosOnly: true,
   title: 'インタビューを文字起こしして原稿にする方法｜引用確認のチェックリスト',
   description: '約3分の架空の取材音声と、約49分・4人の公開インタビューをTexterで処理した実際の出力と、人が直す箇所を掲載。引用候補を選び、音声で確認して原稿にする手順、条件を残した引用の記入例、料金と保存の注意点をまとめました。',
@@ -974,6 +980,7 @@ const interviewWriting = {
 
 const lectureNotes = {
   slug: 'lecture-recording-review-notes',
+  modified: '2026-11-13',
   group: 'interview',
   card: '36分の講義を、要約と確認問題で復習した例です。',
   verified: '2026-11-12',
@@ -1091,6 +1098,7 @@ CMIP5などの全球モデルは世界全体を計算するため、日本海側
 
 const interviewTopics = {
   slug: 'interview-topic-map',
+  modified: '2026-11-13',
   group: 'interview',
   card: '約11分のインタビューが、7つの話題に分かれました。読む順番を決める下準備に使えます。',
   verified: '2026-11-12',
@@ -1199,6 +1207,7 @@ const interviewTopics = {
 
 const talkShowNotes = {
   slug: 'podcast-transcription-show-notes',
+  modified: '2026-11-13',
   group: 'interview',
   card: '約21分の対談を8つの話題に整理して、概要欄の下書きにします。',
   verified: '2026-11-12',
@@ -1309,9 +1318,9 @@ const researchInterview = {
   group: 'interview',
   card: '自動の文字起こしを下書きにして、原音と照合した記録を残します。',
   published: '2026-11-11',
-  modified: '2026-11-11',
+  modified: '2026-11-13',
   metaLabel: '更新日',
-  metaDate: '2026-11-11',
+  metaDate: '2026-11-13',
   iosOnly: true,
   title: '卒論・研究インタビューの文字起こし｜逐語録の確認と引用の残し方',
   description: '卒論や研究のインタビュー音声を文字にした後、音声照合・対象者コードへの置換・引用確認を進める手順。自動出力と逐語録、分析メモを分ける記入例と、クラウド処理・保存先を確認する項目をまとめました。',
