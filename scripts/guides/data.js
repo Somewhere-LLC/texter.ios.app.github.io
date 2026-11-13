@@ -1369,7 +1369,7 @@ const aiToolsMcp = {
   slug: 'ai-tools-mcp',
   group: 'ai',
   card: 'ClaudeやChatGPTなどのAIツールから、Texterで読めるようにしたノートを検索して読む手順です。',
-  verified: '2026-11-12',
+  verified: '2026-11-13',
   published: '2026-11-13',
   modified: '2026-11-13',
   iosOnly: true,
@@ -1420,7 +1420,12 @@ const aiToolsMcp = {
 <p>接続を始めると、Texterの「AIツールの接続を許可しますか？」の画面が開きます。</p>
 <ul><li>Texterアプリと同じアカウント（AppleかGoogle）でサインインします</li><li>画面に出る接続元（例：chatgpt.com）が、いま使っているツールか確かめてください</li><li>「この接続を自分で始めていなければ、許可しないでください」と出ます。心当たりがあるときだけ許可します</li></ul>
 <h3>Claude（claude.ai）</h3>
-<ol><li>パソコンのブラウザでclaude.aiを開く</li><li>設定のコネクタで、「カスタムコネクタを追加」を選ぶ</li><li>上のURLを入れて追加する</li><li>Texterの許可の画面が開いたら、サインインして許可する</li></ol>
+<p>Texter MCPは、Claudeのコネクタの一覧（ディレクトリ）に載っています。URLを入れずに追加できます。</p>
+<ol><li>claude.aiの「カスタマイズ」で「コネクタ」を開き、「Texter」で検索する</li><li>「Texter MCP」を選んで追加する</li><li>Texterの許可の画面が開いたら、サインインして許可する</li></ol>
+<p>次のページから直接開くこともできます。</p>
+<p class="url">https://claude.ai/directory/texter-mcp</p>
+<figure class="shot land"><a href="/assets/guides/ai-tools-mcp/claude-directory-ja.webp"><img src="/assets/guides/ai-tools-mcp/claude-directory-ja.webp" alt="Claudeのコネクタの一覧にあるTexter MCPのページ。名前と説明、「接続済み」の表示がある" width="1568" height="262" loading="lazy" decoding="async"></a><figcaption>Claudeのコネクタの一覧のTexter MCP（この画面は接続済みの状態）</figcaption></figure>
+<p>一覧から追加できないときは、設定のコネクタで「カスタムコネクタを追加」を選び、上のURLを入れて追加します。</p>
 
 <figure class="shot land"><a href="/assets/guides/ai-tools-mcp/claude-add-connector-ja.webp"><img src="/assets/guides/ai-tools-mcp/claude-add-connector-ja.webp" alt="claude.aiの「カスタムコネクタを追加」の画面。名前とURLを入れる欄がある" width="1064" height="315" loading="lazy" decoding="async"></a><figcaption>claude.aiでカスタムコネクタを追加する画面</figcaption></figure>
 <p>プランや設定によっては、この項目が表示されない場合があります。表示されないときは、Claudeのヘルプを確認してください。</p>
@@ -1559,7 +1564,11 @@ codex mcp login texter</pre>
 <p>When you start connecting, Texter opens a screen asking whether to allow the connection.</p>
 <ul><li>Sign in with the same account you use in the Texter app (Apple or Google)</li><li>Check the source shown on the screen (for example, chatgpt.com)</li><li>The screen warns you not to allow a connection you did not start yourself. Allow it only if you did</li></ul>
 <h3>Claude (claude.ai)</h3>
-<ol><li>Open claude.ai in a desktop browser</li><li>In the connector settings, choose to add a custom connector</li><li>Enter the URL above and add it</li><li>When the Texter screen opens, sign in and allow access</li></ol>
+<p>Texter MCP is listed in Claude's connector directory, so you can add it without typing the URL.</p>
+<ol><li>On claude.ai, open Customize, then Connectors, and search for "Texter"</li><li>Choose "Texter MCP" and add it</li><li>When the Texter screen opens, sign in and allow access</li></ol>
+<p>You can also open its page directly.</p>
+<p class="url">https://claude.ai/directory/texter-mcp</p>
+<p>If you can't add it from the directory, choose to add a custom connector in the connector settings and enter the URL above.</p>
 
 <p>Depending on your plan or settings, this option may not appear. If it doesn't, check Claude's help.</p>
 <h3>Claude Code</h3>

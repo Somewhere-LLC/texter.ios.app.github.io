@@ -1,7 +1,6 @@
 # robots.txt for texter.work
 User-agent: *
 Allow: /
-Disallow: /review/
 
 # Sitemap
 Sitemap: https://texter.work/sitemap.xml
