@@ -183,7 +183,7 @@ footer p{margin:12px 0 0}
 <h1>How to use Texter MCP: read your notes from AI tools</h1>
 <p class="lead">With Texter MCP, AI tools such as Claude and ChatGPT can search and read the Texter notes you have made readable. This guide covers setup, what can be read, and how to disconnect.</p>
 <p class="try"><a href="https://apps.apple.com/app/id1482592304?pt=489812&amp;ct=guide-ai-tools-mcp-top&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-ai-tools-mcp-top" data-store="app_store">Get Texter (App Store)</a></p>
-<p class="meta">Last verified <time datetime="2026-11-12">2026-11-12</time></p>
+<p class="meta">Last verified <time datetime="2026-11-13">2026-11-13</time></p>
 <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">Contents</h2><ul><li><a href="#summary">Overview</a></li><li><a href="#uses">What you can do with it</a></li><li><a href="#before">Before you start</a></li><li><a href="#step1">Step 1: Connect your AI tool</a></li><li><a href="#step2">Step 2: Choose the notes to make readable</a></li><li><a href="#step3">Step 3: Try it in your AI tool</a></li><li><a href="#control">You choose what can be read</a></li><li><a href="#scope">Safety</a></li><li><a href="#revoke">Disconnect</a></li><li><a href="#trouble">Troubleshooting</a></li><li><a href="#faq">FAQ</a></li></ul></nav>
 <section class="sec" id="summary" aria-labelledby="summary-h"><h2 id="summary-h">Overview</h2>
 <p>From your own AI tool, you can list, search, read, and get summaries of the notes you have made readable in Texter. Just ask the tool, and it finds the passage you need in your past notes.</p>
@@ -221,9 +221,12 @@ footer p{margin:12px 0 0}
 <p>When you start connecting, Texter opens a screen asking whether to allow the connection.</p>
 <ul><li>Sign in with the same account you use in the Texter app (Apple or Google)</li><li>Check the source shown on the screen (for example, chatgpt.com)</li><li>The screen warns you not to allow a connection you did not start yourself. Allow it only if you did</li></ul>
 <h3>Claude (claude.ai)</h3>
-<ol><li>Open claude.ai in a desktop browser</li><li>In the connector settings, choose to add a custom connector</li><li>Enter the URL above and add it</li><li>When the Texter screen opens, sign in and allow access</li></ol>
+<p>Texter MCP is listed in Claude's connector directory, so you can add it without typing the URL.</p>
+<ol><li>On claude.ai, open Customize, then Connectors, and search for "Texter"</li><li>Open the "Texter MCP" page and connect with the button shown there</li><li>When the Texter screen opens, sign in and allow access</li></ol>
+<p>You can also open <a href="https://claude.ai/directory/texter-mcp" rel="noopener">the Texter MCP page on Claude</a> directly.</p>
+<p>If you can't add it from the directory, choose to add a custom connector in the connector settings and enter the server URL at the top of Step 1 (https://mcp.texter.work/mcp).</p>
 
-<p>Depending on your plan or settings, this option may not appear. If it doesn't, check Claude's help.</p>
+<p>Depending on your plan or settings, the custom connector option may not appear. If it doesn't, check Claude's help.</p>
 <h3>Claude Code</h3>
 <p>Run this command in a terminal on your computer.</p>
 <pre class="code">claude mcp add --transport http texter https://mcp.texter.work/mcp</pre>
