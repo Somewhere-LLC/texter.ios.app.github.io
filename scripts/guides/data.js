@@ -1590,7 +1590,7 @@ codex mcp login texter</pre>
 <ul><li>The text of this note is sent to the cloud</li><li>Recordings and other original files are not sent</li><li>Content already given to tools can't be taken back</li></ul>
 <p>How to select several notes at once is covered in the next section, "You choose what can be read".</p>
 <p>When the status reads "Readable by connected tools", you're ready. If it says "Preparing", wait a moment.</p>
-<figure class="shot"><a href="/assets/guides/ai-tools-mcp/09_note_keep_en.webp"><img src="/assets/guides/ai-tools-mcp/09_note_keep_en.webp" alt="The Texter MCP screen. It shows "Readable by connected tools" and a button to make the note unreadable" width="599" height="1304" loading="lazy" decoding="async"></a><figcaption>A note that has been made readable</figcaption></figure>
+<figure class="shot"><a href="/assets/guides/ai-tools-mcp/09_note_keep_en.webp"><img src="/assets/guides/ai-tools-mcp/09_note_keep_en.webp" alt="The Texter MCP screen. It shows &quot;Readable by connected tools&quot; and a button to make the note unreadable" width="599" height="1304" loading="lazy" decoding="async"></a><figcaption>A note that has been made readable</figcaption></figure>
 </li></ol>` },
     { id: 'step3', title: 'Step 3: Try it in your AI tool', html: `
 <p>Try asking your AI tool something like this.</p>
@@ -1601,7 +1601,7 @@ codex mcp login texter</pre>
 </ul>
 <p>Search looks for notes that contain the words you use, so short words work best. Even if you ask in a full sentence, most AI tools break it into words. Zero results does not mean the note doesn't exist, so try different words.</p>
 <p>If it can't find the note, also paste the ID line from the example prompt under "Try reading it from the AI tool" on the Texter MCP screen.</p>
-<figure class="shot"><a href="/assets/guides/ai-tools-mcp/03_ready_en.webp"><img src="/assets/guides/ai-tools-mcp/03_ready_en.webp" alt="The Texter MCP screen. It shows an example prompt under "Try reading it from the AI tool", with the note ID line and Copy and Share buttons" width="599" height="1304" loading="lazy" decoding="async"></a><figcaption>The "Try reading it from the AI tool" screen</figcaption></figure>` },
+<figure class="shot"><a href="/assets/guides/ai-tools-mcp/03_ready_en.webp"><img src="/assets/guides/ai-tools-mcp/03_ready_en.webp" alt="The Texter MCP screen. It shows an example prompt under &quot;Try reading it from the AI tool&quot;, with the note ID line and Copy and Share buttons" width="599" height="1304" loading="lazy" decoding="async"></a><figcaption>The "Try reading it from the AI tool" screen</figcaption></figure>` },
     { id: 'control', title: 'You choose what can be read', html: `
 <ul>
 <li>You can make notes readable one at a time</li>
