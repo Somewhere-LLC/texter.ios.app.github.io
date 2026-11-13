@@ -82,6 +82,8 @@ const ja = {
           a: '<p>できます。AIチャット「ノートに聞く」で、ノートの内容について「決まった納期は？」のように質問できます。無料版は1日3回まで、Premiumでは回数の制限なく使えます。</p>' },
         { id: 'export', q: 'どんな形式で書き出せますか？',
           a: '<ul><li>ノート：テキスト、PDF、SRT字幕ファイル、字幕付き動画</li><li>要約：Markdown、テキスト、HTML、PDF</li></ul><p>SlackのWebhookを設定すると、文字起こし結果をSlackに投稿することもできます。</p>' },
+        { id: 'ai-tools', q: 'ChatGPTやClaudeから、Texterのノートを読めますか？',
+          a: '<p>読めます。Premiumに含まれるTexter MCPを使うと、ChatGPTやClaudeなどのAIツールから、自分で選んだノートを検索して読めます。AIツールに渡るのは、アプリで読めるようにしたノートのテキストだけです。録音などの元のファイルは送りません。手順は<a href="/guides/ai-tools-mcp/">Texter MCPの使い方</a>をご覧ください。</p>' },
       ],
     },
     {
@@ -171,6 +173,8 @@ const en = {
           a: '<p>Yes. With AI chat, ask your notes things like “What deadline did we agree on?” The free plan allows 3 questions a day, and Premium has no daily limit.</p>' },
         { id: 'export', q: 'Which export formats are available?',
           a: '<ul><li>Notes: text, PDF, SRT subtitle file, video with captions</li><li>Summaries: Markdown, text, HTML, PDF</li></ul><p>You can also post transcripts to Slack by setting up a Slack webhook.</p>' },
+        { id: 'ai-tools', q: 'Can ChatGPT or Claude read my Texter notes?',
+          a: '<p>Yes. With Texter MCP, which is included with Premium, AI tools such as ChatGPT and Claude can search and read the notes you choose. Only the text of the notes you make readable in the app is shared; recordings and other original files are not sent. See <a href="/en/guides/ai-tools-mcp/">how to use Texter MCP</a> for the steps.</p>' },
       ],
     },
     {
