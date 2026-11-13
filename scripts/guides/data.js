@@ -667,6 +667,7 @@ const offlineTranscription = {
   card: '端末の中だけで文字起こしする設定と、通信が要る機能の一覧です。',
   verified: '2026-11-05',
   published: '2026-11-05',
+  modified: '2026-11-13',
   metaLabel: '確認日',
   iosOnly: true,
   title: 'iPhoneで音声を端末の外に送らずに文字起こしする方法｜Texterで端末内に収まる範囲',
