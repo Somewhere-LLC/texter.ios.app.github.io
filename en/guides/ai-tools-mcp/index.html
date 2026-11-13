@@ -222,12 +222,11 @@ footer p{margin:12px 0 0}
 <ul><li>Sign in with the same account you use in the Texter app (Apple or Google)</li><li>Check the source shown on the screen (for example, chatgpt.com)</li><li>The screen warns you not to allow a connection you did not start yourself. Allow it only if you did</li></ul>
 <h3>Claude (claude.ai)</h3>
 <p>Texter MCP is listed in Claude's connector directory, so you can add it without typing the URL.</p>
-<ol><li>On claude.ai, open Customize, then Connectors, and search for "Texter"</li><li>Choose "Texter MCP" and add it</li><li>When the Texter screen opens, sign in and allow access</li></ol>
-<p>You can also open its page directly.</p>
-<p class="url">https://claude.ai/directory/texter-mcp</p>
-<p>If you can't add it from the directory, choose to add a custom connector in the connector settings and enter the URL above.</p>
+<ol><li>On claude.ai, open Customize, then Connectors, and search for "Texter"</li><li>Open the "Texter MCP" page and connect with the button shown there</li><li>When the Texter screen opens, sign in and allow access</li></ol>
+<p>You can also open <a href="https://claude.ai/directory/texter-mcp" rel="noopener">the Texter MCP page on Claude</a> directly.</p>
+<p>If you can't add it from the directory, choose to add a custom connector in the connector settings and enter the server URL at the top of Step 1 (https://mcp.texter.work/mcp).</p>
 
-<p>Depending on your plan or settings, this option may not appear. If it doesn't, check Claude's help.</p>
+<p>Depending on your plan or settings, the custom connector option may not appear. If it doesn't, check Claude's help.</p>
 <h3>Claude Code</h3>
 <p>Run this command in a terminal on your computer.</p>
 <pre class="code">claude mcp add --transport http texter https://mcp.texter.work/mcp</pre>
