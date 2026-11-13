@@ -189,7 +189,7 @@ footer p{margin:12px 0 0}
 <h1>ChatGPTやClaudeから、Texterの文字起こしを読む方法</h1>
 <p class="lead">会議や講義の文字起こしを、コピーして貼り付けずに、ChatGPT、Claude、Museなどに読ませて質問できます。この機能がTexter MCPです。読ませるノートは、自分で選びます。接続の手順と、実際に返った答えを紹介します。</p>
 <p class="try"><a href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-ai-tools-mcp-top&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-ai-tools-mcp-top" data-store="app_store">Texterを入手する（App Store）</a></p>
-<p class="meta">検証日 <time datetime="2026-11-12">2026-11-12</time></p>
+<p class="meta">検証日 <time datetime="2026-11-13">2026-11-13</time></p>
 <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul><li><a href="#summary">できること</a></li><li><a href="#uses">こんなことに使えます</a></li><li><a href="#before">使う前に</a></li><li><a href="#step1">手順1：AIツールに接続する</a></li><li><a href="#step2">手順2：アプリで読めるノートを選ぶ</a></li><li><a href="#step3">手順3：AIツールで試す</a></li><li><a href="#control">読める範囲は自分で決められます</a></li><li><a href="#scope">安全について</a></li><li><a href="#revoke">接続を解除する</a></li><li><a href="#trouble">うまくいかないとき</a></li><li><a href="#faq">よくある質問</a></li></ul></nav>
 <section class="sec" id="summary" aria-labelledby="summary-h"><h2 id="summary-h">できること</h2>
 <p>Texterの文字起こしを、ChatGPTやClaudeなどのAIツールに読ませて質問できます。AIツールは、読めるようにしたノートを検索し、本文を読んで答えます。ノートをコピーして貼り付ける手間は要りません。</p>
@@ -229,7 +229,11 @@ footer p{margin:12px 0 0}
 <p class="url">https://mcp.texter.work/mcp</p>
 <p>使うツールの手順へ進んでください。<a href="#tool-claude">Claude</a>、<a href="#tool-claude-code">Claude Code</a>、<a href="#tool-codex">Codex</a>、<a href="#tool-chatgpt">ChatGPT</a>、<a href="#tool-muse">Muse</a>の5つを載せています。</p>
 <h3 id="tool-claude">Claude（claude.ai）</h3>
-<ol><li>パソコンのブラウザでclaude.aiを開く</li><li>設定のコネクタで、「カスタムコネクタを追加」を選ぶ</li><li>上のURLを入れて追加する</li><li>Texterの許可の画面が開いたら、サインインして許可する</li></ol>
+<p>Texter MCPは、Claudeのコネクタの一覧（ディレクトリ）に載っています。URLを入れずに追加できます。</p>
+<ol><li>claude.aiの「カスタマイズ」で「コネクタ」を開き、「Texter」で検索する</li><li>「Texter MCP」のページを開き、表示されるボタンから接続する</li><li>Texterの許可の画面が開いたら、サインインして許可する</li></ol>
+<p><a href="https://claude.ai/directory/texter-mcp" rel="noopener">ClaudeのTexter MCPのページ</a>から、直接開くこともできます。</p>
+<figure class="shot land"><a href="/assets/guides/ai-tools-mcp/claude-directory-ja.webp"><img src="/assets/guides/ai-tools-mcp/claude-directory-ja.webp" alt="Claudeのコネクタの一覧にあるTexter MCPのページ。名前と説明、「接続済み」の表示がある" width="1568" height="262" loading="lazy" decoding="async"></a><figcaption>Claudeのコネクタの一覧のTexter MCP（この画面は接続済みの状態）</figcaption></figure>
+<p>一覧から追加できないときは、設定のコネクタで「カスタムコネクタを追加」を選び、手順1の最初にあるURL（https://mcp.texter.work/mcp）を入れて追加します。</p>
 
 <figure class="shot land"><a href="/assets/guides/ai-tools-mcp/claude-add-connector-ja.webp"><img src="/assets/guides/ai-tools-mcp/claude-add-connector-ja.webp" alt="claude.aiの「カスタムコネクタを追加」の画面。名前とURLを入れる欄がある" width="1064" height="315" loading="lazy" decoding="async"></a><figcaption>claude.aiでカスタムコネクタを追加する画面</figcaption></figure>
 <p>プランや設定によっては、この項目が表示されない場合があります。表示されないときは、Claudeのヘルプを確認してください。</p>
@@ -318,7 +322,7 @@ codex mcp login texter</pre>
 <article><h3>長く使った接続は、そのまま使えますか。</h3><p>AIツールから、接続し直しを求められることがあります。そのときは、同じ手順で接続し直してください。</p></article>
 <article><h3>iPhoneがオフラインのときは読めますか。</h3><p>iPhoneがオフラインの間は、最後に同期した内容が読まれます。</p></article>
 <article><h3>パソコンのツールは端末ごとに表示されますか。</h3><p>パソコンのツールは、端末ごとではなく1件にまとまって表示されます。</p></article>
-<p class="note">検証日 2026-11-12。ChatGPTとMuseの手順は、この日に実際の画面で操作したものです。画面や手順は、各ツールの更新で変わることがあります。Claude、ChatGPT、Codex、Museは各社の商標です。</p></section>
+<p class="note">検証日 2026-11-13。ChatGPTとMuseの手順は、2026年11月12日に実際の画面で操作したものです。画面や手順は、各ツールの更新で変わることがあります。Claude、ChatGPT、Codex、Museは各社の商標です。</p></section>
 <section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで試す</h2><p>Texterは、録音の文字起こしや要約ができるiPhoneのアプリです。Texter MCPは、Premiumで使える機能です。ファミリー共有で受け取ったプランでは使えません。このほか、一部のPremiumでも、現在使えない場合があります。条件は<a href="/pricing/#sync-conditions">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-ai-tools-mcp-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-ai-tools-mcp-end" data-store="app_store">Texterを入手する（App Store）</a></div></section>
 </main>
 <footer><div class="wrap">

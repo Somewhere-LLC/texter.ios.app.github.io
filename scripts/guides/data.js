@@ -1369,7 +1369,7 @@ const aiToolsMcp = {
   slug: 'ai-tools-mcp',
   group: 'ai',
   card: 'ChatGPTやClaudeに、Texterの文字起こしを読ませて質問する手順です（Premium）。',
-  verified: '2026-11-12',
+  verified: '2026-11-13',
   published: '2026-11-13',
   modified: '2026-11-13',
   iosOnly: true,
@@ -1421,7 +1421,11 @@ const aiToolsMcp = {
 <p class="url">https://mcp.texter.work/mcp</p>
 <p>使うツールの手順へ進んでください。<a href="#tool-claude">Claude</a>、<a href="#tool-claude-code">Claude Code</a>、<a href="#tool-codex">Codex</a>、<a href="#tool-chatgpt">ChatGPT</a>、<a href="#tool-muse">Muse</a>の5つを載せています。</p>
 <h3 id="tool-claude">Claude（claude.ai）</h3>
-<ol><li>パソコンのブラウザでclaude.aiを開く</li><li>設定のコネクタで、「カスタムコネクタを追加」を選ぶ</li><li>上のURLを入れて追加する</li><li>Texterの許可の画面が開いたら、サインインして許可する</li></ol>
+<p>Texter MCPは、Claudeのコネクタの一覧（ディレクトリ）に載っています。URLを入れずに追加できます。</p>
+<ol><li>claude.aiの「カスタマイズ」で「コネクタ」を開き、「Texter」で検索する</li><li>「Texter MCP」のページを開き、表示されるボタンから接続する</li><li>Texterの許可の画面が開いたら、サインインして許可する</li></ol>
+<p><a href="https://claude.ai/directory/texter-mcp" rel="noopener">ClaudeのTexter MCPのページ</a>から、直接開くこともできます。</p>
+<figure class="shot land"><a href="/assets/guides/ai-tools-mcp/claude-directory-ja.webp"><img src="/assets/guides/ai-tools-mcp/claude-directory-ja.webp" alt="Claudeのコネクタの一覧にあるTexter MCPのページ。名前と説明、「接続済み」の表示がある" width="1568" height="262" loading="lazy" decoding="async"></a><figcaption>Claudeのコネクタの一覧のTexter MCP（この画面は接続済みの状態）</figcaption></figure>
+<p>一覧から追加できないときは、設定のコネクタで「カスタムコネクタを追加」を選び、手順1の最初にあるURL（https://mcp.texter.work/mcp）を入れて追加します。</p>
 
 <figure class="shot land"><a href="/assets/guides/ai-tools-mcp/claude-add-connector-ja.webp"><img src="/assets/guides/ai-tools-mcp/claude-add-connector-ja.webp" alt="claude.aiの「カスタムコネクタを追加」の画面。名前とURLを入れる欄がある" width="1064" height="315" loading="lazy" decoding="async"></a><figcaption>claude.aiでカスタムコネクタを追加する画面</figcaption></figure>
 <p>プランや設定によっては、この項目が表示されない場合があります。表示されないときは、Claudeのヘルプを確認してください。</p>
@@ -1510,7 +1514,7 @@ codex mcp login texter</pre>
 <article><h3>長く使った接続は、そのまま使えますか。</h3><p>AIツールから、接続し直しを求められることがあります。そのときは、同じ手順で接続し直してください。</p></article>
 <article><h3>iPhoneがオフラインのときは読めますか。</h3><p>iPhoneがオフラインの間は、最後に同期した内容が読まれます。</p></article>
 <article><h3>パソコンのツールは端末ごとに表示されますか。</h3><p>パソコンのツールは、端末ごとではなく1件にまとまって表示されます。</p></article>
-<p class="note">検証日 2026-11-12。ChatGPTとMuseの手順は、この日に実際の画面で操作したものです。画面や手順は、各ツールの更新で変わることがあります。Claude、ChatGPT、Codex、Museは各社の商標です。</p>` },
+<p class="note">検証日 2026-11-13。ChatGPTとMuseの手順は、2026年11月12日に実際の画面で操作したものです。画面や手順は、各ツールの更新で変わることがあります。Claude、ChatGPT、Codex、Museは各社の商標です。</p>` },
   ],
   ctaTitle: 'Texterで試す',
   ctaLabel: 'Texterを入手する',
@@ -1563,9 +1567,12 @@ codex mcp login texter</pre>
 <p class="url">https://mcp.texter.work/mcp</p>
 <p>Jump to the tool you use: <a href="#tool-claude">Claude</a>, <a href="#tool-claude-code">Claude Code</a>, <a href="#tool-codex">Codex</a>, <a href="#tool-chatgpt">ChatGPT</a>, or <a href="#tool-muse">Muse</a>.</p>
 <h3 id="tool-claude">Claude (claude.ai)</h3>
-<ol><li>Open claude.ai in a desktop browser</li><li>In the connector settings, choose to add a custom connector</li><li>Enter the URL above and add it</li><li>When the Texter screen opens, sign in and allow access</li></ol>
+<p>Texter MCP is listed in Claude's connector directory, so you can add it without typing the URL.</p>
+<ol><li>On claude.ai, open Customize, then Connectors, and search for "Texter"</li><li>Open the "Texter MCP" page and connect with the button shown there</li><li>When the Texter screen opens, sign in and allow access</li></ol>
+<p>You can also open <a href="https://claude.ai/directory/texter-mcp" rel="noopener">the Texter MCP page on Claude</a> directly.</p>
+<p>If you can't add it from the directory, choose to add a custom connector in the connector settings and enter the server URL at the top of Step 1 (https://mcp.texter.work/mcp).</p>
 
-<p>Depending on your plan or settings, this option may not appear. If it doesn't, check Claude's help.</p>
+<p>Depending on your plan or settings, the custom connector option may not appear. If it doesn't, check Claude's help.</p>
 <h3 id="tool-claude-code">Claude Code</h3>
 <p>Run this command in a terminal on your computer.</p>
 <pre class="code">claude mcp add --transport http texter https://mcp.texter.work/mcp</pre>
@@ -1650,7 +1657,7 @@ codex mcp login texter</pre>
 <article><h3>Can I keep using a connection I have used for a long time?</h3><p>Your AI tool may ask you to reconnect. If it does, connect again with the same steps.</p></article>
 <article><h3>What if my iPhone is offline?</h3><p>While your iPhone is offline, the last synced content is read.</p></article>
 <article><h3>Are tools on my computer listed per device?</h3><p>No. Tools on your computer appear as one entry, not one per device.</p></article>
-<p class="note">Last verified 2026-11-12. The ChatGPT and Muse steps are from a session we ran on the real screens that day. Screens and steps can change as each tool updates. Claude, ChatGPT, Codex, and Muse are trademarks of their respective owners.</p>` },
+<p class="note">Last verified 2026-11-13. The ChatGPT and Muse steps are from a session we ran on the real screens on November 12, 2026. Screens and steps can change as each tool updates. Claude, ChatGPT, Codex, and Muse are trademarks of their respective owners.</p>` },
     ],
     ctaTitle: 'Try it in Texter',
     ctaLabel: 'Get Texter',
