@@ -6,7 +6,7 @@ const ORDER = [
   { id: 'files', ja: 'ファイルの文字起こし', en: 'Transcribing files', items: ['import', 'import-service', 'wrong-language', 'cloud-link', 'silence-cut', 'import-limit'] },
   { id: 'speakers', ja: '話者識別・言語・翻訳', en: 'Speakers, languages, and translation', items: ['speaker-diarization', 'languages', 'translate-how'] },
   { id: 'image', ja: '画像とPDF', en: 'Images and PDFs', items: ['ocr-how', 'ocr-accuracy'] },
-  { id: 'ai', ja: '要約・タスク・AIチャット', en: 'Summaries, tasks, and AI chat', items: ['summary', 'action-items', 'ask-notes', 'topic-map', 'ai-title'] },
+  { id: 'ai', ja: '要約・タスク・AIチャット', en: 'Summaries, tasks, and AI chat', items: ['summary', 'action-items', 'ask-notes', 'ai-tools', 'topic-map', 'ai-title'] },
   { id: 'manage', ja: 'ノートの管理と共有', en: 'Managing and sharing notes', items: ['folders', 'export', 'share-choice', 'slack', 'reminder', 'display', 'subtitle-off'] },
   { id: 'premium', ja: '料金・Premium・支払い', en: 'Pricing, Premium, and billing', items: ['price', 'free-limits', 'premium-what', 'platform-diff', 'charge', 'restore', 'billing', 'cancel', 'business'] },
   { id: 'privacy', ja: 'プライバシー・データの扱い', en: 'Privacy and your data', items: ['storage', 'data-sent', 'ai-training'] },
