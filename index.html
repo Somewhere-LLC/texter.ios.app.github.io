@@ -880,7 +880,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <figcaption class="cap">※ 画面はイメージです</figcaption>
       </figure>
       <div class="feats">
-        <article class="feat reveal"><div class="k"><span class="mono">02.1</span><svg class="ico"><use href="#i-lines"/></svg></div><h3>高精度な文字起こしと話者識別</h3><p>Whisper (OpenAI) を含む最新エンジンで文字起こし。句読点も自動で整え、誰の発言かを分けて記録します。</p></article>
+        <article class="feat reveal"><div class="k"><span class="mono">02.1</span><svg class="ico"><use href="#i-lines"/></svg></div><h3>高精度な文字起こしと話者識別</h3><p>Whisper (OpenAI) を含む最新エンジンで文字起こし。句読点も自動で整え、誰の発言かを分けて記録します。録音ファイルの話者識別は、無料でも60分まで使えます。</p></article>
         <article class="feat reveal"><div class="k"><span class="mono">02.2</span><svg class="ico"><use href="#i-spark"/></svg></div><h3>要約と内容まとめ</h3><p>会議・取材・講義など20種のテンプレートで要約。内容まとめは2カラム比較やフローチャートなど、内容に合う形式をAIが選びます。<a href="/guides/interview-transcription-writing/#actual-sample">実際の文字起こし・要約を見る</a></p></article>
         <article class="feat reveal"><div class="k"><span class="mono">02.3</span><svg class="ico"><use href="#i-globe"/></svg></div><h3>99言語の文字起こしと翻訳</h3><p>音声・動画ファイルは99言語の文字起こしに対応。DeepL・Google翻訳と連携し、文字起こしをその場で翻訳できます。</p></article>
       </div>
@@ -1042,6 +1042,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
           <li><svg class="ico"><use href="#i-tick"/></svg>画像文字起こし（5回/日）</li>
           <li><svg class="ico"><use href="#i-tick"/></svg>リアルタイム翻訳</li>
           <li><svg class="ico"><use href="#i-tick"/></svg>ファイルの文字起こし（処理時間の累積枠）</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>録音ファイルの話者識別（音声60分まで）</li>
           <li><svg class="ico"><use href="#i-tick"/></svg>要約・AIチャット（各1日3回）</li>
         </ul>
         <p class="desc"><a href="/pricing/#sixty-minutes">60分の録音を処理する条件</a></p>
@@ -1054,6 +1055,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <p class="desc">月額の対象者には3日間無料トライアル。適用条件・期間は購入画面で確認できます。</p>
         <ul>
           <li><svg class="ico"><use href="#i-tick"/></svg>ファイル文字起こしは月の枠なし（1GB・2時間/件までの方式）</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>話者識別は60分の枠なし。録音しながらも使える</li>
           <li><svg class="ico"><use href="#i-tick"/></svg><span>リアルタイム音声認識 (<span id="rtHours">5</span>時間/月)</span></li>
           <li><svg class="ico"><use href="#i-tick"/></svg><span>Amazon Transcribe (<span id="awsHours">3</span>時間/月)</span></li>
           <li><svg class="ico"><use href="#i-tick"/></svg>「ノートに聞く」AIチャット（すべてのノート対応）</li>
@@ -1076,7 +1078,8 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <ul>
           <li><svg class="ico"><use href="#i-tick"/></svg>ファイル文字起こし専用のチケット</li>
           <li><svg class="ico"><use href="#i-tick"/></svg>残った時間は失効しません</li>
-          <li class="no"><span aria-hidden="true">×</span>話者識別・自動無音カットには使えません</li>
+          <li><svg class="ico"><use href="#i-tick"/></svg>録音ファイルの話者識別にも使えます</li>
+          <li class="no"><span aria-hidden="true">×</span>自動無音カットには使えません</li>
           <li class="no"><span aria-hidden="true">×</span>要約・AIチャットの回数は増えません</li>
         </ul>
         <p class="desc">クラウド文字起こしの無料枠を使い切ったときに、アプリの上限画面で案内されます。Premium加入中など、表示されない条件があります。</p>
@@ -1088,7 +1091,8 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       <dl>
         <div><dt>まず無料で試す</dt><dd>iOS 26以降の対応端末では、広告視聴で端末内文字起こしを利用できます。クラウドの無料枠は処理時間で数える累積制で、音声60分を保証する枠ではありません。</dd></div>
         <div><dt>無料枠を使い切り、文字起こしだけをしたい</dt><dd>チケットが表示される場合は、60分まで1枚 ¥500。要約やAIチャットの枠は増えません。</dd></div>
-        <div><dt>繰り返し取材し、話者識別やAIも使いたい</dt><dd>Premiumでは要約・AIチャットの回数制限がなくなります。ファイルの文字起こしには方式ごとの上限があります。</dd></div>
+        <div><dt>録音ファイルの話者を分けたい</dt><dd>無料でも音声60分まで使えます。枠を使い切ったあとは、チケットでも使えます。</dd></div>
+        <div><dt>枠を気にせず話者を分けたい、繰り返し取材してAIも使いたい</dt><dd>Premiumでは、話者識別に枠がなく、録音しながらも使えます。要約・AIチャットの回数制限もありません。ファイルの文字起こしには方式ごとの上限があります。</dd></div>
       </dl>
       <p>リアルタイム録音の無料枠（1回3分・1日15分）とは別です。<a href="/pricing/#sixty-minutes">対応条件と60分の比較を見る</a></p>
     </section>
