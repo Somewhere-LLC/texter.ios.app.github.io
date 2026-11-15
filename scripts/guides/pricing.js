@@ -12,9 +12,9 @@ const questions = [
   { id: 'without-subscription', q: 'サブスクなしで使えますか？',
     a: `<p>使えます。無料版に加えて、ファイルの文字起こしだけを単発で買える文字起こしチケット（1時間 ${yen(ticket)}、自動更新なし）があります。チケットはWhisperによるファイルの文字起こし専用です。</p>` },
   { id: 'free-minutes', q: '無料で何分使えますか？',
-    a: '<ul><li>リアルタイム文字起こしは、1回3分、1日15分です</li><li>ファイルの文字起こし（Whisper）は、録音の長さではなく処理時間で数えます。目安は音声でおよそ60分以上で、使った分は累積します。話者識別を使うときは60分までです</li><li>音声入力キーボードは、1日3分です</li><li>話者識別（取り込みとやり直し）：音声60分まで。枠は上のファイルの文字起こしと共通</li></ul><p>iOS 26以降なら、端末内で処理するSpeechAnalyzerも無料で選べます。この方式では動画広告が表示されます。</p>' },
+    a: '<ul><li>リアルタイム文字起こしは、1回3分、1日15分です</li><li>ファイルの文字起こし（Whisper）は、録音の長さではなく処理時間で数えます。目安は音声でおよそ60分以上で、使った分は累積します</li><li>音声入力キーボードは、1日3分です</li><li>話者識別（取り込みとやり直し）：音声60分まで。枠は上のファイルの文字起こしと共通</li></ul><p>iOS 26以降なら、端末内で処理するSpeechAnalyzerも無料で選べます。この方式では動画広告が表示されます。</p>' },
   { id: 'free-diarization', q: '無料でも話者識別は使えますか？',
-    a: '<p>はい。録音ファイルを取り込むときと、文字起こしをやり直すときに「話者識別」を選ぶと、無料でも音声60分まで話者ごとに分けられます（枠はファイルの文字起こしと共通）。使い切ったあとは、チケットを買うか、枠のないPremiumで続けてください。録音しながら分けたいときは、Premiumが必要です。</p>' },
+    a: '<p>はい。録音ファイルを取り込むときと、文字起こしをやり直すときに「話者識別」を選ぶと、無料でも音声60分まで話者ごとに分けられます（話者識別は音声の長さで枠を数え、枠はファイルの文字起こしと共通）。使い切ったあとは、チケットを買うか、60分の上限のないPremiumで続けてください。録音しながら分けたいときは、Premiumが必要です。混み合う日は、無料の話者識別をその日は受け付けないことがあります。翌日以降にお試しください。</p>' },
   { id: 'sixty-minutes', q: '60分の録音を処理するには何を買えばいいですか？',
     a: `<p>費用をかけない方法は2つです。iOS 26以降なら、動画広告を見て端末内のSpeechAnalyzerを使えます。Whisperの無料枠が残っていれば、音声ファイル1件の取り込みも無料です。枠が残っていないときは、ちょうど60分までなら文字起こしチケット1枚（${yen(ticket)}）で足ります。60分を超えて120分までの音声は2枚です。120分を超える音声はチケットでは処理できません。Amazon Transcribeを使うと、3時間までなら月額（${yen(monthly)}）、4時間までなら年額（${yen(yearly)}）か追加チャージで処理できます。4時間を超える音声は分割してください。</p>` },
   { id: 'realtime-vs-file', q: 'リアルタイムとファイルの取り込みで、料金や上限は違いますか？',
@@ -30,7 +30,7 @@ const plansTable = `<div class="scroll"><table class="compare plans"><caption>iP
 <tr><th scope="row">リアルタイム文字起こし</th><td>1回3分、1日15分</td><td>無料と同じ</td><td>5時間/月</td><td>10時間/月</td><td>10時間/月</td><td>20時間/月</td></tr>
 <tr><th scope="row">音声入力キーボード</th><td>1日3分</td><td>無料と同じ</td><td>リアルタイムと共通の枠</td><td>リアルタイムと共通の枠</td><td>リアルタイムと共通の枠</td><td>リアルタイムと共通の枠</td></tr>
 <tr><th scope="row">クラウド翻訳</th><td>1入力300字、1日1,000字</td><td>無料と同じ</td><td>1日10万字</td><td>1日10万字</td><td>1日10万字</td><td>1日10万字</td></tr>
-<tr><th scope="row">話者識別（録音ファイル）</th><td>音声60分まで</td><td>使える</td><td>60分の枠なし</td><td>60分の枠なし</td><td>60分の枠なし</td><td>60分の枠なし</td></tr>
+<tr><th scope="row">話者識別（録音ファイル）</th><td>音声60分まで</td><td>使える</td><td>60分の上限なし</td><td>60分の上限なし</td><td>60分の上限なし</td><td>60分の上限なし</td></tr>
 <tr><th scope="row">話者識別（録音しながら、ベータ）</th><td>なし</td><td>なし</td><td>あり</td><td>あり</td><td>あり</td><td>あり</td></tr>
 <tr><th scope="row">クラウド同期（テキストと要約。<a href="#sync-conditions">条件</a>）</th><td>なし</td><td>なし</td><td>条件つき</td><td>条件つき</td><td>条件つき</td><td>条件つき</td></tr>
 <tr><th scope="row">AIツールからノートを読む（<a href="/guides/ai-tools-mcp/">Texter MCP</a>。<a href="#sync-conditions">条件</a>）</th><td>なし</td><td>なし</td><td>条件つき</td><td>条件つき</td><td>条件つき</td><td>条件つき</td></tr>
@@ -51,7 +51,7 @@ const sections = [
 <tr><th scope="row">毎月4時間以上のファイルを処理する</th><td>月額（${yen(monthly)}）。1年続けるなら年額（月あたり約¥733）。1時間ちょうどの音声なら、月3枚（${yen(ticket * 3)}）まではチケットが割安</td></tr>
 <tr><th scope="row">リアルタイムの文字起こしを毎月多く使う</th><td>年額か、10時間・20時間プラン</td></tr>
 <tr><th scope="row">録音ファイルの話者を分けたい</th><td>無料版（音声60分まで）。枠を使い切ったあとはチケット</td></tr>
-<tr><th scope="row">枠を気にせず話者を分けたい、録音しながら分けたい</th><td>Premiumの各プラン</td></tr>
+<tr><th scope="row">60分の上限なしで話者を分けたい、録音しながら分けたい</th><td>Premiumの各プラン</td></tr>
 <tr><th scope="row">3時間を超える音声を1本で処理したい</th><td>Amazon Transcribe（1本4時間まで）。10時間（${yen(tenHours)}/月）、20時間、年額、月額＋追加チャージ</td></tr>
 </tbody></table></div>` },
   { id: 'plans', title: 'プランの比較', html: `${plansTable}
@@ -59,6 +59,7 @@ const sections = [
   { id: 'counting', title: '時間の数え方', html: `<div class="scroll"><table class="compare"><thead><tr><th scope="col">機能</th><th scope="col">数えるもの</th><th scope="col">枠が戻る時期</th></tr></thead><tbody>
 <tr><th scope="row">Whisper（無料）</th><td>サーバーの処理時間</td><td>累積するので、月ごとには戻りません</td></tr>
 <tr><th scope="row">Whisper（チケット）</th><td>音声の長さ（秒単位で切り上げ）</td><td>残りは失効しません</td></tr>
+<tr><th scope="row">話者識別（無料）</th><td>音声の長さ</td><td>ファイルの文字起こし（無料）と共通の枠。累積するので、月ごとには戻りません</td></tr>
 <tr><th scope="row">リアルタイム（無料）</th><td>録音した時間</td><td>毎日</td></tr>
 <tr><th scope="row">リアルタイム（Premium）</th><td>音声の長さ</td><td>毎月</td></tr>
 <tr><th scope="row">Amazon Transcribe</th><td>音声の長さ</td><td>毎月</td></tr>
