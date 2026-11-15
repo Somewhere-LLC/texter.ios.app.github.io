@@ -9,7 +9,7 @@ const ja = [
       { id: 'first-setup', q: '最初に設定しておくとよい項目はありますか？',
         a: '<p>専門用語や社名を使う場合は、「設定」→「音声入力と文字起こし」→「単語登録（専門用語など）」で登録してください。翻訳を使う場合は、同じ画面の「翻訳」で翻訳先の言語とサービスを選べます。</p>' },
       { id: 'free-limits', q: '無料版の主な上限を教えてください。',
-        a: '<ul><li>リアルタイム認識：1回3分、1日15分</li><li>ファイルの文字起こし（Whisper）：処理時間の累積枠（音声でおよそ30〜40分が目安）</li><li>話者識別（録音ファイル）：音声60分まで（ファイルの文字起こしと共通の枠）</li><li>要約：1日3回</li><li>AIチャット：1日3回</li><li>画像の文字起こし：1日5回</li><li>ワードクラウド：1日5回</li></ul><p>録音しながらの話者識別とAmazon TranscribeはPremiumで利用できます。プランごとの比較は<a href="/pricing/">料金と利用条件</a>をご覧ください。上限は変わる場合があります。</p>' },
+        a: '<ul><li>リアルタイム認識：1回3分、1日15分</li><li>ファイルの文字起こし（Whisper）：処理時間の累積枠（音声でおよそ60分以上が目安。話者識別を使うときは60分まで）</li><li>話者識別（録音ファイル）：音声60分まで（ファイルの文字起こしと共通の枠）</li><li>要約：1日3回</li><li>AIチャット：1日3回</li><li>画像の文字起こし：1日5回</li><li>ワードクラウド：1日5回</li></ul><p>録音しながらの話者識別とAmazon TranscribeはPremiumで利用できます。プランごとの比較は<a href="/pricing/">料金と利用条件</a>をご覧ください。上限は変わる場合があります。</p>' },
     ],
   },
   {
@@ -106,7 +106,7 @@ const en = [
       { id: 'first-setup', q: 'Which settings should I check first?',
         a: '<p>If you use technical terms or company names, register them under Settings → Voice Input &amp; Transcription → Word Registration (Technical Terms, etc.). For translation, choose the language and service in Translation Settings on the same screen.</p>' },
       { id: 'free-limits', q: 'What are the main limits on the free plan?',
-        a: '<ul><li>Real-time transcription: 3 minutes per session, 15 minutes a day</li><li>File transcription with Whisper: a cumulative allowance based on processing time (roughly 30 to 40 minutes of audio)</li><li>Speaker labels (imported files): up to 60 minutes of audio, from the same allowance as file transcription</li><li>Summaries: 3 a day</li><li>AI chat: 3 a day</li><li>Image transcription: 5 a day</li><li>Word cloud: 5 a day</li></ul><p>Speaker labels while recording and Amazon Transcribe are available with Premium. Limits can change, so check the plan comparison in the app for the latest details.</p>' },
+        a: '<ul><li>Real-time transcription: 3 minutes per session, 15 minutes a day</li><li>File transcription with Whisper: a cumulative allowance based on processing time (roughly 60 minutes of audio or more; up to 60 minutes when speaker labels are used)</li><li>Speaker labels (imported files): up to 60 minutes of audio, from the same allowance as file transcription</li><li>Summaries: 3 a day</li><li>AI chat: 3 a day</li><li>Image transcription: 5 a day</li><li>Word cloud: 5 a day</li></ul><p>Speaker labels while recording and Amazon Transcribe are available with Premium. Limits can change, so check the plan comparison in the app for the latest details.</p>' },
     ],
   },
   {
