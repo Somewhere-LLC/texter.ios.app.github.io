@@ -312,7 +312,7 @@ if (process.argv.includes('--self-test')) {
     ['hearing page price changed', 'hearing-support/index.html', (s) => s.replaceAll('¥1,800', '¥1,700')],
     ['hearing App Store link loses its campaign', 'hearing-support/index.html', (s) => s.replace('?pt=489812&amp;ct=hearing-end&amp;mt=8"', '"')],
     ['hearing page tracking removed', 'hearing-support/index.html', (s) => s.replace('<script src="../assets/hearing/tracking.js" defer></script>', '')],
-    ['hearing page mail link is accepted', 'hearing-support/index.html', (s) => s.replace('mailto:texter.work.app@gmail.com?subject=', 'mailto:texter.work.app@gmail.com?x=1&subject='), true],
+    ['hearing page mail link is accepted', 'hearing-support/index.html', (s) => s.replace('mailto:support@texter.work?subject=', 'mailto:support@texter.work?x=1&subject='), true],
     ['hearing Google Play link loses its campaign', 'hearing-support/index.html', (s) => s.replace('utm_campaign%3Dhearing', 'utm_campaign%3Dx')],
     ['sitemap drops the hearing page', 'sitemap.xml', (s) => s.replace('https://texter.work/hearing-support/<', 'https://texter.work/hearing/<')],
     ['yen price back on the English LP', 'en/index.html', (s) => s.replace('</body>', '<p>¥600</p></body>')],

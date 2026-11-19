@@ -35,7 +35,7 @@ const ja = {
     { label: 'ホーム', href: '/' },
     { label: '活用ガイド', href: '/guides/' },
     { label: '料金と利用条件', href: '/pricing/' },
-    { label: 'お問い合わせ', href: 'mailto:texter.work.app@gmail.com' },
+    { label: 'お問い合わせ', href: 'mailto:support@texter.work' },
     { label: '利用規約', href: '/terms-of-service/' },
     { label: 'プライバシーポリシー', href: '/privacy-policy/' },
     { label: '特定商取引法に基づく表記', href: '/tokushoho/' },
@@ -127,7 +127,7 @@ const en = {
   ctaBody: 'Texter is free to start. For iPhone / iPad / Apple Watch / Mac (Apple Silicon) / Android.',
   footer: [
     { label: 'Home', href: '/en/' },
-    { label: 'Contact', href: 'mailto:texter.work.app@gmail.com' },
+    { label: 'Contact', href: 'mailto:support@texter.work' },
     { label: 'Terms of Service', href: '/en/terms-of-service/' },
     { label: 'Privacy Policy', href: '/en/privacy-policy/' },
     { label: '日本語', href: '/faq/', hreflang: 'ja' },

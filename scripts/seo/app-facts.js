@@ -8,7 +8,7 @@ module.exports = {
   site: 'https://texter.work',
   org: {
     name: 'Somewhere LLC',
-    email: 'texter.work.app@gmail.com',
+    email: 'support@texter.work',
     address: { addressLocality: 'Kyoto', addressCountry: 'JP' },
   },
   appStoreId: '1482592304',
