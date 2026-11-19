@@ -27,28 +27,29 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:#fff}
 body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-color-adjust:exact;print-color-adjust:exact;font-feature-settings:"palt"}
-.slide{width:1920px;height:1080px;position:relative;overflow:hidden;page-break-after:always;break-after:page;
-  background:repeating-linear-gradient(90deg,transparent 0 159px,rgba(100,130,250,.07) 159px 160px),var(--bg)}
+.slide{width:1920px;height:1080px;position:relative;overflow:hidden;page-break-after:always;break-after:page;background:#fff}
 .slide:last-child{page-break-after:auto;break-after:auto}
-.slide.hero{background:repeating-linear-gradient(90deg,transparent 0 159px,rgba(100,130,250,.09) 159px 160px),linear-gradient(180deg,#F4F8FF 0%,#DCE8FC 100%)}
+.slide.hero{background:#fff}
 
 /* 骨組み */
-.rule{position:absolute;left:120px;right:120px;top:84px;height:1px;background:#CFD7EE}
-.chap{position:absolute;left:120px;top:104px;display:flex;align-items:center;gap:18px}
+.rule{position:absolute;left:120px;right:120px;top:148px;height:1px;background:#CFD7EE}
+.chap{position:absolute;left:120px;top:84px;height:48px;display:flex;align-items:center;gap:18px}
+.cbar{width:6px;height:36px;border-radius:3px;background:var(--accent);flex:none}
+.chap p.topic{font-size:34px;font-weight:700;color:var(--navy);line-height:1}
 .tc{font-family:var(--f-mono);font-size:22px;color:var(--accent);border:1.5px solid var(--accent);border-radius:4px;padding:5px 10px;line-height:1;letter-spacing:.04em}
 .chap p.l{font-family:var(--f-mono);font-size:22px;color:var(--navy);line-height:1;letter-spacing:.04em}
-.brand{position:absolute;right:120px;top:100px;display:flex;align-items:center;gap:12px}
+.brand{position:absolute;right:120px;top:88px;display:flex;align-items:center;gap:12px}
 .brand img{width:40px;height:40px;border-radius:10px}
 .brand p{font-size:26px;font-weight:700;color:var(--navy);line-height:1}
-.ttl{position:absolute;left:120px;right:120px;top:166px;font-size:60px;font-weight:900;color:var(--navy);line-height:1.2;letter-spacing:-.01em}
-.sub{position:absolute;left:124px;right:120px;top:258px;font-size:30px;font-weight:500;color:var(--sub);line-height:1.5}
-.main{position:absolute;left:120px;right:120px;top:350px;bottom:72px}
-.pg{position:absolute;right:120px;bottom:36px;font-family:var(--f-mono);font-size:20px;color:var(--weak);line-height:1;letter-spacing:.06em}
-.src{font-size:22px;color:var(--weak);line-height:1.4}
+.ttl{position:absolute;left:120px;right:120px;top:184px;font-size:56px;font-weight:800;color:var(--navy);line-height:1.2;letter-spacing:.01em}
+.sub{position:absolute;left:124px;right:120px;top:268px;font-size:30px;font-weight:500;color:var(--sub);line-height:1.5}
+.main{position:absolute;left:120px;right:120px;top:360px;bottom:72px}
+.pg{position:absolute;right:120px;bottom:40px;font-size:24px;color:var(--weak);line-height:1}
+.src{font-size:24px;color:var(--weak);line-height:1.4}
 .hl{color:var(--accent)}
 
 /* 部品 */
-.card{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+.card{background:#fff;border:2px solid var(--line);border-radius:16px}
 .ic{width:88px;height:88px;border-radius:22px;background:var(--tint);display:flex;align-items:center;justify-content:center;flex:none}
 .ic svg{width:46px;height:46px;fill:none;stroke:var(--accent);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .ic.dark{background:var(--navy)}
@@ -56,18 +57,18 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
 .num{font-family:var(--f-mono);font-size:26px;color:var(--accent);line-height:1;letter-spacing:.04em}
 .pill{display:flex;align-items:center;justify-content:center;border-radius:999px;background:var(--accent);flex:none}
 .pill p{color:#fff;font-weight:700;line-height:1;white-space:nowrap}
-.phone{border:10px solid #1C2033;border-radius:52px;overflow:hidden;background:#fff;flex:none;box-shadow:0 24px 60px rgba(23,37,90,.18)}
+.phone{border:10px solid #1C2033;border-radius:52px;overflow:hidden;background:#fff;flex:none}
 .phone img{display:block;width:100%}
 
 /* 表紙 */
 .cv-chap{position:absolute;left:120px;top:120px;display:flex;align-items:center;gap:18px}
 .cv-aud{position:absolute;left:120px;top:250px;font-size:30px;font-weight:700;color:var(--deep);line-height:1}
 .cv-h{position:absolute;left:112px;top:310px;font-size:118px;font-weight:900;color:var(--navy);line-height:1.12;letter-spacing:-.02em}
-.cv-s{position:absolute;left:120px;top:610px;font-size:34px;font-weight:500;color:var(--text);line-height:1.6}
-.cv-shots{position:absolute;left:1290px;top:150px;width:520px;height:720px}
+.cv-s{position:absolute;left:120px;top:640px;font-size:34px;font-weight:500;color:var(--text);line-height:1.6}
+.cv-shots{position:absolute;left:1290px;top:170px;width:520px;height:720px}
 .cv-wave{position:absolute;left:120px;right:700px;bottom:150px;height:120px}
 .cv-foot{position:absolute;left:120px;right:120px;bottom:80px;display:flex;justify-content:space-between}
-.cv-foot p{font-family:var(--f-mono);font-size:22px;color:var(--navy);letter-spacing:.06em;line-height:1}
+.cv-foot p{font-size:26px;font-weight:700;color:var(--sub);line-height:1}
 
 /* 課題の行 */
 .rows{display:flex;flex-direction:column;gap:28px;height:100%;justify-content:center}
@@ -85,7 +86,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
 .cmp-h.new p{color:#fff}
 .step{height:112px;display:flex;align-items:center;gap:28px;padding:0 40px}
 .step p.t{font-size:32px;font-weight:700;line-height:1.3;color:var(--navy)}
-.step.old{background:#EEF1F7;border:none;box-shadow:none}
+.step.old{background:#F2F3FA;border:none}
 .step.old p.t{color:var(--sub)}
 .step.old .num{color:#A3A9BD}
 .cmp-mid{display:flex;align-items:center;justify-content:center}
@@ -105,7 +106,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
 .say{display:grid;grid-template-columns:600px 1fr;gap:110px;height:100%;align-items:center}
 .say-l{display:flex;justify-content:center}
 .say-r{display:flex;flex-direction:column;gap:40px}
-.say-r .big{font-size:58px;font-weight:900;color:var(--navy);line-height:1.3;letter-spacing:-.01em}
+.say-r .big{font-size:56px;font-weight:800;color:var(--navy);line-height:1.3;letter-spacing:.01em}
 .say-r .body{font-size:30px;font-weight:500;line-height:1.6}
 .facts{display:flex;flex-direction:column;gap:16px}
 .fact{display:flex;align-items:center;gap:20px}
@@ -122,16 +123,16 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
 .tbl .w{background:var(--warn)}
 
 /* 流れ図 */
-.dflow{display:grid;grid-template-columns:420px 1fr 660px;height:100%;align-items:stretch}
-.dev{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:32px;border:2px solid var(--navy)}
-.dev h3{font-size:38px;font-weight:900;color:var(--navy);line-height:1}
-.dev p{font-size:26px;font-weight:700;line-height:1.6;text-align:center;color:var(--sub)}
+.dflow{display:grid;grid-template-columns:440px 1fr 700px;height:100%;align-items:stretch}
+.dev{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:32px}
+.dev h3{font-size:44px;font-weight:900;color:var(--navy);line-height:1}
+.dev p{font-size:30px;font-weight:700;line-height:1.6;text-align:center;color:var(--sub)}
 .arrows{display:grid;grid-template-rows:1fr 1fr 1fr;gap:28px}
 .arw{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
 .arw p{font-size:26px;font-weight:700;color:var(--accent);line-height:1}
 .dests{display:grid;grid-template-rows:1fr 1fr 1fr;gap:28px}
 .dest{display:flex;align-items:center;gap:28px;padding:0 36px}
-.dest.opt{background:transparent;box-shadow:none;border:2px dashed #B7C3EC}
+.dest.opt{background:#fff;border:2px dashed #B7C3EC}
 .dest h3{font-size:32px;font-weight:700;color:var(--navy);line-height:1.25}
 .dest p{font-size:24px;line-height:1.4;margin-top:6px;color:var(--sub)}
 
@@ -141,15 +142,25 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
 
 /* 導入 */
 .flow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;height:100%}
-.fbox{display:flex;flex-direction:column;justify-content:space-between;padding:48px 48px 44px}
+.fbox{display:flex;flex-direction:column;justify-content:flex-start;gap:36px;padding:44px 48px}
 .fbox h3{font-size:48px;font-weight:900;color:var(--navy);line-height:1}
 .fbox p.d{font-size:30px;font-weight:700;line-height:1.5;color:var(--text)}
 .fbox.last{background:var(--navy);border:none}
 .fbox.last h3,.fbox.last p.d{color:#fff}
 .fbox.last .num{color:#B9C7FF}
-.contact{position:absolute;left:120px;right:120px;bottom:72px;height:110px;display:flex;align-items:center;justify-content:space-between;padding:0 56px}
+.contact{position:absolute;left:120px;right:120px;bottom:84px;height:130px;display:flex;align-items:center;justify-content:space-between;padding:0 56px}
 .contact p.k{font-size:28px;font-weight:700;color:var(--sub);line-height:1}
-.contact p.v{font-family:var(--f-mono);font-size:32px;color:var(--navy);line-height:1;letter-spacing:.02em}
+.contact p.v{font-size:32px;font-weight:700;color:var(--navy);line-height:1}
+.fbox p.d .dd{font-size:24px;font-weight:500;color:var(--sub)}
+.fbox.last p.d .dd{color:#C9D3FF}
+.cmpt .c.yes{color:var(--accent)}
+.cmpt .c.na{color:#A3A9BD;font-weight:500}
+.chk2 p.c{font-size:30px;padding:10px 32px}
+.lbl{font-size:26px;font-weight:800;color:var(--navy);line-height:1;padding-right:18px;border-right:2px solid var(--line)}
+.cmpt .c.vm{color:var(--navy)}
+.quote{margin-top:26px;padding:18px 32px;background:#F2F3FA;border-radius:16px;display:flex;flex-direction:column;gap:8px}
+.quote p.q{font-size:28px;font-weight:700;color:var(--navy);line-height:1.5}
+.quote p.qs{font-size:24px;color:var(--sub);line-height:1}
 
 .tbl p.ctr{justify-content:center;text-align:center}
 .tbl .h p.yr{background:var(--accent)}
@@ -177,37 +188,36 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
 
 <!-- 1 表紙 -->
 <section class="slide hero">
-  <div class="cv-chap"><p class="tc">00:00</p><p class="l" style="font-family:var(--f-mono);font-size:22px;color:var(--navy);letter-spacing:.04em">TEXTER — 法人向け資料</p></div>
+  <div class="cv-chap"><img src="../img/appicon.png" alt="" style="width:56px;height:56px;border-radius:14px"><p style="font-size:30px;font-weight:700;color:var(--navy);line-height:1">Texter 法人向け資料</p></div>
   <p class="cv-aud">社内で使えるかを判断する担当者の方へ</p>
   <h1 class="cv-h">録るだけで、<br>議事録もタスクも。</h1>
-  <p class="cv-s">会議・取材・講義の録音を、<br>文字と要約とやることに変えるiPhoneアプリ</p>
+  <p class="cv-s">会議・取材・講義の録音を、<br>文字と要約とやることに変えるアプリ（iPhone・Android）</p>
   <div class="cv-shots">
     <div class="phone" style="position:absolute;left:0;top:0;width:250px;height:540px"><img src="../assets/guides/ai-minutes/03-summary.webp" alt=""></div>
     <div class="phone" style="position:absolute;left:270px;top:150px;width:250px;height:540px"><img src="../assets/guides/ai-minutes/04-tasks.webp" alt=""></div>
   </div>
-  <svg class="cv-wave" viewBox="0 0 1100 120" preserveAspectRatio="none" aria-hidden="true"><rect x="4" y="46.2" width="6" height="27.5" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="18" y="40.4" width="6" height="39.1" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="32" y="30.8" width="6" height="58.4" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="46" y="31.0" width="6" height="58.1" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="60" y="20.3" width="6" height="79.4" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="74" y="19.3" width="6" height="81.3" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="88" y="22.9" width="6" height="74.2" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="102" y="14.2" width="6" height="91.7" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="116" y="23.7" width="6" height="72.6" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="130" y="19.3" width="6" height="81.5" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="144" y="28.4" width="6" height="63.3" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="158" y="32.3" width="6" height="55.5" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="172" y="34.9" width="6" height="50.3" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="186" y="40.5" width="6" height="39.0" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="200" y="44.3" width="6" height="31.4" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="214" y="38.1" width="6" height="43.8" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="228" y="28.6" width="6" height="62.7" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="242" y="18.3" width="6" height="83.5" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="256" y="18.2" width="6" height="83.7" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="270" y="17.9" width="6" height="84.1" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="284" y="5.7" width="6" height="108.6" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="298" y="22.9" width="6" height="74.3" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="312" y="9.9" width="6" height="100.1" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="326" y="22.7" width="6" height="74.5" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="340" y="28.7" width="6" height="62.6" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="354" y="33.6" width="6" height="52.8" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="368" y="37.8" width="6" height="44.5" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="382" y="43.5" width="6" height="33.0" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="396" y="42.2" width="6" height="35.6" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="410" y="33.6" width="6" height="52.8" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="424" y="26.3" width="6" height="67.5" rx="3" fill="#6482FA" opacity="1"/><rect x="438" y="24.1" width="6" height="71.9" rx="3" fill="#6482FA" opacity="1"/><rect x="452" y="17.3" width="6" height="85.4" rx="3" fill="#6482FA" opacity="1"/><rect x="466" y="23.2" width="6" height="73.6" rx="3" fill="#6482FA" opacity="1"/><rect x="480" y="22.5" width="6" height="75.1" rx="3" fill="#6482FA" opacity="1"/><rect x="494" y="20.2" width="6" height="79.5" rx="3" fill="#6482FA" opacity="1"/><rect x="508" y="14.1" width="6" height="91.8" rx="3" fill="#6482FA" opacity="1"/><rect x="522" y="22.0" width="6" height="76.0" rx="3" fill="#6482FA" opacity="1"/><rect x="536" y="28.2" width="6" height="63.6" rx="3" fill="#6482FA" opacity="1"/><rect x="550" y="31.5" width="6" height="57.0" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="564" y="39.3" width="6" height="41.4" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="578" y="46.1" width="6" height="27.8" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="592" y="37.5" width="6" height="44.9" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="606" y="30.3" width="6" height="59.5" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="620" y="28.8" width="6" height="62.4" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="634" y="19.6" width="6" height="80.8" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="648" y="16.6" width="6" height="86.9" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="662" y="8.0" width="6" height="104.0" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="676" y="10.1" width="6" height="99.9" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="690" y="19.3" width="6" height="81.5" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="704" y="10.5" width="6" height="99.1" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="718" y="27.8" width="6" height="64.4" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="732" y="28.9" width="6" height="62.2" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="746" y="32.7" width="6" height="54.5" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="760" y="42.5" width="6" height="34.9" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="774" y="43.6" width="6" height="32.8" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="788" y="39.0" width="6" height="41.9" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="802" y="28.1" width="6" height="63.8" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="816" y="20.5" width="6" height="79.0" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="830" y="18.1" width="6" height="83.7" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="844" y="9.5" width="6" height="101.0" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="858" y="17.9" width="6" height="84.2" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="872" y="10.9" width="6" height="98.2" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="886" y="14.6" width="6" height="90.8" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="900" y="18.3" width="6" height="83.4" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="914" y="24.8" width="6" height="70.3" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="928" y="27.0" width="6" height="66.1" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="942" y="34.4" width="6" height="51.1" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="956" y="44.1" width="6" height="31.8" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="970" y="40.6" width="6" height="38.8" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="984" y="37.2" width="6" height="45.7" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="998" y="25.4" width="6" height="69.1" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="1012" y="20.1" width="6" height="79.7" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="1026" y="9.9" width="6" height="100.1" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="1040" y="9.6" width="6" height="100.9" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="1054" y="18.3" width="6" height="83.4" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="1068" y="17.0" width="6" height="86.0" rx="3" fill="#9FB4F5" opacity=".75"/><rect x="1082" y="14.4" width="6" height="91.3" rx="3" fill="#9FB4F5" opacity=".75"/></svg>
-  <div class="cv-foot"><p>2026.11 · SOMEWHERE LLC</p><p>TEXTER.WORK</p></div>
+  <div class="cv-foot"><p>2026年11月　Somewhere LLC</p><p>texter.work</p></div>
 </section>
 
 <!-- 2 課題 -->
 <section class="slide">
-  <div class="rule"></div><div class="chap"><p class="tc">04:00</p><p class="l">01 — 課題</p></div>
+  <div class="chap"><span class="cbar"></span><p class="topic">こんなお悩みありませんか？</p></div><div class="rule"></div>
   <div class="brand"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
   <h2 class="ttl">議事録を書くのは、まだ人の手。</h2>
   <p class="sub">録音は残っている。でも、会議のあとにこんな作業が待っている</p>
   <div class="main">
     <div class="rows">
-      <div class="row card"><p class="num">01</p><div class="ic"><svg><use href="#i-play"/></svg></div><p class="t">会議のあと、録音を聞き直して議事録を書いている</p></div>
-      <div class="row card"><p class="num">02</p><div class="ic"><svg><use href="#i-check"/></svg></div><p class="t">誰が何をいつまでにやるか、会議の後で確かめ直す</p></div>
-      <div class="row card"><p class="num">03</p><div class="ic"><svg><use href="#i-chat"/></svg></div><p class="t">先月の会議で決まったことを、録音から探し出せない</p></div>
+      <div class="row card"><p class="num">01</p><p class="t">会議のあと、録音を聞き直して議事録を書いている</p></div>
+      <div class="row card"><p class="num">02</p><p class="t">誰が何をいつまでにやるか、会議の後で確かめ直す</p></div>
+      <div class="row card"><p class="num">03</p><p class="t">先月の会議で決まったことを、録音から探し出せない</p></div>
     </div>
   </div>
-  <p class="pg">02 / 12</p>
+  <p class="pg">02 / 14</p>
 </section>
 
 <!-- 3 比較 -->
 <section class="slide">
-  <div class="rule"></div><div class="chap"><p class="tc">08:00</p><p class="l">02 — 導入後</p></div>
+  <div class="chap"><span class="cbar"></span><p class="topic">今のやり方と導入後</p></div><div class="rule"></div>
   <div class="brand"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
   <h2 class="ttl">聞き直す仕事を、読んで確かめる仕事に。</h2>
   <p class="sub">録音までは同じ。その先の3つの手作業がなくなる</p>
@@ -230,12 +240,12 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       </div>
     </div>
   </div>
-  <p class="pg">03 / 12</p>
+  <p class="pg">03 / 14</p>
 </section>
 
 <!-- 4 実例 -->
 <section class="slide">
-  <div class="rule"></div><div class="chap"><p class="tc">12:00</p><p class="l">03 — 実例</p></div>
+  <div class="chap"><span class="cbar"></span><p class="topic">1回の打ち合わせの例</p></div><div class="rule"></div>
   <div class="brand"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
   <h2 class="ttl">2分4秒の打ち合わせから、<span class="hl">やること4件。</span></h2>
   <p class="sub">新商品の打ち合わせの録音を取り込んだときの、アプリの出力</p>
@@ -243,12 +253,12 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
     <div class="ex">
       <div class="phone" style="width:330px;height:660px"><img src="../assets/guides/ai-minutes/04-tasks.webp" alt=""></div>
       <div class="ex-r">
-        <div class="ex-h"><div class="pill" style="width:150px;height:52px"><p style="font-size:24px">要約</p></div><p>アプリが作った要約から抜粋</p></div>
+        <div class="ex-h"><p class="lbl">要約</p><p>アプリが作った要約から抜粋</p></div>
         <div class="sumbox">
           <p>公開日は11月14日、メールマガジンは同日午前10時に約8,500人へ配信する</p>
           <p>クーポンは15%オフで、期限は11月30日まで</p>
         </div>
-        <div class="ex-h"><div class="pill" style="width:150px;height:52px"><p style="font-size:24px">やること</p></div><p>担当と期限も読み取る</p></div>
+        <div class="ex-h"><p class="lbl">やること</p><p>担当と期限も読み取る</p></div>
         <div class="task card"><p class="n">納品された写真3点を確認する</p><p class="d">11月12日まで</p></div>
         <div class="task card"><p class="n">佐藤さんと一緒に写真を確認する</p><p class="d">担当：私</p></div>
         <div class="task card"><p class="n">メールの原稿を作る</p><p class="d">11月7日まで</p></div>
@@ -256,12 +266,12 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       </div>
     </div>
   </div>
-  <p class="pg">04 / 12</p>
+  <p class="pg">04 / 14</p>
 </section>
 
 <!-- 5 話者 -->
 <section class="slide">
-  <div class="rule"></div><div class="chap"><p class="tc">16:00</p><p class="l">04 — 話者識別</p></div>
+  <div class="chap"><span class="cbar"></span><p class="topic">文字起こしと話者識別</p></div><div class="rule"></div>
   <div class="brand"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
   <h2 class="ttl">誰が何を言ったかまで、文字で残る。</h2>
   <p class="sub">発言を話者ごとに分け、句読点を付けた読める文にする</p>
@@ -278,12 +288,12 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       </div>
     </div>
   </div>
-  <p class="pg">05 / 12</p>
+  <p class="pg">05 / 14</p>
 </section>
 
 <!-- 6 聞く -->
 <section class="slide">
-  <div class="rule"></div><div class="chap"><p class="tc">20:00</p><p class="l">05 — 思い出す</p></div>
+  <div class="chap"><span class="cbar"></span><p class="topic">過去の録音に質問する</p></div><div class="rule"></div>
   <div class="brand"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
   <h2 class="ttl">過去の会話も、Texterに聞ける。</h2>
   <p class="sub">探すかわりに聞く。答えには根拠のノートが付く</p>
@@ -299,41 +309,66 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       </div>
     </div>
   </div>
-  <p class="pg">06 / 12</p>
+  <p class="pg">06 / 14</p>
+</section>
+
+<!-- 6b 比較 -->
+<section class="slide">
+  <div class="chap"><span class="cbar"></span><p class="topic">ほかの手段との違い</p></div><div class="rule"></div>
+  <div class="brand"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
+  <h2 class="ttl">録って読むだけなら、ボイスメモで足りる。</h2>
+  <p class="sub">iPhone標準のボイスメモと比べた。会議を議事録にするところで差が出る</p>
+  <div class="main" style="bottom:56px">
+    <div class="tbl card cmpt">
+      <div class="r h" style="grid-template-columns:520px 1fr 1fr;min-height:72px"><p class="c "></p><p class="c ctr">iPhoneのボイスメモ</p><p class="c ctr yr">Texter</p></div>
+      <div class="r " style="grid-template-columns:520px 1fr 1fr;min-height:56px"><p class="c k">録音して、文字起こしを読む</p><p class="c ctr vm">できる（iPhone 12以降）</p><p class="c ctr yrc yes">できる</p></div>
+      <div class="r " style="grid-template-columns:520px 1fr 1fr;min-height:56px"><p class="c k">要約する</p><p class="c ctr vm">対応機種でApple Intelligence</p><p class="c ctr yrc yes">20種類のテンプレート</p></div>
+      <div class="r " style="grid-template-columns:520px 1fr 1fr;min-height:56px"><p class="c k">誰が話したかを分ける</p><p class="c ctr na">記載なし</p><p class="c ctr yrc yes">できる</p></div>
+      <div class="r " style="grid-template-columns:520px 1fr 1fr;min-height:56px"><p class="c k">担当と期限つきのやることを出す</p><p class="c ctr na">記載なし</p><p class="c ctr yrc yes">できる</p></div>
+      <div class="r " style="grid-template-columns:520px 1fr 1fr;min-height:56px"><p class="c k">複数の録音をまたいで質問する</p><p class="c ctr na">記載なし</p><p class="c ctr yrc yes">できる</p></div>
+      <div class="r " style="grid-template-columns:520px 1fr 1fr;min-height:56px"><p class="c k">費用</p><p class="c ctr ">OS標準</p><p class="c ctr yrc ">無料から。年額で月約733円</p></div>
+    </div>
+    <p class="src" style="margin-top:14px">ボイスメモの欄はAppleのサポート資料（iOS 26版）。資料に書かれていないものは「記載なし」とし、できないとは断定していない</p>
+    <div class="quote" style="margin-top:22px"><p class="q">「ライターです。ここまで性能が良いとは期待以上でした！これまで全て手打ちしていたときに比べて随分助かります。<br>早速一年で契約しました。」</p><p class="qs">App Storeのレビューより（原文のまま）</p></div>
+    
+  </div>
+  <p class="pg">07 / 14</p>
 </section>
 
 <!-- 7 前提 -->
 <section class="slide">
-  <div class="rule"></div><div class="chap"><p class="tc">24:00</p><p class="l">06 — 法人での前提</p></div>
+  <div class="chap"><span class="cbar"></span><p class="topic">法人で使うときの前提</p></div><div class="rule"></div>
   <div class="brand"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
   <h2 class="ttl">使う人が、1人ずつ購入する。</h2>
   <p class="sub">会社で使うときに、先に知っておいてほしいこと</p>
   <div class="main">
     <div class="tbl card">
-      <div class="r" style="grid-template-columns:340px 1fr;height:100px"><p class="c k">購入</p><p class="c">App StoreかGoogle Playで、使う人ごとに購入する</p></div>
-      <div class="r" style="grid-template-columns:340px 1fr;height:110px"><p class="c k">試し方</p><p class="c">無料版のまま使える。月額の初回3日間の無料トライアルは、<br>終わると自動で課金が始まる（対象外の場合あり）</p></div>
-      <div class="r" style="grid-template-columns:340px 1fr;height:110px"><p class="c k">対応端末</p><p class="c">iPhone・iPad・Apple Watch・Android<br>Apple Silicon搭載のMac</p></div>
-      <div class="r" style="grid-template-columns:340px 1fr;height:100px"><p class="c k">データの保存</p><p class="c">録音とノートは各自の端末に保存する</p></div>
-      <div class="r" style="grid-template-columns:340px 1fr;height:100px"><p class="c k">まとめての導入</p><p class="c">契約や支払いの方法は、お問い合わせで個別に相談する</p></div>
-      <div class="r" style="grid-template-columns:340px 1fr;height:100px"><p class="c k">運営</p><p class="c">Somewhere LLC（京都）</p></div>
+      <div class="r h" style="grid-template-columns:340px 1fr;min-height:60px"><p class="c">項目</p><p class="c">内容</p></div>
+      <div class="r" style="grid-template-columns:340px 1fr;min-height:66px"><p class="c k">購入</p><p class="c">App StoreかGoogle Playで、使う人ごとに購入する</p></div>
+      <div class="r" style="grid-template-columns:340px 1fr;min-height:66px"><p class="c k">試し方</p><p class="c">無料版のまま使える。月額の初回3日間の無料トライアルは、<br>終わると自動で課金が始まる（対象外の場合あり）</p></div>
+      <div class="r" style="grid-template-columns:340px 1fr;min-height:66px"><p class="c k">対応端末</p><p class="c">iPhone・iPad・Apple Watch・Android<br>Apple Silicon搭載のMac</p></div>
+      <div class="r" style="grid-template-columns:340px 1fr;min-height:66px"><p class="c k">データの保存</p><p class="c">録音とノートは各自の端末に保存する</p></div>
+      <div class="r" style="grid-template-columns:340px 1fr;min-height:66px"><p class="c k">まとめての導入</p><p class="c">契約や支払いの方法は、お問い合わせで個別に相談する</p></div>
+      <div class="r" style="grid-template-columns:340px 1fr;min-height:66px"><p class="c k">退職・異動のとき</p><p class="c">データは本人の端末にあるので、本人がアプリから削除する</p></div>
+      <div class="r" style="grid-template-columns:340px 1fr;min-height:66px"><p class="c k">録音の前に</p><p class="c">会議の参加者に、録音してよいかを確かめる</p></div>
     </div>
   </div>
-  <p class="pg">07 / 12</p>
+  <p class="pg">08 / 14</p>
 </section>
 
 <!-- 8 データ -->
 <section class="slide">
-  <div class="rule"></div><div class="chap"><p class="tc">28:00</p><p class="l">07 — データの送り先</p></div>
+  <div class="chap"><span class="cbar"></span><p class="topic">データの送り先</p></div><div class="rule"></div>
   <div class="brand"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
   <h2 class="ttl">外に出るのは、使う機能の分だけ。</h2>
   <p class="sub">録音の原本は端末に残る。同期やAIツール連携でも送らない</p>
   <div class="main">
     <div class="dflow">
-      <div class="dev card"><div class="ic dark" style="width:120px;height:120px;border-radius:30px"><svg style="width:62px;height:62px"><use href="#i-phone"/></svg></div><h3>使う人の端末</h3><p>録音・動画の原本<br>文字・要約・やること</p></div>
+      <div class="dev card"><div class="ic dark" style="width:160px;height:160px;border-radius:40px"><svg style="width:84px;height:84px"><use href="#i-phone"/></svg></div><h3>使う人の端末</h3><p>録音・動画の原本<br>文字・要約・やること</p></div>
       <div class="arrows">
-        <div class="arw"><p>音声</p><svg width="200" height="24" viewBox="0 0 200 24"><path d="M4 12h186M180 4l10 8-10 8" fill="none" stroke="#6482FA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div class="arw"><p>テキスト</p><svg width="200" height="24" viewBox="0 0 200 24"><path d="M4 12h186M180 4l10 8-10 8" fill="none" stroke="#6482FA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div class="arw"><p>テキストと要約</p><svg width="200" height="24" viewBox="0 0 200 24"><path d="M4 12h186M180 4l10 8-10 8" fill="none" stroke="#9FB0EE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 9"/></svg></div>
+        <div class="arw"><p>音声</p><svg width="360" height="24" viewBox="0 0 360 24"><path d="M4 12h346M340 4l10 8-10 8" fill="none" stroke="#6482FA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="arw"><p>テキスト</p><svg width="360" height="24" viewBox="0 0 360 24"><path d="M4 12h346M340 4l10 8-10 8" fill="none" stroke="#6482FA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="arw"><p>テキストと要約</p><svg width="360" height="24" viewBox="0 0 360 24"><path d="M4 12h346M340 4l10 8-10 8" fill="none" stroke="#9FB0EE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 9"/></svg></div>
       </div>
       <div class="dests">
         <div class="dest card"><div class="ic"><svg><use href="#i-cloud"/></svg></div><div><h3>クラウドの音声認識</h3><p>文字起こし・話者識別</p></div></div>
@@ -342,60 +377,77 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       </div>
     </div>
   </div>
-  <p class="pg">08 / 12</p>
+  <p class="pg">09 / 14</p>
 </section>
 
 <!-- 9 確認表 -->
 <section class="slide">
-  <div class="rule"></div><div class="chap"><p class="tc">32:00</p><p class="l">08 — 確認表</p></div>
+  <div class="chap"><span class="cbar"></span><p class="topic">情報システムの確認表</p></div><div class="rule"></div>
   <div class="brand"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
-  <h2 class="ttl">情報システムの確認表。</h2>
-  <p class="sub">規程と照らすための答えと出典。注意する点は黄色の行</p>
+  <h2 class="ttl">何を、どこへ送るか。</h2>
+  <p class="sub">社内の規程と照らすための答えと出典（1/2）。注意してほしい点は黄色の行</p>
   <div class="main" style="bottom:56px">
-    <div class="tbl card">
-      <div class="r h" style="grid-template-columns:300px 1fr 190px;min-height:58px"><p class="c">確認すること</p><p class="c">答え</p><p class="c">出典</p></div>
-      <div class="r " style="grid-template-columns:300px 1fr 190px;min-height:60px"><p class="c k">音声を送るか</p><p class="c">ファイル・録音中の文字起こしと話者識別で、クラウドへ送る</p><p class="c k">ガイド</p></div>
-      <div class="r " style="grid-template-columns:300px 1fr 190px;min-height:60px"><p class="c k">テキストを送るか</p><p class="c">要約・AIチャットで送る。初回に送る内容を示して同意を確かめる</p><p class="c k">ポリシー</p></div>
-      <div class="r w" style="grid-template-columns:300px 1fr 190px;min-height:60px"><p class="c k">送信先の国</p><p class="c">AI機能のテキストは米国の事業者へ。音声の送信先の国はポリシーに記載がない</p><p class="c k">ポリシー</p></div>
-      <div class="r " style="grid-template-columns:300px 1fr 190px;min-height:60px"><p class="c k">学習への利用</p><p class="c">AI機能に送ったテキストは、モデル学習に使われない</p><p class="c k">ポリシー</p></div>
-      <div class="r " style="grid-template-columns:300px 1fr 190px;min-height:60px"><p class="c k">保存場所</p><p class="c">録音とノートは端末内。録音の原本は同期でも送らない</p><p class="c k">ポリシー</p></div>
-      <div class="r " style="grid-template-columns:300px 1fr 190px;min-height:60px"><p class="c k">クラウド同期</p><p class="c">初期状態は無効。有料期間の終了後90日はコピーを保持する</p><p class="c k">ポリシー</p></div>
-      <div class="r " style="grid-template-columns:300px 1fr 190px;min-height:60px"><p class="c k">外部への共有</p><p class="c">AIツール連携と公開リンクは初期状態で無効</p><p class="c k">ポリシー</p></div>
-      <div class="r w" style="grid-template-columns:300px 1fr 190px;min-height:60px"><p class="c k">広告</p><p class="c">無料版は広告の事業者と端末の識別子などを共有する</p><p class="c k">ポリシー</p></div>
-      <div class="r w" style="grid-template-columns:300px 1fr 190px;min-height:60px"><p class="c k">端末内だけの処理</p><p class="c">iOS 26以降、ファイルの文字起こしだけ。失敗するとクラウドに切り替わる場合がある</p><p class="c k">ガイド</p></div>
+    <div class="tbl card chk2">
+      <div class="r h" style="grid-template-columns:330px 1fr 210px;min-height:52px"><p class="c">確認すること</p><p class="c">答え</p><p class="c">出典</p></div>
+      <div class="r " style="grid-template-columns:330px 1fr 210px;min-height:92px"><p class="c k">音声を送るか</p><p class="c">ファイル・録音中の文字起こしと話者識別で、クラウドへ送る</p><p class="c k">ガイド</p></div>
+      <div class="r " style="grid-template-columns:330px 1fr 210px;min-height:92px"><p class="c k">テキストを送るか</p><p class="c">要約・AIチャット・やることで送る。初回に送る内容を示して同意を確かめる</p><p class="c k">ポリシー</p></div>
+      <div class="r w" style="grid-template-columns:330px 1fr 210px;min-height:92px"><p class="c k">送信先の国</p><p class="c">AI機能のテキストは米国の事業者へ。音声の送信先の国はポリシーに記載がない</p><p class="c k">ポリシー</p></div>
+      <div class="r " style="grid-template-columns:330px 1fr 210px;min-height:92px"><p class="c k">学習への利用</p><p class="c">AI機能に送ったテキストは、モデル学習に使われない</p><p class="c k">ポリシー</p></div>
+      <div class="r " style="grid-template-columns:330px 1fr 210px;min-height:92px"><p class="c k">保存場所</p><p class="c">録音とノートは端末内。録音の原本は同期でも送らない</p><p class="c k">ポリシー</p></div>
     </div>
     <p class="src" style="margin-top:14px">ポリシー：プライバシーポリシー（2026年11月12日更新）。ガイド：「音声を端末の外に送らずに文字起こしする方法」</p>
   </div>
-  <p class="pg">09 / 12</p>
+  <p class="pg">10 / 14</p>
+</section>
+
+<!-- 9b 確認表 -->
+<section class="slide">
+  <div class="chap"><span class="cbar"></span><p class="topic">情報システムの確認表</p></div><div class="rule"></div>
+  <div class="brand"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
+  <h2 class="ttl">設定と、削除したあと。</h2>
+  <p class="sub">社内の規程と照らすための答えと出典（2/2）。注意してほしい点は黄色の行</p>
+  <div class="main" style="bottom:56px">
+    <div class="tbl card chk2">
+      <div class="r h" style="grid-template-columns:330px 1fr 210px;min-height:52px"><p class="c">確認すること</p><p class="c">答え</p><p class="c">出典</p></div>
+      <div class="r " style="grid-template-columns:330px 1fr 210px;min-height:92px"><p class="c k">クラウド同期</p><p class="c">初期状態は無効。有料期間の終了後90日はコピーを保持する</p><p class="c k">ポリシー</p></div>
+      <div class="r " style="grid-template-columns:330px 1fr 210px;min-height:92px"><p class="c k">外部への共有</p><p class="c">AIツール連携と公開リンクは初期状態で無効</p><p class="c k">ポリシー</p></div>
+      <div class="r w" style="grid-template-columns:330px 1fr 210px;min-height:92px"><p class="c k">広告</p><p class="c">無料版は広告の事業者と端末の識別子などを共有する</p><p class="c k">ポリシー</p></div>
+      <div class="r w" style="grid-template-columns:330px 1fr 210px;min-height:92px"><p class="c k">解析・障害報告</p><p class="c">操作情報・識別子・クラッシュ情報を、分析と障害報告のサービスで集める</p><p class="c k">ポリシー</p></div>
+      <div class="r " style="grid-template-columns:330px 1fr 210px;min-height:92px"><p class="c k">削除したあと</p><p class="c">アカウントやクラウドのノートを消しても、復旧用のバックアップは最長98日残る</p><p class="c k">ポリシー</p></div>
+      <div class="r w" style="grid-template-columns:330px 1fr 210px;min-height:92px"><p class="c k">端末内だけの処理</p><p class="c">iOS 26以降のファイルの文字起こしだけ。失敗時はクラウドへ切り替わる場合あり</p><p class="c k">ガイド</p></div>
+    </div>
+    <p class="src" style="margin-top:14px">ポリシー：プライバシーポリシー（2026年11月12日更新）。ガイド：「音声を端末の外に送らずに文字起こしする方法」</p>
+  </div>
+  <p class="pg">11 / 14</p>
 </section>
 
 <!-- 10 規程別 -->
 <section class="slide">
-  <div class="rule"></div><div class="chap"><p class="tc">36:00</p><p class="l">09 — 規程別の使い方</p></div>
+  <div class="chap"><span class="cbar"></span><p class="topic">規程に合わせた使い方</p></div><div class="rule"></div>
   <div class="brand"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
-  <h2 class="ttl">規程に合わせて、使う機能を決める。</h2>
+  <h2 class="ttl">外に出せる範囲で、使う機能を決める。</h2>
   <p class="sub">外に出せるデータの範囲ごとに、使える機能をまとめた</p>
   <div class="main">
     <div class="tbl card">
-      <div class="r h" style="grid-template-columns:470px 1fr 1fr 1fr;min-height:84px"><p class="c "></p><p class="c ctr">何も外に出せない</p><p class="c ctr">テキストなら出せる</p><p class="c ctr">制限なし</p></div>
-      <div class="r " style="grid-template-columns:470px 1fr 1fr 1fr;min-height:92px"><p class="c k">ファイルの文字起こし</p><p class="c ok ctr">端末内の方式で</p><p class="c ok ctr">端末内の方式で</p><p class="c ok ctr">使える</p></div>
-      <div class="r " style="grid-template-columns:470px 1fr 1fr 1fr;min-height:92px"><p class="c k">録音中の文字起こし（日本語）</p><p class="c ng ctr">使えない</p><p class="c ng ctr">使えない</p><p class="c ok ctr">使える</p></div>
-      <div class="r " style="grid-template-columns:470px 1fr 1fr 1fr;min-height:92px"><p class="c k">話者識別</p><p class="c ng ctr">使えない</p><p class="c ng ctr">使えない</p><p class="c ok ctr">使える</p></div>
-      <div class="r " style="grid-template-columns:470px 1fr 1fr 1fr;min-height:92px"><p class="c k">要約・AIチャット・やること</p><p class="c ng ctr">使えない</p><p class="c ok ctr">使える</p><p class="c ok ctr">使える</p></div>
-      <div class="r " style="grid-template-columns:470px 1fr 1fr 1fr;min-height:92px"><p class="c k">クラウド同期</p><p class="c ng ctr">使えない</p><p class="c ok ctr">使える</p><p class="c ok ctr">使える</p></div>
+      <div class="r h" style="grid-template-columns:470px 1fr 1fr 1fr;min-height:80px"><p class="c "></p><p class="c ctr">音声を外に出せない</p><p class="c ctr">テキストなら出せる</p><p class="c ctr">制限なし</p></div>
+      <div class="r " style="grid-template-columns:470px 1fr 1fr 1fr;min-height:80px"><p class="c k">ファイルの文字起こし</p><p class="c ok ctr">端末内の方式で</p><p class="c ok ctr">端末内の方式で</p><p class="c ok ctr">使える</p></div>
+      <div class="r " style="grid-template-columns:470px 1fr 1fr 1fr;min-height:80px"><p class="c k">録音中の文字起こし（日本語）</p><p class="c ng ctr">使えない</p><p class="c ng ctr">使えない</p><p class="c ok ctr">使える</p></div>
+      <div class="r " style="grid-template-columns:470px 1fr 1fr 1fr;min-height:80px"><p class="c k">話者識別</p><p class="c ng ctr">使えない</p><p class="c ng ctr">使えない</p><p class="c ok ctr">使える</p></div>
+      <div class="r " style="grid-template-columns:470px 1fr 1fr 1fr;min-height:80px"><p class="c k">要約・AIチャット・やること</p><p class="c ng ctr">使えない</p><p class="c ok ctr">使える</p><p class="c ok ctr">使える</p></div>
+      <div class="r " style="grid-template-columns:470px 1fr 1fr 1fr;min-height:80px"><p class="c k">クラウド同期</p><p class="c ng ctr">使えない</p><p class="c ok ctr">使える</p><p class="c ok ctr">使える</p></div>
     </div>
-    <p style="margin-top:26px;font-size:26px;font-weight:700;color:var(--navy);line-height:1.4">端末内の方式はiOS 26以降。どの音声も例外なく外に出さない保証が要る場合は向いていない</p>
+    <p class="src" style="margin-top:16px">端末内の方式はiOS 26以降。失敗するとクラウドに切り替わる場合がある（注意点は前のページ）</p>
   </div>
-  <p class="pg">10 / 12</p>
+  <p class="pg">12 / 14</p>
 </section>
 
 <!-- 11 料金 -->
 <section class="slide">
-  <div class="rule"></div><div class="chap"><p class="tc">40:00</p><p class="l">10 — 料金</p></div>
+  <div class="chap"><span class="cbar"></span><p class="topic">料金のご案内</p></div><div class="rule"></div>
   <div class="brand"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
   <h2 class="ttl">まずは、無料で。</h2>
-  <p class="sub">続けるなら年額で、1人あたり<span style="color:var(--accent);font-weight:700">月約733円</span></p>
-  <div class="main">
+  <p class="sub">続けるなら年額で、1人あたり<span style="color:var(--accent);font-weight:700">月約733円</span><br>長い会議は、録音してから取り込めば月の枠なしで文字にできる（1ファイル2時間まで）</p>
+  <div class="main" style="top:400px">
     <div class="tbl card">
       <div class="r h" style="grid-template-columns:360px 1fr 1fr 1fr 1fr;min-height:72px"><p class="c "></p><p class="c ctr">無料</p><p class="c ctr">チケット</p><p class="c ctr">月額</p><p class="c ctr yr">年額</p></div>
       <div class="r " style="grid-template-columns:360px 1fr 1fr 1fr 1fr;min-height:112px"><p class="c k">料金</p><p class="c ctr"><span class="pr">¥0</span><span class="pu"></span></p><p class="c ctr"><span class="pr">¥500</span><span class="pu">音声1時間</span></p><p class="c ctr"><span class="pr">¥1,800</span><span class="pu">毎月</span></p><p class="c ctr yrc"><span class="pr">¥8,800</span><span class="pu">毎年</span></p></div>
@@ -405,25 +457,26 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       <div class="r " style="grid-template-columns:360px 1fr 1fr 1fr 1fr;min-height:70px"><p class="c k">要約・AIチャット</p><p class="c ctr">1日3回</p><p class="c ctr">無料と同じ</p><p class="c ctr">回数の上限なし</p><p class="c ctr yrc">回数の上限なし</p></div>
       <div class="r " style="grid-template-columns:360px 1fr 1fr 1fr 1fr;min-height:70px"><p class="c k">広告</p><p class="c ctr">あり</p><p class="c ctr">バナーあり</p><p class="c ctr">なし</p><p class="c ctr yrc">なし</p></div>
     </div>
-    <p class="src" style="margin-top:14px">iPhone版・App Store（日本）の価格（2026年11月）。Android版はGoogle Playで確認。10時間・20時間のプランもある</p>
+    <p class="src" style="margin-top:14px">iPhone版・App Store（日本）の価格（2026年11月）。Android版はGoogle Playで確認。録音中の枠が多い10時間（¥3,000/月）・20時間（¥6,000/月）のプランもある</p>
   </div>
-  <p class="pg">11 / 12</p>
+  <p class="pg">13 / 14</p>
 </section>
 
 <!-- 12 はじめる -->
 <section class="slide hero">
-  <div class="rule"></div><div class="chap"><p class="tc">44:00</p><p class="l">11 — はじめる</p></div>
+  <div class="chap"><span class="cbar"></span><p class="topic">導入までの流れ</p></div><div class="rule"></div>
   <div class="brand"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
   <h2 class="ttl">次の会議から、録るだけ。</h2>
   <p class="sub">まず1回、無料版で試してから決める</p>
-  <div class="main" style="bottom:230px">
+  <div class="main" style="bottom:330px">
     <div class="flow">
-      <div class="fbox card"><div style="display:flex;justify-content:space-between;align-items:center"><p class="num">01</p><div class="ic"><svg><use href="#i-mic"/></svg></div></div><div><h3>試す</h3><p class="d" style="margin-top:20px">無料版で、次の会議を1回録る</p></div></div>
-      <div class="fbox card"><div style="display:flex;justify-content:space-between;align-items:center"><p class="num">02</p><div class="ic"><svg><use href="#i-sliders"/></svg></div></div><div><h3>決める</h3><p class="d" style="margin-top:20px">使う機能を、社内の規程と照らす</p></div></div>
-      <div class="fbox card last"><div style="display:flex;justify-content:space-between;align-items:center"><p class="num">03</p><div class="ic" style="background:rgba(255,255,255,.12)"><svg style="stroke:#fff"><use href="#i-check"/></svg></div></div><div><h3>広げる</h3><p class="d" style="margin-top:20px">よく使う人からPremiumにする</p></div></div>
+      <div class="fbox card"><div style="display:flex;justify-content:space-between;align-items:center"><p class="num">01</p></div><div><h3>試す</h3><p class="d" style="margin-top:20px">無料版で、次の会議を1回録る。<br><span class="dd">文字と要約を、どれだけ直すかを見る</span></p></div></div>
+      <div class="fbox card"><div style="display:flex;justify-content:space-between;align-items:center"><p class="num">02</p></div><div><h3>決める</h3><p class="d" style="margin-top:20px">使う機能を、社内の規程と照らす。<br><span class="dd">確認表（10・11ページ）を社内で使える</span></p></div></div>
+      <div class="fbox card last"><div style="display:flex;justify-content:space-between;align-items:center"><p class="num">03</p></div><div><h3>広げる</h3><p class="d" style="margin-top:20px">よく使う人からPremiumにする。<br><span class="dd">録る時間の長い人は、年額か10時間プラン</span></p></div></div>
     </div>
   </div>
   <div class="contact card"><p class="k">お問い合わせ</p><p class="v">texter.work.app@gmail.com</p><p class="v">texter.work</p></div>
+  <p class="pg">14 / 14</p>
 </section>
 
 </body>
