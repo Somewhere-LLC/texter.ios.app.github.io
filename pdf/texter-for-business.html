@@ -169,6 +169,21 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
 .lk{display:flex;align-items:flex-start;gap:28px;padding:32px 36px}
 .lk h3{font-size:32px;font-weight:800;color:var(--navy);line-height:1.2}
 .lk p{font-size:25px;font-weight:700;color:var(--text);line-height:1.55;margin-top:12px}
+.legend{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.legend p{font-size:24px;font-weight:700;color:var(--sub);line-height:1;margin-right:28px}
+.lg{width:28px;height:16px;border-radius:4px;display:inline-block}
+.lg.rec,.bar.rec{background:#D9DDEA}
+.lg.prc,.bar.prc{background:var(--accent)}
+.times{display:flex;flex-direction:column;gap:22px}
+.tr{display:grid;grid-template-columns:300px 1fr;align-items:center}
+.tn{font-size:28px;font-weight:700;color:var(--navy);line-height:1.3}
+.tb{display:flex;flex-direction:column;gap:8px}
+.bl{display:flex;align-items:center;gap:18px}
+.bar{height:30px;border-radius:6px;flex:none}
+.bv{font-size:26px;font-weight:800;color:var(--sub);line-height:1;white-space:nowrap}
+.bv.acc{color:var(--accent)}
+.bv span{font-size:22px;font-weight:700;color:var(--sub)}
+.qual{margin-top:26px;font-size:28px;font-weight:800;color:var(--navy);line-height:1.4}
 
 .tbl p.ctr{justify-content:center;text-align:center}
 .tbl .h p.yr{background:var(--accent)}
@@ -226,7 +241,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       <div class="row card"><p class="num">03</p><p class="t">先月の会議で決まったことを、録音から探し出せない</p></div>
     </div>
   </div>
-  <p class="pg">02 / 15</p>
+  <p class="pg">02 / 16</p>
 </section>
 
 <!-- 3 比較 -->
@@ -254,7 +269,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       </div>
     </div>
   </div>
-  <p class="pg">03 / 15</p>
+  <p class="pg">03 / 16</p>
 </section>
 
 <!-- 4 実例 -->
@@ -280,7 +295,51 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       </div>
     </div>
   </div>
-  <p class="pg">04 / 15</p>
+  <p class="pg">04 / 16</p>
+</section>
+
+<!-- 4b 時間 -->
+<section class="slide">
+  <div class="chap"><span class="cbar"></span><p class="topic">議事録を作る時間</p></div><div class="rule"></div>
+  <div class="brand"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
+  <h2 class="ttl">49分の録音が、<span class="hl">約1分15秒</span>で文字になった。</h2>
+  <p class="sub">録音から議事録を書くには、少なくとも録音と同じ時間の聞き直しが要る。<br>Texterでは、それが数分の待ち時間と、人が確かめて直す時間に置き換わる</p>
+  <div class="main" style="top:400px;bottom:60px">
+    <div class="legend"><span class="lg rec"></span><p>録音の長さ（聞き直すのにかかる時間の目安）</p><span class="lg prc"></span><p>Texterで文字になるまで</p></div>
+    <div class="times">
+      <div class="tr">
+        <p class="tn">公開された会議</p>
+        <div class="tb">
+          <div class="bl"><div class="bar rec" style="width:276px"></div><p class="bv">15分44秒</p></div>
+          <div class="bl"><div class="bar prc" style="width:18px"></div><p class="bv acc">約1分　<span>要約の表示まで・話者識別あり</span></p></div>
+        </div>
+      </div>
+      <div class="tr">
+        <p class="tn">研修の講義（1人）</p>
+        <div class="tb">
+          <div class="bl"><div class="bar rec" style="width:637px"></div><p class="bv">36分19秒</p></div>
+          <div class="bl"><div class="bar prc" style="width:158px"></div><p class="bv acc">約9分</p></div>
+        </div>
+      </div>
+      <div class="tr">
+        <p class="tn">インタビュー（4人）</p>
+        <div class="tb">
+          <div class="bl"><div class="bar rec" style="width:861px"></div><p class="bv">49分5秒</p></div>
+          <div class="bl"><div class="bar prc" style="width:22px"></div><p class="bv acc">約1分15秒　<span>話者識別あり</span></p></div>
+        </div>
+      </div>
+      <div class="tr">
+        <p class="tn">会議</p>
+        <div class="tb">
+          <div class="bl"><div class="bar rec" style="width:1000px"></div><p class="bv">約57分</p></div>
+          <div class="bl"><div class="bar prc" style="width:79px"></div><p class="bv acc">約4分30秒　<span>話者識別あり</span></p></div>
+        </div>
+      </div>
+    </div>
+    <p class="qual">15分44秒の会議では、6つの結論がすべて要約に入り、人が直した箇所は5か所だった</p>
+    <p class="src" style="margin-top:14px">活用ガイドで試した結果（各1回の測定）。講義は2.11.68、インタビューと約57分の会議は開発版2.11.73で測った。<br>端末・版・設定・通信の状態で変わる。確かめて直す時間は測っていない</p>
+  </div>
+  <p class="pg">05 / 16</p>
 </section>
 
 <!-- 5 話者 -->
@@ -302,7 +361,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       </div>
     </div>
   </div>
-  <p class="pg">05 / 15</p>
+  <p class="pg">06 / 16</p>
 </section>
 
 <!-- 6 聞く -->
@@ -323,7 +382,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       </div>
     </div>
   </div>
-  <p class="pg">06 / 15</p>
+  <p class="pg">07 / 16</p>
 </section>
 
 <!-- 6c 端末と連携 -->
@@ -344,9 +403,9 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       <div class="lk card"><div class="ic"><svg><use href="#i-sync"/></svg></div><div><h3>クラウド同期</h3><p>テキストと要約を、同じアカウントの端末で同期する。<br>録音の原本は同期しない</p></div></div>
       <div class="lk card"><div class="ic"><svg><use href="#i-link"/></svg></div><div><h3>AIツールから読む（Texter MCP）</h3><p>ChatGPTやClaudeなどから、<br>選んだノートを読んで質問できる。<br>読み取り専用で、書き換えや削除はできない</p></div></div>
     </div>
-    <p class="src" style="margin-top:18px">同期とAIツール連携は、iPhone版で自分で購入したPremiumが対象（無料トライアル中を含む）。<br>ファミリー共有やチケットだけでは使えない。一部のPremiumでは使えない場合がある</p>
+    <p class="src" style="margin-top:18px">同期とAIツール連携は、iPhone版で、AppleかGoogleのアカウントでサインインし、自分で購入したPremiumが対象（無料トライアル中を含む）。<br>ファミリー共有・紹介特典だけ・チケットだけでは使えない。一部のPremiumでは使えない場合がある</p>
   </div>
-  <p class="pg">07 / 15</p>
+  <p class="pg">08 / 16</p>
 </section>
 
 <!-- 6b 比較 -->
@@ -369,7 +428,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
     <div class="quote" style="margin-top:22px"><p class="q">「ライターです。ここまで性能が良いとは期待以上でした！これまで全て手打ちしていたときに比べて随分助かります。<br>早速一年で契約しました。」</p><p class="qs">App Storeのレビューより（原文のまま）</p></div>
     
   </div>
-  <p class="pg">08 / 15</p>
+  <p class="pg">09 / 16</p>
 </section>
 
 <!-- 7 前提 -->
@@ -390,7 +449,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       <div class="r" style="grid-template-columns:340px 1fr;min-height:66px"><p class="c k">録音の前に</p><p class="c">会議の参加者に、録音してよいかを確かめる</p></div>
     </div>
   </div>
-  <p class="pg">09 / 15</p>
+  <p class="pg">10 / 16</p>
 </section>
 
 <!-- 8 データ -->
@@ -414,7 +473,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       </div>
     </div>
   </div>
-  <p class="pg">10 / 15</p>
+  <p class="pg">11 / 16</p>
 </section>
 
 <!-- 9 確認表 -->
@@ -434,7 +493,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
     </div>
     <p class="src" style="margin-top:14px">ポリシー：プライバシーポリシー（2026年11月12日更新）。ガイド：「音声を端末の外に送らずに文字起こしする方法」</p>
   </div>
-  <p class="pg">11 / 15</p>
+  <p class="pg">12 / 16</p>
 </section>
 
 <!-- 9b 確認表 -->
@@ -455,7 +514,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
     </div>
     <p class="src" style="margin-top:14px">ポリシー：プライバシーポリシー（2026年11月12日更新）。ガイド：「音声を端末の外に送らずに文字起こしする方法」</p>
   </div>
-  <p class="pg">12 / 15</p>
+  <p class="pg">13 / 16</p>
 </section>
 
 <!-- 10 規程別 -->
@@ -475,7 +534,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
     </div>
     <p class="src" style="margin-top:16px">端末内の方式はiOS 26以降。失敗するとクラウドに切り替わる場合がある（注意点は前のページ）</p>
   </div>
-  <p class="pg">13 / 15</p>
+  <p class="pg">14 / 16</p>
 </section>
 
 <!-- 11 料金 -->
@@ -496,7 +555,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
     </div>
     <p class="src" style="margin-top:14px">iPhone版・App Store（日本）の価格（2026年11月）。Android版はGoogle Playで確認。月額で録音中の枠を増やす10時間（¥3,000/月）・20時間（¥6,000/月）もある</p>
   </div>
-  <p class="pg">14 / 15</p>
+  <p class="pg">15 / 16</p>
 </section>
 
 <!-- 12 はじめる -->
@@ -508,12 +567,12 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
   <div class="main" style="bottom:330px">
     <div class="flow">
       <div class="fbox card"><div style="display:flex;justify-content:space-between;align-items:center"><p class="num">01</p></div><div><h3>試す</h3><p class="d" style="margin-top:20px">次の会議を録音して、<br>無料版に取り込む。<br><span class="dd">無料の取り込み枠は、<br>累積で音声60分以上が目安</span></p></div></div>
-      <div class="fbox card"><div style="display:flex;justify-content:space-between;align-items:center"><p class="num">02</p></div><div><h3>決める</h3><p class="d" style="margin-top:20px">使う機能を、社内の規程と照らす。<br><span class="dd">確認表（11・12ページ）を社内で使える</span></p></div></div>
+      <div class="fbox card"><div style="display:flex;justify-content:space-between;align-items:center"><p class="num">02</p></div><div><h3>決める</h3><p class="d" style="margin-top:20px">使う機能を、社内の規程と照らす。<br><span class="dd">確認表（12・13ページ）を社内で使える</span></p></div></div>
       <div class="fbox card last"><div style="display:flex;justify-content:space-between;align-items:center"><p class="num">03</p></div><div><h3>広げる</h3><p class="d" style="margin-top:20px">よく使う人からPremiumにする。<br><span class="dd">録る時間の長い人は、年額か10時間プラン</span></p></div></div>
     </div>
   </div>
   <div class="contact card"><p class="k">お問い合わせ（Somewhere LLC・京都）</p><p class="v">business@texter.work</p><p class="v">texter.work</p></div>
-  <p class="pg">15 / 15</p>
+  <p class="pg">16 / 16</p>
 </section>
 
 </body>
