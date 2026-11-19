@@ -161,6 +161,14 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
 .quote{margin-top:26px;padding:18px 32px;background:#F2F3FA;border-radius:16px;display:flex;flex-direction:column;gap:8px}
 .quote p.q{font-size:28px;font-weight:700;color:var(--navy);line-height:1.5}
 .quote p.qs{font-size:24px;color:var(--sub);line-height:1}
+.devs{display:grid;grid-template-columns:repeat(5,1fr);gap:28px}
+.dv{display:flex;flex-direction:column;align-items:flex-start;gap:16px;padding:30px 30px;min-height:250px}
+.dv h3{font-size:34px;font-weight:800;color:var(--navy);line-height:1}
+.dv p{font-size:24px;font-weight:700;color:var(--sub);line-height:1.5}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:28px}
+.lk{display:flex;align-items:flex-start;gap:28px;padding:32px 36px}
+.lk h3{font-size:32px;font-weight:800;color:var(--navy);line-height:1.2}
+.lk p{font-size:25px;font-weight:700;color:var(--text);line-height:1.55;margin-top:12px}
 
 .tbl p.ctr{justify-content:center;text-align:center}
 .tbl .h p.yr{background:var(--accent)}
@@ -183,6 +191,12 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
     <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 5h3M12 18.5h.01"/></symbol>
     <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></symbol>
     <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z"/></symbol>
+    <symbol id="i-watch" viewBox="0 0 24 24"><rect x="7" y="6" width="10" height="12" rx="3"/><path d="M9 6l.7-3h4.6l.7 3M9 18l.7 3h4.6l.7-3M12 10v2.5l1.5 1"/></symbol>
+    <symbol id="i-tablet" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+    <symbol id="i-laptop" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="10" rx="1.5"/><path d="M3 18.5h18"/></symbol>
+    <symbol id="i-android" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10 19h4"/></symbol>
+    <symbol id="i-sync" viewBox="0 0 24 24"><path d="M19 8a7.5 7.5 0 0 0-13-1.5M5 4v3h3M5 16a7.5 7.5 0 0 0 13 1.5M19 20v-3h-3"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
   </defs>
 </svg>
 
@@ -191,7 +205,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
   <div class="cv-chap"><img src="../img/appicon.png" alt="" style="width:56px;height:56px;border-radius:14px"><p style="font-size:30px;font-weight:700;color:var(--navy);line-height:1">Texter 法人向け資料</p></div>
   <p class="cv-aud">社内で使えるかを判断する担当者の方へ</p>
   <h1 class="cv-h">録るだけで、<br>議事録もタスクも。</h1>
-  <p class="cv-s">会議・取材・講義の録音を、<br>文字と要約とやることに変えるアプリ（iPhone・Android）</p>
+  <p class="cv-s">会議・取材・講義の録音を、<br>文字と要約とやることに変えるアプリ<br>（iPhone・iPad・Apple Watch・Mac・Android）</p>
   <div class="cv-shots">
     <div class="phone" style="position:absolute;left:0;top:0;width:250px;height:540px"><img src="../assets/guides/ai-minutes/03-summary.webp" alt=""></div>
     <div class="phone" style="position:absolute;left:270px;top:150px;width:250px;height:540px"><img src="../assets/guides/ai-minutes/04-tasks.webp" alt=""></div>
@@ -212,7 +226,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       <div class="row card"><p class="num">03</p><p class="t">先月の会議で決まったことを、録音から探し出せない</p></div>
     </div>
   </div>
-  <p class="pg">02 / 14</p>
+  <p class="pg">02 / 15</p>
 </section>
 
 <!-- 3 比較 -->
@@ -240,7 +254,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       </div>
     </div>
   </div>
-  <p class="pg">03 / 14</p>
+  <p class="pg">03 / 15</p>
 </section>
 
 <!-- 4 実例 -->
@@ -266,7 +280,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       </div>
     </div>
   </div>
-  <p class="pg">04 / 14</p>
+  <p class="pg">04 / 15</p>
 </section>
 
 <!-- 5 話者 -->
@@ -288,7 +302,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       </div>
     </div>
   </div>
-  <p class="pg">05 / 14</p>
+  <p class="pg">05 / 15</p>
 </section>
 
 <!-- 6 聞く -->
@@ -309,7 +323,30 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       </div>
     </div>
   </div>
-  <p class="pg">06 / 14</p>
+  <p class="pg">06 / 15</p>
+</section>
+
+<!-- 6c 端末と連携 -->
+<section class="slide">
+  <div class="chap"><span class="cbar"></span><p class="topic">使える端末と連携</p></div><div class="rule"></div>
+  <div class="brand"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
+  <h2 class="ttl">手首から録って、AIツールからも読める。</h2>
+  <p class="sub">iPhone・iPad・Apple Watch・Mac・Androidで使える</p>
+  <div class="main" style="bottom:64px">
+    <div class="devs">
+      <div class="dv card"><div class="ic"><svg><use href="#i-phone"/></svg></div><h3>iPhone</h3><p>iOS 16.0以降</p></div>
+      <div class="dv card"><div class="ic"><svg><use href="#i-tablet"/></svg></div><h3>iPad</h3><p>iPadOS 16.0以降</p></div>
+      <div class="dv card"><div class="ic"><svg><use href="#i-watch"/></svg></div><h3>Apple Watch</h3><p>単体で録音し、<br>あとでiPhoneへ転送</p></div>
+      <div class="dv card"><div class="ic"><svg><use href="#i-laptop"/></svg></div><h3>Mac</h3><p>Apple Silicon搭載。<br>iPad版として動作</p></div>
+      <div class="dv card"><div class="ic"><svg><use href="#i-android"/></svg></div><h3>Android</h3><p>Google Playで配信</p></div>
+    </div>
+    <div class="links">
+      <div class="lk card"><div class="ic"><svg><use href="#i-sync"/></svg></div><div><h3>クラウド同期</h3><p>テキストと要約を、同じアカウントの端末で同期する。<br>録音の原本は同期しない</p></div></div>
+      <div class="lk card"><div class="ic"><svg><use href="#i-link"/></svg></div><div><h3>AIツールから読む（Texter MCP）</h3><p>ChatGPTやClaudeなどから、<br>選んだノートを読んで質問できる。<br>読み取り専用で、書き換えや削除はできない</p></div></div>
+    </div>
+    <p class="src" style="margin-top:18px">同期とAIツール連携は、iPhone版で自分で購入したPremiumが対象（無料トライアル中を含む）。<br>ファミリー共有やチケットだけでは使えない。一部のPremiumでは使えない場合がある</p>
+  </div>
+  <p class="pg">07 / 15</p>
 </section>
 
 <!-- 6b 比較 -->
@@ -332,7 +369,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
     <div class="quote" style="margin-top:22px"><p class="q">「ライターです。ここまで性能が良いとは期待以上でした！これまで全て手打ちしていたときに比べて随分助かります。<br>早速一年で契約しました。」</p><p class="qs">App Storeのレビューより（原文のまま）</p></div>
     
   </div>
-  <p class="pg">07 / 14</p>
+  <p class="pg">08 / 15</p>
 </section>
 
 <!-- 7 前提 -->
@@ -353,7 +390,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       <div class="r" style="grid-template-columns:340px 1fr;min-height:66px"><p class="c k">録音の前に</p><p class="c">会議の参加者に、録音してよいかを確かめる</p></div>
     </div>
   </div>
-  <p class="pg">08 / 14</p>
+  <p class="pg">09 / 15</p>
 </section>
 
 <!-- 8 データ -->
@@ -377,7 +414,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       </div>
     </div>
   </div>
-  <p class="pg">09 / 14</p>
+  <p class="pg">10 / 15</p>
 </section>
 
 <!-- 9 確認表 -->
@@ -397,7 +434,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
     </div>
     <p class="src" style="margin-top:14px">ポリシー：プライバシーポリシー（2026年11月12日更新）。ガイド：「音声を端末の外に送らずに文字起こしする方法」</p>
   </div>
-  <p class="pg">10 / 14</p>
+  <p class="pg">11 / 15</p>
 </section>
 
 <!-- 9b 確認表 -->
@@ -418,7 +455,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
     </div>
     <p class="src" style="margin-top:14px">ポリシー：プライバシーポリシー（2026年11月12日更新）。ガイド：「音声を端末の外に送らずに文字起こしする方法」</p>
   </div>
-  <p class="pg">11 / 14</p>
+  <p class="pg">12 / 15</p>
 </section>
 
 <!-- 10 規程別 -->
@@ -438,7 +475,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
     </div>
     <p class="src" style="margin-top:16px">端末内の方式はiOS 26以降。失敗するとクラウドに切り替わる場合がある（注意点は前のページ）</p>
   </div>
-  <p class="pg">12 / 14</p>
+  <p class="pg">13 / 15</p>
 </section>
 
 <!-- 11 料金 -->
@@ -457,9 +494,9 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       <div class="r " style="grid-template-columns:360px 1fr 1fr 1fr 1fr;min-height:70px"><p class="c k">要約・AIチャット</p><p class="c ctr">1日3回</p><p class="c ctr">無料と同じ</p><p class="c ctr">回数の上限なし</p><p class="c ctr yrc">回数の上限なし</p></div>
       <div class="r " style="grid-template-columns:360px 1fr 1fr 1fr 1fr;min-height:70px"><p class="c k">広告</p><p class="c ctr">あり</p><p class="c ctr">バナーあり</p><p class="c ctr">なし</p><p class="c ctr yrc">なし</p></div>
     </div>
-    <p class="src" style="margin-top:14px">iPhone版・App Store（日本）の価格（2026年11月）。Android版はGoogle Playで確認。月額で録音中の枠を増やす10時間（¥3,000/月）・20時間（¥6,000/月）のプランもある</p>
+    <p class="src" style="margin-top:14px">iPhone版・App Store（日本）の価格（2026年11月）。Android版はGoogle Playで確認。月額で録音中の枠を増やす10時間（¥3,000/月）・20時間（¥6,000/月）もある</p>
   </div>
-  <p class="pg">13 / 14</p>
+  <p class="pg">14 / 15</p>
 </section>
 
 <!-- 12 はじめる -->
@@ -471,12 +508,12 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
   <div class="main" style="bottom:330px">
     <div class="flow">
       <div class="fbox card"><div style="display:flex;justify-content:space-between;align-items:center"><p class="num">01</p></div><div><h3>試す</h3><p class="d" style="margin-top:20px">次の会議を録音して、<br>無料版に取り込む。<br><span class="dd">無料の取り込み枠は、<br>累積で音声60分以上が目安</span></p></div></div>
-      <div class="fbox card"><div style="display:flex;justify-content:space-between;align-items:center"><p class="num">02</p></div><div><h3>決める</h3><p class="d" style="margin-top:20px">使う機能を、社内の規程と照らす。<br><span class="dd">確認表（10・11ページ）を社内で使える</span></p></div></div>
+      <div class="fbox card"><div style="display:flex;justify-content:space-between;align-items:center"><p class="num">02</p></div><div><h3>決める</h3><p class="d" style="margin-top:20px">使う機能を、社内の規程と照らす。<br><span class="dd">確認表（11・12ページ）を社内で使える</span></p></div></div>
       <div class="fbox card last"><div style="display:flex;justify-content:space-between;align-items:center"><p class="num">03</p></div><div><h3>広げる</h3><p class="d" style="margin-top:20px">よく使う人からPremiumにする。<br><span class="dd">録る時間の長い人は、年額か10時間プラン</span></p></div></div>
     </div>
   </div>
   <div class="contact card"><p class="k">お問い合わせ（Somewhere LLC・京都）</p><p class="v">business@texter.work</p><p class="v">texter.work</p></div>
-  <p class="pg">14 / 14</p>
+  <p class="pg">15 / 15</p>
 </section>
 
 </body>
