@@ -15,16 +15,23 @@ async function generatePDF() {
 
   fs.mkdirSync(outputDir, { recursive: true });
 
-  const browser = await puppeteer.launch();
+  // CHROME_PATH があればそれを使う（同梱の Chrome が無い環境向け。macOS では pipe が要る）
+  const chromePath = process.env.CHROME_PATH;
+  const browser = await puppeteer.launch(
+    chromePath ? { executablePath: chromePath, headless: true, pipe: true } : {}
+  );
   try {
     const page = await browser.newPage();
 
     const fileUrl = 'file://' + inputPath;
     await page.goto(fileUrl, { waitUntil: 'networkidle0' });
+    await page.evaluate(async () => { await document.fonts.ready; });
 
+    // 16:9 のスライド（1枚 1920×1080）
     await page.pdf({
       path: outputPath,
-      format: 'A4',
+      width: '1920px',
+      height: '1080px',
       printBackground: true,
       margin: { top: 0, right: 0, bottom: 0, left: 0 },
     });
