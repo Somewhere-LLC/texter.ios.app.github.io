@@ -93,7 +93,7 @@ const ja = [
       { id: 'delete-note', q: 'アプリを削除するとノートはどうなりますか？',
         a: '<p>アプリを削除すると、端末内のノートも消えます。必要なノートは、先に書き出してください。</p>' },
       { id: 'contact', q: '問い合わせはどこからできますか？',
-        a: '<p>「設定」→「ヘルプとサポート」→「お問い合わせ」から送信してください。機能名、再現手順、端末とOSのバージョンを添えると、確認が早くなります。メールは<a href="mailto:texter.work.app@gmail.com">texter.work.app@gmail.com</a>です。</p>' },
+        a: '<p>「設定」→「ヘルプとサポート」→「お問い合わせ」から送信してください。機能名、再現手順、端末とOSのバージョンを添えると、確認が早くなります。メールは<a href="mailto:support@texter.work">support@texter.work</a>です。</p>' },
     ],
   },
 ];
@@ -190,7 +190,7 @@ const en = [
       { id: 'delete-note', q: 'What happens to my notes if I delete the app?',
         a: '<p>Deleting the app also removes the notes on your device. Export anything you need first.</p>' },
       { id: 'contact', q: 'How do I contact support?',
-        a: '<p>Go to Settings → Help &amp; Support → Contact Us. It helps to include the feature name, the steps to reproduce the problem, and your device and OS version. You can also email <a href="mailto:texter.work.app@gmail.com">texter.work.app@gmail.com</a>.</p>' },
+        a: '<p>Go to Settings → Help &amp; Support → Contact Us. It helps to include the feature name, the steps to reproduce the problem, and your device and OS version. You can also email <a href="mailto:support@texter.work">support@texter.work</a>.</p>' },
     ],
   },
 ];
