@@ -2,1302 +2,508 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Texter for Business</title>
+<title>Texter 法人向け資料</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;900&family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet">
 <style>
-  @page { size: A4; margin: 0; }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
-    background: #ffffff;
-    color: #18181b;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-    font-feature-settings: 'palt';
-  }
-
-  .page {
-    width: 210mm;
-    height: 297mm;
-    padding: 22mm 24mm;
-    position: relative;
-    overflow: hidden;
-    background: #ffffff;
-    page-break-after: always;
-  }
-  .page:last-child { page-break-after: avoid; }
-
-  .page-number {
-    position: absolute;
-    bottom: 14mm;
-    right: 24mm;
-    font-family: 'Outfit', sans-serif;
-    font-size: 10px;
-    color: #a1a1aa;
-    font-weight: 500;
-  }
-
-  .page-logo {
-    position: absolute;
-    bottom: 14mm;
-    left: 24mm;
-    font-family: 'Outfit', sans-serif;
-    font-size: 10px;
-    color: #d4d4d8;
-    font-weight: 600;
-    letter-spacing: 1px;
-  }
-
-  /* === Cover === */
-  .cover {
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(145deg, #18181b 0%, #1e1b4b 50%, #312e81 100%);
-    color: #ffffff;
-  }
-
-  .cover-top {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 40mm;
-  }
-
-  .cover-logo {
-    font-family: 'Outfit', sans-serif;
-    font-size: 64px;
-    font-weight: 700;
-    letter-spacing: 5px;
-    margin-bottom: 4px;
-  }
-
-  .cover-for {
-    font-family: 'Outfit', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 48px;
-  }
-
-  .cover-line {
-    width: 48px;
-    height: 2px;
-    background: linear-gradient(90deg, #818cf8, #22d3ee);
-    margin: 0 auto 48px;
-  }
-
-  .cover-tagline {
-    font-size: 26px;
-    font-weight: 600;
-    line-height: 1.6;
-    margin-bottom: 12px;
-  }
-
-  .cover-sub {
-    font-size: 14px;
-    font-weight: 400;
-    color: rgba(255,255,255,0.55);
-    line-height: 1.8;
-  }
-
-  .cover-bottom-bar {
-    padding: 20mm 28mm;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    color: rgba(255,255,255,0.35);
-    font-size: 11px;
-  }
-
-  .cover-bottom-bar a { color: rgba(255,255,255,0.5); text-decoration: none; }
-
-  /* === Section headers === */
-  .section-eyebrow {
-    font-family: 'Outfit', sans-serif;
-    font-size: 10px;
-    font-weight: 700;
-    color: #6366f1;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
-
-  .section-title {
-    font-size: 22px;
-    font-weight: 700;
-    color: #18181b;
-    line-height: 1.4;
-    margin-bottom: 8px;
-  }
-
-  .section-desc {
-    font-size: 13px;
-    color: #52525b;
-    line-height: 1.8;
-    margin-bottom: 24px;
-  }
-
-  .accent-bar {
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, #6366f1, #22d3ee, #6366f1);
-    border-radius: 2px;
-    margin-bottom: 22mm;
-    margin-bottom: 24px;
-  }
-
-  /* === P2: Problem === */
-  .pain-section {
-    background: #fafafa;
-    border-radius: 14px;
-    padding: 24px;
-    margin-bottom: 28px;
-  }
-
-  .pain-title {
-    font-size: 15px;
-    font-weight: 700;
-    color: #18181b;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .pain-title::before {
-    content: '';
-    width: 4px;
-    height: 20px;
-    background: #ef4444;
-    border-radius: 2px;
-  }
-
-  .pain-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 12px;
-  }
-
-  .pain-card {
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 18px 16px;
-    text-align: center;
-    border: 1px solid #f4f4f5;
-  }
-
-  .pain-emoji { font-size: 24px; margin-bottom: 8px; }
-  .pain-text { font-size: 12.5px; color: #52525b; line-height: 1.6; font-weight: 500; }
-  .pain-text strong { color: #ef4444; }
-
-  .solution-section {
-    margin-bottom: 24px;
-  }
-
-  .solution-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: linear-gradient(90deg, #6366f1, #22d3ee);
-    color: #ffffff;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 5px 16px;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    letter-spacing: 0.5px;
-  }
-
-  .flow-row {
-    display: flex;
-    align-items: stretch;
-    gap: 0;
-    margin-bottom: 24px;
-  }
-
-  .flow-step {
-    flex: 1;
-    border: 1.5px solid #e4e4e7;
-    border-radius: 10px;
-    padding: 14px 10px;
-    text-align: center;
-    background: #ffffff;
-    position: relative;
-  }
-
-  .flow-step.accent {
-    border-color: #6366f1;
-    background: linear-gradient(180deg, #f5f3ff 0%, #ffffff 100%);
-  }
-
-  .flow-num {
-    font-family: 'Outfit', sans-serif;
-    font-size: 9px;
-    font-weight: 700;
-    color: #a1a1aa;
-    letter-spacing: 1px;
-    margin-bottom: 6px;
-  }
-
-  .flow-step.accent .flow-num { color: #6366f1; }
-
-  .flow-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 6px;
-  }
-
-  .flow-label {
-    font-size: 12px;
-    font-weight: 600;
-    color: #18181b;
-  }
-
-  .flow-arrow {
-    display: flex;
-    align-items: center;
-    padding: 0 4px;
-    color: #c4b5fd;
-    font-size: 16px;
-    flex-shrink: 0;
-  }
-
-  .platform-row {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-  }
-
-  .platform-tag {
-    background: #f4f4f5;
-    border-radius: 6px;
-    padding: 6px 14px;
-    font-size: 11px;
-    font-weight: 600;
-    color: #52525b;
-  }
-
-  /* === P3: Benefits === */
-  .benefit-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-bottom: 24px;
-  }
-
-  .benefit-card {
-    border-radius: 12px;
-    padding: 22px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .benefit-card.purple {
-    background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
-    border: 1px solid #ddd6fe;
-  }
-  .benefit-card.cyan {
-    background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%);
-    border: 1px solid #a5f3fc;
-  }
-  .benefit-card.green {
-    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-    border: 1px solid #bbf7d0;
-  }
-  .benefit-card.amber {
-    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
-    border: 1px solid #fde68a;
-  }
-
-  .benefit-num {
-    font-family: 'Outfit', sans-serif;
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 1;
-    margin-bottom: 2px;
-  }
-
-  .benefit-card.purple .benefit-num { color: #6366f1; }
-  .benefit-card.cyan .benefit-num { color: #0891b2; }
-  .benefit-card.green .benefit-num { color: #16a34a; }
-  .benefit-card.amber .benefit-num { color: #d97706; }
-
-  .benefit-unit {
-    font-size: 12px;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-
-  .benefit-card.purple .benefit-unit { color: #7c3aed; }
-  .benefit-card.cyan .benefit-unit { color: #0e7490; }
-  .benefit-card.green .benefit-unit { color: #15803d; }
-  .benefit-card.amber .benefit-unit { color: #b45309; }
-
-  .benefit-title {
-    font-size: 14px;
-    font-weight: 700;
-    color: #18181b;
-    margin-bottom: 4px;
-  }
-
-  .benefit-desc {
-    font-size: 11.5px;
-    color: #3f3f46;
-    line-height: 1.6;
-  }
-
-  .proof-bar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0;
-    background: #18181b;
-    border-radius: 12px;
-    padding: 18px 0;
-    color: #ffffff;
-  }
-
-  .proof-item {
-    flex: 1;
-    text-align: center;
-    position: relative;
-  }
-
-  .proof-item + .proof-item::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 4px;
-    bottom: 4px;
-    width: 1px;
-    background: rgba(255,255,255,0.12);
-  }
-
-  .proof-value {
-    font-family: 'Outfit', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-  }
-
-  .proof-label {
-    font-size: 10px;
-    color: rgba(255,255,255,0.5);
-    margin-top: 2px;
-  }
-
-  /* === P4: Features === */
-  .feat-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-  }
-
-  .feat-card {
-    border: 1px solid #e4e4e7;
-    border-radius: 10px;
-    padding: 20px;
-    background: #ffffff;
-    transition: none;
-  }
-
-  .feat-icon-wrap {
-    width: 38px;
-    height: 38px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 12px;
-    background: linear-gradient(135deg, #f5f3ff, #ede9fe);
-  }
-
-  .feat-title {
-    font-size: 14px;
-    font-weight: 700;
-    color: #18181b;
-    margin-bottom: 6px;
-  }
-
-  .feat-desc {
-    font-size: 12px;
-    color: #52525b;
-    line-height: 1.65;
-  }
-
-  /* === P5: AI Viz === */
-  .viz-hero {
-    background: linear-gradient(135deg, #1e1b4b, #312e81);
-    border-radius: 14px;
-    padding: 24px 28px;
-    color: #ffffff;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .viz-hero-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 14px;
-    background: rgba(255,255,255,0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    flex-shrink: 0;
-  }
-
-  .viz-hero-text {
-    flex: 1;
-  }
-
-  .viz-hero-title {
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 4px;
-  }
-
-  .viz-hero-desc {
-    font-size: 12px;
-    color: rgba(255,255,255,0.65);
-    line-height: 1.6;
-  }
-
-  .viz-list {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .viz-item {
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-    border: 1px solid #e4e4e7;
-    border-radius: 12px;
-    padding: 20px;
-    background: #ffffff;
-  }
-
-  .viz-badge {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    background: linear-gradient(135deg, #6366f1, #818cf8);
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Outfit', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    flex-shrink: 0;
-  }
-
-  .viz-body { flex: 1; }
-
-  .viz-title {
-    font-size: 15px;
-    font-weight: 700;
-    color: #18181b;
-    margin-bottom: 2px;
-  }
-
-  .viz-sub {
-    font-size: 11px;
-    color: #6366f1;
-    font-weight: 600;
-    margin-bottom: 6px;
-    letter-spacing: 0.3px;
-  }
-
-  .viz-desc {
-    font-size: 12px;
-    color: #52525b;
-    line-height: 1.7;
-  }
-
-  .viz-export {
-    margin-top: 20px;
-    padding: 14px 20px;
-    background: #fafafa;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .viz-export-label {
-    font-size: 12px;
-    font-weight: 600;
-    color: #71717a;
-  }
-
-  .viz-export-tags {
-    display: flex;
-    gap: 6px;
-  }
-
-  .viz-export-tag {
-    background: #ffffff;
-    border: 1px solid #e4e4e7;
-    border-radius: 4px;
-    padding: 3px 10px;
-    font-size: 10px;
-    font-weight: 600;
-    color: #52525b;
-  }
-
-  /* === P6: Use Cases === */
-  .uc-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-bottom: 22px;
-  }
-
-  .uc-card {
-    border: 1px solid #e4e4e7;
-    border-radius: 10px;
-    padding: 18px;
-    background: #ffffff;
-  }
-
-  .uc-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-
-  .uc-icon.biz { background: #eef2ff; }
-  .uc-icon.media { background: #ecfeff; }
-  .uc-icon.edu { background: #f0fdf4; }
-  .uc-icon.a11y { background: #fef3c7; }
-
-  .uc-title {
-    font-size: 13.5px;
-    font-weight: 700;
-    color: #18181b;
-    margin-bottom: 8px;
-  }
-
-  .uc-list { list-style: none; }
-
-  .uc-list li {
-    font-size: 11.5px;
-    color: #52525b;
-    line-height: 1.7;
-    padding-left: 12px;
-    position: relative;
-    margin-bottom: 2px;
-  }
-
-  .uc-list li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 8px;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: #6366f1;
-  }
-
-  .testimonial-box {
-    background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
-    border: 1px solid #ddd6fe;
-    border-radius: 12px;
-    padding: 20px 24px;
-    position: relative;
-  }
-
-  .testimonial-box::before {
-    content: '"';
-    position: absolute;
-    top: 8px;
-    left: 16px;
-    font-family: 'Outfit', sans-serif;
-    font-size: 48px;
-    color: #c4b5fd;
-    line-height: 1;
-  }
-
-  .testimonial-stars {
-    color: #f59e0b;
-    font-size: 13px;
-    letter-spacing: 1px;
-    margin-bottom: 6px;
-  }
-
-  .testimonial-text {
-    font-size: 13px;
-    color: #3f3f46;
-    line-height: 1.8;
-    margin-bottom: 6px;
-    padding-left: 4px;
-  }
-
-  .testimonial-author {
-    font-size: 11px;
-    color: #a1a1aa;
-    font-weight: 500;
-    padding-left: 4px;
-  }
-
-  /* === P7: Security === */
-  .sec-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-bottom: 24px;
-  }
-
-  .sec-card {
-    border: 1px solid #e4e4e7;
-    border-radius: 10px;
-    padding: 20px;
-    background: #ffffff;
-  }
-
-  .sec-icon-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
-
-  .sec-check {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: #ecfdf5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .sec-check svg { width: 16px; height: 16px; }
-
-  .sec-title {
-    font-size: 14px;
-    font-weight: 700;
-    color: #18181b;
-  }
-
-  .sec-desc {
-    font-size: 12px;
-    color: #52525b;
-    line-height: 1.7;
-  }
-
-  .sec-note {
-    background: #fafafa;
-    border-radius: 10px;
-    padding: 16px 20px;
-    font-size: 12px;
-    color: #71717a;
-    line-height: 1.7;
-  }
-
-  .sec-note a {
-    color: #6366f1;
-    text-decoration: none;
-    font-weight: 500;
-    word-break: break-all;
-  }
-
-  /* === P8: Pricing === */
-  .price-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.1fr 1fr;
-    gap: 12px;
-    margin-bottom: 24px;
-  }
-
-  .price-card {
-    border: 1.5px solid #e4e4e7;
-    border-radius: 12px;
-    padding: 22px 16px;
-    background: #ffffff;
-    position: relative;
-    text-align: center;
-  }
-
-  .price-card.highlight {
-    border-color: #6366f1;
-    background: linear-gradient(180deg, #f5f3ff 0%, #ffffff 40%);
-    transform: scale(1.02);
-  }
-
-  .price-best {
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(90deg, #6366f1, #22d3ee);
-    color: #ffffff;
-    font-size: 10px;
-    font-weight: 700;
-    padding: 3px 14px;
-    border-radius: 12px;
-    white-space: nowrap;
-  }
-
-  .price-name {
-    font-size: 14px;
-    font-weight: 700;
-    color: #18181b;
-    margin-bottom: 8px;
-  }
-
-  .price-amount {
-    font-family: 'Outfit', sans-serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: #18181b;
-    line-height: 1.2;
-  }
-
-  .price-period {
-    font-size: 11px;
-    color: #a1a1aa;
-    margin-bottom: 14px;
-  }
-
-  .price-divider {
-    width: 28px;
-    height: 2px;
-    background: #e4e4e7;
-    margin: 0 auto 12px;
-    border-radius: 1px;
-  }
-
-  .price-card.highlight .price-divider {
-    background: linear-gradient(90deg, #6366f1, #22d3ee);
-  }
-
-  .price-feature-text {
-    font-size: 11.5px;
-    color: #52525b;
-    line-height: 1.6;
-    text-align: left;
-  }
-
-  .price-trial {
-    display: inline-block;
-    margin-top: 12px;
-    background: #f5f3ff;
-    color: #6366f1;
-    font-size: 10px;
-    font-weight: 600;
-    padding: 4px 12px;
-    border-radius: 6px;
-  }
-
-  .cta-box {
-    background: linear-gradient(135deg, #18181b 0%, #1e1b4b 100%);
-    border-radius: 14px;
-    padding: 28px 32px;
-    text-align: center;
-    color: #ffffff;
-  }
-
-  .cta-title {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 6px;
-  }
-
-  .cta-desc {
-    font-size: 13px;
-    color: rgba(255,255,255,0.6);
-    margin-bottom: 18px;
-    line-height: 1.6;
-  }
-
-  .cta-row {
-    display: flex;
-    justify-content: center;
-    gap: 28px;
-  }
-
-  .cta-item {
-    font-size: 12px;
-    color: rgba(255,255,255,0.5);
-  }
-
-  .cta-item a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 600;
-  }
-
-  @media print {
-    body { background: #ffffff; }
-    .page { margin: 0; box-shadow: none; }
-  }
-
-  @media screen {
-    body { background: #d4d4d8; }
-    .page { margin: 20px auto; box-shadow: 0 4px 32px rgba(0,0,0,0.08); }
-  }
+/*
+  構成の約束（natural-slides の規則に合わせる）
+  - 1枚 = <section class="slide">、1920×1080。PDF は scripts/generate-pdf.js で書き出す
+  - 色はクラスで持つ。メインカラー A はアプリと同じ紺 #17255A。段階色は A の15%・45%・100%・暗い紺
+  - 文字は h1〜h3 と p だけ。SVG の中に文字を置かない
+  - 箱・円・列の枠は 6〜9px。細い線は表の区切りとタイトル下のヘアラインだけ
+*/
+:root{
+  --a:#17255A; --a-dark:#0F1840; --a35:#AEB3C5; --a15:#DCDEE6; --a45:#979DB5; --a8:#ECEEF2;
+  --text:#3C3C3C; --sub:#6B6B6B; --weak:#9A9A9A; --frame:#DDDBD5; --line:#A3A5A8;
+  --face:#EEEEEC; --cell:#F5F5F3; --mk:#F9DC72; --hl:#E5B521;
+}
+@page{size:1920px 1080px;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#fff}
+body{font-family:'Montserrat','Noto Sans JP',Arial,sans-serif;color:var(--text);font-weight:500;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.slide{width:1920px;height:1080px;position:relative;overflow:hidden;background:#fff;page-break-after:always;break-after:page}
+.slide:last-child{page-break-after:auto;break-after:auto}
+
+/* 骨組み */
+.bar{position:absolute;left:120px;top:76px;width:8px;height:48px;background:var(--a)}
+.ttl{position:absolute;left:152px;top:70px;font-size:44px;font-weight:700;line-height:60px;color:var(--text);white-space:nowrap}
+.hair{position:absolute;left:120px;right:120px;top:152px;height:1px;background:#E6E4DE}
+.logo{position:absolute;right:120px;top:72px;display:flex;align-items:center;gap:14px}
+.logo img{width:52px;height:52px;border-radius:12px}
+.logo p{font-size:30px;font-weight:700;color:var(--a);line-height:1}
+.pg{position:absolute;right:72px;bottom:40px;font-size:24px;color:var(--weak);line-height:1}
+.lead{position:absolute;left:240px;right:240px;top:196px;text-align:center}
+.lead p{font-size:38px;font-weight:700;line-height:1.5}
+.mk-line{display:inline-block;background:linear-gradient(180deg,transparent 56%,var(--mk) 56%);padding:0 6px}
+.main{position:absolute;left:240px;right:240px;top:360px;bottom:60px}
+.src{font-size:24px;color:var(--weak);line-height:1.4}
+
+/* ピル */
+.pill{display:flex;align-items:center;justify-content:center;border-radius:999px;background:var(--a);flex:none}
+.pill p{color:#fff;font-weight:700;line-height:1;white-space:nowrap;text-align:center}
+.pill-o{background:#fff;border:6px solid var(--a)}
+.pill-o p{color:var(--a)}
+
+/* 番号の円のリスト */
+.nlist{display:flex;flex-direction:column;justify-content:center;gap:56px;height:100%;padding-left:120px}
+.nrow{display:flex;align-items:center;gap:80px}
+.ncirc{width:120px;height:120px;border-radius:60px;border:6px solid var(--a);display:flex;align-items:center;justify-content:center;flex:none}
+.ncirc p{font-size:36px;font-weight:700;color:var(--a);line-height:1}
+.nrow .t{font-size:44px;font-weight:700;line-height:1.35}
+.nrow .t2{font-size:28px;color:var(--sub);margin-top:8px;line-height:1.4}
+
+/* 表紙 */
+.cover-panel{position:absolute;left:0;top:0;bottom:0;width:640px;background:var(--a);display:flex;flex-direction:column;justify-content:space-between;padding:120px 96px}
+.cover-panel img{width:128px;height:128px;border-radius:28px}
+.cover-panel .name{font-size:72px;font-weight:900;color:#fff;line-height:1;margin-top:40px}
+.cover-panel .kind{font-size:36px;font-weight:700;color:#fff;line-height:1.4;margin-top:24px}
+.cover-panel .date{font-size:28px;color:#fff;line-height:1.6}
+.cover-body{position:absolute;left:720px;width:700px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;gap:48px}
+.cover-shots{position:absolute;left:1440px;right:96px;top:150px;bottom:150px;display:flex;gap:32px;align-items:center}
+.phone.crop{height:780px}
+.cover-body h1{font-size:80px;font-weight:900;line-height:1.25;color:var(--text)}
+.cover-body .sub{font-size:38px;font-weight:700;line-height:1.55}
+
+/* スマホの画面 */
+.phone{border:8px solid var(--text);border-radius:44px;overflow:hidden;background:#fff;flex:none}
+.phone img{display:block;width:100%}
+
+/* 比較図 */
+.cmp{display:grid;grid-template-columns:1fr 120px 1fr;height:100%}
+.cmp-col{display:flex;flex-direction:column;gap:0}
+.cmp-h{height:96px;border-radius:20px;display:flex;align-items:center;justify-content:center}
+.cmp-h p{font-size:36px;font-weight:700;line-height:1}
+.cmp-h.old{background:var(--face)}
+.cmp-h.new{background:var(--a)}
+.cmp-h.new p{color:#fff}
+.step{height:104px;border:6px solid var(--frame);border-radius:20px;display:flex;align-items:center;padding:0 40px;gap:28px}
+.step p{font-size:32px;font-weight:700;line-height:1.3}
+.step.new{border-color:var(--a)}
+.step .no{font-family:Montserrat;font-size:30px;font-weight:700;color:var(--weak);flex:none;width:44px}
+.step.new .no{color:var(--a)}
+.down{height:44px;display:flex;justify-content:center;align-items:center}
+.cmp-mid{display:flex;align-items:center;justify-content:center}
+
+/* 工程フロー */
+.flow{display:flex;align-items:stretch;height:100%;gap:0}
+.fbox{flex:1;border-radius:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:36px;padding:40px 16px}
+.fbox h3{font-size:46px;font-weight:900;line-height:1;white-space:nowrap}
+.fbox p{font-size:28px;font-weight:700;line-height:1.45;text-align:center}
+.st1{background:var(--a15)} .st2{background:var(--a45)} .st3{background:var(--a)} .st4{background:var(--a-dark)}
+.st3 h3,.st3 p,.st4 h3,.st4 p{color:#fff}
+.farrow{width:56px;display:flex;align-items:center;justify-content:center;flex:none}
+
+/* 画面＋言い切り */
+.shot-grid{display:flex;align-items:center;justify-content:center;gap:120px;height:100%}
+.shot-col{display:flex;flex-direction:column;align-items:center;gap:28px}
+.cap{font-size:30px;font-weight:700;line-height:1.4;text-align:center}
+
+/* カード */
+.cards{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:40px;height:100%}
+.card{border:6px solid var(--frame);border-radius:28px;display:flex;align-items:center;padding:0 48px;gap:44px}
+.card h3{font-size:40px;font-weight:700;line-height:1.3}
+.card p.d{font-size:30px;line-height:1.5;color:var(--text);margin-top:12px}
+.card .url{font-size:24px;color:var(--weak);line-height:1.3;margin-top:auto;text-align:center}
+
+/* レーン図 */
+.lanes{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;height:620px}
+.lane{border-radius:28px;background:var(--face);display:flex;flex-direction:column;padding:0 0 32px;overflow:hidden}
+.lane-h{height:112px;display:flex;align-items:center;justify-content:center;gap:20px;background:var(--a15)}
+.lane-h.dev{background:var(--a)}
+.lane-h.dev p{color:#fff}
+.lane-h p{font-size:34px;font-weight:700;line-height:1}
+.lane-body{display:flex;flex-direction:column;gap:20px;padding:28px 28px 0}
+.item{background:#fff;border-radius:20px;padding:22px 28px;display:flex;flex-direction:column;gap:6px}
+.item h3{font-size:30px;font-weight:700;line-height:1.3}
+.item p{font-size:26px;color:var(--text);line-height:1.35}
+.under{margin-top:28px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.under .b{font-size:32px;font-weight:700;line-height:1.4}
+
+/* 料金表 */
+.ptable{display:grid;grid-template-columns:330px repeat(4,1fr);gap:6px;font-size:28px}
+.ptable .c{background:var(--cell);display:flex;align-items:center;justify-content:center;text-align:center;padding:14px 16px;min-height:76px;line-height:1.3;font-weight:700}
+.ptable .rh{justify-content:flex-start;text-align:left;background:#fff;padding-left:8px;color:var(--text)}
+.ptable .hd{background:#D9DADF;font-size:30px;min-height:88px}
+.ptable .hd.me{background:var(--a);color:#fff}
+.ptable .me{background:var(--a8)}
+.ptable .price{font-family:Montserrat;font-size:40px;font-weight:700;flex-direction:column;gap:4px}
+.ptable .price span{font-family:'Noto Sans JP';font-size:24px;font-weight:700}
+.ptable .hd.empty{background:#fff}
+
+/* 3版目で足したもの */
+.cover-aud{font-size:30px;font-weight:700;color:var(--a);line-height:1.4}
+.cover-body .mk-line{padding:0 4px}
+.lead .lead-2{margin-top:4px}
+
+/* 実例のページ */
+.ex{display:grid;grid-template-columns:320px 1fr;gap:80px;height:100%;align-items:center}
+.ex-r{display:flex;flex-direction:column;gap:18px}
+.ex-h{display:flex;align-items:center;gap:24px}
+.ex-h p{font-size:30px;font-weight:700;line-height:1}
+.task{border:6px solid var(--frame);border-radius:20px;height:96px;display:flex;align-items:center;justify-content:space-between;padding:0 36px}
+.task p.n{font-size:32px;font-weight:700;line-height:1.2}
+.task p.d{font-size:28px;font-weight:700;color:var(--a);line-height:1;white-space:nowrap}
+.sumbox{background:var(--a8);border-radius:20px;padding:20px 32px;display:flex;flex-direction:column;gap:8px}
+.sumbox p{font-size:26px;white-space:nowrap;line-height:1.45}
+
+/* 画面＋大きな一文 */
+.say{display:grid;grid-template-columns:560px 1fr;gap:120px;height:100%;align-items:center}
+.say-r{display:flex;flex-direction:column;gap:36px}
+.say-r .big{font-size:60px;font-weight:900;line-height:1.35}
+.say-r .body{font-size:32px;font-weight:700;line-height:1.5}
+
+/* 2列の表 */
+.kv{display:grid;grid-template-columns:340px 1fr;gap:6px}
+.kv .k{background:var(--a);color:#fff;font-size:32px;font-weight:700;display:flex;align-items:center;padding:0 40px;min-height:98px;border-radius:0}
+.kv .v{background:var(--cell);font-size:32px;font-weight:700;display:flex;align-items:center;padding:14px 48px;min-height:98px;line-height:1.4}
+
+/* 流れ図 */
+.dflow{display:grid;grid-template-columns:400px 1fr 640px;height:100%;align-items:stretch}
+.dev{border:8px solid var(--a);border-radius:32px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:32px}
+.dev h3{font-size:40px;font-weight:900;color:var(--a);line-height:1}
+.dev p{font-size:28px;font-weight:700;line-height:1.5;text-align:center}
+.arrows{display:grid;grid-template-rows:1fr 1fr 1fr;gap:36px}
+.arw{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.arw p{font-size:30px;font-weight:700;color:var(--a);line-height:1}
+.dests{display:grid;grid-template-rows:1fr 1fr 1fr;gap:36px}
+.dest{border:6px solid var(--frame);border-radius:24px;display:flex;align-items:center;gap:28px;padding:0 32px}
+.dest.opt{border-style:dashed;border-color:var(--a45)}
+.dest h3{font-size:34px;font-weight:700;line-height:1.25}
+.dest p{font-size:26px;line-height:1.4;margin-top:6px}
+
+/* 確認表 */
+.chk{display:grid;grid-template-columns:290px 1fr 170px;gap:5px}
+.chk .c{background:var(--cell);font-size:26px;font-weight:700;display:flex;align-items:center;padding:8px 28px;min-height:60px;line-height:1.3}
+.chk .h{background:#D9DADF;min-height:56px;font-size:26px}
+.chk .k{background:var(--a8)}
+.chk .s{font-size:24px;color:var(--sub);font-weight:500}
+.chk .warn{background:#FFF6D6}
+
+/* 規程別の表 */
+.pol{display:grid;grid-template-columns:450px repeat(3,1fr);gap:6px}
+.pol .c{background:var(--cell);font-size:28px;font-weight:700;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px 20px;min-height:96px;line-height:1.3;white-space:nowrap}
+.pol .rh{background:#fff;justify-content:flex-start;text-align:left;padding-left:8px}
+.pol .hd{background:var(--a);color:#fff;font-size:30px;min-height:96px}
+.pol .hd.e{background:#fff}
+.pol .ok{color:var(--a)}
+.pol .ng{color:var(--weak)}
 </style>
 </head>
 <body>
 
-<!-- ==================== P1: Cover ==================== -->
-<div class="page cover">
-  <div class="cover-top">
-    <div class="cover-logo">Texter</div>
-    <div class="cover-for">for Business</div>
-    <div class="cover-line"></div>
-    <div class="cover-tagline">議事録作成を、ゼロ秒に。</div>
-    <div class="cover-sub">AI音声文字起こし・翻訳・要約・可視化で<br>チームの知識整理を自動化するアプリ</div>
-  </div>
-  <div class="cover-bottom-bar">
-    <div>2026年10月</div>
-    <div><a href="mailto:texter.work.app@gmail.com">texter.work.app@gmail.com</a></div>
-  </div>
-</div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-mic" viewBox="0 0 160 160"><rect x="56" y="18" width="48" height="80" rx="24" fill="#fff" stroke="#3C3C3C" stroke-width="6"/><path d="M38 76a42 42 0 0 0 84 0" fill="none" stroke="#3C3C3C" stroke-width="6" stroke-linecap="round"/><path d="M80 118v24M56 142h48" stroke="#3C3C3C" stroke-width="6" stroke-linecap="round"/><path d="M68 46h24M68 62h24" stroke="#17255A" stroke-width="6" stroke-linecap="round"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 160 160"><path d="M38 18h62l26 26v98H38z" fill="#fff" stroke="#3C3C3C" stroke-width="6" stroke-linejoin="round"/><path d="M100 18v26h26" fill="none" stroke="#3C3C3C" stroke-width="6" stroke-linejoin="round"/><path d="M56 70h48M56 90h48M56 110h32" stroke="#17255A" stroke-width="6" stroke-linecap="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 160 160"><rect x="28" y="22" width="104" height="118" rx="14" fill="#fff" stroke="#3C3C3C" stroke-width="6"/><path d="M46 56l8 8 14-16M46 94l8 8 14-16" fill="none" stroke="#17255A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M82 58h32M82 96h32" stroke="#3C3C3C" stroke-width="6" stroke-linecap="round"/></symbol>
+    <symbol id="i-ask" viewBox="0 0 160 160"><path d="M24 30h112v76H74l-30 26v-26H24z" fill="#fff" stroke="#3C3C3C" stroke-width="6" stroke-linejoin="round"/><circle cx="76" cy="66" r="18" fill="none" stroke="#17255A" stroke-width="6"/><path d="M89 79l14 14" stroke="#17255A" stroke-width="6" stroke-linecap="round"/></symbol>
+    <symbol id="i-people" viewBox="0 0 160 160"><circle cx="56" cy="54" r="20" fill="#fff" stroke="#3C3C3C" stroke-width="6"/><circle cx="106" cy="54" r="20" fill="#fff" stroke="#3C3C3C" stroke-width="6"/><path d="M22 128c0-22 15-36 34-36s34 14 34 36z" fill="#fff" stroke="#3C3C3C" stroke-width="6" stroke-linejoin="round"/><path d="M90 104c5-8 10-12 16-12 19 0 34 14 34 36H96" fill="#fff" stroke="#3C3C3C" stroke-width="6" stroke-linejoin="round"/><path d="M48 112h16" stroke="#17255A" stroke-width="6" stroke-linecap="round"/></symbol>
+    <symbol id="i-note" viewBox="0 0 160 160"><rect x="30" y="20" width="76" height="120" rx="10" fill="#fff" stroke="#3C3C3C" stroke-width="6"/><path d="M48 50h40M48 70h40M48 90h24" stroke="#17255A" stroke-width="6" stroke-linecap="round"/><rect x="100" y="56" width="30" height="50" rx="15" fill="#fff" stroke="#3C3C3C" stroke-width="6"/><path d="M92 96a23 23 0 0 0 46 0M115 119v16" fill="none" stroke="#3C3C3C" stroke-width="6" stroke-linecap="round"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 160 160"><path d="M80 30l64 30-64 30-64-30z" fill="#fff" stroke="#3C3C3C" stroke-width="6" stroke-linejoin="round"/><path d="M46 76v34c0 10 16 20 34 20s34-10 34-20V76" fill="#fff" stroke="#3C3C3C" stroke-width="6" stroke-linejoin="round"/><path d="M136 64v40" stroke="#17255A" stroke-width="6" stroke-linecap="round"/><circle cx="136" cy="110" r="7" fill="#17255A"/></symbol>
+    <symbol id="i-caption" viewBox="0 0 160 160"><rect x="18" y="32" width="124" height="96" rx="14" fill="#fff" stroke="#3C3C3C" stroke-width="6"/><path d="M38 92h52M100 92h22M38 108h30M78 108h44" stroke="#17255A" stroke-width="6" stroke-linecap="round"/><path d="M60 54l18 12-18 12z" fill="#3C3C3C"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 160 160"><rect x="44" y="12" width="72" height="136" rx="16" fill="#fff" stroke="#3C3C3C" stroke-width="6"/><path d="M70 28h20" stroke="#3C3C3C" stroke-width="6" stroke-linecap="round"/><path d="M62 80v0M72 70v20M82 62v36M92 72v16M102 78v4" stroke="#17255A" stroke-width="6" stroke-linecap="round"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 160 160"><path d="M46 116a26 26 0 0 1-2-52 36 36 0 0 1 70-6 28 28 0 0 1 4 58z" fill="#fff" stroke="#3C3C3C" stroke-width="6" stroke-linejoin="round"/><path d="M80 104V74M68 86l12-12 12 12" fill="none" stroke="#17255A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-toggle" viewBox="0 0 160 160"><rect x="20" y="52" width="120" height="56" rx="28" fill="#fff" stroke="#3C3C3C" stroke-width="6"/><circle cx="112" cy="80" r="18" fill="#17255A"/></symbol>
+    <symbol id="i-down" viewBox="0 0 40 40"><path d="M8 12l12 14 12-14" fill="none" stroke="#A3A5A8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-right" viewBox="0 0 40 40"><path d="M12 6l16 14-16 14" fill="none" stroke="#A3A5A8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
 
-<!-- ==================== P2: Problem → Solution ==================== -->
-<div class="page">
-  <div class="accent-bar"></div>
-  <div class="section-eyebrow">Problem → Solution</div>
-  <div class="section-title">こんな課題、ありませんか？</div>
+<!-- 1 表紙 -->
+<section class="slide">
+  <div class="cover-panel">
+    <div>
+      <img src="../img/appicon.png" alt="">
+      <p class="name">Texter</p>
+      <p class="kind">法人向け資料</p>
+    </div>
+    <div>
+      <p class="date">2026年11月</p>
+      <p class="date">Somewhere LLC</p>
+    </div>
+  </div>
+  <div class="cover-body">
+    <p class="cover-aud">社内で使えるかを判断する担当者の方へ</p>
+    <h1>録るだけで、<br><span class="mk-line">議事録もタスクも</span></h1>
+    <p class="sub">会議・取材・講義の録音を、<br>文字と要約とやることに<br>変えるiPhoneアプリ</p>
+  </div>
+  <div class="cover-shots">
+    <div class="phone crop" style="width:220px;height:476px;align-self:flex-start"><img src="../assets/guides/ai-minutes/03-summary.webp" alt=""></div>
+    <div class="phone crop" style="width:220px;height:476px;align-self:flex-end"><img src="../assets/guides/ai-minutes/04-tasks.webp" alt=""></div>
+  </div>
+</section>
 
-  <div class="pain-section">
-    <div class="pain-title">よくある課題</div>
-    <div class="pain-grid">
-      <div class="pain-card">
-        <div class="pain-emoji">⏱️</div>
-        <div class="pain-text">会議のたびに<br>議事録作成で<br><strong>30分以上</strong></div>
+<!-- 2 課題 -->
+<section class="slide">
+  <div class="bar"></div><p class="ttl">こんなお悩みありませんか？</p><div class="hair"></div>
+  <div class="logo"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
+  <div class="lead"><p>録音はある。議事録を書くのは、まだ人の手</p></div>
+  <div class="main">
+    <div class="nlist">
+      <div class="nrow"><div class="ncirc"><p>01</p></div><p class="t">会議のあと、録音を聞き直して議事録を書いている</p></div>
+      <div class="nrow"><div class="ncirc"><p>02</p></div><p class="t">誰が何をいつまでにやるか、会議の後で確かめ直す</p></div>
+      <div class="nrow"><div class="ncirc"><p>03</p></div><p class="t">先月の会議で決まったことを、録音から探し出せない</p></div>
+    </div>
+  </div>
+  <p class="pg">2</p>
+</section>
+
+<!-- 3 比較 -->
+<section class="slide">
+  <div class="bar"></div><p class="ttl">今のやり方と導入後</p><div class="hair"></div>
+  <div class="logo"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
+  <div class="lead"><p>聞き直して書く仕事を、読んで確かめる仕事に変える</p></div>
+  <div class="main">
+    <div class="cmp">
+      <div class="cmp-col">
+        <div class="cmp-h old"><p>今のやり方</p></div>
+        <div class="down"><svg width="40" height="40"><use href="#i-down"/></svg></div>
+        <div class="step"><p class="no">01</p><p>会議を録音する</p></div>
+        <div class="down"><svg width="40" height="40"><use href="#i-down"/></svg></div>
+        <div class="step"><p class="no">02</p><p>録音を頭から聞き直す</p></div>
+        <div class="down"><svg width="40" height="40"><use href="#i-down"/></svg></div>
+        <div class="step"><p class="no">03</p><p>議事録を手で書き起こす</p></div>
+        <div class="down"><svg width="40" height="40"><use href="#i-down"/></svg></div>
+        <div class="step"><p class="no">04</p><p>やることを拾い出して連絡する</p></div>
       </div>
-      <div class="pain-card">
-        <div class="pain-emoji">🌍</div>
-        <div class="pain-text">多言語対応が<br>追いつかない</div>
-      </div>
-      <div class="pain-card">
-        <div class="pain-emoji">📁</div>
-        <div class="pain-text">録音データが<br>活用されないまま<br>埋もれている</div>
+      <div class="cmp-mid"><svg width="72" height="72" viewBox="0 0 40 40"><path d="M12 6l16 14-16 14" fill="none" stroke="#17255A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="cmp-col">
+        <div class="cmp-h new"><p>Texterを使うと</p></div>
+        <div class="down"><svg width="40" height="40"><use href="#i-down"/></svg></div>
+        <div class="step new"><p class="no">01</p><p>会議を録音する</p></div>
+        <div class="down"><svg width="40" height="40"><use href="#i-down"/></svg></div>
+        <div class="step new"><p class="no">02</p><p>話者ごとに分かれた文字が残る</p></div>
+        <div class="down"><svg width="40" height="40"><use href="#i-down"/></svg></div>
+        <div class="step new"><p class="no">03</p><p>要約とやることができる</p></div>
+        <div class="down"><svg width="40" height="40"><use href="#i-down"/></svg></div>
+        <div class="step new"><p class="no">04</p><p>人が確かめて、共有する</p></div>
       </div>
     </div>
   </div>
+  <p class="pg">3</p>
+</section>
 
-  <div class="solution-section">
-    <div class="solution-badge">Texterが解決します</div>
-    <div class="flow-row">
-      <div class="flow-step">
-        <div class="flow-num">STEP 1</div>
-        <div class="flow-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+<!-- 4 実例 -->
+<section class="slide">
+  <div class="bar"></div><p class="ttl">1回の打ち合わせの例</p><div class="hair"></div>
+  <div class="logo"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
+  <div class="lead"><p>2分4秒の打ち合わせの録音から</p><p class="lead-2"><span class="mk-line">要約と、やること4件ができた</span></p></div>
+  <div class="main" style="top:370px;bottom:50px">
+    <div class="ex">
+      <div class="phone crop" style="width:320px;height:640px"><img src="../assets/guides/ai-minutes/04-tasks.webp" alt=""></div>
+      <div class="ex-r">
+        <div class="ex-h"><div class="pill" style="width:180px;height:62px"><p style="font-size:28px">要約</p></div><p>アプリが作った要約から抜粋</p></div>
+        <div class="sumbox">
+          <p>公開日は11月14日、メールマガジンは同日午前10時に約8,500人へ配信する</p>
+          <p>クーポンは15%オフで、期限は11月30日まで</p>
         </div>
-        <div class="flow-label">話す・録音</div>
-      </div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-step accent">
-        <div class="flow-num">STEP 2</div>
-        <div class="flow-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        <div class="ex-h" style="margin-top:8px"><div class="pill" style="width:180px;height:62px"><p style="font-size:28px">やること</p></div><p>担当と期限も読み取る</p></div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="task" style="height:80px"><p class="n">納品された写真3点を確認する</p><p class="d">11月12日まで</p></div>
+          <div class="task" style="height:80px"><p class="n">佐藤さんと一緒に写真を確認する</p><p class="d">担当：私</p></div>
+          <div class="task" style="height:80px"><p class="n">メールの原稿を作る</p><p class="d">11月7日まで</p></div>
+          <div class="task" style="height:80px"><p class="n">山田さんに納期の確認メールを送る</p><p class="d">今日中に</p></div>
         </div>
-        <div class="flow-label">AIがテキスト化</div>
-      </div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-step accent">
-        <div class="flow-num">STEP 3</div>
-        <div class="flow-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        </div>
-        <div class="flow-label">要約・可視化</div>
-      </div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-step">
-        <div class="flow-num">STEP 4</div>
-        <div class="flow-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
-        </div>
-        <div class="flow-label">共有・活用</div>
       </div>
     </div>
   </div>
+  <p class="pg">4</p>
+</section>
 
-  <div class="platform-row">
-    <div class="platform-tag">iOS</div>
-    <div class="platform-tag">iPadOS</div>
-    <div class="platform-tag">watchOS</div>
-    <div class="platform-tag">Android</div>
-  </div>
-
-  <div class="page-logo">Texter</div>
-  <div class="page-number">2</div>
-</div>
-
-<!-- ==================== P3: Benefits ==================== -->
-<div class="page">
-  <div class="accent-bar"></div>
-  <div class="section-eyebrow">Benefits</div>
-  <div class="section-title">導入で得られる効果</div>
-  <div class="section-desc">Texterは「文字起こしツール」ではなく「知識整理のパートナー」。録って、可視化して、構造化。</div>
-
-  <div class="benefit-grid">
-    <div class="benefit-card purple">
-      <div class="benefit-num">90%↓</div>
-      <div class="benefit-unit">議事録作成時間</div>
-      <div class="benefit-title">書き起こし作業の自動化</div>
-      <div class="benefit-desc">1時間の会議に45分かけていた書き起こしが、録音ボタンひとつで完了。</div>
-    </div>
-    <div class="benefit-card cyan">
-      <div class="benefit-num">99</div>
-      <div class="benefit-unit">言語の文字起こし</div>
-      <div class="benefit-title">多言語コミュニケーション</div>
-      <div class="benefit-desc">リアルタイム翻訳で、グローバルチームの議事録も一元管理。</div>
-    </div>
-    <div class="benefit-card green">
-      <div class="benefit-num">3分</div>
-      <div class="benefit-unit">で全体像を把握</div>
-      <div class="benefit-title">AIが会議を構造化</div>
-      <div class="benefit-desc">話題マップで2時間の会議を俯瞰。トピックまとめで構造化レポートを自動生成。</div>
-    </div>
-    <div class="benefit-card amber">
-      <div class="benefit-num">¥0</div>
-      <div class="benefit-unit">から始められる</div>
-      <div class="benefit-title">リスクゼロで導入</div>
-      <div class="benefit-desc">無料プランで即日利用開始。効果を確認してからアップグレード可能。</div>
-    </div>
-  </div>
-
-  <div class="proof-bar">
-    <div class="proof-item">
-      <div class="proof-value">★ 4.1</div>
-      <div class="proof-label">App Store 評価</div>
-    </div>
-    <div class="proof-item">
-      <div class="proof-value">50,000+</div>
-      <div class="proof-label">ダウンロード</div>
-    </div>
-    <div class="proof-item">
-      <div class="proof-value">4+</div>
-      <div class="proof-label">AIエンジン搭載</div>
-    </div>
-    <div class="proof-item">
-      <div class="proof-value">4</div>
-      <div class="proof-label">プラットフォーム</div>
-    </div>
-  </div>
-
-  <div class="page-logo">Texter</div>
-  <div class="page-number">3</div>
-</div>
-
-<!-- ==================== P4: Key Features ==================== -->
-<div class="page">
-  <div class="accent-bar"></div>
-  <div class="section-eyebrow">Features</div>
-  <div class="section-title">主要機能</div>
-  <div class="section-desc">用途に応じて最適なAIエンジンを選択。録音から共有まで一気通貫で対応します。</div>
-
-  <div class="feat-grid">
-    <div class="feat-card">
-      <div class="feat-icon-wrap">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
-      </div>
-      <div class="feat-title">AI音声文字起こし</div>
-      <div class="feat-desc">複数の音声認識エンジンから、用途に合わせて選べます。句読点も自動挿入。</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon-wrap">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-      </div>
-      <div class="feat-title">リアルタイム翻訳</div>
-      <div class="feat-desc">DeepL / Google翻訳に対応。99言語の文字起こしに対応し、文字起こしと同時に翻訳を実行。</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon-wrap">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-      </div>
-      <div class="feat-title">画像・動画OCR</div>
-      <div class="feat-desc">撮影した資料やホワイトボードをテキストデータに変換。動画ファイルからの音声抽出にも対応。</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon-wrap">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      </div>
-      <div class="feat-title">AI要約</div>
-      <div class="feat-desc">長文テキストをAIが自動要約。議事録・インタビューなど20種類のテンプレートから選べます。会議の要点を素早く把握し、情報共有を効率化。</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon-wrap">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-      </div>
-      <div class="feat-title">動画字幕生成 + PiP</div>
-      <div class="feat-desc">動画に自動で字幕を生成。ピクチャ・イン・ピクチャで他アプリ使用中も字幕付き再生が可能。</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon-wrap">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="1" y1="1" x2="23" y2="23"/><path d="M9 9v3a3 3 0 0 0 5.12 2.12M15 9.34V4a3 3 0 0 0-5.94-.6"/><path d="M17 16.95A7 7 0 0 1 5 12v-2m14 0v2c0 .76-.13 1.49-.35 2.17"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
-      </div>
-      <div class="feat-title">無音カット</div>
-      <div class="feat-desc">不要な無音部分を自動検出して除去。3つのプリセット（弱・標準・強）で調整可能。</div>
-    </div>
-  </div>
-
-  <div class="page-logo">Texter</div>
-  <div class="page-number">4</div>
-</div>
-
-<!-- ==================== P5: AI Visualization ==================== -->
-<div class="page">
-  <div class="accent-bar"></div>
-  <div class="section-eyebrow">Differentiator</div>
-  <div class="section-title">AI可視化機能</div>
-
-  <div class="viz-hero">
-    <div class="viz-hero-icon">✨</div>
-    <div class="viz-hero-text">
-      <div class="viz-hero-title">録って終わり、じゃない。AIが「気づき」を引き出す</div>
-      <div class="viz-hero-desc">文字起こしデータをAIが分析し、視覚的にわかりやすく変換。会議や取材の内容を直感的に把握できます。</div>
-    </div>
-  </div>
-
-  <div class="viz-list">
-    <div class="viz-item">
-      <div class="viz-badge">1</div>
-      <div class="viz-body">
-        <div class="viz-title">話題マップ</div>
-        <div class="viz-sub">2時間の会議を3分で把握</div>
-        <div class="viz-desc">トピックを自動分類し、バブルチャートで可視化。どのトピックにどれだけ時間が使われたかを直感的に理解できます。</div>
-      </div>
-    </div>
-    <div class="viz-item">
-      <div class="viz-badge">2</div>
-      <div class="viz-body">
-        <div class="viz-title">トピックまとめ</div>
-        <div class="viz-sub">構造化ドキュメントを自動生成</div>
-        <div class="viz-desc">トピックごとに要点を整理し、2カラム比較・フローチャート・サマリーグリッドなど最適な形式を自動選択。</div>
-      </div>
-    </div>
-    <div class="viz-item">
-      <div class="viz-badge">3</div>
-      <div class="viz-body">
-        <div class="viz-title">ワードクラウド</div>
-        <div class="viz-sub">キーワードの全体像を一望</div>
-        <div class="viz-desc">キーワードの出現頻度を視覚化。タップで該当ノートにジャンプし、情報の検索性を大幅に向上。</div>
+<!-- 5 話者 -->
+<section class="slide">
+  <div class="bar"></div><p class="ttl">文字起こしと話者識別</p><div class="hair"></div>
+  <div class="logo"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
+  <div class="lead"><p>誰が何を言ったかを分けて、読める文で残す</p></div>
+  <div class="main">
+    <div class="say">
+      <div class="phone crop" style="width:560px;height:660px"><img src="../assets/guides/multi-speaker-minutes/speaker-labels.png" alt=""></div>
+      <div class="say-r">
+        <p class="big">発言を話者ごとに分け、<br>名前はあとから直せる</p>
+        <p class="body">句読点も自動で付く。<br>無料でも、録音ファイルなら<br>音声60分まで話者を分けられる</p>
       </div>
     </div>
   </div>
+  <p class="pg">5</p>
+</section>
 
-  <div class="viz-export">
-    <div class="viz-export-label">エクスポート形式:</div>
-    <div class="viz-export-tags">
-      <div class="viz-export-tag">PDF</div>
-      <div class="viz-export-tag">Markdown</div>
-      <div class="viz-export-tag">テキスト</div>
-      <div class="viz-export-tag">画像</div>
+<!-- 6 聞く -->
+<section class="slide">
+  <div class="bar"></div><p class="ttl">過去の録音に質問する</p><div class="hair"></div>
+  <div class="logo"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
+  <div class="lead"><p>探すかわりに聞く。答えには根拠のノートが付く</p></div>
+  <div class="main">
+    <div class="say">
+      <div class="phone crop" style="width:520px;height:660px"><img src="../assets/guides/search-notes/03-answer.webp" alt=""></div>
+      <div class="say-r">
+        <p class="big">「クーポンの期限は？」<br>と聞けば、答えと<br>元のノートが返る</p>
+        <p class="body">すべてのノートをまたいで質問できる。<br>根拠から元のノートを開いて確かめる</p>
+      </div>
     </div>
   </div>
+  <p class="pg">6</p>
+</section>
 
-  <div class="page-logo">Texter</div>
-  <div class="page-number">5</div>
-</div>
-
-<!-- ==================== P6: Use Cases ==================== -->
-<div class="page">
-  <div class="accent-bar"></div>
-  <div class="section-eyebrow">Use Cases</div>
-  <div class="section-title">活用シーン</div>
-  <div class="section-desc">さまざまな業種・職種でご活用いただけます。</div>
-
-  <div class="uc-grid">
-    <div class="uc-card">
-      <div class="uc-icon biz">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-      </div>
-      <div class="uc-title">ビジネス</div>
-      <ul class="uc-list">
-        <li>議事録の自動作成</li>
-        <li>商談・ミーティングの記録</li>
-        <li>社内研修の文字起こし・共有</li>
-      </ul>
-    </div>
-    <div class="uc-card">
-      <div class="uc-icon media">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0891b2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-      </div>
-      <div class="uc-title">メディア</div>
-      <ul class="uc-list">
-        <li>インタビュー取材の文字起こし</li>
-        <li>動画コンテンツの字幕制作</li>
-        <li>ポッドキャストのテキスト化</li>
-      </ul>
-    </div>
-    <div class="uc-card">
-      <div class="uc-icon edu">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-      </div>
-      <div class="uc-title">教育・研究</div>
-      <ul class="uc-list">
-        <li>講義録音のテキスト化</li>
-        <li>質的研究データの整理・分析</li>
-        <li>多言語資料の翻訳</li>
-      </ul>
-    </div>
-    <div class="uc-card">
-      <div class="uc-icon a11y">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-      </div>
-      <div class="uc-title">アクセシビリティ</div>
-      <ul class="uc-list">
-        <li>聴覚障害をお持ちの方のサポート</li>
-        <li>リアルタイム字幕表示</li>
-        <li>音声コンテンツのテキスト変換</li>
-      </ul>
+<!-- 7 前提 -->
+<section class="slide">
+  <div class="bar"></div><p class="ttl">法人で使うときの前提</p><div class="hair"></div>
+  <div class="logo"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
+  <div class="lead"><p>使う人が、アプリストアで1人ずつ購入する</p></div>
+  <div class="main">
+    <div class="kv">
+      <p class="k">購入</p><p class="v">App StoreかGoogle Playで、使う人ごとに購入する</p>
+      <p class="k">試し方</p><p class="v">無料版のまま使える。月額には初回3日間の無料トライアル</p>
+      <p class="k">対応端末</p><p class="v">iPhone・iPad・Apple Watch・Android<br>Apple Silicon搭載のMac</p>
+      <p class="k">データの保存</p><p class="v">録音とノートは各自の端末に保存する</p>
+      <p class="k">まとめての導入</p><p class="v">契約や支払いの方法は、お問い合わせで個別に相談する</p>
+      <p class="k">運営</p><p class="v">Somewhere LLC（京都）</p>
     </div>
   </div>
+  <p class="pg">7</p>
+</section>
 
-  <div class="testimonial-box">
-    <div class="testimonial-stars">★★★★★</div>
-    <div class="testimonial-text">ライターです。ここまで性能が良いとは期待以上でした！これまで全て手打ちしていたときに比べて随分助かります。早速一年で契約しました。</div>
-    <div class="testimonial-author">— App Store レビューより</div>
-  </div>
-
-  <div class="page-logo">Texter</div>
-  <div class="page-number">6</div>
-</div>
-
-<!-- ==================== P7: Security ==================== -->
-<div class="page">
-  <div class="accent-bar"></div>
-  <div class="section-eyebrow">Security</div>
-  <div class="section-title">セキュリティ・プライバシー</div>
-  <div class="section-desc">お客様の音声データとプライバシーを最優先に設計しています。</div>
-
-  <div class="sec-grid">
-    <div class="sec-card">
-      <div class="sec-icon-row">
-        <div class="sec-check">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
-        <div class="sec-title">ノートは端末内に保存</div>
+<!-- 8 データの流れ -->
+<section class="slide">
+  <div class="bar"></div><p class="ttl">データの送り先</p><div class="hair"></div>
+  <div class="logo"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
+  <div class="lead"><p>録音の原本は端末に残し、使う機能の分だけ送る</p></div>
+  <div class="main">
+    <div class="dflow">
+      <div class="dev"><svg width="170" height="170"><use href="#i-phone"/></svg><h3>使う人の端末</h3><p>録音・動画の原本<br>文字・要約・やること</p></div>
+      <div class="arrows">
+        <div class="arw"><p>音声</p><svg width="220" height="40" viewBox="0 0 220 40"><path d="M8 20h196M186 6l18 14-18 14" fill="none" stroke="#17255A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="arw"><p>テキスト</p><svg width="220" height="40" viewBox="0 0 220 40"><path d="M8 20h196M186 6l18 14-18 14" fill="none" stroke="#17255A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="arw"><p>テキストと要約</p><svg width="220" height="40" viewBox="0 0 220 40"><path d="M8 20h196M186 6l18 14-18 14" fill="none" stroke="#979DB5" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="14 12"/></svg></div>
       </div>
-      <div class="sec-desc">録音とノートはお使いの端末内に保存。Premiumでは、選んだノートのテキスト・要約・分析結果を、同じアカウントの端末とクラウドで同期できます（録音などの原本は対象外）。iOS 26以降は、端末内で処理するSpeechAnalyzerでファイルを文字起こしできます。</div>
-    </div>
-    <div class="sec-card">
-      <div class="sec-icon-row">
-        <div class="sec-check">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
-        <div class="sec-title">クラウド処理は使う機能だけ</div>
+      <div class="dests">
+        <div class="dest"><svg width="110" height="110" style="flex:none"><use href="#i-cloud"/></svg><div><h3>クラウドの音声認識</h3><p>文字起こし・話者識別</p></div></div>
+        <div class="dest"><svg width="110" height="110" style="flex:none"><use href="#i-ask"/></svg><div><h3>クラウドのAI（米国）</h3><p>要約・AIチャット・やること</p></div></div>
+        <div class="dest opt"><svg width="110" height="110" style="flex:none"><use href="#i-toggle"/></svg><div><h3>オンにしたときだけ</h3><p>同期・AIツール連携・公開リンク</p></div></div>
       </div>
-      <div class="sec-desc">クラウドで処理する機能（会話向けリアルタイム音声認識、ファイルの文字起こし、翻訳、AI要約・AIチャット）を使うときだけ、必要なデータを送信。</div>
-    </div>
-    <div class="sec-card">
-      <div class="sec-icon-row">
-        <div class="sec-check">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
-        <div class="sec-title">第三者へのデータ販売なし</div>
-      </div>
-      <div class="sec-desc">お客様のデータを第三者に販売することはありません。AI機能でOpenAIに送信したデータは、OpenAIのモデル学習に使われません。</div>
-    </div>
-    <div class="sec-card">
-      <div class="sec-icon-row">
-        <div class="sec-check">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
-        <div class="sec-title">プライバシーポリシー公開</div>
-      </div>
-      <div class="sec-desc">詳細なプライバシーポリシーをWebサイトにて公開しています。</div>
     </div>
   </div>
+  <p class="pg">8</p>
+</section>
 
-  <div class="sec-note">
-    プライバシーポリシーの詳細: <a href="https://texter.work/privacy-policy/">https://texter.work/privacy-policy/</a>
+<!-- 9 確認表 -->
+<section class="slide">
+  <div class="bar"></div><p class="ttl">情報システムの確認表</p><div class="hair"></div>
+  <div class="logo"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
+  <div class="lead"><p>社内の規程と照らすときの答えと出典</p></div>
+  <div class="main" style="top:280px;bottom:40px">
+    <div class="chk">
+      <p class="c h">確認すること</p><p class="c h">答え</p><p class="c h">出典</p>
+      <p class="c k">音声を送るか</p><p class="c">ファイル・録音中の文字起こしと話者識別で、クラウドへ送る</p><p class="c s">ガイド</p>
+      <p class="c k">テキストを送るか</p><p class="c">要約・AIチャットで送る。初回に送る内容を示して同意を確かめる</p><p class="c s">ポリシー</p>
+      <p class="c k warn">送信先の国</p><p class="c warn">AI機能のテキストは米国の事業者へ送る</p><p class="c s warn">ポリシー</p>
+      <p class="c k">学習への利用</p><p class="c">AI機能に送ったテキストは、モデル学習に使われない</p><p class="c s">ポリシー</p>
+      <p class="c k">保存場所</p><p class="c">録音とノートは端末内。録音の原本は同期でも送らない</p><p class="c s">ポリシー</p>
+      <p class="c k">クラウド同期</p><p class="c">初期状態は無効。有料期間の終了後90日はコピーを保持する</p><p class="c s">ポリシー</p>
+      <p class="c k">外部への共有</p><p class="c">AIツール連携と公開リンクは初期状態で無効</p><p class="c s">ポリシー</p>
+      <p class="c k warn">広告</p><p class="c warn">無料版は広告の事業者と端末の識別子などを共有する</p><p class="c s warn">ポリシー</p>
+      <p class="c k warn">端末内だけの処理</p><p class="c warn">iOS 26以降、ファイルの文字起こしだけ。失敗するとクラウドに切り替わる場合がある</p><p class="c s warn">ガイド</p>
+    </div>
+    <p class="src" style="margin-top:16px">ポリシー：プライバシーポリシー（2026年11月12日更新）。ガイド：「音声を端末の外に送らずに文字起こしする方法」</p>
   </div>
+  <p class="pg">9</p>
+</section>
 
-  <div class="page-logo">Texter</div>
-  <div class="page-number">7</div>
-</div>
-
-<!-- ==================== P8: Pricing + CTA ==================== -->
-<div class="page">
-  <div class="accent-bar"></div>
-  <div class="section-eyebrow">Pricing</div>
-  <div class="section-title">料金プラン</div>
-  <div class="section-desc">無料プランで即日利用開始。効果を確認してからアップグレードできます。</div>
-
-  <div class="price-grid">
-    <div class="price-card">
-      <div class="price-name">Free</div>
-      <div class="price-amount">&yen;0</div>
-      <div class="price-period">無料</div>
-      <div class="price-divider"></div>
-      <div class="price-feature-text">
-        リアルタイム文字起こし（3分）<br>
-        画像OCR（5回/日）<br>
-        リアルタイム翻訳<br>
-        録音・動画文字起こし（短時間）
-      </div>
+<!-- 10 規程別 -->
+<section class="slide">
+  <div class="bar"></div><p class="ttl">規程に合わせた使い方</p><div class="hair"></div>
+  <div class="logo"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
+  <div class="lead"><p>外に出せるデータに合わせて、使う機能を決める</p></div>
+  <div class="main">
+    <div class="pol">
+      <div class="c hd e"></div><p class="c hd">音声は出せない</p><p class="c hd">テキストなら出せる</p><p class="c hd">制限なし</p>
+      <p class="c rh">ファイルの文字起こし</p><p class="c ok">端末内の方式で</p><p class="c ok">端末内の方式で</p><p class="c ok">使える</p>
+      <p class="c rh">録音中の文字起こし（日本語）</p><p class="c ng">使えない</p><p class="c ng">使えない</p><p class="c ok">使える</p>
+      <p class="c rh">話者識別</p><p class="c ng">使えない</p><p class="c ng">使えない</p><p class="c ok">使える</p>
+      <p class="c rh">要約・AIチャット・やること</p><p class="c ng">使えない</p><p class="c ok">使える</p><p class="c ok">使える</p>
+      <p class="c rh">クラウド同期</p><p class="c ng">使えない</p><p class="c ok">使える</p><p class="c ok">使える</p>
     </div>
-    <div class="price-card highlight">
-      <div class="price-best">最もお得</div>
-      <div class="price-name">Premium 年額</div>
-      <div class="price-amount">&yen;8,800</div>
-      <div class="price-period">/ 年（月あたり約&yen;733）</div>
-      <div class="price-divider"></div>
-      <div class="price-feature-text">
-        音声・動画取り込み 無制限<br>
-        リアルタイム認識 10時間/月<br>
-        Amazon Transcribe 5時間/月<br>
-        月額プランの全機能
-      </div>
-      <div class="price-trial">月額払い比 約59%お得</div>
+    <p style="margin-top:32px;font-size:30px;font-weight:700;text-align:center;line-height:1.4">端末内の方式はiOS 26以降。どの音声も例外なく外に出さない保証が要る場合は向いていない</p>
+  </div>
+  <p class="pg">10</p>
+</section>
+
+<!-- 11 料金 -->
+<section class="slide">
+  <div class="bar"></div><p class="ttl">料金のご案内</p><div class="hair"></div>
+  <div class="logo"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
+  <div class="lead"><p>無料版から始め、続けるなら年額で</p><p class="lead-2"><span class="mk-line">1人あたり月約733円</span></p></div>
+  <div class="main" style="top:370px">
+    <div class="ptable">
+      <div class="c hd empty"></div>
+      <div class="c hd"><p>無料</p></div>
+      <div class="c hd"><p>チケット</p></div>
+      <div class="c hd"><p>月額</p></div>
+      <div class="c hd me"><p>年額</p></div>
+
+      <div class="c rh"><p>料金</p></div>
+      <div class="c price"><p>¥0</p></div>
+      <div class="c price"><p>¥500</p><span>音声1時間ぶん</span></div>
+      <div class="c price"><p>¥1,800</p><span>毎月</span></div>
+      <div class="c price me"><p>¥8,800</p><span>毎年</span></div>
+
+      <div class="c rh"><p>録音中の文字起こし</p></div>
+      <div class="c"><p>1回3分、1日15分</p></div>
+      <div class="c"><p>無料と同じ</p></div>
+      <div class="c"><p>5時間/月</p></div>
+      <div class="c me"><p>10時間/月</p></div>
+
+      <div class="c rh"><p>ファイルの文字起こし</p></div>
+      <div class="c"><p>累積の無料枠</p></div>
+      <div class="c"><p>1枚で音声1時間</p></div>
+      <div class="c"><p>月の枠なし</p></div>
+      <div class="c me"><p>月の枠なし</p></div>
+
+      <div class="c rh"><p>話者識別</p></div>
+      <div class="c"><p>音声60分まで</p></div>
+      <div class="c"><p>使える</p></div>
+      <div class="c"><p>60分の上限なし</p></div>
+      <div class="c me"><p>60分の上限なし</p></div>
+
+      <div class="c rh"><p>要約・AIチャット</p></div>
+      <div class="c"><p>1日3回</p></div>
+      <div class="c"><p>無料と同じ</p></div>
+      <div class="c"><p>回数の上限なし</p></div>
+      <div class="c me"><p>回数の上限なし</p></div>
+
+      <div class="c rh"><p>広告</p></div>
+      <div class="c"><p>あり</p></div>
+      <div class="c"><p>バナーあり</p></div>
+      <div class="c"><p>なし</p></div>
+      <div class="c me"><p>なし</p></div>
     </div>
-    <div class="price-card">
-      <div class="price-name">Premium 月額</div>
-      <div class="price-amount">&yen;1,800</div>
-      <div class="price-period">/ 月</div>
-      <div class="price-divider"></div>
-      <div class="price-feature-text">
-        音声・動画取り込み 無制限<br>
-        リアルタイム認識 5時間/月<br>
-        Amazon Transcribe 3時間/月<br>
-        AIチャット・要約20種<br>
-        字幕・無音カット・広告なし
-      </div>
-      <div class="price-trial">3日間 無料トライアル</div>
+    <p class="src" style="margin-top:20px">iPhone版・App Store（日本）の価格（2026年11月）。録音中の枠が多い10時間・20時間のプランもある</p>
+  </div>
+  <p class="pg">11</p>
+</section>
+
+<!-- 12 始め方 -->
+<section class="slide">
+  <div class="bar"></div><p class="ttl">導入までの流れ</p><div class="hair"></div>
+  <div class="logo"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
+  <div class="lead"><p>まず次の会議を1回、無料版で録ってみる</p></div>
+  <div class="main" style="bottom:200px">
+    <div class="flow">
+      <div class="fbox st1" style="gap:28px"><svg width="150" height="150"><use href="#i-phone"/></svg><h3>試す</h3><p>無料版で、<br>次の会議を1回録る</p></div>
+      <div class="farrow"><svg width="40" height="40"><use href="#i-right"/></svg></div>
+      <div class="fbox st2" style="gap:28px"><svg width="150" height="150"><use href="#i-toggle"/></svg><h3>決める</h3><p>使う機能を、<br>社内の規程と照らす</p></div>
+      <div class="farrow"><svg width="40" height="40"><use href="#i-right"/></svg></div>
+      <div class="fbox st3" style="gap:28px"><svg width="150" height="150"><use href="#i-check"/></svg><h3>広げる</h3><p>よく使う人から<br>Premiumにする</p></div>
     </div>
   </div>
-
-  <div class="cta-box">
-    <div class="cta-title">まずは無料でお試しください</div>
-    <div class="cta-desc">App Store / Google Play からダウンロードして、すぐにご利用いただけます。</div>
-    <div class="cta-row">
-      <div class="cta-item">Email: <a href="mailto:texter.work.app@gmail.com">texter.work.app@gmail.com</a></div>
-      <div class="cta-item">Web: <a href="https://texter.work">texter.work</a></div>
-    </div>
+  <div style="position:absolute;left:240px;right:240px;bottom:64px;height:104px;border:6px solid var(--a);border-radius:24px;display:flex;align-items:center;justify-content:center;gap:56px">
+    <p style="font-size:32px;font-weight:700;line-height:1">お問い合わせ</p>
+    <p style="font-family:Montserrat;font-size:34px;font-weight:700;color:var(--a);line-height:1">texter.work.app@gmail.com</p>
+    <p style="font-family:Montserrat;font-size:34px;font-weight:700;color:var(--a);line-height:1">texter.work</p>
   </div>
-
-  <div class="page-logo">Texter</div>
-  <div class="page-number">8</div>
-</div>
+  <p class="pg">12</p>
+</section>
 
 </body>
 </html>
