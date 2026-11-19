@@ -4,7 +4,7 @@
 // Answers may use only <a>, <b>, <strong>, <br>, <ul>, <ol>, <li>, <p>.
 const howto = require('./faq-howto-data');
 const { arrange } = require('./faq-structure');
-const updated = '2026-11-01';
+const updated = '2026-11-20';
 
 const ja = {
   path: '/faq/',
@@ -51,7 +51,7 @@ const ja = {
         { id: 'price', q: '無料で使えますか？料金はいくらですか？',
           a: '<p>アプリのダウンロードと基本機能は無料です。無料版には、文字起こしの時間や各機能の利用回数に上限があります。条件の比較は<a href="/pricing/">料金と利用条件</a>をご覧ください。</p><p>上限を引き上げるTexter Premiumは、App Store（日本）で月額 ¥1,800、年額 ¥8,800 です。週額 ¥600 は解約時の案内でのみ表示されます。無料トライアルの有無と期間は、アプリ内の購入画面でご確認ください。</p>' },
         { id: 'business', q: '法人で利用できますか？',
-          a: '<p>はい。機能・料金・セキュリティ情報をまとめた<a href="/assets/pdf/texter-for-business.pdf">法人向け資料（PDF）</a>をご用意しています。ご相談は<a href="mailto:texter.work.app@gmail.com">texter.work.app@gmail.com</a>までお送りください。</p>' },
+          a: '<p>はい。機能・料金・セキュリティ情報をまとめた<a href="/assets/pdf/texter-for-business.pdf">法人向け資料（PDF）</a>をご用意しています。ご相談は<a href="mailto:business@texter.work">business@texter.work</a>までお送りください。</p>' },
       ],
     },
     {
@@ -142,7 +142,7 @@ const en = {
         { id: 'price', q: 'Is Texter free? How much is Premium?',
           a: '<p>The app is free to download, and the basic features are free to use. The free plan limits transcription time and how often you can use each feature.</p><p>Texter Premium raises those limits and comes in weekly, monthly, and yearly plans. Prices vary by country and are shown in your local currency on the App Store and in the app. Check the purchase screen in the app for any free trial and its length.</p>' },
         { id: 'business', q: 'Can my company use Texter?',
-          a: '<p>Yes. Our <a href="/assets/pdf/texter-for-business.pdf">business brochure (PDF)</a> covers features, pricing, and security. For questions, email <a href="mailto:texter.work.app@gmail.com">texter.work.app@gmail.com</a>.</p>' },
+          a: '<p>Yes. Our <a href="/assets/pdf/texter-for-business.pdf">business brochure (PDF)</a> covers features, pricing, and security. For questions, email <a href="mailto:business@texter.work">business@texter.work</a>.</p>' },
       ],
     },
     {

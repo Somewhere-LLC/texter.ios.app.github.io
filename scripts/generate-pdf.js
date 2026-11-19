@@ -25,7 +25,7 @@ async function generatePDF() {
 
     const fileUrl = 'file://' + inputPath;
     await page.goto(fileUrl, { waitUntil: 'networkidle0' });
-    await page.evaluate(() => document.fonts.ready);
+    await page.evaluate(async () => { await document.fonts.ready; });
 
     // 16:9 のスライド（1枚 1920×1080）
     await page.pdf({
