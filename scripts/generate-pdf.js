@@ -16,11 +16,12 @@ async function generatePDF() {
   fs.mkdirSync(outputDir, { recursive: true });
 
   // CHROME_PATH があればそれを使う（同梱の Chrome が無い環境向け。macOS では pipe が要る）
+  // 負荷が高いと起動と CDP の呼び出しが既定の30秒を超えるので、どちらの待ち時間も延ばす
   const chromePath = process.env.CHROME_PATH;
   const browser = await puppeteer.launch(
     chromePath
-      ? { executablePath: chromePath, headless: true, pipe: true, protocolTimeout: 240000 }
-      : { protocolTimeout: 240000 }
+      ? { executablePath: chromePath, headless: true, pipe: true, timeout: 240000, protocolTimeout: 240000 }
+      : { timeout: 240000, protocolTimeout: 240000 }
   );
   try {
     const page = await browser.newPage();
