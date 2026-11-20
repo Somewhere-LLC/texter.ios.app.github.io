@@ -63,8 +63,8 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
 /* 表紙 */
 .cv-chap{position:absolute;left:120px;top:120px;display:flex;align-items:center;gap:18px}
 .cv-aud{position:absolute;left:120px;top:250px;font-size:30px;font-weight:700;color:var(--deep);line-height:1}
-.cv-h{position:absolute;left:112px;top:310px;font-size:118px;font-weight:900;color:var(--navy);line-height:1.12;letter-spacing:-.02em}
-.cv-s{position:absolute;left:120px;top:640px;font-size:34px;font-weight:500;color:var(--text);line-height:1.6}
+.cv-h{position:absolute;left:112px;top:310px;font-size:84px;font-weight:900;color:var(--navy);line-height:1.12;letter-spacing:-.02em}
+.cv-s{position:absolute;left:120px;top:590px;font-size:30px;font-weight:500;color:var(--text);line-height:1.6}
 .cv-shots{position:absolute;left:1290px;top:170px;width:520px;height:720px}
 .cv-wave{position:absolute;left:120px;right:700px;bottom:150px;height:120px}
 .cv-foot{position:absolute;left:120px;right:120px;bottom:80px;display:flex;justify-content:space-between}
@@ -184,6 +184,77 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
 .bv.acc{color:var(--accent)}
 .bv span{font-size:22px;font-weight:700;color:var(--sub)}
 .qual{margin-top:26px;font-size:28px;font-weight:800;color:var(--navy);line-height:1.4}
+.devset{position:absolute;left:1120px;top:190px;width:780px;height:830px;transform:scale(1.0);transform-origin:top left}
+.mac{position:absolute;left:0;top:60px;width:600px}
+.mac-scr{width:600px;height:380px;border:14px solid #1C2033;border-radius:22px 22px 6px 6px;background:linear-gradient(180deg,#EEF2FE,#DCE6FB);display:flex;align-items:center;justify-content:flex-start;padding-left:40px;overflow:hidden}
+.mac-win{width:272px;height:356px;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(23,37,90,.18);background:#fff}
+.mac-win img{display:block;width:100%}
+.mac-base{width:680px;height:22px;margin-left:-40px;border-radius:0 0 18px 18px;background:#C9CEDD}
+.dv-phone{position:absolute;left:420px;top:250px;width:230px;height:500px}
+.watch{position:absolute;left:590px;top:525px;width:136px;display:flex;flex-direction:column;align-items:center}
+.band{width:94px;height:50px;background:#2A2F45}
+.band.t{border-radius:16px 16px 4px 4px}
+.band.b{border-radius:4px 4px 16px 16px}
+.wcase{width:136px;height:166px;border:10px solid #1C2033;border-radius:44px;overflow:hidden;background:#000}
+.wcase img{display:block;width:100%;height:100%;object-fit:cover}
+.dlab{position:absolute;font-size:24px;font-weight:800;color:#8A90A6;line-height:1;white-space:nowrap}
+.dnote2{font-size:24px;font-weight:500;color:#9AA0B4;line-height:1;margin-top:16px}
+.scs{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.sc{display:flex;flex-direction:column;gap:14px;padding:30px 34px;min-height:250px}
+.sc h3{font-size:40px;font-weight:800;color:#17255A;line-height:1.2}
+.sc>p{font-size:26px;font-weight:700;color:#444;line-height:1.5}
+.out{margin-top:auto;background:#EEF2FE;border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:14px}
+.out .ol{font-size:22px;font-weight:800;color:#6482FA;line-height:1;white-space:nowrap}
+.out .ov{font-size:26px;font-weight:800;color:#17255A;line-height:1.3}
+.hero-panel{position:absolute;left:900px;top:120px;width:900px;height:840px;border-radius:48px;background:#17255A}
+.hero-dev{position:absolute;left:910px;top:290px;width:880px}
+.dnote{position:absolute;left:1400px;top:690px;font-size:22px;font-weight:500;color:#9AA0B4;line-height:1}
+.slide.k2{background:radial-gradient(1200px 800px at 85% 30%,#6482FA 0%,rgba(100,130,250,0) 60%),linear-gradient(135deg,#17255A 0%,#2B3A8C 55%,#5460D6 100%)}
+.k-logo{position:absolute;left:120px;top:110px;display:flex;align-items:center;gap:16px}
+.k-logo img{width:56px;height:56px;border-radius:14px}
+.k-logo p{font-size:30px;font-weight:700;line-height:1;color:#fff}
+.k-aud{position:absolute;left:120px;top:250px;font-size:30px;font-weight:700;line-height:1;color:#B9C7FF}
+.k-h{position:absolute;left:112px;top:310px;font-size:96px;font-weight:900;line-height:1.14;letter-spacing:-.02em;color:#fff}
+.k-s{position:absolute;left:120px;top:570px;font-size:30px;font-weight:500;line-height:1.6;color:#DCE3FF}
+.k-foot{position:absolute;left:120px;bottom:80px;font-size:26px;font-weight:700;line-height:1;color:#DCE3FF}
+.ui{position:absolute;background:#fff;border-radius:22px;box-shadow:0 24px 60px rgba(10,16,40,.30);padding:24px 28px}
+.ui .lb{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;color:#6482FA;line-height:1;margin-bottom:14px}
+.ui .lb i{width:10px;height:10px;border-radius:5px;background:#6482FA;display:inline-block}
+.ui p.tx{font-size:22px;font-weight:700;color:#17255A;line-height:1.5;white-space:nowrap}
+.ui .rw{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-top:1px solid #EEF1F7;align-items:center}
+.ui .rw:first-of-type{border-top:none}
+.ui .rw p{font-size:21px;font-weight:700;color:#17255A;line-height:1.3;white-space:nowrap}
+.ui .rw .d{font-size:19px;color:#fff;background:#6482FA;border-radius:999px;padding:6px 12px}
+.ph{position:absolute;border:12px solid #12141c;border-radius:56px;overflow:hidden;background:#fff;box-shadow:0 30px 80px rgba(10,16,40,.40)}
+.ph img{display:block;width:100%}
+.end-h{position:absolute;left:112px;top:200px;font-size:84px;font-weight:900;color:#fff;line-height:1.15;letter-spacing:-.02em}
+.end-s{position:absolute;left:120px;top:315px;font-size:32px;font-weight:500;color:#DCE3FF;line-height:1.5}
+.steps{position:absolute;left:120px;right:120px;top:395px;display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.stp{background:#fff;border-radius:24px;padding:28px 38px;min-height:290px;display:flex;flex-direction:column;gap:10px;box-shadow:0 6px 16px rgba(10,16,40,.10)}
+.stp .sn{font-family:var(--f-mono);font-size:28px;color:#6482FA;line-height:1}
+.stp h3{font-size:52px;font-weight:900;color:#17255A;line-height:1.1;margin-top:6px}
+.stp .sd{font-size:30px;font-weight:700;color:#17255A;line-height:1.45}
+.stp .sx{font-size:22px;font-weight:600;color:#6B6F80;line-height:1.4;margin-top:auto}
+.cta{position:absolute;left:120px;right:120px;top:752px;height:244px;border-radius:28px;background:rgba(255,255,255,.10);border:2px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:space-between;padding:0 48px}
+.cta-l .cl{font-size:26px;font-weight:700;color:#B9C7FF;line-height:1}
+.cta-l .cm{font-size:64px;font-weight:900;color:#fff;line-height:1.1;margin-top:14px;letter-spacing:-.01em}
+.cta-l .cs{font-size:24px;font-weight:600;color:#DCE3FF;line-height:1;margin-top:18px}
+.cta-r{display:flex;align-items:center;gap:28px}
+.qr{display:flex;flex-direction:column;align-items:center;gap:10px}
+.qr p{font-size:20px;font-weight:800;color:#fff;line-height:1}
+.cta-r img{width:168px;height:168px;border-radius:16px;background:#fff;padding:8px}
+.cta-r p{font-size:26px;font-weight:800;color:#fff;line-height:1.4}
+.slide.k2 .pg{color:#B9C7FF}
+.aw{position:absolute;left:1640px;top:700px;width:190px;transform:scale(.68);transform-origin:top left;display:flex;flex-direction:column;align-items:center;filter:drop-shadow(0 24px 40px rgba(10,16,40,.45))}
+.aw-band{width:132px;height:86px;background:linear-gradient(90deg,#1d2130,#2c3246 50%,#1d2130)}
+.aw-band.t{border-radius:22px 22px 6px 6px}
+.aw-band.b{border-radius:6px 6px 22px 22px}
+.aw-case{position:relative;width:190px;height:226px;border-radius:58px;background:linear-gradient(145deg,#3a3f52,#14161f 60%,#2a2e3d);padding:13px}
+.aw-scr{width:100%;height:100%;border-radius:46px;overflow:hidden;background:#000}
+.aw-scr img{display:block;width:100%;height:100%;object-fit:cover}
+.aw-crown{position:absolute;right:-12px;top:52px;width:14px;height:40px;border-radius:6px;background:linear-gradient(90deg,#4a5068,#262a38)}
+.aw-btn{position:absolute;right:-8px;top:112px;width:9px;height:52px;border-radius:4px;background:#2a2e3d}
+.aw-img{position:absolute;left:1625px;top:718px;width:176px;filter:drop-shadow(0 24px 40px rgba(10,16,40,.45))}
 
 .tbl p.ctr{justify-content:center;text-align:center}
 .tbl .h p.yr{background:var(--accent)}
@@ -216,16 +287,17 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
 </svg>
 
 <!-- 1 表紙 -->
-<section class="slide hero">
-  <div class="cv-chap"><img src="../img/appicon.png" alt="" style="width:56px;height:56px;border-radius:14px"><p style="font-size:30px;font-weight:700;color:var(--navy);line-height:1">Texter 法人向け資料</p></div>
-  <p class="cv-aud">社内で使えるかを判断する担当者の方へ</p>
-  <h1 class="cv-h">録るだけで、<br>議事録もタスクも。</h1>
-  <p class="cv-s">会議・取材・講義の録音を、<br>文字と要約とやることに変えるアプリ<br>（iPhone・iPad・Apple Watch・Mac・Android）</p>
-  <div class="cv-shots">
-    <div class="phone" style="position:absolute;left:0;top:0;width:250px;height:540px"><img src="../assets/guides/ai-minutes/03-summary.webp" alt=""></div>
-    <div class="phone" style="position:absolute;left:270px;top:150px;width:250px;height:540px"><img src="../assets/guides/ai-minutes/04-tasks.webp" alt=""></div>
-  </div>
-  <div class="cv-foot"><p>2026年11月　Somewhere LLC</p><p>texter.work</p></div>
+<section class="slide k2">
+  <div class="k-logo"><img src="../img/appicon.png" alt=""><p>Texter 法人向け資料</p></div>
+  <p class="k-aud">社内で使えるかを判断する担当者の方へ</p>
+  <h1 class="k-h">録るだけで、<br>議事録もタスクも。</h1>
+  <p class="k-s">会議・取材・講義の録音を、<br>文字と要約とやることに変えるアプリ<br>（iPhone・iPad・Mac・Apple Watch・Android）</p>
+  <div class="ph" style="left:1360px;top:150px;width:320px;height:694px"><img src="../assets/guides/multi-speaker-minutes/speaker-labels.png" alt=""></div>
+  <div class="ui" style="left:1048px;top:195px;width:500px"><div class="lb"><i></i>要約</div><p class="tx">公開日は11月14日。<br>メールマガジンは同日午前10時に、<br>約8,500人へ配信する</p></div>
+  <div class="ui" style="left:1270px;top:443px;width:530px;padding-bottom:27px"><div class="lb"><i></i>やること</div><div class="rw"><p>納品された写真3点を確認する</p><p class="d">11月12日まで</p></div><div class="rw"><p>メールの原稿を作る</p><p class="d">11月7日まで</p></div><div class="rw"><p>山田さんに納期の確認メールを送る</p><p class="d">今日中に</p></div></div>
+  <div class="ui" style="left:1060px;top:724px;width:470px"><div class="lb"><i></i>過去の会議に聞く</div><p class="tx">「コピー用紙の発注数と、<br>クーポンの期限を教えて」<br><span style="color:#6482FA">クーポンの期限は11月30日まで（根拠つき）</span></p></div>
+  <img class="aw-img" src="../assets/pdf/img/watch-cover.png" alt="Apple WatchのTexterの録音画面">
+  <p class="k-foot">2026年11月　Somewhere LLC　texter.work</p>
 </section>
 
 <!-- 2 課題 -->
@@ -241,7 +313,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       <div class="row card"><p class="num">03</p><p class="t">先月の会議で決まったことを、録音から探し出せない</p></div>
     </div>
   </div>
-  <p class="pg">02 / 16</p>
+  <p class="pg">02 / 17</p>
 </section>
 
 <!-- 3 比較 -->
@@ -269,7 +341,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       </div>
     </div>
   </div>
-  <p class="pg">03 / 16</p>
+  <p class="pg">03 / 17</p>
 </section>
 
 <!-- 4 実例 -->
@@ -295,7 +367,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       </div>
     </div>
   </div>
-  <p class="pg">04 / 16</p>
+  <p class="pg">04 / 17</p>
 </section>
 
 <!-- 4b 時間 -->
@@ -339,7 +411,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
     <p class="qual">15分44秒の会議では、6つの結論がすべて要約に入った。要約で直す箇所は5か所（文字起こしの聞き間違いは別に4種類）</p>
     <p class="src" style="margin-top:14px">活用ガイドで試した結果（各1回）。15分44秒の会議と講義は2.11.68（シミュレータ・無料）、49分と57分は開発版2.11.73（実機・Premium）。<br>測った終点は、要約の表示・ノートの完成・処理中の表示が消えるまで、と測定ごとに違う。確かめて直す時間は測っていない</p>
   </div>
-  <p class="pg">05 / 16</p>
+  <p class="pg">05 / 17</p>
 </section>
 
 <!-- 5 話者 -->
@@ -361,7 +433,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       </div>
     </div>
   </div>
-  <p class="pg">06 / 16</p>
+  <p class="pg">06 / 17</p>
 </section>
 
 <!-- 6 聞く -->
@@ -382,7 +454,18 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       </div>
     </div>
   </div>
-  <p class="pg">07 / 16</p>
+  <p class="pg">07 / 17</p>
+</section>
+
+<!-- 6d 場面 -->
+<section class="slide">
+  <div class="chap"><span class="cbar"></span><p class="topic">使われている場面</p></div><div class="rule"></div>
+  <div class="brand"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
+  <h2 class="ttl">社内の会議から、採用や取材まで。</h2>
+  <p class="sub">どの場面でも、録音すれば文字起こし・要約・やることの一覧ができる</p>
+  <div class="main" style="bottom:56px"><div class="scs"><div class="sc card"><h3>社内の定例・進捗</h3><p>週次の進捗会議を、そのまま議事録に</p><div class="out"><p class="ol">できるもの</p><p class="ov">担当と期限つきのやること</p></div></div><div class="sc card"><h3>打合せ・商談</h3><p>取引先との合意事項と宿題を残す</p><div class="out"><p class="ol">できるもの</p><p class="ov">決まったことの要約</p></div></div><div class="sc card"><h3>面談・1on1</h3><p>面談の話を、あとから要点で振り返る</p><div class="out"><p class="ol">できるもの</p><p class="ov">次回までにやることと要点</p></div></div><div class="sc card"><h3>採用面接</h3><p>候補者の話を、評価の前に読み返す</p><div class="out"><p class="ol">できるもの</p><p class="ov">話者ごとに分かれた発言</p></div></div><div class="sc card"><h3>講義・研修</h3><p>社内研修の録音を、復習ノートに</p><div class="out"><p class="ol">できるもの</p><p class="ov">理解を確かめる確認問題</p></div></div><div class="sc card"><h3>取材・インタビュー</h3><p>引用する発言を、文字で探して確かめる</p><div class="out"><p class="ol">できるもの</p><p class="ov">話題ごとのまとめ</p></div></div></div>
+  <p class="src" style="margin-top:18px">アプリの利用の傾向から選んだ場面で、特定の企業の導入事例ではない。面談・面接・商談は、相手の同意を得てから録音する</p></div>
+  <p class="pg">08 / 17</p>
 </section>
 
 <!-- 6c 端末と連携 -->
@@ -405,7 +488,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
     </div>
     <p class="src" style="margin-top:18px">同期とAIツール連携は、iPhone版で、AppleかGoogleのアカウントでサインインし、自分で購入したPremiumが対象（無料トライアル中を含む）。<br>ファミリー共有・紹介特典だけ・チケットだけでは使えない。一部のPremiumでは使えない場合がある</p>
   </div>
-  <p class="pg">08 / 16</p>
+  <p class="pg">09 / 17</p>
 </section>
 
 <!-- 6b 比較 -->
@@ -428,7 +511,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
     <div class="quote" style="margin-top:22px"><p class="q">「ライターです。ここまで性能が良いとは期待以上でした！これまで全て手打ちしていたときに比べて随分助かります。<br>早速一年で契約しました。」</p><p class="qs">App Storeのレビューより（原文のまま）</p></div>
     
   </div>
-  <p class="pg">09 / 16</p>
+  <p class="pg">10 / 17</p>
 </section>
 
 <!-- 7 前提 -->
@@ -449,7 +532,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       <div class="r" style="grid-template-columns:340px 1fr;min-height:66px"><p class="c k">録音の前に</p><p class="c">会議の参加者に、録音してよいかを確かめる</p></div>
     </div>
   </div>
-  <p class="pg">10 / 16</p>
+  <p class="pg">11 / 17</p>
 </section>
 
 <!-- 8 データ -->
@@ -473,7 +556,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
       </div>
     </div>
   </div>
-  <p class="pg">11 / 16</p>
+  <p class="pg">12 / 17</p>
 </section>
 
 <!-- 9 確認表 -->
@@ -493,7 +576,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
     </div>
     <p class="src" style="margin-top:14px">ポリシー：プライバシーポリシー（2026年11月12日更新）。ガイド：「音声を端末の外に送らずに文字起こしする方法」</p>
   </div>
-  <p class="pg">12 / 16</p>
+  <p class="pg">13 / 17</p>
 </section>
 
 <!-- 9b 確認表 -->
@@ -514,7 +597,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
     </div>
     <p class="src" style="margin-top:14px">ポリシー：プライバシーポリシー（2026年11月12日更新）。ガイド：「音声を端末の外に送らずに文字起こしする方法」</p>
   </div>
-  <p class="pg">13 / 16</p>
+  <p class="pg">14 / 17</p>
 </section>
 
 <!-- 10 規程別 -->
@@ -534,7 +617,7 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
     </div>
     <p class="src" style="margin-top:16px">端末内の方式はiOS 26以降。失敗するとクラウドに切り替わる場合がある（注意点は前のページ）</p>
   </div>
-  <p class="pg">14 / 16</p>
+  <p class="pg">15 / 17</p>
 </section>
 
 <!-- 11 料金 -->
@@ -555,24 +638,24 @@ body{font-family:var(--f-jp);color:var(--text);font-weight:500;-webkit-print-col
     </div>
     <p class="src" style="margin-top:14px">iPhone版・App Store（日本）の価格（2026年11月）。Android版はGoogle Playで確認。月額で録音中の枠を増やす10時間（¥3,000/月）・20時間（¥6,000/月）もある</p>
   </div>
-  <p class="pg">15 / 16</p>
+  <p class="pg">16 / 17</p>
 </section>
 
 <!-- 12 はじめる -->
-<section class="slide hero">
-  <div class="chap"><span class="cbar"></span><p class="topic">導入までの流れ</p></div><div class="rule"></div>
-  <div class="brand"><img src="../img/appicon.png" alt=""><p>Texter</p></div>
-  <h2 class="ttl">次の会議から、録るだけ。</h2>
-  <p class="sub">まず1回、無料版で試してから決める</p>
-  <div class="main" style="bottom:330px">
-    <div class="flow">
-      <div class="fbox card"><div style="display:flex;justify-content:space-between;align-items:center"><p class="num">01</p></div><div><h3>試す</h3><p class="d" style="margin-top:20px">次の会議を録音して、<br>無料版に取り込む。<br><span class="dd">無料の取り込み枠は、<br>累積で音声60分以上が目安</span></p></div></div>
-      <div class="fbox card"><div style="display:flex;justify-content:space-between;align-items:center"><p class="num">02</p></div><div><h3>決める</h3><p class="d" style="margin-top:20px">使う機能を、社内の規程と照らす。<br><span class="dd">確認表（12・13ページ）を社内で使える</span></p></div></div>
-      <div class="fbox card last"><div style="display:flex;justify-content:space-between;align-items:center"><p class="num">03</p></div><div><h3>広げる</h3><p class="d" style="margin-top:20px">よく使う人からPremiumにする。<br><span class="dd">録る時間の長い人は、年額か10時間プラン</span></p></div></div>
-    </div>
+<section class="slide k2">
+  <div class="k-logo"><img src="../img/appicon.png" alt=""><p>導入までの流れ</p></div>
+  <h2 class="end-h">次の会議から、録るだけ。</h2>
+  <p class="end-s">まず1回、無料版で試してから決める</p>
+  <div class="steps">
+    <div class="stp"><p class="sn">01</p><h3>試す</h3><p class="sd">次の会議を録音して、<br>無料版に取り込む</p><p class="sx">無料の取り込み枠は、<br>累積で音声60分以上が目安</p></div>
+    <div class="stp"><p class="sn">02</p><h3>決める</h3><p class="sd">使う機能を、<br>社内の規程と照らす</p><p class="sx">確認表（13・14ページ）を社内で使える</p></div>
+    <div class="stp"><p class="sn">03</p><h3>広げる</h3><p class="sd">よく使う人から<br>Premiumにする</p><p class="sx">録る時間の長い人は、年額か10時間プラン</p></div>
   </div>
-  <div class="contact card"><p class="k">お問い合わせ（Somewhere LLC・京都）</p><p class="v">business@texter.work</p><p class="v">texter.work</p></div>
-  <p class="pg">16 / 16</p>
+  <div class="cta">
+    <div class="cta-l"><p class="cl">法人のご相談</p><p class="cm">business@texter.work</p><p class="cs">Somewhere LLC（京都）　texter.work</p></div>
+    <div class="cta-r"><div class="qr"><img src="../assets/pdf/img/qr-appstore.png" alt="App StoreのQRコード"><p>iPhone・iPad・Mac</p></div><div class="qr"><img src="../assets/pdf/img/qr-googleplay.png" alt="Google PlayのQRコード"><p>Android</p></div></div>
+  </div>
+  <p class="pg">17 / 17</p>
 </section>
 
 </body>
