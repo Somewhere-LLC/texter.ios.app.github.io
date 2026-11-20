@@ -18,7 +18,7 @@ async function generatePDF() {
   // CHROME_PATH があればそれを使う（同梱の Chrome が無い環境向け。macOS では pipe が要る）
   const chromePath = process.env.CHROME_PATH;
   const browser = await puppeteer.launch(
-    chromePath ? { executablePath: chromePath, headless: true, pipe: true } : {}
+    chromePath ? { executablePath: chromePath, headless: true, pipe: true, protocolTimeout: 240000 } : {}
   );
   try {
     const page = await browser.newPage();
