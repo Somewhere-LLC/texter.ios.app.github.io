@@ -206,7 +206,7 @@ footer p{margin:12px 0 0}
       <div class="scroll"><table class="compare"><thead><tr><th scope="col">処理</th><th scope="col">端末内で済む条件</th><th scope="col">通信が要る場合</th></tr></thead><tbody>
         <tr><th scope="row">音声ファイルの文字起こし（取り込み）</th><td>音声認識サービスをSpeechAnalyzerにする（iOS 26以降）。初回は言語モデルのダウンロードに通信が要る</td><td>既定のWhisperとAmazon Transcribeは、音声をサーバーへ送る</td></tr>
         <tr><th scope="row">録音中の文字起こし</th><td>日本語、英語、中国語、韓国語では、端末内で済む方式はない。ほかの言語はAppleの音声認識を使い、端末が対応していて、ネットワークに接続できない状態のときだけ、端末内の認識を指定する</td><td>日本語、英語、中国語、韓国語は、クラウドの音声認識へ音声を送る。使うクラウドの音声認識は、サーバーの設定などで決まり、利用者は選べない。ほかの言語でも、接続できる状態では端末内の認識を指定しないので、Appleのサーバーが使われる場合がある</td></tr>
-        <tr><th scope="row">Apple Watchの録音の文字起こし</th><td>iOS 26以降の対応端末で、音声認識サービスをSpeechAnalyzerにしたとき。クラウドの無料枠は使わない。無料版は、ノート一覧の「広告を見てこの録音を文字起こし」を押すと始まる</td><td>既定のWhisperは、音声をクラウドへ送り、ファイルの文字起こしの無料枠を使う。端末内の方式が使えないときは、クラウドへ自動では切り替わらず、文字起こしが止まって一覧の行に理由が出る</td></tr>
+        <tr><th scope="row">Apple Watchの録音の文字起こし</th><td>iOS 26以降の対応端末で、音声認識サービスをSpeechAnalyzerにしたとき。クラウドの無料枠は使わず、録音の長さの上限もない。無料版は、ノート一覧の「広告を見てこの録音を文字起こし」を押すと始まる</td><td>既定のWhisperは、音声をクラウドへ送り、ファイルの文字起こしの無料枠を使う。1ファイルの長さに上限があり、超えた録音は文字起こしされない。端末内の方式が使えないときは、クラウドへ自動では切り替わらず、文字起こしが止まって一覧の行に理由が出る</td></tr>
         <tr><th scope="row">タイトルの自動生成</th><td>iOS 26以降で、端末内のAIモデルが使える端末では、端末内だけで作る</td><td>端末内のAIモデルが使えないと、自動のタイトルは付かず、既定の名前のままになる。クラウドへの切り替えはない</td></tr>
         <tr><th scope="row">要約</th><td>端末内で処理する経路は、確認したコードにはなかった</td><td>クラウドのAIサービスへテキストを送る</td></tr>
         <tr><th scope="row">内容まとめ、やること</th><td>端末内のAIモデルを先に試す設定はあるが、確認したコードでは既定でオフ</td><td>既定では、クラウドのAIサービスへテキストを送る</td></tr>
@@ -232,7 +232,7 @@ footer p{margin:12px 0 0}
         <li>どの音声も例外なく端末の外へ出さない、という保証が必要な場合。SpeechAnalyzerが失敗したときの切り替えがあり、通信の中身も実機で観測していないためです</li>
         <li>iOS 26より前のiPhoneで、端末内の文字起こしを使いたい場合</li>
       </ul></section>
-<section class="sec" id="next" aria-labelledby="next-h"><h2 id="next-h">関連するページ</h2><p>料金と上限は<a href="/pricing/">料金と利用条件</a>、データの扱いは<a href="/faq/#data-sent">よくある質問</a>をご覧ください。標準のボイスメモとの使い分けは<a href="/guides/iphone-voice-memos-vs-texter/">ボイスメモとTexterの違い</a>で説明しています。Apple Watchの録音の流れは、<a href="/guides/apple-watch-recording-transcription/">Apple Watchで録音して文字起こしする方法</a>をご覧ください。</p><p>録音から文字起こし、発言の確認までの流れは<a href="/interview/">取材・インタビューでの使い方</a>をご覧ください。クラウド方式の文字起こしや要約・AIチャットでは、処理のためにデータを外部サービスへ送ります。</p></section>
+<section class="sec" id="next" aria-labelledby="next-h"><h2 id="next-h">関連するページ</h2><p>料金と上限は<a href="/pricing/">料金と利用条件</a>、データの扱いは<a href="/faq/#data-sent">よくある質問</a>をご覧ください。標準のボイスメモとの使い分けは<a href="/guides/iphone-voice-memos-vs-texter/">ボイスメモとTexterの違い</a>で説明しています。Apple Watchの録音の流れは、<a href="/guides/apple-watch-recording-transcription/">Apple Watchで長く録音して文字起こしする方法</a>をご覧ください。</p><p>録音から文字起こし、発言の確認までの流れは<a href="/interview/">取材・インタビューでの使い方</a>をご覧ください。クラウド方式の文字起こしや要約・AIチャットでは、処理のためにデータを外部サービスへ送ります。</p></section>
 <section class="sec" id="method" aria-labelledby="method-h"><h2 id="method-h">確認の範囲</h2><details class="raw"><summary>開いて読む</summary>
       <dl class="facts">
         <dt>確認した人</dt><dd>Texter運営</dd>
