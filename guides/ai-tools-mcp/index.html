@@ -49,7 +49,7 @@
       "url": "https://texter.work/guides/ai-tools-mcp/",
       "inLanguage": "ja",
       "datePublished": "2026-11-13",
-      "dateModified": "2026-11-13",
+      "dateModified": "2026-11-26",
       "image": "https://texter.work/img/ogp.png",
       "isPartOf": {
         "@id": "https://texter.work/#website"
@@ -189,7 +189,7 @@ footer p{margin:12px 0 0}
 <h1>ChatGPTやClaudeから、Texterの文字起こしを読む方法</h1>
 <p class="lead">会議や講義の文字起こしを、コピーして貼り付けずに、ChatGPT、Claude、Museなどに読ませて質問できます。この機能がTexter MCPです。読ませるノートは、自分で選びます。接続の手順と、実際に返った答えを紹介します。</p>
 <p class="try"><a href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-ai-tools-mcp-top&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-ai-tools-mcp-top" data-store="app_store">Texterを入手する（App Store）</a></p>
-<p class="meta">検証日 <time datetime="2026-11-13">2026-11-13</time></p>
+<p class="meta">検証日 <time datetime="2026-11-26">2026-11-26</time></p>
 <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul><li><a href="#summary">できること</a></li><li><a href="#uses">こんなことに使えます</a></li><li><a href="#before">使う前に</a></li><li><a href="#step1">手順1：AIツールに接続する</a></li><li><a href="#step2">手順2：アプリで読めるノートを選ぶ</a></li><li><a href="#step3">手順3：AIツールで試す</a></li><li><a href="#control">読める範囲は自分で決められます</a></li><li><a href="#scope">安全について</a></li><li><a href="#revoke">接続を解除する</a></li><li><a href="#trouble">うまくいかないとき</a></li><li><a href="#faq">よくある質問</a></li></ul></nav>
 <section class="sec" id="summary" aria-labelledby="summary-h"><h2 id="summary-h">できること</h2>
 <p>Texterの文字起こしを、ChatGPTやClaudeなどのAIツールに読ませて質問できます。AIツールは、読めるようにしたノートを検索し、本文を読んで答えます。ノートをコピーして貼り付ける手間は要りません。</p>
@@ -247,8 +247,12 @@ footer p{margin:12px 0 0}
 codex mcp login texter</pre>
 <p>ブラウザでTexterの許可の画面が開くので、サインインして許可してください。</p>
 <h3 id="tool-chatgpt">ChatGPT</h3>
+<p>Texterは、ChatGPTのプラグインの一覧に載っています。URLを入れずに追加できます。画面の表記は日本語の画面のものです。</p>
+<ol><li>ChatGPTのプラグインの一覧で「Texter」を探して開く</li><li>右上の「プラグインをインストール」を押す</li><li>Texterの許可の画面が開いたら、サインインして許可する</li></ol>
+<p><a href="https://chatgpt.com/plugins/plugin_asdk_app_6af6ad7b741c81919c457dd81e6c3ea0" rel="noopener">ChatGPTのTexterのページ</a>から、直接開くこともできます。</p>
+<p>一覧から追加できないときは、カスタムMCPサーバーとして追加してください。使うURLは、手順1の最初にある https://mcp.texter.work/mcp です。</p>
 <ol><li>「プラグイン」の画面を開き、右上の「追加」から「カスタム MCP サーバーを追加」を選ぶ</li><li>名前に「Texter」などを入れる</li><li>接続タイプは「サーバーURL」を選び、上のURLを入れる</li><li>認証は「OAuth」を選ぶ</li><li>リスクの注意を読み、「理解したうえで続けます」に印を付けて作成する</li><li>Texterの許可の画面が開いたら、サインインして許可する</li></ol>
-<p>プランや管理者の設定によっては、この項目が表示されない場合があります。表示されないときは、ChatGPTのヘルプを確認してください。</p>
+<p>プランや管理者の設定によっては、プラグインの一覧やこの項目が表示されない場合があります。表示されないときは、ChatGPTのヘルプを確認してください。</p>
 
 <figure class="shot land"><a href="/assets/guides/ai-tools-mcp/chatgpt-add-mcp-ja.webp"><img src="/assets/guides/ai-tools-mcp/chatgpt-add-mcp-ja.webp" alt="ChatGPTのカスタムMCPサーバーを追加する画面。名前とサーバーURLを入れる欄がある" width="1023" height="1176" loading="lazy" decoding="async"></a><figcaption>ChatGPTでカスタムMCPサーバーを追加する画面</figcaption></figure>
 <h3 id="tool-muse">Muse</h3>
@@ -322,7 +326,7 @@ codex mcp login texter</pre>
 <article><h3>長く使った接続は、そのまま使えますか。</h3><p>AIツールから、接続し直しを求められることがあります。そのときは、同じ手順で接続し直してください。</p></article>
 <article><h3>iPhoneがオフラインのときは読めますか。</h3><p>iPhoneがオフラインの間は、最後に同期した内容が読まれます。</p></article>
 <article><h3>パソコンのツールは端末ごとに表示されますか。</h3><p>パソコンのツールは、端末ごとではなく1件にまとまって表示されます。</p></article>
-<p class="note">検証日 2026-11-13。ChatGPTとMuseの手順は、2026年11月12日に実際の画面で操作したものです。画面や手順は、各ツールの更新で変わることがあります。Claude、ChatGPT、Codex、Museは各社の商標です。</p></section>
+<p class="note">検証日 2026-11-26。ChatGPTのカスタムMCPサーバーの手順とMuseの手順は、2026年11月12日に実際の画面で操作したものです。ChatGPTのプラグインの一覧からの追加は、公開されたページの表記を確かめたもので、インストールから接続までは通して確かめていません。画面や手順は、各ツールの更新で変わることがあります。Claude、ChatGPT、Codex、Museは各社の商標です。</p></section>
 <section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで試す</h2><p>Texterは、録音の文字起こしや要約ができるiPhoneのアプリです。Texter MCPは、Premiumで使える機能です。ファミリー共有で受け取ったプランでは使えません。このほか、一部のPremiumでも、現在使えない場合があります。条件は<a href="/pricing/#sync-conditions">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-ai-tools-mcp-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-ai-tools-mcp-end" data-store="app_store">Texterを入手する（App Store）</a></div></section>
 </main>
 <footer><div class="wrap">

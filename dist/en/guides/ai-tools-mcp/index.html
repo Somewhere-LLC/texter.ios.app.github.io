@@ -49,7 +49,7 @@
       "url": "https://texter.work/en/guides/ai-tools-mcp/",
       "inLanguage": "en",
       "datePublished": "2026-11-13",
-      "dateModified": "2026-11-13",
+      "dateModified": "2026-11-26",
       "image": "https://texter.work/img/ogp.png",
       "isPartOf": {
         "@id": "https://texter.work/#website"
@@ -183,7 +183,7 @@ footer p{margin:12px 0 0}
 <h1>Let ChatGPT or Claude read your Texter transcripts</h1>
 <p class="lead">Ask ChatGPT, Claude, or Muse about your meeting and lecture transcripts without copying and pasting them. This feature is called Texter MCP. You choose which notes can be read. This guide covers the setup and shows the answers we actually got.</p>
 <p class="try"><a href="https://apps.apple.com/app/id1482592304?pt=489812&amp;ct=guide-ai-tools-mcp-top&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-ai-tools-mcp-top" data-store="app_store">Get Texter (App Store)</a></p>
-<p class="meta">Last verified <time datetime="2026-11-13">2026-11-13</time></p>
+<p class="meta">Last verified <time datetime="2026-11-26">2026-11-26</time></p>
 <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">Contents</h2><ul><li><a href="#summary">What it does</a></li><li><a href="#uses">What you can do with it</a></li><li><a href="#before">Before you start</a></li><li><a href="#step1">Step 1: Connect your AI tool</a></li><li><a href="#step2">Step 2: Choose the notes to make readable</a></li><li><a href="#step3">Step 3: Try it in your AI tool</a></li><li><a href="#control">You choose what can be read</a></li><li><a href="#scope">Safety</a></li><li><a href="#revoke">Disconnect</a></li><li><a href="#trouble">Troubleshooting</a></li><li><a href="#faq">FAQ</a></li></ul></nav>
 <section class="sec" id="summary" aria-labelledby="summary-h"><h2 id="summary-h">What it does</h2>
 <p>You can ask AI tools such as ChatGPT and Claude about your Texter transcripts. The AI tool searches the notes you have made readable, reads the text, and answers from it. You don't need to copy and paste a note.</p>
@@ -239,9 +239,12 @@ footer p{margin:12px 0 0}
 codex mcp login texter</pre>
 <p>The Texter allow screen opens in your browser; sign in and allow access.</p>
 <h3 id="tool-chatgpt">ChatGPT</h3>
-<p>The labels below are from the Japanese interface and may read differently in yours.</p>
+<p>Texter is listed in ChatGPT's plugin directory, so you can add it without typing the URL. The labels below are from the Japanese interface and may read differently in yours.</p>
+<ol><li>In ChatGPT's plugin directory, find "Texter" and open it</li><li>Choose the install button at the top right (shown as "プラグインをインストール" in the Japanese interface)</li><li>When the Texter screen opens, sign in and allow access</li></ol>
+<p>You can also open <a href="https://chatgpt.com/plugins/plugin_asdk_app_6af6ad7b741c81919c457dd81e6c3ea0" rel="noopener">the Texter page on ChatGPT</a> directly.</p>
+<p>If you can't add it from the directory, add it as a custom MCP server instead, using the server URL at the top of Step 1 (https://mcp.texter.work/mcp).</p>
 <ol><li>Open the plugins screen. From "Add" at the top right, choose to add a custom MCP server</li><li>Enter a name such as "Texter"</li><li>Set the connection type to server URL and enter the URL above</li><li>Choose OAuth for authentication</li><li>Read the risk notice, check the box confirming you understand, and create it</li><li>When the Texter screen opens, sign in and allow access</li></ol>
-<p>Depending on your plan or your administrator's settings, this option may not appear. If it doesn't, check ChatGPT's help.</p>
+<p>Depending on your plan or your administrator's settings, the plugin directory or this option may not appear. If it doesn't, check ChatGPT's help.</p>
 
 <h3 id="tool-muse">Muse</h3>
 <ol><li>In a Muse chat, say you want to connect to Texter MCP (use the URL above) with a custom connector</li><li>On the connection card that appears, tap "Connect"</li><li>Read the notice and tap "Next". Enter <code>texter-meta-muse</code> as the client ID and tap "Add"</li><li>When the Texter screen opens, sign in and allow access</li></ol>
@@ -313,7 +316,7 @@ codex mcp login texter</pre>
 <article><h3>Can I keep using a connection I have used for a long time?</h3><p>Your AI tool may ask you to reconnect. If it does, connect again with the same steps.</p></article>
 <article><h3>What if my iPhone is offline?</h3><p>While your iPhone is offline, the last synced content is read.</p></article>
 <article><h3>Are tools on my computer listed per device?</h3><p>No. Tools on your computer appear as one entry, not one per device.</p></article>
-<p class="note">Last verified 2026-11-13. The ChatGPT and Muse steps are from a session we ran on the real screens on November 12, 2026. Screens and steps can change as each tool updates. Claude, ChatGPT, Codex, and Muse are trademarks of their respective owners.</p></section>
+<p class="note">Last verified 2026-11-26. The steps for adding a custom MCP server in ChatGPT and the Muse steps are from a session we ran on the real screens on November 12, 2026. For adding Texter from ChatGPT's plugin directory, we checked the labels on the published page, but we have not gone through the whole flow from install to connection. Screens and steps can change as each tool updates. Claude, ChatGPT, Codex, and Muse are trademarks of their respective owners.</p></section>
 <section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Try it in Texter</h2><p>Texter is an iPhone app that transcribes and summarizes your recordings. Texter MCP is a Premium feature. It is not available with a plan received through Family Sharing, and it may also be unavailable with some other Premium subscriptions at this time. See <a href="#before">Before you start</a> for the conditions.</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/app/id1482592304?pt=489812&amp;ct=guide-ai-tools-mcp-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-ai-tools-mcp-end" data-store="app_store">Get Texter (App Store)</a></div></section>
 </main>
 <footer><div class="wrap">

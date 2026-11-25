@@ -1445,9 +1445,9 @@ const aiToolsMcp = {
   slug: 'ai-tools-mcp',
   group: 'ai',
   card: 'ChatGPTやClaudeに、Texterの文字起こしを読ませて質問する手順です（Premium）。',
-  verified: '2026-11-13',
+  verified: '2026-11-26',
   published: '2026-11-13',
-  modified: '2026-11-13',
+  modified: '2026-11-26',
   iosOnly: true,
   title: 'ChatGPTやClaudeにTexterの文字起こしを読ませる方法｜Texter MCPの使い方',
   description: 'Texterで文字起こしした会議や講義のノートを、ChatGPT、Claude、MuseなどのAIツールから検索して読む方法です。接続の手順、読ませるノートの選び方、解除の方法を、実際の画面で説明します。',
@@ -1515,8 +1515,12 @@ const aiToolsMcp = {
 codex mcp login texter</pre>
 <p>ブラウザでTexterの許可の画面が開くので、サインインして許可してください。</p>
 <h3 id="tool-chatgpt">ChatGPT</h3>
+<p>Texterは、ChatGPTのプラグインの一覧に載っています。URLを入れずに追加できます。画面の表記は日本語の画面のものです。</p>
+<ol><li>ChatGPTのプラグインの一覧で「Texter」を探して開く</li><li>右上の「プラグインをインストール」を押す</li><li>Texterの許可の画面が開いたら、サインインして許可する</li></ol>
+<p><a href="https://chatgpt.com/plugins/plugin_asdk_app_6af6ad7b741c81919c457dd81e6c3ea0" rel="noopener">ChatGPTのTexterのページ</a>から、直接開くこともできます。</p>
+<p>一覧から追加できないときは、カスタムMCPサーバーとして追加してください。使うURLは、手順1の最初にある https://mcp.texter.work/mcp です。</p>
 <ol><li>「プラグイン」の画面を開き、右上の「追加」から「カスタム MCP サーバーを追加」を選ぶ</li><li>名前に「Texter」などを入れる</li><li>接続タイプは「サーバーURL」を選び、上のURLを入れる</li><li>認証は「OAuth」を選ぶ</li><li>リスクの注意を読み、「理解したうえで続けます」に印を付けて作成する</li><li>Texterの許可の画面が開いたら、サインインして許可する</li></ol>
-<p>プランや管理者の設定によっては、この項目が表示されない場合があります。表示されないときは、ChatGPTのヘルプを確認してください。</p>
+<p>プランや管理者の設定によっては、プラグインの一覧やこの項目が表示されない場合があります。表示されないときは、ChatGPTのヘルプを確認してください。</p>
 
 <figure class="shot land"><a href="/assets/guides/ai-tools-mcp/chatgpt-add-mcp-ja.webp"><img src="/assets/guides/ai-tools-mcp/chatgpt-add-mcp-ja.webp" alt="ChatGPTのカスタムMCPサーバーを追加する画面。名前とサーバーURLを入れる欄がある" width="1023" height="1176" loading="lazy" decoding="async"></a><figcaption>ChatGPTでカスタムMCPサーバーを追加する画面</figcaption></figure>
 <h3 id="tool-muse">Muse</h3>
@@ -1590,7 +1594,7 @@ codex mcp login texter</pre>
 <article><h3>長く使った接続は、そのまま使えますか。</h3><p>AIツールから、接続し直しを求められることがあります。そのときは、同じ手順で接続し直してください。</p></article>
 <article><h3>iPhoneがオフラインのときは読めますか。</h3><p>iPhoneがオフラインの間は、最後に同期した内容が読まれます。</p></article>
 <article><h3>パソコンのツールは端末ごとに表示されますか。</h3><p>パソコンのツールは、端末ごとではなく1件にまとまって表示されます。</p></article>
-<p class="note">検証日 2026-11-13。ChatGPTとMuseの手順は、2026年11月12日に実際の画面で操作したものです。画面や手順は、各ツールの更新で変わることがあります。Claude、ChatGPT、Codex、Museは各社の商標です。</p>` },
+<p class="note">検証日 2026-11-26。ChatGPTのカスタムMCPサーバーの手順とMuseの手順は、2026年11月12日に実際の画面で操作したものです。ChatGPTのプラグインの一覧からの追加は、公開されたページの表記を確かめたもので、インストールから接続までは通して確かめていません。画面や手順は、各ツールの更新で変わることがあります。Claude、ChatGPT、Codex、Museは各社の商標です。</p>` },
   ],
   ctaTitle: 'Texterで試す',
   ctaLabel: 'Texterを入手する',
@@ -1659,9 +1663,12 @@ codex mcp login texter</pre>
 codex mcp login texter</pre>
 <p>The Texter allow screen opens in your browser; sign in and allow access.</p>
 <h3 id="tool-chatgpt">ChatGPT</h3>
-<p>The labels below are from the Japanese interface and may read differently in yours.</p>
+<p>Texter is listed in ChatGPT's plugin directory, so you can add it without typing the URL. The labels below are from the Japanese interface and may read differently in yours.</p>
+<ol><li>In ChatGPT's plugin directory, find "Texter" and open it</li><li>Choose the install button at the top right (shown as "プラグインをインストール" in the Japanese interface)</li><li>When the Texter screen opens, sign in and allow access</li></ol>
+<p>You can also open <a href="https://chatgpt.com/plugins/plugin_asdk_app_6af6ad7b741c81919c457dd81e6c3ea0" rel="noopener">the Texter page on ChatGPT</a> directly.</p>
+<p>If you can't add it from the directory, add it as a custom MCP server instead, using the server URL at the top of Step 1 (https://mcp.texter.work/mcp).</p>
 <ol><li>Open the plugins screen. From "Add" at the top right, choose to add a custom MCP server</li><li>Enter a name such as "Texter"</li><li>Set the connection type to server URL and enter the URL above</li><li>Choose OAuth for authentication</li><li>Read the risk notice, check the box confirming you understand, and create it</li><li>When the Texter screen opens, sign in and allow access</li></ol>
-<p>Depending on your plan or your administrator's settings, this option may not appear. If it doesn't, check ChatGPT's help.</p>
+<p>Depending on your plan or your administrator's settings, the plugin directory or this option may not appear. If it doesn't, check ChatGPT's help.</p>
 
 <h3 id="tool-muse">Muse</h3>
 <ol><li>In a Muse chat, say you want to connect to Texter MCP (use the URL above) with a custom connector</li><li>On the connection card that appears, tap "Connect"</li><li>Read the notice and tap "Next". Enter <code>texter-meta-muse</code> as the client ID and tap "Add"</li><li>When the Texter screen opens, sign in and allow access</li></ol>
@@ -1733,7 +1740,7 @@ codex mcp login texter</pre>
 <article><h3>Can I keep using a connection I have used for a long time?</h3><p>Your AI tool may ask you to reconnect. If it does, connect again with the same steps.</p></article>
 <article><h3>What if my iPhone is offline?</h3><p>While your iPhone is offline, the last synced content is read.</p></article>
 <article><h3>Are tools on my computer listed per device?</h3><p>No. Tools on your computer appear as one entry, not one per device.</p></article>
-<p class="note">Last verified 2026-11-13. The ChatGPT and Muse steps are from a session we ran on the real screens on November 12, 2026. Screens and steps can change as each tool updates. Claude, ChatGPT, Codex, and Muse are trademarks of their respective owners.</p>` },
+<p class="note">Last verified 2026-11-26. The steps for adding a custom MCP server in ChatGPT and the Muse steps are from a session we ran on the real screens on November 12, 2026. For adding Texter from ChatGPT's plugin directory, we checked the labels on the published page, but we have not gone through the whole flow from install to connection. Screens and steps can change as each tool updates. Claude, ChatGPT, Codex, and Muse are trademarks of their respective owners.</p>` },
     ],
     ctaTitle: 'Try it in Texter',
     ctaLabel: 'Get Texter',
