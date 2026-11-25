@@ -7,6 +7,7 @@ const CHECKED = '2026-11-01';
 const yen = (n) => `¥${n.toLocaleString('en-US')}`;
 const { weekly, monthly, yearly } = facts.prices;
 const { ticket, semiannual, tenHours, twentyHours, chargeRealtime, chargeAmazon, chargeTranslate } = facts.jaPlans;
+const android = facts.androidJapan;
 
 const questions = [
   { id: 'without-subscription', q: 'サブスクなしで使えますか？',
@@ -72,19 +73,20 @@ const sections = [
 <ul><li>音声・動画の取り込み（Whisper）：月の枠なし。1ファイル1GBまで、作成は1日300件まで</li><li>画像の文字起こし：1日1,000単位まで</li><li>翻訳（DeepLなどのクラウド翻訳）：1日10万字まで</li><li>要約、内容まとめ、AIチャット、ワードクラウド、話題マップ：アプリの回数の上限なし</li></ul>` },
   { id: 'ticket', title: '文字起こしチケットに含まれないもの', html: `<p>チケットで処理するときは、動画広告は表示されません。次の機能には使えません。</p>
 <ul><li>リアルタイム文字起こし、音声入力キーボード</li><li>Amazon Transcribe、録音しながらの話者識別、取り込み時の自動無音カット</li><li>要約、AIチャット、翻訳、画像の文字起こしの回数</li></ul><p>チケットは、Whisperの無料枠を使い切ったときの上限画面に表示されます。表示されない場合もあり、Premiumに加入中の方と紹介特典を利用中の方には表示されません。録音ファイルの話者識別にも、チケットを使えます。</p>` },
-  { id: 'charge', title: '追加チャージ', html: `<p>月の枠を超えて使いたいときは、次の追加チャージ（自動更新なし）を購入できます。追加できる量は、アプリの購入画面で確認してください。</p>
+  { id: 'charge', title: 'iPhone版の追加チャージ', html: `<p>iPhone版では、利用枠を超えて使いたいときに、次の追加チャージ（自動更新なし）を購入できます。追加できる量は、アプリの購入画面で確認してください。Android版の追加チャージは<a href="#android">下の案内</a>をご覧ください。</p>
 <ul><li>リアルタイム文字起こし：${yen(chargeRealtime)}</li><li>Amazon Transcribe：${yen(chargeAmazon)}</li><li>翻訳：${yen(chargeTranslate)}</li></ul>` },
-  { id: 'android', title: 'iPhoneとAndroidの違い', html: `<p>このページの料金と上限は、iPhone版のものです。Android版の料金はGoogle Playで確認してください。次の点が異なります。</p>
+  { id: 'android', title: 'Android版の料金とiPhoneとの違い', html: `<p>上のプラン比較はiPhone版です。日本のGoogle PlayでのAndroid版Premiumの標準料金は月額 ${yen(android.monthly)}、半年 ${yen(android.semiannual)}、年額 ${yen(android.yearly)} です。対象の方には月額プランに3日間の無料試用が表示されます。</p>
 <div class="scroll"><table class="compare"><thead><tr><th scope="col">項目</th><th scope="col">iPhone</th><th scope="col">Android</th></tr></thead><tbody>
 <tr><th scope="row">無料のファイル文字起こし</th><td>処理時間の累積枠</td><td>別の枠（iPhoneとは共通ではありません）</td></tr>
-<tr><th scope="row">文字起こしチケット</th><td>あり（1時間 ${yen(ticket)}）</td><td>あり（1時間 ${yen(ticket)}）</td></tr>
+<tr><th scope="row">文字起こしチケット</th><td>あり（1時間 ${yen(ticket)}）</td><td>あり（1時間 ${yen(android.ticket)}）</td></tr>
 <tr><th scope="row">チケットの1ファイルの上限</th><td>1GB、2時間</td><td>256MB、2時間</td></tr>
-<tr><th scope="row">追加チャージ</th><td>あり</td><td>確認日の時点で提供していません</td></tr>
+<tr><th scope="row">追加チャージ</th><td>あり</td><td>高性能リアルタイム文字起こし＋5時間 ${yen(android.chargeRealtime)}（Premium加入中）、クラウド翻訳＋20万文字 ${yen(android.chargeTranslate)}</td></tr>
 <tr><th scope="row">音声入力キーボード</th><td>あり</td><td>なし</td></tr>
 <tr><th scope="row">Apple Watchでの録音</th><td>あり</td><td>なし</td></tr>
-</tbody></table></div>` },
+</tbody></table></div>
+<p>Android版の追加チャージは自動更新されません。アプリの設定にある「Texter プレミアムオプション」から購入できます。文字起こしチケットはWhisperでファイルを文字起こしするときに使います。購入できる商品、価格、無料試用の対象は、アプリのGoogle Play購入画面で確認してください。</p>` },
   { id: 'not-suited', title: 'Texterが向いていない使い方', html: `<ul><li>無料のまま長時間をリアルタイムで記録したい場合：1回3分で止まる</li><li>無料枠で毎月ファイルを処理したい場合：iPhone版のWhisperの無料枠は累積する</li><li>通信なしで話者識別まで使いたい場合：話者識別には通信が必要。通信なしで使えるのは、対応端末のApple音声認識とSpeechAnalyzerだけ</li><li>チケットで2時間を超える音声を処理したい場合：Premiumが必要</li><li>無料のまま複数の端末でノートを同期したい場合：同期はPremiumで使える。録音などの原本は同期しない</li></ul>` },
-  { id: 'method', title: '確認の方法', html: `<dl class="facts"><dt>確認日</dt><dd>${CHECKED}</dd><dt>確認した人</dt><dd>Texter運営</dd><dt>料金</dt><dd>App Store（日本）の表示</dd><dt>上限</dt><dd>iPhone版2.11.68の実装と、配信中の設定値</dd></dl><p class="note">上限は変わる場合があります。最新の内容は、アプリのプラン比較と購入画面で確認してください。よくある質問は<a href="/faq/">こちら</a>です。</p>` },
+  { id: 'method', title: '確認の方法', html: `<dl class="facts"><dt>iPhone版の確認日</dt><dd>${CHECKED}</dd><dt>Android版の料金の確認日</dt><dd>${android.checked}</dd><dt>確認した人</dt><dd>Texter運営</dd><dt>料金</dt><dd>App Store（日本）の表示、Google Play（日本）の販売情報</dd><dt>上限</dt><dd>iPhone版2.11.68の実装と、配信中の設定値</dd></dl><p class="note">上限は変わる場合があります。最新の内容は、アプリのプラン比較と購入画面で確認してください。よくある質問は<a href="/faq/">こちら</a>です。</p>` },
 ];
 
 const page = {
