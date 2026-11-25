@@ -773,6 +773,96 @@ const offlineTranscription = {
   ctaBody: 'Texterは、録音や音声ファイルから文字起こし、要約、やることの抽出までを行うアプリです。この手順はiPhone版のものです。',
 };
 
+const watchGuide = {
+  slug: 'apple-watch-recording-transcription',
+  modified: '2026-11-26',
+  group: 'record',
+  card: 'Apple Watchで録音し、iPhoneで文字起こしする手順と、つまずいたときの確認をまとめました。',
+  published: '2026-11-26',
+  iosOnly: true,
+  verified: '2026-11-26',
+  metaLabel: '確認日',
+  title: 'Apple Watchで録音して文字起こしする方法｜iPhoneへの転送と文字起こしの設定',
+  description: 'Apple Watch単体で録音し、iPhoneのTexterで文字起こしする手順です。1回の録音は無料で最大15分、Premiumで最大2時間です。文字起こしの方式の選び方と、届かないときの確認を紹介します。',
+  crumb: 'Apple Watchで録音して文字起こしする方法',
+  h1: 'Apple Watchで録音して文字起こしする方法',
+  lead: 'Apple Watchで録音すると、録音はあとでiPhoneへ転送され、iPhoneのTexterで文字起こしできます。1回の録音は、無料版で最大15分、Premiumで最大2時間です。文字起こしの方式は、iPhoneの設定で決まります。<a href="#on-device">iPhoneの中で文字起こしする設定</a>と、<a href="#trouble">つまずいたときの確認</a>を紹介します。',
+  image: '/img/ogp.png',
+  store: 'guide-apple-watch',
+  sections: [
+    { id: 'summary', title: '結論', html: `
+      <p>Apple Watch単体で録音できるので、iPhoneが近くになくても問題ありません。録音はWatchに保存され、あとでiPhoneへ転送されます。転送後は、iPhoneのTexterでノートとして文字起こしする流れです。</p>
+      <p>録音1回の長さには上限があり、無料版は最大15分、Premiumは最大2時間です。上限に達すると録音は自動で止まり、そこまでの録音は保存されます。回数の上限はありません。</p>
+      <p>文字起こしの方式は、iPhoneの設定の「音声認識サービス」で決まります。何も変えていないときは、音声をクラウドへ送って文字にする設定です。iOS 26以降の対応端末なら、iPhoneの中で文字起こしする方式も選べます。</p>` },
+    { id: 'prep', title: '始める前に必要なもの', html: `
+      <ul>
+        <li>watchOS 11以降のApple Watch。TexterのWatchアプリを使います</li>
+        <li>Texterを入れたiPhone。文字起こしはiPhoneで行います</li>
+        <li>Android版には、Apple Watchの録音はありません</li>
+      </ul>
+      <p>Watchでの録音の始め方は、次のとおりです。使いやすいものを選んでください。</p>
+      <ul>
+        <li>WatchでTexterのアプリを開き、録音ボタンを押す</li>
+        <li>文字盤のコンプリケーションから始める</li>
+        <li>スマートスタックのコントロールから始める（watchOS 26以降）</li>
+        <li>Apple Watch Ultraのアクションボタンから始める</li>
+        <li>ショートカットから始める</li>
+        <li>Siriに「Texterで録音を開始」または「Texterで録音」と話しかける</li>
+      </ul>` },
+    { id: 'steps', cta: 'after-steps', title: '録音から文字起こしまでの手順', html: `
+      <ol class="steps">
+        <li><h3>Watchで録音する</h3><p>上の方法のどれかで録音を始めます。録音中は、Watchの画面に経過時間が出ます。録音を止めた画面の表示は、「録音を保存しました」です。iPhoneへまだ転送されていないときは、「iPhoneへの転送待ち」も出ます。</p></li>
+        <li><h3>iPhoneに届くのを待つ</h3><p>iPhoneのTexterでは、受信中に「Apple Watchの録音を受信中…」、ノートの準備中に「Apple Watchのノートを準備中…」と出ます。届いたことを知らせる通知は出ません。ノート一覧を開いて、新しいノートがあるか確かめてください。</p></li>
+        <li><h3>文字起こしを確かめる</h3><p>iPhoneの設定で決めた方式で、文字起こしが始まります。何も変えていないときは、音声をクラウドへ送って文字にします。この方式で使うのは、ファイルの文字起こしの無料枠です。iPhoneの中で文字起こしする設定は、<a href="#on-device">次の節</a>で説明します。</p></li>
+      </ol>` },
+    { id: 'on-device', title: 'iPhoneの中で文字起こしする設定', html: `
+      <p>iOS 26以降の対応端末では、「音声認識サービス」でSpeechAnalyzerを選ぶと、Watchの録音をiPhoneの中で文字起こしします。この方式は、クラウドの無料枠を使いません。</p>
+      <ol class="steps">
+        <li><h3>iOSの版を確かめる</h3><p>SpeechAnalyzerは、iOS 26以降の機能です。それより前のiPhoneでは選べません。</p></li>
+        <li><h3>SpeechAnalyzerを選ぶ</h3><p>Texterの「設定」→「ファイルをインポート」→「音声認識サービスを選択」を開き、SpeechAnalyzerを選びます。初回は、言語のモデルをダウンロードするため、通信が要ります。</p></li>
+        <li><h3>無料版では、広告を見て始める</h3><p>Premiumの方は、文字起こしが自動で始まります。無料版の方は、ノート一覧に出る「広告を見てこの録音を文字起こし」を押すと始まります。この操作は、録音1件ごとに必要です。</p></li>
+      </ol>
+      <p>端末内の方式が使えないとき、Texterはクラウドへ自動では切り替えません。対応していない端末や言語では、文字起こしは止まり、ノート一覧の行に理由が出ます。録音は消えません。</p>
+      <p>設定の詳しい手順と、端末内で済む処理の範囲は、<a href="/guides/iphone-offline-transcription/">音声を端末の外に送らずに文字起こしする方法</a>で説明しています。</p>` },
+    { id: 'prevent', title: '止め忘れを防ぐ', html: `
+      <ul>
+        <li>録音中は、Watchの画面で経過時間を確かめられます</li>
+        <li>録音が30分続くごとに、Watchが振動で知らせます</li>
+        <li>録音が自動で止まるのは、バッテリーが少なくなったとき、空き容量が足りないとき、録音の上限に達したときです。止まるまでの録音は保存されます</li>
+        <li>電話などで録音が中断されたときも、途中までの録音が保存されます</li>
+      </ul>
+      <p>画面を消したあとも録音が続く設計です。ただし、実機での確認はこれからです。大事な録音では、始めた直後に画面を確かめてください。</p>` },
+    { id: 'trouble', title: 'つまずいたとき', html: `
+      <ul>
+        <li><strong>iPhoneにノートが出ない</strong>。Watchの画面に「iPhoneへの転送待ち」と出ていないか確かめます。iPhoneが近くにないと、転送はあとになります。Texterを開いて、「Apple Watchの録音を受信中…」と出るかも見てください</li>
+        <li><strong>録音が途中で止まった</strong>。バッテリー、空き容量、録音の上限のどれかが原因のことがあります。止まるまでの録音は保存されるので、ノートを開いて確かめてください</li>
+        <li><strong>文字起こしが始まらない</strong>。ノート一覧の行に、止まった理由が出ます。「広告を見てこの録音を文字起こし」と出ているときは、それを押すと始まります。「この録音に使える文字起こし方式がありません」と出ているときは、設定の「音声認識サービス」を変えてください。ノートから音声を書き出す方法もあります</li>
+        <li><strong>「無料枠の上限で止まっています」と出る</strong>。クラウドの方式を使っていて、文字起こしの無料枠を超えたときの表示です。録音は消えません。枠が戻ったあとにタップして再開できます。iOS 26以降の対応端末なら、SpeechAnalyzerに変える方法もあります</li>
+      </ul>` },
+    { id: 'notes', title: '始める前の注意', html: `
+      <ul>
+        <li>無料版の録音は、1回につき最大15分です。Premiumは最大2時間です。回数に上限はありません</li>
+        <li>既定のクラウドの方式では、録音の音声をクラウドの音声認識へ送ります。送りたくない録音は、先にSpeechAnalyzerへ切り替えてください。ただし、iOS 26以降の対応端末だけです</li>
+        <li>無料版では、ファイルの文字起こしの無料枠を超えると、クラウドの方式の処理は止まります。枠は累積で、毎月は戻りません。条件は<a href="/pricing/">料金と利用条件</a>で確認できます</li>
+        <li>取り込み時の「無音を自動削除」（Premium）は、ファイルの取り込みの機能です。Watchの録音には使えません</li>
+        <li>録音する前に、参加者へ録音することを伝えてください</li>
+      </ul>` },
+    { id: 'next', title: '録音のあとにすること', html: `
+      <p>Watchの録音から作ったノートでも、要約を使えます。無料版は1日3回までです。録音から議事録を仕上げる手順は、<a href="/guides/ai-minutes/">録音から議事録を作る方法</a>で説明しています。</p>
+      <p>iPhoneですぐ録音を始めたいときは、<a href="/guides/iphone-side-button-recording/">サイドボタンで録音を始める方法</a>もご覧ください。</p>` },
+    { id: 'method', title: '確認の範囲', html: `
+      <dl class="facts">
+        <dt>確認した人</dt><dd>Texter運営</dd>
+        <dt>確認日</dt><dd>2026-11-26</dd>
+        <dt>確認したもの</dt><dd>iPhone版Texterの最新の開発版のソースコードと、日本語の画面の文言です。</dd>
+        <dt>確認していないこと</dt><dd>実機での録音から文字起こしまでの所要時間と精度、画面を消したあとの録音の継続、Watchとホーム画面の実際の見え方です。</dd>
+      </dl>` },
+  ],
+  ctaTitle: 'Texterで試す',
+  ctaLabel: 'iPhoneでWatchの録音を試す',
+  ctaBody: 'Texterは、録音や音声ファイルから文字起こし、要約、やることの抽出までを行うアプリです。この手順はiPhone版とApple Watchのものです。',
+};
+
 const meetingTasks = {
   slug: 'iphone-meeting-action-items-reminder',
   modified: '2026-11-13',
@@ -1765,4 +1855,4 @@ const index = {
   crumb: '活用ガイド',
 };
 
-module.exports = { VERIFIED, guides: [interviewWriting, researchInterview, interviewTopics, lectureNotes, talkShowNotes, aiMinutes, meetingTasks, multiSpeakerMinutes, voiceMemosVsTexter, sideButton, pipGuide, searchNotes, aiToolsMcp, offlineTranscription, subtitledVideo, videoSubtitles], index, groups };
+module.exports = { VERIFIED, guides: [interviewWriting, researchInterview, interviewTopics, lectureNotes, talkShowNotes, aiMinutes, meetingTasks, multiSpeakerMinutes, voiceMemosVsTexter, sideButton, watchGuide, pipGuide, searchNotes, aiToolsMcp, offlineTranscription, subtitledVideo, videoSubtitles], index, groups };

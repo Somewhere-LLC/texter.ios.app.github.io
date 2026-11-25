@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HDB32BHHL8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HDB32BHHL8', { 'cookie_flags': 'SameSite=None;Secure' });
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Apple Watchで録音して文字起こしする方法｜iPhoneへの転送と文字起こしの設定</title>
+<meta name="description" content="Apple Watch単体で録音し、iPhoneのTexterで文字起こしする手順です。1回の録音は無料で最大15分、Premiumで最大2時間です。文字起こしの方式の選び方と、届かないときの確認を紹介します。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://texter.work/guides/apple-watch-recording-transcription/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://texter.work/guides/apple-watch-recording-transcription/">
+<meta property="og:title" content="Apple Watchで録音して文字起こしする方法｜iPhoneへの転送と文字起こしの設定">
+<meta property="og:description" content="Apple Watch単体で録音し、iPhoneのTexterで文字起こしする手順です。1回の録音は無料で最大15分、Premiumで最大2時間です。文字起こしの方式の選び方と、届かないときの確認を紹介します。">
+<meta property="og:site_name" content="Texter">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://texter.work/img/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Apple Watchで録音して文字起こしする方法｜iPhoneへの転送と文字起こしの設定">
+<meta name="twitter:description" content="Apple Watch単体で録音し、iPhoneのTexterで文字起こしする手順です。1回の録音は無料で最大15分、Premiumで最大2時間です。文字起こしの方式の選び方と、届かないときの確認を紹介します。">
+<meta name="twitter:image" content="https://texter.work/img/ogp.png">
+<meta name="apple-itunes-app" content="app-id=1482592304">
+<link rel="icon" href="/assets/favicon/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v=2">
+<link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png?v=2">
+<meta name="theme-color" content="#EDF4FF">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://texter.work/guides/apple-watch-recording-transcription/#article",
+      "headline": "Apple Watchで録音して文字起こしする方法",
+      "description": "Apple Watch単体で録音し、iPhoneのTexterで文字起こしする手順です。1回の録音は無料で最大15分、Premiumで最大2時間です。文字起こしの方式の選び方と、届かないときの確認を紹介します。",
+      "url": "https://texter.work/guides/apple-watch-recording-transcription/",
+      "inLanguage": "ja",
+      "datePublished": "2026-11-26",
+      "dateModified": "2026-11-26",
+      "image": "https://texter.work/img/ogp.png",
+      "isPartOf": {
+        "@id": "https://texter.work/#website"
+      },
+      "about": {
+        "@id": "https://texter.work/#app"
+      },
+      "publisher": {
+        "@id": "https://texter.work/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://texter.work/guides/apple-watch-recording-transcription/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Texter",
+          "item": "https://texter.work/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "活用ガイド",
+          "item": "https://texter.work/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Apple Watchで録音して文字起こしする方法",
+          "item": "https://texter.work/guides/apple-watch-recording-transcription/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{--accent:#6482FA;--deep:#5460D6;--navy:#17255A;--text:#444444;--sub:#5F6170;--line:rgba(23,37,90,.12);--card:#FFFFFF;--grad-a:#EDF4FF;--grad-b:#D6E4FC;
+  --f-jp:-apple-system,BlinkMacSystemFont,"SF Pro JP","Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;--f-mono:ui-monospace,Menlo,monospace;color-scheme:light}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:80px}
+body{margin:0;color:var(--text);font-family:var(--f-jp);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased;background:linear-gradient(180deg,var(--grad-a) 0%,var(--grad-b) 100%) fixed,var(--grad-b)}
+a{color:var(--deep)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip{position:fixed;left:12px;top:-60px;z-index:100;background:var(--navy);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+.skip:focus{top:12px}
+.wrap{max-width:760px;margin-inline:auto;padding-inline:20px}
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:18px;color:var(--navy)}
+.brand img{width:28px;height:28px;border-radius:7px}
+.nav ul{display:flex;gap:4px;margin:0;padding:0;list-style:none}
+.nav ul a{display:block;padding:8px 10px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;color:var(--text);white-space:nowrap}
+.crumbs{margin:28px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px;font-size:13px;color:var(--sub)}
+.crumbs li+li::before{content:"/";margin-right:6px}
+.crumbs a{color:var(--sub)}
+h1{margin:12px 0 0;color:var(--navy);font-size:clamp(2rem,5vw,2.6rem);line-height:1.25;font-weight:900}
+.lead{margin:16px 0 0}
+.try{margin:16px 0 0}
+.try a{display:inline-flex;align-items:center;min-height:44px;padding:8px 18px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:15px}
+.meta{margin:10px 0 0;font-size:13px;color:var(--sub)}
+.toc{margin:28px 0 0;padding:18px 20px;background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:14px}
+.toc h2{margin:0;font-size:13px;color:var(--sub);font-weight:600}
+.toc ul{margin:8px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 18px}
+.toc a{font-size:15px;font-weight:500}
+.sec{margin-top:48px}
+.sec>h2{margin:0;padding-top:12px;border-top:1.5px solid var(--navy);color:var(--navy);font-size:clamp(1.3rem,3vw,1.6rem);line-height:1.4}
+.sec h3{margin:24px 0 0;color:var(--navy);font-size:17px;line-height:1.6}
+.sec p,.sec ul,.sec ol{margin:12px 0 0}
+.sec ul,.sec ol{padding-left:1.3em}
+.compare{width:100%;margin-top:16px;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;font-size:15px}
+.compare th,.compare td{padding:12px 14px;border:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.65}
+.compare thead th{background:#F2F5FD;color:var(--navy)}
+.compare caption{padding:8px 0;text-align:left;font-size:14px;color:var(--sub)}
+.scroll{overflow-x:auto;margin-top:12px}
+.scroll .compare{margin-top:0}
+.plans{min-width:680px}
+.plans tbody th{min-width:128px}
+.plans th:first-child{position:sticky;left:0;background:#fff;z-index:1}
+.plans thead th:first-child{background:#F2F5FD}
+.sec article{margin-top:18px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.sec article h3{margin:0}
+.doc{margin-top:12px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.doc p:first-child{margin-top:0}
+.steps{list-style:none;padding:0!important;counter-reset:s}
+.steps>li{counter-increment:s;margin-top:32px;padding:20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.steps>li>h3{margin:0}
+.steps>li>h3::before{content:counter(s) ". "}
+.shot{display:inline-block;width:min(46%,260px);margin:16px 10px 0 0;vertical-align:top}
+.shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:14px}
+.shot figcaption{margin-top:6px;font-size:13px;line-height:1.5;color:var(--sub)}
+.ask{margin:12px 0 0;padding:14px 16px;background:#fff;border-left:4px solid var(--accent);border-radius:8px;color:var(--navy);font-weight:600}
+.url{margin:16px 0 0;padding:14px 16px;background:#fff;border:2px solid var(--accent);border-radius:12px;font:600 17px/1.6 var(--f-mono);overflow-wrap:anywhere;color:var(--navy)}
+.shot.land{display:block;width:100%;max-width:680px;margin-right:0}
+.demo{margin:16px 0 0;max-width:300px}
+.demo.land{max-width:none}
+.demo figcaption{margin-top:6px;font-size:13px;line-height:1.5;color:var(--sub)}
+.demo video{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);background:#fff}
+.sample{display:block;width:100%;height:auto;margin-top:16px;border-radius:14px;background:#000}
+.note{font-size:14px}
+.raw{margin-top:14px}
+.raw summary{cursor:pointer;font-weight:600;color:var(--navy)}
+.code{margin:12px 0 0;padding:16px;overflow-x:auto;background:var(--navy);color:#fff;border-radius:12px;font:14px/1.7 var(--f-mono);white-space:pre-wrap;overflow-wrap:anywhere}
+.facts{display:grid;grid-template-columns:8em 1fr;gap:8px 12px;margin:16px 0 0;font-size:15px}
+.facts dt{font-weight:600;color:var(--navy)}
+.facts dd{margin:0}
+.cards{display:grid;gap:14px;margin:28px 0 0}
+.card{display:block;padding:20px 22px;background:var(--card);border:1px solid var(--line);border-radius:14px;text-decoration:none;color:var(--text)}
+.card strong{display:block;color:var(--navy);font-size:18px}
+.card span{display:block;margin-top:6px;font-size:15px}
+.cta{margin:56px 0 0;padding:28px 22px;background:var(--navy);color:#fff;border-radius:18px}
+.cta h2{margin:0;font-size:22px;line-height:1.4}
+.cta p{margin:8px 0 0;color:rgba(255,255,255,.85);font-size:15px}
+.cta .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.cta.inline{margin:32px 0 0;padding:20px 22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 20px;text-align:center;line-height:1.4;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px}
+.btn-solid{background:#fff;color:var(--navy)}
+.btn-line{color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)}
+footer{margin-top:64px;padding:28px 0 40px;border-top:1px solid var(--line);font-size:13px;color:var(--sub)}
+footer ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 16px}
+footer a{color:var(--sub)}
+footer p{margin:12px 0 0}
+@media (max-width:400px){.nav ul .opt{display:none}}
+@media (max-width:560px){.nav ul a{padding:8px 5px;font-size:13px}.shot{width:calc(50% - 8px);margin-right:6px}.shot.wide{width:100%;max-width:320px;margin-right:0}.steps>li{padding:16px}.facts{grid-template-columns:1fr}.facts dd{margin-bottom:8px}.compare{font-size:14px}.compare th,.compare td{padding:10px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/"><img src="/img/appicon.png" alt="" width="28" height="28">Texter</a>
+  <nav aria-label="メイン"><ul><li class="opt"><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金</a></li><li><a href="/faq/">よくある質問</a></li></ul></nav>
+</div></header>
+<main id="main" class="wrap">
+<nav aria-label="パンくずリスト"><ol class="crumbs"><li><a href="/">Texter</a></li><li><a href="/guides/">活用ガイド</a></li><li aria-current="page">Apple Watchで録音して文字起こしする方法</li></ol></nav>
+<h1>Apple Watchで録音して文字起こしする方法</h1>
+<p class="lead">Apple Watchで録音すると、録音はあとでiPhoneへ転送され、iPhoneのTexterで文字起こしできます。1回の録音は、無料版で最大15分、Premiumで最大2時間です。文字起こしの方式は、iPhoneの設定で決まります。<a href="#on-device">iPhoneの中で文字起こしする設定</a>と、<a href="#trouble">つまずいたときの確認</a>を紹介します。</p>
+<p class="try"><a href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-apple-watch-top&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-apple-watch-top" data-store="app_store">無料で試す（App Store）</a></p>
+<p class="meta">確認日 <time datetime="2026-11-26">2026-11-26</time></p>
+<nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul><li><a href="#summary">結論</a></li><li><a href="#prep">始める前に必要なもの</a></li><li><a href="#steps">録音から文字起こしまでの手順</a></li><li><a href="#on-device">iPhoneの中で文字起こしする設定</a></li><li><a href="#prevent">止め忘れを防ぐ</a></li><li><a href="#trouble">つまずいたとき</a></li><li><a href="#notes">始める前の注意</a></li><li><a href="#next">録音のあとにすること</a></li><li><a href="#method">確認の範囲</a></li></ul></nav>
+<section class="sec" id="summary" aria-labelledby="summary-h"><h2 id="summary-h">結論</h2>
+      <p>Apple Watch単体で録音できるので、iPhoneが近くになくても問題ありません。録音はWatchに保存され、あとでiPhoneへ転送されます。転送後は、iPhoneのTexterでノートとして文字起こしする流れです。</p>
+      <p>録音1回の長さには上限があり、無料版は最大15分、Premiumは最大2時間です。上限に達すると録音は自動で止まり、そこまでの録音は保存されます。回数の上限はありません。</p>
+      <p>文字起こしの方式は、iPhoneの設定の「音声認識サービス」で決まります。何も変えていないときは、音声をクラウドへ送って文字にする設定です。iOS 26以降の対応端末なら、iPhoneの中で文字起こしする方式も選べます。</p></section>
+<section class="sec" id="prep" aria-labelledby="prep-h"><h2 id="prep-h">始める前に必要なもの</h2>
+      <ul>
+        <li>watchOS 11以降のApple Watch。TexterのWatchアプリを使います</li>
+        <li>Texterを入れたiPhone。文字起こしはiPhoneで行います</li>
+        <li>Android版には、Apple Watchの録音はありません</li>
+      </ul>
+      <p>Watchでの録音の始め方は、次のとおりです。使いやすいものを選んでください。</p>
+      <ul>
+        <li>WatchでTexterのアプリを開き、録音ボタンを押す</li>
+        <li>文字盤のコンプリケーションから始める</li>
+        <li>スマートスタックのコントロールから始める（watchOS 26以降）</li>
+        <li>Apple Watch Ultraのアクションボタンから始める</li>
+        <li>ショートカットから始める</li>
+        <li>Siriに「Texterで録音を開始」または「Texterで録音」と話しかける</li>
+      </ul></section>
+<section class="sec" id="steps" aria-labelledby="steps-h"><h2 id="steps-h">録音から文字起こしまでの手順</h2>
+      <ol class="steps">
+        <li><h3>Watchで録音する</h3><p>上の方法のどれかで録音を始めます。録音中は、Watchの画面に経過時間が出ます。録音を止めた画面の表示は、「録音を保存しました」です。iPhoneへまだ転送されていないときは、「iPhoneへの転送待ち」も出ます。</p></li>
+        <li><h3>iPhoneに届くのを待つ</h3><p>iPhoneのTexterでは、受信中に「Apple Watchの録音を受信中…」、ノートの準備中に「Apple Watchのノートを準備中…」と出ます。届いたことを知らせる通知は出ません。ノート一覧を開いて、新しいノートがあるか確かめてください。</p></li>
+        <li><h3>文字起こしを確かめる</h3><p>iPhoneの設定で決めた方式で、文字起こしが始まります。何も変えていないときは、音声をクラウドへ送って文字にします。この方式で使うのは、ファイルの文字起こしの無料枠です。iPhoneの中で文字起こしする設定は、<a href="#on-device">次の節</a>で説明します。</p></li>
+      </ol></section><aside class="cta inline" aria-label="アプリで試す"><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-apple-watch-after-steps&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-apple-watch-after-steps" data-store="app_store">iPhoneでWatchの録音を試す（App Store）</a></div></aside>
+<section class="sec" id="on-device" aria-labelledby="on-device-h"><h2 id="on-device-h">iPhoneの中で文字起こしする設定</h2>
+      <p>iOS 26以降の対応端末では、「音声認識サービス」でSpeechAnalyzerを選ぶと、Watchの録音をiPhoneの中で文字起こしします。この方式は、クラウドの無料枠を使いません。</p>
+      <ol class="steps">
+        <li><h3>iOSの版を確かめる</h3><p>SpeechAnalyzerは、iOS 26以降の機能です。それより前のiPhoneでは選べません。</p></li>
+        <li><h3>SpeechAnalyzerを選ぶ</h3><p>Texterの「設定」→「ファイルをインポート」→「音声認識サービスを選択」を開き、SpeechAnalyzerを選びます。初回は、言語のモデルをダウンロードするため、通信が要ります。</p></li>
+        <li><h3>無料版では、広告を見て始める</h3><p>Premiumの方は、文字起こしが自動で始まります。無料版の方は、ノート一覧に出る「広告を見てこの録音を文字起こし」を押すと始まります。この操作は、録音1件ごとに必要です。</p></li>
+      </ol>
+      <p>端末内の方式が使えないとき、Texterはクラウドへ自動では切り替えません。対応していない端末や言語では、文字起こしは止まり、ノート一覧の行に理由が出ます。録音は消えません。</p>
+      <p>設定の詳しい手順と、端末内で済む処理の範囲は、<a href="/guides/iphone-offline-transcription/">音声を端末の外に送らずに文字起こしする方法</a>で説明しています。</p></section>
+<section class="sec" id="prevent" aria-labelledby="prevent-h"><h2 id="prevent-h">止め忘れを防ぐ</h2>
+      <ul>
+        <li>録音中は、Watchの画面で経過時間を確かめられます</li>
+        <li>録音が30分続くごとに、Watchが振動で知らせます</li>
+        <li>録音が自動で止まるのは、バッテリーが少なくなったとき、空き容量が足りないとき、録音の上限に達したときです。止まるまでの録音は保存されます</li>
+        <li>電話などで録音が中断されたときも、途中までの録音が保存されます</li>
+      </ul>
+      <p>画面を消したあとも録音が続く設計です。ただし、実機での確認はこれからです。大事な録音では、始めた直後に画面を確かめてください。</p></section>
+<section class="sec" id="trouble" aria-labelledby="trouble-h"><h2 id="trouble-h">つまずいたとき</h2>
+      <ul>
+        <li><strong>iPhoneにノートが出ない</strong>。Watchの画面に「iPhoneへの転送待ち」と出ていないか確かめます。iPhoneが近くにないと、転送はあとになります。Texterを開いて、「Apple Watchの録音を受信中…」と出るかも見てください</li>
+        <li><strong>録音が途中で止まった</strong>。バッテリー、空き容量、録音の上限のどれかが原因のことがあります。止まるまでの録音は保存されるので、ノートを開いて確かめてください</li>
+        <li><strong>文字起こしが始まらない</strong>。ノート一覧の行に、止まった理由が出ます。「広告を見てこの録音を文字起こし」と出ているときは、それを押すと始まります。「この録音に使える文字起こし方式がありません」と出ているときは、設定の「音声認識サービス」を変えてください。ノートから音声を書き出す方法もあります</li>
+        <li><strong>「無料枠の上限で止まっています」と出る</strong>。クラウドの方式を使っていて、文字起こしの無料枠を超えたときの表示です。録音は消えません。枠が戻ったあとにタップして再開できます。iOS 26以降の対応端末なら、SpeechAnalyzerに変える方法もあります</li>
+      </ul></section>
+<section class="sec" id="notes" aria-labelledby="notes-h"><h2 id="notes-h">始める前の注意</h2>
+      <ul>
+        <li>無料版の録音は、1回につき最大15分です。Premiumは最大2時間です。回数に上限はありません</li>
+        <li>既定のクラウドの方式では、録音の音声をクラウドの音声認識へ送ります。送りたくない録音は、先にSpeechAnalyzerへ切り替えてください。ただし、iOS 26以降の対応端末だけです</li>
+        <li>無料版では、ファイルの文字起こしの無料枠を超えると、クラウドの方式の処理は止まります。枠は累積で、毎月は戻りません。条件は<a href="/pricing/">料金と利用条件</a>で確認できます</li>
+        <li>取り込み時の「無音を自動削除」（Premium）は、ファイルの取り込みの機能です。Watchの録音には使えません</li>
+        <li>録音する前に、参加者へ録音することを伝えてください</li>
+      </ul></section>
+<section class="sec" id="next" aria-labelledby="next-h"><h2 id="next-h">録音のあとにすること</h2>
+      <p>Watchの録音から作ったノートでも、要約を使えます。無料版は1日3回までです。録音から議事録を仕上げる手順は、<a href="/guides/ai-minutes/">録音から議事録を作る方法</a>で説明しています。</p>
+      <p>iPhoneですぐ録音を始めたいときは、<a href="/guides/iphone-side-button-recording/">サイドボタンで録音を始める方法</a>もご覧ください。</p></section>
+<section class="sec" id="method" aria-labelledby="method-h"><h2 id="method-h">確認の範囲</h2><details class="raw"><summary>開いて読む</summary>
+      <dl class="facts">
+        <dt>確認した人</dt><dd>Texter運営</dd>
+        <dt>確認日</dt><dd>2026-11-26</dd>
+        <dt>確認したもの</dt><dd>iPhone版Texterの最新の開発版のソースコードと、日本語の画面の文言です。</dd>
+        <dt>確認していないこと</dt><dd>実機での録音から文字起こしまでの所要時間と精度、画面を消したあとの録音の継続、Watchとホーム画面の実際の見え方です。</dd>
+      </dl></details></section>
+<section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで試す</h2><p>Texterは、録音や音声ファイルから文字起こし、要約、やることの抽出までを行うアプリです。この手順はiPhone版とApple Watchのものです。無料で始められます。iPhone版の無料版では、手元の録音を取り込むと、目安として音声60分以上を文字にできます（この枠は、毎月は戻りません）。その場で録音しながらの文字起こしは1回3分、1日15分まで、要約は1日3回までです。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-apple-watch-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-apple-watch-end" data-store="app_store">iPhoneでWatchの録音を試す（App Store）</a></div></section>
+</main>
+<footer><div class="wrap">
+  <ul><li><a href="/">ホーム</a></li><li><a href="/guides/">活用ガイド</a></li><li><a href="/pricing/">料金と利用条件</a></li><li><a href="/faq/">よくある質問</a></li><li><a href="/terms-of-service/">利用規約</a></li><li><a href="/privacy-policy/">プライバシーポリシー</a></li><li><a href="/tokushoho/">特定商取引法に基づく表記</a></li></ul>
+  <p>© 2026 Texter app - Kyoto, Japan.</p>
+</div></footer>
+<script>
+(function(){
+  var send=function(name,el){if(window.gtag)gtag('event',name,{location:el.dataset.cta,store:el.dataset.store});};
+  var links=document.querySelectorAll('a[data-cta]');
+  links.forEach(function(a){
+    a.addEventListener('click',function(){send(a.dataset.store==='google_play'?'google_play_click':'app_store_click',a);});
+    if(!('IntersectionObserver' in window))return;
+    var seen=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){send('guide_cta_view',a);seen.disconnect();}});},{threshold:.5});
+    seen.observe(a);
+  });
+})();
+</script>
+</body>
+</html>
