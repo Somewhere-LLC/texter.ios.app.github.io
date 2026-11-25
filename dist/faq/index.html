@@ -49,7 +49,7 @@
       "url": "https://texter.work/faq/",
       "name": "よくある質問 | Texter - AI文字起こし・議事録アプリ",
       "inLanguage": "ja",
-      "dateModified": "2026-11-20",
+      "dateModified": "2026-11-25",
       "isPartOf": {
         "@id": "https://texter.work/#website"
       },
@@ -161,7 +161,15 @@
           "name": "録音済みの音声や動画のファイルも文字起こしできますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "\u003cp>できます。「設定」→「ファイルをインポート」で「音声ファイルをインポート」か「動画をインポート」を選んでください。動画では「動画として保存」か「音声のみ抽出」を選びます。対応しているファイル形式は次のとおりです。\u003c/p>\u003cul>\u003cli>音声：m4a、mp3、wav、aac、aiff、cafなど\u003c/li>\u003cli>動画：mp4、mov、m4v\u003c/li>\u003c/ul>"
+            "text": "\u003cp>できます。iPhoneの「ファイル」アプリにある音声は、ファイルを長押しし、「共有」→「Texter」をタップして取り込めます。\u003c/p>\u003cp>Texterから選ぶには、「設定」→「ファイルをインポート」で「音声ファイルをインポート」か「動画をインポート」を選んでください。動画では「動画として保存」か「音声のみ抽出」を選びます。\u003c/p>\u003cp>対応するファイル形式は次のとおりです。\u003c/p>\u003cul>\u003cli>音声：m4a、mp3、wav、aac、aiff、cafなど\u003c/li>\u003cli>動画：mp4、mov、m4v\u003c/li>\u003c/ul>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "iPhoneで音声の取り込みや文字起こしがうまくいかないときは？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\u003cp>共有先にTexterが見当たらないときは、アプリのアイコンが並ぶ列を左にスワイプして「その他」を開きます。そこにもなければ、\u003ca href=\"#import\">Texterの設定から音声ファイルを選ぶ方法\u003c/a>を試してください。音声が別のアプリにある場合は、先に「ファイル」に保存してください。\u003c/p>\u003cp>共有から取り込んだ音声は、Texterの「リスト」に「インポートした音声」という名前で表示されることがあります。処理が終わっても本文が空で、ノートの音声を再生できる場合は、「やり直す」から文字起こしを試せます。\u003c/p>\u003cp>ノートの再生時間が0秒なら、元のファイルを「ファイル」アプリで再生できるか確認してください。元の音声が再生できる場合は、Texterの設定から取り込み直してみてください。再生できない場合は、ダウンロードし直すか、送り主に元のファイルを送ってもらってください。\u003c/p>\u003cp>上限の案内が出た場合は、\u003ca href=\"#import-limit\">取り込みの上限\u003c/a>を確認してください。\u003c/p>"
           }
         },
         {
@@ -584,7 +592,7 @@ footer p{margin:12px 0 0}
   <nav aria-label="パンくずリスト"><ol class="crumbs"><li><a href="/">Texter</a></li><li aria-current="page">よくある質問</li></ol></nav>
   <h1>よくある質問</h1>
   <p class="intro">Texter（AI文字起こし・議事録アプリ）について、よくいただく質問への回答です。機能の説明に続けて、画面ごとの操作手順も載せています。手順はiPhone版のものです。</p>
-  <p class="meta">最終更新 <time datetime="2026-11-20">2026-11-20</time></p>
+  <p class="meta">最終更新 <time datetime="2026-11-25">2026-11-25</time></p>
   <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul><li><a href="#start">はじめに</a></li><li><a href="#voice">録音とリアルタイム文字起こし</a></li><li><a href="#files">ファイルの文字起こし</a></li><li><a href="#speakers">話者識別・言語・翻訳</a></li><li><a href="#image">画像とPDF</a></li><li><a href="#ai">要約・タスク・AIチャット</a></li><li><a href="#manage">ノートの管理と共有</a></li><li><a href="#premium">料金・Premium・支払い</a></li><li><a href="#privacy">プライバシー・データの扱い</a></li><li><a href="#support">困ったとき</a></li></ul></nav>
 
     <section class="sec" id="start" aria-labelledby="start-h">
@@ -649,7 +657,11 @@ footer p{margin:12px 0 0}
       <h2 id="files-h">ファイルの文字起こし</h2>
       <article class="qa" id="import">
         <h3>録音済みの音声や動画のファイルも文字起こしできますか？</h3>
-        <div class="a"><p>できます。「設定」→「ファイルをインポート」で「音声ファイルをインポート」か「動画をインポート」を選んでください。動画では「動画として保存」か「音声のみ抽出」を選びます。対応しているファイル形式は次のとおりです。</p><ul><li>音声：m4a、mp3、wav、aac、aiff、cafなど</li><li>動画：mp4、mov、m4v</li></ul></div>
+        <div class="a"><p>できます。iPhoneの「ファイル」アプリにある音声は、ファイルを長押しし、「共有」→「Texter」をタップして取り込めます。</p><p>Texterから選ぶには、「設定」→「ファイルをインポート」で「音声ファイルをインポート」か「動画をインポート」を選んでください。動画では「動画として保存」か「音声のみ抽出」を選びます。</p><p>対応するファイル形式は次のとおりです。</p><ul><li>音声：m4a、mp3、wav、aac、aiff、cafなど</li><li>動画：mp4、mov、m4v</li></ul></div>
+      </article>
+      <article class="qa" id="import-troubleshooting">
+        <h3>iPhoneで音声の取り込みや文字起こしがうまくいかないときは？</h3>
+        <div class="a"><p>共有先にTexterが見当たらないときは、アプリのアイコンが並ぶ列を左にスワイプして「その他」を開きます。そこにもなければ、<a href="#import">Texterの設定から音声ファイルを選ぶ方法</a>を試してください。音声が別のアプリにある場合は、先に「ファイル」に保存してください。</p><p>共有から取り込んだ音声は、Texterの「リスト」に「インポートした音声」という名前で表示されることがあります。処理が終わっても本文が空で、ノートの音声を再生できる場合は、「やり直す」から文字起こしを試せます。</p><p>ノートの再生時間が0秒なら、元のファイルを「ファイル」アプリで再生できるか確認してください。元の音声が再生できる場合は、Texterの設定から取り込み直してみてください。再生できない場合は、ダウンロードし直すか、送り主に元のファイルを送ってもらってください。</p><p>上限の案内が出た場合は、<a href="#import-limit">取り込みの上限</a>を確認してください。</p></div>
       </article>
       <article class="qa" id="import-service">
         <h3>文字起こしのサービスはどう選びますか？</h3>
