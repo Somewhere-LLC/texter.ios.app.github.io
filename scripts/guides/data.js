@@ -1611,8 +1611,9 @@ codex mcp login texter</pre>
     sections: [
     { id: 'summary', cta: 'after-result', title: 'What it does', html: `
 <p>You can ask AI tools such as ChatGPT and Claude about your Texter transcripts. The AI tool searches the notes you have made readable, reads the text, and answers from it. You don't need to copy and paste a note.</p>
-<figure class="shot land"><a href="/assets/guides/ai-tools-mcp/chatgpt-answer-ja.webp"><img src="/assets/guides/ai-tools-mcp/chatgpt-answer-ja.webp" alt="ChatGPT answering a question about a Texter note. It found the note and quoted part of its text. The note and the interface are in Japanese" width="1232" height="880" loading="lazy" decoding="async"></a><figcaption>ChatGPT's answer (the note and the interface are in Japanese)</figcaption></figure>
-<p>The screen above shows ChatGPT with one readable note, the transcript of a video (in Japanese). In the same state, we asked three things.</p>
+<figure class="shot land"><a href="/assets/guides/ai-tools-mcp/chatgpt-answer-en.webp"><img src="/assets/guides/ai-tools-mcp/chatgpt-answer-en.webp" alt="ChatGPT answering a question about a Texter note. It found the note called Weekly product sync and listed two decisions with timestamps and five open tasks with owners and deadlines" width="795" height="635" loading="lazy" decoding="async"></a><figcaption>ChatGPT's answer about a demo note (a fictional weekly meeting, recorded for this guide)</figcaption></figure>
+<p>The screen above is ChatGPT in the English interface with one readable note. The note is a fictional weekly product meeting that we recorded in English for this demo, not a real meeting. We asked, "Use Texter to find my Weekly product sync note and list what was decided and which tasks are still open." ChatGPT found the note, read the full transcript, and answered with two tables. One lists two decisions with the times they were said. The other lists five open tasks with an owner and a deadline.</p>
+<p>Earlier, in a separate session with a Japanese note (the transcript of a video) and the Japanese interface, we asked three more things.</p>
 <dl class="facts">
 <dt>Asked</dt><dd>"Give me the key points of my newest note in three lines." (ChatGPT)</dd>
 <dt>Answer</dt><dd>Three lines of key points and a link to open the note in Texter.</dd>
