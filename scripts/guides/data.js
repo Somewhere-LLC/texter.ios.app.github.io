@@ -1445,9 +1445,9 @@ const aiToolsMcp = {
   slug: 'ai-tools-mcp',
   group: 'ai',
   card: 'ChatGPTやClaudeに、Texterの文字起こしを読ませて質問する手順です（Premium）。',
-  verified: '2026-11-13',
+  verified: '2026-11-26',
   published: '2026-11-13',
-  modified: '2026-11-13',
+  modified: '2026-11-26',
   iosOnly: true,
   title: 'ChatGPTやClaudeにTexterの文字起こしを読ませる方法｜Texter MCPの使い方',
   description: 'Texterで文字起こしした会議や講義のノートを、ChatGPT、Claude、MuseなどのAIツールから検索して読む方法です。接続の手順、読ませるノートの選び方、解除の方法を、実際の画面で説明します。',
@@ -1498,8 +1498,8 @@ const aiToolsMcp = {
 <p>使うツールの手順へ進んでください。<a href="#tool-claude">Claude</a>、<a href="#tool-claude-code">Claude Code</a>、<a href="#tool-codex">Codex</a>、<a href="#tool-chatgpt">ChatGPT</a>、<a href="#tool-muse">Muse</a>の5つを載せています。</p>
 <h3 id="tool-claude">Claude（claude.ai）</h3>
 <p>Texter MCPは、Claudeのコネクタの一覧（ディレクトリ）に載っています。URLを入れずに追加できます。</p>
-<ol><li>claude.aiの「カスタマイズ」で「コネクタ」を開き、「Texter」で検索する</li><li>「Texter MCP」のページを開き、表示されるボタンから接続する</li><li>Texterの許可の画面が開いたら、サインインして許可する</li></ol>
-<p><a href="https://claude.ai/directory/texter-mcp" rel="noopener">ClaudeのTexter MCPのページ</a>から、直接開くこともできます。</p>
+<ol><li><a href="https://claude.ai/directory/texter-mcp" rel="noopener">ClaudeのTexter MCPのページ</a>を開く</li><li>ページに表示されるボタンから接続する</li><li>Texterの許可の画面が開いたら、サインインして許可する</li></ol>
+<p>ページを直接開く代わりに、claude.aiの「カスタマイズ」で「コネクタ」を開き、「Texter」で検索して「Texter MCP」のページを開くこともできます。</p>
 <figure class="shot land"><a href="/assets/guides/ai-tools-mcp/claude-directory-ja.webp"><img src="/assets/guides/ai-tools-mcp/claude-directory-ja.webp" alt="Claudeのコネクタの一覧にあるTexter MCPのページ。名前と説明、「接続済み」の表示がある" width="1568" height="262" loading="lazy" decoding="async"></a><figcaption>Claudeのコネクタの一覧のTexter MCP（この画面は接続済みの状態）</figcaption></figure>
 <p>一覧から追加できないときは、設定のコネクタで「カスタムコネクタを追加」を選び、手順1の最初にあるURL（https://mcp.texter.work/mcp）を入れて追加します。</p>
 
@@ -1515,8 +1515,12 @@ const aiToolsMcp = {
 codex mcp login texter</pre>
 <p>ブラウザでTexterの許可の画面が開くので、サインインして許可してください。</p>
 <h3 id="tool-chatgpt">ChatGPT</h3>
+<p>Texterは、ChatGPTのプラグインの一覧に載っています。URLを入れずに追加できます。画面の表記は日本語の画面のものです。</p>
+<ol><li><a href="https://chatgpt.com/plugins/plugin_asdk_app_6af6ad7b741c81919c457dd81e6c3ea0" rel="noopener">ChatGPTのTexterのページ</a>を開く</li><li>右上の「プラグインをインストール」（英語の画面では「Install plugin」）を押す</li><li>Texterの許可の画面が開いたら、サインインして許可する</li></ol>
+<p>ページを直接開く代わりに、ChatGPTのプラグインの一覧で「Texter」を検索して開くこともできます。</p>
+<p>一覧から追加できないときは、カスタムMCPサーバーとして追加してください。使うURLは、手順1の最初にある https://mcp.texter.work/mcp です。</p>
 <ol><li>「プラグイン」の画面を開き、右上の「追加」から「カスタム MCP サーバーを追加」を選ぶ</li><li>名前に「Texter」などを入れる</li><li>接続タイプは「サーバーURL」を選び、上のURLを入れる</li><li>認証は「OAuth」を選ぶ</li><li>リスクの注意を読み、「理解したうえで続けます」に印を付けて作成する</li><li>Texterの許可の画面が開いたら、サインインして許可する</li></ol>
-<p>プランや管理者の設定によっては、この項目が表示されない場合があります。表示されないときは、ChatGPTのヘルプを確認してください。</p>
+<p>プランや管理者の設定によっては、プラグインの一覧やこの項目が表示されない場合があります。表示されないときは、ChatGPTのヘルプを確認してください。</p>
 
 <figure class="shot land"><a href="/assets/guides/ai-tools-mcp/chatgpt-add-mcp-ja.webp"><img src="/assets/guides/ai-tools-mcp/chatgpt-add-mcp-ja.webp" alt="ChatGPTのカスタムMCPサーバーを追加する画面。名前とサーバーURLを入れる欄がある" width="1023" height="1176" loading="lazy" decoding="async"></a><figcaption>ChatGPTでカスタムMCPサーバーを追加する画面</figcaption></figure>
 <h3 id="tool-muse">Muse</h3>
@@ -1590,7 +1594,7 @@ codex mcp login texter</pre>
 <article><h3>長く使った接続は、そのまま使えますか。</h3><p>AIツールから、接続し直しを求められることがあります。そのときは、同じ手順で接続し直してください。</p></article>
 <article><h3>iPhoneがオフラインのときは読めますか。</h3><p>iPhoneがオフラインの間は、最後に同期した内容が読まれます。</p></article>
 <article><h3>パソコンのツールは端末ごとに表示されますか。</h3><p>パソコンのツールは、端末ごとではなく1件にまとまって表示されます。</p></article>
-<p class="note">検証日 2026-11-13。ChatGPTとMuseの手順は、2026年11月12日に実際の画面で操作したものです。画面や手順は、各ツールの更新で変わることがあります。Claude、ChatGPT、Codex、Museは各社の商標です。</p>` },
+<p class="note">検証日 2026-11-26。ChatGPTのプラグインの一覧からの追加は、2026年11月26日に、英語の画面でインストールし、Texterの許可の画面でサインインして許可しました。そのうえで、ChatGPTからノートの一覧・検索・読み取りが動くことを確かめています。日本語の画面のボタン名は、公開されたページの表記によります。ChatGPTのカスタムMCPサーバーの手順とMuseの手順は、2026年11月12日に実際の画面で操作しました。Claude、Claude Code、Codexの手順は、この版では確かめ直していません。画面や手順は、各ツールの更新で変わることがあります。Claude、ChatGPT、Codex、Museは各社の商標です。</p>` },
   ],
   ctaTitle: 'Texterで試す',
   ctaLabel: 'Texterを入手する',
@@ -1606,9 +1610,10 @@ codex mcp login texter</pre>
     conditions: 'Texter MCP is a Premium feature. It is not available with a plan received through Family Sharing, and it may also be unavailable with some other Premium subscriptions at this time. See <a href="#before">Before you start</a> for the conditions.',
     sections: [
     { id: 'summary', cta: 'after-result', title: 'What it does', html: `
-<p>You can ask AI tools such as ChatGPT and Claude about your Texter transcripts. The AI tool searches the notes you have made readable, reads the text, and answers from it. You don't need to copy and paste a note.</p>
-<figure class="shot land"><a href="/assets/guides/ai-tools-mcp/chatgpt-answer-ja.webp"><img src="/assets/guides/ai-tools-mcp/chatgpt-answer-ja.webp" alt="ChatGPT answering a question about a Texter note. It found the note and quoted part of its text. The note and the interface are in Japanese" width="1232" height="880" loading="lazy" decoding="async"></a><figcaption>ChatGPT's answer (the note and the interface are in Japanese)</figcaption></figure>
-<p>The screen above shows ChatGPT with one readable note, the transcript of a video (in Japanese). In the same state, we asked three things.</p>
+<p>You can ask AI tools such as ChatGPT and Claude about your Texter transcripts. The AI tool searches the notes you have shared, reads the text, and answers from it. You don't need to copy and paste a note.</p>
+<figure class="shot land"><a href="/assets/guides/ai-tools-mcp/chatgpt-answer-en.webp"><img src="/assets/guides/ai-tools-mcp/chatgpt-answer-en.webp" alt="ChatGPT answering a question about a Texter note. It found the note called Weekly product sync and listed two decisions with timestamps and five open tasks with owners and deadlines" width="795" height="635" loading="lazy" decoding="async"></a><figcaption>ChatGPT's answer about a demo note (a fictional weekly meeting, recorded for this guide)</figcaption></figure>
+<p>The screen above is ChatGPT in the English interface with one shared note. The note is a fictional weekly product meeting that we recorded in English for this demo, not a real meeting. We asked, "Use Texter to find my Weekly product sync note and list what was decided and which tasks are still open." ChatGPT found the note, read the full transcript, and answered with two tables. One lists two decisions with the times they were said. The other lists five open tasks with an owner and a deadline.</p>
+<p>Earlier, in a separate session with a Japanese note (the transcript of a video), we asked three more things.</p>
 <dl class="facts">
 <dt>Asked</dt><dd>"Give me the key points of my newest note in three lines." (ChatGPT)</dd>
 <dt>Answer</dt><dd>Three lines of key points and a link to open the note in Texter.</dd>
@@ -1618,7 +1623,7 @@ codex mcp login texter</pre>
 <dt>Answer</dt><dd>It quoted the two relevant lines and pointed out that the transcript might contain errors.</dd>
 </dl>` },
     { id: 'uses', title: 'What you can do with it', html: `
-<p>The AI tool searches the titles, text, and summaries of your readable notes by keyword. It can also narrow the search by recording date.</p>
+<p>The AI tool searches the titles, text, and summaries of the notes you have shared by keyword. It can also narrow the search by recording date.</p>
 <h3>Tidy up after a meeting</h3>
 <p class="ask">"Read the note from yesterday's weekly meeting and list the decisions and owners in a table."</p>
 <p>Like the example above, this has the tool read a single note.</p>
@@ -1628,7 +1633,7 @@ codex mcp login texter</pre>
 <h3>Look back over a period</h3>
 <p class="ask">"Find last month's notes about 'progress' and list the issues that keep coming up."</p>
 <p>The tool searches by keyword within a date range, then reads the matching notes one by one.</p>
-<p class="note">On this page we tested with a single readable note. The requests that span several notes are written from the feature's specification. Check the answers against the original notes.</p>` },
+<p class="note">On this page we tested with a single shared note. The requests that span several notes are written from the feature's specification. Check the answers against the original notes.</p>` },
     { id: 'before', title: 'Before you start', html: `
 <ul>
 <li>You need Premium. Texter MCP works only with an auto-renewing plan you purchased yourself. It is not available with a plan received through Family Sharing, and it may also be unavailable with some other Premium subscriptions at this time</li>
@@ -1636,7 +1641,7 @@ codex mcp login texter</pre>
 <li>In Texter, sign in with Apple or Google and sync your notes</li>
 </ul>
 <p>In Texter, open "Settings &gt; Account &gt; Texter MCP". The three steps are listed under "Getting started", and this page follows the same order.</p>
-<figure class="shot"><a href="/assets/guides/ai-tools-mcp/03_ready_en.webp"><img src="/assets/guides/ai-tools-mcp/03_ready_en.webp" alt="The Texter MCP screen. It shows an example prompt under &quot;Try reading it from the AI tool&quot;, with the note ID line and Copy and Share buttons" width="599" height="1304" loading="lazy" decoding="async"></a><figcaption>The Texter MCP screen (after steps 1 and 2)</figcaption></figure>
+<figure class="shot"><a href="/assets/guides/ai-tools-mcp/03_ready_en.webp"><img src="/assets/guides/ai-tools-mcp/03_ready_en.webp" alt="The Texter MCP screen. It shows an example prompt under &quot;Try asking the AI tool to read it&quot;, with the note ID line and Copy and Share buttons" width="599" height="1304" loading="lazy" decoding="async"></a><figcaption>The Texter MCP screen (after steps 1 and 2)</figcaption></figure>
 <p>If you don't see "Texter MCP" in the app, update the app, wait a while, and open it again.</p>` },
     { id: 'step1', title: 'Step 1: Connect your AI tool', html: `
 <p>For every tool, the connection URL is the same.</p>
@@ -1644,8 +1649,8 @@ codex mcp login texter</pre>
 <p>Jump to the tool you use: <a href="#tool-claude">Claude</a>, <a href="#tool-claude-code">Claude Code</a>, <a href="#tool-codex">Codex</a>, <a href="#tool-chatgpt">ChatGPT</a>, or <a href="#tool-muse">Muse</a>.</p>
 <h3 id="tool-claude">Claude (claude.ai)</h3>
 <p>Texter MCP is listed in Claude's connector directory, so you can add it without typing the URL.</p>
-<ol><li>On claude.ai, open Customize, then Connectors, and search for "Texter"</li><li>Open the "Texter MCP" page and connect with the button shown there</li><li>When the Texter screen opens, sign in and allow access</li></ol>
-<p>You can also open <a href="https://claude.ai/directory/texter-mcp" rel="noopener">the Texter MCP page on Claude</a> directly.</p>
+<ol><li>Open <a href="https://claude.ai/directory/texter-mcp" rel="noopener">the Texter MCP page on Claude</a></li><li>Connect with the button shown on the page</li><li>When the Texter screen opens, sign in and allow access</li></ol>
+<p>Instead of opening the page directly, you can open Customize, then Connectors on claude.ai, search for "Texter", and open the "Texter MCP" page.</p>
 <p>If you can't add it from the directory, choose to add a custom connector in the connector settings and enter the server URL at the top of Step 1 (https://mcp.texter.work/mcp).</p>
 
 <p>Depending on your plan or settings, the custom connector option may not appear. If it doesn't, check Claude's help.</p>
@@ -1659,9 +1664,12 @@ codex mcp login texter</pre>
 codex mcp login texter</pre>
 <p>The Texter allow screen opens in your browser; sign in and allow access.</p>
 <h3 id="tool-chatgpt">ChatGPT</h3>
-<p>The labels below are from the Japanese interface and may read differently in yours.</p>
+<p>Texter is listed in ChatGPT's plugin directory, so you can add it without typing the URL.</p>
+<ol><li>Open <a href="https://chatgpt.com/plugins/plugin_asdk_app_6af6ad7b741c81919c457dd81e6c3ea0" rel="noopener">the Texter page on ChatGPT</a></li><li>Choose "Install plugin" at the top right</li><li>When the Texter screen opens, sign in and allow access</li></ol>
+<p>Instead of opening the page directly, you can search for "Texter" in ChatGPT's plugin directory and open it from there.</p>
+<p>If you can't add it from the directory, add it as a custom MCP server instead, using the server URL at the top of Step 1 (https://mcp.texter.work/mcp). The labels in these steps are from the Japanese interface and may read differently in yours.</p>
 <ol><li>Open the plugins screen. From "Add" at the top right, choose to add a custom MCP server</li><li>Enter a name such as "Texter"</li><li>Set the connection type to server URL and enter the URL above</li><li>Choose OAuth for authentication</li><li>Read the risk notice, check the box confirming you understand, and create it</li><li>When the Texter screen opens, sign in and allow access</li></ol>
-<p>Depending on your plan or your administrator's settings, this option may not appear. If it doesn't, check ChatGPT's help.</p>
+<p>Depending on your plan or your administrator's settings, the plugin directory or this option may not appear. If it doesn't, check ChatGPT's help.</p>
 
 <h3 id="tool-muse">Muse</h3>
 <ol><li>In a Muse chat, say you want to connect to Texter MCP (use the URL above) with a custom connector</li><li>On the connection card that appears, tap "Connect"</li><li>Read the notice and tap "Next". Enter <code>texter-meta-muse</code> as the client ID and tap "Add"</li><li>When the Texter screen opens, sign in and allow access</li></ol>
@@ -1672,15 +1680,15 @@ codex mcp login texter</pre>
 <ul><li>Sign in with the same account you use in the Texter app (Apple or Google)</li><li>Check the source shown on the screen (for example, chatgpt.com)</li><li>The screen warns you not to allow a connection you did not start yourself. Allow it only if you did</li></ul>
 <h3>Check that it connected</h3>
 <p>In Texter, open "Settings &gt; Account &gt; Texter MCP". The tool you connected appears under "Connected AI tools".</p>` },
-    { id: 'step2', title: 'Step 2: Choose the notes to make readable', html: `
-<p>Connecting alone does not let the tool read anything. An AI tool can read only the notes you have made readable in Texter. Start with one.</p>
-<ol class="steps"><li><h3>Make a note readable</h3>
-<p>Open a note in Texter and choose "Make Readable with Texter MCP" from its menu. You can also choose notes from "Settings &gt; Account &gt; Texter MCP".</p>
-<p>A confirmation screen explains the following. After reading it, tap "Agree and Make Readable".</p>
+    { id: 'step2', title: 'Step 2: Choose the notes to share', html: `
+<p>Connecting alone does not let the tool read anything. An AI tool can read only the notes you have shared in Texter. Start with one.</p>
+<ol class="steps"><li><h3>Share a note</h3>
+<p>Open a note in Texter and choose "Share with Texter MCP" from its menu. You can also choose notes from "Settings &gt; Account &gt; Texter MCP".</p>
+<p>A confirmation screen explains the following. After reading it, tap "Agree and Share".</p>
 <ul><li>The text of this note is sent to the cloud</li><li>Recordings and other original files are not sent</li><li>Content already given to tools can't be taken back</li></ul>
 <p>How to select several notes at once is covered in the next section, "You choose what can be read".</p>
 <p>When the status reads "Readable by connected tools", you're ready. If it says "Preparing", wait a moment.</p>
-<figure class="shot"><a href="/assets/guides/ai-tools-mcp/09_note_keep_en.webp"><img src="/assets/guides/ai-tools-mcp/09_note_keep_en.webp" alt="The Texter MCP screen. It shows &quot;Readable by connected tools&quot; and a button to make the note unreadable" width="599" height="1304" loading="lazy" decoding="async"></a><figcaption>A note that has been made readable</figcaption></figure>
+<figure class="shot"><a href="/assets/guides/ai-tools-mcp/09_note_keep_en.webp"><img src="/assets/guides/ai-tools-mcp/09_note_keep_en.webp" alt="The Texter MCP screen. It shows &quot;Readable by connected tools&quot; and a &quot;Stop Sharing with Texter MCP&quot; button" width="599" height="1304" loading="lazy" decoding="async"></a><figcaption>A note that has been shared</figcaption></figure>
 </li></ol>` },
     { id: 'step3', title: 'Step 3: Try it in your AI tool', html: `
 <p>Try asking your AI tool something like this.</p>
@@ -1689,12 +1697,12 @@ codex mcp login texter</pre>
 <li>Find my Texter note about blood sugar and tell me what it says about the time before bed</li>
 <li>Read my Texter note "note title" and summarize the decisions</li>
 </ul>
-<p>Search looks for notes that contain the words you use, so short words work best. Even if you ask in a full sentence, most AI tools break it into words. A word that is not in your notes returns no results. When we searched for "meeting" while no readable note contained that word, we got none. A different wording can find the note, so try other words.</p>
-<p>If it can't find the note, also paste the ID line from the example prompt under "Try reading it from the AI tool" on the Texter MCP screen. The example is at the top of the image in <a href="#before">Before you start</a>.</p>` },
+<p>Search looks for notes that contain the words you use, so short words work best. Even if you ask in a full sentence, most AI tools break it into words. A word that is not in your notes returns no results. When we searched for "meeting" while no shared note contained that word, we got none. A different wording can find the note, so try other words.</p>
+<p>If it can't find the note, also paste the ID line from the example prompt under "Try asking the AI tool to read it" on the Texter MCP screen. The example is at the top of the image in <a href="#before">Before you start</a>.</p>` },
     { id: 'control', title: 'You choose what can be read', html: `
 <ul>
-<li>You can make notes readable one at a time</li>
-<li>Under "Settings &gt; Account &gt; Texter MCP", open "Readable notes" and tap "Select" to make several notes readable or unreadable at once. "Select All" picks only the notes that exist now, not notes you create later</li>
+<li>You can share notes one at a time</li>
+<li>Under "Settings &gt; Account &gt; Texter MCP", open "Readable notes" and tap "Select" to share or stop sharing several notes at once. "Select All" picks only the notes that exist now, not notes you create later</li>
 <li>There is a setting to make new notes readable automatically. It is optional, and until you turn it on, new notes do not become readable on their own</li>
 <li>You can see the connected tools under "Connected AI tools", and remove any you don't need with "Disconnect"</li>
 <li>Access is read-only. An AI tool cannot edit or delete your notes</li>
@@ -1702,11 +1710,11 @@ codex mcp login texter</pre>
 <figure class="shot"><a href="/assets/guides/ai-tools-mcp/08_notes_selecting_en.webp"><img src="/assets/guides/ai-tools-mcp/08_notes_selecting_en.webp" alt="The Readable Notes screen with several notes selected" width="599" height="1304" loading="lazy" decoding="async"></a><figcaption>Selecting several notes</figcaption></figure><figure class="shot"><a href="/assets/guides/ai-tools-mcp/05_autoAllowOff_en.webp"><img src="/assets/guides/ai-tools-mcp/05_autoAllowOff_en.webp" alt="The setting that makes new notes readable automatically, turned off" width="599" height="1304" loading="lazy" decoding="async"></a><figcaption>The automatic setting (off)</figcaption></figure>` },
     { id: 'scope', title: 'Safety', html: `
 <ul>
-<li>Only the notes you made readable in the app can be read</li>
+<li>Only the notes you shared in the app can be read</li>
 <li>You can disconnect at any time. After you do, that AI tool can no longer read your notes</li>
 <li>Content already given to an AI tool can't be taken back. What happens to it afterward follows that tool's terms and settings</li>
 <li>Check the AI's answers against the original note. Transcripts can contain errors</li>
-<li>Every AI tool connected to the same account can read the notes you have made readable. Make only the notes you need readable</li>
+<li>Every AI tool connected to the same account can read the notes you have shared. Share only the notes you need</li>
 </ul>
 <p>What is sent and how it is stored is described under "Connecting External AI Tools (Texter MCP)" in the <a href="/en/privacy-policy/">Privacy Policy</a>.</p>` },
     { id: 'revoke', title: 'Disconnect', html: `
@@ -1715,25 +1723,25 @@ codex mcp login texter</pre>
 <li>Under "Connected AI tools", tap "Disconnect" next to the tool</li>
 <li>Confirm. Disconnecting cuts the connection on every device</li>
 </ol>
-<p>If the connection also remains on the AI tool's side, remove it in that tool's settings. To stop a single note from being read, choose "Make Unreadable with Texter MCP" from the note's menu.</p>
-<p>A disconnected tool can no longer read your notes from that moment. If you make individual notes unreadable instead, they may still be readable until the change takes effect.</p>
+<p>If the connection also remains on the AI tool's side, remove it in that tool's settings. To stop a single note from being read, choose "Stop Sharing with Texter MCP" from the note's menu.</p>
+<p>A disconnected tool can no longer read your notes from that moment. If you stop sharing individual notes instead, they may still be readable until the change takes effect.</p>
 <figure class="shot"><a href="/assets/guides/ai-tools-mcp/11_grants_list_en.webp"><img src="/assets/guides/ai-tools-mcp/11_grants_list_en.webp" alt="The Connected AI tools screen listing the tools you connected" width="599" height="1304" loading="lazy" decoding="async"></a><figcaption>The "Connected AI tools" list</figcaption></figure>` },
     { id: 'trouble', title: 'Troubleshooting', html: `
 <dl class="facts">
 <dt>No Texter MCP in the app</dt><dd>Update the app, wait a while, and open it again.</dd>
 <dt>"Available with Premium"</dt><dd>Texter MCP is available with Premium. Also check that you are not signed in with a different account than the one you used to purchase. It is not available with a plan received through Family Sharing.</dd>
 <dt>Connected, but not shown in the app</dt><dd>Check that on the consent screen you signed in with the same Apple or Google account as this iPhone.</dd>
-<dt>A note can't be found</dt><dd>Check that the note is readable and its status reads "Readable by connected tools". Searching again with a shorter word also helps.</dd>
+<dt>A note can't be found</dt><dd>Check that the note is shared and its status reads "Readable by connected tools". Searching again with a shorter word also helps.</dd>
 <dt>Stuck on "Preparing"</dt><dd>Check your connection and wait a while. If it says "Couldn't send", try again.</dd>
 </dl>` },
     { id: 'faq', title: 'FAQ', html: `
-<article><h3>Does the audio of my recording go to the AI tool?</h3><p>The text, summaries, and speaker names of the notes you made readable are sent, along with details such as when they were created. Recordings and other original files are not.</p></article>
+<article><h3>Does the audio of my recording go to the AI tool?</h3><p>The text, summaries, and speaker names of the notes you shared are sent, along with details such as when they were created. Recordings and other original files are not.</p></article>
 <article><h3>Can an AI tool change my notes?</h3><p>No. Access is read-only, so it cannot edit or delete them.</p></article>
 <article><h3>What happens if I stop Premium?</h3><p>AI tools can no longer read your notes. If you resume, they can read them again.</p></article>
 <article><h3>Can I keep using a connection I have used for a long time?</h3><p>Your AI tool may ask you to reconnect. If it does, connect again with the same steps.</p></article>
 <article><h3>What if my iPhone is offline?</h3><p>While your iPhone is offline, the last synced content is read.</p></article>
 <article><h3>Are tools on my computer listed per device?</h3><p>No. Tools on your computer appear as one entry, not one per device.</p></article>
-<p class="note">Last verified 2026-11-13. The ChatGPT and Muse steps are from a session we ran on the real screens on November 12, 2026. Screens and steps can change as each tool updates. Claude, ChatGPT, Codex, and Muse are trademarks of their respective owners.</p>` },
+<p class="note">Last verified 2026-11-26. For adding Texter from ChatGPT's plugin directory, on November 26, 2026 we installed it in the English interface, signed in and allowed access on the Texter screen, and confirmed that ChatGPT could list, search, and read notes. The Japanese button name is from the published page. The steps for adding a custom MCP server in ChatGPT and the Muse steps are from a session we ran on the real screens on November 12, 2026. We have not re-checked the Claude, Claude Code, and Codex steps for this version of the page. Screens and steps can change as each tool updates. Claude, ChatGPT, Codex, and Muse are trademarks of their respective owners.</p>` },
     ],
     ctaTitle: 'Try it in Texter',
     ctaLabel: 'Get Texter',
