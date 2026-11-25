@@ -4,7 +4,7 @@
 // Answers may use only <a>, <b>, <strong>, <br>, <ul>, <ol>, <li>, <p>.
 const howto = require('./faq-howto-data');
 const { arrange } = require('./faq-structure');
-const updated = '2026-11-20';
+const updated = '2026-11-25';
 
 const ja = {
   path: '/faq/',
