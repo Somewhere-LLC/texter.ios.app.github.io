@@ -4,7 +4,7 @@
 // Answers may use only <a>, <b>, <strong>, <br>, <ul>, <ol>, <li>, <p>.
 const howto = require('./faq-howto-data');
 const { arrange } = require('./faq-structure');
-const updated = '2026-11-25';
+const updated = '2026-11-26';
 
 const ja = {
   path: '/faq/',
@@ -67,7 +67,7 @@ const ja = {
         { id: 'offline', q: 'オフラインでも使えますか？',
           a: '<p>一部の機能は使えます。日本語、英語、中国語、韓国語のリアルタイム文字起こしには、通信が必要です。ほかの言語は、端末が対応していれば、ネットワークにつながっていないときに端末内の音声認識を使います。iOS 26以降では、ファイルの文字起こしに、端末内で処理する方式を選べます。翻訳は、オフライン翻訳を選べます。要約やAIチャットなどのAI機能にはインターネット接続が必要です。</p>' },
         { id: 'apple-watch', q: 'Apple Watchで録音できますか？',
-          a: '<p>できます。iPhoneを持っていなくても、Apple Watch単体で録音できます。録音はあとでiPhoneへ転送され、文字起こしされます。1回に録音できる長さは、無料版で最大15分、Premiumで最大2時間です。</p>' },
+          a: '<p>できます。iPhoneが近くになくても、Apple Watchだけで録音できます（watchOS 11以降）。録音はあとでiPhoneに届き、Texterが文字にします。</p><p>iOS 26以降で、Apple Intelligenceに対応しているiPhoneなら、準備をすると、何時間でも録音して文字にできます（バッテリーと空き容量が続くかぎり）。それ以外のiPhoneでは、録音は、無料版は15分まで、Premiumは2時間までを目安にしてください。</p><p>準備の内容と細かい条件は、<a href="/guides/apple-watch-recording-transcription/">Apple Watchで長時間録音して文字起こしする方法</a>をご覧ください。</p>' },
         { id: 'quick-start', q: 'すぐに録音を始める方法はありますか？',
           a: '<p>ロック画面ウィジェットから、ワンタップで録音を始められます。iOS 18以降ではコントロールセンターにも追加できます。Apple Accountの国または地域が日本で、日本国内にいるときは、iOS 26.2以降でサイドボタンの長押しにTexterの音声入力を割り当てられます。手順は<a href="/guides/iphone-side-button-recording/">サイドボタンのガイド</a>をご覧ください。</p>' },
       ],
@@ -158,7 +158,7 @@ const en = {
         { id: 'offline', q: 'Does Texter work offline?',
           a: '<p>Some features do. Live transcription in Japanese, English, Chinese, and Korean needs a network connection. In other languages, it uses on-device speech recognition when there is no connection, on devices that support it. On iOS 26 or later you can transcribe files with a method that runs on the device. Translation has an offline option. AI features such as summaries and AI chat need an internet connection.</p>' },
         { id: 'apple-watch', q: 'Can I record on Apple Watch?',
-          a: '<p>Yes. Apple Watch records on its own, without your iPhone nearby. The recording transfers to your iPhone later and is transcribed there. Each recording can be up to 15 minutes on the free plan and up to 2 hours with Premium.</p>' },
+          a: '<p>Yes. Apple Watch can record by itself, even when your iPhone is not nearby (watchOS 11 or later). The recording reaches your iPhone later, and Texter turns it into text.</p><p>If your iPhone runs iOS 26 or later and supports Apple Intelligence, you can set it up once and record for as long as you like, while the battery and storage last. On other iPhones, plan on 15 minutes or less on the free plan and 2 hours or less with Premium.</p><p>The setup steps and details are in the <a href="/guides/apple-watch-recording-transcription/">guide to long recordings on Apple Watch</a> (in Japanese).</p>' },
         { id: 'quick-start', q: 'Is there a quick way to start recording?',
           a: '<p>Yes. Start recording with one tap from the Lock Screen widget. On iOS 18 or later you can also add Texter to Control Center.</p>' },
       ],
