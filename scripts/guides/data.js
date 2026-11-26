@@ -829,7 +829,6 @@ const watchGuide = {
         <li>文字盤のコンプリケーションを押す（watchOS 11以降）</li>
         <li>スマートスタックのコントロールを押す（watchOS 26以降）</li>
         <li>ショートカットを使う（watchOS 26以降）</li>
-        <li>Siriに「Texterで録音を開始」または「Texterで録音」と話しかける（watchOS 26以降）</li>
       </ul>` },
     { id: 'know', title: '知っておきたいこと', html: `
       <ul>
