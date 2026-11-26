@@ -206,7 +206,7 @@ footer p{margin:12px 0 0}
       <div class="scroll"><table class="compare"><thead><tr><th scope="col">処理</th><th scope="col">端末内で済む条件</th><th scope="col">通信が要る場合</th></tr></thead><tbody>
         <tr><th scope="row">音声ファイルの文字起こし（取り込み）</th><td>音声認識サービスをSpeechAnalyzerにする（iOS 26以降）。初回は言語モデルのダウンロードに通信が要る</td><td>既定のWhisperとAmazon Transcribeは、音声をサーバーへ送る</td></tr>
         <tr><th scope="row">録音中の文字起こし</th><td>日本語、英語、中国語、韓国語では、端末内で済む方式はない。ほかの言語はAppleの音声認識を使い、端末が対応していて、ネットワークに接続できない状態のときだけ、端末内の認識を指定する</td><td>日本語、英語、中国語、韓国語は、クラウドの音声認識へ音声を送る。使うクラウドの音声認識は、サーバーの設定などで決まり、利用者は選べない。ほかの言語でも、接続できる状態では端末内の認識を指定しないので、Appleのサーバーが使われる場合がある</td></tr>
-        <tr><th scope="row">Apple Watchの録音の文字起こし（2.11.80で確認）</th><td>iOS 26以降で、端末内の文字起こしに対応した機種（目安はApple Intelligence対応のiPhone）が、音声認識サービスをSpeechAnalyzerにしたとき。iPhoneとWatchのTexterが2.11.80以降なら、録音の長さの上限もなく、クラウドの無料枠も使わない。対応していない機種や言語では、処理中のまま残る。SpeechAnalyzerを選んでいる無料版は、ノート一覧の「広告を見てこの録音を文字起こし」を押すと始まる</td><td>既定のWhisperは、音声をクラウドへ送り、ファイルの文字起こしの無料枠を使う。Apple Watchの録音では、Defaultを選んでいても同じくクラウドで処理する。1ファイルの長さと容量に上限があり、超えた録音は文字起こしされない。iOS 26より前の機種や、端末内の方式に対応していない機種では、長い録音は文字起こしされない</td></tr>
+        <tr><th scope="row">Apple Watchの録音の文字起こし（2.11.80で確認）</th><td>iOS 26以降で、Apple Intelligenceに対応しているiPhoneが、音声認識サービスをSpeechAnalyzerにしたとき。iPhoneとWatchのTexterが2.11.80以降なら、何時間でも録音して文字にできる。無料で使える分も使わない。対応していないiPhoneや言語では、文字起こしが始まらないまま進まない。SpeechAnalyzerを選んでいる無料版は、ノート一覧の「広告を見てこの録音を文字起こし」を押すと始まる</td><td>既定のWhisperは、音声をインターネット経由で送り、ファイルの文字起こしの無料枠を使う。Apple Watchの録音では、Defaultを選んでいても同じ。1ファイルの長さと容量に上限があり、超えた録音は文字にされない。iOS 26より前のiPhoneや、SpeechAnalyzerに対応していないiPhoneでは、長い録音を文字にできないことがある</td></tr>
         <tr><th scope="row">タイトルの自動生成</th><td>iOS 26以降で、端末内のAIモデルが使える端末では、端末内だけで作る</td><td>端末内のAIモデルが使えないと、自動のタイトルは付かず、既定の名前のままになる。クラウドへの切り替えはない</td></tr>
         <tr><th scope="row">要約</th><td>端末内で処理する経路は、確認したコードにはなかった</td><td>クラウドのAIサービスへテキストを送る</td></tr>
         <tr><th scope="row">内容まとめ、やること</th><td>端末内のAIモデルを先に試す設定はあるが、確認したコードでは既定でオフ</td><td>既定では、クラウドのAIサービスへテキストを送る</td></tr>
@@ -219,7 +219,7 @@ footer p{margin:12px 0 0}
       <p class="note">この表は、アプリのコード（バージョン2.11.71）で確認した既定の動きです。Apple Watchの録音の行だけは、バージョン2.11.80で確認しました。サーバーから配信される設定で変わる場合があります。</p></section>
 <section class="sec" id="fallback" aria-labelledby="fallback-h"><h2 id="fallback-h">SpeechAnalyzerが失敗するとWhisperへ切り替わる</h2>
       <p>コードでは、SpeechAnalyzerでの処理にエラーが起きると、同じ音声をWhisperで処理し直します。Whisperは音声をクラウドへ送ります。確認したコードの範囲では、切り替える前に確認の画面を出す処理は見つかりませんでした。</p>
-      <p>コードでは、選んだ言語にSpeechAnalyzerが対応していないとき、言語のモデルの準備に失敗したとき、文字起こしの途中でエラーが起きたときに、この切り替えが起きます。音声を端末の外へ出さないことが条件なら、この切り替えを受け入れられるかを先に判断してください。通信できない状態で切り替えが起きた場合の動きは、検証していません。Apple Watchの録音は別で、対応していない機種や言語では、処理中のまま残ります。その場合は、音声認識サービスをWhisperに戻してください。</p></section>
+      <p>コードでは、選んだ言語にSpeechAnalyzerが対応していないとき、言語のモデルの準備に失敗したとき、文字起こしの途中でエラーが起きたときに、この切り替えが起きます。音声を端末の外へ出さないことが条件なら、この切り替えを受け入れられるかを先に判断してください。通信できない状態で切り替えが起きた場合の動きは、検証していません。Apple Watchの録音は別です。対応していないiPhoneや言語では、文字起こしが始まらないまま進みません。その場合は、音声認識サービスをWhisperに戻してください。</p></section>
 <section class="sec" id="storage" aria-labelledby="storage-h"><h2 id="storage-h">保存先と、外へ出る操作</h2>
       <ul>
         <li>録音とノートは、端末内に保存されます</li>
@@ -232,7 +232,7 @@ footer p{margin:12px 0 0}
         <li>どの音声も例外なく端末の外へ出さない、という保証が必要な場合。SpeechAnalyzerが失敗したときの切り替えがあり、通信の中身も実機で観測していないためです</li>
         <li>iOS 26より前のiPhoneで、端末内の文字起こしを使いたい場合</li>
       </ul></section>
-<section class="sec" id="next" aria-labelledby="next-h"><h2 id="next-h">関連するページ</h2><p>料金と上限は<a href="/pricing/">料金と利用条件</a>、データの扱いは<a href="/faq/#data-sent">よくある質問</a>をご覧ください。標準のボイスメモとの使い分けは<a href="/guides/iphone-voice-memos-vs-texter/">ボイスメモとTexterの違い</a>で説明しています。Apple Watchの録音の流れは、<a href="/guides/apple-watch-recording-transcription/">Apple Watchで長く録音して文字起こしする方法</a>をご覧ください。</p><p>録音から文字起こし、発言の確認までの流れは<a href="/interview/">取材・インタビューでの使い方</a>をご覧ください。クラウド方式の文字起こしや要約・AIチャットでは、処理のためにデータを外部サービスへ送ります。</p></section>
+<section class="sec" id="next" aria-labelledby="next-h"><h2 id="next-h">関連するページ</h2><p>料金と上限は<a href="/pricing/">料金と利用条件</a>、データの扱いは<a href="/faq/#data-sent">よくある質問</a>をご覧ください。標準のボイスメモとの使い分けは<a href="/guides/iphone-voice-memos-vs-texter/">ボイスメモとTexterの違い</a>で説明しています。Apple Watchの録音の流れは、<a href="/guides/apple-watch-recording-transcription/">Apple Watchで長時間録音して文字起こしする方法</a>をご覧ください。</p><p>録音から文字起こし、発言の確認までの流れは<a href="/interview/">取材・インタビューでの使い方</a>をご覧ください。クラウド方式の文字起こしや要約・AIチャットでは、処理のためにデータを外部サービスへ送ります。</p></section>
 <section class="sec" id="method" aria-labelledby="method-h"><h2 id="method-h">確認の範囲</h2><details class="raw"><summary>開いて読む</summary>
       <dl class="facts">
         <dt>確認した人</dt><dd>Texter運営</dd>

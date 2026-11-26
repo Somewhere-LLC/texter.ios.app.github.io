@@ -4,7 +4,7 @@
 // Answers may use only <a>, <b>, <strong>, <br>, <ul>, <ol>, <li>, <p>.
 const howto = require('./faq-howto-data');
 const { arrange } = require('./faq-structure');
-const updated = '2026-11-25';
+const updated = '2026-11-26';
 
 const ja = {
   path: '/faq/',
@@ -67,7 +67,7 @@ const ja = {
         { id: 'offline', q: 'オフラインでも使えますか？',
           a: '<p>一部の機能は使えます。日本語、英語、中国語、韓国語のリアルタイム文字起こしには、通信が必要です。ほかの言語は、端末が対応していれば、ネットワークにつながっていないときに端末内の音声認識を使います。iOS 26以降では、ファイルの文字起こしに、端末内で処理する方式を選べます。翻訳は、オフライン翻訳を選べます。要約やAIチャットなどのAI機能にはインターネット接続が必要です。</p>' },
         { id: 'apple-watch', q: 'Apple Watchで録音できますか？',
-          a: '<p>できます。iPhoneが近くになくても、Apple Watch単体で録音できます（watchOS 11以降）。録音はあとでiPhoneへ転送され、文字起こしされます。</p><p>録音の長さの上限は、次の条件で変わります。</p><ul><li>iPhoneがiOS 26以降で、端末内の文字起こし（SpeechAnalyzer）に対応した機種のときは、録音の長さに上限はありません。iPhoneとWatchのTexterがどちらも2.11.80以降で、アップデートしたiPhoneのTexterを通信できる状態で一度開いたあとに始めた録音が対象です。止まるのは、自分で止めたとき、バッテリー残量が10%を切ったとき、空き容量が足りないときです</li><li>それ以外のiPhoneでは、無料版15分、Premium 2時間を超える録音を文字起こしできません。アプリの版によっては、Watchの録音がこの長さで止まります</li></ul><p>この動きは、サーバーから配信される設定で変わる場合があります。</p><p>長い録音は、iPhoneの「音声認識サービス」を先にSpeechAnalyzerに切り替えてください。長さの上限はありません。クラウドの無料枠も使いません。SpeechAnalyzerを選んでいる無料版では、ノート一覧の「広告を見てこの録音を文字起こし」を押すと始まります。何も変えていないWhisperでは、Watchの録音1件の長さと容量に上限があり（無料版はおよそ18分、2026年11月時点）、超えた録音は文字起こしされません。この上限は、無料枠（累積）とは別の制限です。クラウドの方式の無料枠は累積で、超えると処理が止まります。どちらの場合も、録音は消えません。詳しくは<a href="/guides/apple-watch-recording-transcription/">Apple Watchで長く録音して文字起こしする方法</a>をご覧ください。</p>' },
+          a: '<p>できます。iPhoneが近くになくても、Apple Watchだけで録音できます（watchOS 11以降）。録音はあとでiPhoneに届き、Texterが文字にします。</p><p>iOS 26以降で、Apple Intelligenceに対応しているiPhoneなら、準備をすると、何時間でも録音して文字にできます（バッテリーと空き容量が続くかぎり）。それ以外のiPhoneでは、録音は、無料版は15分まで、Premiumは2時間までを目安にしてください。</p><p>準備の内容と細かい条件は、<a href="/guides/apple-watch-recording-transcription/">Apple Watchで長時間録音して文字起こしする方法</a>をご覧ください。</p>' },
         { id: 'quick-start', q: 'すぐに録音を始める方法はありますか？',
           a: '<p>ロック画面ウィジェットから、ワンタップで録音を始められます。iOS 18以降ではコントロールセンターにも追加できます。Apple Accountの国または地域が日本で、日本国内にいるときは、iOS 26.2以降でサイドボタンの長押しにTexterの音声入力を割り当てられます。手順は<a href="/guides/iphone-side-button-recording/">サイドボタンのガイド</a>をご覧ください。</p>' },
       ],
@@ -158,7 +158,7 @@ const en = {
         { id: 'offline', q: 'Does Texter work offline?',
           a: '<p>Some features do. Live transcription in Japanese, English, Chinese, and Korean needs a network connection. In other languages, it uses on-device speech recognition when there is no connection, on devices that support it. On iOS 26 or later you can transcribe files with a method that runs on the device. Translation has an offline option. AI features such as summaries and AI chat need an internet connection.</p>' },
         { id: 'apple-watch', q: 'Can I record on Apple Watch?',
-          a: '<p>Yes. Apple Watch (watchOS 11 or later) records on its own, without your iPhone nearby. The recording transfers to your iPhone later and is transcribed there.</p><p>The length limit depends on these conditions.</p><ul><li>When your iPhone runs iOS 26 or later and supports on-device transcription (SpeechAnalyzer), a recording has no length limit. This applies when Texter on both your iPhone and your Apple Watch is version 2.11.80 or later, and you start the recording after opening the updated Texter on your iPhone once, while it is online. A recording stops when you stop it, when the battery drops below 10%, or when free storage runs low</li><li>On other iPhones, a recording longer than 15 minutes (free plan) or 2 hours (Premium) cannot be transcribed. Depending on the app version, Watch recordings stop at that length</li></ul><p>This behavior can change with settings delivered from the server.</p><p>For long recordings, first switch the speech recognition service on your iPhone to SpeechAnalyzer. It has no length limit, and it does not use the free cloud allowance. On the free plan with SpeechAnalyzer selected, tap "Watch an ad to transcribe this recording" in the note list to start it. With the default Whisper, a single Watch recording has a limit on length and size (about 18 minutes on the free plan, as of November 2026), and a recording over the limit is not transcribed. This limit is separate from the cumulative free cloud allowance. The free cloud allowance is cumulative, and transcription stops when it runs out. In both cases, the recording is kept. See the <a href="/guides/apple-watch-recording-transcription/">guide to long recordings on Apple Watch</a> (in Japanese).</p>' },
+          a: '<p>Yes. Apple Watch can record by itself, even when your iPhone is not nearby (watchOS 11 or later). The recording reaches your iPhone later, and Texter turns it into text.</p><p>If your iPhone runs iOS 26 or later and supports Apple Intelligence, you can set it up once and record for as long as you like, while the battery and storage last. On other iPhones, plan on 15 minutes or less on the free plan and 2 hours or less with Premium.</p><p>The setup steps and details are in the <a href="/guides/apple-watch-recording-transcription/">guide to long recordings on Apple Watch</a> (in Japanese).</p>' },
         { id: 'quick-start', q: 'Is there a quick way to start recording?',
           a: '<p>Yes. Start recording with one tap from the Lock Screen widget. On iOS 18 or later you can also add Texter to Control Center.</p>' },
       ],
