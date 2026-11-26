@@ -13,13 +13,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Apple Watchで長く録音して文字起こしする方法｜iPhoneの中で文字にする設定</title>
-<meta name="description" content="Apple Watch単体で長く録音し、iPhoneのTexterで文字起こしする手順です。iPhoneとWatchのTexterがどちらも2.11.80以降なら、録音の長さの上限はありません。長い録音は、先にSpeechAnalyzerへ切り替えておくと確実です。">
+<meta name="description" content="iPhoneがiOS 26以降で、端末内の文字起こし（SpeechAnalyzer）に対応した機種なら、Apple Watchで長さの上限なく録音して、iPhoneの中で文字起こしできます。iPhoneとWatchのTexterは、どちらも2.11.80以降が条件です。手順と、つまずいたときの確認を紹介します。">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://texter.work/guides/apple-watch-recording-transcription/">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://texter.work/guides/apple-watch-recording-transcription/">
 <meta property="og:title" content="Apple Watchで長く録音して文字起こしする方法｜iPhoneの中で文字にする設定">
-<meta property="og:description" content="Apple Watch単体で長く録音し、iPhoneのTexterで文字起こしする手順です。iPhoneとWatchのTexterがどちらも2.11.80以降なら、録音の長さの上限はありません。長い録音は、先にSpeechAnalyzerへ切り替えておくと確実です。">
+<meta property="og:description" content="iPhoneがiOS 26以降で、端末内の文字起こし（SpeechAnalyzer）に対応した機種なら、Apple Watchで長さの上限なく録音して、iPhoneの中で文字起こしできます。iPhoneとWatchのTexterは、どちらも2.11.80以降が条件です。手順と、つまずいたときの確認を紹介します。">
 <meta property="og:site_name" content="Texter">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:image" content="https://texter.work/img/ogp.png">
@@ -27,7 +27,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Apple Watchで長く録音して文字起こしする方法｜iPhoneの中で文字にする設定">
-<meta name="twitter:description" content="Apple Watch単体で長く録音し、iPhoneのTexterで文字起こしする手順です。iPhoneとWatchのTexterがどちらも2.11.80以降なら、録音の長さの上限はありません。長い録音は、先にSpeechAnalyzerへ切り替えておくと確実です。">
+<meta name="twitter:description" content="iPhoneがiOS 26以降で、端末内の文字起こし（SpeechAnalyzer）に対応した機種なら、Apple Watchで長さの上限なく録音して、iPhoneの中で文字起こしできます。iPhoneとWatchのTexterは、どちらも2.11.80以降が条件です。手順と、つまずいたときの確認を紹介します。">
 <meta name="twitter:image" content="https://texter.work/img/ogp.png">
 <meta name="apple-itunes-app" content="app-id=1482592304">
 <link rel="icon" href="/assets/favicon/favicon.ico?v=2" sizes="any">
@@ -42,7 +42,7 @@
       "@type": "Article",
       "@id": "https://texter.work/guides/apple-watch-recording-transcription/#article",
       "headline": "Apple Watchで長く録音して文字起こしする方法",
-      "description": "Apple Watch単体で長く録音し、iPhoneのTexterで文字起こしする手順です。iPhoneとWatchのTexterがどちらも2.11.80以降なら、録音の長さの上限はありません。長い録音は、先にSpeechAnalyzerへ切り替えておくと確実です。",
+      "description": "iPhoneがiOS 26以降で、端末内の文字起こし（SpeechAnalyzer）に対応した機種なら、Apple Watchで長さの上限なく録音して、iPhoneの中で文字起こしできます。iPhoneとWatchのTexterは、どちらも2.11.80以降が条件です。手順と、つまずいたときの確認を紹介します。",
       "url": "https://texter.work/guides/apple-watch-recording-transcription/",
       "inLanguage": "ja",
       "datePublished": "2026-11-26",
@@ -184,75 +184,68 @@ footer p{margin:12px 0 0}
 <main id="main" class="wrap">
 <nav aria-label="パンくずリスト"><ol class="crumbs"><li><a href="/">Texter</a></li><li><a href="/guides/">活用ガイド</a></li><li aria-current="page">Apple Watchで長く録音して文字起こしする方法</li></ol></nav>
 <h1>Apple Watchで長く録音して文字起こしする方法</h1>
-<p class="lead">iPhoneとWatchのTexterがどちらも2.11.80以降なら、Apple Watchの録音は、無料版でも15分で止まりません。止まるのは、自分で止めたとき、バッテリーが減ったとき、空き容量が足りなくなったときです。長い録音は、先にiPhoneの「音声認識サービス」をSpeechAnalyzerへ切り替えてください。iPhoneの中で文字起こしできます。<a href="#steps">手順</a>と、<a href="#trouble">つまずいたときの確認</a>を紹介します。</p>
+<p class="lead">iPhoneがiOS 26以降で、端末内の文字起こし（SpeechAnalyzer）に対応した機種なら、Apple Watchで長さの上限なく録音して、iPhoneの中で文字起こしできます。iPhoneとWatchのTexterは、どちらも2.11.80以降が条件です。それ以外のiPhoneでは、長い録音は文字起こしできません。<a href="#steps">手順</a>と、<a href="#trouble">つまずいたときの確認</a>を紹介します。</p>
 <p class="try"><a href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-apple-watch-top&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-apple-watch-top" data-store="app_store">無料で試す（App Store）</a></p>
 <p class="meta">確認日 <time datetime="2026-11-26">2026-11-26</time></p>
-<nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul><li><a href="#summary">結論</a></li><li><a href="#prep">始める前に必要なもの</a></li><li><a href="#steps">長く録音して文字起こしするまでの手順</a></li><li><a href="#methods">音声認識サービスで変わること</a></li><li><a href="#prevent">止め忘れを防ぐ</a></li><li><a href="#trouble">つまずいたとき</a></li><li><a href="#notes">始める前の注意</a></li><li><a href="#next">録音のあとにすること</a></li><li><a href="#method">確認の範囲</a></li></ul></nav>
+<nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">目次</h2><ul><li><a href="#summary">結論</a></li><li><a href="#prep">始める前に必要なもの</a></li><li><a href="#notes">始める前の注意</a></li><li><a href="#steps">長く録音して文字起こしするまでの手順</a></li><li><a href="#methods">音声認識サービスで変わること</a></li><li><a href="#prevent">止め忘れを防ぐ</a></li><li><a href="#trouble">つまずいたとき</a></li><li><a href="#next">録音のあとにすること</a></li><li><a href="#method">確認の範囲</a></li></ul></nav>
 <section class="sec" id="summary" aria-labelledby="summary-h"><h2 id="summary-h">結論</h2>
       <p>Apple Watch単体で録音できるので、iPhoneが近くになくても問題ありません。録音はWatchに保存され、あとでiPhoneへ転送されます。転送後は、iPhoneのTexterでノートとして文字起こしする流れです。</p>
-      <p>iPhoneとWatchのTexterがどちらも2.11.80以降なら、録音の長さに上限はありません。バッテリーと空き容量が続くかぎり、録音できます。録音が止まるのは、自分で止めたとき、バッテリー残量が10%を切ったとき、空き容量が約100MBを下回ったときです。確認は数分おきなので、少し下回ってから止まることがあります。</p>
-      <p>長い録音の文字起こしは、iPhoneの「音声認識サービス」で結果が変わります。SpeechAnalyzer（iOS 26以降の対応端末）なら、録音の長さの上限はありません。何も変えていない状態のWhisperでは、1ファイルの長さや容量に上限があり、超えた録音は文字起こしされません。長く録る前に、SpeechAnalyzerへ切り替えておくのが確実です。</p>
-      <p class="note">上限がなくなるのは、次の準備が済んだあとに始めた録音からです。アップデートしたiPhoneのTexterを、通信できる状態で一度開いてください。Watchを近くに置き、WatchのTexterも最新にしてから録音を始めてください。設定がiPhoneからWatchに届いたあとの録音が対象で、この動きは、サーバーから配信される設定で変わる場合があります。それより前の状態では、従来どおり、無料版は最大15分、Premiumは最大2時間が上限です。無料版では、このとき、Watchに「録音の上限に達しました」と出ます。</p></section>
+      <p>iPhoneがiOS 26以降で、SpeechAnalyzerに対応した機種なら、録音の長さに上限はありません。iPhoneとWatchのTexterがどちらも2.11.80以降であることも条件です。録音が止まるのは、自分で止めたとき、バッテリー残量が10%を切ったとき、空き容量が約100MBを下回ったときです。確認は数分おきなので、少し下回ってから止まることがあります。</p>
+      <p>それ以外のiPhoneでは、長い録音は文字起こしできません。iOS 26より前のiPhoneや、対応していない機種では、アプリの版によって、Watchの録音が無料版15分、Premium 2時間で止まります。上限なしで録れる版でも、長い録音は文字にできません。録音は、この長さまでに区切ってください。</p>
+      <p class="note">上限がなくなるのは、次の準備が済んだあとに始めた録音からです。アップデートしたiPhoneのTexterを、通信できる状態で一度開いてください。Watchを近くに置き、WatchのTexterも最新にしてから録音を始めてください。この動きは、サーバーから配信される設定で変わる場合があります。</p></section>
 <section class="sec" id="prep" aria-labelledby="prep-h"><h2 id="prep-h">始める前に必要なもの</h2>
       <ul>
-        <li>watchOS 11以降のApple Watch。TexterのWatchアプリを使います</li>
-        <li>2.11.80以降のTexterを入れたiPhoneと、2.11.80以降のTexterを入れたApple Watch。文字起こしはiPhoneで行います</li>
-        <li>SpeechAnalyzerで文字起こしするなら、iOS 26以降の対応端末のiPhone</li>
+        <li>watchOS 11以降で、2.11.80以降のTexterを入れたApple Watch</li>
+        <li>2.11.80以降のTexterを入れたiPhone。文字起こしはiPhoneで行います</li>
+        <li>長い録音を文字起こしするなら、iOS 26以降で、SpeechAnalyzerに対応した機種のiPhone。対応した機種の目安は、Apple Intelligenceに対応したiPhoneです。確かめ方は手順2のとおりです</li>
         <li>Android版には、Apple Watchの録音はありません</li>
       </ul>
-      <p>Watchでの録音の始め方は、次のとおりです。使いやすいものを選んでください。</p>
+      <p>Watchでの録音の始め方は、次のとおりです。</p>
       <ul>
         <li>WatchでTexterのアプリを開き、録音ボタンを押す（watchOS 11以降）</li>
         <li>文字盤のコンプリケーションから始める（watchOS 11以降）</li>
         <li>スマートスタックのコントロールから始める（watchOS 26以降）</li>
-        <li>Apple Watch Ultraのアクションボタンから始める（watchOS 26以降）</li>
         <li>ショートカットから始める（watchOS 26以降）</li>
         <li>Siriに「Texterで録音を開始」または「Texterで録音」と話しかける（watchOS 26以降）</li>
       </ul></section>
+<section class="sec" id="notes" aria-labelledby="notes-h"><h2 id="notes-h">始める前の注意</h2>
+      <ul>
+        <li>既定のWhisperと、Defaultでは、録音の音声をクラウドの音声認識へ送ります。送りたくない録音は、先にSpeechAnalyzerへ切り替えてください</li>
+        <li>クラウドの方式の無料枠は累積で、毎月は戻りません。条件は<a href="/pricing/">料金と利用条件</a>で確認できます</li>
+        <li>録音は、バッテリー残量が10%を切るか、空き容量が約100MBを下回ると止まります。長く録るときは、Watchのバッテリーと空き容量を先に確かめてください</li>
+        <li>取り込み時の「無音を自動削除」（Premium）は、ファイルの取り込みの機能です。Watchの録音には使えません</li>
+        <li>録音する前に、参加者へ録音することを伝えてください</li>
+      </ul></section>
 <section class="sec" id="steps" aria-labelledby="steps-h"><h2 id="steps-h">長く録音して文字起こしするまでの手順</h2>
       <ol class="steps">
-        <li><h3>先にiPhoneで方式をSpeechAnalyzerに切り替える</h3><p>iOS 26以降の対応端末で、Texterの「設定」→「ファイルをインポート」→「音声認識サービスを選択」を開き、SpeechAnalyzerを選びます。初回は、言語のモデルをダウンロードするため、通信が要ります。長く録る予定があるときは、録音の前に済ませてください。</p></li>
-        <li><h3>Watchで1分ほど録音して、文字起こしできるか確かめる</h3><p>対応していない機種や言語では、SpeechAnalyzerを選べても、文字起こしが進まないことがあります。長く録る前に、Watchで1分ほど録音して、iPhoneで文字が出るか確かめてください。Watchの録音は、短くても長くても同じ端末内の経路で処理され、クラウドへは切り替わりません。無料版は、ノート一覧の「広告を見てこの録音を文字起こし」を押して確かめます。文字が出れば、その端末と言語で使えます。処理中のまま進まなければ、使えません。音声認識サービスをWhisperに戻してください。ただし、Whisperに戻しても、上限（無料版はおよそ18分、Premiumは2時間）を超えた録音は文字起こしされません。</p></li>
+        <li><h3>先にiPhoneで方式をSpeechAnalyzerに切り替える</h3><p>iOS 26以降のiPhoneで、Texterの「設定」→「ファイルをインポート」→「音声認識サービスを選択」を開き、SpeechAnalyzerを選びます。初回は、言語のモデルをダウンロードするため、通信が要ります。同じ画面の「音声認識言語」の行で、録音する言語も確かめてください。対応していない言語では、文字起こしが進まず、処理中のまま残ります。</p></li>
+        <li><h3>Watchで1分ほど録音して、文字起こしできるか確かめる</h3><p>対応していない機種では、SpeechAnalyzerを選べても、文字起こしが進みません。長く録る前に、Watchで1分ほど録音して、iPhoneで文字が出るか確かめてください。Watchの録音は、短くても長くても同じ端末内の経路で処理され、クラウドへは切り替わりません。SpeechAnalyzerを選んでいる無料版は、ノート一覧の「広告を見てこの録音を文字起こし」を押して確かめます。文字が出れば、その機種と言語で使えます。処理中のまま進まなければ、使えません。</p>
+          <p>音声認識サービスをWhisperに戻すと、止まっているWatchの録音は、試しの録音も含めて、音声がクラウドへ送られます。無料版では、無料枠も使います。上限は、<a href="#methods">方式の表</a>のとおりです。</p></li>
         <li><h3>Watchで録音する</h3><p>上の方法のどれかで録音を始めます。録音中は、Watchの画面に経過時間が出ます。録り終えたら、Watchの画面で録音を止めてください。止めた画面の表示は、「録音を保存しました」です。iPhoneへまだ転送されていないときは、「iPhoneへの転送待ち」も出ます。</p></li>
-        <li><h3>iPhoneに届くのを待つ</h3><p>iPhoneのTexterでは、受信中に「Apple Watchの録音を受信中…」、ノートの準備中に「Apple Watchのノートを準備中…」と出ます。届いたことを知らせる通知は出ません。ノート一覧を開いて、新しいノートがあるか確かめてください。</p></li>
-        <li><h3>文字起こしを始める</h3><p>Premiumの方は、文字起こしが自動で始まります。無料版の方は、ノート一覧に出る「広告を見てこの録音を文字起こし」を押すと始まります。この操作は、録音1件ごとに1回必要です。</p></li>
+        <li><h3>iPhoneに届くのを待つ</h3><p>iPhoneのTexterでは、受信中に「Apple Watchの録音を受信中…」、ノートの準備中に「Apple Watchのノートを準備中…」と出ます。この表示は、「すべてのノート」の一覧でだけ出ます。フォルダを開いていると出ません。届いたことを知らせる通知はないので、一覧で新しいノートを確かめてください。</p></li>
+        <li><h3>文字起こしを始める</h3><p>SpeechAnalyzerを選んでいるPremiumは、文字起こしが自動で始まります。SpeechAnalyzerを選んでいる無料版は、「広告を見てこの録音を文字起こし」を押すと始まります。この操作は、録音1件ごとに1回必要です。WhisperとDefaultのままなら、ボタンを押さなくても自動で始まり、クラウドの無料枠を使います。</p></li>
       </ol></section><aside class="cta inline" aria-label="アプリで試す"><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-apple-watch-after-steps&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-apple-watch-after-steps" data-store="app_store">iPhoneでWatchの録音を試す（App Store）</a></div></aside>
 <section class="sec" id="methods" aria-labelledby="methods-h"><h2 id="methods-h">音声認識サービスで変わること</h2>
       <div class="scroll"><table class="compare"><thead><tr><th scope="col">方式</th><th scope="col">長い録音のとき</th></tr></thead><tbody>
-        <tr><th scope="row">SpeechAnalyzer（iOS 26以降の対応端末）</th><td>録音の長さの上限はありません。iPhoneの中で文字起こしするので、クラウドの無料枠は使いません。Premiumは自動で始まります。無料版は、広告のボタンを押すと始まります。対応していない機種や言語では、選べても進まない場合があるため、先にWatchで1分ほど録音して確かめてください</td></tr>
-        <tr><th scope="row">Whisper（何も変えていないとき）とDefault</th><td>1ファイルの長さと容量に上限があります。Premiumは2時間です。無料版はおよそ18分です（2026年11月時点。変わる場合があります）。上限を超えた録音は、文字起こしされません</td></tr>
+        <tr><th scope="row">SpeechAnalyzer（iOS 26以降で、対応した機種）</th><td>録音の長さの上限はありません。iPhoneの中で文字起こしするので、クラウドの無料枠は使いません</td></tr>
+        <tr><th scope="row">Whisper（何も変えていないとき）とDefault</th><td>1ファイルの長さと容量に上限があります。Premiumは2時間です。無料版はおよそ18分です（2026年11月時点。変わる場合があります）。超えた録音は、文字起こしされません</td></tr>
       </tbody></table></div>
-      <p>Apple Watchの録音では、Defaultを選んでいても、Whisperと同じくクラウドで処理する扱いです。</p>
-      <p>無料版でAmazon Transcribeを選んでいると、長時間の録音には「この録音に使える文字起こし方式がありません」と出ます。Premiumで選んでいると、Watchの録音はAmazon Transcribe（クラウド）で処理されます。長い録音を端末内で文字にしたいときは、SpeechAnalyzerを選んでください。</p>
       <p>上限を超えた録音では、ノート一覧の行に次の文が出ます。「Whisperのファイル上限を超えました。録音は保存済みです。対応端末ではSpeechAnalyzerに切り替えられます。ノートから音声を書き出すこともできます。」録音は消えません。</p>
-      <p>対応端末なら、音声認識サービスをSpeechAnalyzerに切り替えてからノート一覧に戻ると、止まっているこの録音も文字起こしが始まる場合があります。無料版は、行に出るボタンを押してください。</p>
-      <p>iOS 26より前のiPhoneでは、SpeechAnalyzerを選べません。上限を超えた長い録音は、文字起こしできません。音声の書き出しはできます。</p>
-      <p>iOS 26なら、機種に関係なくSpeechAnalyzerを選べる画面です。ただし、対応していない機種や言語では、選べても文字起こしが進まないことがあります。そのときは、ノートが処理中のまま残り、一覧の行に理由は出ません。クラウドへ自動で切り替わることもありません。音声認識サービスをWhisperに戻すか、ノートから音声を書き出してください。Whisperに戻しても、上限（無料版はおよそ18分、Premiumは2時間）を超えた録音は文字起こしされません。その録音は、ノートから音声を書き出してください。設定の詳しい手順と、端末内で済む処理の範囲は、<a href="/guides/iphone-offline-transcription/">音声を端末の外に送らずに文字起こしする方法</a>で説明しています。</p></section>
+      <p>対応した機種なら、音声認識サービスをSpeechAnalyzerに切り替えてからノート一覧に戻ると、止まっているこの録音も文字起こしが始まる場合があります。SpeechAnalyzerを選んでいる無料版は、行に出るボタンを押してください。</p>
+      <p>Apple Watchの録音では、Defaultを選んでいても、Whisperと同じくクラウドで処理する扱いです。無料版でAmazon Transcribeを選んでいると、長さに関係なく、「この録音に使える文字起こし方式がありません」と出ます。Premiumで選んでいると、Watchの録音はAmazon Transcribe（クラウド）で処理されます。長い録音を端末内で文字にしたいときは、SpeechAnalyzerを選んでください。</p>
+      <p>iOS 26より前のiPhoneでは、SpeechAnalyzerを選べません。上限を超えた録音は文字起こしできませんが、音声の書き出しはできます。設定の詳しい手順と、端末内で済む処理の範囲は、<a href="/guides/iphone-offline-transcription/">音声を端末の外に送らずに文字起こしする方法</a>で説明しています。</p></section>
 <section class="sec" id="prevent" aria-labelledby="prevent-h"><h2 id="prevent-h">止め忘れを防ぐ</h2>
       <p>上限がなくなったあとの録音では、長さの上限で止まることはありません。止まるのは、自分で止めたとき、バッテリー残量が10%を切ったとき、空き容量が足りないときです。録り終えたら、Watchの画面で止めたことを確かめてください。</p>
-      <ul>
-        <li>録音中の経過時間は、Watchの画面で確かめてください</li>
-        <li>録音が自動で止まった場合も、止まるまでの録音は保存されます</li>
-        <li>電話などで録音が中断されたときの録音は、途中までが保存されます</li>
-      </ul></section>
+      <p>録音中の経過時間は、Watchの画面で確かめられます。自動で止まったときも、電話などで中断されたときも、止まるまでの録音は保存されます。</p></section>
 <section class="sec" id="trouble" aria-labelledby="trouble-h"><h2 id="trouble-h">つまずいたとき</h2>
       <ul>
-        <li><strong>iPhoneにノートが出ない</strong>。Watchに「iPhoneへの転送待ち」が出ていないか確かめます。iPhoneが近くにないと、転送はあとになります。Texterを開いて、「Apple Watchの録音を受信中…」と出るかも見てください</li>
-        <li><strong>録音が途中で止まった</strong>。バッテリー残量、空き容量が原因のことがあります。iPhoneかWatchのTexterが2.11.80より前のときや、設定がまだ届いていないときは、録音の上限（無料版は15分、Premiumは2時間）のこともあります。止まるまでの録音は保存されるので、ノートを開いて確かめてください。バッテリー残量が少ないときは、Watchに「バッテリー残量が少ないため録音を続けられません」と出ます。空き容量が足りないときは、「録音に必要な空き容量が不足しています」と出ます</li>
+        <li><strong>iPhoneにノートが出ない</strong>。Watchに「iPhoneへの転送待ち」が出ていないか確かめます。iPhoneが近くにないと、転送はあとになります。「すべてのノート」の一覧で、「Apple Watchの録音を受信中…」と出るかも見てください</li>
+        <li><strong>録音が途中で止まった</strong>。バッテリー残量が少ないときは、Watchに「バッテリー残量が少ないため録音を続けられません」と出ます。空き容量が足りないときの表示は、「録音に必要な空き容量が不足しています」です。次の場合は、録音の上限（無料版は15分、Premiumは2時間）で止まることもあります。iPhoneかWatchのTexterが2.11.80より前のとき、設定がまだ届いていないとき、iPhoneがiOS 26より前か対応していない機種のとき（アプリの版によります）。止まるまでの録音は保存されています</li>
         <li><strong>録音を始められない</strong>。バッテリー残量が10%を切っているときと、空き容量が足りないときは、録音を始めることもできません</li>
-        <li><strong>ノートが処理中のまま進まない</strong>。SpeechAnalyzerを選んでいて、対応していない機種や言語のときに起きることがあります。一覧の行に理由は出ません。音声認識サービスをWhisperに戻すか、ノートから音声を書き出してください。Whisperに戻しても、上限（無料版はおよそ18分、Premiumは2時間）を超えた録音は文字起こしされません。その録音は、ノートから音声を書き出してください</li>
+        <li><strong>ノートが処理中のまま進まない</strong>。SpeechAnalyzerを選んでいて、対応していない機種や言語のときに起きることがあります。その場合は、音声認識サービスをWhisperに戻してください。戻すと、止まっているWatchの録音は、試しの録音も含めて、音声がクラウドへ送られます。無料版では、無料枠も使います。Whisperに戻しても、上の表の上限を超えた録音は文字起こしされません。その録音は、ノートから音声を書き出してください。言語の行も確かめてください</li>
         <li><strong>文字起こしが始まらない</strong>。ノート一覧の行に、止まった理由が出ます。「広告を見てこの録音を文字起こし」と出ているときは、それを押すと始まります。「この録音に使える文字起こし方式がありません」と出ているときは、設定の「音声認識サービス」を変えてください。ノートから音声を書き出す方法もあります</li>
-        <li><strong>「Whisperのファイル上限を超えました」と出る</strong>。録音の長さか容量が、Whisperの1ファイルの上限を超えたときの表示です。録音は消えません。音声は、ノートから書き出せます。対応端末なら、音声認識サービスをSpeechAnalyzerに切り替えてからノート一覧に戻ると、止まっているこの録音も文字起こしが始まる場合があります。無料版は、行に出るボタンを押してください。次に長く録るときは、録音の前に切り替えてください。iOS 26より前のiPhoneでは、SpeechAnalyzerを選べません</li>
-        <li><strong>「無料枠の上限で止まっています。タップして再開できます」と出る</strong>。クラウドの方式を使っていて、文字起こしの無料枠の上限に達したときの表示です。録音は消えません。行をタップすると、文字起こしの再開を試します。無料枠が残っていなければ、上限の画面が開く動きです。対応端末なら、SpeechAnalyzerに切り替えてから一覧に戻ると、この録音の文字起こしが始まる場合があります</li>
-      </ul></section>
-<section class="sec" id="notes" aria-labelledby="notes-h"><h2 id="notes-h">始める前の注意</h2>
-      <ul>
-        <li>録音の長さに上限がないのは、iPhoneとWatchのTexterがどちらも2.11.80以降で、設定がWatchに届いたあとに始めた録音からです。それより前は、無料版は最大15分、Premiumは最大2時間で止まります</li>
-        <li>録音は、バッテリー残量が10%を切るか、空き容量が約100MBを下回ると止まります。長く録るときは、Watchのバッテリーと空き容量を先に確かめてください</li>
-        <li>既定のWhisperでは、録音の音声をクラウドの音声認識へ送ります。送りたくない録音は、先にSpeechAnalyzerへ切り替えてください。iOS 26以降の対応端末だけです</li>
-        <li>クラウドの方式の無料枠は累積で、毎月は戻りません。条件は<a href="/pricing/">料金と利用条件</a>で確認できます</li>
-        <li>取り込み時の「無音を自動削除」（Premium）は、ファイルの取り込みの機能です。Watchの録音には使えません</li>
-        <li>録音する前に、参加者へ録音することを伝えてください</li>
+        <li><strong>「Whisperのファイル上限を超えました」と出る</strong>。録音の長さか容量が、上の表の上限を超えたときの表示です。音声は、ノートから書き出せます。止まっているこの録音の文字起こしは、表の下で説明した方法で始まる場合があります。次に長く録るときは、録音の前に切り替えてください</li>
+        <li><strong>「無料枠の上限で止まっています。タップして再開できます」と出る</strong>。クラウドの方式の無料枠の上限に達したときの表示です。録音は消えません。行をタップすると、文字起こしの再開を試します。無料枠が残っていなければ、上限の画面が開く動きです。対応した機種なら、表の下で説明した方法も使えます</li>
       </ul></section>
 <section class="sec" id="next" aria-labelledby="next-h"><h2 id="next-h">録音のあとにすること</h2>
       <p>Watchの録音から作ったノートでも、要約を使えます。無料版は1日3回までです。録音から議事録を仕上げる手順は、<a href="/guides/ai-minutes/">録音から議事録を作る方法</a>で説明しています。</p>
@@ -262,7 +255,7 @@ footer p{margin:12px 0 0}
         <dt>確認した人</dt><dd>Texter運営</dd>
         <dt>確認日</dt><dd>2026-11-26</dd>
         <dt>確認したもの</dt><dd>iPhone版Texter（2.11.80）のソースコードと設定、日本語の画面の文言です。</dd>
-        <dt>確認していないこと</dt><dd>実機での録音から文字起こしまでの所要時間と精度、画面を消したあとの録音の継続、長い録音でのWatchの振動、上限で止まった録音を、SpeechAnalyzerに切り替えたあとに一覧へ戻ると始まるか（コードでは始まる作りですが、実機では確かめていません）、文字起こしの間にアプリを開いたままにする必要があるか、Watchとホーム画面の実際の見え方です。</dd>
+        <dt>確認していないこと</dt><dd>実機での録音から文字起こしまでの所要時間と精度、画面を消したあとの録音の継続、長い録音でのWatchの振動、対応していない機種で文字起こしが処理中のまま進まないこと（コードで確認。実機では確かめていません）、上限で止まった録音を、SpeechAnalyzerに切り替えたあとに一覧へ戻ると始まるか（コードでは始まる作りですが、実機では確かめていません）、文字起こしの間にアプリを開いたままにする必要があるか、Watchとホーム画面の実際の見え方です。</dd>
       </dl></details></section>
 <section class="cta" aria-labelledby="cta-h"><h2 id="cta-h">Texterで試す</h2><p>Texterは、録音や音声ファイルから文字起こし、要約、やることの抽出までを行うアプリです。この手順はiPhone版とApple Watchのものです。無料で始められます。iPhone版の無料版では、手元の録音を取り込むと、目安として音声60分以上を文字にできます（この枠は、毎月は戻りません）。その場で録音しながらの文字起こしは1回3分、1日15分まで、要約は1日3回までです。処理の前に広告が表示される場合があります。条件は<a href="/pricing/">料金と利用条件</a>で確認できます。</p><div class="row"><a class="btn btn-solid" href="https://apps.apple.com/jp/app/id1482592304?pt=489812&amp;ct=guide-apple-watch-end&amp;mt=8" target="_blank" rel="noopener noreferrer" data-cta="guide-apple-watch-end" data-store="app_store">iPhoneでWatchの録音を試す（App Store）</a></div></section>
 </main>
